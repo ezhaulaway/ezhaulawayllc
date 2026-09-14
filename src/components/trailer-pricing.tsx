@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { Armchair, Boxes, LampFloor, Trash2 } from "lucide-react";
+import {
+  Armchair,
+  Bike,
+  Box,
+  Boxes,
+  Lamp,
+  Package,
+  ToyBrick,
+  WashingMachine,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const loadLevels = [
@@ -9,7 +19,39 @@ const loadLevels = [
   { quarters: 4, label: "Full trailer", price: 800, shortLabel: "Full" },
 ] as const;
 
-const junkIcons = [Boxes, Armchair, LampFloor, Trash2] as const;
+// Household junk: toys, boxes, garage-sale style items.
+// Positions are % inside the trailer bed, staggered so items tumble in.
+type JunkItem = {
+  icon: LucideIcon;
+  left: number;
+  bottom: number;
+  size: number;
+  rotate: number;
+  delay: number;
+};
+
+const junkPile: JunkItem[] = [
+  // Quarter 1 (front of bed)
+  { icon: Package, left: 4, bottom: 4, size: 44, rotate: -8, delay: 0 },
+  { icon: Box, left: 14, bottom: 6, size: 36, rotate: 7, delay: 90 },
+  { icon: ToyBrick, left: 8, bottom: 32, size: 28, rotate: -12, delay: 180 },
+  // Quarter 2
+  { icon: Boxes, left: 28, bottom: 5, size: 44, rotate: 6, delay: 0 },
+  { icon: Bike, left: 36, bottom: 8, size: 38, rotate: -6, delay: 110 },
+  { icon: Lamp, left: 30, bottom: 34, size: 26, rotate: 10, delay: 200 },
+  // Quarter 3
+  { icon: Armchair, left: 52, bottom: 6, size: 46, rotate: -5, delay: 0 },
+  { icon: Package, left: 63, bottom: 8, size: 34, rotate: 9, delay: 100 },
+  { icon: ToyBrick, left: 56, bottom: 38, size: 24, rotate: 14, delay: 190 },
+  // Quarter 4
+  { icon: WashingMachine, left: 78, bottom: 6, size: 42, rotate: 4, delay: 0 },
+  { icon: Box, left: 89, bottom: 9, size: 32, rotate: -10, delay: 90 },
+  { icon: Bike, left: 82, bottom: 38, size: 28, rotate: 8, delay: 180 },
+];
+
+function quarterOf(item: JunkItem) {
+  return Math.min(4, Math.floor(item.left / 25) + 1);
+}
 
 export function TrailerPricing() {
   const [selectedQuarters, setSelectedQuarters] = useState(1);
@@ -17,6 +59,17 @@ export function TrailerPricing() {
 
   return (
     <section className="border-b border-border bg-muted py-16 sm:py-24">
+      <style>{`
+        @keyframes junk-drop {
+          0% { opacity: 0; transform: translateY(-90px) rotate(0deg) scale(0.8); }
+          60% { opacity: 1; transform: translateY(6px) rotate(var(--junk-rot)) scale(1.05); }
+          100% { opacity: 1; transform: translateY(0) rotate(var(--junk-rot)) scale(1); }
+        }
+        .junk-item { animation: junk-drop 0.55s cubic-bezier(0.34, 1.4, 0.64, 1) both; }
+        @media (prefers-reduced-motion: reduce) {
+          .junk-item { animation: none; opacity: 1; }
+        }
+      `}</style>
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Interactive price guide</p>
@@ -28,13 +81,45 @@ export function TrailerPricing() {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-14">
           <div>
-            <div className="relative mx-auto max-w-3xl pb-16 pt-5" aria-label="Interactive trailer load size selector">
-              <div className="relative aspect-[2.15/1] overflow-hidden rounded-md border-[5px] border-secondary bg-card shadow-sm">
-                <div className="absolute inset-x-0 bottom-0 grid h-[78%] grid-cols-4">
-                  {loadLevels.map((level, index) => {
-                    const Icon = junkIcons[index] ?? Boxes;
-                    const isFilled = index < selectedQuarters;
-                    return (
+            {/* Dump trailer */}
+            <div className="relative mx-auto max-w-3xl pb-20 pt-5" aria-label="Interactive trailer load size selector">
+              {/* Trailer bed */}
+              <div className="relative aspect-[2.35/1]">
+                {/* Bed interior */}
+                <div className="absolute inset-x-0 top-0 bottom-[18%] overflow-hidden rounded-t-md border-[5px] border-b-0 border-secondary bg-card shadow-sm">
+                  {/* Junk pile */}
+                  <div className="absolute inset-0" aria-hidden="true">
+                    {junkPile.map((item, i) => {
+                      const Icon = item.icon;
+                      const visible = quarterOf(item) <= selectedQuarters;
+                      return (
+                        <Icon
+                          key={i}
+                          className={visible ? "junk-item absolute text-primary" : "hidden"}
+                          style={{
+                            left: `${item.left}%`,
+                            bottom: `${item.bottom}%`,
+                            width: item.size,
+                            height: item.size,
+                            animationDelay: `${item.delay}ms`,
+                            ["--junk-rot" as string]: `${item.rotate}deg`,
+                          }}
+                          strokeWidth={1.7}
+                        />
+                      );
+                    })}
+                  </div>
+
+                  {/* Vertical side ribs (dump trailer look) */}
+                  <div className="pointer-events-none absolute inset-0 flex justify-between px-6" aria-hidden="true">
+                    {Array.from({ length: 7 }).map((_, i) => (
+                      <span key={i} className="h-full w-1.5 bg-secondary/15" />
+                    ))}
+                  </div>
+
+                  {/* Hover/selection zones */}
+                  <div className="absolute inset-0 grid grid-cols-4">
+                    {loadLevels.map((level) => (
                       <button
                         key={level.quarters}
                         type="button"
@@ -43,35 +128,37 @@ export function TrailerPricing() {
                         onMouseEnter={() => setSelectedQuarters(level.quarters)}
                         onFocus={() => setSelectedQuarters(level.quarters)}
                         onClick={() => setSelectedQuarters(level.quarters)}
-                        className="group relative border-r border-dashed border-secondary/25 last:border-r-0 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/40"
+                        className="relative border-r border-dashed border-secondary/20 transition-colors last:border-r-0 hover:bg-primary/5 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/40"
                       >
-                        <span
-                          className={`absolute inset-x-1 bottom-1 flex h-[88%] items-center justify-center rounded-sm border transition-all duration-300 motion-reduce:transition-none ${
-                            isFilled
-                              ? "translate-y-0 border-primary/25 bg-primary/15 opacity-100"
-                              : "translate-y-6 border-transparent bg-transparent opacity-0"
-                          }`}
-                          aria-hidden="true"
-                        >
-                          <Icon className="size-10 text-primary sm:size-14" strokeWidth={1.6} />
-                        </span>
                         <span className="absolute inset-x-0 top-2 text-center text-xs font-extrabold text-secondary/55 sm:text-sm">
                           {level.shortLabel}
                         </span>
                       </button>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-4 bg-secondary" aria-hidden="true" />
-              </div>
 
-              <div className="absolute -right-7 bottom-[3.4rem] h-3 w-16 origin-left rotate-12 rounded-full bg-secondary sm:-right-12 sm:w-24" aria-hidden="true" />
-              <div className="absolute -right-12 bottom-[2.55rem] h-3 w-8 rounded-full bg-secondary sm:-right-20" aria-hidden="true" />
-              <div className="absolute bottom-7 left-[16%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
-                <span className="absolute inset-3 rounded-full bg-secondary/25" />
-              </div>
-              <div className="absolute bottom-7 right-[16%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
-                <span className="absolute inset-3 rounded-full bg-secondary/25" />
+                {/* Bed floor / frame rail */}
+                <div className="absolute inset-x-0 bottom-[18%] h-[9%] border-x-[5px] border-b-[5px] border-secondary bg-secondary/90" aria-hidden="true" />
+                {/* Front wall (slightly taller, dump-trailer style) */}
+                <div className="absolute -left-1 top-0 bottom-[18%] w-2.5 rounded-l-md bg-secondary" aria-hidden="true" />
+                {/* Rear tailgate (angled) */}
+                <div className="absolute -right-1 top-0 bottom-[18%] w-2.5 rounded-r-md bg-secondary" aria-hidden="true" />
+                {/* Under-frame */}
+                <div className="absolute inset-x-[6%] bottom-[9%] h-[5%] rounded-sm bg-secondary/70" aria-hidden="true" />
+
+                {/* Tandem wheels */}
+                <div className="absolute bottom-0 left-[16%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
+                  <span className="absolute inset-3 rounded-full bg-secondary/25" />
+                </div>
+                <div className="absolute bottom-0 left-[26%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
+                  <span className="absolute inset-3 rounded-full bg-secondary/25" />
+                </div>
+
+                {/* Hitch tongue + jack */}
+                <div className="absolute -right-10 bottom-[13%] h-2.5 w-12 rounded-full bg-secondary sm:-right-14 sm:w-16" aria-hidden="true" />
+                <div className="absolute -right-12 bottom-[11.5%] size-4 rounded-full border-4 border-secondary bg-background sm:-right-16" aria-hidden="true" />
+                <div className="absolute -right-2 bottom-0 h-[12%] w-1.5 bg-secondary/70" aria-hidden="true" />
               </div>
             </div>
 
