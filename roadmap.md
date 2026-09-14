@@ -5,3 +5,7 @@
 - [x] Add quote form, service expansion, mobile menu, and FAQ interactions
 - [x] Add route-specific metadata and accessible contact actions
 - [x] Verify desktop and mobile behavior
+
+## Interactive Trailer Pricing
+- [ ] Add interactive quarter-load trailer estimator to Pricing
+- [ ] Verify desktop and mobile interactions
