@@ -28,12 +28,13 @@ import heroJobAsset from "@/assets/appliance_removal.avif.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
 import benZoeAsset from "@/assets/ben_and_zoe_photo.avif.asset.json";
-import cleanoutAsset from "@/assets/Backyard_and_waste_cleanup.avif.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
-import furnitureAsset from "@/assets/furniture_removal.avif.asset.json";
-import hotTubAsset from "@/assets/hot_tub_removal.avif.asset.json";
-import constructionAsset from "@/assets/construction_and_demolition.avif.asset.json";
-import residentialAsset from "@/assets/Residential_Junk_Removal.avif.asset.json";
+import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
+import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
+import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
+import constructionAsset from "@/assets/service-construction-debris.jpg.asset.json";
+import garageAsset from "@/assets/service-garage-cleanout.jpg.asset.json";
+import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -71,9 +72,9 @@ const navItems = [
 
 const services: Array<{ title: string; text: string; icon: LucideIcon; image: string; position: string }> = [
   { title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset.url, position: "50% 40%" },
-  { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: heroJobAsset.url, position: "50% 35%" },
-  { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: residentialAsset.url, position: "50% 45%" },
-  { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: cleanoutAsset.url, position: "50% 40%" },
+  { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset.url, position: "50% 35%" },
+  { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageAsset.url, position: "50% 45%" },
+  { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset.url, position: "50% 40%" },
   { title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset.url, position: "50% 45%" },
   { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset.url, position: "50% 40%" },
 ];
