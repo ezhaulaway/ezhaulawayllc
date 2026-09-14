@@ -1,16 +1,10 @@
-import { useState, type FormEvent, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  CircleCheck,
-  Menu,
-  MessageSquareText,
-  Phone,
-  Upload,
-} from "lucide-react";
+import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
+import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -33,8 +27,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Sheet,
   SheetClose,
