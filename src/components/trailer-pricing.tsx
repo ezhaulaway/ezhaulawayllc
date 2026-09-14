@@ -19,6 +19,11 @@ const loadLevels = [
   { quarters: 4, label: "Full trailer", price: 800, shortLabel: "Full" },
 ] as const;
 
+const priceRange = (price: number) => ({
+  min: price - 50,
+  max: price + 50,
+});
+
 // Household junk: toys, boxes, garage-sale style items.
 // Positions are % inside the trailer bed, staggered so items tumble in.
 type JunkItem = {
