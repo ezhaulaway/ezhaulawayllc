@@ -7,5 +7,5 @@
 - [x] Verify desktop and mobile behavior
 
 ## Interactive Trailer Pricing
-- [ ] Add interactive quarter-load trailer estimator to Pricing
-- [ ] Verify desktop and mobile interactions
+- [x] Add interactive quarter-load trailer estimator to Pricing
+- [x] Verify desktop and mobile interactions
