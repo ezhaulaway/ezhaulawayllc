@@ -17,11 +17,32 @@ const quoteSchema = z.object({
 });
 
 function generateId() {
-  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
-    return crypto.randomUUID();
+  const c = typeof crypto !== "undefined" ? crypto : undefined;
+  if (c && typeof c.randomUUID === "function") {
+    return c.randomUUID();
   }
-  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  // RFC 4122 v4 fallback so uploads always land in a UUID folder
+  const bytes = new Uint8Array(16);
+  if (c && typeof c.getRandomValues === "function") {
+    c.getRandomValues(bytes);
+  } else {
+    for (let i = 0; i < 16; i += 1) bytes[i] = Math.floor(Math.random() * 256);
+  }
+  bytes[6] = ((bytes[6] ?? 0) & 0x0f) | 0x40;
+  bytes[8] = ((bytes[8] ?? 0) & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
+
+
+function safeFileName(name: string) {
+  const parts = name.split(".");
+  const ext = parts.length > 1 ? parts.pop()!.toLowerCase() : "jpg";
+  const base = parts.join(".").replace(/[^a-zA-Z0-9-_]/g, "-").slice(0, 60) || "photo";
+  return `${base}.${ext}`;
+}
+
+
 
 function formatFileSize(bytes: number) {
   if (bytes < 1024) return `${bytes} B`;
@@ -92,7 +113,7 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
       const uploadErrors: string[] = [];
 
       for (const file of files) {
-        const path = `${quoteId}/${file.name}`;
+        const path = `${quoteId}/${safeFileName(file.name)}`;
         const { error } = await supabase.storage.from("quote-photos").upload(path, file, {
           cacheControl: "3600",
           upsert: false,
