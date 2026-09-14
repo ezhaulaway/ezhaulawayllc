@@ -1,15 +1,13 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { SiteHeader, SiteFooter, MobileCtaBar } from "@/components/site-chrome";
+import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
-  ArrowRight,
   Armchair,
   Building2,
   Check,
   ChevronDown,
-  CircleCheck,
   Clock3,
   Construction,
   House,
@@ -22,7 +20,6 @@ import {
   ShieldCheck,
   Star,
   Trees,
-  Upload,
   Users,
 } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
@@ -52,8 +49,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Sheet,
   SheetClose,
