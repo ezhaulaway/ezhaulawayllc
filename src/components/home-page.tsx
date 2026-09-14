@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
+import { GoogleReviewsGrid } from "@/components/google-reviews";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
