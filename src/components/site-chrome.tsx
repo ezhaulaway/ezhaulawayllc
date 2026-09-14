@@ -255,16 +255,20 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
-          {navItems.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
-            >
-              {label}
-            </Link>
-          ))}
+          <ServicesDropdown />
+          <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            How It Works
+          </Link>
+          <Link to="/pricing" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            Pricing
+          </Link>
+          <AreasDropdown />
+          <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            About
+          </Link>
+          <Link to="/contact" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            Contact
+          </Link>
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild variant="ghost" className="px-3">
