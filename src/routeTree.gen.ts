@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as WhatWeTakeRouteImport } from './routes/what-we-take'
+import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
+import { Route as ServiceAreasCityRouteImport } from './routes/service-areas.$city'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatWeTakeRoute = WhatWeTakeRouteImport.update({
+  id: '/what-we-take',
+  path: '/what-we-take',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
+  id: '/service-areas/',
+  path: '/service-areas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasCityRoute = ServiceAreasCityRouteImport.update({
+  id: '/service-areas/$city',
+  path: '/service-areas/$city',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/what-we-take': typeof WhatWeTakeRoute
+  '/service-areas/$city': typeof ServiceAreasCityRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/what-we-take': typeof WhatWeTakeRoute
+  '/service-areas/$city': typeof ServiceAreasCityRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/service-areas': typeof ServiceAreasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/what-we-take': typeof WhatWeTakeRoute
+  '/service-areas/$city': typeof ServiceAreasCityRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy-policy'
+    | '/what-we-take'
+    | '/service-areas/$city'
+    | '/services/$slug'
+    | '/service-areas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy-policy'
+    | '/what-we-take'
+    | '/service-areas/$city'
+    | '/services/$slug'
+    | '/service-areas'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy-policy'
+    | '/what-we-take'
+    | '/service-areas/$city'
+    | '/services/$slug'
+    | '/service-areas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  WhatWeTakeRoute: typeof WhatWeTakeRoute
+  ServiceAreasCityRoute: typeof ServiceAreasCityRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-we-take': {
+      id: '/what-we-take'
+      path: '/what-we-take'
+      fullPath: '/what-we-take'
+      preLoaderRoute: typeof WhatWeTakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/': {
+      id: '/service-areas/'
+      path: '/service-areas'
+      fullPath: '/service-areas/'
+      preLoaderRoute: typeof ServiceAreasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/$city': {
+      id: '/service-areas/$city'
+      path: '/service-areas/$city'
+      fullPath: '/service-areas/$city'
+      preLoaderRoute: typeof ServiceAreasCityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  PricingRoute: PricingRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  WhatWeTakeRoute: WhatWeTakeRoute,
+  ServiceAreasCityRoute: ServiceAreasCityRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  ServiceAreasIndexRoute: ServiceAreasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
