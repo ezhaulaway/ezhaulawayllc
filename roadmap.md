@@ -19,4 +19,4 @@
 ## Branded Service Images
 - [x] Generate a distinct branded image for all 12 service pages
 - [x] Assign each image and add exact EZ Haulaway logo treatment
-- [ ] Verify desktop and mobile service-page presentation
+- [x] Verify desktop and mobile service-page presentation
