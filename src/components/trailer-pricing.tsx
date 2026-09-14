@@ -147,14 +147,11 @@ export function TrailerPricing() {
                 {/* Under-frame */}
                 <div className="absolute inset-x-[8%] bottom-[7%] h-[4%] rounded-sm bg-secondary/70" aria-hidden="true" />
 
-                {/* Triple-axle wheels */}
-                <div className="absolute bottom-0 left-[14%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
+                {/* Tandem (two-axle) wheels */}
+                <div className="absolute bottom-0 left-[16%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
                   <span className="absolute inset-3 rounded-full bg-secondary/25" />
                 </div>
-                <div className="absolute bottom-0 left-[23%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
-                  <span className="absolute inset-3 rounded-full bg-secondary/25" />
-                </div>
-                <div className="absolute bottom-0 left-[32%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
+                <div className="absolute bottom-0 left-[26%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
                   <span className="absolute inset-3 rounded-full bg-secondary/25" />
                 </div>
 
