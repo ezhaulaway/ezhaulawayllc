@@ -1,16 +1,10 @@
-import { useState, type FormEvent, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  CircleCheck,
-  Menu,
-  MessageSquareText,
-  Phone,
-  Upload,
-} from "lucide-react";
+import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
+import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -33,8 +27,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Sheet,
   SheetClose,
@@ -114,73 +106,6 @@ export function Wordmark() {
   );
 }
 
-function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [fileName, setFileName] = useState("");
-
-  function submitForm(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
-
-  if (submitted) {
-    return (
-      <div className="grid min-h-72 place-items-center text-center" role="status">
-        <div>
-          <CircleCheck className="mx-auto size-12 text-primary" />
-          <h3 className="mt-5 text-2xl font-bold">Your request is ready</h3>
-          <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-muted-foreground">
-            Online delivery will be connected in the next phase. For service now, call or text us directly.
-          </p>
-          <Button asChild className="mt-6" size="lg">
-            <a href={`sms:${PHONE_TEL}`}>Text {PHONE}</a>
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <form className="mt-5 space-y-4" onSubmit={submitForm}>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="space-y-1.5 text-sm font-semibold">
-          Name
-          <Input name="name" autoComplete="name" required className="h-11 bg-card" />
-        </label>
-        <label className="space-y-1.5 text-sm font-semibold">
-          Phone number
-          <Input name="phone" type="tel" autoComplete="tel" required className="h-11 bg-card" />
-        </label>
-      </div>
-      <label className="block space-y-1.5 text-sm font-semibold">
-        City or ZIP code
-        <Input name="location" autoComplete="postal-code" required className="h-11 bg-card" />
-      </label>
-      <label className="block space-y-1.5 text-sm font-semibold">
-        What needs to be removed?
-        <Textarea name="details" required rows={4} className="min-h-24 resize-y bg-card" />
-      </label>
-      <label className="block cursor-pointer rounded-md border border-dashed border-input bg-muted/60 p-4 text-center transition-colors hover:border-primary">
-        <Upload className="mx-auto size-5 text-primary" />
-        <span className="mt-2 block text-sm font-semibold">{fileName || "Add photos (optional)"}</span>
-        <span className="mt-1 block text-xs text-muted-foreground">Choose one or more images</span>
-        <input
-          className="sr-only"
-          type="file"
-          accept="image/*"
-          multiple
-          onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")}
-        />
-      </label>
-      <Button type="submit" size="lg" className="w-full">
-        Request My Free Quote <ArrowRight />
-      </Button>
-      <p className="text-center text-xs leading-5 text-muted-foreground">
-        This preview does not send your information yet. Call or text for immediate service.
-      </p>
-    </form>
-  );
-}
 
 export function QuoteButton({
   className = "",
