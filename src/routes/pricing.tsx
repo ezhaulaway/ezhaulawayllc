@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BadgeCheck, Check, Receipt, ShieldCheck, Truck } from "lucide-react";
 import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
+import { TrailerPricing } from "@/components/trailer-pricing";
 import { SITE_URL } from "@/content/site";
 
 const title = "Junk Removal Pricing & Free Quotes | EZ Haulaway";
@@ -63,6 +64,8 @@ function PricingPage() {
         title="Straightforward Pricing, No Surprise Fees"
         text="We price by how much space your items take in the trailer and the work involved in getting them there. You approve the number before anything is loaded."
       />
+
+      <TrailerPricing />
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
