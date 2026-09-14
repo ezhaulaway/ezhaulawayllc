@@ -298,13 +298,63 @@ export function SiteHeader() {
                 <SheetDescription>Junk removal in Parker and the Denver metro area.</SheetDescription>
               </SheetHeader>
               <nav className="mt-8 grid" aria-label="Mobile navigation">
-                {navItems.map(({ label, to }) => (
-                  <SheetClose asChild key={to}>
-                    <Link to={to} className="border-b border-border py-4 font-display text-lg font-bold">
-                      {label}
-                    </Link>
-                  </SheetClose>
-                ))}
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="services" className="border-border">
+                    <AccordionTrigger className="py-4 font-display text-lg font-bold hover:no-underline">
+                      Services
+                    </AccordionTrigger>
+                    <AccordionContent className="grid pb-2">
+                      <SheetClose asChild>
+                        <Link to="/what-we-take" className="py-2.5 font-semibold text-primary">
+                          All Services — What We Take
+                        </Link>
+                      </SheetClose>
+                      {services.map((service) => (
+                        <SheetClose asChild key={service.slug}>
+                          <Link
+                            to="/services/$slug"
+                            params={{ slug: service.slug }}
+                            className="py-2.5 text-muted-foreground"
+                          >
+                            {service.name}
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="areas" className="border-border">
+                    <AccordionTrigger className="py-4 font-display text-lg font-bold hover:no-underline">
+                      Service Areas
+                    </AccordionTrigger>
+                    <AccordionContent className="grid pb-2">
+                      <SheetClose asChild>
+                        <Link to="/service-areas" className="py-2.5 font-semibold text-primary">
+                          All Service Areas
+                        </Link>
+                      </SheetClose>
+                      {locations.map((location) => (
+                        <SheetClose asChild key={location.slug}>
+                          <Link
+                            to="/service-areas/$city"
+                            params={{ city: location.slug }}
+                            className="py-2.5 text-muted-foreground"
+                          >
+                            {location.city}, CO
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                {navItems
+                  .filter(({ to }) => to !== "/what-we-take" && to !== "/service-areas")
+                  .map(({ label, to }) => (
+                    <SheetClose asChild key={to}>
+                      <Link to={to} className="border-b border-border py-4 font-display text-lg font-bold">
+                        {label}
+                      </Link>
+                    </SheetClose>
+                  ))}
               </nav>
               <div className="mt-8 grid gap-3">
                 <QuoteButton className="w-full" />
