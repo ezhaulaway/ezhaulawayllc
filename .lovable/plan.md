@@ -21,5 +21,5 @@ Emails must come from your own domain (like quotes@ezhaulawayllc.com) so they la
 3. Storage: private `quote-photos` bucket, ~10MB file limit, `storage.objects` policies allowing anonymous insert into that bucket only; signed URLs generated server-side for the notification email.
 4. Client: `QuoteForm` in both `src/components/site-chrome.tsx` and `src/components/home-page.tsx` gets shared submit logic (new `src/components/quote-form.tsx`, single source of truth for both) — zod validation (name ≤100, phone ≤30, location ≤100, details ≤2000), photo upload to storage, then a `createServerFn` POST call.
 5. Server: `src/lib/quote.functions.ts` — public `submitQuoteRequest` server fn, revalidates input with zod, inserts the row via a server publishable client, then renders and sends the notification email through Lovable's managed email API using a `@react-email/components` template. Email failure never fails the submission.
-6. Email domain setup for `ezhaulawayllc.com`, sender + reply-to configured; delivery visible in Cloud → Emails.
-7. Verify with a real submission through the browser: row saved, photo stored, email log shows the send.
+6. The notification email template is prepared to send to **benezhaulaway@gmail.com** with the customer's details and photo links; sending starts once the email domain is connected later.
+7. Verify with a real submission through the browser: row saved, photo stored, confirmation shown.
