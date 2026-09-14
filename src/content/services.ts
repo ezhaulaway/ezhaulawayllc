@@ -1,11 +1,15 @@
-import furnitureAsset from "@/assets/furniture_removal.avif.asset.json";
-import applianceAsset from "@/assets/appliance_removal.avif.asset.json";
-import hotTubAsset from "@/assets/hot_tub_removal.avif.asset.json";
-import constructionAsset from "@/assets/construction_and_demolition.avif.asset.json";
-import cleanoutAsset from "@/assets/Backyard_and_waste_cleanup.avif.asset.json";
-import residentialAsset from "@/assets/Residential_Junk_Removal.avif.asset.json";
-import deckAsset from "@/assets/deck_removal.avif.asset.json";
-import electronicsAsset from "@/assets/electronic_disposal.avif.asset.json";
+import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
+import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
+import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
+import lightDemolitionAsset from "@/assets/service-light-demolition.jpg.asset.json";
+import deckAsset from "@/assets/service-deck-fence-removal.jpg.asset.json";
+import constructionAsset from "@/assets/service-construction-debris.jpg.asset.json";
+import yardAsset from "@/assets/service-yard-debris.jpg.asset.json";
+import garageAsset from "@/assets/service-garage-cleanout.jpg.asset.json";
+import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
+import bulkyAsset from "@/assets/service-bulky-items.jpg.asset.json";
+import electronicsAsset from "@/assets/service-electronics.jpg.asset.json";
+import commercialAsset from "@/assets/service-commercial.jpg.asset.json";
 
 export type Service = {
   slug: string;
@@ -149,8 +153,8 @@ export const services: Service[] = [
     metaDescription:
       "Sheds, decks, pergolas, playsets, and interior tear-outs demolished and hauled away in one visit across the Denver metro area.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
-    image: constructionAsset.url,
-    imageAlt: "Construction and demolition debris loaded into the EZ Haulaway trailer",
+    image: lightDemolitionAsset.url,
+    imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
     intro: [
       "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day.",
       "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks.",
@@ -189,7 +193,7 @@ export const services: Service[] = [
       "Tear out an aging deck, pergola, or fence line and have every board hauled off. EZ Haulaway serves Parker and the Denver metro area.",
     summary: "Aging decks, pergolas, railings, and fence lines removed and hauled.",
     image: deckAsset.url,
-    imageAlt: "Wooden deck attached to the back of a house",
+    imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
     intro: [
       "Colorado weather is hard on wood. When a deck starts splintering or a fence starts leaning, tearing it out is the first step toward whatever comes next.",
       "This is Ben's strongest area — he has worked on more than 300 decks, so he knows how they are built and how they come apart.",
@@ -228,7 +232,7 @@ export const services: Service[] = [
       "Drywall, lumber, flooring, roofing, and remodel debris cleared from job sites across Parker and the Denver metro area.",
     summary: "Drywall, lumber, flooring, roofing, and remodel debris.",
     image: constructionAsset.url,
-    imageAlt: "Construction debris loaded for disposal",
+    imageAlt: "EZ Haulaway crew loading organized renovation debris at a Denver metro jobsite",
     intro: [
       "Renting a dumpster means paying for the days it sits in the driveway. We show up when the pile is ready, load it, and leave.",
       "We work with homeowners mid-remodel and with contractors who need a site cleared between phases.",
@@ -266,8 +270,8 @@ export const services: Service[] = [
     metaDescription:
       "Branches, brush, sod, rock, and storm debris hauled out of Denver metro yards. Free quotes from EZ Haulaway in Parker, CO.",
     summary: "Branches, brush, sod, rock, storm damage, and landscaping waste.",
-    image: cleanoutAsset.url,
-    imageAlt: "Backyard waste cleanup with the EZ Haulaway trailer",
+    image: yardAsset.url,
+    imageAlt: "EZ Haulaway crew loading branches and yard debris into a tandem-axle dump trailer",
     intro: [
       "Yard waste fills a truck bed fast and most curbside services will not take it. We bring a trailer sized for the whole pile.",
       "After a spring storm or a landscaping project, one visit usually clears the yard completely.",
@@ -305,8 +309,8 @@ export const services: Service[] = [
     metaDescription:
       "Get the garage back. EZ Haulaway clears years of stored junk from garages across Parker and the Denver metro area. Free quote.",
     summary: "Years of stored clutter cleared out so you can park in there again.",
-    image: residentialAsset.url,
-    imageAlt: "Household junk staged for removal",
+    image: garageAsset.url,
+    imageAlt: "EZ Haulaway crew clearing sorted boxes and household clutter from a garage",
     intro: [
       "Garages collect everything nobody wants to decide about. Paint cans aside, most of it can leave today.",
       "You point out what stays. We clear the rest and sweep the floor before we go.",
@@ -344,8 +348,8 @@ export const services: Service[] = [
     metaDescription:
       "Full property cleanouts for estates, rentals, and moves across the Denver metro area. Respectful, thorough work from EZ Haulaway.",
     summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
-    image: cleanoutAsset.url,
-    imageAlt: "Property cleanout in progress with the EZ Haulaway trailer",
+    image: estateAsset.url,
+    imageAlt: "EZ Haulaway crew respectfully removing furniture and boxes during an estate cleanout",
     intro: [
       "Clearing a house is rarely just a hauling job. Estates, foreclosures, and rental turnovers all come with a deadline and often with grief or stress attached.",
       "We work steadily, communicate clearly, and leave the property empty and swept.",
@@ -383,8 +387,8 @@ export const services: Service[] = [
     metaDescription:
       "Single-item pickups for mattresses, treadmills, pianos, pool tables, and other oversized items across the Denver metro area.",
     summary: "Single oversized items: mattresses, treadmills, pianos, pool tables.",
-    image: residentialAsset.url,
-    imageAlt: "Bulky household items ready for pickup",
+    image: bulkyAsset.url,
+    imageAlt: "EZ Haulaway crew safely carrying a wrapped mattress from a garage",
     intro: [
       "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone.",
       "Single-item pickups are welcome. No minimum truckload, no pressure to find more junk to justify the trip.",
@@ -423,7 +427,7 @@ export const services: Service[] = [
       "TVs, monitors, computers, printers, and office electronics collected for responsible recycling across the Denver metro area.",
     summary: "TVs, monitors, computers, printers, and office electronics.",
     image: electronicsAsset.url,
-    imageAlt: "Old electronics staged for recycling",
+    imageAlt: "EZ Haulaway crew collecting televisions, computers, and electronics for recycling",
     intro: [
       "Electronics cannot go in the trash in most places, and hauling a 60-inch TV to a recycling center is nobody's idea of a Saturday.",
       "We pick it up and route it to the right facility.",
@@ -461,8 +465,8 @@ export const services: Service[] = [
     metaDescription:
       "Office cleanouts, retail fixtures, warehouse clearing, and property manager turnovers across the Denver metro area.",
     summary: "Offices, retail spaces, warehouses, and property turnovers.",
-    image: constructionAsset.url,
-    imageAlt: "Commercial debris loaded for hauling",
+    image: commercialAsset.url,
+    imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
     intro: [
       "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.",
       "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work.",

@@ -17,6 +17,6 @@
 - [ ] Send email notifications (waiting on email domain setup)
 
 ## Branded Service Images
-- [ ] Generate a distinct branded image for all 12 service pages
-- [ ] Assign each image and add exact EZ Haulaway logo treatment
+- [x] Generate a distinct branded image for all 12 service pages
+- [x] Assign each image and add exact EZ Haulaway logo treatment
 - [ ] Verify desktop and mobile service-page presentation

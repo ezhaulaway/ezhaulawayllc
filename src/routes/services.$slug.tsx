@@ -11,6 +11,7 @@ import {
 import { serviceBySlug, services } from "@/content/services";
 import { locations } from "@/content/locations";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
+import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -111,11 +112,24 @@ function ServicePage() {
               </Button>
             </div>
           </div>
-          <img
-            src={service.image}
-            alt={service.imageAlt}
-            className="aspect-[4/3] w-full rounded-lg border border-border object-cover"
-          />
+          <div className="relative overflow-hidden rounded-lg border border-border bg-muted">
+            <img
+              src={service.image}
+              alt={service.imageAlt}
+              width={1024}
+              height={768}
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <div className="absolute right-3 top-3 rounded-md border border-secondary-foreground/20 bg-secondary/90 px-3 py-2 shadow-lg backdrop-blur-sm sm:right-4 sm:top-4">
+              <img
+                src={wordmarkAsset.url}
+                alt="EZ Haulaway"
+                width={1254}
+                height={302}
+                className="h-auto w-28 sm:w-36"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
