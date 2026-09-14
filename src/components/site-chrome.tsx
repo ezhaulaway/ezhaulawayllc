@@ -13,6 +13,13 @@ import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
 import { Button } from "@/components/ui/button";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -49,6 +56,49 @@ export const navItems = [
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ] as const;
+
+const desktopLinkClass =
+  "text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground";
+
+function ServicesDropdown() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className={`inline-flex items-center gap-1 ${desktopLinkClass} data-[state=open]:text-foreground`}>
+        Services <ChevronDown className="size-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="max-h-[70vh] w-64 overflow-y-auto">
+        <DropdownMenuItem asChild>
+          <Link to="/what-we-take" className="font-semibold">All Services — What We Take</Link>
+        </DropdownMenuItem>
+        {services.map((service) => (
+          <DropdownMenuItem asChild key={service.slug}>
+            <Link to="/services/$slug" params={{ slug: service.slug }}>{service.name}</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+function AreasDropdown() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className={`inline-flex items-center gap-1 ${desktopLinkClass} data-[state=open]:text-foreground`}>
+        Service Areas <ChevronDown className="size-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="max-h-[70vh] w-56 overflow-y-auto">
+        <DropdownMenuItem asChild>
+          <Link to="/service-areas" className="font-semibold">All Service Areas</Link>
+        </DropdownMenuItem>
+        {locations.map((location) => (
+          <DropdownMenuItem asChild key={location.slug}>
+            <Link to="/service-areas/$city" params={{ city: location.slug }}>{location.city}, CO</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
 
 export function Wordmark() {
   return (
@@ -205,16 +255,20 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
-          {navItems.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
-            >
-              {label}
-            </Link>
-          ))}
+          <ServicesDropdown />
+          <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            How It Works
+          </Link>
+          <Link to="/pricing" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            Pricing
+          </Link>
+          <AreasDropdown />
+          <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            About
+          </Link>
+          <Link to="/contact" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            Contact
+          </Link>
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild variant="ghost" className="px-3">
@@ -244,13 +298,63 @@ export function SiteHeader() {
                 <SheetDescription>Junk removal in Parker and the Denver metro area.</SheetDescription>
               </SheetHeader>
               <nav className="mt-8 grid" aria-label="Mobile navigation">
-                {navItems.map(({ label, to }) => (
-                  <SheetClose asChild key={to}>
-                    <Link to={to} className="border-b border-border py-4 font-display text-lg font-bold">
-                      {label}
-                    </Link>
-                  </SheetClose>
-                ))}
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="services" className="border-border">
+                    <AccordionTrigger className="py-4 font-display text-lg font-bold hover:no-underline">
+                      Services
+                    </AccordionTrigger>
+                    <AccordionContent className="grid pb-2">
+                      <SheetClose asChild>
+                        <Link to="/what-we-take" className="py-2.5 font-semibold text-primary">
+                          All Services — What We Take
+                        </Link>
+                      </SheetClose>
+                      {services.map((service) => (
+                        <SheetClose asChild key={service.slug}>
+                          <Link
+                            to="/services/$slug"
+                            params={{ slug: service.slug }}
+                            className="py-2.5 text-muted-foreground"
+                          >
+                            {service.name}
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="areas" className="border-border">
+                    <AccordionTrigger className="py-4 font-display text-lg font-bold hover:no-underline">
+                      Service Areas
+                    </AccordionTrigger>
+                    <AccordionContent className="grid pb-2">
+                      <SheetClose asChild>
+                        <Link to="/service-areas" className="py-2.5 font-semibold text-primary">
+                          All Service Areas
+                        </Link>
+                      </SheetClose>
+                      {locations.map((location) => (
+                        <SheetClose asChild key={location.slug}>
+                          <Link
+                            to="/service-areas/$city"
+                            params={{ city: location.slug }}
+                            className="py-2.5 text-muted-foreground"
+                          >
+                            {location.city}, CO
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                {navItems
+                  .filter(({ to }) => to !== "/what-we-take" && to !== "/service-areas")
+                  .map(({ label, to }) => (
+                    <SheetClose asChild key={to}>
+                      <Link to={to} className="border-b border-border py-4 font-display text-lg font-bold">
+                        {label}
+                      </Link>
+                    </SheetClose>
+                  ))}
               </nav>
               <div className="mt-8 grid gap-3">
                 <QuoteButton className="w-full" />
