@@ -48,7 +48,10 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
       global: { fetch: createSupabaseFetch(key) },
     });
 
+    const quoteId = crypto.randomUUID();
+
     const { error } = await supabasePublic.from("quote_requests" as any).insert({
+      id: quoteId,
       name: data.name,
       phone: data.phone,
       location: data.location,
@@ -60,6 +63,28 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
     if (error) {
       console.error("quote insert error", error);
       throw new Error("Could not save your request. Please call or text us.");
+    }
+
+    // Notify the office. A failed alert must never fail the customer's request.
+    try {
+      const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+      await sendTemplateEmail("new-quote-request", "", {
+        templateData: {
+          name: data.name,
+          phone: data.phone,
+          location: data.location,
+          details: data.details,
+          photoCount: data.photoPaths.length,
+          submittedAt: new Date().toLocaleString("en-US", {
+            timeZone: "America/Denver",
+            dateStyle: "medium",
+            timeStyle: "short",
+          }),
+        },
+        idempotencyKey: `new-quote-request-${quoteId}`,
+      });
+    } catch (emailError) {
+      console.error("quote alert email failed", emailError);
     }
 
     return { success: true };
