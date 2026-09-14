@@ -98,7 +98,7 @@ export function Wordmark() {
       <img
         src={wordmarkAsset.url}
         alt="EZ Haulaway"
-        className="h-9 w-auto transition-transform group-hover:-rotate-1 sm:h-10"
+        className="h-10 w-auto transition-transform group-hover:-rotate-1 sm:h-12 md:h-14"
         width={1254}
         height={302}
       />
