@@ -81,12 +81,12 @@ export function TrailerPricing() {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-14">
           <div>
-            {/* Dump trailer */}
+            {/* Dump trailer — tall black walls, triple axle, red accent rail */}
             <div className="relative mx-auto max-w-3xl pb-20 pt-5" aria-label="Interactive trailer load size selector">
               {/* Trailer bed */}
               <div className="relative aspect-[2.35/1]">
-                {/* Bed interior */}
-                <div className="absolute inset-x-0 top-0 bottom-[18%] overflow-hidden rounded-t-md border-[5px] border-b-0 border-secondary bg-card shadow-sm">
+                {/* Tall bed walls */}
+                <div className="absolute inset-x-0 top-0 bottom-[16%] overflow-hidden rounded-t-sm border-4 border-b-0 border-secondary bg-secondary shadow-md">
                   {/* Junk pile */}
                   <div className="absolute inset-0" aria-hidden="true">
                     {junkPile.map((item, i) => {
@@ -95,7 +95,7 @@ export function TrailerPricing() {
                       return (
                         <Icon
                           key={i}
-                          className={visible ? "junk-item absolute text-primary" : "hidden"}
+                          className={visible ? "junk-item absolute text-card" : "hidden"}
                           style={{
                             left: `${item.left}%`,
                             bottom: `${item.bottom}%`,
@@ -110,12 +110,14 @@ export function TrailerPricing() {
                     })}
                   </div>
 
-                  {/* Vertical side ribs (dump trailer look) */}
-                  <div className="pointer-events-none absolute inset-0 flex justify-between px-6" aria-hidden="true">
-                    {Array.from({ length: 7 }).map((_, i) => (
-                      <span key={i} className="h-full w-1.5 bg-secondary/15" />
+                  {/* Vertical wall ribs */}
+                  <div className="pointer-events-none absolute inset-0 flex justify-between px-5" aria-hidden="true">
+                    {Array.from({ length: 9 }).map((_, i) => (
+                      <span key={i} className="h-full w-1 bg-background/10" />
                     ))}
                   </div>
+                  {/* Top rail highlight */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-background/15" aria-hidden="true" />
 
                   {/* Hover/selection zones */}
                   <div className="absolute inset-0 grid grid-cols-4">
@@ -128,9 +130,9 @@ export function TrailerPricing() {
                         onMouseEnter={() => setSelectedQuarters(level.quarters)}
                         onFocus={() => setSelectedQuarters(level.quarters)}
                         onClick={() => setSelectedQuarters(level.quarters)}
-                        className="relative border-r border-dashed border-secondary/20 transition-colors last:border-r-0 hover:bg-primary/5 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/40"
+                        className="relative border-r border-dashed border-background/15 transition-colors last:border-r-0 hover:bg-background/5 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/60"
                       >
-                        <span className="absolute inset-x-0 top-2 text-center text-xs font-extrabold text-secondary/55 sm:text-sm">
+                        <span className="absolute inset-x-0 top-2 text-center text-xs font-extrabold text-background/60 sm:text-sm">
                           {level.shortLabel}
                         </span>
                       </button>
@@ -138,27 +140,28 @@ export function TrailerPricing() {
                   </div>
                 </div>
 
+                {/* Red/white reflective strip along the lower rail */}
+                <div className="absolute inset-x-0 bottom-[16%] h-[4%] bg-[repeating-linear-gradient(90deg,var(--primary)_0_18px,var(--card)_18px_36px)]" aria-hidden="true" />
                 {/* Bed floor / frame rail */}
-                <div className="absolute inset-x-0 bottom-[18%] h-[9%] border-x-[5px] border-b-[5px] border-secondary bg-secondary/90" aria-hidden="true" />
-                {/* Front wall (slightly taller, dump-trailer style) */}
-                <div className="absolute -left-1 top-0 bottom-[18%] w-2.5 rounded-l-md bg-secondary" aria-hidden="true" />
-                {/* Rear tailgate (angled) */}
-                <div className="absolute -right-1 top-0 bottom-[18%] w-2.5 rounded-r-md bg-secondary" aria-hidden="true" />
+                <div className="absolute inset-x-0 bottom-[12%] h-[4%] bg-secondary" aria-hidden="true" />
                 {/* Under-frame */}
-                <div className="absolute inset-x-[6%] bottom-[9%] h-[5%] rounded-sm bg-secondary/70" aria-hidden="true" />
+                <div className="absolute inset-x-[8%] bottom-[7%] h-[4%] rounded-sm bg-secondary/70" aria-hidden="true" />
 
-                {/* Tandem wheels */}
-                <div className="absolute bottom-0 left-[16%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
+                {/* Triple-axle wheels */}
+                <div className="absolute bottom-0 left-[14%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
                   <span className="absolute inset-3 rounded-full bg-secondary/25" />
                 </div>
-                <div className="absolute bottom-0 left-[26%] size-14 rounded-full border-[6px] border-secondary bg-background shadow-inner sm:size-16" aria-hidden="true">
+                <div className="absolute bottom-0 left-[23%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
+                  <span className="absolute inset-3 rounded-full bg-secondary/25" />
+                </div>
+                <div className="absolute bottom-0 left-[32%] size-13 rounded-full border-[5px] border-secondary bg-background shadow-inner sm:size-15" aria-hidden="true">
                   <span className="absolute inset-3 rounded-full bg-secondary/25" />
                 </div>
 
-                {/* Hitch tongue + jack */}
-                <div className="absolute -right-10 bottom-[13%] h-2.5 w-12 rounded-full bg-secondary sm:-right-14 sm:w-16" aria-hidden="true" />
-                <div className="absolute -right-12 bottom-[11.5%] size-4 rounded-full border-4 border-secondary bg-background sm:-right-16" aria-hidden="true" />
-                <div className="absolute -right-2 bottom-0 h-[12%] w-1.5 bg-secondary/70" aria-hidden="true" />
+                {/* Hitch tongue + coupler + jack */}
+                <div className="absolute -right-10 bottom-[9%] h-2.5 w-12 rounded-full bg-secondary sm:-right-14 sm:w-16" aria-hidden="true" />
+                <div className="absolute -right-12 bottom-[7.5%] size-4 rounded-full border-4 border-secondary bg-background sm:-right-16" aria-hidden="true" />
+                <div className="absolute -right-2 bottom-0 h-[8%] w-1.5 bg-secondary/70" aria-hidden="true" />
               </div>
             </div>
 
