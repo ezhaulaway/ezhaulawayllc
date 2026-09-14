@@ -57,6 +57,49 @@ export const navItems = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
+const desktopLinkClass =
+  "text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground";
+
+function ServicesDropdown() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className={`inline-flex items-center gap-1 ${desktopLinkClass} data-[state=open]:text-foreground`}>
+        Services <ChevronDown className="size-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="max-h-[70vh] w-64 overflow-y-auto">
+        <DropdownMenuItem asChild>
+          <Link to="/what-we-take" className="font-semibold">All Services — What We Take</Link>
+        </DropdownMenuItem>
+        {services.map((service) => (
+          <DropdownMenuItem asChild key={service.slug}>
+            <Link to="/services/$slug" params={{ slug: service.slug }}>{service.name}</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+function AreasDropdown() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger className={`inline-flex items-center gap-1 ${desktopLinkClass} data-[state=open]:text-foreground`}>
+        Service Areas <ChevronDown className="size-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="max-h-[70vh] w-56 overflow-y-auto">
+        <DropdownMenuItem asChild>
+          <Link to="/service-areas" className="font-semibold">All Service Areas</Link>
+        </DropdownMenuItem>
+        {locations.map((location) => (
+          <DropdownMenuItem asChild key={location.slug}>
+            <Link to="/service-areas/$city" params={{ city: location.slug }}>{location.city}, CO</Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
 export function Wordmark() {
   return (
     <Link to="/" className="group inline-flex items-center" aria-label="EZ Haulaway home">
