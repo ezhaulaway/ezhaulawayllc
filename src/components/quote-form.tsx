@@ -113,7 +113,7 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
       const uploadErrors: string[] = [];
 
       for (const file of files) {
-        const path = `${quoteId}/${file.name}`;
+        const path = `${quoteId}/${safeFileName(file.name)}`;
         const { error } = await supabase.storage.from("quote-photos").upload(path, file, {
           cacheControl: "3600",
           upsert: false,
