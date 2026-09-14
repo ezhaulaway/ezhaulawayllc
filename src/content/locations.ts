@@ -72,7 +72,7 @@ export const locations: Location[] = [
       "EZ Haulaway works throughout Denver, from older neighborhoods with alley access to downtown apartments and offices.",
     local:
       "City jobs come with tight parking and narrow stairwells. We plan access before we arrive so the crew is not improvising in front of your building.",
-    nearby: ["englewood", "aurora", "commerce-city"],
+    nearby: ["englewood", "aurora"],
     topServices: ["furniture-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
   },
   {
@@ -83,7 +83,7 @@ export const locations: Location[] = [
       "Aurora is one of the largest areas we cover, and we take jobs across the city from Southlands out toward the older neighborhoods.",
     local:
       "Rental turnovers and estate cleanouts make up a good share of our Aurora work, alongside everyday appliance and furniture pickups.",
-    nearby: ["denver", "centennial", "commerce-city"],
+    nearby: ["denver", "centennial"],
     topServices: ["house-and-estate-cleanouts", "appliance-removal", "garage-cleanouts"],
   },
   {
@@ -116,74 +116,8 @@ export const locations: Location[] = [
       "We cover Lakewood across the west side of the metro for junk removal, cleanouts, and light demolition.",
     local:
       "Mature yards here generate serious landscaping debris, and a lot of Lakewood garages are due for a real clear-out.",
-    nearby: ["denver", "arvada", "westminster"],
+    nearby: ["denver"],
     topServices: ["yard-and-landscaping-debris", "garage-cleanouts", "light-demolition"],
-  },
-  {
-    slug: "arvada",
-    city: "Arvada",
-    county: "Jefferson County",
-    intro:
-      "Arvada homeowners call us for everything from one heavy item to a complete property cleanout.",
-    local:
-      "Between Olde Town's older housing stock and the newer neighborhoods north of town, we see a wide mix of jobs here.",
-    nearby: ["westminster", "lakewood", "broomfield"],
-    topServices: ["house-and-estate-cleanouts", "appliance-removal", "deck-and-fence-removal"],
-  },
-  {
-    slug: "westminster",
-    city: "Westminster",
-    county: "Adams & Jefferson County",
-    intro:
-      "Westminster is part of our regular north-metro route for junk removal and debris hauling.",
-    local:
-      "Remodel debris and garage clutter are the two most common reasons Westminster customers call us.",
-    nearby: ["arvada", "northglenn", "broomfield"],
-    topServices: ["construction-debris-removal", "garage-cleanouts", "furniture-removal"],
-  },
-  {
-    slug: "thornton",
-    city: "Thornton",
-    county: "Adams County",
-    intro:
-      "We haul junk throughout Thornton, from single appliance pickups to full basement and garage cleanouts.",
-    local:
-      "Fast growth means plenty of remodels and move-outs, and both generate more debris than a curbside bin can handle.",
-    nearby: ["northglenn", "commerce-city", "westminster"],
-    topServices: ["appliance-removal", "construction-debris-removal", "house-and-estate-cleanouts"],
-  },
-  {
-    slug: "northglenn",
-    city: "Northglenn",
-    county: "Adams County",
-    intro:
-      "Northglenn is on our north-metro run, and we can usually work it into the same week.",
-    local:
-      "Compact lots and older homes mean careful carries and a lot of long-stored household junk finally going out.",
-    nearby: ["thornton", "westminster", "commerce-city"],
-    topServices: ["garage-cleanouts", "mattress-and-bulky-item-removal", "yard-and-landscaping-debris"],
-  },
-  {
-    slug: "commerce-city",
-    city: "Commerce City",
-    county: "Adams County",
-    intro:
-      "Commerce City mixes residential neighborhoods with light industrial space, and we work in both.",
-    local:
-      "Warehouse clearing and commercial cleanouts sit alongside everyday household pickups on our schedule here.",
-    nearby: ["thornton", "denver", "aurora"],
-    topServices: ["commercial-junk-removal", "construction-debris-removal", "appliance-removal"],
-  },
-  {
-    slug: "broomfield",
-    city: "Broomfield",
-    county: "Broomfield County",
-    intro:
-      "Broomfield sits at the north edge of our service area and we take jobs there regularly.",
-    local:
-      "Office and tech space turnovers plus suburban household cleanouts make up most of the work we do in Broomfield.",
-    nearby: ["westminster", "arvada", "northglenn"],
-    topServices: ["commercial-junk-removal", "electronics-and-e-waste-removal", "furniture-removal"],
   },
 ];
 
