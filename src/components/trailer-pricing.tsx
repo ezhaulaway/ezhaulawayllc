@@ -22,7 +22,7 @@ export function TrailerPricing() {
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Interactive price guide</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">How Much Trailer Space Do You Need?</h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            Hover over the trailer or choose a load size to see an estimated price.
+            Hover over the trailer or choose a load size to see an estimated price. Prices are based on a 450 cubic foot trailer. Mattresses, furniture, electronics, and other large items are priced individually rather than by total trailer space.
           </p>
         </div>
 
