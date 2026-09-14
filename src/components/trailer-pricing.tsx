@@ -180,7 +180,7 @@ export function TrailerPricing() {
                   className="h-auto min-h-14 flex-col gap-0.5 py-2"
                 >
                   <span>{level.label}</span>
-                  <span className="text-xs opacity-80">${level.price}</span>
+                  <span className="text-xs opacity-80">${priceRange(level.price).min}–${priceRange(level.price).max}</span>
                 </Button>
               ))}
             </div>
