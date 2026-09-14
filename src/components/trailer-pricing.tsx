@@ -32,7 +32,7 @@ export function TrailerPricing() {
               <div className="relative aspect-[2.15/1] overflow-hidden rounded-md border-[5px] border-secondary bg-card shadow-sm">
                 <div className="absolute inset-x-0 bottom-0 grid h-[78%] grid-cols-4">
                   {loadLevels.map((level, index) => {
-                    const Icon = junkIcons[index];
+                    const Icon = junkIcons[index] ?? Boxes;
                     const isFilled = index < selectedQuarters;
                     return (
                       <button
