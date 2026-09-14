@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
+import { GoogleReviewsGrid } from "@/components/google-reviews";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -318,38 +319,7 @@ export function HomePage() {
         <section id="reviews" className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <SectionHeader eyebrow="CUSTOMER REVIEWS" title="What Our Customers Say" text="Real 5-star reviews from EZ Haulaway customers on Google." />
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {[
-                {
-                  name: "Renee Thompson",
-                  text: "Ben and DJ were seriously AMAZING!! We just moved into our new home and the previous owner left behind way more stuff than we were expecting. Ben and DJ came in and handled literally EVERYTHING. They were so kind, professional, quick, and made what had been a really stressful situation so much easier for us.",
-                },
-                {
-                  name: "Martin Meza",
-                  text: "Punctual, fast and extremely friendly, great guy to do business with.",
-                },
-                {
-                  name: "Devin Hall",
-                  text: "The team at EZ Haulaway were courteous and skillful. They made the entire process smooth and hassle-free, and the results exceeded my expectations.",
-                },
-              ].map((review) => (
-                <article key={review.name} className="flex flex-col rounded-lg border border-border bg-card p-7 shadow-sm">
-                  <div className="flex gap-1 text-primary" aria-label="5 out of 5 stars">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <Star key={index} className="size-5 fill-current" />
-                    ))}
-                  </div>
-                  <p className="mt-6 flex-1 leading-7 text-foreground">“{review.text}”</p>
-                  <div className="mt-8 border-t border-border pt-5">
-                    <p className="font-display font-bold text-foreground">{review.name}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Google Review</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <Button asChild variant="outline" className="mt-8">
-              <a href="https://share.google/cf9FKoYXCi9K62j84" target="_blank" rel="noopener noreferrer">Read More Reviews on Google</a>
-            </Button>
+            <GoogleReviewsGrid />
           </div>
         </section>
 
