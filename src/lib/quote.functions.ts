@@ -33,7 +33,7 @@ function createSupabaseFetch(key: string): typeof fetch {
 }
 
 export const submitQuoteRequest = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => quoteSchema.parse(data))
+  .validator((data: unknown) => quoteSchema.parse(data))
   .handler(async ({ data }) => {
     const { createClient } = await import("@supabase/supabase-js");
 
