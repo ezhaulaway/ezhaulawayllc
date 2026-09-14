@@ -189,7 +189,9 @@ export function TrailerPricing() {
           <div className="border-l-4 border-primary pl-6 sm:pl-8" aria-live="polite">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Estimated price</p>
             <p className="mt-3 text-3xl font-extrabold sm:text-4xl">{selected.label}</p>
-            <p className="mt-2 font-display text-6xl font-extrabold text-primary">${selected.price}</p>
+            <p className="mt-2 font-display text-5xl font-extrabold text-primary sm:text-6xl">
+              ${priceRange(selected.price).min}–${priceRange(selected.price).max}
+            </p>
             <div className="mt-7 border-t border-border pt-6">
               <p className="font-bold">Smaller pickup?</p>
               <p className="mt-1 text-sm leading-6 text-muted-foreground">Our minimum service price starts at $125.</p>
