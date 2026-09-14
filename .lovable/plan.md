@@ -5,7 +5,7 @@ Right now the form only shows a success message — nothing reaches you. This co
 ## What you'll get
 
 - Every quote request is saved, so nothing is lost even if an email fails.
-- An email alert goes to **benezhaulaway@gmail.com** with the customer's name, phone, city/ZIP, what needs removing, and links to any photos they attached.
+- An email alert goes to **ben@ezhaulawayllc.com** with the customer's name, phone, city/ZIP, what needs removing, and links to any photos they attached.
 - Photos customers pick are uploaded and saved with their request.
 - The form gives real feedback: a spinner while sending, a clear confirmation with your text/call buttons, and a friendly error with your phone number if something goes wrong. The "this preview does not send your information yet" note is removed.
 - Text-message alerts can be added later; email first.
