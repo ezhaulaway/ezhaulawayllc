@@ -273,21 +273,21 @@ export function HomePage() {
         </section>
 
         <section id="in-action" className="py-20 sm:py-28">
-          <div className="mx-auto max-w-2xl px-5 lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <SectionHeader center eyebrow="On the job" title="See EZ Haulaway in Action" text="See how quickly a cluttered space can become a clean one." />
-            <div className="relative mt-10 overflow-hidden rounded-lg border border-border bg-secondary shadow-sm">
-              <video
-                controls
-                muted
-                playsInline
-                preload="metadata"
-                poster={heroJobAsset.url}
-                src={timelapseAsset.url}
-                className="aspect-video w-full object-cover"
-              >
-                Your browser does not support video playback.
-              </video>
-            </div>
+          </div>
+          <div className="relative mt-10 w-full overflow-hidden border-y border-border bg-secondary shadow-sm">
+            <video
+              controls
+              muted
+              playsInline
+              preload="metadata"
+              poster={heroJobAsset.url}
+              src={timelapseAsset.url}
+              className="aspect-video w-full object-cover"
+            >
+              Your browser does not support video playback.
+            </video>
           </div>
         </section>
 
