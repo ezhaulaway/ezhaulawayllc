@@ -17,7 +17,7 @@ export const locations: Location[] = [
       "Parker is home base. EZ Haulaway is a family-owned business run out of Parker, so a job here is a job in our own neighborhood.",
     local:
       "Between newer subdivisions still filling in and established neighborhoods finally replacing that twenty-year-old deck, Parker keeps us busy with everything from single mattress pickups to full garage cleanouts.",
-    nearby: ["lone-tree", "castle-rock", "centennial"],
+    nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
   },
   {
@@ -28,7 +28,7 @@ export const locations: Location[] = [
       "Castle Rock sits just down I-25 from our shop in Parker, which makes it one of the easiest areas for us to schedule quickly.",
     local:
       "Larger lots mean larger projects here — sheds, fence lines, landscaping debris, and hot tubs that have not been filled in years.",
-    nearby: ["parker", "lone-tree", "highlands-ranch"],
+    nearby: ["parker", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
   },
   {
@@ -61,7 +61,7 @@ export const locations: Location[] = [
       "Lone Tree is minutes from Parker, so same-week scheduling is usually straightforward.",
     local:
       "We handle a mix of residential cleanouts and commercial work here, including office furniture and tenant turnovers around the business corridors.",
-    nearby: ["parker", "centennial", "highlands-ranch"],
+    nearby: ["parker", "centennial", "highlands-ranch", "castle-pines"],
     topServices: ["commercial-junk-removal", "furniture-removal", "electronics-and-e-waste-removal"],
   },
   {
@@ -94,7 +94,7 @@ export const locations: Location[] = [
       "Littleton mixes long-established neighborhoods with newer development, and both keep our trailer full.",
     local:
       "Older Littleton homes often mean decks and fences well past their service life, plus basements holding decades of stored items.",
-    nearby: ["highlands-ranch", "englewood", "centennial"],
+    nearby: ["highlands-ranch", "englewood", "centennial", "sedalia"],
     topServices: ["deck-and-fence-removal", "house-and-estate-cleanouts", "yard-and-landscaping-debris"],
   },
   {
@@ -118,6 +118,50 @@ export const locations: Location[] = [
       "Mature yards here generate serious landscaping debris, and a lot of Lakewood garages are due for a real clear-out.",
     nearby: ["denver"],
     topServices: ["yard-and-landscaping-debris", "garage-cleanouts", "light-demolition"],
+  },
+  {
+    slug: "elizabeth",
+    city: "Elizabeth",
+    county: "Elbert County",
+    intro:
+      "EZ Haulaway makes the trip out to Elizabeth for everything from single heavy items to full property cleanouts.",
+    local:
+      "Rural lots and ranch-style homes mean bigger yards, older outbuildings, and plenty of long-stored household junk that needs to go.",
+    nearby: ["parker", "franktown", "castle-rock"],
+    topServices: ["garage-cleanouts", "yard-and-landscaping-debris", "house-and-estate-cleanouts"],
+  },
+  {
+    slug: "franktown",
+    city: "Franktown",
+    county: "Douglas County",
+    intro:
+      "Franktown is a quick run southeast of Parker, and we handle junk removal and light demolition jobs here regularly.",
+    local:
+      "A mix of acreage properties and older homes means fence tear-outs, shed removals, and brush cleanup are common requests.",
+    nearby: ["parker", "castle-rock", "elizabeth", "sedalia"],
+    topServices: ["deck-and-fence-removal", "light-demolition", "garage-cleanouts"],
+  },
+  {
+    slug: "castle-pines",
+    city: "Castle Pines",
+    county: "Douglas County",
+    intro:
+      "Castle Pines is close to our Parker base and an easy area for same-week junk removal scheduling.",
+    local:
+      "Newer homes and active move-ins mean furniture swaps, mattress removals, and garage organization jobs keep us busy here.",
+    nearby: ["parker", "castle-rock", "lone-tree", "highlands-ranch"],
+    topServices: ["furniture-removal", "mattress-and-bulky-item-removal", "garage-cleanouts"],
+  },
+  {
+    slug: "sedalia",
+    city: "Sedalia",
+    county: "Douglas County",
+    intro:
+      "Sedalia sits along Highway 85 and is a regular stop for EZ Haulaway on the way to and from Parker.",
+    local:
+      "Mountain homes and rural properties here often need appliance haul-away, yard debris cleanup, and full garage clear-outs.",
+    nearby: ["castle-rock", "littleton", "parker", "franktown"],
+    topServices: ["yard-and-landscaping-debris", "appliance-removal", "garage-cleanouts"],
   },
 ];
 
