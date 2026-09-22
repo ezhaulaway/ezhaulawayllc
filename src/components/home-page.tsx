@@ -171,7 +171,7 @@ export function HomePage() {
                 <MapPin className="size-3.5 text-primary" /> Parker, CO · Denver Metro
               </div>
               <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
-                Junk Removal <span className="text-primary">Parker.</span>
+                Junk Removal <span className="text-primary">Parker</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Fast, reliable junk removal throughout the Denver metro area. We handle the lifting, hauling, and cleanup — with clear communication and no surprises.
