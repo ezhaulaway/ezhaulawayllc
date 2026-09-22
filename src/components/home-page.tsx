@@ -80,13 +80,14 @@ const services: Array<{ title: string; text: string; icon: LucideIcon; image: st
   { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset.url, position: "50% 40%" },
 ];
 
-const extraServices: Array<{ label: string }> = [
+const extraServices: Array<{ label: string; slug?: string }> = [
   { label: "Residential junk removal" },
-  { label: "Garage cleanouts" },
+  { label: "Shed removal and demolition", slug: "shed-removal" },
+  { label: "Garage cleanouts", slug: "garage-cleanouts" },
   { label: "Storage unit cleanouts" },
-  { label: "Mattress removal" },
-  { label: "Electronics removal" },
-  { label: "Deck and pergola removal" },
+  { label: "Mattress removal", slug: "mattress-and-bulky-item-removal" },
+  { label: "Electronics removal", slug: "electronics-and-e-waste-removal" },
+  { label: "Deck and pergola removal", slug: "deck-and-fence-removal" },
 ];
 
 const trustSignals: Array<{ icon: LucideIcon; label: string }> = [
