@@ -10,6 +10,7 @@ import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
 import bulkyAsset from "@/assets/service-bulky-items.jpg.asset.json";
 import electronicsAsset from "@/assets/service-electronics.jpg.asset.json";
 import commercialAsset from "@/assets/service-commercial.jpg.asset.json";
+import shedImage from "@/assets/service-shed-removal.jpg";
 
 export type Service = {
   slug: string;
@@ -456,6 +457,51 @@ export const services: Service[] = [
       ["Can I leave items outside?", "If you will not be home, arrange it with us in advance and leave items accessible."],
     ],
     related: ["appliance-removal", "commercial-junk-removal", "garage-cleanouts"],
+  },
+  {
+    slug: "shed-removal",
+    name: "Shed Removal",
+    h1: "Shed Removal & Demolition in Parker & the Denver Metro Area",
+    metaTitle: "Shed Removal & Demolition in Parker, CO | EZ Haulaway",
+    metaDescription:
+      "Old wood, metal, or plastic shed taking up the backyard? EZ Haulaway tears it down and hauls every board away across Parker and the Denver metro. Free quote.",
+    summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
+    image: shedImage,
+    imageAlt: "Crew dismantling an old wooden backyard shed next to a black dump trailer",
+    intro: [
+      "A shed that has gone soft, leaky, or full of mice is not something you want to take apart on a weekend. We handle the whole thing: tear down the structure, load every board, and haul it off the same visit.",
+      "Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us.",
+    ],
+    includes: [
+      "Wood and T1-11 backyard sheds",
+      "Metal and steel storage sheds",
+      "Vinyl, resin, and plastic sheds",
+      "Playhouses, chicken coops, and lean-tos",
+      "Shelving, flooring, and leftover contents",
+      "Nail and debris cleanup of the footprint",
+    ],
+    sections: [
+      {
+        heading: "Contents and all",
+        text: "Most sheds we take are still full of paint cans, tools, bikes, and boxes. You do not need to empty it first — tell us what is inside and we will price the clear-out with the tear-down. Paint, chemicals, and solvents are the one exception; those need a licensed disposal service.",
+      },
+      {
+        heading: "Slabs, skids, and what we leave behind",
+        text: "Sheds on wood skids or a gravel pad come out cleanly and we rake the footprint so it is safe to walk on. If yours sits on a concrete slab, tell us up front and let us know whether you want the slab broken out too — that is priced as light demolition on top of the shed.",
+      },
+      {
+        heading: "Tight backyards and gates",
+        text: "Denver metro yards often have a narrow side gate or a neighbor's fence line a few feet away. We break the structure down in place so material can be carried out by hand instead of driving equipment across your grass.",
+      },
+    ],
+    faqs: [
+      ["Do I need a permit to remove a shed?", "Most residential shed removals in the Denver metro do not require a permit, but rules vary by town and HOA. If yours is large, on a slab, or has power run to it, check with your local building department first."],
+      ["What if the shed has electricity run to it?", "The circuit needs to be disconnected by a qualified electrician before we start. Once it is safely dead, we can remove the structure and the wiring inside it."],
+      ["Can you take out the concrete slab underneath?", "Often yes, in manageable amounts. Send a photo with a rough size and we will quote the slab separately from the shed."],
+      ["How long does shed removal take?", "A typical backyard shed comes down and gets loaded in a few hours. Larger structures or ones packed with contents can take most of a day."],
+      ["What happens to the material?", "Metal is recycled, usable lumber and contents can be set aside if you want them, and the rest is hauled to the appropriate facility."],
+    ],
+    related: ["light-demolition", "deck-and-fence-removal", "garage-cleanouts"],
   },
   {
     slug: "commercial-junk-removal",
