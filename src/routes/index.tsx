@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
         content:
           "Professional junk removal and light demolition in Parker and the Denver metro area. Get a free quote from EZ Haulaway LLC.",
       },
-      { property: "og:title", content: "EZ In, Junk Out | EZ Haulaway" },
+      { property: "og:title", content: "Junk Removal Parker | EZ Haulaway" },
       {
         property: "og:description",
         content:
