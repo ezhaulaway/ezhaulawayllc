@@ -80,13 +80,14 @@ const services: Array<{ title: string; text: string; icon: LucideIcon; image: st
   { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset.url, position: "50% 40%" },
 ];
 
-const extraServices: Array<{ label: string }> = [
+const extraServices: Array<{ label: string; slug?: string }> = [
   { label: "Residential junk removal" },
-  { label: "Garage cleanouts" },
+  { label: "Shed removal and demolition", slug: "shed-removal" },
+  { label: "Garage cleanouts", slug: "garage-cleanouts" },
   { label: "Storage unit cleanouts" },
-  { label: "Mattress removal" },
-  { label: "Electronics removal" },
-  { label: "Deck and pergola removal" },
+  { label: "Mattress removal", slug: "mattress-and-bulky-item-removal" },
+  { label: "Electronics removal", slug: "electronics-and-e-waste-removal" },
+  { label: "Deck and pergola removal", slug: "deck-and-fence-removal" },
 ];
 
 const trustSignals: Array<{ icon: LucideIcon; label: string }> = [
@@ -239,10 +240,16 @@ export function HomePage() {
             </div>
             {showAllServices ? (
               <div className="mt-6 grid gap-3 rounded-lg border border-border bg-card p-5 sm:grid-cols-2 lg:grid-cols-3">
-                {extraServices.map(({ label }) => (
+                {extraServices.map(({ label, slug }) => (
                   <div key={label} className="flex items-center gap-3 text-sm font-semibold">
                     <Check className="size-4 shrink-0 text-primary" />
-                    {label}
+                    {slug ? (
+                      <Link to="/services/$slug" params={{ slug }} className="hover:text-primary">
+                        {label}
+                      </Link>
+                    ) : (
+                      label
+                    )}
                   </div>
                 ))}
               </div>
