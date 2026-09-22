@@ -240,10 +240,16 @@ export function HomePage() {
             </div>
             {showAllServices ? (
               <div className="mt-6 grid gap-3 rounded-lg border border-border bg-card p-5 sm:grid-cols-2 lg:grid-cols-3">
-                {extraServices.map(({ label }) => (
+                {extraServices.map(({ label, slug }) => (
                   <div key={label} className="flex items-center gap-3 text-sm font-semibold">
                     <Check className="size-4 shrink-0 text-primary" />
-                    {label}
+                    {slug ? (
+                      <Link to="/services/$slug" params={{ slug }} className="hover:text-primary">
+                        {label}
+                      </Link>
+                    ) : (
+                      label
+                    )}
                   </div>
                 ))}
               </div>
