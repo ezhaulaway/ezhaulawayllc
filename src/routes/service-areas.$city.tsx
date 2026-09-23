@@ -118,6 +118,38 @@ function CityPage() {
         </div>
       </section>
 
+      {location.content && location.content.length > 0 && (
+        <section className="py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-5 lg:px-8">
+            {location.content.map((section) => (
+              <div key={section.heading} className="mt-10 first:mt-0">
+                <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                  {section.heading}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
+                    {paragraph}
+                  </p>
+                ))}
+                {section.list && (
+                  <ul className="mt-6 space-y-4">
+                    {section.list.map((item) => (
+                      <li key={item.title} className="rounded-lg border border-border bg-card p-5">
+                        <h3 className="font-bold">{item.title}</h3>
+                        <p className="mt-1 leading-7 text-muted-foreground">{item.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {section.closing && (
+                  <p className="mt-6 text-lg font-semibold leading-8">{section.closing}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
