@@ -3,6 +3,7 @@ export type Location = {
   city: string;
   county: string;
   metaTitle?: string;
+  metaDescription?: string;
   intro: string;
   local: string;
   nearby: string[];
@@ -70,6 +71,7 @@ export const locations: Location[] = [
     slug: "denver",
     city: "Denver",
     county: "Denver County",
+    metaDescription: "Junk removal near me Denver",
     intro:
       "EZ Haulaway works throughout Denver, from older neighborhoods with alley access to downtown apartments and offices.",
     local:
