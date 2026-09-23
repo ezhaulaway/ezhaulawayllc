@@ -3,6 +3,7 @@ export type Location = {
   city: string;
   county: string;
   metaTitle?: string;
+  metaDescription?: string;
   intro: string;
   local: string;
   nearby: string[];
