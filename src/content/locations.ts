@@ -1,3 +1,10 @@
+export type LocationContentSection = {
+  heading: string;
+  paragraphs: string[];
+  list?: { title: string; text: string }[];
+  closing?: string;
+};
+
 export type Location = {
   slug: string;
   city: string;
@@ -8,6 +15,7 @@ export type Location = {
   local: string;
   nearby: string[];
   topServices: string[];
+  content?: LocationContentSection[];
 };
 
 export const locations: Location[] = [
@@ -78,6 +86,46 @@ export const locations: Location[] = [
       "City jobs come with tight parking and narrow stairwells. We plan access before we arrive so the crew is not improvising in front of your building.",
     nearby: ["englewood", "aurora"],
     topServices: ["furniture-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    content: [
+      {
+        heading: "Reliable, Eco-Friendly Junk Removal in Denver",
+        paragraphs: [
+          "When clutter takes over your space, you need a dependable junk removal company that handles the heavy lifting for you. Proudly serving the Denver area, we specialize in both residential and commercial cleanouts of all sizes. Whether you are clearing out a cluttered garage, upgrading your office workspace, or simply looking to get rid of unwanted items, our professional team is dedicated to providing a seamless, stress-free removal experience from start to finish.",
+        ],
+      },
+      {
+        heading: "Comprehensive Removal Services Tailored to Your Needs",
+        paragraphs: [
+          "No job is too big or too small. Our premier junk removal service covers everything from single-item pickups to full-scale property cleanouts. We offer specialized junk hauling solutions for:",
+        ],
+        list: [
+          {
+            title: "Unwanted furniture",
+            text: "We safely remove and haul away old couches, desks, mattresses, and heavy dining sets without damaging your property.",
+          },
+          {
+            title: "Construction debris",
+            text: "Keep your renovation or job site safe and clear with our prompt pickup of scrap wood, drywall, concrete, and remodeling waste.",
+          },
+          {
+            title: "Office and Retail cleanouts",
+            text: "Minimizing downtime while clearing out old inventory, cubicles, and filing cabinets.",
+          },
+          {
+            title: "Appliance & Electronics",
+            text: "Safe, compliant disposal of heavy, outdated tech and white goods.",
+          },
+        ],
+      },
+      {
+        heading: "Our Commitment to Keeping Colorado Clean",
+        paragraphs: [
+          "We love Denver, and we are committed to keeping it beautiful. That is why we take a strictly eco friendly approach to our work. We don't just dump your belongings into the nearest landfill; instead, our team carefully sorts through the load. We partner with local charities, donation centers, and recycling facilities to ensure that usable goods find a second life and raw materials are properly processed.",
+        ],
+        closing:
+          "Ready to reclaim your space? Contact us today for a free estimate and let our team handle the mess!",
+      },
+    ],
   },
   {
     slug: "aurora",
