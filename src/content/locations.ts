@@ -2,6 +2,7 @@ export type Location = {
   slug: string;
   city: string;
   county: string;
+  metaTitle?: string;
   intro: string;
   local: string;
   nearby: string[];
@@ -24,6 +25,7 @@ export const locations: Location[] = [
     slug: "castle-rock",
     city: "Castle Rock",
     county: "Douglas County",
+    metaTitle: "Junk Removal Castle Rock CO",
     intro:
       "Castle Rock sits just down I-25 from our shop in Parker, which makes it one of the easiest areas for us to schedule quickly.",
     local:
