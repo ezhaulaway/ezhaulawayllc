@@ -2,6 +2,7 @@ export type Location = {
   slug: string;
   city: string;
   county: string;
+  metaTitle?: string;
   intro: string;
   local: string;
   nearby: string[];
