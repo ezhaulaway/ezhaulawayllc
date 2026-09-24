@@ -211,6 +211,10 @@ export function HomePage() {
           </div>
         </section>
 
+        <div id="instant-estimate" className="border-b border-border">
+          <AiEstimator />
+        </div>
+
         <section id="services" className="relative overflow-hidden py-20 sm:py-28">
           <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
