@@ -189,6 +189,29 @@ function PricingPage() {
         </div>
       </section>
 
+      <section className="border-t border-border bg-card py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="What the price buys"
+            title="More Than a Truck and a Trailer"
+            text="When you compare junk removal prices in the Denver metro area, make sure you're comparing the whole job — not just the haul away."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              Every EZ Haulaway price includes the full service: a courteous crew, all the lifting and carrying from
+              wherever your items sit, careful protection of your walls and floors, loading, hauling, disposal fees,
+              and a sweep-up before we leave. There are no fuel surcharges, no "stair fees" invented on site, and no
+              number that mysteriously grows once the trailer is loaded.
+            </p>
+            <p>
+              What you're really buying is your weekend back. No truck rental, no dump run, no sore back, no begging
+              friends for help. You point at what needs to go, approve one straightforward price, and watch the
+              space open up. Most customers tell us the same thing afterward: they wish they'd called sooner.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand title="Get a Free Quote on Your Job" text="Photos, a phone call, or a quick text — whatever's easiest for you." />
     </PageShell>
   );

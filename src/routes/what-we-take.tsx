@@ -43,6 +43,29 @@ function WhatWeTakePage() {
         imageAlt="EZ Haulaway trailer loaded during a property cleanout"
       />
 
+      <section className="border-b border-border bg-card py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="How it goes"
+            title="One Call, One Visit, One Clean Space"
+            text="However big the pile, the process stays the same — and so does the way you'll feel when it's gone."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              Send us photos or describe the job, and we'll give you a straightforward price before we arrive. Our
+              crew handles all the lifting, loading, and hauling from anywhere on your property — basements, backyards,
+              attics, and storage units included. When the trailer is loaded, we sweep the area and sort the load for
+              donation and recycling wherever we can.
+            </p>
+            <p>
+              Customers across Parker and the Denver metro area tell us the best part isn't watching the junk leave —
+              it's what comes back: a garage you can park in, a room you can use, a yard you can enjoy. Pick your
+              service below and let's get your space back.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeader

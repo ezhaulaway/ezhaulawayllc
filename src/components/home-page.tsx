@@ -287,6 +287,36 @@ export function HomePage() {
           </div>
         </section>
 
+        <section className="border-y border-border bg-card py-20 sm:py-28">
+          <div className="mx-auto max-w-3xl px-5 lg:px-8">
+            <SectionHeader
+              eyebrow="The EZ Haulaway difference"
+              title="From Cluttered to Clear — Without Lifting a Finger"
+              text="Most people put off junk removal because they expect it to be a hassle. Here's what it actually looks like when you hire a local Parker crew that does it right."
+            />
+            <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+              <p>
+                It starts with a photo or a quick call. You show us the garage that's been full for two years, the
+                hot tub that stopped working three summers ago, or the furniture that didn't make the move. We give
+                you a straightforward price based on how much space your items take in our trailer — and that number
+                doesn't change once we start loading.
+              </p>
+              <p>
+                On job day, our crew arrives on time, walks the job with you, and confirms exactly what's going. Then
+                we do everything: the lifting, the stairs, the tight doorways, the loading, and the haul away. We
+                sweep the area before we leave, and we sort every load for donation and recycling before anything
+                heads to a landfill.
+              </p>
+              <p>
+                What you're left with is the part customers talk about most: a garage you can park in again, a spare
+                room that becomes an office, a backyard where the kids can actually play. That's the real product we
+                sell across Parker, Castle Rock, and the Denver metro area — not just junk removal, but getting your
+                space and your peace of mind back.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section id="in-action" className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <SectionHeader center eyebrow="On the job" title="See EZ Haulaway in Action" text="See how quickly a cluttered space can become a clean one." />
