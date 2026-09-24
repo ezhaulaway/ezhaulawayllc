@@ -16,6 +16,7 @@ import type { TemplateEntry } from './registry'
 interface Props {
   name?: string
   phone?: string
+  address?: string
   description?: string
   photoCount?: number
   priceRange?: string
@@ -28,6 +29,7 @@ interface Props {
 const Email = ({
   name,
   phone,
+  address,
   description,
   photoCount,
   priceRange,
@@ -42,7 +44,7 @@ const Email = ({
     <Body style={main}>
       <Container style={container}>
         <Text style={brand}>EZ HAULAWAY LLC</Text>
-        <Heading style={heading}>New instant estimate lead</Heading>
+        <Heading style={heading}>Customer wants to lock in their quote</Heading>
         <Text style={muted}>{submittedAt ? `Submitted ${submittedAt}` : 'Just submitted'}</Text>
         <Hr style={hr} />
         <Section>
@@ -52,6 +54,8 @@ const Email = ({
           <Text style={value}>
             {phone ? <Link href={`tel:${phone}`} style={link}>{phone}</Link> : '—'}
           </Text>
+          <Text style={label}>Job address</Text>
+          <Text style={value}>{address || '—'}</Text>
           <Text style={label}>Estimate shown to them</Text>
           <Text style={price}>{priceRange || '—'}</Text>
           <Text style={label}>Load size</Text>
@@ -83,6 +87,7 @@ export const template = {
   previewData: {
     name: 'Jordan Miller',
     phone: '720-555-0134',
+    address: '123 Main St, Parker, CO 80134',
     description: 'Old couch, two mattresses and about 15 boxes in the garage.',
     photoCount: 2,
     priceRange: '$400–$500',
