@@ -85,8 +85,7 @@ function WhatWeTakePage() {
               >
                 <img
                   src={service.image}
-                  alt=""
-                  aria-hidden
+                  alt={service.imageAlt}
                   loading="lazy"
                   className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
