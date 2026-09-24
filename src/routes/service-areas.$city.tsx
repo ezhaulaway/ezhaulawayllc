@@ -8,7 +8,7 @@ import {
   PageShell,
   SectionHeader,
 } from "@/components/site-chrome";
-import { locationBySlug, locations } from "@/content/locations";
+import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
 
