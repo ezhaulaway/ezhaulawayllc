@@ -110,16 +110,16 @@ export const services: Service[] = [
   {
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
-    h1: "Hot Tub Removal & Disposal in the Denver Metro Area",
-    metaTitle: "Hot Tub Removal in Parker, CO | EZ Haulaway",
+    h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Hot Tub Removal Denver & Parker CO | Spa Disposal | EZ Haulaway",
     metaDescription:
-      "Old hot tub taking up the backyard? EZ Haulaway drains, dismantles, and hauls hot tubs across Parker and the Denver metro area. Free quote.",
-    summary: "Drain, dismantle, and haul away old spas and hot tubs.",
+      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from $500.",
+    summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset.url,
-    imageAlt: "Hot tub set up outdoors, ready for removal",
+    imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
     intro: [
-      "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and full of water and wiring.",
-      "We cut it down, load the pieces, and leave you with an open patio again.",
+      "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and still full of water, foam, and wiring.",
+      "EZ Haulaway handles hot tub removal and disposal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. We cut the spa down on site, load every piece, and leave you with an open patio the same day.",
     ],
     includes: [
       "Above-ground hot tubs and spas",
@@ -131,18 +131,29 @@ export const services: Service[] = [
     ],
     sections: [
       {
-        heading: "How the removal works",
-        text: "We confirm the power is shut off, drain the tub, dismantle the shell and frame into manageable sections, and carry every piece out through the gate or over the fence line.",
+        heading: "How our hot tub removal works, start to finish",
+        text: "First we confirm the power is off at the breaker and the unit is safely dead. Then we drain the tub, pull the cover and skirting, and cut the shell and frame into sections we can carry by hand. Every piece leaves on our trailer, and we sweep the pad before we go. Most backyard spas take two to four hours.",
       },
       {
-        heading: "Ben has the demolition background",
-        text: "Hot tub removal is really a small demolition job. With roughly six years of construction and demolition work behind him, Ben approaches it the same way — plan the cuts, protect the property, clear the site.",
+        heading: "No gate access? That is the normal job, not the hard one",
+        text: "Denver metro backyards are tight, and most spas were set in place before the fence went up. Because we cut the tub down where it sits instead of trying to roll it out whole, narrow side gates, stairs, retaining walls, and shared fence lines are routine for us. No crane, no equipment tracking across your grass.",
+      },
+      {
+        heading: "Real demolition experience behind the saw",
+        text: "Hot tub removal is really a small demolition job, and that is where Ben started — roughly six years of construction and demolition work, including more than 300 decks. That matters when a spa is wrapped in decking, bolted to a slab, or sitting inches from your siding.",
+      },
+      {
+        heading: "What hot tub removal costs in the Denver metro",
+        text: "Hot tub and spa removal starts around $500 and depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
       },
     ],
     faqs: [
-      ["Do I need to drain it first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
-      ["What if there is no gate access?", "We cut the tub into smaller sections so it can come out through whatever access exists."],
-      ["Can you remove the deck around it too?", "Yes. Surrounding decking and skirting can be removed on the same visit."],
+      ["How much does hot tub removal cost in Denver?", "Hot tub removal starts around $500 in the Denver metro area. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
+      ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
+      ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
+      ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
+      ["Can you remove the deck around the hot tub too?", "Yes. Surrounding decking, skirting, and steps can all be removed on the same visit."],
+      ["Do you take swim spas and above-ground pools?", "Yes. Swim spas, jetted tubs, and above-ground pools are all jobs we do regularly."],
     ],
     related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
   },
