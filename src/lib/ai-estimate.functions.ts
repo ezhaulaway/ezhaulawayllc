@@ -10,7 +10,17 @@ const inputSchema = z.object({
 });
 
 export type AiEstimate = {
-  load_size: "minimum" | "quarter" | "half" | "three_quarters" | "full" | "multiple_loads";
+  load_size:
+    | "minimum"
+    | "eighth"
+    | "quarter"
+    | "three_eighths"
+    | "half"
+    | "five_eighths"
+    | "three_quarters"
+    | "seven_eighths"
+    | "full"
+    | "multiple_loads";
   price_low: number;
   price_high: number;
   summary: string;
