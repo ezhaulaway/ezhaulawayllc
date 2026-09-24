@@ -2,28 +2,37 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
 import trailerEmpty from "@/assets/trailer-base-empty.png";
-import trailerQuarter from "@/assets/trailer-base-quarter.png";
-import trailerHalf from "@/assets/trailer-base-half.png";
-import trailerThreeQuarter from "@/assets/trailer-base-three-quarter.png";
 import trailerFull from "@/assets/trailer-base-full.png";
 
-// Map each eighth-fill level to the closest cartoon junk fill image.
-const fillImages: Record<number, { src: string; alt: string }> = {
-  0: { src: trailerEmpty, alt: "Cartoon of the EZ Haulaway black dump trailer with a small pile — a minimum load" },
-  1: { src: trailerQuarter, alt: "Cartoon dump trailer with a small pile of junk — about an eighth full" },
-  2: { src: trailerQuarter, alt: "Cartoon dump trailer with boxes and a chair — about a quarter full" },
-  3: { src: trailerHalf, alt: "Cartoon dump trailer with furniture and boxes — about three-eighths full" },
-  4: { src: trailerHalf, alt: "Cartoon dump trailer half full of household junk" },
-  5: { src: trailerThreeQuarter, alt: "Cartoon dump trailer with a couch, bike and boxes — about five-eighths full" },
-  6: { src: trailerThreeQuarter, alt: "Cartoon dump trailer three-quarters full of junk" },
-  7: { src: trailerFull, alt: "Cartoon dump trailer nearly overflowing with junk" },
-  8: { src: trailerFull, alt: "Cartoon dump trailer heaping full of furniture, appliances and junk" },
+const fillDescriptions: Record<number, string> = {
+  0: "Cartoon of the EZ Haulaway black dump trailer with a small minimum load at the rear",
+  1: "Cartoon dump trailer about one-eighth full of junk, building from the rear",
+  2: "Cartoon dump trailer about one-quarter full of junk, building from the rear",
+  3: "Cartoon dump trailer about three-eighths full of junk, building from the rear",
+  4: "Cartoon dump trailer half full of household junk, building from the rear",
+  5: "Cartoon dump trailer about five-eighths full of junk, building from the rear",
+  6: "Cartoon dump trailer three-quarters full of junk, building from the rear",
+  7: "Cartoon dump trailer seven-eighths full of junk, building from the rear",
+  8: "Cartoon dump trailer heaping full of furniture, appliances, boxes, and bags",
+};
+
+// The full load is revealed from right to left in eight distinct steps. The
+// empty trailer beneath it never changes, so every increment adds visible junk.
+const fillRevealClasses: Record<number, string> = {
+  0: "[clip-path:inset(0_0_0_100%)]",
+  1: "[clip-path:inset(0_0_0_87.5%)]",
+  2: "[clip-path:inset(0_0_0_75%)]",
+  3: "[clip-path:inset(0_0_0_62.5%)]",
+  4: "[clip-path:inset(0_0_0_50%)]",
+  5: "[clip-path:inset(0_0_0_37.5%)]",
+  6: "[clip-path:inset(0_0_0_25%)]",
+  7: "[clip-path:inset(0_0_0_12.5%)]",
+  8: "[clip-path:inset(0_0_0_0)]",
 };
 
 export function TrailerPricing() {
   const [selectedEighths, setSelectedEighths] = useState(2);
   const selected = (LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0])!;
-  const image = fillImages[selectedEighths] ?? fillImages[0]!;
 
   return (
     <section className="border-b border-border bg-muted py-16 sm:py-24">
@@ -47,26 +56,23 @@ export function TrailerPricing() {
                 {/* Base trailer never changes or reloads — junk layers fade in on top */}
                 <img
                   src={trailerEmpty}
-                  alt={fillImages[selectedEighths]?.alt ?? fillImages[0]!.alt}
+                  alt={fillDescriptions[selectedEighths] ?? fillDescriptions[0]}
                   width={1376}
                   height={768}
                   fetchPriority="high"
                   className="absolute inset-0 h-full w-full object-contain"
                 />
-                {[trailerQuarter, trailerHalf, trailerThreeQuarter, trailerFull].map((src) => ({ src, alt: "" })).map((img) => (
-                    <img
-                      key={img.src}
-                      src={img.src}
-                      alt=""
-                      aria-hidden="true"
-                      width={1376}
-                      height={768}
-                      loading="eager"
-                      className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${
-                        fillImages[selectedEighths]?.src === img.src && selectedEighths !== 0 ? "opacity-100" : "opacity-0"
-                      }`}
-                    />
-                  ))}
+                <div className="absolute inset-0 [clip-path:polygon(21.5%_9%,99%_9%,99%_51%,21.5%_51%)]">
+                  <img
+                    src={trailerFull}
+                    alt=""
+                    aria-hidden="true"
+                    width={1376}
+                    height={768}
+                    loading="eager"
+                    className={`absolute inset-0 h-full w-full object-contain transition-[clip-path] duration-300 ease-out ${fillRevealClasses[selectedEighths] ?? fillRevealClasses[0]}`}
+                  />
+                </div>
                 <span className="absolute left-3 top-3 rounded-full bg-secondary/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-secondary-foreground">
                   {selected.eighths === 0 ? "Minimum load" : `${selected.label}`}
                 </span>
