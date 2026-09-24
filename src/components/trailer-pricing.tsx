@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
-import trailerEmpty from "@/assets/trailer-base-empty.png";
+import trailerEmpty from "@/assets/trailer-base-empty-clean.png";
 import trailerJunk0 from "@/assets/trailer-junk-0.png";
 import trailerJunk1 from "@/assets/trailer-junk-1.png";
 import trailerJunk2 from "@/assets/trailer-junk-2.png";
