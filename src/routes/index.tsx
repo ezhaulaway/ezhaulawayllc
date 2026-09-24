@@ -5,13 +5,13 @@ import { GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Junk Removal Parker CO | EZ Haulaway LLC" },
+      { title: "Junk Removal Parker CO | EZ Haulaway LLC – Free Quotes" },
       {
         name: "description",
         content:
           "Junk removal in Parker, CO and the Denver metro area. Furniture, appliances, hot tubs, cleanouts and light demolition. Free quotes from EZ Haulaway LLC.",
       },
-      { property: "og:title", content: "Junk Removal Parker | EZ Haulaway" },
+      { property: "og:title", content: "Junk Removal Parker CO | EZ Haulaway LLC – Free Quotes" },
       {
         property: "og:description",
         content:
