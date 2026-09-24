@@ -48,8 +48,32 @@ export const Route = createFileRoute("/service-areas/$city")({
             description: pageDescription,
             telephone: PHONE,
             url: `${SITE_URL}/service-areas/${params.city}`,
+            priceRange: "$150 - $800",
             areaServed: { "@type": "City", name: `${location.city}, CO` },
             address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
+            makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
+              const service = services.find((item) => item.slug === slug);
+              return {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: `${service?.name ?? slug} in ${location.city}, CO`,
+                  url: `${SITE_URL}/services/${slug}`,
+                },
+              };
+            }),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
+              { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
+            ],
           }),
         },
       ],
