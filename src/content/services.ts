@@ -494,16 +494,16 @@ export const services: Service[] = [
   {
     slug: "shed-removal",
     name: "Shed Removal",
-    h1: "Shed Removal & Demolition in Parker & the Denver Metro Area",
-    metaTitle: "Shed Removal & Demolition in Parker, CO | EZ Haulaway",
+    h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Shed Removal & Demolition Denver & Parker, CO | EZ Haulaway",
     metaDescription:
-      "Old wood, metal, or plastic shed taking up the backyard? EZ Haulaway tears it down and hauls every board away across Parker and the Denver metro. Free quote.",
+      "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board. Free quote.",
     summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
     image: shedImage,
     imageAlt: "Crew dismantling an old wooden backyard shed next to a black dump trailer",
     intro: [
       "A shed that has gone soft, leaky, or full of mice is not something you want to take apart on a weekend. We handle the whole thing: tear down the structure, load every board, and haul it off the same visit.",
-      "Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us.",
+      "EZ Haulaway does shed removal and backyard demolition across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us. Ben brings roughly six years of construction and demolition experience, so the tear-down is planned, not improvised.",
     ],
     includes: [
       "Wood and T1-11 backyard sheds",
