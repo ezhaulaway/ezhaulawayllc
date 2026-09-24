@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
-import trailerEmpty from "@/assets/trailer-cartoon-empty.png";
-import trailerQuarter from "@/assets/trailer-cartoon-quarter.png";
-import trailerHalf from "@/assets/trailer-cartoon-half.png";
-import trailerThreeQuarter from "@/assets/trailer-cartoon-three-quarter.png";
-import trailerFull from "@/assets/trailer-cartoon-full.png";
+import trailerEmpty from "@/assets/trailer-base-empty.png";
+import trailerQuarter from "@/assets/trailer-base-quarter.png";
+import trailerHalf from "@/assets/trailer-base-half.png";
+import trailerThreeQuarter from "@/assets/trailer-base-three-quarter.png";
+import trailerFull from "@/assets/trailer-base-full.png";
 
 // Map each eighth-fill level to the closest cartoon junk fill image.
 const fillImages: Record<number, { src: string; alt: string }> = {
@@ -43,7 +43,7 @@ export function TrailerPricing() {
           <div>
             {/* Cartoon trailer with junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
-              <div className="relative aspect-[16/9]">
+              <div className="relative aspect-[1376/768]">
                 {Object.entries(fillImages)
                   .filter(([eighths]) => Number(eighths) !== 0 || selectedEighths === 0)
                   .map(([eighths, img]) => (
@@ -52,10 +52,10 @@ export function TrailerPricing() {
                       src={img.src}
                       alt={Number(eighths) === selectedEighths ? img.alt : ""}
                       aria-hidden={Number(eighths) !== selectedEighths}
-                      width={1280}
-                      height={720}
+                      width={1376}
+                      height={768}
                       loading="lazy"
-                      className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+                      className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${
                         Number(eighths) === selectedEighths ? "opacity-100" : "opacity-0"
                       }`}
                     />
