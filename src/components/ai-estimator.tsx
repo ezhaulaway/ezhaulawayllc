@@ -5,10 +5,14 @@ import { Button } from "@/components/ui/button";
 import { generateAiEstimate, type AiEstimate } from "@/lib/ai-estimate.functions";
 
 const LOAD_LABEL: Record<AiEstimate["load_size"], string> = {
-  minimum: "Minimum job",
+  minimum: "Minimum / small load",
+  eighth: "About ⅛ trailer",
   quarter: "About ¼ trailer",
+  three_eighths: "About ⅜ trailer",
   half: "About ½ trailer",
+  five_eighths: "About ⅝ trailer",
   three_quarters: "About ¾ trailer",
+  seven_eighths: "About ⅞ trailer",
   full: "About a full trailer",
   multiple_loads: "More than one trailer",
 };
@@ -132,7 +136,9 @@ export function AiEstimator() {
               <div>
                 <p className="text-sm font-bold uppercase tracking-wide text-primary">{LOAD_LABEL[estimate.load_size]}</p>
                 <p className="mt-1 text-4xl font-extrabold">
-                  ${Math.round(estimate.price_low)}–${Math.round(estimate.price_high)}
+                  {Math.round(estimate.price_low) === Math.round(estimate.price_high)
+                    ? `$${Math.round(estimate.price_low)}`
+                    : `$${Math.round(estimate.price_low)}–$${Math.round(estimate.price_high)}`}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">Preliminary estimate · {estimate.confidence} confidence</p>
                 <p className="mt-4 text-sm leading-6">{estimate.summary}</p>

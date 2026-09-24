@@ -10,7 +10,17 @@ const inputSchema = z.object({
 });
 
 export type AiEstimate = {
-  load_size: "minimum" | "quarter" | "half" | "three_quarters" | "full" | "multiple_loads";
+  load_size:
+    | "minimum"
+    | "eighth"
+    | "quarter"
+    | "three_eighths"
+    | "half"
+    | "five_eighths"
+    | "three_quarters"
+    | "seven_eighths"
+    | "full"
+    | "multiple_loads";
   price_low: number;
   price_high: number;
   summary: string;
@@ -30,7 +40,13 @@ const schema = {
     "special_items", "recommended_service", "crew_and_time", "prep_tips", "confidence",
   ],
   properties: {
-    load_size: { type: "string", enum: ["minimum", "quarter", "half", "three_quarters", "full", "multiple_loads"] },
+    load_size: {
+      type: "string",
+      enum: [
+        "minimum", "eighth", "quarter", "three_eighths", "half",
+        "five_eighths", "three_quarters", "seven_eighths", "full", "multiple_loads",
+      ],
+    },
     price_low: { type: "number" },
     price_high: { type: "number" },
     summary: { type: "string" },
@@ -52,14 +68,27 @@ const schema = {
 };
 
 const SYSTEM = `You are the estimating assistant for EZ Haulaway, a junk removal company in Castle Rock / Parker, Colorado (Denver metro).
-Pricing rules (all-inclusive: labor, loading, hauling, disposal):
-- Trailer is 450 cubic feet.
-- Minimum job: $125 (small pickups, a few items).
-- 1/4 trailer: $150-$250. 1/2 trailer: $350-$450. 3/4 trailer: $550-$650. Full trailer: $750-$850.
-- More than one trailer: multiply accordingly.
-- Mattresses, furniture, electronics, appliances and other large items may be priced individually; list them in special_items with a short note.
-- Heavy material (concrete, dirt, tile, shingles) or hard access (stairs, long carries) can raise the price; mention it.
-Estimate volume from the photos and description. Be honest about uncertainty. Keep summary to 2-3 sentences, at most 12 items, at most 4 prep tips. Plain friendly language. This is a preliminary estimate; the final price is confirmed on site.`;
+
+TRAILER: 16' x 8' x 3' dump trailer, about 14 cubic yards (450 cubic feet).
+
+TRAILER LOAD PRICING (includes standard labor, loading, hauling, and disposal):
+- Minimum / small load (small pickup): $150 (range $150-$200)
+- 1/8 trailer (1.75 yd3): $175
+- 1/4 trailer (3.5 yd3): $275 (range $250-$300)
+- 3/8 trailer (5.25 yd3): $350
+- 1/2 trailer (7.0 yd3): $450 (range $400-$500)
+- 5/8 trailer (8.75 yd3): $550
+- 3/4 trailer (10.5 yd3): $650 (range $550-$650)
+- 7/8 trailer (12.25 yd3): $725
+- Full trailer (14 yd3): $800 (range $700-$850)
+- More than one trailer load: multiply accordingly and use load_size "multiple_loads".
+
+LABOR: $50/hour per crew member may be added for difficult access, disassembly, oversized or heavy items, or extended loading time. Access conditions (stairs, long carries, tight spaces, heavy weight such as concrete, dirt, tile, or shingles) can raise the price - mention it when relevant.
+
+SPECIALTY / SINGLE-ITEM PRICING (use these instead of trailer pricing when the job is only a few of these items; list them in special_items with their price):
+AC $50-75; Aquarium $100; Basketball hoop and stand $125; Bicycle (adult) $40; Bookshelf $50; Box spring $75; BBQ grill $75; Cabinet/bottom of hutch $85; Cable machine $150-250; Office chair $40; Recliner $85; Chest freezer $100; Computer monitor $40; Commercial copier/printer $150; Couch $60 per cushion; Dehumidifier $50-65; Desk large $100; Desk small $75; Dining set (table + 4 chairs) $150; Dining set (table + 6 chairs) $200; Dishwasher $75; Dresser/bureau $85; Elliptical $100-150; Entertainment center $175; Filing cabinet small $50; Filing cabinet tall $100; Freezer (large) $125; Furnace $350-400; Futon $100; Hockey/lacrosse net $60; Hot tub from $500; Hutch (dining) $300-400; Push mower $50; Ride-on mower from $225; Mattress $100; Box spring $75; Mini freezer $50; Mini fridge $60; Mirror $25; Ottoman $40; Pallet $30; Piano from $375; Home printer $30; Propane tank $30; Refrigerator (full size) $125; Refrigerator (side by side) $150; Stationary bike $75; Stove $85; Swing set from $300; Coffee table $50; Night stand $30; Dining table $100; Treadmill $150; Trash bag $50; Washer/dryer $100 each; Water heater $125; Basement workbench $200.
+
+METHOD: Estimate volume from the photos and description, pick the closest fill level, and set price_low/price_high around that price (use the published range where one is listed, otherwise about +/- $50). Never quote below the $150 minimum. Oversized/specialty items above are priced individually on top of or instead of trailer space - put each one in special_items with its price. Be honest about uncertainty. Keep summary to 2-3 sentences, at most 12 items, at most 4 prep tips. Plain friendly language. This is a preliminary estimate; the final price is approved before work begins.`;
 
 export const generateAiEstimate = createServerFn({ method: "POST" })
   .validator((data: unknown) => inputSchema.parse(data))
