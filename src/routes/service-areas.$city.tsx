@@ -9,6 +9,7 @@ import {
   SectionHeader,
 } from "@/components/site-chrome";
 import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/locations";
+import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
 
