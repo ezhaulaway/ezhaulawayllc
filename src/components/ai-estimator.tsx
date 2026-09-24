@@ -29,6 +29,8 @@ async function resize(file: File): Promise<string> {
 
 export function AiEstimator() {
   const run = useServerFn(generateAiEstimate);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -44,6 +46,14 @@ export function AiEstimator() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (name.trim().length < 1) {
+      setError("Please add your name so we know who we're talking to.");
+      return;
+    }
+    if (phone.replace(/\D/g, "").length < 10) {
+      setError("Please add a phone number we can reach you at.");
+      return;
+    }
     if (description.trim().length < 5) {
       setError("Tell us a little about what needs to go.");
       return;
@@ -52,7 +62,7 @@ export function AiEstimator() {
     setError(null);
     setEstimate(null);
     try {
-      const res = await run({ data: { description, images } });
+      const res = await run({ data: { name, phone, description, images } });
       if (res.ok) setEstimate(res.estimate);
       else setError(res.error);
     } catch {
