@@ -11,6 +11,7 @@ import bulkyAsset from "@/assets/service-bulky-items.jpg.asset.json";
 import electronicsAsset from "@/assets/service-electronics.jpg.asset.json";
 import commercialAsset from "@/assets/service-commercial.jpg.asset.json";
 import shedImage from "@/assets/service-shed-removal.jpg";
+import { serviceExtras } from "./service-extras";
 
 export type Service = {
   slug: string;
@@ -580,5 +581,13 @@ export const services: Service[] = [
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts"],
   },
 ];
+
+for (const service of services) {
+  const extra = serviceExtras[service.slug];
+  if (extra) {
+    service.sections.push(...extra.sections);
+    service.faqs.push(...extra.faqs);
+  }
+}
 
 export const serviceBySlug = (slug: string) => services.find((service) => service.slug === slug);

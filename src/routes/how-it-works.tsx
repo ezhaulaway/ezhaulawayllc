@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { Camera, CalendarCheck, HandCoins, Sparkles, Truck, UserCheck } from "lucide-react";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -164,6 +166,7 @@ function HowItWorksPage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["how-it-works"]} />
       <CtaBand />
     </PageShell>
   );

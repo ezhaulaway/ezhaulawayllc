@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -77,6 +79,7 @@ function ServiceAreasPage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["service-areas"]} />
       <CtaBand title="Not Sure If We Reach You?" text="Give us a call and we'll tell you straight away." />
     </PageShell>
   );
