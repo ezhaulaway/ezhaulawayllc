@@ -85,7 +85,46 @@ export function AiEstimator() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <form onSubmit={submit} className="rounded-lg border border-border bg-card p-6 shadow-sm">
-            <label className="text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="text-sm font-bold" htmlFor="ai-name">
+                  Your name <span className="text-destructive">*</span>
+                </label>
+                <input
+                  id="ai-name"
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={100}
+                  autoComplete="name"
+                  placeholder="First and last name"
+                  className="mt-2 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-bold" htmlFor="ai-phone">
+                  Phone number <span className="text-destructive">*</span>
+                </label>
+                <input
+                  id="ai-phone"
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  maxLength={30}
+                  autoComplete="tel"
+                  inputMode="tel"
+                  placeholder="(720) 614-7223"
+                  className="mt-2 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </div>
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              We use your number to follow up with a firm price — no spam, ever.
+            </p>
+
+            <label className="mt-5 block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
             <textarea
               id="ai-desc"
               value={description}
