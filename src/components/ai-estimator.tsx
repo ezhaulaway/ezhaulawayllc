@@ -136,7 +136,9 @@ export function AiEstimator() {
               <div>
                 <p className="text-sm font-bold uppercase tracking-wide text-primary">{LOAD_LABEL[estimate.load_size]}</p>
                 <p className="mt-1 text-4xl font-extrabold">
-                  ${Math.round(estimate.price_low)}–${Math.round(estimate.price_high)}
+                  {Math.round(estimate.price_low) === Math.round(estimate.price_high)
+                    ? `$${Math.round(estimate.price_low)}`
+                    : `$${Math.round(estimate.price_low)}–$${Math.round(estimate.price_high)}`}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">Preliminary estimate · {estimate.confidence} confidence</p>
                 <p className="mt-4 text-sm leading-6">{estimate.summary}</p>
