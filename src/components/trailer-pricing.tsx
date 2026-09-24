@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
-import trailerEmpty from "@/assets/trailer-base-empty.png";
-import trailerFull from "@/assets/trailer-base-full.png";
+import trailerEmpty from "@/assets/trailer-base-empty-clean.png";
+import trailerJunk0 from "@/assets/trailer-junk-0.png";
+import trailerJunk1 from "@/assets/trailer-junk-1.png";
+import trailerJunk2 from "@/assets/trailer-junk-2.png";
+import trailerJunk3 from "@/assets/trailer-junk-3.png";
+import trailerJunk4 from "@/assets/trailer-junk-4.png";
+import trailerJunk5 from "@/assets/trailer-junk-5.png";
+import trailerJunk6 from "@/assets/trailer-junk-6.png";
+import trailerJunk7 from "@/assets/trailer-junk-7.png";
+import trailerJunk8 from "@/assets/trailer-junk-8.png";
 
 const fillDescriptions: Record<number, string> = {
   0: "Cartoon of the EZ Haulaway black dump trailer with a small minimum load at the rear",
@@ -16,23 +24,23 @@ const fillDescriptions: Record<number, string> = {
   8: "Cartoon dump trailer heaping full of furniture, appliances, boxes, and bags",
 };
 
-// The full load is revealed from right to left in eight distinct steps. The
-// empty trailer beneath it never changes, so every increment adds visible junk.
-const fillRevealClasses: Record<number, string> = {
-  0: "[clip-path:inset(0_0_0_100%)]",
-  1: "[clip-path:inset(0_0_0_87.5%)]",
-  2: "[clip-path:inset(0_0_0_75%)]",
-  3: "[clip-path:inset(0_0_0_62.5%)]",
-  4: "[clip-path:inset(0_0_0_50%)]",
-  5: "[clip-path:inset(0_0_0_37.5%)]",
-  6: "[clip-path:inset(0_0_0_25%)]",
-  7: "[clip-path:inset(0_0_0_12.5%)]",
-  8: "[clip-path:inset(0_0_0_0)]",
-};
+const loadImages = [
+  trailerJunk0,
+  trailerJunk1,
+  trailerJunk2,
+  trailerJunk3,
+  trailerJunk4,
+  trailerJunk5,
+  trailerJunk6,
+  trailerJunk7,
+  trailerJunk8,
+];
 
 export function TrailerPricing() {
   const [selectedEighths, setSelectedEighths] = useState(2);
-  const selected = (LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0])!;
+  const selected = LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0];
+
+  if (!selected) return null;
 
   return (
     <section className="border-b border-border bg-muted py-16 sm:py-24">
@@ -53,26 +61,30 @@ export function TrailerPricing() {
             {/* Cartoon trailer with junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
               <div className="relative aspect-[1376/768]">
-                {/* Base trailer never changes or reloads — junk layers fade in on top */}
+                {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
                 <img
                   src={trailerEmpty}
-                  alt={fillDescriptions[selectedEighths] ?? fillDescriptions[0]}
+                  alt=""
+                  aria-hidden="true"
                   width={1376}
                   height={768}
                   fetchPriority="high"
                   className="absolute inset-0 h-full w-full object-contain"
                 />
-                <div className="absolute inset-0 [clip-path:polygon(21.5%_9%,99%_9%,99%_51%,21.5%_51%)]">
+                {loadImages.map((image, eighths) => (
                   <img
-                    src={trailerFull}
-                    alt=""
-                    aria-hidden="true"
+                    key={image}
+                    src={image}
+                    alt={eighths === selectedEighths ? fillDescriptions[eighths] : ""}
+                    aria-hidden={eighths !== selectedEighths}
                     width={1376}
                     height={768}
                     loading="eager"
-                    className={`absolute inset-0 h-full w-full object-contain transition-[clip-path] duration-300 ease-out ${fillRevealClasses[selectedEighths] ?? fillRevealClasses[0]}`}
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ease-out ${
+                      eighths === selectedEighths ? "opacity-100" : "opacity-0"
+                    }`}
                   />
-                </div>
+                ))}
                 <span className="absolute left-3 top-3 rounded-full bg-secondary/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-secondary-foreground">
                   {selected.eighths === 0 ? "Minimum load" : `${selected.label}`}
                 </span>
