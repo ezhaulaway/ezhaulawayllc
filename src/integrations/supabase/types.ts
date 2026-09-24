@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       ai_estimate_requests: {
         Row: {
+          address: string | null
           created_at: string
           description: string
           id: string
@@ -30,6 +31,7 @@ export type Database = {
           summary: string | null
         }
         Insert: {
+          address?: string | null
           created_at?: string
           description: string
           id?: string
@@ -44,6 +46,7 @@ export type Database = {
           summary?: string | null
         }
         Update: {
+          address?: string | null
           created_at?: string
           description?: string
           id?: string

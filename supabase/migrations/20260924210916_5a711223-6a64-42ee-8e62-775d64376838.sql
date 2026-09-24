@@ -1,0 +1,1 @@
+ALTER TABLE public.ai_estimate_requests ADD COLUMN IF NOT EXISTS address text;
