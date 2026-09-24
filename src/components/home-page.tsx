@@ -194,6 +194,8 @@ export function HomePage() {
               <img
                 src={heroJobAsset.url}
                 alt="EZ Haulaway crew loading a refrigerator onto the branded trailer at a Parker home"
+                fetchPriority="high"
+                decoding="async"
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
               />
               <div className="absolute -bottom-5 left-4 max-w-64 rounded-md bg-secondary p-4 text-secondary-foreground shadow-lg sm:left-[-1rem]">
@@ -327,7 +329,7 @@ export function HomePage() {
               controls
               muted
               playsInline
-              preload="metadata"
+              preload="none"
               poster={heroJobAsset.url}
               src={timelapseAsset.url}
               className="aspect-video w-full object-cover"
