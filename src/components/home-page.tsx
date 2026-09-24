@@ -247,12 +247,11 @@ export function HomePage() {
               <QuoteButton className="w-fit" label="Ask About Your Job" />
             </div>
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ title, text, icon: Icon, image, position }) => (
+              {services.map(({ title, text, icon: Icon, image, imageAlt, position }) => (
                 <article key={title} className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7 sm:min-h-72">
                   <img
                     src={image}
-                    alt=""
-                    aria-hidden
+                    alt={imageAlt}
                     loading="lazy"
                     style={{ objectPosition: position }}
                     className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
