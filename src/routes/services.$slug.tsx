@@ -260,6 +260,34 @@ function ServicePage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="The experience"
+            title={`What to Expect When You Book ${service.name}`}
+            text="Every job follows the same straightforward process — so you always know where things stand."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              It starts with a photo or a quick call. We look at what you have, give you a straightforward price, and
+              schedule a time that works for you — often within a few days. When our crew arrives, we walk the job
+              with you and confirm the price before anything is loaded, so the number you approved is the number you pay.
+            </p>
+            <p>
+              From there, you don't lift a thing. We handle the carrying, the stairs, the tight corners, the loading,
+              and the haul away — then sweep the area before we leave. Usable items are sorted for donation and
+              recycling wherever we can, so less of your load ends up in a landfill.
+            </p>
+            <p>
+              What customers across Parker, Castle Rock, and the Denver metro area mention most is the feeling
+              afterward: the space is back, the project is finally off the to-do list, and it took one visit instead
+              of a whole weekend. That's how {service.name.toLowerCase()} should feel — easy from the first call to
+              the final sweep.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand title={`Need ${service.name} Today?`} text="Send photos or give us a call. We'll get you a straight answer fast." />
     </PageShell>
   );

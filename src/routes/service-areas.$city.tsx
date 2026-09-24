@@ -314,6 +314,34 @@ function CityPage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="The experience"
+            title={`Junk Removal in ${location.city} Without the Hassle`}
+            text="Here's exactly how a job goes when you hire EZ Haulaway — and how you'll feel when we pull away."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              It starts with a photo or a quick call. We give you a straightforward price based on how much space your
+              items take in our trailer, and we schedule around your day — not a four-hour window. When our crew
+              arrives at your {location.city} property, we walk the job with you and confirm the price before anything
+              is loaded, so there are no surprises at the end.
+            </p>
+            <p>
+              Then we do all of it: the lifting, the stairs, the tight gates and doorways, the loading, and the haul
+              away. We sweep up before we leave, and we sort every load for donation and recycling before anything
+              heads to a landfill. You never touch a dolly, rent a truck, or make a dump run.
+            </p>
+            <p>
+              The part {location.city} customers talk about most is the feeling afterward — the garage you can park in
+              again, the basement that's finally usable, the backyard without the old hot tub or broken fence. One
+              visit, and a project that felt overwhelming is simply done.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand title={`Ready to Clear It Out in ${location.city}?`} />
     </PageShell>
   );
