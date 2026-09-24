@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
 import { GoogleReviewsGrid } from "@/components/google-reviews";
+import { AiEstimator } from "@/components/ai-estimator";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -210,6 +211,10 @@ export function HomePage() {
             ))}
           </div>
         </section>
+
+        <div id="instant-estimate" className="border-b border-border">
+          <AiEstimator />
+        </div>
 
         <section id="services" className="relative overflow-hidden py-20 sm:py-28">
           <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
