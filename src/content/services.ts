@@ -160,16 +160,16 @@ export const services: Service[] = [
   {
     slug: "light-demolition",
     name: "Light Demolition",
-    h1: "Light Demolition Services in Parker & Denver Metro",
-    metaTitle: "Light Demolition in Parker, CO | EZ Haulaway",
+    h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Light Demolition Denver & Parker, CO | Tear-Out & Haul | EZ Haulaway",
     metaDescription:
-      "Sheds, decks, pergolas, playsets, and interior tear-outs demolished and hauled away in one visit across the Denver metro area.",
+      "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
     image: lightDemolitionAsset.url,
     imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
     intro: [
-      "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day.",
-      "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks.",
+      "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day, anywhere in the Denver metro area.",
+      "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks. That is the difference between a demolition crew and a hauling crew with a pry bar.",
     ],
     includes: [
       "Sheds and small outbuildings",
