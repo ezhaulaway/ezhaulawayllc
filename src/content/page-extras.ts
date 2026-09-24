@@ -8,6 +8,9 @@ export const pageExtras = {
       ["Junk removal priced by trailer space", "Our 16-foot, 14-cubic-yard dump trailer lets us price fairly by volume. Small pickups start at a $150 minimum, a half load runs about $450, and a full trailer is about $800 — all labor, loading, hauling, and disposal included."],
       ["Serving Parker, Castle Rock, and the Denver metro", "We're based in Parker and work daily in Castle Rock, Castle Pines, Highlands Ranch, Lone Tree, Centennial, Aurora, Littleton, Englewood, Lakewood, Denver, Elizabeth, Franktown, and Sedalia."],
       ["Donate, recycle, then dispose", "Every load is sorted before it heads to the landfill. Usable furniture goes toward donation, and metal, appliances, and electronics are recycled whenever possible."],
+      ["Same-day junk removal when you're in a hurry", "Moving day, a closing date, or a rental turnover can't wait. We keep room in the schedule for same-day and next-day junk removal in Parker, Castle Rock, Lone Tree, Centennial, and Denver whenever the trailer is free."],
+      ["Mattress, couch, and appliance disposal", "Most calls start with one item: mattress disposal, couch disposal, a refrigerator, a washer and dryer, or a treadmill. Single-item pickups start at $150, and we carry it out of the bedroom, basement, or garage ourselves."],
+      ["Hot tubs, sheds, and decks other haulers skip", "Hot tub removal, shed tear-downs, deck demolition, and fence removal need tools and experience, not just a truck. Ben's construction background means those jobs get done in one visit across the Denver metro area.'"],
     ],
   },
   about: {
