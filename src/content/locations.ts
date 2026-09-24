@@ -23,6 +23,9 @@ export const locations: Location[] = [
     slug: "parker",
     city: "Parker",
     county: "Douglas County",
+    metaTitle: "Junk Removal Parker CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Parker, CO from a local, family-owned crew. Furniture, appliances, hot tubs and full cleanouts hauled away. Free quotes from EZ Haulaway.",
     intro:
       "Parker is home base. EZ Haulaway is a family-owned business run out of Parker, so a job here is a job in our own neighborhood.",
     local:
@@ -35,6 +38,8 @@ export const locations: Location[] = [
     city: "Castle Rock",
     county: "Douglas County",
     metaTitle: "Junk Removal Castle Rock CO",
+    metaDescription:
+      "Junk removal in Castle Rock, CO — sheds, fences, hot tubs, yard debris and full cleanouts. Fast scheduling from our Parker base. Free quotes.",
     intro:
       "Castle Rock sits just down I-25 from our shop in Parker, which makes it one of the easiest areas for us to schedule quickly.",
     local:
@@ -46,6 +51,9 @@ export const locations: Location[] = [
     slug: "centennial",
     city: "Centennial",
     county: "Arapahoe County",
+    metaTitle: "Junk Removal Centennial CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Centennial, CO — appliances, furniture, construction debris and property cleanouts. Local crew, free quotes from EZ Haulaway.",
     intro:
       "Centennial is a short run from Parker and a regular stop for household junk removal and property cleanouts.",
     local:
@@ -57,6 +65,9 @@ export const locations: Location[] = [
     slug: "highlands-ranch",
     city: "Highlands Ranch",
     county: "Douglas County",
+    metaTitle: "Junk Removal Highlands Ranch CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Highlands Ranch, CO — furniture, mattresses, exercise equipment and garage cleanouts. Free quotes from EZ Haulaway.",
     intro:
       "We serve Highlands Ranch several times a week, from single-item pickups to complete garage and basement clearing.",
     local:
@@ -79,6 +90,7 @@ export const locations: Location[] = [
     slug: "denver",
     city: "Denver",
     county: "Denver County",
+    metaTitle: "Junk Removal Denver CO | EZ Haulaway",
     metaDescription: "Junk removal near me Denver",
     intro:
       "EZ Haulaway works throughout Denver, from older neighborhoods with alley access to downtown apartments and offices.",
@@ -197,6 +209,9 @@ export const locations: Location[] = [
     slug: "castle-pines",
     city: "Castle Pines",
     county: "Douglas County",
+    metaTitle: "Junk Removal Castle Pines CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Castle Pines, CO — furniture swaps, mattress removal and garage cleanouts. Same-week scheduling. Free quotes from EZ Haulaway.",
     intro:
       "Castle Pines is close to our Parker base and an easy area for same-week junk removal scheduling.",
     local:
