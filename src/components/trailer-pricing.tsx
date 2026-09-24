@@ -9,7 +9,7 @@ import trailerFull from "@/assets/trailer-base-full.png";
 
 // Map each eighth-fill level to the closest cartoon junk fill image.
 const fillImages: Record<number, { src: string; alt: string }> = {
-  0: { src: trailerEmpty, alt: "Cartoon of the EZ Haulaway black dump trailer, empty" },
+  0: { src: trailerEmpty, alt: "Cartoon of the EZ Haulaway black dump trailer with a small pile — a minimum load" },
   1: { src: trailerQuarter, alt: "Cartoon dump trailer with a small pile of junk — about an eighth full" },
   2: { src: trailerQuarter, alt: "Cartoon dump trailer with boxes and a chair — about a quarter full" },
   3: { src: trailerHalf, alt: "Cartoon dump trailer with furniture and boxes — about three-eighths full" },
