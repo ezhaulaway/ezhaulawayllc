@@ -43,7 +43,7 @@ export function TrailerPricing() {
           <div>
             {/* Cartoon trailer with junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-[#f4f1ec] shadow-sm">
+              <div className="relative aspect-[16/9]">
                 {Object.entries(fillImages)
                   .filter(([eighths]) => Number(eighths) !== 0 || selectedEighths === 0)
                   .map(([eighths, img]) => (
