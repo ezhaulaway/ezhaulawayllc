@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
-import { SITE_URL } from "@/content/site";
+import { GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
