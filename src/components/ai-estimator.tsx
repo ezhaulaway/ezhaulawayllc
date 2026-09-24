@@ -5,10 +5,14 @@ import { Button } from "@/components/ui/button";
 import { generateAiEstimate, type AiEstimate } from "@/lib/ai-estimate.functions";
 
 const LOAD_LABEL: Record<AiEstimate["load_size"], string> = {
-  minimum: "Minimum job",
+  minimum: "Minimum / small load",
+  eighth: "About ⅛ trailer",
   quarter: "About ¼ trailer",
+  three_eighths: "About ⅜ trailer",
   half: "About ½ trailer",
+  five_eighths: "About ⅝ trailer",
   three_quarters: "About ¾ trailer",
+  seven_eighths: "About ⅞ trailer",
   full: "About a full trailer",
   multiple_loads: "More than one trailer",
 };

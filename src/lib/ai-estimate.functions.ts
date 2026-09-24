@@ -40,7 +40,13 @@ const schema = {
     "special_items", "recommended_service", "crew_and_time", "prep_tips", "confidence",
   ],
   properties: {
-    load_size: { type: "string", enum: ["minimum", "quarter", "half", "three_quarters", "full", "multiple_loads"] },
+    load_size: {
+      type: "string",
+      enum: [
+        "minimum", "eighth", "quarter", "three_eighths", "half",
+        "five_eighths", "three_quarters", "seven_eighths", "full", "multiple_loads",
+      ],
+    },
     price_low: { type: "number" },
     price_high: { type: "number" },
     summary: { type: "string" },
