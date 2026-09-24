@@ -69,6 +69,67 @@ function PricingPage() {
       <TrailerPricing />
       <AiEstimator />
 
+      <section className="border-b border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="Price list"
+            title="Trailer Load & Specialty Item Pricing"
+            text={`Straight from our printed price guide. Prices include standard labor, loading, hauling, and disposal. Additional labor of $${LABOR_RATE}/hour per crew member may apply for difficult access, disassembly, oversized or heavy items, or extended loading time.`}
+            center
+          />
+
+          <div className="mt-12 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="overflow-hidden rounded-lg border border-border">
+              <h3 className="bg-secondary px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-card">
+                Trailer load pricing
+              </h3>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-muted text-left">
+                    <th className="px-5 py-2 font-bold">Fill level</th>
+                    <th className="px-3 py-2 font-bold">Volume</th>
+                    <th className="px-5 py-2 text-right font-bold">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {LOAD_LEVELS.map((level) => (
+                    <tr key={level.eighths} className="border-b border-border last:border-b-0">
+                      <td className="px-5 py-2 font-semibold">{level.eighths === 0 ? "Minimum / small load" : level.label}</td>
+                      <td className="px-3 py-2 text-muted-foreground">{level.volume}</td>
+                      <td className="px-5 py-2 text-right font-extrabold text-primary">${level.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="border-t border-border bg-muted px-5 py-3 text-xs leading-5 text-muted-foreground">
+                Minimum service charge ${MINIMUM_CHARGE}. Pricing may vary based on material, weight, and access — call for an exact quote.
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-lg border border-border">
+              <h3 className="bg-secondary px-5 py-3 text-sm font-extrabold uppercase tracking-[0.14em] text-card">
+                Specialty & single item pricing
+              </h3>
+              <ul className="grid sm:grid-cols-2">
+                {SPECIALTY_ITEMS.map((entry) => (
+                  <li
+                    key={entry.item}
+                    className="flex items-baseline justify-between gap-3 border-b border-border px-5 py-2 text-sm"
+                  >
+                    <span className="font-semibold">{entry.item}</span>
+                    <span className="shrink-0 font-extrabold text-primary">{entry.price}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="bg-muted px-5 py-3 text-xs leading-5 text-muted-foreground">
+                Specialty items are priced individually instead of by trailer space. Don't see your item? Send us a photo and we'll
+                price it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeader eyebrow="How we price" title="Four Things That Never Change" center />
