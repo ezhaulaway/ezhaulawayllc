@@ -404,19 +404,21 @@ export const services: Service[] = [
   {
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
-    h1: "Mattress & Bulky Item Removal",
-    metaTitle: "Mattress & Bulky Item Removal in Parker, CO | EZ Haulaway",
+    h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
+    metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
+    methodPlaceholder: undefined as never,
     metaDescription:
-      "Single-item pickups for mattresses, treadmills, pianos, pool tables, and other oversized items across the Denver metro area.",
-    summary: "Single oversized items: mattresses, treadmills, pianos, pool tables.",
+      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you. Free quote.",
+    summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
     imageAlt: "EZ Haulaway crew safely carrying a wrapped mattress from a garage",
     intro: [
-      "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone.",
-      "Single-item pickups are welcome. No minimum truckload, no pressure to find more junk to justify the trip.",
+      "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
+      "EZ Haulaway does single-item mattress disposal, couch removal, and bulky item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
     ],
     includes: [
       "Mattresses and box springs",
+      "Couches, sectionals, and recliners",
       "Treadmills, ellipticals, and home gyms",
       "Pianos, organs, and pool tables",
       "Grills, smokers, and patio sets",
@@ -425,18 +427,29 @@ export const services: Service[] = [
     ],
     sections: [
       {
+        heading: "We come inside and carry it out",
+        text: "City bulk pickup and mattress recycling drop-offs both expect the item to already be at the curb or in your truck. We walk into the upstairs bedroom, the finished basement, or the third-floor apartment and carry it out ourselves. That is the whole point.",
+      },
+      {
+        heading: "What single-item pickup costs",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs $100, a box spring $75, a couch $60 per cushion, and a treadmill $150, with a $150 minimum on any visit. Upright pianos start around $375. You know the number before we arrive.",
+      },
+      {
         heading: "Heavy and awkward is the specialty",
-        text: "Weight is one problem. Stairs, corners, and doorframes are the other. We bring enough crew and the right equipment for both.",
+        text: "Weight is one problem. Stairs, tight corners, and doorframes are the other. We bring enough crew, straps, and dollies for both, and we protect your floors and walls on the way out.",
       },
       {
         heading: "Quick scheduling",
-        text: "Single items are often the easiest jobs to fit into the schedule. Call or text and we will find you a slot.",
+        text: "Single items are the easiest jobs to fit into the schedule, so these often go out the same week. Call or text a photo and we will find you a slot.",
       },
     ],
     faqs: [
-      ["Is there a minimum charge?", "Small pickups are priced for what they are. Call or text for a quote on your item."],
-      ["Can you take a piano?", "Upright pianos, yes. Grand pianos depend on access — send photos first."],
-      ["Do you take trampolines?", "Yes, including disassembly."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is $100 and a box spring is $75, with a $150 minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
+      ["Do I have to put the mattress at the curb?", "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment."],
+      ["Is there a minimum charge?", "Yes, $150 covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
+      ["Can you take a piano?", "Upright pianos start around $375. Grand pianos depend on access — send photos first."],
+      ["Do you take trampolines and above-ground pools?", "Yes, including disassembly on site."],
+      ["What happens to an old mattress?", "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped."],
     ],
     related: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
   },
