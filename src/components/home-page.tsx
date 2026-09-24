@@ -214,11 +214,11 @@ export function HomePage() {
 
         <section id="how-it-works" className="bg-secondary py-20 text-secondary-foreground sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Simple from start to finish</p>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">EZ IN, EZ OUT</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">Three Steps. Then It’s Gone. EZ</h2>
             <div className="mt-12 grid gap-8 lg:grid-cols-3">
               {[
-                ["01", "Send Us Photos", "Tell us what needs to go and send photos when possible."],
+                ["01", "Send Us Photos", "Use our ai estimate to get an idea of what it will cost "],
                 ["02", "Get Your Quote", "We'll review the job and help schedule a convenient time."],
                 ["03", "We Haul It Away", "We handle the lifting, loading, hauling, and cleanup."],
               ].map(([number, title, text]) => (
