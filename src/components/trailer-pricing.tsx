@@ -11,18 +11,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
 
-const loadLevels = [
-  { quarters: 1, label: "¼ trailer", price: 200, shortLabel: "¼" },
-  { quarters: 2, label: "½ trailer", price: 400, shortLabel: "½" },
-  { quarters: 3, label: "¾ trailer", price: 600, shortLabel: "¾" },
-  { quarters: 4, label: "Full trailer", price: 800, shortLabel: "Full" },
-] as const;
-
-const priceRange = (price: number) => ({
-  min: price - 50,
-  max: price + 50,
-});
+const fillLevels = LOAD_LEVELS.filter((level) => level.eighths > 0);
 
 // Household junk: toys, boxes, garage-sale style items.
 // Positions are % inside the trailer bed, staggered so items tumble in.
@@ -36,31 +27,36 @@ type JunkItem = {
 };
 
 const junkPile: JunkItem[] = [
-  // Quarter 1 (front of bed)
-  { icon: Package, left: 4, bottom: 4, size: 44, rotate: -8, delay: 0 },
-  { icon: Box, left: 14, bottom: 6, size: 36, rotate: 7, delay: 90 },
-  { icon: ToyBrick, left: 8, bottom: 32, size: 28, rotate: -12, delay: 180 },
-  // Quarter 2
-  { icon: Boxes, left: 28, bottom: 5, size: 44, rotate: 6, delay: 0 },
-  { icon: Bike, left: 36, bottom: 8, size: 38, rotate: -6, delay: 110 },
-  { icon: Lamp, left: 30, bottom: 34, size: 26, rotate: 10, delay: 200 },
-  // Quarter 3
-  { icon: Armchair, left: 52, bottom: 6, size: 46, rotate: -5, delay: 0 },
-  { icon: Package, left: 63, bottom: 8, size: 34, rotate: 9, delay: 100 },
-  { icon: ToyBrick, left: 56, bottom: 38, size: 24, rotate: 14, delay: 190 },
-  // Quarter 4
-  { icon: WashingMachine, left: 78, bottom: 6, size: 42, rotate: 4, delay: 0 },
-  { icon: Box, left: 89, bottom: 9, size: 32, rotate: -10, delay: 90 },
-  { icon: Bike, left: 82, bottom: 38, size: 28, rotate: 8, delay: 180 },
+  // 1/8
+  { icon: Package, left: 2, bottom: 4, size: 40, rotate: -8, delay: 0 },
+  { icon: ToyBrick, left: 4, bottom: 34, size: 24, rotate: -12, delay: 140 },
+  // 2/8
+  { icon: Box, left: 15, bottom: 5, size: 34, rotate: 7, delay: 0 },
+  { icon: Lamp, left: 16, bottom: 32, size: 24, rotate: 9, delay: 140 },
+  // 3/8
+  { icon: Boxes, left: 27, bottom: 5, size: 40, rotate: 6, delay: 0 },
+  // 4/8
+  { icon: Bike, left: 39, bottom: 6, size: 36, rotate: -6, delay: 0 },
+  { icon: Box, left: 40, bottom: 36, size: 26, rotate: 11, delay: 140 },
+  // 5/8
+  { icon: Armchair, left: 51, bottom: 6, size: 42, rotate: -5, delay: 0 },
+  // 6/8
+  { icon: Package, left: 64, bottom: 6, size: 34, rotate: 9, delay: 0 },
+  { icon: ToyBrick, left: 65, bottom: 36, size: 24, rotate: 14, delay: 140 },
+  // 7/8
+  { icon: WashingMachine, left: 76, bottom: 6, size: 40, rotate: 4, delay: 0 },
+  // 8/8
+  { icon: Box, left: 89, bottom: 6, size: 32, rotate: -10, delay: 0 },
+  { icon: Bike, left: 88, bottom: 38, size: 26, rotate: 8, delay: 140 },
 ];
 
-function quarterOf(item: JunkItem) {
-  return Math.min(4, Math.floor(item.left / 25) + 1);
+function eighthOf(item: JunkItem) {
+  return Math.min(8, Math.floor(item.left / 12.5) + 1);
 }
 
 export function TrailerPricing() {
-  const [selectedQuarters, setSelectedQuarters] = useState(1);
-  const selected = loadLevels[selectedQuarters - 1] ?? loadLevels[0];
+  const [selectedEighths, setSelectedEighths] = useState(2);
+  const selected = LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0];
 
   return (
     <section className="border-b border-border bg-muted py-16 sm:py-24">
@@ -77,17 +73,20 @@ export function TrailerPricing() {
       `}</style>
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Interactive price guide</p>
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Trailer fill level guide</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">How Much Trailer Space Do You Need?</h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            Hover over the trailer or choose a load size to see an estimated price. Prices are based on a 450 cubic foot trailer. Mattresses, furniture, electronics, and other large items are priced individually rather than by total trailer space.
+            Hover over the trailer or choose a fill level to see the price. Prices are based on our{" "}
+            {TRAILER_SPEC.length} × {TRAILER_SPEC.width} × {TRAILER_SPEC.height} dump trailer (about {TRAILER_SPEC.cubicYards} cubic yards)
+            and include standard labor, loading, hauling, and disposal. Mattresses, furniture, electronics, appliances, and other
+            oversized items are priced individually rather than by trailer space.
           </p>
         </div>
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-14">
           <div>
-            {/* Dump trailer — tall black walls, triple axle, red accent rail */}
-            <div className="relative mx-auto max-w-3xl pb-20 pt-5" aria-label="Interactive trailer load size selector">
+            {/* Dump trailer — tall black walls, tandem axle, red accent rail */}
+            <div className="relative mx-auto max-w-3xl pb-20 pt-5" aria-label="Interactive trailer fill level selector">
               {/* Trailer bed */}
               <div className="relative aspect-[2.35/1]">
                 {/* Tall bed walls */}
@@ -96,7 +95,7 @@ export function TrailerPricing() {
                   <div className="absolute inset-0" aria-hidden="true">
                     {junkPile.map((item, i) => {
                       const Icon = item.icon;
-                      const visible = quarterOf(item) <= selectedQuarters;
+                      const visible = eighthOf(item) <= selectedEighths;
                       return (
                         <Icon
                           key={i}
@@ -125,19 +124,19 @@ export function TrailerPricing() {
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-background/15" aria-hidden="true" />
 
                   {/* Hover/selection zones */}
-                  <div className="absolute inset-0 grid grid-cols-4">
-                    {loadLevels.map((level) => (
+                  <div className="absolute inset-0 grid grid-cols-8">
+                    {fillLevels.map((level) => (
                       <button
-                        key={level.quarters}
+                        key={level.eighths}
                         type="button"
-                        aria-label={`Show ${level.label} estimate: $${level.price}`}
-                        aria-pressed={selectedQuarters === level.quarters}
-                        onMouseEnter={() => setSelectedQuarters(level.quarters)}
-                        onFocus={() => setSelectedQuarters(level.quarters)}
-                        onClick={() => setSelectedQuarters(level.quarters)}
+                        aria-label={`Show ${level.label} price: $${level.price}`}
+                        aria-pressed={selectedEighths === level.eighths}
+                        onMouseEnter={() => setSelectedEighths(level.eighths)}
+                        onFocus={() => setSelectedEighths(level.eighths)}
+                        onClick={() => setSelectedEighths(level.eighths)}
                         className="relative border-r border-dashed border-background/15 transition-colors last:border-r-0 hover:bg-background/5 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-ring/60"
                       >
-                        <span className="absolute inset-x-0 top-2 text-center text-xs font-extrabold text-background/60 sm:text-sm">
+                        <span className="absolute inset-x-0 top-2 text-center text-[11px] font-extrabold text-background/60 sm:text-sm">
                           {level.shortLabel}
                         </span>
                       </button>
@@ -167,37 +166,40 @@ export function TrailerPricing() {
               </div>
             </div>
 
-            <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="Choose a trailer load size">
-              {loadLevels.map((level) => (
+            <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-5" aria-label="Choose a trailer fill level">
+              {LOAD_LEVELS.map((level) => (
                 <Button
-                  key={level.quarters}
+                  key={level.eighths}
                   type="button"
-                  variant={selectedQuarters === level.quarters ? "default" : "outline"}
-                  onMouseEnter={() => setSelectedQuarters(level.quarters)}
-                  onFocus={() => setSelectedQuarters(level.quarters)}
-                  onClick={() => setSelectedQuarters(level.quarters)}
-                  aria-pressed={selectedQuarters === level.quarters}
-                  className="h-auto min-h-14 flex-col gap-0.5 py-2"
+                  variant={selectedEighths === level.eighths ? "default" : "outline"}
+                  onMouseEnter={() => setSelectedEighths(level.eighths)}
+                  onFocus={() => setSelectedEighths(level.eighths)}
+                  onClick={() => setSelectedEighths(level.eighths)}
+                  aria-pressed={selectedEighths === level.eighths}
+                  className="h-auto min-h-14 flex-col gap-0.5 px-1 py-2 text-xs"
                 >
-                  <span>{level.label}</span>
-                  <span className="text-xs opacity-80">${priceRange(level.price).min}–${priceRange(level.price).max}</span>
+                  <span>{level.eighths === 0 ? "Minimum" : level.label.replace(" trailer", "")}</span>
+                  <span className="text-xs opacity-80">${level.price}</span>
                 </Button>
               ))}
             </div>
           </div>
 
           <div className="border-l-4 border-primary pl-6 sm:pl-8" aria-live="polite">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Estimated price</p>
-            <p className="mt-3 text-3xl font-extrabold sm:text-4xl">{selected.label}</p>
-            <p className="mt-2 font-display text-5xl font-extrabold text-primary sm:text-6xl">
-              ${priceRange(selected.price).min}–${priceRange(selected.price).max}
-            </p>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Price</p>
+            <p className="mt-3 text-2xl font-extrabold sm:text-3xl">{selected.label}</p>
+            <p className="mt-1 text-sm font-semibold text-muted-foreground">{selected.volume}</p>
+            <p className="mt-2 font-display text-5xl font-extrabold text-primary sm:text-6xl">${selected.price}</p>
             <div className="mt-7 border-t border-border pt-6">
               <p className="font-bold">Smaller pickup?</p>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">Our minimum service price starts at $125.</p>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                Our minimum service price starts at ${MINIMUM_CHARGE}.
+              </p>
             </div>
             <p className="mt-6 text-xs leading-5 text-muted-foreground">
-              Estimates are based on volume. Heavy materials, difficult access, demolition, and special disposal items may change the final quote. You approve the price before we start.
+              Additional labor of ${LABOR_RATE}/hour per crew member may apply for difficult access, disassembly, oversized or heavy
+              items, or extended loading time. Pricing may vary based on material, weight, and access. Your final price is approved
+              before any work begins.
             </p>
           </div>
         </div>
