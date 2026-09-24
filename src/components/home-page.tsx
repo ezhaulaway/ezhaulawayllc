@@ -287,26 +287,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="how-it-works" className="bg-secondary py-20 text-secondary-foreground sm:py-28">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Simple from start to finish</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">Three Steps. Then It’s Gone. EZ</h2>
-            <div className="mt-12 grid gap-8 lg:grid-cols-3">
-              {[
-                ["01", "Send Us Photos", "Tell us what needs to go and send photos when possible."],
-                ["02", "Get Your Quote", "We'll review the job and help schedule a convenient time."],
-                ["03", "We Haul It Away", "We handle the lifting, loading, hauling, and cleanup."],
-              ].map(([number, title, text]) => (
-                <article key={number} className="border-t border-secondary-foreground/20 pt-6">
-                  <span className="font-display text-5xl font-extrabold text-primary">{number}</span>
-                  <h3 className="mt-7 text-xl font-bold">{title}</h3>
-                  <p className="mt-3 max-w-sm leading-7 text-secondary-foreground/70">{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section id="in-action" className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <SectionHeader center eyebrow="On the job" title="See EZ Haulaway in Action" text="See how quickly a cluttered space can become a clean one." />
