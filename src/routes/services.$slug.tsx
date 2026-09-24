@@ -44,7 +44,8 @@ export const Route = createFileRoute("/services/$slug")({
             name: service.name,
             serviceType: service.name,
             description: service.metaDescription,
-            areaServed: locations.map((location) => `${location.city}, CO`),
+            url: `${SITE_URL}/services/${params.slug}`,
+            areaServed: locations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
             provider: {
               "@type": "LocalBusiness",
               name: "EZ Haulaway LLC",
@@ -52,6 +53,18 @@ export const Route = createFileRoute("/services/$slug")({
               address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
               url: SITE_URL,
             },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "What We Take", item: `${SITE_URL}/what-we-take` },
+              { "@type": "ListItem", position: 3, name: service.name, item: `${SITE_URL}/services/${params.slug}` },
+            ],
           }),
         },
       ],
