@@ -29,6 +29,7 @@ export const pageExtras = {
       ["Best way to get a fast price", "Text a few photos of the items or the space to 720-614-7223. Photos from a couple of angles, plus a note about stairs or long carries, let us give you an accurate junk removal quote quickly."],
       ["Scheduling", "We work throughout the week across Parker and the Denver metro area and can often fit jobs in within a few days. Let us know if you have a deadline, such as a move-out or closing date."],
       ["What to have ready", "Nothing, really. You don't need to bag, sort, or move items to the curb. Just make sure we can access the area, and our crew handles the rest."],
+      ["Need same-day junk removal?", "Call or text if it's urgent. Same-day and next-day junk removal in Parker, Castle Rock, Lone Tree, Centennial, and Denver is often possible when the trailer isn't already booked."],
     ],
   },
   "how-it-works": {
