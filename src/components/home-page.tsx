@@ -194,7 +194,7 @@ export function HomePage() {
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
               />
               <div className="absolute -bottom-5 left-4 max-w-64 rounded-md bg-secondary p-4 text-secondary-foreground shadow-lg sm:left-[-1rem]">
-                <p className="font-display text-lg font-bold">We do the heavy lifting.</p>
+                <p className="font-display text-lg font-bold">We do the hauling.</p>
                 <p className="mt-1 text-sm text-secondary-foreground/75">You point. We load, haul, and clean up.</p>
               </div>
             </div>
