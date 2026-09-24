@@ -110,16 +110,16 @@ export const services: Service[] = [
   {
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
-    h1: "Hot Tub Removal & Disposal in the Denver Metro Area",
-    metaTitle: "Hot Tub Removal in Parker, CO | EZ Haulaway",
+    h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Hot Tub Removal Denver & Parker CO | Spa Disposal | EZ Haulaway",
     metaDescription:
-      "Old hot tub taking up the backyard? EZ Haulaway drains, dismantles, and hauls hot tubs across Parker and the Denver metro area. Free quote.",
-    summary: "Drain, dismantle, and haul away old spas and hot tubs.",
+      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from $500.",
+    summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset.url,
-    imageAlt: "Hot tub set up outdoors, ready for removal",
+    imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
     intro: [
-      "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and full of water and wiring.",
-      "We cut it down, load the pieces, and leave you with an open patio again.",
+      "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and still full of water, foam, and wiring.",
+      "EZ Haulaway handles hot tub removal and disposal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. We cut the spa down on site, load every piece, and leave you with an open patio the same day.",
     ],
     includes: [
       "Above-ground hot tubs and spas",
@@ -131,34 +131,45 @@ export const services: Service[] = [
     ],
     sections: [
       {
-        heading: "How the removal works",
-        text: "We confirm the power is shut off, drain the tub, dismantle the shell and frame into manageable sections, and carry every piece out through the gate or over the fence line.",
+        heading: "How our hot tub removal works, start to finish",
+        text: "First we confirm the power is off at the breaker and the unit is safely dead. Then we drain the tub, pull the cover and skirting, and cut the shell and frame into sections we can carry by hand. Every piece leaves on our trailer, and we sweep the pad before we go. Most backyard spas take two to four hours.",
       },
       {
-        heading: "Ben has the demolition background",
-        text: "Hot tub removal is really a small demolition job. With roughly six years of construction and demolition work behind him, Ben approaches it the same way — plan the cuts, protect the property, clear the site.",
+        heading: "No gate access? That is the normal job, not the hard one",
+        text: "Denver metro backyards are tight, and most spas were set in place before the fence went up. Because we cut the tub down where it sits instead of trying to roll it out whole, narrow side gates, stairs, retaining walls, and shared fence lines are routine for us. No crane, no equipment tracking across your grass.",
+      },
+      {
+        heading: "Real demolition experience behind the saw",
+        text: "Hot tub removal is really a small demolition job, and that is where Ben started — roughly six years of construction and demolition work, including more than 300 decks. That matters when a spa is wrapped in decking, bolted to a slab, or sitting inches from your siding.",
+      },
+      {
+        heading: "What hot tub removal costs in the Denver metro",
+        text: "Hot tub and spa removal starts around $500 and depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
       },
     ],
     faqs: [
-      ["Do I need to drain it first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
-      ["What if there is no gate access?", "We cut the tub into smaller sections so it can come out through whatever access exists."],
-      ["Can you remove the deck around it too?", "Yes. Surrounding decking and skirting can be removed on the same visit."],
+      ["How much does hot tub removal cost in Denver?", "Hot tub removal starts around $500 in the Denver metro area. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
+      ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
+      ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
+      ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
+      ["Can you remove the deck around the hot tub too?", "Yes. Surrounding decking, skirting, and steps can all be removed on the same visit."],
+      ["Do you take swim spas and above-ground pools?", "Yes. Swim spas, jetted tubs, and above-ground pools are all jobs we do regularly."],
     ],
     related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
   },
   {
     slug: "light-demolition",
     name: "Light Demolition",
-    h1: "Light Demolition Services in Parker & Denver Metro",
-    metaTitle: "Light Demolition in Parker, CO | EZ Haulaway",
+    h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Light Demolition Denver & Parker, CO | Tear-Out & Haul | EZ Haulaway",
     metaDescription:
-      "Sheds, decks, pergolas, playsets, and interior tear-outs demolished and hauled away in one visit across the Denver metro area.",
+      "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
     image: lightDemolitionAsset.url,
     imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
     intro: [
-      "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day.",
-      "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks.",
+      "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day, anywhere in the Denver metro area.",
+      "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks. That is the difference between a demolition crew and a hauling crew with a pry bar.",
     ],
     includes: [
       "Sheds and small outbuildings",
@@ -188,16 +199,16 @@ export const services: Service[] = [
   {
     slug: "deck-and-fence-removal",
     name: "Deck & Fence Removal",
-    h1: "Deck & Fence Removal in the Denver Metro Area",
-    metaTitle: "Deck & Fence Removal in Parker, CO | EZ Haulaway",
+    h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
+    metaTitle: "Deck Removal & Fence Demolition Denver, CO | EZ Haulaway",
     metaDescription:
-      "Tear out an aging deck, pergola, or fence line and have every board hauled off. EZ Haulaway serves Parker and the Denver metro area.",
-    summary: "Aging decks, pergolas, railings, and fence lines removed and hauled.",
+      "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of hands-on experience. Every board hauled, site raked. Free quote.",
+    summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
     image: deckAsset.url,
     imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
     intro: [
-      "Colorado weather is hard on wood. When a deck starts splintering or a fence starts leaning, tearing it out is the first step toward whatever comes next.",
-      "This is Ben's strongest area — he has worked on more than 300 decks, so he knows how they are built and how they come apart.",
+      "Colorado weather is hard on wood. When a deck starts splintering or a fence line starts leaning, tearing it out is the first step toward whatever comes next.",
+      "EZ Haulaway handles deck demolition and fence removal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. This is Ben's strongest area — he has worked on more than 300 decks, so he knows exactly how they were built and how they come apart without wrecking your siding or your yard.",
     ],
     includes: [
       "Wood and composite decks",
@@ -209,18 +220,28 @@ export const services: Service[] = [
     ],
     sections: [
       {
-        heading: "Clean tear-out, clean site",
-        text: "Boards, framing, hardware, and posts all leave with us. We rake and sweep the area so you can start your next project without stepping on nails.",
+        heading: "300+ decks of experience, not a guess with a crowbar",
+        text: "A deck attached to a house is fastened to a ledger board against your siding. Pulled the wrong way, that is a water-intrusion repair you did not budget for. Ben has spent roughly six years in construction and demolition and worked on over 300 decks, so we take the structure apart in the order it went up — flashing and ledger last, and carefully.",
       },
       {
-        heading: "Rebuilding after?",
-        text: "If a new deck or fence is going in, tell us. We can pull the old structure in a way that keeps the site ready for your builder.",
+        heading: "Clean tear-out, clean site",
+        text: "Boards, framing, hardware, posts, and concrete footings all leave with us. We rake and sweep the footprint so you can walk it barefoot without finding a nail, and so your landscaper or builder can start immediately.",
+      },
+      {
+        heading: "Fence lines, post by post",
+        text: "Wood, vinyl, and chain link all come out, including the concrete footings when you want them gone. Shared fence lines with a neighbor are common here — tell us which side is yours and we will work to the property line.",
+      },
+      {
+        heading: "Rebuilding after the tear-out?",
+        text: "If a new deck or fence is going in, tell us up front. We can pull the old structure in a way that leaves the site ready for your builder, and we coordinate timing so your contractor is not waiting on a pile of old lumber.",
       },
     ],
     faqs: [
+      ["How much does deck removal cost in the Denver metro?", "Most residential deck tear-outs are priced by size, height, and how much concrete is in the ground. Send photos with a rough footprint and we will give you a firm number before the job."],
       ["Do you dig out concrete fence footings?", "Yes, in most cases. Let us know the post count so we can price the job accurately."],
-      ["Can you remove just part of a deck?", "Yes. Partial removals and railing-only jobs are common."],
-      ["What happens to the lumber?", "Usable material can be set aside if you want it; everything else is hauled and disposed of."],
+      ["Can you remove just part of a deck?", "Yes. Partial removals, railing-only jobs, and stair replacements are all common."],
+      ["Will removing the deck damage my siding?", "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed."],
+      ["What happens to the lumber?", "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility."],
     ],
     related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris"],
   },
@@ -383,19 +404,20 @@ export const services: Service[] = [
   {
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
-    h1: "Mattress & Bulky Item Removal",
-    metaTitle: "Mattress & Bulky Item Removal in Parker, CO | EZ Haulaway",
+    h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
+    metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
     metaDescription:
-      "Single-item pickups for mattresses, treadmills, pianos, pool tables, and other oversized items across the Denver metro area.",
-    summary: "Single oversized items: mattresses, treadmills, pianos, pool tables.",
+      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you. Free quote.",
+    summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
     imageAlt: "EZ Haulaway crew safely carrying a wrapped mattress from a garage",
     intro: [
-      "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone.",
-      "Single-item pickups are welcome. No minimum truckload, no pressure to find more junk to justify the trip.",
+      "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
+      "EZ Haulaway does single-item mattress disposal, couch removal, and bulky item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
     ],
     includes: [
       "Mattresses and box springs",
+      "Couches, sectionals, and recliners",
       "Treadmills, ellipticals, and home gyms",
       "Pianos, organs, and pool tables",
       "Grills, smokers, and patio sets",
@@ -404,18 +426,29 @@ export const services: Service[] = [
     ],
     sections: [
       {
+        heading: "We come inside and carry it out",
+        text: "City bulk pickup and mattress recycling drop-offs both expect the item to already be at the curb or in your truck. We walk into the upstairs bedroom, the finished basement, or the third-floor apartment and carry it out ourselves. That is the whole point.",
+      },
+      {
+        heading: "What single-item pickup costs",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs $100, a box spring $75, a couch $60 per cushion, and a treadmill $150, with a $150 minimum on any visit. Upright pianos start around $375. You know the number before we arrive.",
+      },
+      {
         heading: "Heavy and awkward is the specialty",
-        text: "Weight is one problem. Stairs, corners, and doorframes are the other. We bring enough crew and the right equipment for both.",
+        text: "Weight is one problem. Stairs, tight corners, and doorframes are the other. We bring enough crew, straps, and dollies for both, and we protect your floors and walls on the way out.",
       },
       {
         heading: "Quick scheduling",
-        text: "Single items are often the easiest jobs to fit into the schedule. Call or text and we will find you a slot.",
+        text: "Single items are the easiest jobs to fit into the schedule, so these often go out the same week. Call or text a photo and we will find you a slot.",
       },
     ],
     faqs: [
-      ["Is there a minimum charge?", "Small pickups are priced for what they are. Call or text for a quote on your item."],
-      ["Can you take a piano?", "Upright pianos, yes. Grand pianos depend on access — send photos first."],
-      ["Do you take trampolines?", "Yes, including disassembly."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is $100 and a box spring is $75, with a $150 minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
+      ["Do I have to put the mattress at the curb?", "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment."],
+      ["Is there a minimum charge?", "Yes, $150 covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
+      ["Can you take a piano?", "Upright pianos start around $375. Grand pianos depend on access — send photos first."],
+      ["Do you take trampolines and above-ground pools?", "Yes, including disassembly on site."],
+      ["What happens to an old mattress?", "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped."],
     ],
     related: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
   },
@@ -461,16 +494,16 @@ export const services: Service[] = [
   {
     slug: "shed-removal",
     name: "Shed Removal",
-    h1: "Shed Removal & Demolition in Parker & the Denver Metro Area",
-    metaTitle: "Shed Removal & Demolition in Parker, CO | EZ Haulaway",
+    h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
+    metaTitle: "Shed Removal & Demolition Denver & Parker, CO | EZ Haulaway",
     metaDescription:
-      "Old wood, metal, or plastic shed taking up the backyard? EZ Haulaway tears it down and hauls every board away across Parker and the Denver metro. Free quote.",
+      "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board. Free quote.",
     summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
     image: shedImage,
     imageAlt: "Crew dismantling an old wooden backyard shed next to a black dump trailer",
     intro: [
       "A shed that has gone soft, leaky, or full of mice is not something you want to take apart on a weekend. We handle the whole thing: tear down the structure, load every board, and haul it off the same visit.",
-      "Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us.",
+      "EZ Haulaway does shed removal and backyard demolition across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us. Ben brings roughly six years of construction and demolition experience, so the tear-down is planned, not improvised.",
     ],
     includes: [
       "Wood and T1-11 backyard sheds",
@@ -492,6 +525,10 @@ export const services: Service[] = [
       {
         heading: "Tight backyards and gates",
         text: "Denver metro yards often have a narrow side gate or a neighbor's fence line a few feet away. We break the structure down in place so material can be carried out by hand instead of driving equipment across your grass.",
+      },
+      {
+        heading: "What shed removal costs around here",
+        text: "Shed removal is priced by the size of the structure, what is still inside it, and whether a slab comes out with it. Most standard backyard sheds are a single trailer load. Send a photo with a rough size and we will give you a firm number up front instead of a range.",
       },
     ],
     faqs: [

@@ -233,3 +233,25 @@ export const locations: Location[] = [
 ];
 
 export const locationBySlug = (slug: string) => locations.find((location) => location.slug === slug);
+
+/** Cities with the strongest local search demand — used for city + service cross-linking. */
+export const PRIORITY_CITY_SLUGS = [
+  "parker",
+  "castle-rock",
+  "denver",
+  "highlands-ranch",
+  "centennial",
+  "castle-pines",
+] as const;
+
+export const priorityLocations = PRIORITY_CITY_SLUGS
+  .map((slug) => locations.find((location) => location.slug === slug))
+  .filter((location): location is Location => Boolean(location));
+
+/** High-ticket, low-competition specialty services promoted on city pages. */
+export const SPECIALTY_SERVICE_SLUGS = [
+  "hot-tub-removal",
+  "shed-removal",
+  "deck-and-fence-removal",
+  "mattress-and-bulky-item-removal",
+] as const;

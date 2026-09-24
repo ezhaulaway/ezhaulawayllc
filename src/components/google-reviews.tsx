@@ -67,11 +67,22 @@ export function GoogleReviewsGrid() {
           </article>
         ))}
       </div>
-      <Button asChild variant="outline" className="mt-8">
-        <a href={mapsUri} target="_blank" rel="noopener noreferrer">
-          Read More Reviews on Google
-        </a>
-      </Button>
+      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <Button asChild variant="outline">
+          <a href={mapsUri} target="_blank" rel="noopener noreferrer">
+            Read More Reviews on Google
+          </a>
+        </Button>
+        <Button asChild>
+          <a href={`${mapsUri}`} target="_blank" rel="noopener noreferrer">
+            Leave Us a Review
+          </a>
+        </Button>
+      </div>
+      <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
+        Just hauled for you? Mentioning what we took and your town — like “hot tub removal in Castle Rock”
+        or “shed tear-down in Parker” — helps your neighbors find us when they search for the same job.
+      </p>
     </>
   );
 }

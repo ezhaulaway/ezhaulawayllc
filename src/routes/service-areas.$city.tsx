@@ -8,7 +8,7 @@ import {
   PageShell,
   SectionHeader,
 } from "@/components/site-chrome";
-import { locationBySlug, locations } from "@/content/locations";
+import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
 
@@ -48,8 +48,32 @@ export const Route = createFileRoute("/service-areas/$city")({
             description: pageDescription,
             telephone: PHONE,
             url: `${SITE_URL}/service-areas/${params.city}`,
+            priceRange: "$150 - $800",
             areaServed: { "@type": "City", name: `${location.city}, CO` },
             address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
+            makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
+              const service = services.find((item) => item.slug === slug);
+              return {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: `${service?.name ?? slug} in ${location.city}, CO`,
+                  url: `${SITE_URL}/services/${slug}`,
+                },
+              };
+            }),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
+              { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
+            ],
           }),
         },
       ],
@@ -76,6 +100,9 @@ function CityNotFound() {
 function CityPage() {
   const { location } = Route.useLoaderData();
   const top = location.topServices
+    .map((slug) => services.find((item) => item.slug === slug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const specialty = SPECIALTY_SERVICE_SLUGS
     .map((slug) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
@@ -184,6 +211,36 @@ function CityPage() {
           <InlineQuoteForm />
         </div>
       </section>
+
+      <section className="border-y border-border bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow={`Specialty removal in ${location.city}`}
+            title={`Hot Tubs, Sheds, Decks & Heavy Items in ${location.city}, CO`}
+            text="These are the jobs most haulers turn down. Ben has roughly six years of construction and demolition experience, including more than 300 decks, so the tear-down and the haul happen in one visit."
+          />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {specialty.map((service) => (
+              <Link
+                key={service.slug}
+                to="/services/$slug"
+                params={{ slug: service.slug }}
+                className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+              >
+                <h3 className="font-display text-lg font-bold">
+                  {service.name} in {location.city}, CO
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                  See pricing and details <ArrowRight className="size-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       <section className="bg-secondary py-16 text-secondary-foreground sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">

@@ -9,7 +9,7 @@ import {
   SectionHeader,
 } from "@/components/site-chrome";
 import { serviceBySlug, services } from "@/content/services";
-import { locations } from "@/content/locations";
+import { locations, priorityLocations } from "@/content/locations";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 
@@ -44,7 +44,8 @@ export const Route = createFileRoute("/services/$slug")({
             name: service.name,
             serviceType: service.name,
             description: service.metaDescription,
-            areaServed: locations.map((location) => `${location.city}, CO`),
+            url: `${SITE_URL}/services/${params.slug}`,
+            areaServed: locations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
             provider: {
               "@type": "LocalBusiness",
               name: "EZ Haulaway LLC",
@@ -52,6 +53,18 @@ export const Route = createFileRoute("/services/$slug")({
               address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
               url: SITE_URL,
             },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "What We Take", item: `${SITE_URL}/what-we-take` },
+              { "@type": "ListItem", position: 3, name: service.name, item: `${SITE_URL}/services/${params.slug}` },
+            ],
           }),
         },
       ],
@@ -205,6 +218,29 @@ function ServicePage() {
                 </span>
               </Link>
             ))}
+          </div>
+          <div className="mt-12 border-t border-border pt-10">
+            <h3 className="font-display text-xl font-bold">
+              {service.name} by City
+            </h3>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+              Same crew, same pricing, same week. Pick your town to see what we haul most there.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {priorityLocations.map((location) => (
+                <Link
+                  key={location.slug}
+                  to="/service-areas/$city"
+                  params={{ city: location.slug }}
+                  className="inline-flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold transition-colors hover:border-primary"
+                >
+                  <span>
+                    {service.name} in {location.city}, CO
+                  </span>
+                  <ArrowRight className="size-4 shrink-0 text-primary" />
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="mt-10">
             <p className="font-display font-bold">Available across the Denver metro area</p>
