@@ -109,6 +109,7 @@ function CityNotFound() {
 
 function CityPage() {
   const { location } = Route.useLoaderData();
+  const photo = locationPhoto(location.slug);
   const top = location.topServices
     .map((slug) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
