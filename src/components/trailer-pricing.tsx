@@ -53,11 +53,7 @@ export function TrailerPricing() {
                   fetchPriority="high"
                   className="absolute inset-0 h-full w-full object-contain"
                 />
-                {[1, 2, 3, 4, 5, 6, 7, 8]
-                  .filter((eighths, i, arr) => arr.indexOf(eighths) === i)
-                  .map((eighths) => fillImages[eighths]!)
-                  .filter((img, i, arr) => arr.indexOf(img) === i)
-                  .map((img) => (
+                {[trailerQuarter, trailerHalf, trailerThreeQuarter, trailerFull].map((src) => ({ src, alt: "" })).map((img) => (
                     <img
                       key={img.src}
                       src={img.src}
