@@ -4,6 +4,7 @@ import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHea
 import { TrailerPricing } from "@/components/trailer-pricing";
 import { AiEstimator } from "@/components/ai-estimator";
 import { SITE_URL } from "@/content/site";
+import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, SPECIALTY_ITEMS } from "@/content/pricing";
 
 const title = "Junk Removal Pricing & Free Quotes | EZ Haulaway";
 const description =
