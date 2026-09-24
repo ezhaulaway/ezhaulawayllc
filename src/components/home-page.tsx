@@ -170,7 +170,7 @@ export function HomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-24">
             <div className="min-w-0">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground">
-                <MapPin className="size-3.5 text-primary" /> CASTLE ROCK, CO · DENVER METRO
+                <MapPin className="size-3.5 text-primary" /> PARKER, CO · DENVER METRO
               </div>
               <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
                 Junk Removal <span className="text-primary">Parker</span>
