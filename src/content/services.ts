@@ -526,6 +526,10 @@ export const services: Service[] = [
         heading: "Tight backyards and gates",
         text: "Denver metro yards often have a narrow side gate or a neighbor's fence line a few feet away. We break the structure down in place so material can be carried out by hand instead of driving equipment across your grass.",
       },
+      {
+        heading: "What shed removal costs around here",
+        text: "Shed removal is priced by the size of the structure, what is still inside it, and whether a slab comes out with it. Most standard backyard sheds are a single trailer load. Send a photo with a rough size and we will give you a firm number up front instead of a range.",
+      },
     ],
     faqs: [
       ["Do I need a permit to remove a shed?", "Most residential shed removals in the Denver metro do not require a permit, but rules vary by town and HOA. If yours is large, on a slab, or has power run to it, check with your local building department first."],
