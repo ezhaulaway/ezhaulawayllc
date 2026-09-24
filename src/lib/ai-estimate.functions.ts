@@ -2,8 +2,6 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const inputSchema = z.object({
-  name: z.string().trim().min(1).max(100),
-  phone: z.string().trim().min(7).max(30),
   description: z.string().trim().min(5).max(2000),
   images: z
     .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
@@ -45,7 +43,7 @@ function createSupabaseFetch(key: string): typeof fetch {
 }
 
 async function recordLead(
-  lead: { name: string; phone: string; description: string; photoCount: number },
+  lead: { name: string; phone: string; address: string; description: string; photoCount: number },
   estimate: AiEstimate,
 ) {
   const priceRange =
@@ -68,6 +66,7 @@ async function recordLead(
         id: leadId,
         name: lead.name,
         phone: lead.phone,
+        address: lead.address,
         description: lead.description,
         photo_count: lead.photoCount,
         load_size: loadSize,
@@ -89,6 +88,7 @@ async function recordLead(
       templateData: {
         name: lead.name,
         phone: lead.phone,
+        address: lead.address,
         description: lead.description,
         photoCount: lead.photoCount,
         priceRange,
@@ -262,16 +262,36 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
 
-    // Save the lead and alert the office. A failed alert must never break the customer's estimate.
+    return { ok: true, estimate };
+  });
+
+const lockInSchema = z.object({
+  name: z.string().trim().min(1).max(100),
+  phone: z.string().trim().min(7).max(30),
+  address: z.string().trim().min(3).max(200),
+  description: z.string().trim().max(2000).default(""),
+  photoCount: z.number().int().min(0).max(4).default(0),
+  estimate: z.object({
+    load_size: z.string().max(40),
+    price_low: z.number(),
+    price_high: z.number(),
+    summary: z.string().max(2000),
+    items_identified: z.array(z.string().max(200)).max(30),
+  }),
+});
+
+export const submitEstimateLead = createServerFn({ method: "POST" })
+  .validator((data: unknown) => lockInSchema.parse(data))
+  .handler(async ({ data }) => {
     await recordLead(
       {
         name: data.name,
         phone: data.phone,
+        address: data.address,
         description: data.description,
-        photoCount: data.images.length,
+        photoCount: data.photoCount,
       },
-      estimate,
+      data.estimate as unknown as AiEstimate,
     );
-
-    return { ok: true, estimate };
+    return { ok: true as const };
   });
