@@ -9,7 +9,7 @@ import {
   SectionHeader,
 } from "@/components/site-chrome";
 import { serviceBySlug, services } from "@/content/services";
-import { locations } from "@/content/locations";
+import { locations, priorityLocations } from "@/content/locations";
 import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 
