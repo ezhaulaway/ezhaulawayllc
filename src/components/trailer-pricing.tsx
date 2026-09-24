@@ -44,19 +44,26 @@ export function TrailerPricing() {
             {/* Cartoon trailer with junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
               <div className="relative aspect-[1376/768]">
-                {Object.entries(fillImages)
-                  .filter(([eighths]) => Number(eighths) !== 0 || selectedEighths === 0)
-                  .map(([eighths, img]) => (
+                {/* Base trailer never changes or reloads — junk layers fade in on top */}
+                <img
+                  src={trailerEmpty}
+                  alt={fillImages[selectedEighths]?.alt ?? fillImages[0]!.alt}
+                  width={1376}
+                  height={768}
+                  fetchPriority="high"
+                  className="absolute inset-0 h-full w-full object-contain"
+                />
+                {[trailerQuarter, trailerHalf, trailerThreeQuarter, trailerFull].map((src) => ({ src, alt: "" })).map((img) => (
                     <img
-                      key={eighths}
+                      key={img.src}
                       src={img.src}
-                      alt={Number(eighths) === selectedEighths ? img.alt : ""}
-                      aria-hidden={Number(eighths) !== selectedEighths}
+                      alt=""
+                      aria-hidden="true"
                       width={1376}
                       height={768}
-                      loading="lazy"
-                      className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${
-                        Number(eighths) === selectedEighths ? "opacity-100" : "opacity-0"
+                      loading="eager"
+                      className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${
+                        fillImages[selectedEighths]?.src === img.src && selectedEighths !== 0 ? "opacity-100" : "opacity-0"
                       }`}
                     />
                   ))}
