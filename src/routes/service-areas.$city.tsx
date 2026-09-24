@@ -135,23 +135,39 @@ function CityPage() {
             <span className="font-semibold text-foreground">{location.city}</span>
           </nav>
         </div>
-        <div className="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
-          <div className="flex items-center gap-2 text-primary">
-            <MapPin className="size-4" />
-            <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div>
+            <div className="flex items-center gap-2 text-primary">
+              <MapPin className="size-4" />
+              <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
+            </div>
+            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
+              Junk Removal in {location.city}, CO
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
+            <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
+            <div className="mt-8">
+              <Button asChild size="lg" variant="outline">
+                <a href={`tel:${PHONE_TEL}`}>
+                  <Phone /> Call or Text {PHONE}
+                </a>
+              </Button>
+            </div>
           </div>
-          <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
-            Junk Removal in {location.city}, CO
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
-          <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="outline">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone /> Call or Text {PHONE}
-              </a>
-            </Button>
-          </div>
+          {photo && (
+            <figure className="overflow-hidden rounded-xl border border-border bg-muted">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                width={1200}
+                height={800}
+                className="aspect-[3/2] w-full object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">
+                {photo.caption}
+              </figcaption>
+            </figure>
+          )}
         </div>
       </section>
 
