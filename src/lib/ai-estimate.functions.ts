@@ -6,7 +6,7 @@ const inputSchema = z.object({
   phone: z.string().trim().min(7).max(30),
   description: z.string().trim().min(5).max(2000),
   images: z
-    .array(z.string().regex(/^data:image\/(jpeg|png|webp):?;?base64,|^data:image\/(jpeg|png|webp);base64,/))
+    .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
     .max(4)
     .default([]),
 });
@@ -255,9 +255,23 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     }
 
     if (refused || !text) return { ok: false, error: "We couldn't estimate from that info. Please send a quote request instead." };
+    let estimate: AiEstimate;
     try {
-      return { ok: true, estimate: JSON.parse(text) as AiEstimate };
+      estimate = JSON.parse(text) as AiEstimate;
     } catch {
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
+
+    // Save the lead and alert the office. A failed alert must never break the customer's estimate.
+    await recordLead(
+      {
+        name: data.name,
+        phone: data.phone,
+        description: data.description,
+        photoCount: data.images.length,
+      },
+      estimate,
+    );
+
+    return { ok: true, estimate };
   });
