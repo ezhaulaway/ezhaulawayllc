@@ -47,6 +47,8 @@ export const pageExtras = {
       ["Single items", "One couch, mattress, or appliance usually falls near our $150 minimum. Couches are about $60 per cushion, mattresses $100, box springs $75, refrigerators $125 to $150, and treadmills $150."],
       ["Garage and room cleanouts", "Most garage cleanouts and single-room cleanouts fill a quarter to a half trailer, roughly $275 to $450, depending on weight and access."],
       ["Whole-house and large projects", "Estate cleanouts, remodel debris, and deck tear-outs can fill a full trailer — about $800 — or more than one load. Hot tubs start around $500 and pianos around $375."],
+      ["Specialty removal and disposal pricing", "Some jobs are priced by the item instead of by trailer space: hot tub removal from $500, piano removal from $375, mattress disposal $100, box spring $75, couch disposal about $60 per cushion, refrigerator disposal $125 to $150, and treadmill removal $150."],
+      ["Cheaper than a dumpster rental", "A dumpster in Denver sits in your driveway for a week and you still load it yourself. Our price includes the labor, the loading, the hauling, and the disposal fees, and the trailer leaves the same day."],
     ],
   },
   "service-areas": {
