@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { BadgeCheck, Check, Receipt, ShieldCheck, Truck } from "lucide-react";
 import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -212,6 +214,7 @@ function PricingPage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["pricing"]} />
       <CtaBand title="Get a Free Quote on Your Job" text="Photos, a phone call, or a quick text — whatever's easiest for you." />
     </PageShell>
   );

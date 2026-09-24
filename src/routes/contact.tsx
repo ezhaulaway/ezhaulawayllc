@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -94,6 +96,7 @@ function ContactPage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["contact"]} />
       <CtaBand />
     </PageShell>
   );

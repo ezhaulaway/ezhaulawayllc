@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
@@ -434,6 +436,8 @@ export function HomePage() {
             </Accordion>
           </div>
         </section>
+
+        <ProseSection {...pageExtras.home} />
 
         <section className="bg-primary py-16 text-primary-foreground sm:py-20">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 md:flex-row md:items-center lg:px-8">

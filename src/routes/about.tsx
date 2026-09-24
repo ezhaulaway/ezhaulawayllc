@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { HeartHandshake, Leaf, ShieldCheck, Users } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -145,6 +147,7 @@ function AboutPage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["about"]} />
       <CtaBand />
     </PageShell>
   );

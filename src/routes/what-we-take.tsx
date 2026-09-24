@@ -1,3 +1,5 @@
+import { ProseSection } from "@/components/prose-section";
+import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -120,6 +122,7 @@ function WhatWeTakePage() {
         </div>
       </section>
 
+      <ProseSection {...pageExtras["what-we-take"]} />
       <CtaBand />
     </PageShell>
   );
