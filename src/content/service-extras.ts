@@ -90,4 +90,44 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
       ["Do I need to bag leaves and branches?", "Bagged leaves are easiest, but loose branches and brush are fine — we'll load them as they are."],
     ],
   },
+  "hot-tub-removal": {
+    sections: [
+      { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "Hot tub removal in Denver and the south metro starts around $500 for a standard backyard spa. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
+      { heading: "Tight gates, decks, and second-story patios", text: "Most spas were set in place before the fence went up, so the only way out is to cut. We protect gates, siding, and landscaping while we work, and we can remove a spa surround or deck section at the same time if the tub is built in." },
+    ],
+    faqs: [
+      ["How much does hot tub removal cost in Denver?", "Most hot tub removals start around $500 and go up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
+      ["Do you disconnect the electrical?", "We shut off the breaker and disconnect the whip at the tub, but any panel work should be done by a licensed electrician."],
+    ],
+  },
+  "deck-and-fence-removal": {
+    sections: [
+      { heading: "Deck demolition and fence removal across the Denver metro", text: "Ben has torn out and rebuilt more than 300 decks, so deck demolition in Denver, Parker, Castle Rock, and Highlands Ranch is familiar ground. We take out boards, framing, posts, footings where possible, railings, and old fence panels, then haul every piece of lumber and hardware away so the yard is clear." },
+      { heading: "Old fencing, posts, and concrete", text: "Wood fence removal, chain link, and leaning cedar panels all come out the same day. Post concrete is heavy, so we price it with the load, and we tell you up front whether footings are coming out or being cut at grade." },
+    ],
+    faqs: [
+      ["How much does deck removal cost?", "Small decks often fit in one trailer load, while large multi-level decks take more than one. Send photos with rough dimensions and we'll quote it before we start."],
+      ["Will the siding be damaged where the deck attaches?", "We separate the ledger board carefully and leave the wall ready for repair, and we'll point out anything we find behind it."],
+    ],
+  },
+  "mattress-and-bulky-item-removal": {
+    sections: [
+      { heading: "Mattress disposal, couch removal, and heavy item hauling", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are $100, box springs $75, couches run about $60 per cushion, treadmills $150, and pianos start around $375. Couch disposal, recliners, sleeper sofas, dressers, and exercise equipment all come out of the room they're in, not just off the curb." },
+      { heading: "Stairs, apartments, and awkward turns", text: "Bulky items rarely come out the way they went in. We bring straps, dollies, and the extra hands to get a king mattress down a stairwell or a sectional through a narrow hallway without damaging walls or doorframes." },
+    ],
+    faqs: [
+      ["How much does mattress disposal cost in Denver?", "A mattress is $100 and a box spring is $75. If they're part of a bigger load, we price the whole load by trailer space instead."],
+      ["Can you take just one couch?", "Yes. Single-item couch removal usually falls near our $150 minimum, and we'll carry it out for you."],
+    ],
+  },
+  "shed-removal": {
+    sections: [
+      { heading: "Shed removal and backyard tear-downs in Colorado", text: "Shed removal in Denver and the south metro means more than hauling: we take the structure apart. Wood sheds, metal kits, plastic resin sheds, and playhouses all get dismantled, loaded, and hauled off, including the contents and the old flooring. Ben's construction and demolition background is why we can tear down a shed that a standard junk truck won't touch." },
+      { heading: "Light demolition on the same visit", text: "While the trailer is on site, we can also handle small demolition projects — a rotting deck, a section of fence, a playset, or an old chicken coop — and clear the debris in the same trip instead of scheduling a second crew." },
+    ],
+    faqs: [
+      ["How much does shed removal cost?", "Most sheds land between a half and a full trailer load, roughly $450 to $800, depending on size, materials, and what's still inside."],
+      ["Do you remove the shed floor and base?", "Yes. We take the floor and skids, and we'll tell you up front if a concrete pad needs a separate plan."],
+    ],
+  },
 };
