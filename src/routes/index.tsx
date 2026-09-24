@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
+import { SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,8 +18,10 @@ export const Route = createFileRoute("/")({
           "Fast, reliable junk removal throughout the Denver metro area from a local, family-owned business.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: HomePage,
 });
