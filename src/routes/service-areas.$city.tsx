@@ -102,6 +102,9 @@ function CityPage() {
   const top = location.topServices
     .map((slug) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const specialty = SPECIALTY_SERVICE_SLUGS
+    .map((slug) => services.find((item) => item.slug === slug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const faqs = [
     [`Do you charge extra to come to ${location.city}?`, `No. ${location.city} is part of our regular service area, so there's no separate trip charge built into your quote.`],
