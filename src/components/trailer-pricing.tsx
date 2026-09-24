@@ -56,7 +56,7 @@ function eighthOf(item: JunkItem) {
 
 export function TrailerPricing() {
   const [selectedEighths, setSelectedEighths] = useState(2);
-  const selected = LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0];
+  const selected = (LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0])!;
 
   return (
     <section className="border-b border-border bg-muted py-16 sm:py-24">
