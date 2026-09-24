@@ -28,6 +28,8 @@ export const Route = createFileRoute("/service-areas/$city")({
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
+    const photo = locationPhoto(location.slug);
+    const photoUrl = photo ? `${SITE_URL}${photo.src}` : undefined;
     return {
       meta: [
         { title: pageTitle },
@@ -37,6 +39,12 @@ export const Route = createFileRoute("/service-areas/$city")({
         { property: "og:type", content: "website" },
         { property: "og:url", content: `${SITE_URL}/service-areas/${params.city}` },
         { name: "twitter:card", content: "summary_large_image" },
+        ...(photoUrl
+          ? [
+              { property: "og:image", content: photoUrl },
+              { name: "twitter:image", content: photoUrl },
+            ]
+          : []),
       ],
       links: [{ rel: "canonical", href: `${SITE_URL}/service-areas/${params.city}` }],
       scripts: [
