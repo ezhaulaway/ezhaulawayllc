@@ -69,6 +69,8 @@ export const pageExtras = {
       ["Around the house", "Couches, recliners, mattresses, box springs, dressers, tables, TVs, exercise equipment, boxes, clothing, toys, and general household clutter."],
       ["Outdoors", "Hot tubs, sheds, playsets, decks, fencing, grills, patio furniture, branches, brush, landscape debris, and old lumber."],
       ["Items we can't take", "For safety, we don't haul hazardous materials such as wet paint, chemicals, fuel, asbestos, or medical waste. If you're unsure about an item, send us a photo and we'll let you know."],
+      ["Disposal, not just removal", "People search for mattress disposal, couch disposal, appliance disposal, refrigerator disposal, and yard waste removal — that's all the same call here. We take the item out and handle the dump and recycling fees in your price."],
+      ["Cleanouts of every size", "Garage cleanouts, basement cleanouts, estate and eviction cleanouts, storage units, rental turnovers, and construction debris removal all get hauled in our 16-foot dump trailer."],
     ],
   },
 } satisfies Record<string, Extra>;
