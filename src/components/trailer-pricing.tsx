@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
 import trailerEmpty from "@/assets/trailer-base-empty.png";
-import trailerLoad0 from "@/assets/trailer-load-0.png";
-import trailerLoad1 from "@/assets/trailer-load-1.png";
-import trailerLoad2 from "@/assets/trailer-load-2.png";
-import trailerLoad3 from "@/assets/trailer-load-3.png";
-import trailerLoad4 from "@/assets/trailer-load-4.png";
-import trailerLoad5 from "@/assets/trailer-load-5.png";
-import trailerLoad6 from "@/assets/trailer-load-6.png";
-import trailerLoad7 from "@/assets/trailer-load-7.png";
-import trailerLoad8 from "@/assets/trailer-load-8.png";
+import trailerJunk0 from "@/assets/trailer-junk-0.png";
+import trailerJunk1 from "@/assets/trailer-junk-1.png";
+import trailerJunk2 from "@/assets/trailer-junk-2.png";
+import trailerJunk3 from "@/assets/trailer-junk-3.png";
+import trailerJunk4 from "@/assets/trailer-junk-4.png";
+import trailerJunk5 from "@/assets/trailer-junk-5.png";
+import trailerJunk6 from "@/assets/trailer-junk-6.png";
+import trailerJunk7 from "@/assets/trailer-junk-7.png";
+import trailerJunk8 from "@/assets/trailer-junk-8.png";
 
 const fillDescriptions: Record<number, string> = {
   0: "Cartoon of the EZ Haulaway black dump trailer with a small minimum load at the rear",
@@ -25,15 +25,15 @@ const fillDescriptions: Record<number, string> = {
 };
 
 const loadImages = [
-  trailerLoad0,
-  trailerLoad1,
-  trailerLoad2,
-  trailerLoad3,
-  trailerLoad4,
-  trailerLoad5,
-  trailerLoad6,
-  trailerLoad7,
-  trailerLoad8,
+  trailerJunk0,
+  trailerJunk1,
+  trailerJunk2,
+  trailerJunk3,
+  trailerJunk4,
+  trailerJunk5,
+  trailerJunk6,
+  trailerJunk7,
+  trailerJunk8,
 ];
 
 export function TrailerPricing() {
@@ -61,7 +61,7 @@ export function TrailerPricing() {
             {/* Cartoon trailer with junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
               <div className="relative aspect-[1376/768]">
-                {/* The base stays mounted while nine complete, preloaded load stages crossfade. */}
+                {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
                 <img
                   src={trailerEmpty}
                   alt=""
