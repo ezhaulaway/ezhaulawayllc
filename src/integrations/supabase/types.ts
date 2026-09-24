@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_estimate_requests: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          items_identified: string[]
+          load_size: string | null
+          name: string
+          phone: string
+          photo_count: number
+          price_high: number | null
+          price_low: number | null
+          status: string
+          summary: string | null
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          items_identified?: string[]
+          load_size?: string | null
+          name: string
+          phone: string
+          photo_count?: number
+          price_high?: number | null
+          price_low?: number | null
+          status?: string
+          summary?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          items_identified?: string[]
+          load_size?: string | null
+          name?: string
+          phone?: string
+          photo_count?: number
+          price_high?: number | null
+          price_low?: number | null
+          status?: string
+          summary?: string | null
+        }
+        Relationships: []
+      }
       google_reviews_cache: {
         Row: {
           fetched_at: string

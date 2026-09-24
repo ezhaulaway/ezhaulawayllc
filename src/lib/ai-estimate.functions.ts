@@ -2,12 +2,111 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 const inputSchema = z.object({
+  name: z.string().trim().min(1).max(100),
+  phone: z.string().trim().min(7).max(30),
   description: z.string().trim().min(5).max(2000),
   images: z
     .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
     .max(4)
     .default([]),
 });
+
+const LOAD_TEXT: Record<string, string> = {
+  minimum: "Minimum / small load",
+  eighth: "About 1/8 trailer",
+  quarter: "About 1/4 trailer",
+  three_eighths: "About 3/8 trailer",
+  half: "About 1/2 trailer",
+  five_eighths: "About 5/8 trailer",
+  three_quarters: "About 3/4 trailer",
+  seven_eighths: "About 7/8 trailer",
+  full: "About a full trailer",
+  multiple_loads: "More than one trailer",
+};
+
+function isNewSupabaseApiKey(value: string): boolean {
+  return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_");
+}
+
+function createSupabaseFetch(key: string): typeof fetch {
+  return (input, init) => {
+    const headers = new Headers(
+      typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
+    );
+    if (init?.headers) {
+      new Headers(init.headers).forEach((value, k) => headers.set(k, value));
+    }
+    if (isNewSupabaseApiKey(key) && headers.get("Authorization") === `Bearer ${key}`) {
+      headers.delete("Authorization");
+    }
+    headers.set("apikey", key);
+    return fetch(input, { ...init, headers });
+  };
+}
+
+async function recordLead(
+  lead: { name: string; phone: string; description: string; photoCount: number },
+  estimate: AiEstimate,
+) {
+  const priceRange =
+    Math.round(estimate.price_low) === Math.round(estimate.price_high)
+      ? `$${Math.round(estimate.price_low)}`
+      : `$${Math.round(estimate.price_low)}\u2013$${Math.round(estimate.price_high)}`;
+  const loadSize = LOAD_TEXT[estimate.load_size] ?? estimate.load_size;
+  const leadId = crypto.randomUUID();
+
+  try {
+    const url = process.env["SUPABASE_URL"];
+    const key = process.env["SUPABASE_PUBLISHABLE_KEY"];
+    if (url && key) {
+      const { createClient } = await import("@supabase/supabase-js");
+      const supabasePublic = createClient(url, key, {
+        auth: { persistSession: false, autoRefreshToken: false, storage: undefined },
+        global: { fetch: createSupabaseFetch(key) },
+      });
+      const { error } = await supabasePublic.from("ai_estimate_requests").insert({
+        id: leadId,
+        name: lead.name,
+        phone: lead.phone,
+        description: lead.description,
+        photo_count: lead.photoCount,
+        load_size: loadSize,
+        price_low: Math.round(estimate.price_low),
+        price_high: Math.round(estimate.price_high),
+        items_identified: estimate.items_identified ?? [],
+        summary: estimate.summary,
+        status: "new",
+      });
+      if (error) console.error("ai estimate lead insert error", error);
+    }
+  } catch (dbError) {
+    console.error("ai estimate lead insert failed", dbError);
+  }
+
+  try {
+    const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+    await sendTemplateEmail("new-ai-estimate", "", {
+      templateData: {
+        name: lead.name,
+        phone: lead.phone,
+        description: lead.description,
+        photoCount: lead.photoCount,
+        priceRange,
+        loadSize,
+        itemsIdentified: (estimate.items_identified ?? []).join(", "),
+        summary: estimate.summary,
+        submittedAt: new Date().toLocaleString("en-US", {
+          timeZone: "America/Denver",
+          dateStyle: "medium",
+          timeStyle: "short",
+        }),
+      },
+      idempotencyKey: `new-ai-estimate-${leadId}`,
+    });
+  } catch (emailError) {
+    console.error("ai estimate alert email failed", emailError);
+  }
+}
 
 export type AiEstimate = {
   load_size:
@@ -156,9 +255,23 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     }
 
     if (refused || !text) return { ok: false, error: "We couldn't estimate from that info. Please send a quote request instead." };
+    let estimate: AiEstimate;
     try {
-      return { ok: true, estimate: JSON.parse(text) as AiEstimate };
+      estimate = JSON.parse(text) as AiEstimate;
     } catch {
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
+
+    // Save the lead and alert the office. A failed alert must never break the customer's estimate.
+    await recordLead(
+      {
+        name: data.name,
+        phone: data.phone,
+        description: data.description,
+        photoCount: data.images.length,
+      },
+      estimate,
+    );
+
+    return { ok: true, estimate };
   });
