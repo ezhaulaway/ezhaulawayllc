@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 import { template as newQuoteRequestTemplate } from './new-quote-request'
+import { template as newAiEstimateTemplate } from './new-ai-estimate'
 
 export interface TemplateEntry {
   component: ComponentType<any>
@@ -16,4 +17,5 @@ export interface TemplateEntry {
  */
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'new-quote-request': newQuoteRequestTemplate,
+  'new-ai-estimate': newAiEstimateTemplate,
 }

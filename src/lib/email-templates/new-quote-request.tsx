@@ -57,7 +57,7 @@ export const template = {
   subject: (data: Record<string, any>) =>
     `New quote request — ${data['name'] || 'Website'}${data['location'] ? ` (${data['location']})` : ''}`,
   displayName: 'New quote request (internal alert)',
-  to: 'benezhaulaway@gmail.com',
+  to: 'ben@ezhaulawayllc.com',
   previewData: {
     name: 'Jane Smith',
     phone: '720-555-0148',
