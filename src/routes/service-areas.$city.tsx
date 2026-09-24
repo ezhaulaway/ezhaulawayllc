@@ -212,6 +212,36 @@ function CityPage() {
         </div>
       </section>
 
+      <section className="border-y border-border bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow={`Specialty removal in ${location.city}`}
+            title={`Hot Tubs, Sheds, Decks & Heavy Items in ${location.city}, CO`}
+            text="These are the jobs most haulers turn down. Ben has roughly six years of construction and demolition experience, including more than 300 decks, so the tear-down and the haul happen in one visit."
+          />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {specialty.map((service) => (
+              <Link
+                key={service.slug}
+                to="/services/$slug"
+                params={{ slug: service.slug }}
+                className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+              >
+                <h3 className="font-display text-lg font-bold">
+                  {service.name} in {location.city}, CO
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                  See pricing and details <ArrowRight className="size-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
       <section className="bg-secondary py-16 text-secondary-foreground sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">How it works</p>
