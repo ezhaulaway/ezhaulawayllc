@@ -71,6 +71,29 @@ function ContactPage() {
         </div>
       </section>
 
+      <section className="border-t border-border bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="After you reach out"
+            title="What Happens Next"
+            text="Reaching out about junk removal shouldn't feel like a commitment. Here's exactly what to expect."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              First, we look at your photos or listen to your description and give you an honest, straightforward
+              price — usually the same day. There's no obligation and no pressure; if the number doesn't work for
+              you, no hard feelings.
+            </p>
+            <p>
+              If it does work, we find a time that fits your schedule, often within a few days. Our crew arrives on
+              time, confirms the price before loading anything, and handles every bit of the lifting, hauling, and
+              cleanup. Most jobs across Parker and the Denver metro area are finished in a single visit — and most
+              customers tell us afterward they wish they'd called months earlier.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand />
     </PageShell>
   );

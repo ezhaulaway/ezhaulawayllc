@@ -140,6 +140,30 @@ function HowItWorksPage() {
         </div>
       </section>
 
+      <section className="border-t border-border bg-card py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="Why it works"
+            title="A Process Built Around Your Time and Your Property"
+            text="Every step exists to remove a frustration people have had with junk removal companies in the past."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              Quotes by photo mean you don't waste a Saturday waiting for an in-person estimate. Confirming the price
+              before we load means you never get surprised at the end of the job. Walking the job with you on arrival
+              means nothing leaves your property unless you said so. And sweeping up before we leave means the only
+              sign we were there is the space you got back.
+            </p>
+            <p>
+              The result our customers across Parker, Castle Rock, Centennial, and the greater Denver metro area talk
+              about most isn't the hauling — it's the feeling afterward. The garage you can park in again. The
+              basement that's finally usable. The backyard without the old hot tub or broken-down shed. One visit,
+              and a project that felt overwhelming is simply done.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand />
     </PageShell>
   );

@@ -116,6 +116,35 @@ function AboutPage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="The experience"
+            title="What Hiring EZ Haulaway Actually Feels Like"
+            text="Junk removal is a service most people only need once in a while — so it should be simple every single time."
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            <p>
+              From the first call or text, you're talking to the people who will actually show up at your door.
+              There's no call center, no runaround, and no franchise script. We ask a few questions, look at your
+              photos, and give you an honest price for your junk removal job — whether it's a single mattress in
+              Parker or a full estate cleanout in the Denver metro area.
+            </p>
+            <p>
+              When the job is done, the feeling we hear about most is relief. The project you'd been dreading for
+              months is finished in an afternoon. The space is swept, the clutter is gone, and usable items are on
+              their way to donation instead of a landfill. You didn't lift anything, rent a truck, or make a single
+              trip to the dump.
+            </p>
+            <p>
+              That's the standard we hold every job to, because in a local business your reputation is everything.
+              Most of our work comes from neighbors telling neighbors — and that only happens when every customer
+              walks away feeling like the job was done right.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand />
     </PageShell>
   );
