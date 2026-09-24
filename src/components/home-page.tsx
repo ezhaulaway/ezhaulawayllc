@@ -172,10 +172,10 @@ export function HomePage() {
                 <MapPin className="size-3.5 text-primary" /> Parker, CO · Denver Metro
               </div>
               <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
-                Junk Removal <span className="text-primary">Parker</span>
+                Junk Removal <span className="text-primary">Castle Rock</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-                Fast, reliable junk removal throughout the Denver metro area. We handle the lifting, hauling, and cleanup — with clear communication and no surprises.
+                Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton />
@@ -214,7 +214,7 @@ export function HomePage() {
         <section id="services" className="relative overflow-hidden py-20 sm:py-28">
           <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <SectionHeader eyebrow="What we haul" title="What Can We Take Off Your Hands?" text="From one bulky item to a full cleanout, tell us what needs to go." />
+              <SectionHeader eyebrow="What we haul" title="Junk Removal Services" text="From one bulky item to a full cleanout, tell us what needs to go." />
               <QuoteButton className="w-fit" label="Ask About Your Job" />
             </div>
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -263,7 +263,7 @@ export function HomePage() {
         <section id="how-it-works" className="bg-secondary py-20 text-secondary-foreground sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Simple from start to finish</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">Three Steps. Then It’s Gone.</h2>
+            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">Three Steps. Then It’s Gone. EZ</h2>
             <div className="mt-12 grid gap-8 lg:grid-cols-3">
               {[
                 ["01", "Send Us Photos", "Tell us what needs to go and send photos when possible."],
