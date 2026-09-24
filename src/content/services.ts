@@ -406,7 +406,6 @@ export const services: Service[] = [
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
     metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
-    methodPlaceholder: undefined as never,
     metaDescription:
       "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you. Free quote.",
     summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
