@@ -72,7 +72,6 @@ export const Route = createFileRoute("/")({
           "@type": "LocalBusiness",
           "@id": `${SITE_URL}/#localbusiness`,
           name: "EZ Haulaway LLC",
-          image: `${SITE_URL}/og-image.jpg`,
           url: SITE_URL,
           telephone: "+1-720-614-7223",
           priceRange: "$150 - $800",
