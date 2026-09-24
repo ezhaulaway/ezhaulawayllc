@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Camera, Loader2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { generateAiEstimate, type AiEstimate } from "@/lib/ai-estimate.functions";
+import { generateAiEstimate, submitEstimateLead, type AiEstimate } from "@/lib/ai-estimate.functions";
 
 const LOAD_LABEL: Record<AiEstimate["load_size"], string> = {
   minimum: "Minimum / small load",
@@ -29,13 +29,18 @@ async function resize(file: File): Promise<string> {
 
 export function AiEstimator() {
   const run = useServerFn(generateAiEstimate);
+  const lockIn = useServerFn(submitEstimateLead);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<AiEstimate | null>(null);
+  const [leadSending, setLeadSending] = useState(false);
+  const [leadError, setLeadError] = useState<string | null>(null);
+  const [leadSent, setLeadSent] = useState(false);
 
   async function addFiles(files: FileList | null) {
     if (!files) return;
@@ -46,14 +51,6 @@ export function AiEstimator() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (name.trim().length < 1) {
-      setError("Please add your name so we know who we're talking to.");
-      return;
-    }
-    if (phone.replace(/\D/g, "").length < 10) {
-      setError("Please add a phone number we can reach you at.");
-      return;
-    }
     if (description.trim().length < 5) {
       setError("Tell us a little about what needs to go.");
       return;
@@ -61,8 +58,9 @@ export function AiEstimator() {
     setLoading(true);
     setError(null);
     setEstimate(null);
+    setLeadSent(false);
     try {
-      const res = await run({ data: { name, phone, description, images } });
+      const res = await run({ data: { description, images } });
       if (res.ok) setEstimate(res.estimate);
       else setError(res.error);
     } catch {
@@ -71,6 +69,38 @@ export function AiEstimator() {
       setLoading(false);
     }
   }
+
+  async function submitLead(e: React.FormEvent) {
+    e.preventDefault();
+    if (!estimate) return;
+    if (name.trim().length < 1) return setLeadError("Please add your name.");
+    if (phone.replace(/\D/g, "").length < 10) return setLeadError("Please add a phone number we can reach you at.");
+    if (address.trim().length < 3) return setLeadError("Please add the job address.");
+    setLeadSending(true);
+    setLeadError(null);
+    try {
+      await lockIn({
+        data: {
+          name, phone, address, description,
+          photoCount: images.length,
+          estimate: {
+            load_size: estimate.load_size,
+            price_low: estimate.price_low,
+            price_high: estimate.price_high,
+            summary: estimate.summary,
+            items_identified: estimate.items_identified,
+          },
+        },
+      });
+      setLeadSent(true);
+    } catch {
+      setLeadError("Couldn't send that. Please call or text us.");
+    } finally {
+      setLeadSending(false);
+    }
+  }
+
+  const inputCls = "mt-1 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
   return (
     <section id="instant-estimate" className="py-16 sm:py-24">
@@ -85,46 +115,9 @@ export function AiEstimator() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <form onSubmit={submit} className="rounded-lg border border-border bg-card p-6 shadow-sm">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label className="text-sm font-bold" htmlFor="ai-name">
-                  Your name <span className="text-destructive">*</span>
-                </label>
-                <input
-                  id="ai-name"
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  maxLength={100}
-                  autoComplete="name"
-                  placeholder="First and last name"
-                  className="mt-2 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-bold" htmlFor="ai-phone">
-                  Phone number <span className="text-destructive">*</span>
-                </label>
-                <input
-                  id="ai-phone"
-                  type="tel"
-                  required
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  maxLength={30}
-                  autoComplete="tel"
-                  inputMode="tel"
-                  placeholder="(720) 614-7223"
-                  className="mt-2 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-              </div>
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground">
-              We use your number to follow up with a firm price — no spam, ever.
-            </p>
 
-            <label className="mt-5 block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
+
+            <label className="block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
             <textarea
               id="ai-desc"
               value={description}
@@ -230,9 +223,27 @@ export function AiEstimator() {
                 <p className="mt-6 text-xs text-muted-foreground">
                   AI-generated ballpark. Final price is confirmed on site before any work starts.
                 </p>
-                <Button asChild className="mt-4 w-full">
-                  <a href="/contact">Lock in a free quote</a>
-                </Button>
+                {leadSent ? (
+                  <div className="mt-5 rounded-md border border-primary bg-background p-4 text-center" role="status">
+                    <p className="font-bold">You're locked in!</p>
+                    <p className="mt-1 text-sm text-muted-foreground">We'll call or text you shortly with your actual quote.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={submitLead} className="mt-5 rounded-md border border-border bg-background p-4">
+                    <p className="font-bold">Get your actual quote & lock in this price</p>
+                    <p className="mt-1 text-xs text-muted-foreground">We'll reach out fast to confirm — no spam, ever.</p>
+                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-name">Name</label>
+                    <input id="ai-name" required maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
+                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-phone">Phone number</label>
+                    <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
+                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-address">Job address</label>
+                    <input id="ai-address" required maxLength={200} autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Street, city" className={inputCls} />
+                    {leadError && <p className="mt-3 text-sm font-semibold text-destructive">{leadError}</p>}
+                    <Button type="submit" className="mt-4 w-full" disabled={leadSending}>
+                      {leadSending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : "Lock in my quote"}
+                    </Button>
+                  </form>
+                )}
               </div>
             )}
           </div>
