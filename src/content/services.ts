@@ -199,16 +199,16 @@ export const services: Service[] = [
   {
     slug: "deck-and-fence-removal",
     name: "Deck & Fence Removal",
-    h1: "Deck & Fence Removal in the Denver Metro Area",
-    metaTitle: "Deck & Fence Removal in Parker, CO | EZ Haulaway",
+    h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
+    metaTitle: "Deck Removal & Fence Demolition Denver, CO | EZ Haulaway",
     metaDescription:
-      "Tear out an aging deck, pergola, or fence line and have every board hauled off. EZ Haulaway serves Parker and the Denver metro area.",
-    summary: "Aging decks, pergolas, railings, and fence lines removed and hauled.",
+      "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of hands-on experience. Every board hauled, site raked. Free quote.",
+    summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
     image: deckAsset.url,
     imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
     intro: [
-      "Colorado weather is hard on wood. When a deck starts splintering or a fence starts leaning, tearing it out is the first step toward whatever comes next.",
-      "This is Ben's strongest area — he has worked on more than 300 decks, so he knows how they are built and how they come apart.",
+      "Colorado weather is hard on wood. When a deck starts splintering or a fence line starts leaning, tearing it out is the first step toward whatever comes next.",
+      "EZ Haulaway handles deck demolition and fence removal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. This is Ben's strongest area — he has worked on more than 300 decks, so he knows exactly how they were built and how they come apart without wrecking your siding or your yard.",
     ],
     includes: [
       "Wood and composite decks",
@@ -220,18 +220,28 @@ export const services: Service[] = [
     ],
     sections: [
       {
-        heading: "Clean tear-out, clean site",
-        text: "Boards, framing, hardware, and posts all leave with us. We rake and sweep the area so you can start your next project without stepping on nails.",
+        heading: "300+ decks of experience, not a guess with a crowbar",
+        text: "A deck attached to a house is fastened to a ledger board against your siding. Pulled the wrong way, that is a water-intrusion repair you did not budget for. Ben has spent roughly six years in construction and demolition and worked on over 300 decks, so we take the structure apart in the order it went up — flashing and ledger last, and carefully.",
       },
       {
-        heading: "Rebuilding after?",
-        text: "If a new deck or fence is going in, tell us. We can pull the old structure in a way that keeps the site ready for your builder.",
+        heading: "Clean tear-out, clean site",
+        text: "Boards, framing, hardware, posts, and concrete footings all leave with us. We rake and sweep the footprint so you can walk it barefoot without finding a nail, and so your landscaper or builder can start immediately.",
+      },
+      {
+        heading: "Fence lines, post by post",
+        text: "Wood, vinyl, and chain link all come out, including the concrete footings when you want them gone. Shared fence lines with a neighbor are common here — tell us which side is yours and we will work to the property line.",
+      },
+      {
+        heading: "Rebuilding after the tear-out?",
+        text: "If a new deck or fence is going in, tell us up front. We can pull the old structure in a way that leaves the site ready for your builder, and we coordinate timing so your contractor is not waiting on a pile of old lumber.",
       },
     ],
     faqs: [
+      ["How much does deck removal cost in the Denver metro?", "Most residential deck tear-outs are priced by size, height, and how much concrete is in the ground. Send photos with a rough footprint and we will give you a firm number before the job."],
       ["Do you dig out concrete fence footings?", "Yes, in most cases. Let us know the post count so we can price the job accurately."],
-      ["Can you remove just part of a deck?", "Yes. Partial removals and railing-only jobs are common."],
-      ["What happens to the lumber?", "Usable material can be set aside if you want it; everything else is hauled and disposed of."],
+      ["Can you remove just part of a deck?", "Yes. Partial removals, railing-only jobs, and stair replacements are all common."],
+      ["Will removing the deck damage my siding?", "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed."],
+      ["What happens to the lumber?", "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility."],
     ],
     related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris"],
   },
