@@ -58,6 +58,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             telephone: PHONE,
             url: `${SITE_URL}/service-areas/${params.city}`,
             priceRange: "$150 - $800",
+            ...(photoUrl ? { image: photoUrl } : {}),
             areaServed: { "@type": "City", name: `${location.city}, CO` },
             address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
             makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
