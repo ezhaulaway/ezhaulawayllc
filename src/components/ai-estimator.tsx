@@ -176,7 +176,7 @@ export function AiEstimator() {
                   AI-generated ballpark. Final price is confirmed on site before any work starts.
                 </p>
                 <Button asChild className="mt-4 w-full">
-                  <a href="#quote">Lock in a free quote</a>
+                  <a href="/contact">Lock in a free quote</a>
                 </Button>
               </div>
             )}
