@@ -1,6 +1,6 @@
 type Extra = { eyebrow: string; title: string; blocks: Array<[string, string]> };
 
-export const pageExtras: Record<string, Extra> = {
+export const pageExtras = {
   home: {
     eyebrow: "Local junk removal",
     title: "Why Parker Homeowners Call EZ Haulaway",
@@ -64,4 +64,4 @@ export const pageExtras: Record<string, Extra> = {
       ["Items we can't take", "For safety, we don't haul hazardous materials such as wet paint, chemicals, fuel, asbestos, or medical waste. If you're unsure about an item, send us a photo and we'll let you know."],
     ],
   },
-};
+} satisfies Record<string, Extra>;
