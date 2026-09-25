@@ -10,6 +10,9 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
@@ -84,9 +87,26 @@ function AreasDropdown() {
           <Link to="/service-areas" className="font-semibold">All Service Areas</Link>
         </DropdownMenuItem>
         {locations.map((location) => (
-          <DropdownMenuItem asChild key={location.slug}>
-            <Link to="/service-areas/$city" params={{ city: location.slug }}>Junk Removal {location.city}</Link>
-          </DropdownMenuItem>
+          <DropdownMenuSub key={location.slug}>
+            <DropdownMenuSubTrigger>Junk Removal {location.city}</DropdownMenuSubTrigger>
+            <DropdownMenuSubContent className="max-h-[70vh] w-64 overflow-y-auto">
+              <DropdownMenuItem asChild>
+                <Link to="/service-areas/$city" params={{ city: location.slug }} className="font-semibold">
+                  All services in {location.city}
+                </Link>
+              </DropdownMenuItem>
+              {services.map((service) => (
+                <DropdownMenuItem asChild key={service.slug}>
+                  <Link
+                    to="/service-areas/$city/$service"
+                    params={{ city: location.slug, service: service.slug }}
+                  >
+                    {service.name} {location.city}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
