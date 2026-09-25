@@ -24,7 +24,7 @@ export const Route = createFileRoute("/service-areas/$city")({
       return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
     const { location } = loaderData;
-    const pageTitle = location.metaTitle ?? `Junk Removal in ${location.city}, CO | EZ Haulaway`;
+    const pageTitle = location.metaTitle ?? `Junk Removal ${location.city} CO | EZ Haulaway`;
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
@@ -143,7 +143,7 @@ function CityPage() {
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
-              Junk Removal in {location.city}, CO
+              Junk Removal {location.city}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>

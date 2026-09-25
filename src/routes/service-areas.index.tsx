@@ -64,7 +64,7 @@ function ServiceAreasPage() {
                       <MapPin className="size-4" />
                       <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
                     </div>
-                    <h2 className="mt-4 text-xl font-bold">Junk Removal in {location.city}</h2>
+                    <h2 className="mt-4 text-xl font-bold">Junk Removal {location.city}</h2>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">
                       {photo?.caption ?? location.intro}
                     </p>

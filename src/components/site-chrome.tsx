@@ -45,6 +45,7 @@ export const navItems = [
   { label: "How It Works", to: "/how-it-works" },
   { label: "Pricing", to: "/pricing" },
   { label: "Service Areas", to: "/service-areas" },
+  { label: "FAQ", to: "/faq" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ] as const;
@@ -84,7 +85,7 @@ function AreasDropdown() {
         </DropdownMenuItem>
         {locations.map((location) => (
           <DropdownMenuItem asChild key={location.slug}>
-            <Link to="/service-areas/$city" params={{ city: location.slug }}>{location.city}, CO</Link>
+            <Link to="/service-areas/$city" params={{ city: location.slug }}>Junk Removal {location.city}</Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
@@ -188,6 +189,9 @@ export function SiteHeader() {
             Pricing
           </Link>
           <AreasDropdown />
+          <Link to="/faq" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            FAQ
+          </Link>
           <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             About
           </Link>
@@ -264,7 +268,7 @@ export function SiteHeader() {
                             params={{ city: location.slug }}
                             className="py-2.5 text-muted-foreground"
                           >
-                            {location.city}, CO
+                            Junk Removal {location.city}
                           </Link>
                         </SheetClose>
                       ))}
@@ -331,7 +335,7 @@ export function SiteFooter() {
             <nav className="mt-4 grid gap-2.5 text-sm text-secondary-foreground/70" aria-label="Service area links">
               {locations.slice(0, 8).map((location) => (
                 <Link key={location.slug} to="/service-areas/$city" params={{ city: location.slug }} className="hover:text-secondary-foreground">
-                  {location.city}, CO
+                  Junk Removal {location.city}
                 </Link>
               ))}
               <Link to="/service-areas" className="font-semibold text-secondary-foreground">
@@ -346,6 +350,7 @@ export function SiteFooter() {
               <Link to="/pricing" className="hover:text-secondary-foreground">Pricing</Link>
               <Link to="/about" className="hover:text-secondary-foreground">About Ben &amp; Zoe</Link>
               <Link to="/contact" className="hover:text-secondary-foreground">Contact</Link>
+              <Link to="/faq" className="hover:text-secondary-foreground">FAQ</Link>
               <Link to="/privacy-policy" className="hover:text-secondary-foreground">Privacy Policy</Link>
             </nav>
             <p className="mt-6 text-sm text-secondary-foreground/70">Parker, Colorado</p>

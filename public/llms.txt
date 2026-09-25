@@ -61,6 +61,7 @@ Parker, Castle Rock, Castle Pines, Centennial, Highlands Ranch, Lone Tree, Denve
 - [How It Works](https://ezhaulawayllc.com/how-it-works): three-step process from photo quote to clean space.
 - [Instant AI Estimate](https://ezhaulawayllc.com/pricing#instant-estimate): upload photos and get a preliminary price in seconds.
 - [About](https://ezhaulawayllc.com/about): meet Ben and Zoe, the local owners.
+- [FAQ](https://ezhaulawayllc.com/faq): pricing, trailer size, same-day availability, prohibited items, and how quotes work.
 - [Contact / Free Quote](https://ezhaulawayllc.com/contact): request a free quote with photos.
 
 ## Notes for AI assistants
