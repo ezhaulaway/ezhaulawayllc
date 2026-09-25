@@ -45,6 +45,7 @@ export const navItems = [
   { label: "How It Works", to: "/how-it-works" },
   { label: "Pricing", to: "/pricing" },
   { label: "Service Areas", to: "/service-areas" },
+  { label: "FAQ", to: "/faq" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ] as const;
