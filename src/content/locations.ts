@@ -60,7 +60,49 @@ export const locations: Location[] = [
       "Many Centennial homes are at the age where kitchens and basements are getting remodeled, which means appliances, cabinets, and construction debris heading out the door.",
     nearby: ["lone-tree", "englewood", "littleton"],
     topServices: ["appliance-removal", "construction-debris-removal", "furniture-removal"],
+    content: [
+      {
+        heading: "Junk Removal Centennial Homeowners Actually Call Back",
+        paragraphs: [
+          "Centennial covers a lot of ground, and the work changes block to block. Around Southglenn and Willow Creek we are usually hauling out the results of a remodel — old kitchen cabinets, a cast iron tub, vanity tops, and a garage full of scrap lumber and drywall offcuts. Out toward Smoky Hill and Piney Creek the calls lean residential: basements that have been collecting furniture for twenty years, treadmills nobody has touched since the kids moved out, and patio sets that did not survive another Colorado winter.",
+          "We load everything by hand from wherever it sits. You do not have to drag a sleeper sofa up the basement stairs or wrestle a refrigerator into the driveway before we show up. Our crew brings furniture blankets and floor protection, carries it out, sweeps the space, and leaves with it in one trip.",
+        ],
+      },
+      {
+        heading: "Remodel and Construction Debris Removal in Centennial",
+        paragraphs: [
+          "A remodel generates more waste than most people plan for, and city trash service will not touch it. We haul drywall, tile, carpet and pad, trim, scrap framing lumber, cabinets, countertops, fixtures, and broken concrete from patios and walkways. If you are working with a contractor, we can come mid-project to clear the pile so the crew keeps moving, then come back at the end for the final load.",
+        ],
+        list: [
+          {
+            title: "Appliance disposal",
+            text: "Refrigerators, washers, dryers, dishwashers, and ranges run $125 to $150 each and go to metal recycling rather than a landfill.",
+          },
+          {
+            title: "Basement and garage cleanouts",
+            text: "Decades of boxes, shelving, old paint cans that are fully dried, exercise equipment, and furniture cleared in a single visit.",
+          },
+          {
+            title: "Hot tubs and decks",
+            text: "We cut down and haul old spas starting around $500, and we have torn out more than 300 decks across the south metro.",
+          },
+          {
+            title: "Furniture and mattresses",
+            text: "Mattresses are $100, box springs $75, and sectional couches are priced per cushion at $60.",
+          },
+        ],
+      },
+      {
+        heading: "Straight Pricing Before We Load Anything",
+        paragraphs: [
+          "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at $150, a quarter trailer runs $250 to $300, half is $400 to $500, three-quarters is $550 to $650, and a completely full trailer is $700 to $850. We quote the price on site before a single item goes on the trailer, and that number is what you pay.",
+        ],
+        closing:
+          "Call or text us for a same-week slot in Centennial, or send photos through our instant estimate tool for a ballpark in minutes.",
+      },
+    ],
   },
+
   {
     slug: "highlands-ranch",
     city: "Highlands Ranch",
@@ -143,13 +185,58 @@ export const locations: Location[] = [
     slug: "aurora",
     city: "Aurora",
     county: "Arapahoe & Adams County",
+    metaTitle: "Junk Removal Aurora CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Aurora, CO — rental turnovers, estate cleanouts, appliance and furniture hauling. Fast scheduling and free quotes from EZ Haulaway.",
     intro:
       "Aurora is one of the largest areas we cover, and we take jobs across the city from Southlands out toward the older neighborhoods.",
     local:
       "Rental turnovers and estate cleanouts make up a good share of our Aurora work, alongside everyday appliance and furniture pickups.",
     nearby: ["denver", "centennial"],
     topServices: ["house-and-estate-cleanouts", "appliance-removal", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal Aurora Neighborhood by Neighborhood",
+        paragraphs: [
+          "Aurora is close to 400,000 people spread across two counties, and no two jobs here look alike. Out by Southlands and Saddle Rock we are mostly clearing garages, moving-day leftovers, and furniture from homes that are being listed. Around Heather Ridge and the older stretches off Colfax and Havana we get a lot of rental turnovers, eviction cleanouts, and apartments full of items left behind. Near the Buckley area we work with military families on short-notice moves, which usually means everything has to be gone this week, not next month.",
+          "Because we are based in Parker, Aurora is a straight shot for us and there is no travel surcharge. One family-owned crew shows up, quotes the job in person, and loads it out the same visit.",
+        ],
+      },
+      {
+        heading: "Rental Turnovers, Evictions, and Estate Cleanouts",
+        paragraphs: [
+          "If you manage property in Aurora, you already know the clock starts the moment a unit goes empty. We clear the whole thing — furniture, mattresses, appliances, carpet, trash bags, and whatever is left in the closets — so your cleaners and painters can get in the next day. For estate and probate cleanouts, we work slowly and respectfully, set aside anything the family wants to keep, and route usable furniture and household goods to local donation centers instead of the dump.",
+        ],
+        list: [
+          {
+            title: "Tenant turnover cleanouts",
+            text: "Full unit clearing including appliances, mattresses, and abandoned belongings, usually completed in one visit.",
+          },
+          {
+            title: "Estate and probate cleanouts",
+            text: "Whole-home clearing with donation sorting, so the property is ready for listing or handover.",
+          },
+          {
+            title: "HOA compliance cleanups",
+            text: "Junk piles, dead landscaping debris, broken fencing, and driveway clutter cleared before a deadline hits.",
+          },
+          {
+            title: "Appliance and bulky item pickup",
+            text: "Refrigerators and washers $125 to $150, mattresses $100, box springs $75, couches priced at $60 per cushion.",
+          },
+        ],
+      },
+      {
+        heading: "The Heavy Work Other Aurora Haulers Pass On",
+        paragraphs: [
+          "Plenty of companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around $500, tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+        ],
+        closing:
+          "Call or text 720-614-7223 for an Aurora slot, or send photos through our instant estimate for a price range in minutes.",
+      },
+    ],
   },
+
   {
     slug: "littleton",
     city: "Littleton",
