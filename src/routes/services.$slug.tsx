@@ -10,7 +10,7 @@ import {
 } from "@/components/site-chrome";
 import { serviceBySlug, services } from "@/content/services";
 import { locations, priorityLocations } from "@/content/locations";
-import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
+import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -46,13 +46,7 @@ export const Route = createFileRoute("/services/$slug")({
             description: service.metaDescription,
             url: `${SITE_URL}/services/${params.slug}`,
             areaServed: locations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
-            provider: {
-              "@type": "LocalBusiness",
-              name: "EZ Haulaway LLC",
-              telephone: PHONE,
-              address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
-              url: SITE_URL,
-            },
+            provider: BUSINESS_SCHEMA,
           }),
         },
         {
@@ -61,7 +55,7 @@ export const Route = createFileRoute("/services/$slug")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
               { "@type": "ListItem", position: 2, name: "What We Take", item: `${SITE_URL}/what-we-take` },
               { "@type": "ListItem", position: 3, name: service.name, item: `${SITE_URL}/services/${params.slug}` },
             ],
