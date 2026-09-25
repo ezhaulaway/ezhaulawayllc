@@ -121,6 +121,9 @@ export const locations: Location[] = [
     slug: "lone-tree",
     city: "Lone Tree",
     county: "Douglas County",
+    metaTitle: "Junk Removal Lone Tree CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Lone Tree, CO — furniture, office cleanouts, electronics and bulky items hauled away. Same-week scheduling and free quotes.",
     intro:
       "Lone Tree is minutes from Parker, so same-week scheduling is usually straightforward.",
     local:
@@ -241,6 +244,9 @@ export const locations: Location[] = [
     slug: "littleton",
     city: "Littleton",
     county: "Arapahoe & Jefferson County",
+    metaTitle: "Junk Removal Littleton CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Littleton, CO — deck and fence tear-outs, basement cleanouts and yard debris hauled away. Free quotes from EZ Haulaway.",
     intro:
       "Littleton mixes long-established neighborhoods with newer development, and both keep our trailer full.",
     local:
@@ -252,6 +258,9 @@ export const locations: Location[] = [
     slug: "englewood",
     city: "Englewood",
     county: "Arapahoe County",
+    metaTitle: "Junk Removal Englewood CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Englewood, CO — furniture, mattresses, small commercial cleanouts and bulky items. Local crew, free quotes.",
     intro:
       "Englewood is a quick trip for us and a frequent stop for both household and small commercial jobs.",
     local:
@@ -263,6 +272,9 @@ export const locations: Location[] = [
     slug: "lakewood",
     city: "Lakewood",
     county: "Jefferson County",
+    metaTitle: "Junk Removal Lakewood CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Lakewood, CO — garage cleanouts, landscaping debris and light demolition hauled away. Free quotes from EZ Haulaway.",
     intro:
       "We cover Lakewood across the west side of the metro for junk removal, cleanouts, and light demolition.",
     local:
@@ -274,6 +286,9 @@ export const locations: Location[] = [
     slug: "elizabeth",
     city: "Elizabeth",
     county: "Elbert County",
+    metaTitle: "Junk Removal Elizabeth CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Elizabeth, CO — property cleanouts, outbuilding tear-downs, scrap and brush hauled away. Free quotes from EZ Haulaway.",
     intro:
       "EZ Haulaway makes the trip out to Elizabeth for everything from single heavy items to full property cleanouts.",
     local:
