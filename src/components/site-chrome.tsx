@@ -189,6 +189,9 @@ export function SiteHeader() {
             Pricing
           </Link>
           <AreasDropdown />
+          <Link to="/faq" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            FAQ
+          </Link>
           <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             About
           </Link>
@@ -347,6 +350,7 @@ export function SiteFooter() {
               <Link to="/pricing" className="hover:text-secondary-foreground">Pricing</Link>
               <Link to="/about" className="hover:text-secondary-foreground">About Ben &amp; Zoe</Link>
               <Link to="/contact" className="hover:text-secondary-foreground">Contact</Link>
+              <Link to="/faq" className="hover:text-secondary-foreground">FAQ</Link>
               <Link to="/privacy-policy" className="hover:text-secondary-foreground">Privacy Policy</Link>
             </nav>
             <p className="mt-6 text-sm text-secondary-foreground/70">Parker, Colorado</p>
