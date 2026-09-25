@@ -24,3 +24,24 @@ export const processSteps = [
   ["02", "Get Your Quote", "We review the job, give you a straightforward price, and find a time that works for you."],
   ["03", "We Haul It Away", "Our crew does the lifting, loading, and hauling, then cleans up the space before we leave."],
 ] as const;
+
+/** Complete LocalBusiness entity for JSON-LD (address + image required by validators). */
+export const BUSINESS_SCHEMA = {
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#localbusiness`,
+  name: "EZ Haulaway LLC",
+  url: `${SITE_URL}/`,
+  telephone: "+1-720-614-7223",
+  image: `${SITE_URL}/apple-touch-icon.png`,
+  logo: `${SITE_URL}/apple-touch-icon.png`,
+  priceRange: "$150 - $800",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Parker",
+    addressRegion: "CO",
+    postalCode: "80134",
+    addressCountry: "US",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 39.5242, longitude: -104.8064 },
+  sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
+};

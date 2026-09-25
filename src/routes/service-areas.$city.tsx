@@ -11,7 +11,7 @@ import {
 import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
-import { PHONE, PHONE_TEL, SITE_URL, processSteps } from "@/content/site";
+import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: ({ params }) => {
@@ -52,15 +52,12 @@ export const Route = createFileRoute("/service-areas/$city")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "EZ Haulaway LLC",
+            ...BUSINESS_SCHEMA,
+            "@id": `${SITE_URL}/service-areas/${params.city}#localbusiness`,
             description: pageDescription,
-            telephone: PHONE,
             url: `${SITE_URL}/service-areas/${params.city}`,
-            priceRange: "$150 - $800",
-            ...(photoUrl ? { image: photoUrl } : {}),
+            image: photoUrl ?? BUSINESS_SCHEMA.image,
             areaServed: { "@type": "City", name: `${location.city}, CO` },
-            address: { "@type": "PostalAddress", addressLocality: "Parker", addressRegion: "CO", addressCountry: "US" },
             makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
               const service = services.find((item) => item.slug === slug);
               return {
@@ -80,7 +77,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
               { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
               { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
             ],

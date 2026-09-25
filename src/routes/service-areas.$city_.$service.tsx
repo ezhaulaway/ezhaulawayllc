@@ -156,7 +156,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
             url,
             description,
             areaServed: { "@type": "City", name: `${location.city}, CO` },
-            provider: { "@type": "LocalBusiness", name: "EZ Haulaway LLC", telephone: PHONE, url: SITE_URL },
+            provider: BUSINESS_SCHEMA,
           }),
         },
         {
@@ -165,7 +165,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
               { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
               { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
               { "@type": "ListItem", position: 4, name: service.name, item: url },
