@@ -300,6 +300,9 @@ export const locations: Location[] = [
     slug: "franktown",
     city: "Franktown",
     county: "Douglas County",
+    metaTitle: "Junk Removal Franktown CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Franktown, CO — fence tear-outs, shed removal, brush and acreage cleanups. Free quotes from EZ Haulaway.",
     intro:
       "Franktown is a quick run southeast of Parker, and we handle junk removal and light demolition jobs here regularly.",
     local:
@@ -325,6 +328,9 @@ export const locations: Location[] = [
     slug: "sedalia",
     city: "Sedalia",
     county: "Douglas County",
+    metaTitle: "Junk Removal Sedalia CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Sedalia, CO — appliance haul-away, yard debris and full garage cleanouts. Free quotes from EZ Haulaway.",
     intro:
       "Sedalia sits along Highway 85 and is a regular stop for EZ Haulaway on the way to and from Parker.",
     local:
