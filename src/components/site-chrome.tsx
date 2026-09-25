@@ -189,7 +189,12 @@ export function SectionHeader({
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">{title}</h2>
+      <h2
+        id={title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
+        className="mt-3 scroll-mt-24 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl"
+      >
+        {title}
+      </h2>
       {text ? <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">{text}</p> : null}
     </div>
   );
