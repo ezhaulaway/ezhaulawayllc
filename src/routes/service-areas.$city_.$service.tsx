@@ -121,16 +121,19 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     const location = locationBySlug(params.city);
     const service = serviceBySlug(params.service);
     if (!location || !service) throw notFound();
-    return { location, service };
+    const custom = CUSTOM_PAGES[`${params.city}/${params.service}`] ?? null;
+    return { location, service, custom };
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return { meta: [{ title: "Page not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
-    const { location, service } = loaderData;
+    const { location, service, custom } = loaderData;
     const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
     const title = `${service.name} ${location.city} CO | EZ Haulaway`;
-    const description = `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
+    const description =
+      custom?.description ??
+      `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
     return {
       meta: [
         { title },
