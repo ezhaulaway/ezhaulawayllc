@@ -194,7 +194,7 @@ function CityServiceNotFound() {
 }
 
 function CityServicePage() {
-  const { location, service } = Route.useLoaderData();
+  const { location, service, custom } = Route.useLoaderData();
   const photo = locationPhoto(location.slug);
   const city = location.city;
   const name = service.name;
@@ -202,11 +202,15 @@ function CityServicePage() {
   const otherServices = services.filter((item) => item.slug !== service.slug);
   const nearby = locations.filter((item) => location.nearby.includes(item.slug));
 
-  const faqs = [
-    [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a $150 minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts — no trip charge for ${city}.`],
-    [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
-    ...service.faqs.slice(0, 3),
-  ] as Array<[string, string]>;
+  const faqs = custom
+    ? custom.faqs
+    : ([
+        [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a $150 minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts — no trip charge for ${city}.`],
+        [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
+        ...service.faqs.slice(0, 3),
+      ] as Array<[string, string]>);
+
+  const introParagraphs = custom ? custom.intro : service.intro;
 
   return (
     <PageShell>
