@@ -1,0 +1,249 @@
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  CtaBand,
+  FaqAccordion,
+  InlineQuoteForm,
+  PageShell,
+  SectionHeader,
+} from "@/components/site-chrome";
+import { locationBySlug, locations } from "@/content/locations";
+import { locationPhoto } from "@/content/location-images";
+import { serviceBySlug, services } from "@/content/services";
+import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
+
+export const Route = createFileRoute("/service-areas/$city_/$service")({
+  loader: ({ params }) => {
+    const location = locationBySlug(params.city);
+    const service = serviceBySlug(params.service);
+    if (!location || !service) throw notFound();
+    return { location, service };
+  },
+  head: ({ params, loaderData }) => {
+    if (!loaderData) {
+      return { meta: [{ title: "Page not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
+    }
+    const { location, service } = loaderData;
+    const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
+    const title = `${service.name} ${location.city} CO | EZ Haulaway`;
+    const description = `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: `${service.name} in ${location.city}, CO`,
+            serviceType: service.name,
+            url,
+            description,
+            areaServed: { "@type": "City", name: `${location.city}, CO` },
+            provider: { "@type": "LocalBusiness", name: "EZ Haulaway LLC", telephone: PHONE, url: SITE_URL },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
+              { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
+              { "@type": "ListItem", position: 4, name: service.name, item: url },
+            ],
+          }),
+        },
+      ],
+    };
+  },
+  component: CityServicePage,
+  notFoundComponent: CityServiceNotFound,
+});
+
+function CityServiceNotFound() {
+  return (
+    <PageShell>
+      <div className="mx-auto max-w-3xl px-5 py-24 text-center">
+        <h1 className="text-3xl font-extrabold">We couldn’t find that page</h1>
+        <p className="mt-4 text-muted-foreground">Pick your city to see every service we offer there.</p>
+        <Button asChild className="mt-8" size="lg">
+          <Link to="/service-areas">View Service Areas</Link>
+        </Button>
+      </div>
+    </PageShell>
+  );
+}
+
+function CityServicePage() {
+  const { location, service } = Route.useLoaderData();
+  const photo = locationPhoto(location.slug);
+  const city = location.city;
+  const name = service.name;
+  const lower = name.toLowerCase();
+  const otherServices = services.filter((item) => item.slug !== service.slug);
+  const nearby = locations.filter((item) => location.nearby.includes(item.slug));
+
+  const faqs = [
+    [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a $150 minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts — no trip charge for ${city}.`],
+    [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
+    ...service.faqs.slice(0, 3),
+  ] as Array<[string, string]>;
+
+  return (
+    <PageShell>
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
+          <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
+            <Link to="/" className="hover:text-foreground">Home</Link>
+            <span className="px-2">/</span>
+            <Link to="/service-areas" className="hover:text-foreground">Service Areas</Link>
+            <span className="px-2">/</span>
+            <Link to="/service-areas/$city" params={{ city: location.slug }} className="hover:text-foreground">{city}</Link>
+            <span className="px-2">/</span>
+            <span className="font-semibold text-foreground">{name}</span>
+          </nav>
+        </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div>
+            <div className="flex items-center gap-2 text-primary">
+              <MapPin className="size-4" />
+              <span className="text-xs font-bold uppercase tracking-[0.16em]">{city}, CO · {location.county}</span>
+            </div>
+            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
+              {name} {city}
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Need {lower} in {city}? {service.summary}
+            </p>
+            <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
+            <div className="mt-8">
+              <Button asChild size="lg" variant="outline">
+                <a href={`tel:${PHONE_TEL}`}>
+                  <Phone /> Call or Text {PHONE}
+                </a>
+              </Button>
+            </div>
+          </div>
+          <figure className="overflow-hidden rounded-xl border border-border bg-muted">
+            <img
+              src={service.image}
+              alt={`${service.imageAlt} — ${lower} in ${city}, CO`}
+              width={1200}
+              height={800}
+              className="aspect-[3/2] w-full object-cover"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div>
+            <SectionHeader
+              eyebrow={`${name} in ${city}`}
+              title={`How ${name} Works in ${city}`}
+            />
+            <div className="mt-6 space-y-5 leading-8 text-muted-foreground">
+              {service.intro.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+            <h3 className="mt-10 font-display text-xl font-bold">What’s included for {city} customers</h3>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {service.includes.map((item) => (
+                <li key={item} className="flex gap-3 rounded-lg border border-border bg-card p-4 text-sm leading-6">
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <InlineQuoteForm />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          {service.sections.slice(0, 2).map((section) => (
+            <div key={section.heading} className="mt-10 first:mt-0">
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">{section.heading}</h2>
+              <p className="mt-5 leading-8 text-muted-foreground">{section.text}</p>
+            </div>
+          ))}
+          <div className="mt-10">
+            <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+              Why {city} Calls EZ Haulaway
+            </h2>
+            <p className="mt-5 leading-8 text-muted-foreground">{location.intro}</p>
+          </div>
+          {photo && (
+            <figure className="mt-10 overflow-hidden rounded-xl border border-border bg-card">
+              <img src={photo.src} alt={photo.alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full object-cover" />
+              <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">{photo.caption}</figcaption>
+            </figure>
+          )}
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+          <SectionHeader eyebrow="Common questions" title={`${name} in ${city}: Questions`} />
+          <FaqAccordion faqs={faqs} />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-muted py-14">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <p className="font-display font-bold">More services in {city}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {otherServices.map((item) => (
+              <Link
+                key={item.slug}
+                to="/service-areas/$city/$service"
+                params={{ city: location.slug, service: item.slug }}
+                className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+              >
+                {item.name} {city}
+              </Link>
+            ))}
+          </div>
+          {nearby.length > 0 && (
+            <>
+              <p className="mt-8 font-display font-bold">{name} in nearby towns</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {nearby.map((item) => (
+                  <Link
+                    key={item.slug}
+                    to="/service-areas/$city/$service"
+                    params={{ city: item.slug, service: service.slug }}
+                    className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+                  >
+                    {name} {item.city}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+          <Link to="/services/$slug" params={{ slug: service.slug }} className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary">
+            Full {lower} details and pricing <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
+
+      <CtaBand title={`Book ${name} in ${city}`} />
+    </PageShell>
+  );
+}
