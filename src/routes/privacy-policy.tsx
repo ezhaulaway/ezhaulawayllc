@@ -68,6 +68,36 @@ function PrivacyPolicyPage() {
             </p>
           </section>
           <section>
+            <h2 className="text-xl font-bold text-foreground">Photos you send us</h2>
+            <p className="mt-3">
+              Photos uploaded through our quote form or instant AI estimate are used only to size up your job and price
+              it. AI estimates are generated automatically from your description and photos; the estimate is a starting
+              point, and the final price is always confirmed in person before any work begins.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-xl font-bold text-foreground">How we protect your information</h2>
+            <p className="mt-3">
+              Quote requests and photos are stored in secure, access-restricted systems that only EZ Haulaway can view.
+              We keep job records only as long as we need them to serve you, handle billing, and meet our legal
+              obligations in Colorado.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-xl font-bold text-foreground">Cookies and analytics</h2>
+            <p className="mt-3">
+              Our site uses Google Analytics to understand which pages are helpful, such as how many visitors view our
+              pricing page. This data is collected in aggregate and does not identify you personally. You can block
+              cookies in your browser settings at any time.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-xl font-bold text-foreground">Children's privacy</h2>
+            <p className="mt-3">
+              Our services are intended for adults. We do not knowingly collect information from anyone under 13.
+            </p>
+          </section>
+          <section>
             <h2 className="text-xl font-bold text-foreground">Changes to this policy</h2>
             <p className="mt-3">
               If we update this policy, the revised version will be posted on this page.
