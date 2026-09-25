@@ -4,6 +4,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { locations } from "@/content/locations";
+import { services } from "@/content/services";
 import { locationPhoto } from "@/content/location-images";
 import { SITE_URL } from "@/content/site";
 
@@ -43,36 +44,63 @@ function ServiceAreasPage() {
             {locations.map((location) => {
               const photo = locationPhoto(location.slug);
               return (
-                <Link
+                <div
                   key={location.slug}
-                  to="/service-areas/$city"
-                  params={{ city: location.slug }}
-                  className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary"
+                  className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary"
                 >
-                  {photo && (
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      loading="lazy"
-                      width={1200}
-                      height={800}
-                      className="aspect-[3/2] w-full object-cover"
-                    />
-                  )}
-                  <div className="flex flex-1 flex-col p-7">
-                    <div className="flex items-center gap-2 text-primary">
-                      <MapPin className="size-4" />
-                      <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
+                  <Link to="/service-areas/$city" params={{ city: location.slug }} className="flex flex-1 flex-col">
+                    {photo && (
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        loading="lazy"
+                        width={1200}
+                        height={800}
+                        className="aspect-[3/2] w-full object-cover"
+                      />
+                    )}
+                    <div className="flex flex-1 flex-col p-7">
+                      <div className="flex items-center gap-2 text-primary">
+                        <MapPin className="size-4" />
+                        <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
+                      </div>
+                      <h2 className="mt-4 text-xl font-bold">Junk Removal {location.city}</h2>
+                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                        {photo?.caption ?? location.intro}
+                      </p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                        See {location.city} details <ArrowRight className="size-4" />
+                      </span>
                     </div>
-                    <h2 className="mt-4 text-xl font-bold">Junk Removal {location.city}</h2>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                      {photo?.caption ?? location.intro}
+                  </Link>
+                  <div className="border-t border-border bg-card p-5 lg:invisible lg:absolute lg:inset-0 lg:overflow-y-auto lg:border-t-0 lg:opacity-0 lg:transition-opacity lg:group-focus-within:visible lg:group-focus-within:opacity-100 lg:group-hover:visible lg:group-hover:opacity-100">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+                      Services in {location.city}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
-                      See {location.city} details <ArrowRight className="size-4" />
-                    </span>
+                    <ul className="mt-3 grid gap-1">
+                      <li>
+                        <Link
+                          to="/service-areas/$city"
+                          params={{ city: location.slug }}
+                          className="block rounded px-2 py-1.5 text-sm font-bold hover:bg-muted"
+                        >
+                          Junk Removal {location.city}
+                        </Link>
+                      </li>
+                      {services.map((service) => (
+                        <li key={service.slug}>
+                          <Link
+                            to="/service-areas/$city/$service"
+                            params={{ city: location.slug, service: service.slug }}
+                            className="block rounded px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                          >
+                            {service.name} {location.city}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>

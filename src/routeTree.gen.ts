@@ -20,6 +20,7 @@ import { Route as WhatWeTakeRouteImport } from './routes/what-we-take'
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
 import { Route as ServiceAreasCityRouteImport } from './routes/service-areas.$city'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ServiceAreasCityServiceRouteImport } from './routes/service-areas.$city_.$service'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const IndexRoute = IndexRouteImport.update({
@@ -77,6 +78,11 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceAreasCityServiceRoute = ServiceAreasCityServiceRouteImport.update({
+  id: '/service-areas/$city_/$service',
+  path: '/service-areas/$city/$service',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailTransactionalPreviewRoute =
   LovableEmailTransactionalPreviewRouteImport.update({
     id: '/lovable/email/transactional/preview',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/service-areas/$city/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas': typeof ServiceAreasIndexRoute
+  '/service-areas/$city/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/service-areas/$city_/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas/'
+    | '/service-areas/$city/$service'
     | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas'
+    | '/service-areas/$city/$service'
     | '/lovable/email/transactional/preview'
   id:
     | '__root__'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas/'
+    | '/service-areas/$city_/$service'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   ServiceAreasCityRoute: typeof ServiceAreasCityRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
+  ServiceAreasCityServiceRoute: typeof ServiceAreasCityServiceRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
@@ -266,6 +279,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-areas/$city_/$service': {
+      id: '/service-areas/$city_/$service'
+      path: '/service-areas/$city/$service'
+      fullPath: '/service-areas/$city/$service'
+      preLoaderRoute: typeof ServiceAreasCityServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/preview': {
       id: '/lovable/email/transactional/preview'
       path: '/lovable/email/transactional/preview'
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServiceAreasCityRoute: ServiceAreasCityRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServiceAreasIndexRoute: ServiceAreasIndexRoute,
+  ServiceAreasCityServiceRoute: ServiceAreasCityServiceRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport

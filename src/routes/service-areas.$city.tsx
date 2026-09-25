@@ -216,8 +216,8 @@ function CityPage() {
               {top.map((service) => (
                 <Link
                   key={service.slug}
-                  to="/services/$slug"
-                  params={{ slug: service.slug }}
+                  to="/service-areas/$city/$service"
+                  params={{ city: location.slug, service: service.slug }}
                   className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
                 >
                   <h3 className="font-display text-lg font-bold">{service.name}</h3>
