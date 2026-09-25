@@ -267,7 +267,7 @@ function CityServicePage() {
               title={`How ${name} Works in ${city}`}
             />
             <div className="mt-6 space-y-5 leading-8 text-muted-foreground">
-              {service.intro.map((paragraph) => (
+              {introParagraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
             </div>
@@ -293,12 +293,25 @@ function CityServicePage() {
               <p className="mt-5 leading-8 text-muted-foreground">{section.text}</p>
             </div>
           ))}
-          <div className="mt-10">
-            <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
-              Why {city} Calls EZ Haulaway
-            </h2>
-            <p className="mt-5 leading-8 text-muted-foreground">{location.intro}</p>
-          </div>
+          {custom ? (
+            <div className="mt-10">
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                {custom.localHeading}
+              </h2>
+              {custom.localText.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-10">
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                Why {city} Calls EZ Haulaway
+              </h2>
+              <p className="mt-5 leading-8 text-muted-foreground">{location.intro}</p>
+            </div>
+          )}
           {photo && (
             <figure className="mt-10 overflow-hidden rounded-xl border border-border bg-card">
               <img src={photo.src} alt={photo.alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full object-cover" />
