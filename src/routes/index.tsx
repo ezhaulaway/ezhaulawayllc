@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
-import { GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
+import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
             addressRegion: "CO",
             addressCountry: "US",
           },
-          sameAs: [GOOGLE_REVIEWS_URL],
+          sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
           makesOffer: [
             {
               "@type": "Offer",
@@ -86,7 +86,7 @@ export const Route = createFileRoute("/")({
             latitude: 39.5242,
             longitude: -104.8064,
           },
-          sameAs: [GOOGLE_REVIEWS_URL],
+          sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
         }),
       },
     ],

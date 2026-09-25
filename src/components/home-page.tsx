@@ -216,6 +216,32 @@ export function HomePage() {
           </div>
         </section>
 
+        <section id="fast-facts" aria-labelledby="fast-facts-heading" className="border-b border-border bg-card py-12">
+          <div className="mx-auto max-w-4xl px-5 lg:px-8">
+            <h2 id="fast-facts-heading" className="text-2xl font-extrabold text-foreground">EZ Haulaway at a Glance</h2>
+            <p className="mt-3 leading-7 text-muted-foreground">
+              EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
+              metro area. Pricing starts at $150 and a full 16-foot trailer load (14 cubic yards) runs $700–$850,
+              with labor, loading, hauling, and disposal included. Call or text 720-614-7223 for a free quote.
+            </p>
+            <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+              {[
+                ["Based in", "Parker, CO"],
+                ["Service area", "Parker, Castle Rock, Denver, Aurora, Centennial, Highlands Ranch and nearby towns"],
+                ["Pricing", "$150 minimum · full trailer $700–$850"],
+                ["Specialties", "Hot tubs, sheds, decks & fences, mattresses, appliances, cleanouts"],
+                ["Quotes", "Free — text photos or use the AI estimate"],
+                ["Contact", "720-614-7223 (call or text)"],
+              ].map(([k, v]) => (
+                <div key={k} className="rounded-md border border-border bg-muted p-4">
+                  <dt className="font-bold text-foreground">{k}</dt>
+                  <dd className="mt-1 text-muted-foreground">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
         <section id="how-it-works" className="bg-secondary py-20 text-secondary-foreground sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">EZ IN, EZ OUT</p>
