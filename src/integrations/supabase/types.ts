@@ -62,6 +62,33 @@ export type Database = {
         }
         Relationships: []
       }
+      customers: {
+        Row: {
+          address: string | null
+          created_at: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone?: string | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string | null
+        }
+        Relationships: []
+      }
       google_reviews_cache: {
         Row: {
           fetched_at: string
@@ -77,6 +104,51 @@ export type Database = {
           fetched_at?: string
           id?: string
           payload?: Json
+        }
+        Relationships: []
+      }
+      jobs_and_schedule: {
+        Row: {
+          address: string | null
+          assigned_crew: string | null
+          created_at: string
+          customer_name: string | null
+          id: string
+          load_size: string | null
+          notes: string | null
+          phone: string | null
+          price: number | null
+          scheduled_at: string | null
+          status: string
+          title: string
+        }
+        Insert: {
+          address?: string | null
+          assigned_crew?: string | null
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          load_size?: string | null
+          notes?: string | null
+          phone?: string | null
+          price?: number | null
+          scheduled_at?: string | null
+          status?: string
+          title: string
+        }
+        Update: {
+          address?: string | null
+          assigned_crew?: string | null
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          load_size?: string | null
+          notes?: string | null
+          phone?: string | null
+          price?: number | null
+          scheduled_at?: string | null
+          status?: string
+          title?: string
         }
         Relationships: []
       }
