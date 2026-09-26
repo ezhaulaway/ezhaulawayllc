@@ -177,6 +177,9 @@ export function HomePage() {
               <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
+              <h2 className="mt-4 max-w-xl text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">
+                You’ve Got the Junk, We’ve Got the Truck
+              </h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
               </p>
