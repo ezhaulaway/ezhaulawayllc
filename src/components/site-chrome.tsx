@@ -40,6 +40,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { PHONE, PHONE_TEL } from "@/content/site";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { services } from "@/content/services";
 import { locations } from "@/content/locations";
 
@@ -225,6 +226,7 @@ export function SiteHeader() {
           </Link>
         </nav>
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <Button asChild variant="ghost" className="px-3">
             <a href={`tel:${PHONE_TEL}`}>
               <Phone /> {PHONE}
@@ -233,6 +235,7 @@ export function SiteHeader() {
           <QuoteButton />
         </div>
         <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway">
             <a href={`tel:${PHONE_TEL}`}>
               <Phone />
