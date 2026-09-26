@@ -177,6 +177,9 @@ export function HomePage() {
               <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
+              <h2 className="mt-4 max-w-xl text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">
+                You’ve Got the Junk, We’ve Got the Truck
+              </h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
               </p>
@@ -205,6 +208,10 @@ export function HomePage() {
             </div>
           </div>
         </section>
+
+        <div id="instant-estimate" className="border-b border-border bg-background">
+          <AiEstimator />
+        </div>
 
         <section aria-label="Why customers choose EZ Haulaway" className="border-b border-border bg-muted">
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-border px-5 py-4 sm:grid-cols-4 sm:divide-y-0 lg:px-8">
@@ -262,9 +269,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <div id="instant-estimate" className="border-b border-border">
-          <AiEstimator />
-        </div>
 
 
 

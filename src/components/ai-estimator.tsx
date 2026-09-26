@@ -106,10 +106,15 @@ export function AiEstimator() {
     <section id="instant-estimate" className="py-16 sm:py-24">
       <div className="mx-auto max-w-5xl px-5 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Instant AI estimate</p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">Snap a Photo, Get a Ballpark Price</h2>
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
+            100% Free · Instant Junk Removal Estimator
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+            Get Your Free Junk Removal Price Right Now
+          </h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            Upload up to 4 photos and describe your junk. We'll give you a preliminary price range and what to expect — confirmed on site before we start.
+            No waiting on a callback, no obligation, no cost. Snap up to 4 photos or just describe your junk and get
+            an instant price range for hauling it away — in seconds, right here.
           </p>
         </div>
 
@@ -157,8 +162,11 @@ export function AiEstimator() {
             {error && <p className="mt-4 text-sm font-semibold text-destructive">{error}</p>}
 
             <Button type="submit" size="lg" className="mt-6 w-full" disabled={loading}>
-              {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Looking over your junk…</> : <><Sparkles className="h-4 w-4" /> Get my estimate</>}
+              {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Pricing your junk right now…</> : <><Sparkles className="h-4 w-4" /> Get My Free Instant Estimate</>}
             </Button>
+            <p className="mt-2 text-center text-xs font-semibold text-muted-foreground">
+              Free · Instant · No phone call required
+            </p>
           </form>
 
           <div className="rounded-lg border border-border bg-muted p-6">
