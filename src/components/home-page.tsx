@@ -174,7 +174,7 @@ export function HomePage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground">
                 <MapPin className="size-3.5 text-primary" /> PARKER, CO · DENVER METRO
               </div>
-              <h1 className="mt-6 max-w-xl text-2xl font-extrabold uppercase tracking-[0.08em] leading-tight text-foreground sm:text-3xl lg:text-4xl">
+              <h1 className="mt-6 max-w-xl text-lg font-extrabold uppercase tracking-[0.08em] leading-tight text-foreground sm:text-xl lg:text-2xl">
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
               <h2 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
