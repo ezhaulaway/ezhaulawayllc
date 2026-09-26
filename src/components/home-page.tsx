@@ -174,11 +174,12 @@ export function HomePage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground">
                 <MapPin className="size-3.5 text-primary" /> PARKER, CO · DENVER METRO
               </div>
-              <h1 className="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] text-foreground sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 max-w-xl text-2xl font-extrabold uppercase tracking-[0.08em] leading-tight text-foreground sm:text-3xl lg:text-4xl">
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
-              <h2 className="mt-4 max-w-xl text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">
-                You’ve Got the Junk, We’ve Got the Truck
+              <h2 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
+                You’ve Got the Junk,{" "}
+                <span className="text-primary">We’ve Got the Truck</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
