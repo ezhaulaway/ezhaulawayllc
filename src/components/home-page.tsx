@@ -209,6 +209,10 @@ export function HomePage() {
           </div>
         </section>
 
+        <div id="instant-estimate" className="border-b border-border bg-background">
+          <AiEstimator />
+        </div>
+
         <section aria-label="Why customers choose EZ Haulaway" className="border-b border-border bg-muted">
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-border px-5 py-4 sm:grid-cols-4 sm:divide-y-0 lg:px-8">
             {trustSignals.map(({ icon: Icon, label }) => (
@@ -265,9 +269,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <div id="instant-estimate" className="border-b border-border">
-          <AiEstimator />
-        </div>
 
 
 
