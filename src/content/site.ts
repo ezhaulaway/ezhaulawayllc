@@ -1,6 +1,6 @@
 export const PHONE = "720-614-7223";
 export const PHONE_TEL = PHONE.replaceAll("-", "");
-export const SITE_URL = "https://ezhaulawayllc.com";
+export const SITE_URL = "https://www.ezhaulawayllc.com";
 export const GOOGLE_REVIEWS_URL = "https://share.google/cf9FKoYXCi9K62j84";
 export const FACEBOOK_URL = "https://www.facebook.com/ezhaulawayjunkremoval/";
 
