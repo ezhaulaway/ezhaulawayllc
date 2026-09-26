@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://ezhaulawayllc.com/sitemap.xml
+Sitemap: https://www.ezhaulawayllc.com/sitemap.xml
