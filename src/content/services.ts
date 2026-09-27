@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
 import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
 import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
@@ -29,7 +30,7 @@ export type Service = {
   related: string[];
 };
 
-export const services: Service[] = [
+const raw_services: Service[] = [
   {
     slug: "furniture-removal",
     name: "Furniture Removal",
@@ -114,7 +115,7 @@ export const services: Service[] = [
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
     metaTitle: "Hot Tub Removal Denver & Parker CO | Spa Disposal | EZ Haulaway",
     metaDescription:
-      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from $500.",
+      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from [[item:Hot tub]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset.url,
     imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
@@ -145,11 +146,11 @@ export const services: Service[] = [
       },
       {
         heading: "What hot tub removal costs in the Denver metro",
-        text: "Hot tub and spa removal starts around $500 and depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
+        text: "Hot tub and spa removal starts around [[item:Hot tub]] and depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
       },
     ],
     faqs: [
-      ["How much does hot tub removal cost in Denver?", "Hot tub removal starts around $500 in the Denver metro area. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
+      ["How much does hot tub removal cost in Denver?", "Hot tub removal starts around [[item:Hot tub]] in the Denver metro area. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
       ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
       ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
       ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
@@ -432,7 +433,7 @@ export const services: Service[] = [
       },
       {
         heading: "What single-item pickup costs",
-        text: "Single items are priced individually rather than by trailer space: a mattress runs $100, a box spring $75, a couch $60 per cushion, and a treadmill $150, with a $150 minimum on any visit. Upright pianos start around $375. You know the number before we arrive.",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], a couch [[item:Couch]] per cushion, and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
       },
       {
         heading: "Heavy and awkward is the specialty",
@@ -444,10 +445,10 @@ export const services: Service[] = [
       },
     ],
     faqs: [
-      ["How much does mattress disposal cost in Denver?", "A mattress is $100 and a box spring is $75, with a $150 minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]], with a [[min]] minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
       ["Do I have to put the mattress at the curb?", "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment."],
-      ["Is there a minimum charge?", "Yes, $150 covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
-      ["Can you take a piano?", "Upright pianos start around $375. Grand pianos depend on access — send photos first."],
+      ["Is there a minimum charge?", "Yes, [[min]] covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
+      ["Can you take a piano?", "Upright pianos start around [[item:Piano]]. Grand pianos depend on access — send photos first."],
       ["Do you take trampolines and above-ground pools?", "Yes, including disassembly on site."],
       ["What happens to an old mattress?", "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped."],
     ],
@@ -581,6 +582,7 @@ export const services: Service[] = [
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts"],
   },
 ];
+export const services = priced(raw_services);
 
 for (const service of services) {
   const extra = serviceExtras[service.slug];

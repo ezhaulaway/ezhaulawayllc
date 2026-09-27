@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Prices come from the crew app (ezhaulawaycrew /api/public/pricing) via src/lib/price-store.ts; write prices in content as [[min]]/[[labor]]/[[load:N]]/[[item:Name]]/[[adj:id]] tokens, never literal dollar amounts — so the app stays the single price control center.

@@ -1,3 +1,6 @@
+import { FALLBACK_GUIDE, getPriceGuide } from "@/lib/pricing.functions";
+import { setGuide } from "@/lib/price-store";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -98,6 +101,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
+  loader: async () => {
+    const guide = await getPriceGuide().catch(() => FALLBACK_GUIDE);
+    setGuide(guide);
+    return { guide };
+  },
+  staleTime: 5 * 60 * 1000,
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -120,6 +129,8 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
+  setGuide(Route.useLoaderData().guide);
+  usePriceGuide();
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
 

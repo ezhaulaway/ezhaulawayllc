@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 export const PHONE = "720-614-7223";
 export const PHONE_TEL = PHONE.replaceAll("-", "");
 export const SITE_URL = "https://www.ezhaulawayllc.com";
@@ -26,7 +27,7 @@ export const processSteps = [
 ] as const;
 
 /** Complete LocalBusiness entity for JSON-LD (address + image required by validators). */
-export const BUSINESS_SCHEMA = {
+const raw_BUSINESS_SCHEMA = {
   "@type": "LocalBusiness",
   "@id": `${SITE_URL}/#localbusiness`,
   name: "EZ Haulaway LLC",
@@ -34,7 +35,7 @@ export const BUSINESS_SCHEMA = {
   telephone: "+1-720-614-7223",
   image: `${SITE_URL}/apple-touch-icon.png`,
   logo: `${SITE_URL}/apple-touch-icon.png`,
-  priceRange: "$150 - $800",
+  priceRange: "[[min]] - [[load:8]]",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Parker",
@@ -45,3 +46,4 @@ export const BUSINESS_SCHEMA = {
   geo: { "@type": "GeoCoordinates", latitude: 39.5242, longitude: -104.8064 },
   sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
 };
+export const BUSINESS_SCHEMA = priced(raw_BUSINESS_SCHEMA);
