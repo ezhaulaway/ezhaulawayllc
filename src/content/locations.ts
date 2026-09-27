@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 export type LocationContentSection = {
   heading: string;
   paragraphs: string[];
@@ -18,7 +19,7 @@ export type Location = {
   content?: LocationContentSection[];
 };
 
-export const locations: Location[] = [
+const raw_locations: Location[] = [
   {
     slug: "parker",
     city: "Parker",
@@ -339,6 +340,7 @@ export const locations: Location[] = [
     topServices: ["yard-and-landscaping-debris", "appliance-removal", "garage-cleanouts"],
   },
 ];
+export const locations = priced(raw_locations);
 
 export const locationBySlug = (slug: string) => locations.find((location) => location.slug === slug);
 

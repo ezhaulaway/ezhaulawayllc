@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +30,7 @@ type Answer = {
   paragraphs: string[];
 };
 
-const groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
+const raw_groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
   {
     eyebrow: "Pricing",
     heading: "What Junk Removal Costs With EZ Haulaway",
@@ -134,6 +135,7 @@ const groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
     ],
   },
 ];
+const groups = priced(raw_groups);
 
 function FaqPage() {
   return (

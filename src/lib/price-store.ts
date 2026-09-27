@@ -34,7 +34,10 @@ function resolve(token: string, g: PriceGuide): string | null {
     const l = g.loads.find((x) => x.eighths === Number(arg)) ?? FALLBACK_GUIDE.loads.find((x) => x.eighths === Number(arg));
     return l ? money(l.price) : null;
   }
-  if (kind === "item") return (findItem(g.specialty, arg) ?? findItem(FALLBACK_GUIDE.specialty, arg))?.price ?? null;
+  if (kind === "item") {
+    const price = (findItem(g.specialty, arg) ?? findItem(FALLBACK_GUIDE.specialty, arg))?.price;
+    return price ? price.replace(/^starting at\s*/i, "").replace(/\s*per cushion$/i, "") : null;
+  }
   if (kind === "adj") return g.adjustments.find((a) => a.id === arg)?.amount ?? null;
   return null;
 }

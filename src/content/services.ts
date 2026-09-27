@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
 import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
 import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
@@ -29,7 +30,7 @@ export type Service = {
   related: string[];
 };
 
-export const services: Service[] = [
+const raw_services: Service[] = [
   {
     slug: "furniture-removal",
     name: "Furniture Removal",
@@ -581,6 +582,7 @@ export const services: Service[] = [
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts"],
   },
 ];
+export const services = priced(raw_services);
 
 for (const service of services) {
   const extra = serviceExtras[service.slug];
