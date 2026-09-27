@@ -34,7 +34,7 @@ export const BUSINESS_SCHEMA = {
   telephone: "+1-720-614-7223",
   image: `${SITE_URL}/apple-touch-icon.png`,
   logo: `${SITE_URL}/apple-touch-icon.png`,
-  priceRange: "$150 - $800",
+  priceRange: "[[min]] - [[load:8]]",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Parker",

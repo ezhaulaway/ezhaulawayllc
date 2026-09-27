@@ -30,10 +30,10 @@ export const Route = createFileRoute("/")({
           "@type": "JunkRemovalService",
           name: "EZ Haulaway LLC",
           description:
-            "Local, family-owned junk removal and light demolition serving Parker and the Denver metro area. Trailer load pricing from $150 with full cleanup included.",
+            "Local, family-owned junk removal and light demolition serving Parker and the Denver metro area. Trailer load pricing from [[min]] with full cleanup included.",
           url: SITE_URL,
           telephone: "+1-720-614-7223",
-          priceRange: "$150 - $800",
+          priceRange: "[[min]] - [[load:8]]",
           areaServed: [
             { "@type": "City", name: "Parker, CO" },
             { "@type": "AdministrativeArea", name: "Douglas County, CO" },
@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
           name: "EZ Haulaway LLC",
           url: SITE_URL,
           telephone: "+1-720-614-7223",
-          priceRange: "$150 - $800",
+          priceRange: "[[min]] - [[load:8]]",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Parker",

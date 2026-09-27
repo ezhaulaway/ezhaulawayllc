@@ -76,7 +76,7 @@ export const locations: Location[] = [
         list: [
           {
             title: "Appliance disposal",
-            text: "Refrigerators, washers, dryers, dishwashers, and ranges run $125 to $150 each and go to metal recycling rather than a landfill.",
+            text: "Refrigerators, washers, dryers, dishwashers, and ranges run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each and go to metal recycling rather than a landfill.",
           },
           {
             title: "Basement and garage cleanouts",
@@ -84,18 +84,18 @@ export const locations: Location[] = [
           },
           {
             title: "Hot tubs and decks",
-            text: "We cut down and haul old spas starting around $500, and we have torn out more than 300 decks across the south metro.",
+            text: "We cut down and haul old spas starting around [[item:Hot tub]], and we have torn out more than 300 decks across the south metro.",
           },
           {
             title: "Furniture and mattresses",
-            text: "Mattresses are $100, box springs $75, and sectional couches are priced per cushion at $60.",
+            text: "Mattresses are [[item:Mattress]], box springs [[item:Box spring]], and sectional couches are priced per cushion at [[item:Couch]].",
           },
         ],
       },
       {
         heading: "Straight Pricing Before We Load Anything",
         paragraphs: [
-          "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at $150, a quarter trailer runs $250 to $300, half is $400 to $500, three-quarters is $550 to $650, and a completely full trailer is $700 to $850. We quote the price on site before a single item goes on the trailer, and that number is what you pay.",
+          "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at [[min]], a quarter trailer runs [[load:2]], half is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. We quote the price on site before a single item goes on the trailer, and that number is what you pay.",
         ],
         closing:
           "Call or text us for a same-week slot in Centennial, or send photos through our instant estimate tool for a ballpark in minutes.",
@@ -225,14 +225,14 @@ export const locations: Location[] = [
           },
           {
             title: "Appliance and bulky item pickup",
-            text: "Refrigerators and washers $125 to $150, mattresses $100, box springs $75, couches priced at $60 per cushion.",
+            text: "Refrigerators and washers [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], mattresses [[item:Mattress]], box springs [[item:Box spring]], couches priced at [[item:Couch]] per cushion.",
           },
         ],
       },
       {
         heading: "The Heavy Work Other Aurora Haulers Pass On",
         paragraphs: [
-          "Plenty of companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around $500, tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+          "Plenty of companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
         ],
         closing:
           "Call or text 720-614-7223 for an Aurora slot, or send photos through our instant estimate for a price range in minutes.",

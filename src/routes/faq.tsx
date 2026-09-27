@@ -37,7 +37,7 @@ const groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
       {
         question: "How much does junk removal cost in Parker and the Denver metro area?",
         paragraphs: [
-          "We price by how much room your junk takes up in our dump trailer, and we confirm the number in person before anything is loaded. A minimum load starts at $150. A quarter trailer runs $250 to $300, a half trailer is $400 to $500, three-quarters is $550 to $650, and a completely full trailer is $700 to $850. Extra labor beyond normal loading is $50 per hour.",
+          "We price by how much room your junk takes up in our dump trailer, and we confirm the number in person before anything is loaded. A minimum load starts at [[min]]. A quarter trailer runs [[load:2]], a half trailer is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. Extra labor beyond normal loading is [[labor]] per hour.",
           "There is no travel fee inside our service area, no fuel surcharge, and no dump-fee add-on after the fact. The price we say out loud is the price you pay.",
         ],
       },
@@ -50,7 +50,7 @@ const groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
       {
         question: "What do individual items cost to haul away?",
         paragraphs: [
-          "Common single items: mattress $100, box spring $75, couch $60 per cushion, refrigerator or washer $125 to $150, treadmill $150, piano from $375, and hot tub removal from $500. Sheds generally run $450 to $800 depending on size and construction. Single-item pickups still fall under the $150 minimum load.",
+          "Common single items: mattress [[item:Mattress]], box spring [[item:Box spring]], couch [[item:Couch]] per cushion, refrigerator or washer [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], treadmill [[item:Treadmill]], piano from [[item:Piano]], and hot tub removal from [[item:Hot tub]]. Sheds generally run [[load:4]] to [[load:8]] depending on size and construction. Single-item pickups still fall under the [[min]] minimum load.",
         ],
       },
     ],

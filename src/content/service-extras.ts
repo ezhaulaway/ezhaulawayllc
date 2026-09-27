@@ -2,7 +2,7 @@
 export const serviceExtras: Record<string, { sections: Array<{ heading: string; text: string }>; faqs: Array<[string, string]> }> = {
   "appliance-removal": {
     sections: [
-      { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area typically runs $125 to $150 per unit, and we can add other junk to the same trip." },
+      { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area typically runs [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] per unit, and we can add other junk to the same trip." },
       { heading: "Responsible appliance disposal", text: "Refrigerators and freezers contain refrigerants that need proper handling, and most appliances hold recyclable steel and copper. We route working units toward donation when possible and send the rest to facilities that recycle the metal instead of burying it in a landfill." },
     ],
     faqs: [
@@ -42,7 +42,7 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
   },
   "furniture-removal": {
     sections: [
-      { heading: "Couch, sectional, and mattress removal pricing", text: "Couches are priced at about $60 per cushion, mattresses run $100, and box springs $75. Larger furniture loads are priced by how much trailer space they take, starting at our $150 minimum. You'll know the exact number before we lift anything." },
+      { heading: "Couch, sectional, and mattress removal pricing", text: "Couches are priced at about [[item:Couch]] per cushion, mattresses run [[item:Mattress]], and box springs [[item:Box spring]]. Larger furniture loads are priced by how much trailer space they take, starting at our [[min]] minimum. You'll know the exact number before we lift anything." },
       { heading: "Donation first when furniture is still usable", text: "A lot of furniture we pick up still has life in it. When pieces are in good shape, we set them aside for local donation rather than the landfill, so your old dresser or dining set can help another Denver-area family." },
     ],
     faqs: [
@@ -53,7 +53,7 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
   "garage-cleanouts": {
     sections: [
       { heading: "Get your parking spot back", text: "Most garage cleanouts in Parker and Highlands Ranch start the same way: boxes from the last move, broken bikes, old paint cans, and furniture nobody wanted inside. We sort, load, and haul it all in a single visit, then sweep up so you can finally park inside again — just in time for Colorado winters." },
-      { heading: "You decide what stays", text: "We work alongside you, not around you. Point out what goes and what stays, and we'll handle the heavy lifting. Most garage cleanouts fall between a quarter and a half trailer load, roughly $275 to $450." },
+      { heading: "You decide what stays", text: "We work alongside you, not around you. Point out what goes and what stays, and we'll handle the heavy lifting. Most garage cleanouts fall between a quarter and a half trailer load, roughly [[load:2]] to [[load:4]]." },
     ],
     faqs: [
       ["How long does a garage cleanout take?", "Most take one to three hours depending on the size of the garage and how much is going."],
@@ -92,11 +92,11 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
   },
   "hot-tub-removal": {
     sections: [
-      { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "Hot tub removal in Denver and the south metro starts around $500 for a standard backyard spa. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
+      { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "Hot tub removal in Denver and the south metro starts around [[item:Hot tub]] for a standard backyard spa. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
       { heading: "Tight gates, decks, and second-story patios", text: "Most spas were set in place before the fence went up, so the only way out is to cut. We protect gates, siding, and landscaping while we work, and we can remove a spa surround or deck section at the same time if the tub is built in." },
     ],
     faqs: [
-      ["How much does hot tub removal cost in Denver?", "Most hot tub removals start around $500 and go up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
+      ["How much does hot tub removal cost in Denver?", "Most hot tub removals start around [[item:Hot tub]] and go up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
       ["Do you disconnect the electrical?", "We shut off the breaker and disconnect the whip at the tub, but any panel work should be done by a licensed electrician."],
     ],
   },
@@ -112,12 +112,12 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
   },
   "mattress-and-bulky-item-removal": {
     sections: [
-      { heading: "Mattress disposal, couch removal, and heavy item hauling", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are $100, box springs $75, couches run about $60 per cushion, treadmills $150, and pianos start around $375. Couch disposal, recliners, sleeper sofas, dressers, and exercise equipment all come out of the room they're in, not just off the curb." },
+      { heading: "Mattress disposal, couch removal, and heavy item hauling", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are [[item:Mattress]], box springs [[item:Box spring]], couches run about [[item:Couch]] per cushion, treadmills [[item:Treadmill]], and pianos start around [[item:Piano]]. Couch disposal, recliners, sleeper sofas, dressers, and exercise equipment all come out of the room they're in, not just off the curb." },
       { heading: "Stairs, apartments, and awkward turns", text: "Bulky items rarely come out the way they went in. We bring straps, dollies, and the extra hands to get a king mattress down a stairwell or a sectional through a narrow hallway without damaging walls or doorframes." },
     ],
     faqs: [
-      ["How much does mattress disposal cost in Denver?", "A mattress is $100 and a box spring is $75. If they're part of a bigger load, we price the whole load by trailer space instead."],
-      ["Can you take just one couch?", "Yes. Single-item couch removal usually falls near our $150 minimum, and we'll carry it out for you."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. If they're part of a bigger load, we price the whole load by trailer space instead."],
+      ["Can you take just one couch?", "Yes. Single-item couch removal usually falls near our [[min]] minimum, and we'll carry it out for you."],
     ],
   },
   "shed-removal": {
@@ -126,7 +126,7 @@ export const serviceExtras: Record<string, { sections: Array<{ heading: string; 
       { heading: "Light demolition on the same visit", text: "While the trailer is on site, we can also handle small demolition projects — a rotting deck, a section of fence, a playset, or an old chicken coop — and clear the debris in the same trip instead of scheduling a second crew." },
     ],
     faqs: [
-      ["How much does shed removal cost?", "Most sheds land between a half and a full trailer load, roughly $450 to $800, depending on size, materials, and what's still inside."],
+      ["How much does shed removal cost?", "Most sheds land between a half and a full trailer load, roughly [[load:4]] to [[load:8]], depending on size, materials, and what's still inside."],
       ["Do you remove the shed floor and base?", "Yes. We take the floor and skids, and we'll tell you up front if a concrete pad needs a separate plan."],
     ],
   },

@@ -32,11 +32,11 @@ const CUSTOM_PAGES: Record<
 > = {
   "castle-rock/hot-tub-removal": {
     description:
-      "Hot tub removal in Castle Rock, CO from $500. We cut up, haul out and dispose of old spas and hot tubs — including decks and pads they sit on. Free quotes, family-owned crew from Parker.",
+      "Hot tub removal in Castle Rock, CO from [[item:Hot tub]]. We cut up, haul out and dispose of old spas and hot tubs — including decks and pads they sit on. Free quotes, family-owned crew from Parker.",
     intro: [
       "Castle Rock backyards are full of hot tubs that came with the house — and half of them haven't run in years. Whether your spa is dead, cracked, or you're reclaiming the patio in The Meadows, Founders Village or Castlewood Ranch, we remove the whole thing: shell, cabinet, cover, pump and wiring.",
       "Most hot tubs won't fit through a gate or over a fence in one piece, so we cut them into manageable sections with a reciprocating saw, carry every piece out by hand, and load it into our 16-foot dump trailer. You don't touch anything — we disconnect, demolish, haul and sweep the pad when we're done.",
-      "Hot tub removal in Castle Rock starts at $500 and goes up with size, access and whether the tub is sunk into a deck. Text us a few photos and we'll give you a firm price before we ever start the saw.",
+      "Hot tub removal in Castle Rock starts at [[item:Hot tub]] and goes up with size, access and whether the tub is sunk into a deck. Text us a few photos and we'll give you a firm price before we ever start the saw.",
     ],
     localHeading: "Hot Tub Removal Across Castle Rock Neighborhoods",
     localText: [
@@ -46,7 +46,7 @@ const CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does hot tub removal cost in Castle Rock?",
-        `Most Castle Rock hot tub removals run $500 to $800 depending on the tub's size, whether it's sunk into a deck, and how far we have to carry the pieces. Text photos to ${PHONE} for a firm quote — the price we give you is the price you pay.`,
+        `Most Castle Rock hot tub removals run [[item:Hot tub]] to $800 depending on the tub's size, whether it's sunk into a deck, and how far we have to carry the pieces. Text photos to ${PHONE} for a firm quote — the price we give you is the price you pay.`,
       ],
       [
         "Can you remove a hot tub that's built into my deck?",
@@ -60,10 +60,10 @@ const CUSTOM_PAGES: Record<
   },
   "parker/shed-removal": {
     description:
-      "Shed removal and tear-down in Parker, CO from $450. We demolish, haul and dispose of old sheds — wood, metal or plastic — and leave the spot clean. Free quotes from your local Parker crew.",
+      "Shed removal and tear-down in Parker, CO from [[load:4]]. We demolish, haul and dispose of old sheds — wood, metal or plastic — and leave the spot clean. Free quotes from your local Parker crew.",
     intro: [
       "We're based right here in Parker, so shed removal is practically our hometown specialty. From leaning metal sheds in older Parker neighborhoods to rotting wood sheds out toward Pinery and Stonegate, we tear them down, load every scrap into our trailer, and rake the spot clean.",
-      "Most Parker shed removals run $450 to $800 depending on size, construction and what's still stored inside. If the shed is full of old tools, paint cans and junk, we clear that out first and price it with the load — one visit, one price, nothing left behind.",
+      "Most Parker shed removals run [[load:4]] to [[load:8]] depending on size, construction and what's still stored inside. If the shed is full of old tools, paint cans and junk, we clear that out first and price it with the load — one visit, one price, nothing left behind.",
       "Concrete footings and anchor posts are no problem. Post concrete gets priced with the load, and footings that can't come out cleanly can be cut at grade so you can sod or landscape right over the spot.",
     ],
     localHeading: "Parker's Local Shed Tear-Down Crew",
@@ -74,7 +74,7 @@ const CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does shed removal cost in Parker?",
-        `Most Parker shed tear-downs run $450 to $800. A small metal shed with easy access sits at the low end; a large wood shed full of stored junk sits at the high end. Text photos to ${PHONE} and we'll give you a firm price.`,
+        `Most Parker shed tear-downs run [[load:4]] to [[load:8]]. A small metal shed with easy access sits at the low end; a large wood shed full of stored junk sits at the high end. Text photos to ${PHONE} and we'll give you a firm price.`,
       ],
       [
         "Do you haul away what was inside the shed too?",
@@ -92,7 +92,7 @@ const CUSTOM_PAGES: Record<
     intro: [
       "Aurora's housing boom left thousands of aging cedar decks and leaning privacy fences, and we tear them out every week — from the older neighborhoods near Heather Ridge and Buckingham to newer builds out by Southlands where builders' grade decks are already failing.",
       "This isn't a side service for us. Our crew comes from construction with 300+ decks of hands-on experience, so we know exactly how a deck is put together — ledger boards, joist hangers, footings and all — which means we take it apart fast, safely, and without damaging your house.",
-      "Deck and fence removal in Aurora is priced by trailer volume with a $150 minimum, and most full deck tear-outs run $800 to $2,500 depending on size, height and whether you want the footings pulled. Text photos for a firm quote before we start.",
+      "Deck and fence removal in Aurora is priced by trailer volume with a [[min]] minimum, and most full deck tear-outs run $800 to $2,500 depending on size, height and whether you want the footings pulled. Text photos for a firm quote before we start.",
     ],
     localHeading: "Deck & Fence Tear-Out Across Aurora",
     localText: [
@@ -102,7 +102,7 @@ const CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does deck removal cost in Aurora?",
-        `Most full deck tear-outs in Aurora run $800 to $2,500 depending on size, height off the ground, and footing removal. Fence lines are priced by the trailer load with a $150 minimum. Text photos to ${PHONE} for a firm quote.`,
+        `Most full deck tear-outs in Aurora run $800 to $2,500 depending on size, height off the ground, and footing removal. Fence lines are priced by the trailer load with a [[min]] minimum. Text photos to ${PHONE} for a firm quote.`,
       ],
       [
         "Will tearing off the deck damage my house?",
@@ -205,7 +205,7 @@ function CityServicePage() {
   const faqs = custom
     ? custom.faqs
     : ([
-        [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a $150 minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts — no trip charge for ${city}.`],
+        [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a [[min]] minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts — no trip charge for ${city}.`],
         [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
         ...service.faqs.slice(0, 3),
       ] as Array<[string, string]>);
