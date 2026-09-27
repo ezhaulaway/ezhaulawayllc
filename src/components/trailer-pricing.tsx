@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, TRAILER_SPEC } from "@/content/pricing";
+import { TRAILER_SPEC } from "@/content/pricing";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 import trailerEmpty from "@/assets/trailer-base-empty-clean.png";
 import trailerJunk0 from "@/assets/trailer-junk-0.png";
 import trailerJunk1 from "@/assets/trailer-junk-1.png";
@@ -37,6 +38,10 @@ const loadImages = [
 ];
 
 export function TrailerPricing() {
+  const guide = usePriceGuide();
+  const LOAD_LEVELS = guide.loads;
+  const MINIMUM_CHARGE = guide.minimum;
+  const LABOR_RATE = guide.laborRate;
   const [selectedEighths, setSelectedEighths] = useState(2);
   const selected = LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0];
 
@@ -121,6 +126,16 @@ export function TrailerPricing() {
                 Our minimum service price starts at ${MINIMUM_CHARGE}.
               </p>
             </div>
+            {guide.adjustments.length > 0 && (
+              <ul className="mt-5 space-y-1 text-sm">
+                {guide.adjustments.map((a) => (
+                  <li key={a.label} className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{a.label}</span>
+                    <span className="font-bold">{a.amount}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
             <p className="mt-6 text-xs leading-5 text-muted-foreground">
               Additional labor of ${LABOR_RATE}/hour per crew member may apply for difficult access, disassembly, oversized or heavy
               items, or extended loading time. Pricing may vary based on material, weight, and access. Your final price is approved

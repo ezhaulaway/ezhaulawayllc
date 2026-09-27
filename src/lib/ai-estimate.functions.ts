@@ -207,7 +207,12 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         model: "openai/gpt-6-astra",
-        instructions: SYSTEM,
+        instructions: await (async () => {
+          const { loadPriceGuide } = await import("./pricing.functions");
+          const g = await loadPriceGuide();
+          if (!g.live) return SYSTEM;
+          return `${SYSTEM}\n\nCURRENT PRICE GUIDE (this overrides any conflicting prices above):\nMinimum charge: $${g.minimum}. Labor: $${g.laborRate}/hour per crew member.\nLoads: ${g.loads.map((l) => `${l.label} (${l.volume}) $${l.price}`).join("; ")}.\n${g.adjustments.length ? `Adjustments: ${g.adjustments.map((a) => `${a.label} ${a.amount}`).join("; ")}.\n` : ""}Specialty: ${g.specialty.map((s) => `${s.item} ${s.price}`).join("; ")}. Never quote below $${g.minimum}.`;
+        })(),
         input: [{ role: "user", content }],
         stream: true,
         store: false,

@@ -6,7 +6,7 @@ import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHea
 import { TrailerPricing } from "@/components/trailer-pricing";
 import { AiEstimator } from "@/components/ai-estimator";
 import { SITE_URL } from "@/content/site";
-import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, SPECIALTY_ITEMS } from "@/content/pricing";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 
 const title = "Junk Removal Pricing & Free Quotes | EZ Haulaway";
 const description =
@@ -61,6 +61,8 @@ const faqs = [
 ] as const;
 
 function PricingPage() {
+  const guide = usePriceGuide();
+  const { loads: LOAD_LEVELS, minimum: MINIMUM_CHARGE, laborRate: LABOR_RATE, specialty: SPECIALTY_ITEMS } = guide;
   return (
     <PageShell>
       <PageHero
