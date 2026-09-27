@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { LABOR_RATE, LOAD_LEVELS, MINIMUM_CHARGE, SPECIALTY_ITEMS, type LoadLevel, type SpecialtyItem } from "@/content/pricing";
 
-export type Adjustment = { label: string; amount: string };
+export type Adjustment = { id: string; label: string; amount: string };
 export type PriceGuide = {
   minimum: number;
   laborRate: number;
@@ -64,7 +64,7 @@ function normalize(raw: any): PriceGuide | null {
     .map((s: any) => ({ item: String(s.item).slice(0, 80), price: toStr(s.price) }));
   const adjustments: Adjustment[] = (Array.isArray(raw.adjustments) ? raw.adjustments : [])
     .filter((a: any) => a?.label)
-    .map((a: any) => ({ label: String(a.label).slice(0, 120), amount: toStr(a.amount) }));
+    .map((a: any) => ({ id: String(a.id ?? a.label).slice(0, 40), label: String(a.label).slice(0, 120), amount: toStr(a.amount) }));
   if (loads.length === 0) return null;
   return { minimum, laborRate, loads, adjustments, specialty: specialty.length ? specialty : SPECIALTY_ITEMS, live: true };
 }
