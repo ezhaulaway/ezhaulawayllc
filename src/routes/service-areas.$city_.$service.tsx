@@ -1,3 +1,4 @@
+import { priced } from "@/lib/price-store";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
  * page-specific FAQs so they are not near-identical to the other
  * city+service pages.
  */
-const CUSTOM_PAGES: Record<
+const RAW_CUSTOM_PAGES: Record<
   string,
   {
     description: string;
@@ -115,6 +116,7 @@ const CUSTOM_PAGES: Record<
     ],
   },
 };
+const CUSTOM_PAGES = priced(RAW_CUSTOM_PAGES);
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
   loader: ({ params }) => {

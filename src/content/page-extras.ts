@@ -1,6 +1,7 @@
+import { priced } from "@/lib/price-store";
 type Extra = { eyebrow: string; title: string; blocks: Array<[string, string]> };
 
-export const pageExtras = {
+const raw_pageExtras = {
   home: {
     eyebrow: "Local junk removal",
     title: "Why Parker Homeowners Call EZ Haulaway",
@@ -75,3 +76,4 @@ export const pageExtras = {
     ],
   },
 } satisfies Record<string, Extra>;
+export const pageExtras = priced(raw_pageExtras);

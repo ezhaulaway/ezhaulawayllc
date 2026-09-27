@@ -1,3 +1,4 @@
+import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
+        children: priceText(JSON.stringify({
           "@context": "https://schema.org",
           "@type": "JunkRemovalService",
           name: "EZ Haulaway LLC",
@@ -63,11 +64,11 @@ export const Route = createFileRoute("/")({
               itemOffered: { "@type": "Service", name: "Junk Removal" },
             },
           ],
-        }),
+        })),
       },
       {
         type: "application/ld+json",
-        children: JSON.stringify({
+        children: priceText(JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": `${SITE_URL}/#localbusiness`,
@@ -87,7 +88,7 @@ export const Route = createFileRoute("/")({
             longitude: -104.8064,
           },
           sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
-        }),
+        })),
       },
     ],
   }),
