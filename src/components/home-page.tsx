@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
 import { GoogleReviewsGrid } from "@/components/google-reviews";
 import { AiEstimator } from "@/components/ai-estimator";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -161,6 +162,9 @@ function SectionHeader({ eyebrow, title, text, center = false }: { eyebrow: stri
 }
 
 export function HomePage() {
+  const guide = usePriceGuide();
+  const fullLoad = guide.loads.find((l) => l.eighths === 8);
+  const fullPrice = guide.live && fullLoad ? `$${fullLoad.price}` : "$700–$850";
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (
