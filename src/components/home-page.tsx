@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
 import { GoogleReviewsGrid } from "@/components/google-reviews";
 import { AiEstimator } from "@/components/ai-estimator";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 import { locations } from "@/content/locations";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -161,6 +162,9 @@ function SectionHeader({ eyebrow, title, text, center = false }: { eyebrow: stri
 }
 
 export function HomePage() {
+  const guide = usePriceGuide();
+  const fullLoad = guide.loads.find((l) => l.eighths === 8);
+  const fullPrice = guide.live && fullLoad ? `$${fullLoad.price}` : "$700–$850";
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (
@@ -229,14 +233,14 @@ export function HomePage() {
             <h2 id="fast-facts-heading" className="text-2xl font-extrabold text-foreground">EZ Haulaway at a Glance</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
-              metro area. Pricing starts at $150 and a full 16-foot trailer load (14 cubic yards) runs $700–$850,
+              metro area. Pricing starts at ${guide.minimum} and a full 16-foot trailer load (14 cubic yards) runs ${fullPrice},
               with labor, loading, hauling, and disposal included. Call or text 720-614-7223 for a free quote.
             </p>
             <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
               {[
                 ["Based in", "Parker, CO"],
                 ["Service area", "Parker, Castle Rock, Denver, Aurora, Centennial, Highlands Ranch and nearby towns"],
-                ["Pricing", "$150 minimum · full trailer $700–$850"],
+                ["Pricing", `$${guide.minimum} minimum · full trailer ${fullPrice}`],
                 ["Specialties", "Hot tubs, sheds, decks & fences, mattresses, appliances, cleanouts"],
                 ["Quotes", "Free — text photos or use the AI estimate"],
                 ["Contact", "720-614-7223 (call or text)"],
