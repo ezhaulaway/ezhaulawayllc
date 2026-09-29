@@ -9,9 +9,9 @@ import { locationPhoto } from "@/content/location-images";
 import { SITE_URL } from "@/content/site";
 import { ServiceAreaMap } from "@/components/service-area-map";
 
-const title = "Service Areas — Denver Metro Junk Removal | EZ Haulaway";
+const title = "Junk Removal Parker & Castle Rock CO | Service Areas";
 const description =
-  "EZ Haulaway hauls junk across Parker, Castle Rock, Centennial, Highlands Ranch, Denver, Aurora and the rest of the Denver metro area. Find your city.";
+  "Local junk removal in Parker and Castle Rock, CO, plus nearby Denver metro communities. Explore EZ Haulaway service areas and get a free quote.";
 
 export const Route = createFileRoute("/service-areas/")({
   head: () => ({
@@ -34,9 +34,31 @@ function ServiceAreasPage() {
     <PageShell>
       <PageHero
         eyebrow="Service areas"
-        title="Proudly Serving the Denver Metro Area"
-        text="We're based in Parker and work throughout the south metro and beyond. If your town isn't listed, call us — we probably still come out."
+        title="Junk Removal in Parker, Castle Rock & the Denver Metro"
+        text="EZ Haulaway is based in Parker and regularly serves Castle Rock and nearby communities. Choose your city to see local junk removal services, common projects, and neighborhood-specific details."
       />
+
+      <section className="border-b border-border bg-background py-8" aria-label="Featured local service areas">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 sm:flex-row sm:items-center lg:px-8">
+          <p className="font-semibold text-foreground">Start with our two primary local service areas:</p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              to="/service-areas/$city"
+              params={{ city: "parker" }}
+              className="inline-flex items-center gap-2 font-bold text-primary hover:underline"
+            >
+              Junk Removal Parker CO <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              to="/service-areas/$city"
+              params={{ city: "castle-rock" }}
+              className="inline-flex items-center gap-2 font-bold text-primary hover:underline"
+            >
+              Junk Removal Castle Rock CO <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <ServiceAreaMap />
 

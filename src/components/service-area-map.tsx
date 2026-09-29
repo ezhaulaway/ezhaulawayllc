@@ -107,10 +107,10 @@ export function ServiceAreaMap() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Our coverage</p>
             <h2 id="coverage-map-title" className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-              Local Hauling Across the Denver Metro
+              Parker & Castle Rock Junk Removal Coverage
             </h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              We dispatch from Parker and serve communities across the south and central metro. Select your city for local services and details.
+              We dispatch from our Parker home base, regularly serve Castle Rock, and cover communities across the south and central Denver metro. Select your city for local services and details.
             </p>
             <ul className="mt-7 grid grid-cols-2 gap-x-5 gap-y-2.5" aria-label="Mapped service areas">
               {locations.map((location, index) => (
