@@ -11,3 +11,4 @@
 
 - Prices come from the crew app (ezhaulawaycrew /api/public/pricing) via src/lib/price-store.ts; write prices in content as [[min]]/[[labor]]/[[load:N]]/[[item:Name]]/[[adj:id]] tokens, never literal dollar amounts — so the app stays the single price control center.
 - The Service Areas page uses a local SVG coverage map rather than a map API, keeping it fast, private, and free of usage charges.
+- MCP server (public, read-only) lives in src/lib/mcp/; tools expose only public site data — never leads or customer tables.
