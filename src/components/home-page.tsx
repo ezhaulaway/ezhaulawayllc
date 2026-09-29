@@ -181,7 +181,7 @@ export function HomePage() {
               <h1 className="mt-6 max-w-xl text-lg font-extrabold uppercase tracking-[0.08em] leading-tight text-foreground sm:text-xl lg:text-2xl">
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
-              <h2 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
+              <h2 className="mt-3 max-w-2xl text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
                 <span className="block">EZ IN,</span>
                 <span className="block text-primary">EZ OUT</span>
               </h2>
