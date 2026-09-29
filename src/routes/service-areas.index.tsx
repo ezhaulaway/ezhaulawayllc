@@ -7,6 +7,7 @@ import { locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { locationPhoto } from "@/content/location-images";
 import { SITE_URL } from "@/content/site";
+import { ServiceAreaMap } from "@/components/service-area-map";
 
 const title = "Service Areas — Denver Metro Junk Removal | EZ Haulaway";
 const description =
@@ -36,6 +37,8 @@ function ServiceAreasPage() {
         title="Proudly Serving the Denver Metro Area"
         text="We're based in Parker and work throughout the south metro and beyond. If your town isn't listed, call us — we probably still come out."
       />
+
+      <ServiceAreaMap />
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
