@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
+import stackedAsset from "@/assets/ez-haulaway-stacked.png.asset.json";
 import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
 import { QuoteForm } from "@/components/quote-form";
@@ -117,17 +118,25 @@ function AreasDropdown() {
 
 export function Wordmark() {
   return (
-    <Link to="/" className="group inline-flex items-center" aria-label="EZ Haulaway home">
+    <Link to="/" className="group inline-flex shrink-0 items-center" aria-label="EZ Haulaway home">
+      <img
+        src={stackedAsset.url}
+        alt="EZ Haulaway"
+        className="h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
+        width={1774}
+        height={887}
+      />
       <img
         src={wordmarkAsset.url}
         alt="EZ Haulaway"
-        className="h-10 w-auto transition-transform group-hover:-rotate-1 sm:h-12 md:h-14"
+        className="hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
         width={1254}
         height={302}
       />
     </Link>
   );
 }
+
 
 
 export function QuoteButton({
