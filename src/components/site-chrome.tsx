@@ -45,6 +45,7 @@ import { services } from "@/content/services";
 import { locations } from "@/content/locations";
 
 export const navItems = [
+  { label: "Instant Estimate", to: "/instant-estimate" },
   { label: "What We Take", to: "/what-we-take" },
   { label: "How It Works", to: "/how-it-works" },
   { label: "Pricing", to: "/pricing" },
@@ -207,6 +208,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
+          <Link to="/instant-estimate" className="font-semibold text-primary" activeProps={{ className: "text-foreground" }}>
+            Instant Estimate
+          </Link>
           <ServicesDropdown />
           <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             How It Works
@@ -374,6 +378,7 @@ export function SiteFooter() {
           <div>
             <p className="font-display font-bold">Company</p>
             <nav className="mt-4 grid gap-2.5 text-sm text-secondary-foreground/70" aria-label="Company links">
+              <Link to="/instant-estimate" className="font-semibold text-secondary-foreground">Instant Estimate</Link>
               <Link to="/how-it-works" className="hover:text-secondary-foreground">How It Works</Link>
               <Link to="/pricing" className="hover:text-secondary-foreground">Pricing</Link>
               <Link to="/about" className="hover:text-secondary-foreground">About Ben &amp; Zoe</Link>
