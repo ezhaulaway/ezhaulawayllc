@@ -104,8 +104,11 @@ function CityNotFound() {
   );
 }
 
+const INSTANT_ESTIMATE_CITIES = ["denver", "parker", "castle-rock"];
+
 function CityPage() {
   const { location } = Route.useLoaderData();
+  const pushInstantEstimate = INSTANT_ESTIMATE_CITIES.includes(location.slug);
   const photo = locationPhoto(location.slug);
   const top = location.topServices
     .map((slug) => services.find((item) => item.slug === slug))
@@ -144,13 +147,24 @@ function CityPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {pushInstantEstimate && (
+                <Button asChild size="lg">
+                  <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+                </Button>
+              )}
               <Button asChild size="lg" variant="outline">
                 <a href={`tel:${PHONE_TEL}`}>
                   <Phone /> Call or Text {PHONE}
                 </a>
               </Button>
             </div>
+            {pushInstantEstimate && (
+              <p className="mt-4 text-sm font-medium text-muted-foreground">
+                Free · Instant · No phone call required — snap a photo or describe your items and get a price
+                for {location.city} junk removal in seconds.
+              </p>
+            )}
           </div>
           {photo && (
             <figure className="overflow-hidden rounded-xl border border-border bg-muted">
@@ -232,9 +246,24 @@ function CityPage() {
               See everything we take <ArrowRight className="size-4" />
             </Link>
           </div>
-          <InlineQuoteForm />
+          <div>
+            {pushInstantEstimate && (
+              <div className="mb-6 rounded-lg border border-primary/40 bg-primary/5 p-6">
+                <p className="font-display text-lg font-bold">Need a price right now?</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Snap a photo or just describe your items and get an instant online estimate for{" "}
+                  {location.city} junk removal — no waiting on a callback.
+                </p>
+                <Button asChild size="lg" className="mt-4 w-full">
+                  <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+                </Button>
+              </div>
+            )}
+            <InlineQuoteForm />
+          </div>
         </div>
       </section>
+
 
       <section className="border-y border-border bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -338,6 +367,25 @@ function CityPage() {
           </div>
         </div>
       </section>
+
+      {pushInstantEstimate && (
+        <section className="border-y border-border bg-muted py-14">
+          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center lg:px-8">
+            <div>
+              <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+                Get a {location.city} Junk Removal Price in 30 Seconds
+              </h2>
+              <p className="mt-3 max-w-xl leading-7 text-muted-foreground">
+                Skip the phone call. Send a photo or a quick description and see your price range on screen right
+                now — free, instant, and no obligation.
+              </p>
+            </div>
+            <Button asChild size="lg" className="w-full shrink-0 sm:w-auto">
+              <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+            </Button>
+          </div>
+        </section>
+      )}
 
       <CtaBand title={`Ready to Clear It Out in ${location.city}?`} />
     </PageShell>
