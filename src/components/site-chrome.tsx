@@ -122,10 +122,11 @@ export function Wordmark() {
       <img
         src={stackedAsset.url}
         alt="EZ Haulaway"
-        className="h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
-        width={1774}
-        height={887}
+        className="h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
+        width={1709}
+        height={832}
       />
+
       <img
         src={wordmarkAsset.url}
         alt="EZ Haulaway"
