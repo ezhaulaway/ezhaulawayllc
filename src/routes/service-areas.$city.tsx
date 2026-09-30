@@ -246,9 +246,24 @@ function CityPage() {
               See everything we take <ArrowRight className="size-4" />
             </Link>
           </div>
-          <InlineQuoteForm />
+          <div>
+            {pushInstantEstimate && (
+              <div className="mb-6 rounded-lg border border-primary/40 bg-primary/5 p-6">
+                <p className="font-display text-lg font-bold">Need a price right now?</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  Snap a photo or just describe your items and get an instant online estimate for{" "}
+                  {location.city} junk removal — no waiting on a callback.
+                </p>
+                <Button asChild size="lg" className="mt-4 w-full">
+                  <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+                </Button>
+              </div>
+            )}
+            <InlineQuoteForm />
+          </div>
         </div>
       </section>
+
 
       <section className="border-y border-border bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
