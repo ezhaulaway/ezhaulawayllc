@@ -189,7 +189,9 @@ export function HomePage() {
                 Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <QuoteButton />
+                <Button asChild size="lg">
+                  <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+                </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href={`tel:${PHONE.replaceAll("-", "")}`}><Phone /> Call or Text {PHONE}</a>
                 </Button>
@@ -483,7 +485,9 @@ export function HomePage() {
               <p className="mt-4 max-w-xl text-primary-foreground/80">Send a few details or give us a call. Getting started is easy.</p>
             </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <QuoteButton className="bg-card text-foreground hover:bg-card/90" />
+              <Button asChild size="lg" className="bg-card text-foreground hover:bg-card/90">
+                <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+              </Button>
               <Button asChild variant="outline" size="lg" className="border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 <a href={`sms:${PHONE.replaceAll("-", "")}`}><MessageSquareText /> Call or Text {PHONE}</a>
               </Button>
