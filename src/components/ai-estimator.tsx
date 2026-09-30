@@ -27,12 +27,18 @@ async function resize(file: File): Promise<string> {
   return canvas.toDataURL("image/jpeg", 0.8);
 }
 
-export function AiEstimator() {
+type AiEstimatorProps = {
+  campaign?: boolean;
+  showIntro?: boolean;
+};
+
+export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorProps) {
   const run = useServerFn(generateAiEstimate);
   const lockIn = useServerFn(submitEstimateLead);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [preferredDay, setPreferredDay] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -81,7 +87,10 @@ export function AiEstimator() {
     try {
       await lockIn({
         data: {
-          name, phone, address, description,
+          name, phone, address,
+          description: preferredDay.trim()
+            ? `${description}\n\nPreferred service day: ${preferredDay.trim()}`
+            : description,
           photoCount: images.length,
           estimate: {
             load_size: estimate.load_size,
@@ -103,9 +112,9 @@ export function AiEstimator() {
   const inputCls = "mt-1 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
   return (
-    <section id="instant-estimate" className="py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl px-5 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+    <section id="instant-estimate" className={campaign ? "py-4 sm:py-6" : "py-16 sm:py-24"}>
+      <div className={campaign ? "mx-auto max-w-6xl" : "mx-auto max-w-5xl px-5 lg:px-8"}>
+        {showIntro && <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
             100% Free · Instant Junk Removal Estimator
           </p>
@@ -116,10 +125,10 @@ export function AiEstimator() {
             No waiting on a callback, no obligation, no cost. Snap up to 4 photos or just describe your junk and get
             an instant price range for hauling it away — in seconds, right here.
           </p>
-        </div>
+        </div>}
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2">
-          <form onSubmit={submit} className="rounded-lg border border-border bg-card p-6 shadow-sm">
+        <div className={`${showIntro ? "mt-10" : ""} grid gap-5 lg:grid-cols-2`}>
+          <form onSubmit={submit} className={`rounded-lg border border-border bg-card shadow-sm ${campaign ? "p-5 sm:p-6" : "p-6"}`}>
 
 
             <label className="block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
@@ -139,14 +148,16 @@ export function AiEstimator() {
                 {images.map((src, i) => (
                   <div key={i} className="relative aspect-square overflow-hidden rounded-md border border-border">
                     <img src={src} alt={`Upload ${i + 1}`} className="h-full w-full object-cover" />
-                    <button
+                    <Button
                       type="button"
+                      variant="outline"
+                      size="icon"
                       aria-label="Remove photo"
                       onClick={() => setImages((p) => p.filter((_, j) => j !== i))}
-                      className="absolute right-1 top-1 rounded-full bg-background/90 p-0.5 text-foreground"
+                      className="absolute right-1 top-1 size-7 rounded-full bg-background/90 text-foreground"
                     >
                       <X className="h-3.5 w-3.5" />
-                    </button>
+                    </Button>
                   </div>
                 ))}
                 {images.length < 4 && (
@@ -169,7 +180,7 @@ export function AiEstimator() {
             </p>
           </form>
 
-          <div className="rounded-lg border border-border bg-muted p-6">
+          <div className={`rounded-lg border border-border bg-muted ${campaign ? "min-h-72 p-5 sm:p-6" : "p-6"}`}>
             {!estimate && !loading && (
               <div className="flex h-full flex-col items-center justify-center text-center text-muted-foreground">
                 <Sparkles className="h-8 w-8 text-primary" />
@@ -246,6 +257,12 @@ export function AiEstimator() {
                     <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
                     <label className="mt-3 block text-sm font-semibold" htmlFor="ai-address">Job address</label>
                     <input id="ai-address" required maxLength={200} autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Street, city" className={inputCls} />
+                    {campaign && (
+                      <>
+                        <label className="mt-3 block text-sm font-semibold" htmlFor="ai-preferred-day">Preferred service day (optional)</label>
+                        <input id="ai-preferred-day" maxLength={80} value={preferredDay} onChange={(e) => setPreferredDay(e.target.value)} placeholder="e.g. Friday afternoon" className={inputCls} />
+                      </>
+                    )}
                     {leadError && <p className="mt-3 text-sm font-semibold text-destructive">{leadError}</p>}
                     <Button type="submit" className="mt-4 w-full" disabled={leadSending}>
                       {leadSending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : "Lock in my quote"}
