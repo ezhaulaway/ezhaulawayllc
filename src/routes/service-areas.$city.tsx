@@ -104,8 +104,11 @@ function CityNotFound() {
   );
 }
 
+const INSTANT_ESTIMATE_CITIES = ["denver", "parker", "castle-rock"];
+
 function CityPage() {
   const { location } = Route.useLoaderData();
+  const pushInstantEstimate = INSTANT_ESTIMATE_CITIES.includes(location.slug);
   const photo = locationPhoto(location.slug);
   const top = location.topServices
     .map((slug) => services.find((item) => item.slug === slug))
