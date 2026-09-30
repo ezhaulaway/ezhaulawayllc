@@ -368,6 +368,25 @@ function CityPage() {
         </div>
       </section>
 
+      {pushInstantEstimate && (
+        <section className="border-y border-border bg-muted py-14">
+          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center lg:px-8">
+            <div>
+              <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+                Get a {location.city} Junk Removal Price in 30 Seconds
+              </h2>
+              <p className="mt-3 max-w-xl leading-7 text-muted-foreground">
+                Skip the phone call. Send a photo or a quick description and see your price range on screen right
+                now — free, instant, and no obligation.
+              </p>
+            </div>
+            <Button asChild size="lg" className="w-full shrink-0 sm:w-auto">
+              <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+            </Button>
+          </div>
+        </section>
+      )}
+
       <CtaBand title={`Ready to Clear It Out in ${location.city}?`} />
     </PageShell>
   );
