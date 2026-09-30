@@ -147,13 +147,24 @@ function CityPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {pushInstantEstimate && (
+                <Button asChild size="lg">
+                  <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
+                </Button>
+              )}
               <Button asChild size="lg" variant="outline">
                 <a href={`tel:${PHONE_TEL}`}>
                   <Phone /> Call or Text {PHONE}
                 </a>
               </Button>
             </div>
+            {pushInstantEstimate && (
+              <p className="mt-4 text-sm font-medium text-muted-foreground">
+                Free · Instant · No phone call required — snap a photo or describe your items and get a price
+                for {location.city} junk removal in seconds.
+              </p>
+            )}
           </div>
           {photo && (
             <figure className="overflow-hidden rounded-xl border border-border bg-muted">
