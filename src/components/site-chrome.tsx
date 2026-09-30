@@ -327,7 +327,13 @@ export function SiteHeader() {
                   ))}
               </nav>
               <div className="mt-8 grid gap-3">
-                <QuoteButton className="w-full" />
+                <SheetClose asChild>
+                  <Button asChild size="lg" className="w-full">
+                    <Link to="/instant-estimate">Instant Estimate</Link>
+                  </Button>
+                </SheetClose>
+                <QuoteButton className="w-full" variant="outline" />
+
                 <Button asChild variant="outline" size="lg">
                   <a href={`sms:${PHONE_TEL}`}>
                     <MessageSquareText /> Text {PHONE}
