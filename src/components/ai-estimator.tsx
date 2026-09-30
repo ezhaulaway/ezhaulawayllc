@@ -23,7 +23,9 @@ async function resize(file: File): Promise<string> {
   const canvas = document.createElement("canvas");
   canvas.width = Math.round(img.width * scale);
   canvas.height = Math.round(img.height * scale);
-  canvas.getContext("2d")!.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const context = canvas.getContext("2d");
+  if (!context) throw new Error("Photo could not be prepared.");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
   return canvas.toDataURL("image/jpeg", 0.8);
 }
 
@@ -89,7 +91,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
         data: {
           name, phone, address,
           description: preferredDay.trim()
-            ? `${description}\n\nPreferred service day: ${preferredDay.trim()}`
+            ? `${description.slice(0, Math.max(0, 1970 - preferredDay.trim().length))}\n\nPreferred day: ${preferredDay.trim()}`
             : description,
           photoCount: images.length,
           estimate: {

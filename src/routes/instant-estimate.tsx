@@ -7,7 +7,6 @@ import {
   EyeOff,
   MapPin,
   MessageSquareText,
-  ShieldCheck,
   Sparkles,
   Star,
   Truck,

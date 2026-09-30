@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as InstantEstimateRouteImport } from './routes/instant-estimate'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -49,6 +50,11 @@ const FaqRoute = FaqRouteImport.update({
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstantEstimateRoute = InstantEstimateRouteImport.update({
+  id: '/instant-estimate',
+  path: '/instant-estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/instant-estimate': typeof InstantEstimateRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/instant-estimate': typeof InstantEstimateRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/instant-estimate': typeof InstantEstimateRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -172,6 +181,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/instant-estimate'
     | '/mcp'
     | '/pricing'
     | '/privacy-policy'
@@ -190,6 +200,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/instant-estimate'
     | '/mcp'
     | '/pricing'
     | '/privacy-policy'
@@ -208,6 +219,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/how-it-works'
+    | '/instant-estimate'
     | '/mcp'
     | '/pricing'
     | '/privacy-policy'
@@ -227,6 +239,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  InstantEstimateRoute: typeof InstantEstimateRoute
   McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -275,6 +288,13 @@ declare module '@tanstack/react-router' {
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/instant-estimate': {
+      id: '/instant-estimate'
+      path: '/instant-estimate'
+      fullPath: '/instant-estimate'
+      preLoaderRoute: typeof InstantEstimateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -363,6 +383,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
+  InstantEstimateRoute: InstantEstimateRoute,
   McpRoute: McpRoute,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
