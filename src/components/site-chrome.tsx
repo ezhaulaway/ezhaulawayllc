@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
+import stackedAsset from "@/assets/ez-haulaway-stacked.png.asset.json";
 import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
 import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
 import { QuoteForm } from "@/components/quote-form";
@@ -117,17 +118,26 @@ function AreasDropdown() {
 
 export function Wordmark() {
   return (
-    <Link to="/" className="group inline-flex items-center" aria-label="EZ Haulaway home">
+    <Link to="/" className="group inline-flex shrink-0 items-center" aria-label="EZ Haulaway home">
+      <img
+        src={stackedAsset.url}
+        alt="EZ Haulaway"
+        className="h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
+        width={1709}
+        height={832}
+      />
+
       <img
         src={wordmarkAsset.url}
         alt="EZ Haulaway"
-        className="h-10 w-auto transition-transform group-hover:-rotate-1 sm:h-12 md:h-14"
+        className="hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
         width={1254}
         height={302}
       />
     </Link>
   );
 }
+
 
 
 export function QuoteButton({
@@ -208,9 +218,6 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
-          <Link to="/instant-estimate" className="font-semibold text-primary" activeProps={{ className: "text-foreground" }}>
-            Instant Estimate
-          </Link>
           <ServicesDropdown />
           <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             How It Works
@@ -236,8 +243,11 @@ export function SiteHeader() {
               <Phone /> {PHONE}
             </a>
           </Button>
-          <QuoteButton />
+          <Button asChild size="lg">
+            <Link to="/instant-estimate">Instant Estimate</Link>
+          </Button>
         </div>
+
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway">
@@ -318,7 +328,13 @@ export function SiteHeader() {
                   ))}
               </nav>
               <div className="mt-8 grid gap-3">
-                <QuoteButton className="w-full" />
+                <SheetClose asChild>
+                  <Button asChild size="lg" className="w-full">
+                    <Link to="/instant-estimate">Instant Estimate</Link>
+                  </Button>
+                </SheetClose>
+                <QuoteButton className="w-full" variant="outline" />
+
                 <Button asChild variant="outline" size="lg">
                   <a href={`sms:${PHONE_TEL}`}>
                     <MessageSquareText /> Text {PHONE}
