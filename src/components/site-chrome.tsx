@@ -217,9 +217,6 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
         <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
-          <Link to="/instant-estimate" className="font-semibold text-primary" activeProps={{ className: "text-foreground" }}>
-            Instant Estimate
-          </Link>
           <ServicesDropdown />
           <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             How It Works
@@ -245,8 +242,11 @@ export function SiteHeader() {
               <Phone /> {PHONE}
             </a>
           </Button>
-          <QuoteButton />
+          <Button asChild size="lg">
+            <Link to="/instant-estimate">Instant Estimate</Link>
+          </Button>
         </div>
+
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway">
