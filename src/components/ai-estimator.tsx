@@ -17,6 +17,51 @@ const LOAD_LABEL: Record<AiEstimate["load_size"], string> = {
   multiple_loads: "More than one trailer",
 };
 
+/** How full the mini trailer graphic should look, 0–1. */
+const LOAD_FILL: Record<AiEstimate["load_size"], number> = {
+  minimum: 0.08,
+  eighth: 0.125,
+  quarter: 0.25,
+  three_eighths: 0.375,
+  half: 0.5,
+  five_eighths: 0.625,
+  three_quarters: 0.75,
+  seven_eighths: 0.875,
+  full: 1,
+  multiple_loads: 1,
+};
+
+/** Mini side-view dump trailer with junk filling from the rear. */
+function TrailerGauge({ fill, label }: { fill: number; label: string }) {
+  // Bed interior: x 14–170, y 30–62. Junk fills right-to-left (rear first).
+  const bedX = 14;
+  const bedW = 156;
+  const junkW = Math.max(6, Math.round(bedW * Math.min(1, fill)));
+  const junkX = bedX + bedW - junkW;
+  const heap = fill >= 0.99;
+  return (
+    <svg viewBox="0 0 220 92" role="img" aria-label={label} className="w-full max-w-72">
+      {/* junk fill */}
+      <rect x={junkX} y={heap ? 22 : 34} width={junkW} height={heap ? 40 : 28} rx={4} className="fill-primary/80" />
+      {heap && <circle cx={junkX + 10} cy={24} r={7} className="fill-primary/80" />}
+      {fill > 0.3 && <circle cx={bedX + bedW - 8} cy={heap ? 18 : 30} r={6} className="fill-primary" />}
+      {/* trailer bed walls */}
+      <path d="M10 30 h164 v34 h-164 z M10 30 l-6 -10 M174 30 l6 -10" fill="none" strokeWidth={4} className="stroke-foreground" strokeLinejoin="round" />
+      {/* floor line + hitch */}
+      <path d="M4 68 h180 M184 68 h22 l8 -6" fill="none" strokeWidth={4} className="stroke-foreground" strokeLinecap="round" />
+      {/* wheels */}
+      <circle cx={60} cy={76} r={10} className="fill-foreground" />
+      <circle cx={60} cy={76} r={4} className="fill-background" />
+      <circle cx={96} cy={76} r={10} className="fill-foreground" />
+      <circle cx={96} cy={76} r={4} className="fill-background" />
+      {/* load tick marks */}
+      {[0.25, 0.5, 0.75].map((t) => (
+        <line key={t} x1={bedX + bedW * t} y1={64} x2={bedX + bedW * t} y2={58} strokeWidth={2} className="stroke-muted-foreground/60" />
+      ))}
+    </svg>
+  );
+}
+
 async function resize(file: File): Promise<string> {
   const img = await createImageBitmap(file);
   const scale = Math.min(1, 1024 / Math.max(img.width, img.height));
