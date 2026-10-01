@@ -242,60 +242,76 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
             )}
             {estimate && (
               <div>
-                <p className="text-sm font-bold uppercase tracking-wide text-primary">{LOAD_LABEL[estimate.load_size]}</p>
-                <p className="mt-1 text-4xl font-extrabold">
-                  {Math.round(estimate.price_low) === Math.round(estimate.price_high)
-                    ? `$${Math.round(estimate.price_low)}`
-                    : `$${Math.round(estimate.price_low)}–$${Math.round(estimate.price_high)}`}
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">Preliminary estimate · {estimate.confidence} confidence</p>
-                <p className="mt-4 text-sm leading-6">{estimate.summary}</p>
+                {/* Price + trailer gauge */}
+                <div className="rounded-lg border border-primary/40 bg-background p-4 text-center">
+                  <TrailerGauge fill={LOAD_FILL[estimate.load_size]} label={`Trailer graphic showing ${LOAD_LABEL[estimate.load_size].toLowerCase()}`} />
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wide text-primary">{LOAD_LABEL[estimate.load_size]}</p>
+                  <p className="mt-1 font-display text-4xl font-extrabold">
+                    {Math.round(estimate.price_low) === Math.round(estimate.price_high)
+                      ? `$${Math.round(estimate.price_low)}`
+                      : `$${Math.round(estimate.price_low)}–$${Math.round(estimate.price_high)}`}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">Preliminary estimate · {estimate.confidence} confidence</p>
+                </div>
 
-                <h3 className="mt-5 text-sm font-bold">Recommended service</h3>
-                <p className="mt-1 text-sm">{estimate.recommended_service}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{estimate.crew_and_time}</p>
+                {/* Job scope at a glance */}
+                <div className="mt-3 grid gap-2 text-sm">
+                  <div className="rounded-md bg-background p-3">
+                    <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Your job</p>
+                    <p className="mt-1 leading-6">{estimate.summary}</p>
+                  </div>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    <div className="rounded-md bg-background p-3">
+                      <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Service</p>
+                      <p className="mt-1 font-semibold">{estimate.recommended_service}</p>
+                    </div>
+                    <div className="rounded-md bg-background p-3">
+                      <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">What it takes</p>
+                      <p className="mt-1 font-semibold">{estimate.crew_and_time}</p>
+                    </div>
+                  </div>
+                  {estimate.items_identified.length > 0 && (
+                    <div className="rounded-md bg-background p-3">
+                      <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">What we spotted</p>
+                      <ul className="mt-1.5 flex flex-wrap gap-1.5">
+                        {estimate.items_identified.map((it, i) => (
+                          <li key={i} className="rounded-full border border-border px-2.5 py-0.5 text-xs">{it}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {estimate.special_items.length > 0 && (
+                    <div className="rounded-md bg-background p-3">
+                      <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Priced individually</p>
+                      <ul className="mt-1 space-y-0.5">
+                        {estimate.special_items.map((s, i) => (
+                          <li key={i}><span className="font-semibold">{s.item}:</span> {s.note}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {estimate.prep_tips.length > 0 && (
+                    <details className="rounded-md bg-background p-3">
+                      <summary className="cursor-pointer text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                        Before we arrive ({estimate.prep_tips.length} quick tips)
+                      </summary>
+                      <ul className="mt-2 list-disc space-y-1 pl-5">
+                        {estimate.prep_tips.map((t, i) => <li key={i}>{t}</li>)}
+                      </ul>
+                    </details>
+                  )}
+                </div>
 
-                {estimate.items_identified.length > 0 && (
-                  <>
-                    <h3 className="mt-5 text-sm font-bold">What we spotted</h3>
-                    <ul className="mt-1 flex flex-wrap gap-1.5">
-                      {estimate.items_identified.map((it, i) => (
-                        <li key={i} className="rounded-full bg-background px-2.5 py-1 text-xs">{it}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-                {estimate.special_items.length > 0 && (
-                  <>
-                    <h3 className="mt-5 text-sm font-bold">Priced individually</h3>
-                    <ul className="mt-1 space-y-1 text-sm">
-                      {estimate.special_items.map((s, i) => (
-                        <li key={i}><span className="font-semibold">{s.item}:</span> {s.note}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-                {estimate.prep_tips.length > 0 && (
-                  <>
-                    <h3 className="mt-5 text-sm font-bold">Before we arrive</h3>
-                    <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
-                      {estimate.prep_tips.map((t, i) => <li key={i}>{t}</li>)}
-                    </ul>
-                  </>
-                )}
-
-                <p className="mt-6 text-xs text-muted-foreground">
+                <p className="mt-3 text-xs text-muted-foreground">
                   Estimates and pricing can subject to change. Final price is confirmed before any work starts.
                 </p>
                 {leadSent ? (
-                  <div className="mt-5 rounded-md border border-primary bg-background p-4 text-center" role="status">
+                  <div className="mt-4 rounded-md border border-primary bg-background p-4 text-center" role="status">
                     <p className="font-bold">You're locked in!</p>
                     <p className="mt-1 text-sm text-muted-foreground">We'll call or text you shortly with your actual quote.</p>
                   </div>
                 ) : (
-                  <form onSubmit={submitLead} className="mt-5 rounded-md border border-border bg-background p-4">
+                  <form onSubmit={submitLead} className="mt-4 rounded-lg border-2 border-primary bg-background p-4">
                     <p className="font-bold">Get your actual quote & lock in this price</p>
                     <p className="mt-1 text-xs text-muted-foreground">We'll reach out fast to confirm — no spam, ever.</p>
                     <label className="mt-3 block text-sm font-semibold" htmlFor="ai-name">Name</label>
