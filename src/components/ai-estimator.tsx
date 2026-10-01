@@ -242,7 +242,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
                 )}
 
                 <p className="mt-6 text-xs text-muted-foreground">
-                  AI-generated ballpark. Final price is confirmed on site before any work starts.
+                  Estimates and pricing can subject to change. Final price is confirmed before any work starts.
                 </p>
                 {leadSent ? (
                   <div className="mt-5 rounded-md border border-primary bg-background p-4 text-center" role="status">
