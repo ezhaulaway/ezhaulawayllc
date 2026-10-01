@@ -6,3 +6,5 @@
 - [ ] Publish pending changes (cartoon trailer, AI estimate lock-in flow, llms.txt, SEO text, favicon, alt text, GA)
 - [x] Add a lightweight linked service-area map to the Service Areas page
 - [x] Build a dedicated instant photo estimate campaign page
+- [x] Redesign estimate result with mini trailer gauge and scannable job scope
+- [x] Add crew photo to the instant estimate page
