@@ -17,6 +17,7 @@ import { FaqAccordion, PageShell } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
+import crewLoadingAsset from "@/assets/crew-loading-trailer.png.asset.json";
 
 const title = "Instant Junk Removal Quote Online | EZ Haulaway";
 const description =
@@ -149,6 +150,12 @@ function InstantEstimatePage() {
                 <p className="mt-1 text-sm text-secondary-foreground/65">Your request goes directly to Ben and the EZ Haulaway crew.</p>
               </div>
             </div>
+            <img
+              src={crewLoadingAsset.url}
+              alt="The EZ Haulaway crew loading furniture and junk into the company dump trailer at a storage facility"
+              className="mt-7 w-full rounded-lg border border-secondary-foreground/15 object-cover"
+              loading="lazy"
+            />
           </div>
           <div className="rounded-lg bg-background p-3 text-foreground shadow-lg sm:p-5">
             <AiEstimator campaign showIntro={false} />
