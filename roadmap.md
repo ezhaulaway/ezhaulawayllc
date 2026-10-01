@@ -7,4 +7,4 @@
 - [x] Add a lightweight linked service-area map to the Service Areas page
 - [x] Build a dedicated instant photo estimate campaign page
 - [x] Redesign estimate result with mini trailer gauge and scannable job scope
-- [ ] Add crew photo to the instant estimate page
+- [x] Add crew photo to the instant estimate page
