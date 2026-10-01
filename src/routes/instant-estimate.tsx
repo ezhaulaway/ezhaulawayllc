@@ -127,9 +127,9 @@ function InstantEstimatePage() {
               Parker, Castle Rock &amp; Denver Metro
             </p>
             <h1 className="mt-4 max-w-xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
-              Instant Junk Removal Quote Online
+              Instant Junk Removal Quote
             </h1>
-            <p className="mt-4 text-xl font-bold text-primary">No phone call required.</p>
+            <p className="mt-4 text-xl font-bold text-primary">NO PHONE CALL REQUIRED</p>
             <p className="mt-5 max-w-xl text-base leading-7 text-secondary-foreground/75 sm:text-lg">
               Snap a photo or describe what you have. Our free junk removal cost estimator gives you a preliminary
               price range before asking for your name or phone number.
