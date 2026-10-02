@@ -79,6 +79,26 @@ type AiEstimatorProps = {
   showIntro?: boolean;
 };
 
+function trackingInfo() {
+  const q = new URLSearchParams(window.location.search);
+  const cut = (v: string | null, n: number) => (v ? v.slice(0, n) : undefined);
+  let referrer: string | undefined;
+  try {
+    const r = document.referrer ? new URL(document.referrer) : null;
+    if (r && r.host !== window.location.host) referrer = r.host.slice(0, 500);
+  } catch {
+    /* ignore */
+  }
+  return {
+    page: window.location.pathname.slice(0, 200),
+    referrer,
+    utm_source: cut(q.get("utm_source"), 100),
+    utm_medium: cut(q.get("utm_medium"), 100),
+    utm_campaign: cut(q.get("utm_campaign"), 150),
+    device: window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop",
+  };
+}
+
 export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorProps) {
   const run = useServerFn(generateAiEstimate);
   const lockIn = useServerFn(submitEstimateLead);
@@ -94,6 +114,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
   const [leadSending, setLeadSending] = useState(false);
   const [leadError, setLeadError] = useState<string | null>(null);
   const [leadSent, setLeadSent] = useState(false);
+  const [eventId, setEventId] = useState<string | null>(null);
 
   async function addFiles(files: FileList | null) {
     if (!files) return;
@@ -113,8 +134,11 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     setEstimate(null);
     setLeadSent(false);
     try {
-      const res = await run({ data: { description, images } });
-      if (res.ok) setEstimate(res.estimate);
+      const res = await run({ data: { description, images, track: trackingInfo() } });
+      if (res.ok) {
+        setEstimate(res.estimate);
+        setEventId(res.eventId);
+      }
       else setError(res.error);
     } catch {
       setError("Something went wrong. Please try again or send a quote request.");
@@ -139,6 +163,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
             ? `${description.slice(0, Math.max(0, 1970 - preferredDay.trim().length))}\n\nPreferred day: ${preferredDay.trim()}`
             : description,
           photoCount: images.length,
+          eventId,
           estimate: {
             load_size: estimate.load_size,
             price_low: estimate.price_low,
