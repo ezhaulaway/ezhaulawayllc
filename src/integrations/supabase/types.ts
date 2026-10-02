@@ -89,6 +89,81 @@ export type Database = {
         }
         Relationships: []
       }
+      estimate_events: {
+        Row: {
+          city: string | null
+          country: string | null
+          created_at: string
+          description: string | null
+          device: string | null
+          est_credits: number | null
+          id: string
+          input_tokens: number | null
+          items_identified: string[]
+          load_size: string | null
+          locked_in: boolean
+          locked_in_at: string | null
+          output_tokens: number | null
+          page: string | null
+          photo_count: number
+          price_high: number | null
+          price_low: number | null
+          referrer: string | null
+          region: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          description?: string | null
+          device?: string | null
+          est_credits?: number | null
+          id?: string
+          input_tokens?: number | null
+          items_identified?: string[]
+          load_size?: string | null
+          locked_in?: boolean
+          locked_in_at?: string | null
+          output_tokens?: number | null
+          page?: string | null
+          photo_count?: number
+          price_high?: number | null
+          price_low?: number | null
+          referrer?: string | null
+          region?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          description?: string | null
+          device?: string | null
+          est_credits?: number | null
+          id?: string
+          input_tokens?: number | null
+          items_identified?: string[]
+          load_size?: string | null
+          locked_in?: boolean
+          locked_in_at?: string | null
+          output_tokens?: number | null
+          page?: string | null
+          photo_count?: number
+          price_high?: number | null
+          price_low?: number | null
+          referrer?: string | null
+          region?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: []
+      }
       google_reviews_cache: {
         Row: {
           fetched_at: string
