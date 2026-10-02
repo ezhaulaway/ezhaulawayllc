@@ -185,6 +185,6 @@
 
 /* Thin white outline around the logo so it stays visible on dark backgrounds */
 @utility logo-outline {
-  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff)
-    drop-shadow(0 -1.5px 0 #fff);
+  filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff)
+    drop-shadow(0 -1px 0 #fff);
 }
