@@ -1,7 +1,19 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+const trackSchema = z
+  .object({
+    page: z.string().max(200).optional(),
+    referrer: z.string().max(500).optional(),
+    utm_source: z.string().max(100).optional(),
+    utm_medium: z.string().max(100).optional(),
+    utm_campaign: z.string().max(150).optional(),
+    device: z.string().max(20).optional(),
+  })
+  .optional();
+
 const inputSchema = z.object({
+  track: trackSchema,
   description: z.string().trim().min(5).max(2000),
   images: z
     .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
@@ -191,7 +203,7 @@ METHOD: Estimate volume from the photos and description, pick the closest fill l
 
 export const generateAiEstimate = createServerFn({ method: "POST" })
   .validator((data: unknown) => inputSchema.parse(data))
-  .handler(async ({ data }): Promise<{ ok: true; estimate: AiEstimate } | { ok: false; error: string }> => {
+  .handler(async ({ data }): Promise<{ ok: true; estimate: AiEstimate; eventId: string | null } | { ok: false; error: string }> => {
     const key = process.env["LOVABLE_API_KEY"];
     if (!key) return { ok: false, error: "Estimator is not configured." };
 
@@ -234,6 +246,8 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     let buffer = "";
     let text = "";
     let refused = false;
+    let inputTokens: number | null = null;
+    let outputTokens: number | null = null;
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -249,6 +263,10 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
           const evt = JSON.parse(payload);
           if (evt.type === "response.output_text.delta") text += evt.delta ?? "";
           if (evt.type === "response.refusal.delta") refused = true;
+          if (evt.type === "response.completed" && evt.response?.usage) {
+            inputTokens = evt.response.usage.input_tokens ?? null;
+            outputTokens = evt.response.usage.output_tokens ?? null;
+          }
           if (evt.type === "error" || evt.type === "response.failed") {
             console.error("AI estimate stream error", payload);
             return { ok: false, error: "We couldn't generate an estimate right now. Please send a quote request instead." };
@@ -267,10 +285,66 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
 
-    return { ok: true, estimate };
+    const eventId = await logEstimateEvent(data, estimate, inputTokens, outputTokens);
+    return { ok: true, estimate, eventId };
   });
 
+async function logEstimateEvent(
+  data: z.infer<typeof inputSchema>,
+  estimate: AiEstimate,
+  inputTokens: number | null,
+  outputTokens: number | null,
+): Promise<string | null> {
+  try {
+    const { getRequest } = await import("@tanstack/react-start/server");
+    const req = getRequest() as (Request & { cf?: Record<string, unknown> }) | undefined;
+    const cf = (req?.cf ?? {}) as Record<string, unknown>;
+    const h = (n: string) => req?.headers.get(n) || null;
+    const str = (v: unknown) => (typeof v === "string" && v ? v.slice(0, 100) : null);
+    // Approximate AI cost in Lovable credits from token usage (actual billing may vary).
+    const estCredits =
+      inputTokens != null && outputTokens != null
+        ? Math.round((inputTokens * 0.00004 + outputTokens * 0.00014) * 10000) / 10000
+        : null;
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const t = data.track ?? {};
+    const { data: row, error } = await supabaseAdmin
+      .from("estimate_events")
+      .insert({
+        page: t.page ?? null,
+        referrer: t.referrer ?? null,
+        utm_source: t.utm_source ?? null,
+        utm_medium: t.utm_medium ?? null,
+        utm_campaign: t.utm_campaign ?? null,
+        device: t.device ?? null,
+        city: str(cf.city) ?? h("cf-ipcity"),
+        region: str(cf.region) ?? h("cf-region"),
+        country: str(cf.country) ?? h("cf-ipcountry"),
+        description: data.description,
+        photo_count: data.images.length,
+        load_size: LOAD_TEXT[estimate.load_size] ?? estimate.load_size,
+        price_low: Math.round(estimate.price_low),
+        price_high: Math.round(estimate.price_high),
+        items_identified: estimate.items_identified ?? [],
+        input_tokens: inputTokens,
+        output_tokens: outputTokens,
+        est_credits: estCredits,
+      })
+      .select("id")
+      .single();
+    if (error) {
+      console.error("estimate event insert error", error);
+      return null;
+    }
+    return row.id;
+  } catch (e) {
+    console.error("estimate event log failed", e);
+    return null;
+  }
+}
+
 const lockInSchema = z.object({
+  eventId: z.string().uuid().nullable().optional(),
   name: z.string().trim().min(1).max(100),
   phone: z.string().trim().min(7).max(30),
   address: z.string().trim().min(3).max(200),
@@ -298,5 +372,16 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
       },
       data.estimate as unknown as AiEstimate,
     );
+    if (data.eventId) {
+      try {
+        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+        await supabaseAdmin
+          .from("estimate_events")
+          .update({ locked_in: true, locked_in_at: new Date().toISOString() })
+          .eq("id", data.eventId);
+      } catch (e) {
+        console.error("estimate event lock-in update failed", e);
+      }
+    }
     return { ok: true as const };
   });
