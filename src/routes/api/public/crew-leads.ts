@@ -107,8 +107,61 @@ export const Route = createFileRoute("/api/public/crew-leads")({
           }),
         );
 
-        return Response.json({ ai_estimate_requests, quote_requests });
+        const estimator_stats = await loadEstimatorStats(supabaseAdmin);
+
+        return Response.json({ ai_estimate_requests, quote_requests, estimator_stats });
       },
     },
   },
 });
+
+// Instant-estimator usage stats (every estimate run, with or without contact info).
+async function loadEstimatorStats(
+  supabaseAdmin: typeof import("@/integrations/supabase/client.server").supabaseAdmin,
+) {
+  const { data, error } = await supabaseAdmin
+    .from("estimate_events")
+    .select(
+      "id, created_at, page, referrer, utm_source, utm_medium, utm_campaign, city, region, country, device, description, photo_count, load_size, price_low, price_high, items_identified, est_credits, locked_in, locked_in_at",
+    )
+    .order("created_at", { ascending: false })
+    .limit(1000);
+  if (error) {
+    console.error("crew-leads estimate_events error", error);
+    return null;
+  }
+  const rows = data ?? [];
+  const now = Date.now();
+  const within = (days: number) =>
+    rows.filter((r) => now - new Date(r.created_at).getTime() <= days * 86400000);
+  const summarize = (list: typeof rows) => {
+    const locked = list.filter((r) => r.locked_in).length;
+    const credits = list.reduce((sum, r) => sum + Number(r.est_credits ?? 0), 0);
+    return {
+      estimates: list.length,
+      locked_in: locked,
+      conversion_rate_percent: list.length ? Math.round((locked / list.length) * 1000) / 10 : 0,
+      est_ai_credits: Math.round(credits * 100) / 100,
+    };
+  };
+  const countBy = (key: "page" | "device" | "city" | "utm_source" | "referrer") => {
+    const m: Record<string, number> = {};
+    for (const r of rows) {
+      const k = (r[key] as string | null) || "unknown";
+      m[k] = (m[k] ?? 0) + 1;
+    }
+    return m;
+  };
+  return {
+    note: "est_ai_credits is approximate, calculated from AI token usage.",
+    all_time: summarize(rows),
+    last_7_days: summarize(within(7)),
+    last_30_days: summarize(within(30)),
+    by_page: countBy("page"),
+    by_device: countBy("device"),
+    by_city: countBy("city"),
+    by_source: countBy("utm_source"),
+    by_referrer: countBy("referrer"),
+    recent_estimates: rows.slice(0, 100),
+  };
+}
