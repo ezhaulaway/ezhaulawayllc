@@ -122,7 +122,7 @@ export function Wordmark() {
       <img
         src={stackedAsset.url}
         alt="EZ Haulaway"
-        className="h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
+        className="logo-outline h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
         width={1709}
         height={832}
       />
@@ -130,7 +130,7 @@ export function Wordmark() {
       <img
         src={wordmarkAsset.url}
         alt="EZ Haulaway"
-        className="hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
+        className="logo-outline hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
         width={1254}
         height={302}
       />
