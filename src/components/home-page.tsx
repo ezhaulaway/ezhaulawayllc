@@ -182,8 +182,8 @@ export function HomePage() {
                 Junk Removal <span className="text-primary">Parker</span>
               </h1>
               <h2 className="mt-3 max-w-2xl text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
-                <span className="block">EZ IN,</span>
-                <span className="block text-primary">EZ OUT</span>
+                <span className="block">YOU POINT,</span>
+                <span className="block text-primary">WE HAUL.</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
