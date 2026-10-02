@@ -182,3 +182,9 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Thin white outline around the logo so it stays visible on dark backgrounds */
+@utility logo-outline {
+  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff)
+    drop-shadow(0 -1.5px 0 #fff);
+}
