@@ -8,3 +8,4 @@
 - [x] Build a dedicated instant photo estimate campaign page
 - [x] Redesign estimate result with mini trailer gauge and scannable job scope
 - [x] Add crew photo to the instant estimate page
+- [x] Track instant estimate usage + estimator_stats in crew feed
