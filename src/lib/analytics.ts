@@ -37,7 +37,26 @@ export function initAnalytics() {
   window.gtag("js", new Date());
   if (measurementId) window.gtag("config", measurementId);
   window.gtag("config", ADS_TAG_ID);
+
+  // Report a "Click to call" conversion for every phone link on the site.
+  // The dialer still opens normally; the beacon transport survives the handoff.
+  document.addEventListener(
+    "click",
+    (e) => {
+      const link = (e.target as HTMLElement | null)?.closest?.('a[href^="tel:"]');
+      if (!link || !window.gtag) return;
+      window.gtag("event", "conversion", {
+        send_to: CALL_CONVERSION,
+        value: 1.0,
+        currency: "USD",
+        transport_type: "beacon",
+      });
+    },
+    { capture: true },
+  );
 }
+
+const CALL_CONVERSION = "AW-18279521152/2nmDCMLBtpIdEIC3rYxE";
 
 /** Send a page_view on client-side route changes (gtag only auto-tracks the first load). */
 export function trackPageView(path: string) {
