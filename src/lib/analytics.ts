@@ -18,12 +18,13 @@ const ADS_TAG_ID = "AW-18279521152";
 let initialized = false;
 
 export function initAnalytics() {
-  if (initialized || typeof window === "undefined" || !measurementId) return;
+  if (initialized || typeof window === "undefined") return;
+  if (!measurementId && !ADS_TAG_ID) return;
   initialized = true;
 
   const script = document.createElement("script");
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId ?? ADS_TAG_ID}`;
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
