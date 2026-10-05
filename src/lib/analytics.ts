@@ -35,7 +35,7 @@ export function initAnalytics() {
     window.dataLayer!.push(arguments);
   } as (...args: unknown[]) => void;
   window.gtag("js", new Date());
-  window.gtag("config", measurementId);
+  if (measurementId) window.gtag("config", measurementId);
   window.gtag("config", ADS_TAG_ID);
 }
 
