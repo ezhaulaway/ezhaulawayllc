@@ -9,3 +9,4 @@
 - [x] Redesign estimate result with mini trailer gauge and scannable job scope
 - [x] Add crew photo to the instant estimate page
 - [x] Track instant estimate usage + estimator_stats in crew feed
+- [ ] Install Google Ads tag AW-18279521152 for call tracking

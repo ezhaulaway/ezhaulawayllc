@@ -12,6 +12,9 @@ const measurementId = import.meta.env[
   "VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY"
 ] as string | undefined;
 
+// Google Ads tag for call/conversion tracking (provided by the site owner).
+const ADS_TAG_ID = "AW-18279521152";
+
 let initialized = false;
 
 export function initAnalytics() {
