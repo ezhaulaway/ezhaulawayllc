@@ -35,6 +35,7 @@ export function initAnalytics() {
   } as (...args: unknown[]) => void;
   window.gtag("js", new Date());
   window.gtag("config", measurementId);
+  window.gtag("config", ADS_TAG_ID);
 }
 
 /** Send a page_view on client-side route changes (gtag only auto-tracks the first load). */
