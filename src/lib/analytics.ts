@@ -12,15 +12,19 @@ const measurementId = import.meta.env[
   "VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY"
 ] as string | undefined;
 
+// Google Ads tag for call/conversion tracking (provided by the site owner).
+const ADS_TAG_ID = "AW-18279521152";
+
 let initialized = false;
 
 export function initAnalytics() {
-  if (initialized || typeof window === "undefined" || !measurementId) return;
+  if (initialized || typeof window === "undefined") return;
+  if (!measurementId && !ADS_TAG_ID) return;
   initialized = true;
 
   const script = document.createElement("script");
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId ?? ADS_TAG_ID}`;
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
@@ -31,7 +35,8 @@ export function initAnalytics() {
     window.dataLayer!.push(arguments);
   } as (...args: unknown[]) => void;
   window.gtag("js", new Date());
-  window.gtag("config", measurementId);
+  if (measurementId) window.gtag("config", measurementId);
+  window.gtag("config", ADS_TAG_ID);
 }
 
 /** Send a page_view on client-side route changes (gtag only auto-tracks the first load). */
