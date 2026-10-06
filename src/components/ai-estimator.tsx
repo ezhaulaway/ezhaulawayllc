@@ -125,6 +125,9 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (name.trim().length < 1) return setError("Please add your name.");
+    if (address.trim().length < 2) return setError("Please add your city.");
+    if (phone.replace(/\D/g, "").length < 10) return setError("Please add a phone number we can reach you at.");
     if (description.trim().length < 5) {
       setError("Tell us a little about what needs to go.");
       return;
@@ -133,11 +136,13 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     setError(null);
     setEstimate(null);
     setLeadSent(false);
+    setLeadError(null);
     try {
       const res = await run({ data: { description, images, track: trackingInfo() } });
       if (res.ok) {
         setEstimate(res.estimate);
         setEventId(res.eventId);
+        void sendLead(res.estimate, res.eventId);
       }
       else setError(res.error);
     } catch {
@@ -147,14 +152,8 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     }
   }
 
-  async function submitLead(e: React.FormEvent) {
-    e.preventDefault();
-    if (!estimate) return;
-    if (name.trim().length < 1) return setLeadError("Please add your name.");
-    if (phone.replace(/\D/g, "").length < 10) return setLeadError("Please add a phone number we can reach you at.");
-    if (address.trim().length < 3) return setLeadError("Please add the job address.");
+  async function sendLead(est: AiEstimate, evId: string | null) {
     setLeadSending(true);
-    setLeadError(null);
     try {
       await lockIn({
         data: {
@@ -163,19 +162,19 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
             ? `${description.slice(0, Math.max(0, 1970 - preferredDay.trim().length))}\n\nPreferred day: ${preferredDay.trim()}`
             : description,
           photoCount: images.length,
-          eventId,
+          eventId: evId,
           estimate: {
-            load_size: estimate.load_size,
-            price_low: estimate.price_low,
-            price_high: estimate.price_high,
-            summary: estimate.summary,
-            items_identified: estimate.items_identified,
+            load_size: est.load_size,
+            price_low: est.price_low,
+            price_high: est.price_high,
+            summary: est.summary,
+            items_identified: est.items_identified,
           },
         },
       });
       setLeadSent(true);
     } catch {
-      setLeadError("Couldn't send that. Please call or text us.");
+      setLeadError("We couldn't send your info. Please call or text us to lock this in.");
     } finally {
       setLeadSending(false);
     }
@@ -203,7 +202,28 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
           <form onSubmit={submit} className={`rounded-lg border border-border bg-card shadow-sm ${campaign ? "p-5 sm:p-6" : "p-6"}`}>
 
 
-            <label className="block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="sm:col-span-2">
+                <label className="block text-sm font-bold" htmlFor="ai-name">Name *</label>
+                <input id="ai-name" required maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
+              </div>
+              <div>
+                <label className="block text-sm font-bold" htmlFor="ai-city">City *</label>
+                <input id="ai-city" required maxLength={200} autoComplete="address-level2" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="e.g. Parker" className={inputCls} />
+              </div>
+              <div>
+                <label className="block text-sm font-bold" htmlFor="ai-phone">Phone *</label>
+                <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
+              </div>
+              {campaign && (
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-bold" htmlFor="ai-preferred-day">Preferred service day (optional)</label>
+                  <input id="ai-preferred-day" maxLength={80} value={preferredDay} onChange={(e) => setPreferredDay(e.target.value)} placeholder="e.g. Friday afternoon" className={inputCls} />
+                </div>
+              )}
+            </div>
+
+            <label className="mt-4 block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
             <textarea
               id="ai-desc"
               value={description}
@@ -248,7 +268,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
               {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Pricing your junk right now…</> : <><Sparkles className="h-4 w-4" /> Get My Free Instant Estimate</>}
             </Button>
             <p className="mt-2 text-center text-xs font-semibold text-muted-foreground">
-              Free · Instant · No phone call required
+              Free · Instant · No spam, ever
             </p>
           </form>
 
@@ -335,28 +355,18 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
                     <p className="font-bold">You're locked in!</p>
                     <p className="mt-1 text-sm text-muted-foreground">We'll call or text you shortly with your actual quote.</p>
                   </div>
-                ) : (
-                  <form onSubmit={submitLead} className="mt-4 rounded-lg border-2 border-primary bg-background p-4">
-                    <p className="font-bold">Get your actual quote & lock in this price</p>
-                    <p className="mt-1 text-xs text-muted-foreground">We'll reach out fast to confirm — no spam, ever.</p>
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-name">Name</label>
-                    <input id="ai-name" required maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-phone">Phone number</label>
-                    <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-address">Job address</label>
-                    <input id="ai-address" required maxLength={200} autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Street, city" className={inputCls} />
-                    {campaign && (
-                      <>
-                        <label className="mt-3 block text-sm font-semibold" htmlFor="ai-preferred-day">Preferred service day (optional)</label>
-                        <input id="ai-preferred-day" maxLength={80} value={preferredDay} onChange={(e) => setPreferredDay(e.target.value)} placeholder="e.g. Friday afternoon" className={inputCls} />
-                      </>
-                    )}
-                    {leadError && <p className="mt-3 text-sm font-semibold text-destructive">{leadError}</p>}
-                    <Button type="submit" className="mt-4 w-full" disabled={leadSending}>
-                      {leadSending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : "Lock in my quote"}
+                ) : leadError ? (
+                  <div className="mt-4 rounded-md border border-destructive bg-background p-4 text-center">
+                    <p className="text-sm font-semibold text-destructive">{leadError}</p>
+                    <Button type="button" className="mt-3 w-full" disabled={leadSending} onClick={() => { setLeadError(null); void sendLead(estimate, eventId); }}>
+                      Try again
                     </Button>
-                  </form>
-                )}
+                  </div>
+                ) : leadSending ? (
+                  <p className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <Loader2 className="h-4 w-4 animate-spin" /> Sending your info to our crew…
+                  </p>
+                ) : null}
               </div>
             )}
           </div>

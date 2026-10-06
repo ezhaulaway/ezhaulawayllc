@@ -131,8 +131,8 @@ function InstantEstimatePage() {
             </h1>
             <p className="mt-4 text-xl font-bold text-primary">NO PHONE CALL REQUIRED</p>
             <p className="mt-5 max-w-xl text-base leading-7 text-secondary-foreground/75 sm:text-lg">
-              Snap a photo or describe what you have. Our free junk removal cost estimator gives you a preliminary
-              price range before asking for your name or phone number.
+              Add your name, city and phone, then snap a photo or describe what you have. Our free junk removal
+              cost estimator gives you a preliminary price range in seconds.
             </p>
             <ul className="mt-7 grid gap-3 text-sm font-semibold sm:grid-cols-2 lg:grid-cols-1">
               <li className="flex items-center gap-2"><Clock3 className="size-4 text-primary" /> Estimate shown right on your screen</li>
