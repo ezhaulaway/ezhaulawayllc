@@ -268,7 +268,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
               {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Pricing your junk right now…</> : <><Sparkles className="h-4 w-4" /> Get My Free Instant Estimate</>}
             </Button>
             <p className="mt-2 text-center text-xs font-semibold text-muted-foreground">
-              Free · Instant · No phone call required
+              Free · Instant · No spam, ever
             </p>
           </form>
 
@@ -355,28 +355,18 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
                     <p className="font-bold">You're locked in!</p>
                     <p className="mt-1 text-sm text-muted-foreground">We'll call or text you shortly with your actual quote.</p>
                   </div>
-                ) : (
-                  <form onSubmit={submitLead} className="mt-4 rounded-lg border-2 border-primary bg-background p-4">
-                    <p className="font-bold">Get your actual quote & lock in this price</p>
-                    <p className="mt-1 text-xs text-muted-foreground">We'll reach out fast to confirm — no spam, ever.</p>
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-name">Name</label>
-                    <input id="ai-name" required maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-phone">Phone number</label>
-                    <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
-                    <label className="mt-3 block text-sm font-semibold" htmlFor="ai-address">Job address</label>
-                    <input id="ai-address" required maxLength={200} autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Street, city" className={inputCls} />
-                    {campaign && (
-                      <>
-                        <label className="mt-3 block text-sm font-semibold" htmlFor="ai-preferred-day">Preferred service day (optional)</label>
-                        <input id="ai-preferred-day" maxLength={80} value={preferredDay} onChange={(e) => setPreferredDay(e.target.value)} placeholder="e.g. Friday afternoon" className={inputCls} />
-                      </>
-                    )}
-                    {leadError && <p className="mt-3 text-sm font-semibold text-destructive">{leadError}</p>}
-                    <Button type="submit" className="mt-4 w-full" disabled={leadSending}>
-                      {leadSending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : "Lock in my quote"}
+                ) : leadError ? (
+                  <div className="mt-4 rounded-md border border-destructive bg-background p-4 text-center">
+                    <p className="text-sm font-semibold text-destructive">{leadError}</p>
+                    <Button type="button" className="mt-3 w-full" disabled={leadSending} onClick={() => { setLeadError(null); void sendLead(estimate, eventId); }}>
+                      Try again
                     </Button>
-                  </form>
-                )}
+                  </div>
+                ) : leadSending ? (
+                  <p className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <Loader2 className="h-4 w-4 animate-spin" /> Sending your info to our crew…
+                  </p>
+                ) : null}
               </div>
             )}
           </div>
