@@ -195,8 +195,12 @@ export function HomePage() {
                   <a href={`tel:${PHONE.replaceAll("-", "")}`}><Phone /> Call or Text {PHONE}</a>
                 </Button>
               </div>
-              <p className="mt-5 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground">
                 <Check className="size-4 text-primary" /> Family-owned and locally operated
+                <span aria-hidden="true" className="text-border">·</span>
+                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
+                  <ShieldCheck className="size-4 text-primary" /> Licensed &amp; Insured
+                </span>
               </p>
             </div>
             <div className="relative min-w-0">
