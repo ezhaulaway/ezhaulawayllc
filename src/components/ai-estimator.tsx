@@ -125,6 +125,9 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (name.trim().length < 1) return setError("Please add your name.");
+    if (address.trim().length < 2) return setError("Please add your city.");
+    if (phone.replace(/\D/g, "").length < 10) return setError("Please add a phone number we can reach you at.");
     if (description.trim().length < 5) {
       setError("Tell us a little about what needs to go.");
       return;
@@ -133,11 +136,13 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     setError(null);
     setEstimate(null);
     setLeadSent(false);
+    setLeadError(null);
     try {
       const res = await run({ data: { description, images, track: trackingInfo() } });
       if (res.ok) {
         setEstimate(res.estimate);
         setEventId(res.eventId);
+        void sendLead(res.estimate, res.eventId);
       }
       else setError(res.error);
     } catch {
@@ -147,14 +152,8 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     }
   }
 
-  async function submitLead(e: React.FormEvent) {
-    e.preventDefault();
-    if (!estimate) return;
-    if (name.trim().length < 1) return setLeadError("Please add your name.");
-    if (phone.replace(/\D/g, "").length < 10) return setLeadError("Please add a phone number we can reach you at.");
-    if (address.trim().length < 3) return setLeadError("Please add the job address.");
+  async function sendLead(est: AiEstimate, evId: string | null) {
     setLeadSending(true);
-    setLeadError(null);
     try {
       await lockIn({
         data: {
@@ -163,19 +162,19 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
             ? `${description.slice(0, Math.max(0, 1970 - preferredDay.trim().length))}\n\nPreferred day: ${preferredDay.trim()}`
             : description,
           photoCount: images.length,
-          eventId,
+          eventId: evId,
           estimate: {
-            load_size: estimate.load_size,
-            price_low: estimate.price_low,
-            price_high: estimate.price_high,
-            summary: estimate.summary,
-            items_identified: estimate.items_identified,
+            load_size: est.load_size,
+            price_low: est.price_low,
+            price_high: est.price_high,
+            summary: est.summary,
+            items_identified: est.items_identified,
           },
         },
       });
       setLeadSent(true);
     } catch {
-      setLeadError("Couldn't send that. Please call or text us.");
+      setLeadError("We couldn't send your info. Please call or text us to lock this in.");
     } finally {
       setLeadSending(false);
     }
@@ -203,7 +202,28 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
           <form onSubmit={submit} className={`rounded-lg border border-border bg-card shadow-sm ${campaign ? "p-5 sm:p-6" : "p-6"}`}>
 
 
-            <label className="block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="sm:col-span-2">
+                <label className="block text-sm font-bold" htmlFor="ai-name">Name *</label>
+                <input id="ai-name" required maxLength={100} autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} />
+              </div>
+              <div>
+                <label className="block text-sm font-bold" htmlFor="ai-city">City *</label>
+                <input id="ai-city" required maxLength={200} autoComplete="address-level2" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="e.g. Parker" className={inputCls} />
+              </div>
+              <div>
+                <label className="block text-sm font-bold" htmlFor="ai-phone">Phone *</label>
+                <input id="ai-phone" type="tel" inputMode="tel" required maxLength={30} autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} />
+              </div>
+              {campaign && (
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-bold" htmlFor="ai-preferred-day">Preferred service day (optional)</label>
+                  <input id="ai-preferred-day" maxLength={80} value={preferredDay} onChange={(e) => setPreferredDay(e.target.value)} placeholder="e.g. Friday afternoon" className={inputCls} />
+                </div>
+              )}
+            </div>
+
+            <label className="mt-4 block text-sm font-bold" htmlFor="ai-desc">What needs to go?</label>
             <textarea
               id="ai-desc"
               value={description}
