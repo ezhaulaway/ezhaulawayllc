@@ -28,18 +28,17 @@ import {
   Users,
 } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
-import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
-import heroJobAsset from "@/assets/appliance_removal.avif.asset.json";
+import heroJobAsset from "@/assets/real-IMG_5005.jpg.asset.json";
+import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
 import benZoeAsset from "@/assets/ben_and_zoe_photo.avif.asset.json";
-import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
-import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
-import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
-import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
-import constructionAsset from "@/assets/service-construction-debris.jpg.asset.json";
-import garageAsset from "@/assets/service-garage-cleanout.jpg.asset.json";
-import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
+import furnitureAsset from "@/assets/branded-service-furniture.webp";
+import applianceAsset from "@/assets/branded-service-appliance.webp";
+import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
+import constructionAsset from "@/assets/branded-service-construction.webp";
+import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
+import estateAsset from "@/assets/branded-service-estate.webp";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -76,12 +75,12 @@ const navItems = [
 ] as const;
 
 const services: Array<{ title: string; text: string; icon: LucideIcon; image: string; imageAlt: string; position: string }> = [
-  { title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset.url, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
-  { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset.url, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
+  { title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
+  { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
   { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageAsset.url, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
-  { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset.url, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
-  { title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset.url, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
-  { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset.url, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
+  { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
+  { title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
+  { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
 ];
 
 const extraServices: Array<{ label: string; slug?: string }> = [
@@ -203,7 +202,7 @@ export function HomePage() {
             <div className="relative min-w-0">
               <img
                 src={heroJobAsset.url}
-                alt="EZ Haulaway crew loading a refrigerator onto the branded trailer at a Parker home"
+                alt="EZ Haulaway crew loading boxes and a wheeled bin into the black dump trailer"
                 fetchPriority="high"
                 decoding="async"
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
@@ -367,7 +366,7 @@ export function HomePage() {
               muted
               playsInline
               preload="none"
-              poster={heroJobAsset.url}
+              poster={timelapsePoster.url}
               src={timelapseAsset.url}
               className="aspect-video w-full object-cover"
             >

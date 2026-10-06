@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { services } from "@/content/services";
 import { SITE_URL } from "@/content/site";
-import cleanoutAsset from "@/assets/Backyard_and_waste_cleanup.avif.asset.json";
+import cleanoutAsset from "@/assets/real-IMG_5076.jpg.asset.json";
 
 const title = "What We Take — Junk Removal Services | EZ Haulaway";
 const description =
@@ -42,7 +42,7 @@ function WhatWeTakePage() {
         title="If You Want It Gone, We'll Take It"
         text="From a single mattress to an entire property, EZ Haulaway loads it, hauls it, and cleans up after. Pick a service below to see how it works."
         image={cleanoutAsset.url}
-        imageAlt="EZ Haulaway trailer loaded during a property cleanout"
+        imageAlt="EZ Haulaway crew moving a wheeled bin beside the black dump trailer"
       />
 
       <section className="border-b border-border bg-card py-16 sm:py-20">
