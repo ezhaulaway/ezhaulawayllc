@@ -17,7 +17,7 @@ import { FaqAccordion, PageShell } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
-import crewLoadingAsset from "@/assets/crew-loading-trailer.png.asset.json";
+import crewLoadingAsset from "@/assets/real-Tezza-5361.jpg.asset.json";
 
 const title = "Instant Junk Removal Quote Online | EZ Haulaway";
 const description =
@@ -152,7 +152,7 @@ function InstantEstimatePage() {
             </div>
             <img
               src={crewLoadingAsset.url}
-              alt="The EZ Haulaway crew loading furniture and junk into the company dump trailer at a storage facility"
+              alt="Ben from EZ Haulaway standing beside the company black dump trailer and maroon pickup"
               className="mt-7 w-full rounded-lg border border-secondary-foreground/15 object-cover"
               loading="lazy"
             />

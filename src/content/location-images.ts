@@ -1,17 +1,17 @@
-import areaAurora from "@/assets/area-aurora.jpg";
-import areaCastlePines from "@/assets/area-castle-pines.jpg";
-import areaCastleRock from "@/assets/area-castle-rock.jpg";
-import areaCentennial from "@/assets/area-centennial.jpg";
-import areaDenver from "@/assets/area-denver.jpg";
-import areaElizabeth from "@/assets/area-elizabeth.jpg";
-import areaEnglewood from "@/assets/area-englewood.jpg";
-import areaFranktown from "@/assets/area-franktown.jpg";
-import areaHighlandsRanch from "@/assets/area-highlands-ranch.jpg";
-import areaLakewood from "@/assets/area-lakewood.jpg";
-import areaLittleton from "@/assets/area-littleton.jpg";
-import areaLoneTree from "@/assets/area-lone-tree.jpg";
-import areaParker from "@/assets/area-parker.jpg";
-import areaSedalia from "@/assets/area-sedalia.jpg";
+import areaAurora from "@/assets/branded-area-aurora.webp";
+import areaCastlePines from "@/assets/branded-area-castle-pines.webp";
+import areaCastleRock from "@/assets/branded-area-castle-rock.webp";
+import areaCentennial from "@/assets/branded-area-centennial.webp";
+import areaDenver from "@/assets/branded-area-denver.webp";
+import areaElizabeth from "@/assets/branded-area-elizabeth.webp";
+import areaEnglewood from "@/assets/branded-area-englewood.webp";
+import areaFranktown from "@/assets/branded-area-franktown.webp";
+import areaHighlandsRanch from "@/assets/branded-area-highlands-ranch.webp";
+import areaLakewood from "@/assets/branded-area-lakewood.webp";
+import areaLittleton from "@/assets/branded-area-littleton.webp";
+import areaLoneTree from "@/assets/branded-area-lone-tree.webp";
+import areaParker from "@/assets/branded-area-parker.webp";
+import areaSedalia from "@/assets/branded-area-sedalia.webp";
 
 export type LocationPhoto = {
   /** Bundled image URL. */

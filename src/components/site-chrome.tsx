@@ -3,8 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 import stackedAsset from "@/assets/ez-haulaway-stacked.png.asset.json";
-import truckAsset from "@/assets/ez-haulaway-truck.png.asset.json";
-import characterAsset from "@/assets/ez-haulaway-character.webp.asset.json";
+import truckAsset from "@/assets/real-IMG_5096.jpg.asset.json";
 import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -356,7 +355,7 @@ export function SiteFooter() {
         <div className="grid gap-10 border-b border-secondary-foreground/15 pb-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" aria-label="EZ Haulaway home">
-              <img src={truckAsset.url} alt="EZ Haulaway truck logo" className="w-44" width={1233} height={814} />
+              <img src={truckAsset.url} alt="EZ Haulaway crew loading the maroon pickup beside the black dump trailer" className="w-44 rounded-lg object-cover" width={1620} height={1080} />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-secondary-foreground/65">
               Professional junk removal and light demolition from a family-owned business in Parker, Colorado.

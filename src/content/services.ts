@@ -1,17 +1,17 @@
 import { priced } from "@/lib/price-store";
-import furnitureAsset from "@/assets/service-furniture-removal.jpg.asset.json";
-import applianceAsset from "@/assets/service-appliance-removal.jpg.asset.json";
-import hotTubAsset from "@/assets/service-hot-tub-removal.jpg.asset.json";
-import lightDemolitionAsset from "@/assets/service-light-demolition.jpg.asset.json";
-import deckAsset from "@/assets/service-deck-fence-removal.jpg.asset.json";
-import constructionAsset from "@/assets/service-construction-debris.jpg.asset.json";
-import yardAsset from "@/assets/service-yard-debris.jpg.asset.json";
+import furnitureAsset from "@/assets/branded-service-furniture.webp";
+import applianceAsset from "@/assets/branded-service-appliance.webp";
+import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
+import lightDemolitionAsset from "@/assets/branded-service-demolition.webp";
+import deckAsset from "@/assets/branded-service-deck.webp";
+import constructionAsset from "@/assets/branded-service-construction.webp";
+import yardAsset from "@/assets/branded-service-yard.webp";
 import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
-import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
+import estateAsset from "@/assets/branded-service-estate.webp";
 import bulkyAsset from "@/assets/real-IMG_5082.jpg.asset.json";
-import electronicsAsset from "@/assets/service-electronics.jpg.asset.json";
-import commercialAsset from "@/assets/service-commercial.jpg.asset.json";
-import shedImage from "@/assets/service-shed-removal.jpg";
+import electronicsAsset from "@/assets/branded-service-electronics.webp";
+import commercialAsset from "@/assets/branded-service-commercial.webp";
+import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
 
 export type Service = {
@@ -39,8 +39,8 @@ const raw_services: Service[] = [
     metaDescription:
       "Couch, mattress, dresser, or a whole room of furniture — EZ Haulaway hauls it out of Parker and Denver metro homes. Free quotes, no heavy lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
-    image: furnitureAsset.url,
-    imageAlt: "Living room furniture ready for removal",
+    image: furnitureAsset,
+    imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. EZ Haulaway takes the whole problem off your hands — you point at the sofa, we carry it out.",
       "We work in occupied homes every week, so floors, doorframes, and corners get treated carefully on the way out.",
@@ -78,7 +78,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Refrigerators, washers, dryers, stoves, and water heaters hauled away across Parker and the Denver metro area. Free quotes from EZ Haulaway.",
     summary: "Refrigerators, washers, dryers, stoves, dishwashers, and water heaters.",
-    image: applianceAsset.url,
+    image: applianceAsset,
     imageAlt: "EZ Haulaway crew loading a refrigerator onto the branded trailer",
     intro: [
       "Appliances are heavy, sharp-edged, and a real risk to your back and your flooring. We bring the dollies, the straps, and the crew.",
@@ -117,7 +117,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from [[item:Hot tub]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
-    image: hotTubAsset.url,
+    image: hotTubAsset,
     imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
     intro: [
       "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and still full of water, foam, and wiring.",
@@ -167,7 +167,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
-    image: lightDemolitionAsset.url,
+    image: lightDemolitionAsset,
     imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
     intro: [
       "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day, anywhere in the Denver metro area.",
@@ -206,7 +206,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of hands-on experience. Every board hauled, site raked. Free quote.",
     summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
-    image: deckAsset.url,
+    image: deckAsset,
     imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
     intro: [
       "Colorado weather is hard on wood. When a deck starts splintering or a fence line starts leaning, tearing it out is the first step toward whatever comes next.",
@@ -255,7 +255,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Drywall, lumber, flooring, roofing, and remodel debris cleared from job sites across Parker and the Denver metro area.",
     summary: "Drywall, lumber, flooring, roofing, and remodel debris.",
-    image: constructionAsset.url,
+    image: constructionAsset,
     imageAlt: "EZ Haulaway crew loading organized renovation debris at a Denver metro jobsite",
     intro: [
       "Renting a dumpster means paying for the days it sits in the driveway. We show up when the pile is ready, load it, and leave.",
@@ -294,7 +294,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Branches, brush, sod, rock, and storm debris hauled out of Denver metro yards. Free quotes from EZ Haulaway in Parker, CO.",
     summary: "Branches, brush, sod, rock, storm damage, and landscaping waste.",
-    image: yardAsset.url,
+    image: yardAsset,
     imageAlt: "EZ Haulaway crew loading branches and yard debris into a tandem-axle dump trailer",
     intro: [
       "Yard waste fills a truck bed fast and most curbside services will not take it. We bring a trailer sized for the whole pile.",
@@ -372,7 +372,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Full property cleanouts for estates, rentals, and moves across the Denver metro area. Respectful, thorough work from EZ Haulaway.",
     summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
-    image: estateAsset.url,
+    image: estateAsset,
     imageAlt: "EZ Haulaway crew respectfully removing furniture and boxes during an estate cleanout",
     intro: [
       "Clearing a house is rarely just a hauling job. Estates, foreclosures, and rental turnovers all come with a deadline and often with grief or stress attached.",
@@ -462,7 +462,7 @@ const raw_services: Service[] = [
     metaDescription:
       "TVs, monitors, computers, printers, and office electronics collected for responsible recycling across the Denver metro area.",
     summary: "TVs, monitors, computers, printers, and office electronics.",
-    image: electronicsAsset.url,
+    image: electronicsAsset,
     imageAlt: "EZ Haulaway crew collecting televisions, computers, and electronics for recycling",
     intro: [
       "Electronics cannot go in the trash in most places, and hauling a 60-inch TV to a recycling center is nobody's idea of a Saturday.",
@@ -550,7 +550,7 @@ const raw_services: Service[] = [
     metaDescription:
       "Office cleanouts, retail fixtures, warehouse clearing, and property manager turnovers across the Denver metro area.",
     summary: "Offices, retail spaces, warehouses, and property turnovers.",
-    image: commercialAsset.url,
+    image: commercialAsset,
     imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
     intro: [
       "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.",
