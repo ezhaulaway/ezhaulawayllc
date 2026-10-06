@@ -158,7 +158,6 @@ export function QuoteButton({
       <DialogContent className="max-h-[92vh] overflow-y-auto sm:max-w-xl">
         <DialogHeader>
           <div className="flex items-center gap-5">
-            <img src={characterAsset.url} alt="" aria-hidden className="h-24 w-auto shrink-0 object-contain sm:h-28" />
             <div>
               <DialogTitle className="font-display text-2xl">Get a Free Quote</DialogTitle>
               <DialogDescription>Tell us what needs to go. It only takes a minute.</DialogDescription>
@@ -175,7 +174,6 @@ export function InlineQuoteForm() {
   return (
     <div className="rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
       <div className="flex items-center gap-5">
-        <img src={characterAsset.url} alt="" aria-hidden className="h-24 w-auto shrink-0 object-contain sm:h-28" />
         <div>
           <h2 className="font-display text-2xl font-bold">Get a Free Quote</h2>
           <p className="text-sm text-muted-foreground">Tell us what needs to go. It only takes a minute.</p>
