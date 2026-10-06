@@ -4,7 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Camera, CalendarCheck, HandCoins, Sparkles, Truck, UserCheck } from "lucide-react";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, SITE_URL } from "@/content/site";
-import timelapsePoster from "@/assets/appliance_removal.avif.asset.json";
+import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 
 const title = "How Our Junk Removal Process Works | EZ Haulaway";
