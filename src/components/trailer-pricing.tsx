@@ -14,15 +14,15 @@ import trailerJunk7 from "@/assets/trailer-junk-7.png";
 import trailerJunk8 from "@/assets/trailer-junk-8.png";
 
 const fillDescriptions: Record<number, string> = {
-  0: "Cartoon of the EZ Haulaway black dump trailer with a small minimum load at the rear",
-  1: "Cartoon dump trailer about one-eighth full of junk, building from the rear",
-  2: "Cartoon dump trailer about one-quarter full of junk, building from the rear",
-  3: "Cartoon dump trailer about three-eighths full of junk, building from the rear",
-  4: "Cartoon dump trailer half full of household junk, building from the rear",
-  5: "Cartoon dump trailer about five-eighths full of junk, building from the rear",
-  6: "Cartoon dump trailer three-quarters full of junk, building from the rear",
-  7: "Cartoon dump trailer seven-eighths full of junk, building from the rear",
-  8: "Cartoon dump trailer heaping full of furniture, appliances, boxes, and bags",
+  0: "Illustrated EZ Haulaway black tandem-axle dump trailer with a small minimum load at the rear",
+  1: "Illustrated black tandem-axle dump trailer about one-eighth full of junk, building from the rear",
+  2: "Illustrated black tandem-axle dump trailer about one-quarter full of junk, building from the rear",
+  3: "Illustrated black tandem-axle dump trailer about three-eighths full of junk, building from the rear",
+  4: "Illustrated black tandem-axle dump trailer half full of household junk, building from the rear",
+  5: "Illustrated black tandem-axle dump trailer about five-eighths full of junk, building from the rear",
+  6: "Illustrated black tandem-axle dump trailer three-quarters full of junk, building from the rear",
+  7: "Illustrated black tandem-axle dump trailer seven-eighths full of junk, building from the rear",
+  8: "Illustrated black tandem-axle dump trailer heaping full of furniture, appliances, boxes, and bags",
 };
 
 const loadImages = [
@@ -63,7 +63,7 @@ export function TrailerPricing() {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-14">
           <div>
-            {/* Cartoon trailer with junk fill */}
+            {/* Equipment-matched trailer with illustrated junk fill */}
             <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
               <div className="relative aspect-[1376/768]">
                 {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
