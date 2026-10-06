@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] Refresh AI service and area photos against real EZ Haulaway equipment; preserve authentic photos
+- [ ] Check refreshed images across the website and trailer graphic
+
 - [x] Bigger, more accurate cartoon trailer (5 fill levels regenerated)
 - [x] Blend trailer into page background (removed card box, matched bg color)
 - [x] Make empty trailer face left like the other four images
