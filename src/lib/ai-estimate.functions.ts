@@ -227,7 +227,7 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
           const { loadPriceGuide } = await import("./pricing.functions");
           const g = await loadPriceGuide();
           if (!g.live) return SYSTEM;
-          return `${SYSTEM}\n\nCURRENT PRICE GUIDE (this overrides any conflicting prices above):\nMinimum charge: $${g.minimum}. Labor: $${g.laborRate}/hour per crew member.\nLoads: ${g.loads.map((l) => `${l.label} (${l.volume}) $${l.price}`).join("; ")}.\n${g.adjustments.length ? `Adjustments: ${g.adjustments.map((a) => `${a.label} ${a.amount}`).join("; ")}.\n` : ""}Specialty: ${g.specialty.map((s) => `${s.item} ${s.price}`).join("; ")}. Never quote below $${g.minimum}.`;
+          return `${SYSTEM}\n\nCURRENT PRICE GUIDE (this overrides any conflicting prices above):\nMinimum charge: $${g.minimum}. Labor: $${g.laborRate}/hour per crew member.\nLoads: ${g.loads.map((l) => `${l.label} (${l.volume}) $${l.price}`).join("; ")}.\nALL-INCLUSIVE: These load prices cover everything in the load. Never add furniture or single-item prices on top of a load. Only add the Freon fee, hot tub flat rates, or heavy materials priced per cubic yard.\n${g.adjustments.length ? `Adjustments: ${g.adjustments.map((a) => `${a.label} ${a.amount}`).join("; ")}.\n` : ""}Specialty: ${g.specialty.map((s) => `${s.item} ${s.price}`).join("; ")}. Use specialty prices instead of load pricing only for a few-item job. Never quote below $${g.minimum}.`;
         })(),
         input: [{ role: "user", content }],
         stream: true,
