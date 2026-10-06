@@ -6,9 +6,9 @@ import lightDemolitionAsset from "@/assets/service-light-demolition.jpg.asset.js
 import deckAsset from "@/assets/service-deck-fence-removal.jpg.asset.json";
 import constructionAsset from "@/assets/service-construction-debris.jpg.asset.json";
 import yardAsset from "@/assets/service-yard-debris.jpg.asset.json";
-import garageAsset from "@/assets/service-garage-cleanout.jpg.asset.json";
+import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
 import estateAsset from "@/assets/service-estate-cleanout.jpg.asset.json";
-import bulkyAsset from "@/assets/service-bulky-items.jpg.asset.json";
+import bulkyAsset from "@/assets/real-IMG_5082.jpg.asset.json";
 import electronicsAsset from "@/assets/service-electronics.jpg.asset.json";
 import commercialAsset from "@/assets/service-commercial.jpg.asset.json";
 import shedImage from "@/assets/service-shed-removal.jpg";
@@ -334,7 +334,7 @@ const raw_services: Service[] = [
       "Get the garage back. EZ Haulaway clears years of stored junk from garages across Parker and the Denver metro area. Free quote.",
     summary: "Years of stored clutter cleared out so you can park in there again.",
     image: garageAsset.url,
-    imageAlt: "EZ Haulaway crew clearing sorted boxes and household clutter from a garage",
+    imageAlt: "EZ Haulaway crew loading garage cleanout boxes from a cart into the black dump trailer in Parker, CO",
     intro: [
       "Garages collect everything nobody wants to decide about. Paint cans aside, most of it can leave today.",
       "You point out what stays. We clear the rest and sweep the floor before we go.",
@@ -412,7 +412,7 @@ const raw_services: Service[] = [
       "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you. Free quote.",
     summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
-    imageAlt: "EZ Haulaway crew safely carrying a wrapped mattress from a garage",
+    imageAlt: "EZ Haulaway crew lifting a bulky trash bin into the tandem-axle dump trailer",
     intro: [
       "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
       "EZ Haulaway does single-item mattress disposal, couch removal, and bulky item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",

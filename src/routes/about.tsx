@@ -6,6 +6,9 @@ import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-c
 import { SITE_URL, reviews, GOOGLE_REVIEWS_URL } from "@/content/site";
 import { Star } from "lucide-react";
 import benAndZoe from "@/assets/ben_and_zoe_photo.avif.asset.json";
+import crewPhoto from "@/assets/real-Tezza-5361.jpg.asset.json";
+import ladderPhoto from "@/assets/real-IMG_5068.jpg.asset.json";
+import truckPhoto from "@/assets/real-IMG_5096.jpg.asset.json";
 
 const title = "About EZ Haulaway — Local Junk Removal in Parker, CO";
 const description =
@@ -65,6 +68,21 @@ function AboutPage() {
               that's how we approach all of them — whether it's one mattress out of a spare room or an entire property
               cleared before a closing date.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader eyebrow="On the job" title="Our Truck, Our Trailer, Our Crew" />
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              [crewPhoto.url, "EZ Haulaway crew member smiling in front of the red Ford truck and black dump trailer"],
+              [ladderPhoto.url, "EZ Haulaway crew loading an old ladder into the dump trailer in a Parker neighborhood"],
+              [truckPhoto.url, "EZ Haulaway crew loading equipment into the red Ford F-250 FX4 work truck"],
+            ].map(([src, alt]) => (
+              <img key={src} src={src} alt={alt} loading="lazy" width={1620} height={1080} className="aspect-[3/2] w-full rounded-lg object-cover" />
+            ))}
           </div>
         </div>
       </section>
