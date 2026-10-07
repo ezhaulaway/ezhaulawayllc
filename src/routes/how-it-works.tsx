@@ -6,6 +6,10 @@ import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/com
 import { PHONE, SITE_URL } from "@/content/site";
 import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
+import job5 from "@/assets/ben-job-5.webp.asset.json";
+import job6 from "@/assets/ben-job-6.webp.asset.json";
+import job7 from "@/assets/ben-job-7.webp.asset.json";
+import job8 from "@/assets/ben-job-8.webp.asset.json";
 
 const title = "How Our Junk Removal Process Works | EZ Haulaway";
 const description =
@@ -102,6 +106,22 @@ function HowItWorksPage() {
                 <h3 className="mt-6 text-lg font-bold">{heading}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader eyebrow="Real jobs" title="Hauling Services, Start to Finish" text="Real photos from our crew — carried out, loaded, and closed up." />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {[
+              [job5.url, "EZ Haulaway pulling a wagon of boxes toward the dump trailer"],
+              [job6.url, "Wheeling a dresser on a dolly to the EZ Haulaway trailer"],
+              [job8.url, "Loaded wagon beside the black EZ Haulaway dump trailer"],
+              [job7.url, "Closing the rear doors of the loaded EZ Haulaway dump trailer"],
+            ].map(([src, alt]) => (
+              <img key={src} src={src} alt={alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full rounded-lg object-cover" />
             ))}
           </div>
         </div>
