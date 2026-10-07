@@ -69,10 +69,11 @@ function normalize(raw: any): PriceGuide | null {
   return { minimum, laborRate, loads, adjustments, specialty: specialty.length ? specialty : SPECIALTY_ITEMS, live: true };
 }
 
-export async function loadPriceGuide(): Promise<PriceGuide> {
-  if (cache && Date.now() - cache.at < 5 * 60 * 1000) return cache.guide;
+let inflight: Promise<PriceGuide> | null = null;
+
+async function fetchFresh(): Promise<PriceGuide> {
   try {
-    const res = await fetch(SOURCE, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(5000) });
+    const res = await fetch(SOURCE, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(1500) });
     if (!res.ok) throw new Error(String(res.status));
     const guide = normalize(await res.json());
     if (!guide) throw new Error("bad data");
@@ -80,7 +81,19 @@ export async function loadPriceGuide(): Promise<PriceGuide> {
     return guide;
   } catch {
     return cache?.guide ?? FALLBACK_GUIDE;
+  } finally {
+    inflight = null;
   }
+}
+
+/** Never blocks long: serves cached prices instantly and refreshes in the background; first fetch waits at most 1.5s. */
+export async function loadPriceGuide(): Promise<PriceGuide> {
+  if (cache) {
+    if (Date.now() - cache.at >= 5 * 60 * 1000 && !inflight) inflight = fetchFresh();
+    return cache.guide;
+  }
+  inflight ??= fetchFresh();
+  return inflight;
 }
 
 export const getPriceGuide = createServerFn({ method: "GET" }).handler(() => loadPriceGuide());
