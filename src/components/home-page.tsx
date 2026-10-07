@@ -28,7 +28,8 @@ import {
   Users,
 } from "lucide-react";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
-import heroJobAsset from "@/assets/real-IMG_5005.jpg.asset.json";
+import heroJob1200 from "@/assets/hero-job-1200.webp";
+import heroJob640 from "@/assets/hero-job-640.webp";
 import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
@@ -205,10 +206,13 @@ export function HomePage() {
             </div>
             <div className="relative min-w-0">
               <img
-                src={heroJobAsset.url}
+                src={heroJob1200}
+                srcSet={`${heroJob640} 640w, ${heroJob1200} 1200w`}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                width={1200}
+                height={800}
                 alt="EZ Haulaway crew loading boxes and a wheeled bin into the black dump trailer"
                 fetchPriority="high"
-                decoding="async"
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
               />
               <div className="absolute -bottom-5 left-4 max-w-64 rounded-md bg-secondary p-4 text-secondary-foreground shadow-lg sm:left-[-1rem]">
