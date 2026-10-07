@@ -243,7 +243,7 @@ export function HomePage() {
             <p className="mt-3 leading-7 text-muted-foreground">
               EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
               metro area. Pricing starts at ${guide.minimum} and a full 16-foot trailer load (14 cubic yards) runs ${fullPrice},
-              with labor, loading, hauling, and disposal included. Call or text 720-614-7223 for a free quote.
+              with labor, loading, hauling, and disposal included. Our hauling services cover homes, businesses, and job sites. Call or text 720-614-7223 for a free quote.
             </p>
             <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
               {[
@@ -289,7 +289,7 @@ export function HomePage() {
         <section id="services" className="relative overflow-hidden py-20 sm:py-28">
           <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <SectionHeader eyebrow="What we haul" title="Junk Removal Services" text="From one bulky item to a full cleanout, tell us what needs to go." />
+              <SectionHeader eyebrow="What we haul" title="Junk Removal & Hauling Services" text="From one bulky item to a full cleanout, our local hauling services cover it — tell us what needs to go." />
               <QuoteButton className="w-fit" label="Ask About Your Job" />
             </div>
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -387,7 +387,7 @@ export function HomePage() {
         <section className="border-y border-border bg-muted py-20 sm:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
             <div>
-              <SectionHeader eyebrow="Why EZ Haulaway" title="A Better Experience Is Worth It" text="When you invite a crew onto your property, dependable service and clear communication matter." />
+              <SectionHeader eyebrow="Why EZ Haulaway" title="Hauling Services Done Right" text="When you invite a crew onto your property, dependable service and clear communication matter." />
               <img
                 src={benJobsiteAsset.url}
                 alt="Ben from EZ Haulaway giving a thumbs up in front of the dump trailer at a jobsite"
@@ -441,7 +441,7 @@ export function HomePage() {
 
         <section id="service-area" className="border-y border-border bg-muted py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-            <SectionHeader eyebrow="Service area" title="Proudly Serving the Denver Metro Area" text="EZ Haulaway provides professional junk removal throughout Parker and communities across the Denver metro area." />
+            <SectionHeader eyebrow="Service area" title="Junk Removal & Hauling Services Across the Denver Metro" text="EZ Haulaway provides professional junk removal and hauling services throughout Parker and communities across the Denver metro area." />
             <div className="rounded-lg border border-border bg-card p-7">
               <div className="flex items-center gap-3">
                 <MapPin className="size-6 text-primary" />
