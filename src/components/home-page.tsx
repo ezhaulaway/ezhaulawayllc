@@ -211,7 +211,7 @@ export function HomePage() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 width={1200}
                 height={800}
-                alt="EZ Haulaway crew loading boxes and a wheeled bin into the black dump trailer"
+                alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
                 fetchPriority="high"
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
               />
