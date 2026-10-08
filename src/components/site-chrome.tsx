@@ -403,7 +403,19 @@ export function SiteFooter() {
             <p className="text-sm text-secondary-foreground/70">Denver metro service area</p>
           </div>
         </div>
-        <p className="pt-6 text-xs text-secondary-foreground/55">© 2026 EZ Haulaway LLC. All rights reserved.</p>
+        <div className="flex flex-col-reverse items-start justify-between gap-4 pt-6 sm:flex-row sm:items-center">
+          <p className="text-xs text-secondary-foreground/55">© 2026 EZ Haulaway LLC. All rights reserved.</p>
+          <a href="https://locatefaith.com/business/ez-haulaway" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://locatefaith.com/brand/verified-badge-v2.svg"
+              alt="Verified Christian Business on LocateFaith"
+              width={240}
+              height={107}
+              loading="lazy"
+              className="h-20 w-auto"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
