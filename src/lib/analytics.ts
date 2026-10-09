@@ -22,10 +22,20 @@ export function initAnalytics() {
   if (!measurementId && !ADS_TAG_ID) return;
   initialized = true;
 
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId ?? ADS_TAG_ID}`;
-  document.head.appendChild(script);
+  // Load the tag after the page has finished loading and the browser is idle,
+  // so it never competes with the main photo. Events queue in dataLayer meanwhile.
+  const load = () => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId ?? ADS_TAG_ID}`;
+    document.head.appendChild(script);
+  };
+  const idle = () =>
+    "requestIdleCallback" in window
+      ? (window as Window & { requestIdleCallback: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback(load, { timeout: 4000 })
+      : setTimeout(load, 2000);
+  if (document.readyState === "complete") idle();
+  else window.addEventListener("load", idle, { once: true });
 
   window.dataLayer = window.dataLayer || [];
   // Use the canonical gtag signature: push the `arguments` object, not a rest
