@@ -38,7 +38,7 @@ import furnitureAsset from "@/assets/branded-service-furniture.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
 import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
 import constructionAsset from "@/assets/branded-service-construction.webp";
-import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
+import garageAsset from "@/assets/new-30F5C3AA.webp.asset.json";
 import estateAsset from "@/assets/branded-service-estate.webp";
 import { Button } from "@/components/ui/button";
 import {

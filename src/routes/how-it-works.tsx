@@ -4,7 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Camera, CalendarCheck, HandCoins, Sparkles, Truck, UserCheck } from "lucide-react";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, SITE_URL } from "@/content/site";
-import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
+import timelapsePoster from "@/assets/new-7247E3BB.webp.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import job5 from "@/assets/ben-job-5.webp.asset.json";
 import job6 from "@/assets/ben-job-6.webp.asset.json";
