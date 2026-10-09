@@ -208,7 +208,7 @@ export function HomePage() {
               <img
                 src={heroJob1200}
                 srcSet={`${heroJob640} 640w, ${heroJob1200} 1200w`}
-                sizes="(min-width: 1024px) 600px, (min-width: 640px) 100vw, 640px"
+                sizes="(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)"
                 width={1200}
                 height={800}
                 alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
