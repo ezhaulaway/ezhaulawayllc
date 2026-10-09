@@ -137,7 +137,7 @@ const raw_locations: Location[] = [
     city: "Denver",
     county: "Denver County",
     metaTitle: "Junk Removal Denver CO | EZ Haulaway",
-    metaDescription: "Junk removal near me Denver",
+    metaDescription: "Junk removal and hauling services in Denver, CO. Furniture, appliances, cleanouts and debris hauled away. Free quotes from EZ Haulaway LLC.",
     intro:
       "EZ Haulaway works throughout Denver, from older neighborhoods with alley access to downtown apartments and offices.",
     local:
