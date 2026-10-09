@@ -16,7 +16,7 @@ import { AiEstimator } from "@/components/ai-estimator";
 import { FaqAccordion, PageShell } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
-import benJobsiteAsset from "@/assets/new-1FD1072F.webp.asset.json";
+import benHeadshot from "@/assets/ben-headshot.webp";
 import wagonAsset from "@/assets/new-B8EC4C72.webp.asset.json";
 import dollyAsset from "@/assets/new-43291499.webp.asset.json";
 import crewLoadingAsset from "@/assets/new-A5F021D5.webp.asset.json";
@@ -157,8 +157,8 @@ function InstantEstimatePage() {
             </ul>
             <div className="mt-7 flex items-center gap-4 border-t border-secondary-foreground/15 pt-6">
               <img
-                src={benJobsiteAsset.url}
-                alt="Ben from EZ Haulaway carrying a bin to the dump trailer"
+                src={benHeadshot}
+                alt="Ben, owner of EZ Haulaway"
                 className="size-14 rounded-full border-2 border-primary object-cover"
               />
               <div>
