@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
-import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
-import stackedAsset from "@/assets/ez-haulaway-stacked.png.asset.json";
+import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
+import stackedSrc from "@/assets/ez-haulaway-stacked-sm.webp";
 import truckAsset from "@/assets/real-IMG_5096.jpg.asset.json";
 import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
@@ -119,19 +119,19 @@ export function Wordmark() {
   return (
     <Link to="/" className="group inline-flex shrink-0 items-center" aria-label="EZ Haulaway home">
       <img
-        src={stackedAsset.url}
+        src={stackedSrc}
         alt="EZ Haulaway"
         className="logo-outline h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
-        width={1709}
-        height={832}
+        width={240}
+        height={117}
       />
 
       <img
-        src={wordmarkAsset.url}
+        src={wordmarkSrc}
         alt="EZ Haulaway"
         className="logo-outline hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
-        width={1254}
-        height={302}
+        width={480}
+        height={116}
       />
     </Link>
   );
@@ -353,7 +353,7 @@ export function SiteFooter() {
         <div className="grid gap-10 border-b border-secondary-foreground/15 pb-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" aria-label="EZ Haulaway home">
-              <img src={truckAsset.url} alt="EZ Haulaway crew loading the maroon pickup beside the black dump trailer" className="w-44 rounded-lg object-cover" width={1620} height={1080} />
+              <img src={truckAsset.url} alt="EZ Haulaway crew loading the maroon pickup beside the black dump trailer" className="w-44 rounded-lg object-cover" width={1620} height={1080} loading="lazy" decoding="async" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-secondary-foreground/65">
               Professional junk removal and light demolition from a family-owned business in Parker, Colorado.

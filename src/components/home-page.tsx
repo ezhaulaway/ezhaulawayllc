@@ -27,7 +27,7 @@ import {
   Trees,
   Users,
 } from "lucide-react";
-import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
+import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 import heroJob640 from "@/assets/hero-job-640.webp";
 import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
@@ -139,11 +139,11 @@ function Wordmark() {
   return (
     <a href="#top" className="group inline-flex items-center" aria-label="EZ Haulaway home">
       <img
-        src={wordmarkAsset.url}
+        src={wordmarkSrc}
         alt="EZ Haulaway"
         className="h-9 w-auto transition-transform group-hover:-rotate-1 sm:h-10"
-        width={1254}
-        height={302}
+        width={480}
+        height={116}
       />
     </a>
   );
