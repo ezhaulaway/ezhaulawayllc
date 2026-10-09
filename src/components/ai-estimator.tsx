@@ -186,14 +186,14 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
     <section id="instant-estimate" className={campaign ? "py-4 sm:py-6" : "py-16 sm:py-24"}>
       <div className={campaign ? "mx-auto max-w-6xl" : "mx-auto max-w-5xl px-5 lg:px-8"}>
         {showIntro && <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
-            100% Free · Instant Junk Removal Estimator
-          </p>
           <p
             aria-hidden="true"
-            className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-7xl"
+            className="font-display text-7xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-8xl"
           >
             Too EZ.
+          </p>
+          <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-primary">
+            100% Free · Instant Junk Removal Estimator
           </p>
           <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
             Get Your Free Junk Removal Price in 30 Seconds
