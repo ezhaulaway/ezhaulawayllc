@@ -2,7 +2,10 @@ import { createServerFn } from "@tanstack/react-start";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
 const CACHE_KEY = "ez-haulaway";
-const CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+
+/** Known Google Place ID for the EZ Haulaway listing (service-area business, not findable by text search). */
+const EZ_HAULAWAY_PLACE_ID = "ChIJPX-32sDH3o4RBp68v9T6vDw";
 
 /** Text query used to locate the business when no place id is configured. */
 const BUSINESS_QUERY = "EZ Haulaway LLC junk removal Parker CO";
@@ -48,7 +51,7 @@ async function readBody(response: Response) {
 }
 
 async function resolvePlaceId(mapsKey: string, lovableKey: string): Promise<string | null> {
-  const configured = process.env["GOOGLE_PLACE_ID"];
+  const configured = process.env["GOOGLE_PLACE_ID"] || EZ_HAULAWAY_PLACE_ID;
   if (configured) return configured;
 
   const response = await fetch(`${GATEWAY_URL}/places/v1/places:searchText`, {
