@@ -189,12 +189,17 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
             100% Free · Instant Junk Removal Estimator
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-            Get Your Free Junk Removal Price Right Now
+          <p
+            aria-hidden="true"
+            className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-7xl"
+          >
+            Too EZ.
+          </p>
+          <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
+            Get Your Free Junk Removal Price in 30 Seconds
           </h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            No waiting on a callback, no obligation, no cost. Snap up to 4 photos or just describe your junk and get
-            an instant price range for hauling it away — in seconds, right here.
+            Snap a photo or describe what needs to go — get an instant price range right on your screen.
           </p>
         </div>}
 
