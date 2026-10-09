@@ -5,7 +5,7 @@ import { HeartHandshake, Leaf, ShieldCheck, Users } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { SITE_URL, reviews, GOOGLE_REVIEWS_URL } from "@/content/site";
 import { Star } from "lucide-react";
-import benAndZoe from "@/assets/ben_and_zoe_photo.avif.asset.json";
+import benAndZoe from "@/assets/new-514DD1DD.webp.asset.json";
 import crewPhoto from "@/assets/real-Tezza-5361.jpg.asset.json";
 import ladderPhoto from "@/assets/real-IMG_5068.jpg.asset.json";
 import truckPhoto from "@/assets/new-1537FC26.webp.asset.json";
@@ -54,9 +54,9 @@ function AboutPage() {
           <div className="flex justify-center rounded-lg border border-border bg-muted p-4">
             <img
               src={benAndZoe.url}
-              alt="Ben of EZ Haulaway with his dog Zoe"
-              width={619}
-              height={640}
+              alt="Ben of EZ Haulaway carrying a bin past the dump trailer"
+              width={360}
+              height={540}
               className="h-auto w-full max-w-md rounded-md"
             />
           </div>

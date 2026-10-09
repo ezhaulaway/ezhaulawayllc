@@ -33,7 +33,7 @@ import heroJob640 from "@/assets/hero-job-640.webp";
 import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
-import benZoeAsset from "@/assets/new-514DD1DD.webp.asset.json";
+import benZoeAsset from "@/assets/ben_and_zoe_photo.avif.asset.json";
 import furnitureAsset from "@/assets/branded-service-furniture.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
 import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
