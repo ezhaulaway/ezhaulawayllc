@@ -39,7 +39,7 @@ export function GoogleReviewsGrid() {
             key={`${review.name}-${review.text.slice(0, 24)}`}
             className="flex flex-col rounded-lg border border-border bg-card p-7 shadow-sm"
           >
-            <div className="flex gap-1 text-primary" aria-label={`${review.rating} out of 5 stars`}>
+            <div role="img" className="flex gap-1 text-primary" aria-label={`${review.rating} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, index) => (
                 <Star
                   key={index}
