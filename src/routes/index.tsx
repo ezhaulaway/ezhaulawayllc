@@ -1,6 +1,8 @@
 import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
+import heroJob640 from "@/assets/hero-job-640.webp";
+import heroJob1200 from "@/assets/hero-job-1200.webp";
 import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
 
 export const Route = createFileRoute("/")({
@@ -22,7 +24,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "preload", as: "image", href: heroJob640, imageSrcSet: `${heroJob640} 640w, ${heroJob1200} 1200w`, imageSizes: "(min-width: 1024px) 50vw, 100vw", fetchPriority: "high" } as any,
+    ],
     scripts: [
       {
         type: "application/ld+json",
