@@ -16,8 +16,10 @@ import { AiEstimator } from "@/components/ai-estimator";
 import { FaqAccordion, PageShell } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
-import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
-import crewLoadingAsset from "@/assets/real-Tezza-5361.jpg.asset.json";
+import benJobsiteAsset from "@/assets/new-1FD1072F.webp.asset.json";
+import wagonAsset from "@/assets/new-B8EC4C72.webp.asset.json";
+import dollyAsset from "@/assets/new-43291499.webp.asset.json";
+import crewLoadingAsset from "@/assets/new-A5F021D5.webp.asset.json";
 
 const title = "Instant Junk Removal Quote Online | EZ Haulaway";
 const description =
@@ -156,7 +158,7 @@ function InstantEstimatePage() {
             <div className="mt-7 flex items-center gap-4 border-t border-secondary-foreground/15 pt-6">
               <img
                 src={benJobsiteAsset.url}
-                alt="Ben from EZ Haulaway beside the company truck at a local junk removal job"
+                alt="Ben from EZ Haulaway carrying a bin to the dump trailer"
                 className="size-14 rounded-full border-2 border-primary object-cover"
               />
               <div>
@@ -166,10 +168,16 @@ function InstantEstimatePage() {
             </div>
             <img
               src={crewLoadingAsset.url}
-              alt="Ben from EZ Haulaway standing beside the company black dump trailer and maroon pickup"
+              alt="Ben from EZ Haulaway loading a cabinet on a dolly into the black dump trailer"
+              width={540}
+              height={360}
               className="mt-7 w-full rounded-lg border border-secondary-foreground/15 object-cover"
               loading="lazy"
             />
+            <div className="mt-4 grid grid-cols-2 gap-4">
+              <img src={wagonAsset.url} alt="EZ Haulaway hauling a wagon of junk toward the red truck and trailer" width={540} height={360} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+              <img src={dollyAsset.url} alt="Ben wheeling a cabinet down a Parker driveway on a dolly" width={360} height={540} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+            </div>
           </div>
           <div className="rounded-lg bg-background p-3 text-foreground shadow-lg sm:p-5">
             <AiEstimator campaign showIntro={false} />
