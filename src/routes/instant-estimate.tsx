@@ -126,10 +126,24 @@ function InstantEstimatePage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
               Parker, Castle Rock &amp; Denver Metro
             </p>
-            <h1 className="mt-4 max-w-xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+            <p
+              aria-hidden="true"
+              className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-7xl lg:text-8xl"
+            >
+              Too EZ.
+            </p>
+            <h1 className="mt-4 max-w-xl text-3xl font-extrabold leading-[1.05] sm:text-4xl lg:text-5xl">
               Instant Junk Removal Quote
             </h1>
             <p className="mt-4 text-xl font-bold text-primary">NO PHONE CALL REQUIRED</p>
+            <ol className="mt-5 flex flex-wrap items-center gap-2 text-sm font-bold uppercase tracking-wide">
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">1. Snap it</li>
+              <ArrowRight aria-hidden="true" className="size-4 text-primary" />
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">2. See your price</li>
+              <ArrowRight aria-hidden="true" className="size-4 text-primary" />
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">3. Lock it in</li>
+            </ol>
+            <p className="mt-3 text-base font-semibold">Locking in your quote is almost too EZ.</p>
             <p className="mt-5 max-w-xl text-base leading-7 text-secondary-foreground/75 sm:text-lg">
               Add your name, city and phone, then snap a photo or describe what you have. Our free junk removal
               cost estimator gives you a preliminary price range in seconds.
