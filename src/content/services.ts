@@ -204,7 +204,7 @@ const raw_services: Service[] = [
     h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
     metaTitle: "Deck Removal & Fence Demolition Denver, CO | EZ Haulaway",
     metaDescription:
-      "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of hands-on experience. Every board hauled, site raked. Free quote.",
+      "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of experience. Every board hauled, site raked. Free quote.",
     summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
     image: deckAsset,
     imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
@@ -409,7 +409,7 @@ const raw_services: Service[] = [
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
     metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
     metaDescription:
-      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you. Free quote.",
+      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
     summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
     imageAlt: "EZ Haulaway crew lifting a bulky trash bin into the tandem-axle dump trailer",
