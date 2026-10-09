@@ -30,6 +30,7 @@ import {
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 import heroJob640 from "@/assets/hero-job-640.webp";
+import heroJob800 from "@/assets/hero-job-800.webp";
 import timelapsePosterSrc from "@/assets/timelapse-poster.webp";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
@@ -207,7 +208,7 @@ export function HomePage() {
             <div className="relative min-w-0">
               <img
                 src={heroJob1200}
-                srcSet={`${heroJob640} 640w, ${heroJob1200} 1200w`}
+                srcSet={`${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`}
                 sizes="(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)"
                 width={1200}
                 height={800}
@@ -265,7 +266,7 @@ export function HomePage() {
 
         <section id="how-it-works" className="bg-secondary py-20 text-secondary-foreground sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">EZ IN, EZ OUT</p>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary-bright">EZ IN, EZ OUT</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">Three Steps. Then It’s Gone. EZ</h2>
             <div className="mt-12 grid gap-8 lg:grid-cols-3">
               {[
@@ -274,7 +275,7 @@ export function HomePage() {
                 ["03", "We Haul It Away", "We handle the lifting, loading, hauling, and cleanup."],
               ].map(([number, title, text]) => (
                 <article key={number} className="border-t border-secondary-foreground/20 pt-6">
-                  <span className="font-display text-5xl font-extrabold text-primary">{number}</span>
+                  <span className="font-display text-5xl font-extrabold text-primary-bright">{number}</span>
                   <h3 className="mt-7 text-xl font-bold">{title}</h3>
                   <p className="mt-3 max-w-sm leading-7 text-secondary-foreground/70">{text}</p>
                 </article>
