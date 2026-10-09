@@ -30,16 +30,16 @@ import {
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 import heroJob640 from "@/assets/hero-job-640.webp";
-import timelapsePoster from "@/assets/real-IMG_5065.jpg.asset.json";
+import timelapsePosterSrc from "@/assets/timelapse-poster.webp";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
 import benZoeAsset from "@/assets/ben_and_zoe_photo.avif.asset.json";
-import furnitureAsset from "@/assets/branded-service-furniture.webp";
-import applianceAsset from "@/assets/branded-service-appliance.webp";
-import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
-import constructionAsset from "@/assets/branded-service-construction.webp";
-import garageAsset from "@/assets/new-30F5C3AA.webp.asset.json";
-import estateAsset from "@/assets/branded-service-estate.webp";
+import furnitureAsset from "@/assets/card-furniture.webp";
+import applianceAsset from "@/assets/card-appliance.webp";
+import hotTubAsset from "@/assets/card-hot-tub.webp";
+import constructionAsset from "@/assets/card-construction.webp";
+import garageSrc from "@/assets/card-household.webp";
+import estateAsset from "@/assets/card-estate.webp";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -78,7 +78,7 @@ const navItems = [
 const services: Array<{ title: string; text: string; icon: LucideIcon; image: string; imageAlt: string; position: string }> = [
   { title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
   { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
-  { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageAsset.url, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
+  { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageSrc, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
   { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
   { title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
   { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
@@ -208,7 +208,7 @@ export function HomePage() {
               <img
                 src={heroJob1200}
                 srcSet={`${heroJob640} 640w, ${heroJob1200} 1200w`}
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 600px, (min-width: 640px) 100vw, 640px"
                 width={1200}
                 height={800}
                 alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
@@ -374,7 +374,7 @@ export function HomePage() {
               muted
               playsInline
               preload="none"
-              poster={timelapsePoster.url}
+              poster={timelapsePosterSrc}
               src={timelapseAsset.url}
               className="aspect-video w-full object-cover"
             >
