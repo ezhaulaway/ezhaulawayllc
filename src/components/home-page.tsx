@@ -499,7 +499,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <ProseSection {...pageExtras.home} />
+        <ProseSection {...pageExtras.home} plainHeadings />
 
         <section className="bg-primary py-16 text-primary-foreground sm:py-20">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 md:flex-row md:items-center lg:px-8">
