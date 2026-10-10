@@ -120,7 +120,6 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "Mattress disposal, couch removal, and heavy item hauling", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are [[item:Mattress]], box springs [[item:Box spring]], couches run about [[item:Couch]] per cushion, treadmills [[item:Treadmill]], and pianos start around [[item:Piano]]. Couch disposal, recliners, sleeper sofas, dressers, and exercise equipment all come out of the room they're in, not just off the curb." },
       { heading: "Stairs, apartments, and awkward turns", text: "Bulky items rarely come out the way they went in. We bring straps, dollies, and the extra hands to get a king mattress down a stairwell or a sectional through a narrow hallway without damaging walls or doorframes." },
-    ],
       { heading: "Why mattress disposal in Denver is a hassle", text: "Most Denver trash pickup won't take a mattress with the regular cans, and many dumps charge extra or refuse them. Mattresses also don't fit in most cars. We pick it up from your bedroom, load it, and handle the disposal fee. Clean mattresses can often be recycled for their steel, foam, and wood." },
       { heading: "How to get ready for mattress pickup", text: "Strip the sheets and mattress cover. If the bed frame is staying, leave it. If it's going, we can take it apart for you. That's it — you don't need to bag it or carry it downstairs." },
     ],
