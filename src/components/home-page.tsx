@@ -111,6 +111,22 @@ const reasons: Array<{ icon: LucideIcon; title: string; text: string }> = [
 
 const faqs = [
   [
+    "Do I have to move my junk to the curb?",
+    "No. Our crew carries items out of basements, bedrooms, garages, and backyards. Just show us what goes.",
+  ],
+  [
+    "How fast can you pick up junk in Parker?",
+    "We're based in Parker, so same-day or next-day pickup is often possible. Call or text and we'll give you the soonest time.",
+  ],
+  [
+    "Where does my junk go?",
+    "We sort every load. Usable furniture goes to donation, metal and appliances get recycled, and only the rest goes to the landfill.",
+  ],
+  [
+    "What can't you take?",
+    "We can't haul hazardous items like wet paint, chemicals, fuel, asbestos, or medical waste. Not sure? Text us a photo.",
+  ],
+  [
     "What types of junk do you remove?",
     "We handle furniture, appliances, household junk, yard and construction debris, storage unit and property cleanouts, mattresses, electronics, hot tubs, and select light demolition projects.",
   ],

@@ -6,7 +6,8 @@ const raw_pageExtras = {
     eyebrow: "Local junk removal",
     title: "Why Parker Homeowners Call EZ Haulaway",
     blocks: [
-      ["Junk removal priced by trailer space", "Our 16-foot, 14-cubic-yard dump trailer lets us price fairly by volume. Small pickups start at a [[min]] minimum, a half load runs about [[load:4]], and a full trailer is about [[load:8]] — all labor, loading, hauling, and disposal included."],
+      ["How much does junk removal cost in Parker?", "We price by how much space your junk takes in our 16-foot dump trailer. Small pickups start at a [[min]] minimum. A half load is about [[load:4]], and a full trailer is about [[load:8]]. That price covers the labor, loading, hauling, and dump fees. No surprise fuel or mileage charges."],
+      ["What does EZ Haulaway pick up?", "Couches, mattresses, appliances, hot tubs, sheds, decks, yard waste, remodel debris, and full garage or estate cleanouts. If it's not hazardous and two people can load it, we can usually take it."],
       ["Serving Parker, Castle Rock, and the Denver metro", "We're based in Parker and work daily in Castle Rock, Castle Pines, Highlands Ranch, Lone Tree, Centennial, Aurora, Littleton, Englewood, Lakewood, Denver, Elizabeth, Franktown, and Sedalia."],
       ["Donate, recycle, then dispose", "Every load is sorted before it heads to the landfill. Usable furniture goes toward donation, and metal, appliances, and electronics are recycled whenever possible."],
       ["Same-day junk removal when you're in a hurry", "Moving day, a closing date, or a rental turnover can't wait. We keep room in the schedule for same-day and next-day junk removal in Parker, Castle Rock, Lone Tree, Centennial, and Denver whenever the trailer is free."],

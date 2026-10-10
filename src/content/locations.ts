@@ -33,6 +33,22 @@ const raw_locations: Location[] = [
       "Between newer subdivisions still filling in and established neighborhoods finally replacing that twenty-year-old deck, Parker keeps us busy with everything from single mattress pickups to full garage cleanouts.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
+    content: [
+      {
+        heading: "Parker Junk Removal: Common Questions",
+        paragraphs: [
+          "Most Parker homeowners ask the same few things before they book. Here are straight answers.",
+        ],
+        list: [
+          { title: "How much does junk removal cost in Parker?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
+          { title: "Does Parker trash service take big items?", text: "Most Parker trash haulers and HOAs limit bulky items like couches, mattresses, and appliances. We take them, plus anything else you need gone." },
+          { title: "How fast can you come?", text: "We're based in Parker, so same-day or next-day pickup is often possible. Call or text and we'll give you the soonest time." },
+          { title: "Do you serve acreage and rural Parker?", text: "Yes. Larger lots out toward Franktown and Elizabeth are a regular stop for brush piles, old fencing, and shed tear-downs." },
+          { title: "Do I have to be home?", text: "Not always. For curbside or garage pickups, you can pay by phone and we'll text you when it's done." },
+        ],
+        closing: "Want a price now? Use our free instant estimate with a few photos.",
+      },
+    ],
   },
   {
     slug: "castle-rock",
