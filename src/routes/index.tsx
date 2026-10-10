@@ -2,9 +2,25 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
+import { getGoogleReviews } from "@/lib/google-reviews.functions";
+
+const BASELINE_RATING = { rating: 5, count: 5 };
 
 export const Route = createFileRoute("/")({
-  head: () => ({
+  loader: async () => {
+    try {
+      const data = await Promise.race([
+        getGoogleReviews(),
+        new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
+      ]);
+      if (data?.rating && data.totalCount) return { rating: data.rating, count: data.totalCount };
+    } catch {
+      /* fall back */
+    }
+    return BASELINE_RATING;
+  },
+  staleTime: 60 * 60 * 1000,
+  head: ({ loaderData }) => ({
     meta: [
       { title: "Junk Removal Parker CO | EZ Haulaway LLC – Free Quotes" },
       {
@@ -90,6 +106,13 @@ export const Route = createFileRoute("/")({
             longitude: -104.8064,
           },
           sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: (loaderData ?? BASELINE_RATING).rating.toFixed(1),
+            reviewCount: (loaderData ?? BASELINE_RATING).count,
+            bestRating: "5",
+            worstRating: "1",
+          },
         })),
       },
     ],
