@@ -45,10 +45,15 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "Couch, sectional, and mattress removal pricing", text: "Couches are priced at about [[item:Couch]] per cushion, mattresses run [[item:Mattress]], and box springs [[item:Box spring]]. Larger furniture loads are priced by how much trailer space they take, starting at our [[min]] minimum. You'll know the exact number before we lift anything." },
       { heading: "Donation first when furniture is still usable", text: "A lot of furniture we pick up still has life in it. When pieces are in good shape, we set them aside for local donation rather than the landfill, so your old dresser or dining set can help another Denver-area family." },
+      { heading: "Sofa removal and furniture hauling in Denver", text: "Sofas, sectionals, sleeper sofas, and recliners are the most common furniture we haul in Denver. Sleeper sofas are heavy and awkward, and older Denver homes have narrow doors and steep stairs. We bring the hands and tools to get it out without scraping walls. Alley pickups, walkup apartments, and basements are all part of the job." },
+      { heading: "What a furniture haul-away includes", text: "We carry the furniture out, load it, haul it off, and pay the dump fees. You don't rent a truck, find helpers, or make a trip to the landfill. Add other junk to the same trip and we price it all together by trailer space." },
     ],
     faqs: [
       ["Can you take furniture the same week?", "Usually, yes. Send photos and we'll offer the soonest available time that works for you."],
       ["Do I need to disassemble anything?", "No. If a piece needs to come apart to get out a door, our crew handles it."],
+      ["How much does sofa removal cost in Denver?", "Couches are about [[item:Couch]] per cushion. A single sofa usually lands near our [[min]] minimum. Sectionals and bigger loads are priced by trailer space."],
+      ["Do you remove sleeper sofas and sectionals?", "Yes. Sleeper sofas, sectionals, and power recliners are heavy, but our crew handles them every week."],
+      ["Do you donate furniture?", "Yes. If a piece is clean and in good shape, we set it aside for local donation instead of the landfill."],
     ],
   },
   "garage-cleanouts": {
@@ -115,10 +120,15 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "Mattress disposal, couch removal, and heavy item hauling", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are [[item:Mattress]], box springs [[item:Box spring]], couches run about [[item:Couch]] per cushion, treadmills [[item:Treadmill]], and pianos start around [[item:Piano]]. Couch disposal, recliners, sleeper sofas, dressers, and exercise equipment all come out of the room they're in, not just off the curb." },
       { heading: "Stairs, apartments, and awkward turns", text: "Bulky items rarely come out the way they went in. We bring straps, dollies, and the extra hands to get a king mattress down a stairwell or a sectional through a narrow hallway without damaging walls or doorframes." },
+      { heading: "Why mattress disposal in Denver is a hassle", text: "Most Denver trash pickup won't take a mattress with the regular cans, and many dumps charge extra or refuse them. Mattresses also don't fit in most cars. We pick it up from your bedroom, load it, and handle the disposal fee. Clean mattresses can often be recycled for their steel, foam, and wood." },
+      { heading: "How to get ready for mattress pickup", text: "Strip the sheets and mattress cover. If the bed frame is staying, leave it. If it's going, we can take it apart for you. That's it — you don't need to bag it or carry it downstairs." },
     ],
     faqs: [
       ["How much does mattress disposal cost in Denver?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. If they're part of a bigger load, we price the whole load by trailer space instead."],
       ["Can you take just one couch?", "Yes. Single-item couch removal usually falls near our [[min]] minimum, and we'll carry it out for you."],
+      ["Does Denver trash pickup take mattresses?", "Usually not with regular trash. Denver's large-item pickup is limited and scheduled weeks out. We can often come the same week."],
+      ["Can you take a mattress from an upstairs bedroom or apartment?", "Yes. We carry it down the stairs and out the door. Third-floor walkups and tight stairwells are no problem."],
+      ["Do you recycle mattresses?", "When a mattress is dry and clean, we try to send it to recycling so the steel and foam get reused instead of buried."],
     ],
   },
   "shed-removal": {
