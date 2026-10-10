@@ -13,9 +13,9 @@ import job3 from "@/assets/ben-job-3.webp.asset.json";
 import job4 from "@/assets/ben-job-4.webp.asset.json";
 import job9 from "@/assets/ben-job-9.webp.asset.json";
 
-const title = "About EZ Haulaway — Local Junk Removal in Parker, CO";
+const title = "About EZ Haulaway — Meet Ben & Our Family-Owned Crew";
 const description =
-  "EZ Haulaway is a locally owned junk removal company serving Parker and the Denver metro area. Meet the crew, see how we work, and read real customer reviews.";
+  "Meet Ben and the family-owned EZ Haulaway crew. Learn how we work, why we donate and recycle first, and what real customers say about our hauling.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
