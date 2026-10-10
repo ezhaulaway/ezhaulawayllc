@@ -117,6 +117,12 @@ const raw_locations: Location[] = [
         ],
       },
       {
+        heading: "How Fast Can You Get to Centennial?",
+        paragraphs: [
+          "Centennial is a short drive from our base in Parker, so same-week pickup is normal and next-day often works. We give you an arrival window, and you get a price before we load anything.",
+        ],
+      },
+      {
         heading: "Straight Pricing Before We Load Anything",
         paragraphs: [
           "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at [[min]], a quarter trailer runs [[load:2]], half is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. We quote the price on site before a single item goes on the trailer, and that number is what you pay.",
@@ -140,6 +146,34 @@ const raw_locations: Location[] = [
       "Storage-heavy homes with finished basements tend to accumulate furniture and exercise equipment nobody uses anymore. Those are some of our most common calls here.",
     nearby: ["littleton", "centennial", "lone-tree"],
     topServices: ["mattress-and-bulky-item-removal", "garage-cleanouts", "furniture-removal"],
+    content: [
+      {
+        heading: "Highlands Ranch Junk Removal: The Quick Answer",
+        paragraphs: [
+          "EZ Haulaway picks up junk all over Highlands Ranch. We carry it out of your home, garage or yard and haul it away in one visit. Pricing is based on trailer space: [[min]] for a small load up to [[load:8]] for a full trailer, with labor and disposal included.",
+        ],
+      },
+      {
+        heading: "What Highlands Ranch Homeowners Call Us For",
+        paragraphs: [
+          "Highlands Ranch homes have big basements and garages, and they fill up. These are our most common calls here:",
+        ],
+        list: [
+          { title: "Basement furniture", text: "Old sectionals, futons, desks and bookshelves carried up the stairs for you." },
+          { title: "Exercise equipment", text: "Treadmills, ellipticals, weight benches and home gyms taken apart and hauled out." },
+          { title: "Mattresses", text: "Mattresses run [[item:Mattress]] and box springs [[item:Box spring]], within our [[min]] minimum." },
+          { title: "Garage cleanouts", text: "Boxes, shelving, old bikes and yard tools cleared in one trip." },
+        ],
+      },
+      {
+        heading: "Working Around HOA Rules",
+        paragraphs: [
+          "Many Highlands Ranch neighborhoods don't want junk piled at the curb for days. With us, nothing sits outside. We load straight from your garage or house and leave the same visit.",
+        ],
+        closing:
+          "Send photos through our free instant estimate, or call or text us for a same-week slot.",
+      },
+    ],
   },
   {
     slug: "lone-tree",
@@ -159,52 +193,64 @@ const raw_locations: Location[] = [
     slug: "denver",
     city: "Denver",
     county: "Denver County",
-    metaTitle: "Junk Removal Denver CO | EZ Haulaway",
-    metaDescription: "Junk removal and hauling services in Denver, CO. Furniture, appliances, cleanouts and debris hauled away. Free quotes from EZ Haulaway LLC.",
+    metaTitle: "Junk Removal Denver CO | Furniture & Junk Hauling",
+    metaDescription: "Junk removal Denver CO: furniture, couches, mattresses, appliances and cleanouts hauled from inside your home. Upfront trailer pricing, free instant estimate.",
     intro:
-      "EZ Haulaway works throughout Denver, from older neighborhoods with alley access to downtown apartments and offices.",
+      "Need junk removal in Denver? EZ Haulaway hauls furniture, appliances, mattresses and full cleanouts from homes, apartments and offices across Denver. We do all the lifting.",
     local:
-      "City jobs come with tight parking and narrow stairwells. We plan access before we arrive so the crew is not improvising in front of your building.",
+      "Denver jobs mean alleys, tight parking and narrow stairs. We plan access before we arrive, so the crew isn't figuring it out in front of your building.",
     nearby: ["englewood", "aurora"],
-    topServices: ["furniture-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
     content: [
       {
-        heading: "Reliable, Eco-Friendly Junk Removal in Denver",
+        heading: "Denver Junk Removal: The Quick Answer",
         paragraphs: [
-          "When clutter takes over your space, you need a dependable junk removal company that handles the heavy lifting for you. Proudly serving the Denver area, we specialize in both residential and commercial cleanouts of all sizes. Whether you are clearing out a cluttered garage, upgrading your office workspace, or simply looking to get rid of unwanted items, our professional team is dedicated to providing a seamless, stress-free removal experience from start to finish.",
+          "EZ Haulaway is a local junk removal company serving Denver. Two of us show up with a 16-foot dump trailer, carry your junk out from wherever it sits, and haul it away the same visit. You get a price before we load anything.",
+          "Prices are based on how much of the trailer you fill. A small load starts at [[min]] and a full trailer is [[load:8]]. Labor, loading, hauling and disposal are all included.",
         ],
       },
       {
-        heading: "Comprehensive Removal Services Tailored to Your Needs",
+        heading: "How Much Does Junk Removal Cost in Denver?",
         paragraphs: [
-          "No job is too big or too small. Our premier junk removal service covers everything from single-item pickups to full-scale property cleanouts. We offer specialized junk hauling solutions for:",
+          "You pay for space, not hours. Here's how our trailer pricing works in Denver:",
         ],
         list: [
-          {
-            title: "Unwanted furniture",
-            text: "We safely remove and haul away old couches, desks, mattresses, and heavy dining sets without damaging your property.",
-          },
-          {
-            title: "Construction debris",
-            text: "Keep your renovation or job site safe and clear with our prompt pickup of scrap wood, drywall, concrete, and remodeling waste.",
-          },
-          {
-            title: "Office and Retail cleanouts",
-            text: "Minimizing downtime while clearing out old inventory, cubicles, and filing cabinets.",
-          },
-          {
-            title: "Appliance & Electronics",
-            text: "Safe, compliant disposal of heavy, outdated tech and white goods.",
-          },
+          { title: "Minimum load", text: "[[min]] — one or two bulky items, like a couch or a mattress set." },
+          { title: "Quarter trailer", text: "[[load:2]] — a small room or a few pieces of furniture." },
+          { title: "Half trailer", text: "[[load:4]] — a one-car garage or a large basement corner." },
+          { title: "Three-quarter trailer", text: "[[load:6]] — most of an apartment or a big garage." },
+          { title: "Full trailer", text: "[[load:8]] — about 14 cubic yards, a full house or estate cleanout." },
+        ],
+        closing:
+          "Want a number now? Send photos through our free instant estimate and get a price range in about a minute.",
+      },
+      {
+        heading: "What We Haul Away in Denver",
+        paragraphs: [
+          "If two people can lift it and it's not hazardous, we can usually take it. Our most common Denver jobs:",
+        ],
+        list: [
+          { title: "Furniture and couch removal", text: "Sofas, sectionals, sleeper sofas, recliners, dressers and dining sets — carried down stairs and out of apartments." },
+          { title: "Mattress disposal", text: "Mattresses and box springs, plus bed frames we take apart for you." },
+          { title: "Appliance removal", text: "Fridges, washers, dryers, stoves and dishwashers, sent to metal recycling when possible." },
+          { title: "Cleanouts", text: "Garages, basements, apartments, move-outs and estate cleanouts in one trip." },
+          { title: "Office and commercial", text: "Desks, chairs, cubicles and filing cabinets, scheduled to keep downtime low." },
+        ],
+        closing:
+          "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
+      },
+      {
+        heading: "Why Denver Customers Hire Us Instead of Curbside Pickup",
+        paragraphs: [
+          "Denver's large-item pickup only takes what you drag to the curb or alley. We come inside. That matters for a third-floor walkup, a basement in an old bungalow, or a couch that barely fit through the door.",
+          "We protect floors and door frames, sweep up after, and leave with everything in one trip. Usable furniture goes to donation when we can, and metal goes to recycling.",
         ],
       },
       {
-        heading: "Our Commitment to Keeping Colorado Clean",
+        heading: "How Fast Can You Come to Denver?",
         paragraphs: [
-          "We love Denver, and we are committed to keeping it beautiful. That is why we take a strictly eco friendly approach to our work. We don't just dump your belongings into the nearest landfill; instead, our team carefully sorts through the load. We partner with local charities, donation centers, and recycling facilities to ensure that usable goods find a second life and raw materials are properly processed.",
+          "We're based in Parker, and we schedule Denver jobs every week. Same-week pickup is common. Call or text us, or start with the instant estimate, and we'll find a time that works.",
         ],
-        closing:
-          "Ready to reclaim your space? Contact us today for a free estimate and let our team handle the mess!",
       },
     ],
   },
