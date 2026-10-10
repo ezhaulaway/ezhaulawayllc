@@ -24,11 +24,11 @@ const raw_locations: Location[] = [
     slug: "parker",
     city: "Parker",
     county: "Douglas County",
-    metaTitle: "Junk Removal Parker CO | EZ Haulaway",
+    metaTitle: "Junk Removal Parker CO | Local Parker Junk Removal",
     metaDescription:
       "Junk removal in Parker, CO from a local, family-owned crew. Furniture, appliances, hot tubs and full cleanouts hauled away. Free quotes from EZ Haulaway.",
     intro:
-      "Parker is home base. EZ Haulaway is a family-owned business run out of Parker, so a job here is a job in our own neighborhood.",
+      "Parker is home base. EZ Haulaway is a family-owned Parker junk removal company, so junk removal in Parker, CO is a job in our own neighborhood.",
     local:
       "Between newer subdivisions still filling in and established neighborhoods finally replacing that twenty-year-old deck, Parker keeps us busy with everything from single mattress pickups to full garage cleanouts.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
@@ -47,6 +47,13 @@ const raw_locations: Location[] = [
           { title: "Do I have to be home?", text: "Not always. For curbside or garage pickups, you can pay by phone and we'll text you when it's done." },
         ],
         closing: "Want a price now? Use our free instant estimate with a few photos.",
+      },
+      {
+        heading: "What Parker Junk Removal Includes",
+        paragraphs: [
+          "Every job includes the lifting, loading, hauling, and dump fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
+          "Common Parker jobs include couch and mattress pickups, garage cleanouts, old hot tubs, sheds, decks, fences, and yard debris. Usable items go to donation, and metal goes to recycling when we can.",
+        ],
       },
     ],
   },
@@ -205,11 +212,11 @@ const raw_locations: Location[] = [
     slug: "aurora",
     city: "Aurora",
     county: "Arapahoe & Adams County",
-    metaTitle: "Junk Removal Aurora CO | EZ Haulaway",
+    metaTitle: "Junk Removal Aurora CO | Aurora Junk Removal & Hauling",
     metaDescription:
       "Junk removal in Aurora, CO — rental turnovers, estate cleanouts, appliance and furniture hauling. Fast scheduling and free quotes from EZ Haulaway.",
     intro:
-      "Aurora is one of the largest areas we cover, and we take jobs across the city from Southlands out toward the older neighborhoods.",
+      "Need junk removal in Aurora, CO? Aurora is one of the largest areas we cover, and we take jobs across the city from Southlands out toward the older neighborhoods.",
     local:
       "Rental turnovers and estate cleanouts make up a good share of our Aurora work, alongside everyday appliance and furniture pickups.",
     nearby: ["denver", "centennial"],
@@ -251,6 +258,12 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Plenty of companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
         ],
+      },
+      {
+        heading: "Aurora Junk Removal Pricing",
+        paragraphs: [
+          "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, with no extra trip charge for Aurora.",
+        ],
         closing:
           "Call or text 720-614-7223 for an Aurora slot, or send photos through our instant estimate for a price range in minutes.",
       },
@@ -270,6 +283,26 @@ const raw_locations: Location[] = [
       "Older Littleton homes often mean decks and fences well past their service life, plus basements holding decades of stored items.",
     nearby: ["highlands-ranch", "englewood", "centennial", "sedalia"],
     topServices: ["deck-and-fence-removal", "house-and-estate-cleanouts", "yard-and-landscaping-debris"],
+    content: [
+      {
+        heading: "Junk Removal in Littleton, CO",
+        paragraphs: [
+          "Littleton junk removal with EZ Haulaway is simple: send a photo, get a price, and we carry everything out. We serve homes across Littleton, from the older streets near downtown to newer neighborhoods to the south.",
+          "Older Littleton homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down and the haul in one visit.",
+        ],
+      },
+      {
+        heading: "Littleton Junk Removal: Common Questions",
+        paragraphs: ["Here are quick answers to what Littleton homeowners ask most."],
+        list: [
+          { title: "How much does junk removal cost in Littleton?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
+          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down and haul it off in the same visit." },
+          { title: "Can you clear out a basement?", text: "Yes. We carry everything up the stairs and out, so you don't lift a thing." },
+          { title: "Where does my junk go?", text: "Usable items go to donation, metal goes to recycling, and the rest goes to a licensed disposal site." },
+        ],
+        closing: "Want a Littleton price now? Use our free instant estimate with a few photos.",
+      },
+    ],
   },
   {
     slug: "englewood",

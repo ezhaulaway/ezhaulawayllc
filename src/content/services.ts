@@ -35,9 +35,9 @@ const raw_services: Service[] = [
     slug: "furniture-removal",
     name: "Furniture Removal",
     h1: "Furniture Removal in Parker & the Denver Metro Area",
-    metaTitle: "Furniture Removal in Parker, CO | EZ Haulaway",
+    metaTitle: "Furniture Removal Services & Couch Removal | EZ Haulaway",
     metaDescription:
-      "Couch, mattress, dresser, or a whole room of furniture — EZ Haulaway hauls it out of Parker and Denver metro homes. Free quotes, no heavy lifting for you.",
+      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, mattresses, and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",

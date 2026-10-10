@@ -43,12 +43,15 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
   },
   "furniture-removal": {
     sections: [
+      { heading: "How to get rid of a couch or sofa", text: "You have four main options: donate it, sell it, put it out for bulk trash, or hire couch removal. Donation centers usually want clean pieces with no rips or stains. Bulk trash often means dragging it to the curb yourself. Our couch removal service is the easy route: we remove a couch from any room, carry it out, and haul it away the same visit." },
+      { heading: "Furniture removal services we offer", text: "Our furniture removal services cover sofas, sectionals, recliners, mattresses, dressers, tables, desks, and office furniture. Need one piece gone or a whole house? Either way, we're a local furniture removal company that does the lifting, loading, and disposal for you." },
       { heading: "Couch, sectional, and mattress removal pricing", text: "Couches are priced at about [[item:Couch]] per cushion, mattresses run [[item:Mattress]], and box springs [[item:Box spring]]. Larger furniture loads are priced by how much trailer space they take, starting at our [[min]] minimum. You'll know the exact number before we lift anything." },
       { heading: "Donation first when furniture is still usable", text: "A lot of furniture we pick up still has life in it. When pieces are in good shape, we set them aside for local donation rather than the landfill, so your old dresser or dining set can help another Denver-area family." },
       { heading: "Sofa removal and furniture hauling in Denver", text: "Sofas, sectionals, sleeper sofas, and recliners are the most common furniture we haul in Denver. Sleeper sofas are heavy and awkward, and older Denver homes have narrow doors and steep stairs. We bring the hands and tools to get it out without scraping walls. Alley pickups, walkup apartments, and basements are all part of the job." },
       { heading: "What a furniture haul-away includes", text: "We carry the furniture out, load it, haul it off, and pay the dump fees. You don't rent a truck, find helpers, or make a trip to the landfill. Add other junk to the same trip and we price it all together by trailer space." },
     ],
     faqs: [
+      ["What's the easiest way to dispose of a sofa?", "Book sofa removal. We carry it out of the house, load it, and haul it away. You don't need a truck or helpers."],
       ["Can you take furniture the same week?", "Usually, yes. Send photos and we'll offer the soonest available time that works for you."],
       ["Do I need to disassemble anything?", "No. If a piece needs to come apart to get out a door, our crew handles it."],
       ["How much does sofa removal cost in Denver?", "Couches are about [[item:Couch]] per cushion. A single sofa usually lands near our [[min]] minimum. Sectionals and bigger loads are priced by trailer space."],
