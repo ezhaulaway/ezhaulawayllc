@@ -260,7 +260,7 @@ export function HomePage() {
             <p className="mt-3 leading-7 text-muted-foreground">
               EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
               metro area. Pricing starts at ${guide.minimum} and a full 16-foot trailer load (14 cubic yards) runs ${fullPrice},
-              with labor, loading, hauling, and disposal included. Our hauling services cover homes, businesses, and job sites. Call or text 720-614-7223 for a free quote.
+              with labor, loading, hauling, and disposal included. Our <strong className="text-foreground">junk removal services</strong> cover homes, businesses, and job sites. Call or text 720-614-7223 for a <strong className="text-foreground">free estimate</strong>.
             </p>
             <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
               {[
