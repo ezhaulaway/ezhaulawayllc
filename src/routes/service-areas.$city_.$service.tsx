@@ -115,6 +115,62 @@ const RAW_CUSTOM_PAGES: Record<
       ],
     ],
   },
+  "denver/furniture-removal": {
+    description:
+      "Furniture removal in Denver, CO: couches, sectionals, mattresses and dressers hauled from inside your home or apartment. Upfront pricing from [[min]]. Free estimate.",
+    intro: [
+      "Need furniture removal in Denver? We pick up couches, sectionals, recliners, dressers, mattresses and dining sets from inside your home, apartment or office, then haul them away the same visit.",
+      "You don't move anything to the curb. Two of us carry it down the stairs, out of the basement or through the hallway, and load it on our trailer.",
+      "A single couch or mattress falls under our [[min]] minimum. Bigger jobs are priced by trailer space, up to [[load:8]] for a full load. Labor, hauling and disposal are included.",
+    ],
+    localHeading: "Couch and Sofa Removal Across Denver",
+    localText: [
+      "Denver furniture jobs come with old bungalow basements, walkup apartments and alley-only access. We plan the route before we lift, and we protect floors, railings and door frames on the way out.",
+      "Furniture in good shape goes to donation when we can. Broken pieces get sorted, and metal frames go to recycling. Want a price first? Send a photo through the instant estimate.",
+    ],
+    faqs: [
+      [
+        "How much does couch removal cost in Denver?",
+        "Couches are priced per cushion at [[item:Couch]]. One couch on its own falls under our [[min]] minimum, and that minimum covers other small items you add.",
+      ],
+      [
+        "Can you remove furniture from an upstairs apartment?",
+        "Yes. We carry furniture down stairs and out of apartments and condos. Let us know about elevators or parking rules when you book.",
+      ],
+      [
+        "Do you take sleeper sofas and sectionals?",
+        "Yes. Sleeper sofas and sectionals are some of our most common Denver pickups. We take them apart if that's needed to get them out.",
+      ],
+    ],
+  },
+  "denver/appliance-removal": {
+    description:
+      "Appliance removal in Denver, CO: fridges, washers, dryers, stoves and dishwashers hauled from inside your home and recycled. Upfront pricing, free estimate.",
+    intro: [
+      "Need appliance removal in Denver? We haul refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters from your kitchen, basement or garage.",
+      "We do the lifting, use dollies and straps on the stairs, and protect your floors on the way out.",
+      "Appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each depending on size, and a single item falls under our [[min]] minimum. Fridges and freezers with Freon have a [[adj:freon]] handling fee.",
+    ],
+    localHeading: "Old Appliance Pickup Anywhere in Denver",
+    localText: [
+      "Replacing a kitchen or laundry set? We can take the old appliances plus any other junk from the remodel in the same trip, priced by trailer space.",
+      "Appliances go to metal recycling whenever possible instead of the landfill. Send a photo through the instant estimate for a quick price.",
+    ],
+    faqs: [
+      [
+        "How much does appliance removal cost in Denver?",
+        "Most appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]]. A single item falls under our [[min]] minimum. Fridges and freezers add a [[adj:freon]] Freon fee.",
+      ],
+      [
+        "Do I need to disconnect my appliance first?",
+        "It's best to unplug it and shut off the water to a washer or fridge line. Gas appliances should be disconnected by a pro before we arrive.",
+      ],
+      [
+        "Where do old appliances go?",
+        "We take them to metal recycling whenever possible, so they don't end up in a landfill.",
+      ],
+    ],
+  },
 };
 const CUSTOM_PAGES = priced(RAW_CUSTOM_PAGES);
 
