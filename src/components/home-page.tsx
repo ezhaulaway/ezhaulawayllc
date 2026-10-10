@@ -181,7 +181,7 @@ function SectionHeader({ eyebrow, title, text, center = false }: { eyebrow: stri
 export function HomePage() {
   const guide = usePriceGuide();
   const fullLoad = guide.loads.find((l) => l.eighths === 8);
-  const fullPrice = guide.live && fullLoad ? `$${fullLoad.price}` : "$700–$850";
+  const fullPrice = guide.live && fullLoad ? `$${fullLoad.price}` : `$${fullLoad?.price ?? 800}`;
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (

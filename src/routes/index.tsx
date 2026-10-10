@@ -69,20 +69,14 @@ export const Route = createFileRoute("/")({
             addressCountry: "US",
           },
           sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
-          makesOffer: [
-            {
-              "@type": "Offer",
-              priceCurrency: "USD",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                price: "150",
-                minPrice: "150",
-                maxPrice: "850",
-              },
-              itemOffered: { "@type": "Service", name: "Junk Removal & Hauling Services" },
-            },
-          ],
-        })),
+          makesOffer: {
+            "@type": "AggregateOffer",
+            priceCurrency: "USD",
+            lowPrice: "[[min]]",
+            highPrice: "[[load:8]]",
+            itemOffered: { "@type": "Service", name: "Junk Removal & Hauling Services" },
+          },
+        })).replace(/"(low|high)Price":"\$([\d,]+)"/g, (_m, k, n) => `"${k}Price":"${n.replace(/,/g, "")}"`),
       },
       {
         type: "application/ld+json",

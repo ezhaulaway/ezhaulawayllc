@@ -32,14 +32,6 @@ export const LOAD_LEVELS: LoadLevel[] = [
   { eighths: 8, label: "Full trailer", shortLabel: "Full", volume: "14 yd³", price: 800 },
 ];
 
-/** Customer-facing ranges for the headline load sizes. */
-export const LOAD_RANGES: { label: string; low: number; high: number }[] = [
-  { label: "Minimum / small load", low: 150, high: 200 },
-  { label: "¼ trailer", low: 250, high: 300 },
-  { label: "½ trailer", low: 400, high: 500 },
-  { label: "¾ trailer", low: 550, high: 650 },
-  { label: "Full trailer", low: 700, high: 850 },
-];
 
 export type SpecialtyItem = { item: string; price: string };
 
