@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
             highPrice: "[[load:8]]",
             itemOffered: { "@type": "Service", name: "Junk Removal & Hauling Services" },
           },
-        })),
+        })).replace(/"(low|high)Price":"\$([\d,]+)"/g, (_m, k, n) => `"${k}Price":"${n.replace(/,/g, "")}"`),
       },
       {
         type: "application/ld+json",
