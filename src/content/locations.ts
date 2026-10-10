@@ -51,9 +51,42 @@ const raw_locations: Location[] = [
       {
         heading: "What Parker Junk Removal Includes",
         paragraphs: [
-          "Every job includes the lifting, loading, hauling, and dump fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
+          "Every job includes the lifting, loading, hauling, and disposal fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
           "Common Parker jobs include couch and mattress pickups, garage cleanouts, old hot tubs, sheds, decks, fences, and yard debris. Usable items go to donation, and metal goes to recycling when we can.",
         ],
+      },
+      {
+        heading: "Affordable Junk Removal Services in Parker, CO",
+        paragraphs: [
+          "Our junk removal services in Parker are priced by how much space your items take in the trailer. That keeps pickup affordable for a single couch and fair for a full house cleanout. You get a free estimate before we load anything, and the price we agree on is the price you pay.",
+          "We're a local, family-owned crew, not a franchise call center. When you call or text, you reach the people who show up. That makes scheduling simple and communication clear from start to finish.",
+        ],
+        list: [
+          { title: "Single-item pickup", text: "One old sofa, recliner, mattress, or treadmill. Pickups start at [[min]]." },
+          { title: "Partial loads", text: "A few rooms of furniture or a garage corner. A half trailer runs about [[load:4]]." },
+          { title: "Full cleanouts", text: "Estate, move-out, and whole-house cleanouts. A full trailer is about [[load:8]]." },
+        ],
+      },
+      {
+        heading: "Parker Neighborhoods We Serve",
+        paragraphs: [
+          "We haul junk all over Parker every week, including Stonegate, The Pinery, Idyllwilde, Compark, Canterberry Crossing, Clarke Farms, Bradbury Ranch, and the homes around Mainstreet and the Cherry Creek Trail. We also cover acreage out toward Hilltop Road and the county line.",
+          "HOA neighborhoods often limit how long a pile can sit in the driveway. We schedule a tight arrival window and clear it in one visit, so nothing sits out for days.",
+        ],
+      },
+      {
+        heading: "How Our Parker Junk Removal Works",
+        paragraphs: [
+          "Booking takes a few minutes. Text a few photos or use the instant estimate, pick a time, and our crew shows up ready to work. We walk the job with you, confirm the price, and handle all the heavy lifting.",
+          "We protect floors, door frames, and walls with blankets and careful carrying. After the trailer is loaded, we sweep the area so your garage or yard is clean when we leave.",
+        ],
+      },
+      {
+        heading: "Where Your Parker Junk Goes",
+        paragraphs: [
+          "We sort every load. Good furniture and household goods go to local donation centers. Metal, appliances, and electronics go to recycling. Only what's left goes to the landfill. It's a responsible way to clear your space and keep usable items out of the trash.",
+        ],
+        closing: "Ready to clear it out? Get a free estimate from Parker's local junk removal crew today.",
       },
     ],
   },
