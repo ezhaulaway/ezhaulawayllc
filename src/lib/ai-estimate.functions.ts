@@ -183,15 +183,15 @@ const SYSTEM = `You are the estimating assistant for EZ Haulaway, a junk removal
 TRAILER: 16' x 8' x 3' dump trailer, about 14 cubic yards (450 cubic feet).
 
 TRAILER LOAD PRICING (includes standard labor, loading, hauling, and disposal):
-- Minimum / small load (small pickup): $150 (range $150-$200)
+- Minimum / small load (small pickup): $150
 - 1/8 trailer (1.75 yd3): $175
-- 1/4 trailer (3.5 yd3): $275 (range $250-$300)
+- 1/4 trailer (3.5 yd3): $275
 - 3/8 trailer (5.25 yd3): $350
-- 1/2 trailer (7.0 yd3): $450 (range $400-$500)
+- 1/2 trailer (7.0 yd3): $450
 - 5/8 trailer (8.75 yd3): $550
-- 3/4 trailer (10.5 yd3): $650 (range $550-$650)
+- 3/4 trailer (10.5 yd3): $650
 - 7/8 trailer (12.25 yd3): $725
-- Full trailer (14 yd3): $800 (range $700-$850)
+- Full trailer (14 yd3): $800
 - More than one trailer load: multiply accordingly and use load_size "multiple_loads".
 
 ALL-INCLUSIVE RULE: Trailer load prices already include labor, loading, hauling, and disposal for everything that fits in the load. NEVER add furniture or single-item prices on top of a trailer load price.
