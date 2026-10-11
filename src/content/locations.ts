@@ -227,10 +227,10 @@ const raw_locations: Location[] = [
     slug: "denver",
     city: "Denver",
     county: "Denver County",
-    metaTitle: "Junk Removal Denver CO | Furniture & Junk Hauling",
-    metaDescription: "Junk removal Denver CO: furniture, couches, mattresses, appliances and cleanouts hauled from inside your home. Upfront trailer pricing, free instant estimate.",
+    metaTitle: "Junk Removal Denver CO | EZ Haulaway – Free Estimates",
+    metaDescription: "Junk removal Denver CO: furniture, couches, mattresses, appliances and cleanouts hauled from inside your home. Upfront pricing, free instant estimate.",
     intro:
-      "Need junk removal in Denver? EZ Haulaway hauls furniture, appliances, mattresses and full cleanouts from homes, apartments and offices across Denver. We do all the lifting.",
+      "Need **junk removal in Denver**? EZ Haulaway is a local **junk removal service** that hauls furniture, appliances, mattresses and full cleanouts from homes, apartments and offices across Denver. We do all the lifting.",
     local:
       "Denver jobs mean alleys, tight parking and narrow stairs. We plan access before we arrive, so the crew isn't figuring it out in front of your building.",
     nearby: ["englewood", "aurora"],
