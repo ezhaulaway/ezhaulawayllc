@@ -309,11 +309,11 @@ const raw_locations: Location[] = [
     slug: "aurora",
     city: "Aurora",
     county: "Arapahoe & Adams County",
-    metaTitle: "Junk Removal Aurora CO | Aurora Junk Removal & Hauling",
+    metaTitle: "Junk Removal Aurora CO | Aurora Junk Removal Services | EZ Haulaway",
     metaDescription:
       "Junk removal in Aurora, CO — rental turnovers, estate cleanouts, appliance and furniture hauling. Fast scheduling and free quotes from EZ Haulaway.",
     intro:
-      "Need junk removal in Aurora, CO? Aurora is one of the largest areas we cover, and we take jobs across the city from Southlands out toward the older neighborhoods.",
+      "Need junk removal in Aurora, CO? Our **junk removal services** cover the whole city, from Southlands out toward the older neighborhoods — and no two junk removal jobs here look alike.",
     local:
       "Rental turnovers and estate cleanouts make up a good share of our Aurora work, alongside everyday appliance and furniture pickups.",
     nearby: ["denver", "centennial"],
@@ -322,14 +322,14 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal Aurora Neighborhood by Neighborhood",
         paragraphs: [
-          "Aurora is close to 400,000 people spread across two counties, and no two jobs here look alike. Out by Southlands and Saddle Rock we are mostly clearing garages, moving-day leftovers, and furniture from homes that are being listed. Around Heather Ridge and the older stretches off Colfax and Havana we get a lot of rental turnovers, eviction cleanouts, and apartments full of items left behind. Near the Buckley area we work with military families on short-notice moves, which usually means everything has to be gone this week, not next month.",
-          "Because we are based in Parker, Aurora is a straight shot for us and there is no travel surcharge. One family-owned crew shows up, quotes the job in person, and loads it out the same visit.",
+          "Aurora is close to 400,000 people spread across two counties, and no two jobs here look alike. Out by Southlands and Saddle Rock we are mostly clearing garages, moving-day leftovers, and furniture from homes that are being listed. Around Heather Ridge and the older stretches off Colfax and Havana we get a lot of rental turnovers, eviction cleanouts, and apartments full of items left behind. Near the Buckley area we work with military families on short-notice moves, which usually means everything must be gone this week.",
+          "Because we are based in Parker, Aurora is a straight shot for us and there is no travel surcharge. One **family-owned crew** shows up, quotes the job in person, and loads it out the same visit — most **customers** tell us it saves a whole weekend of **time**.",
         ],
       },
       {
         heading: "Rental Turnovers, Evictions, and Estate Cleanouts",
         paragraphs: [
-          "If you manage property in Aurora, you already know the clock starts the moment a unit goes empty. We clear the whole thing — furniture, mattresses, appliances, carpet, trash bags, and whatever is left in the closets — so your cleaners and painters can get in the next day. For estate and probate cleanouts, we work slowly and respectfully, set aside anything the family wants to keep, and route usable furniture and household goods to local donation centers instead of the dump.",
+          "If you manage property in Aurora, you already know the clock starts the moment a unit goes empty. Our junk removal crew clears the whole thing — furniture, mattresses, appliances, carpet, trash bags, and whatever is left in the closets — so your cleaners and painters can get in the next day. Property managers are some of our best Aurora **customers**: they text photos to our **phone number**, we confirm the junk removal price, and the unit is clear before the next showing. For estate and probate cleanouts, we work slowly and respectfully, set aside anything the family wants to keep, and route usable furniture and household goods to local donation centers instead of the dump.",
         ],
         list: [
           {
@@ -353,16 +353,23 @@ const raw_locations: Location[] = [
       {
         heading: "The Heavy Work Other Aurora Haulers Pass On",
         paragraphs: [
-          "Plenty of companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+          "Plenty of junk removal companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+        ],
+      },
+      {
+        heading: "Why Aurora Customers Choose Our Junk Removal Services",
+        paragraphs: [
+          "Our junk removal services are **full service** — you point, we lift. Customers call us for **garage cleanouts**, appliance pickups, and whole-home junk removal because one crew handles the stairs, the loading, the sweep-up, and the dump run. It is the easiest way to reclaim your **space** without spending a weekend of your **time** on it.",
+          "Getting a price is simple. Call or text (720) 614-7223 — that **phone number** reaches Ben directly — or send photos through our instant estimate for a junk removal price range in minutes. Either way you get a firm number first, with **no hidden fees**.",
         ],
       },
       {
         heading: "Aurora Junk Removal Pricing",
         paragraphs: [
-          "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, with no extra trip charge for Aurora.",
+          "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, with no extra trip charge for Aurora. Every customer gets the same **upfront junk removal pricing**, whether the job is one mattress or a full **garage**.",
         ],
         closing:
-          "Call or text 720-614-7223 for an Aurora slot, or send photos through our instant estimate for a price range in minutes.",
+          "Call or text 720-614-7223 for an Aurora junk removal slot, or send photos through our instant estimate for a price range in minutes.",
       },
     ],
   },
