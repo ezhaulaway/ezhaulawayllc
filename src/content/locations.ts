@@ -171,6 +171,20 @@ const raw_locations: Location[] = [
         closing:
           "Call or text us for a same-week slot in Centennial, or send photos through our instant estimate tool for a ballpark in minutes.",
       },
+      {
+        heading: "Centennial Neighborhoods We Serve Every Week",
+        paragraphs: [
+          "Our **Centennial junk removal** crew works in **Southglenn**, **Willow Creek**, **Homestead**, **Piney Creek**, **Cherry Knolls**, **Walnut Hills**, **Smoky Hill**, and the neighborhoods along the **Foxfield** border. Older ranch homes west of I-25 tend to need **basement cleanouts** and remodel debris hauled away, while newer two-story homes east of Parker Road usually call us for **garage cleanouts**, old playsets, and furniture swaps after a move.",
+          "Because Centennial homes often have HOA rules about what can sit on the curb, we come to you instead. There is no dumpster parked in the driveway for a week and no pile waiting for a city bulk pickup. We load from the garage, the backyard, or the basement and leave the same visit.",
+        ],
+      },
+      {
+        heading: "Property Cleanouts, Estates, and Move-Outs in Centennial",
+        paragraphs: [
+          "**Estate cleanouts** and **move-out cleanouts** are some of the biggest jobs we do in Centennial. Families settling a parent's home, landlords turning over a rental, and sellers getting a house ready to list all need the same thing: everything gone fast, handled with care, and priced up front. We separate items worth **donating**, set aside anything you want to keep, and haul the rest in our **16-foot dump trailer**.",
+          "For realtors and **property managers**, we can meet a lockbox, send photos when the job is done, and work around showing schedules. One call clears an entire house, garage, and yard so the listing photos look right.",
+        ],
+      },
     ],
   },
 
@@ -464,6 +478,20 @@ const raw_locations: Location[] = [
         ],
         closing: "Call or text for the soonest Englewood junk removal slot, or start your free instant estimate.",
       },
+      {
+        heading: "Englewood Junk Removal Along South Broadway",
+        paragraphs: [
+          "The **South Broadway** corridor and the **Broadway business district** keep our **Englewood junk removal** crew busy with shop cleanouts, **office furniture removal**, and storefront remodels. Narrow alleys and limited parking are normal here, so we plan the load before we arrive and work quickly to keep driveways and loading zones clear.",
+          "Near the **Swedish Medical Center** and **Craig Hospital** area, many homes are rentals or older bungalows close to the hospital campus. We help landlords and tenants with **move-out cleanouts**, old mattresses, broken furniture, and the stuff that piles up in detached garages and alley sheds.",
+        ],
+      },
+      {
+        heading: "Light Demolition and Commercial Hauling in Englewood",
+        paragraphs: [
+          "Englewood has a lot of homes from the 1940s and 1950s, and many are being updated. We handle **light demolition** like tearing out old sheds, wood fences, carpet, and small decks, then haul the **construction debris** away in the same visit. Contractors and **small businesses** use us for drywall, tile, cabinets, and scrap lumber when a dumpster won't fit on the lot.",
+          "Every Englewood job gets **one upfront price** based on how much trailer space the load uses. A minimum pickup starts at [[min]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal fees are all included.",
+        ],
+      },
     ],
   },
   {
@@ -515,6 +543,20 @@ const raw_locations: Location[] = [
           "We sort each load so usable items go to **donation**, metal and yard waste go to **recycling** where possible, and only true trash goes to a licensed disposal site. It's **professional junk removal** done the right way.",
         ],
         closing: "Book Lakewood junk removal today — call or text, or start your free instant estimate.",
+      },
+      {
+        heading: "Why Lakewood Homeowners Choose EZ Haulaway",
+        paragraphs: [
+          "Our **Lakewood junk removal** crew covers **Belmar**, **Green Mountain**, **Bear Creek**, **Union Square**, **Applewood** borders, and the older neighborhoods near **Lakewood Gulch**. Ranch homes from the 1950s and 1960s often come with full basements, crawl spaces, and detached garages that have collected decades of furniture, tools, and boxes. We clear them out in one visit with **all the heavy lifting** done by our crew.",
+          "Hillside homes near Green Mountain and Bear Creek can mean steep driveways, long carries, and stairs. We bring dollies, straps, and furniture blankets, protect your walls and floors, and still give you **one upfront price** before anything goes in the trailer.",
+        ],
+      },
+      {
+        heading: "Garage, Yard, and Rental Cleanouts in Lakewood",
+        paragraphs: [
+          "Lakewood has a big mix of owners and renters, so **rental turnovers** and **move-out cleanouts** are a regular part of our week. Landlords call us for old mattresses, couches, and appliances left behind, while homeowners book **garage cleanouts**, **yard debris removal**, and old hot tub or **shed removal** in the backyard.",
+          "We sort every load. Usable items go to **donation**, metal and appliances go to **recycling**, and the rest goes to a licensed disposal site. A **minimum pickup** starts at [[min]], and a full trailer of junk is [[load:8]] with disposal included.",
+        ],
       },
     ],
   },
