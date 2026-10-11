@@ -26,6 +26,7 @@ const RAW_CUSTOM_PAGES: Record<
   string,
   {
     title?: string;
+    h1?: string;
     description: string;
     intro: string[];
     localHeading: string;
@@ -135,6 +136,9 @@ const RAW_CUSTOM_PAGES: Record<
       "**Furniture removal in Denver** often means more than one piece. Clearing a whole room, downsizing before a move, or emptying a rental between tenants? We price the whole job by trailer space so a couch, two dressers and a mattress cost less than booking three separate pickups.",
       "Furniture in good shape goes to **donation** whenever we can, so usable pieces stay in the community. Broken items get sorted, and metal frames and springs go to **recycling** instead of the landfill. Want a price before you book? Send a photo through our free instant estimate and you'll see your number in about a minute.",
       "Scheduling is simple: call or text, send photos, and we'll give you a firm price and the soonest available window. Because we're in Denver every week, most furniture removal jobs are on the calendar within a few days — and we show up when we say we will.",
+      "**Office furniture removal** is a big part of our Denver work. Desks, cubicle panels, conference tables, filing cabinets and stacks of chairs come out of offices in Cherry Creek, the Tech Center and downtown. We work early or late so your team keeps working.",
+      "Clearing out a loved one's home? **Estate furniture removal** is handled with care. We take the bedroom sets, china cabinets, recliners and patio furniture, set aside anything you want to keep, and send usable pieces to **donation**.",
+      "Our **family-owned**, **licensed and insured** crew treats every Denver home like our own. Send a photo for a **free estimate** and get your price in about a minute.",
     ],
     faqs: [
       [
@@ -157,6 +161,7 @@ const RAW_CUSTOM_PAGES: Record<
   },
   "denver/mattress-and-bulky-item-removal": {
     title: "Mattress Removal Denver CO | Same-Week Pickup | EZ Haulaway LLC",
+    h1: "Mattress Removal Denver",
     description:
       "Mattress removal in Denver, CO. We carry out mattresses, box springs and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
     intro: [
@@ -172,6 +177,13 @@ const RAW_CUSTOM_PAGES: Record<
       "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]), sofas, recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
       "Moving out of a Denver apartment, swapping in a new bed, or clearing a rental between tenants? We handle **same-week mattress pickup** for homeowners, renters and property managers, and we price multi-item jobs together so you save versus separate pickups.",
       "Getting a price is easy: text a photo or use our free instant estimate. You'll get **upfront pricing** before we start, and we show up on time in the window we give you.",
+      "Searching for mattress removal Denver homeowners actually recommend? Our **family-owned**, **licensed and insured** crew from Parker works Denver neighborhoods every week — Highland, Sloan's Lake, Park Hill, Stapleton, University and Washington Virginia Vale included.",
+      "**Box spring disposal** is part of the job. Box springs are bulky, awkward and full of wood and steel, so we load them right alongside the mattress. **Bed frame removal** is included too — metal rails, wooden platforms, bunk beds, daybeds and trundles. We bring the tools to take them apart.",
+      "Why not just leave it in the alley? Denver's large-item program has limits on what and when, and a mattress left out in rain or snow gets heavy, moldy and impossible to donate. Booking a **mattress pickup** keeps it out of the alley and off your to-do list.",
+      "Bed bug concerns or a stained mattress? Let us know when you book. We wrap and load it carefully so nothing touches the rest of your home, and it goes straight to disposal instead of donation.",
+      "Property managers and landlords: we clear **multiple mattresses** from rentals, Airbnbs and student housing in one trip, with one invoice and photos when the job is done.",
+      "Hotels, senior living and furniture stores swapping out beds can book **bulk mattress removal** too. Larger jobs are priced by trailer space, from **[[load:2]]** for a quarter trailer up to **[[load:8]]** for a full load.",
+      "Our promise is simple: **on-time arrival**, **careful carry-out**, **no hidden fees**, and a clean room when we leave. Call or text " + PHONE + " or start your **free instant estimate** today.",
     ],
     faqs: [
       [
@@ -190,6 +202,62 @@ const RAW_CUSTOM_PAGES: Record<
         "What happens to my old mattress?",
         "Usable mattresses go to donation when partners accept them. Others are broken down so steel, foam and wood can be recycled, keeping as much as possible out of the landfill.",
       ],
+    ],
+  },
+  "aurora/mattress-and-bulky-item-removal": {
+    title: "Mattress Removal Aurora CO | Mattress Disposal & Pickup | EZ Haulaway",
+    h1: "Mattress Removal Aurora",
+    description:
+      "Mattress removal in Aurora, CO. We carry out mattresses, box springs, bed frames and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
+    intro: [
+      "Need **mattress removal in Aurora**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — upstairs bedroom, basement or apartment — and haul everything away in one visit. No dragging it to the curb and no truck rental.",
+      "Our **family-owned crew** does **all the heavy lifting**. We carry the mattress down the stairs, out the door and onto our 16-foot trailer, then sweep up before we go. You just show us what goes.",
+      "A mattress is **[[item:Mattress]]** and a box spring is **[[item:Box spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
+      "Looking for mattress removal Aurora residents can book fast? Call or text " + PHONE + " or send a photo through our **free instant estimate** for a price in about a minute.",
+    ],
+    localHeading: "Mattress Disposal and Bulky Item Pickup Across Aurora",
+    localText: [
+      "Aurora is big, and we cover all of it — Southlands, Tallyn's Reach, Saddle Rock, Meadowood, Hoffman Heights, Murphy Creek and the apartments along the I-225 corridor. Whether it's a single-family home or a third-floor walkup, we plan the way out before we lift.",
+      "We take every size: **twin, full, queen, king and California king mattresses**, plus box springs, memory foam, hybrid and pillow-top beds, futon mattresses, crib mattresses and adjustable bases. **Bed frame removal** is included, and we take frames apart when needed.",
+      "**Mattress recycling** matters. Mattresses take up a lot of landfill space, so we send them for recycling when we can, and clean, usable mattresses go to **donation** partners that accept them.",
+      "Why not leave it out with the trash? Most Aurora trash haulers and HOAs limit bulky items, and a mattress left outside in rain or snow gets heavy and moldy fast. A scheduled **mattress pickup** keeps it off the curb and out of HOA trouble.",
+      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]), sofas at [[item:Couch]] per cushion, recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
+      "**Landlords and property managers**: we clear multiple mattresses and furniture from rentals and tenant turnovers in one trip, with one invoice. Bigger jobs are priced by trailer space, from **[[load:2]]** for a quarter trailer up to **[[load:8]]** for a full load.",
+      "Our promise: **upfront pricing**, **on-time arrival**, **careful carry-out** and a clean room when we leave. We're **licensed and insured** and based just down the road in Parker.",
+    ],
+    faqs: [
+      ["How much does mattress removal cost in Aurora?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price."],
+      ["Do you carry the mattress out of my home?", "Yes. We remove mattresses from any room, including upstairs bedrooms, basements and apartments. You never have to move it yourself."],
+      ["What sizes do you take?", "All of them — twin, full, queen, king and California king, plus box springs, futons, crib mattresses and adjustable bases."],
+      ["What happens to my old mattress?", "Usable mattresses go to donation when partners accept them. Others go to recycling when possible, keeping as much as we can out of the landfill."],
+    ],
+  },
+  "centennial/electronics-and-e-waste-removal": {
+    title: "Electronic Disposal Centennial CO | E-Waste Recycling | EZ Haulaway",
+    h1: "Electronic Disposal Centennial",
+    description:
+      "Electronic disposal in Centennial, CO. TVs, computers, monitors, printers and e-waste picked up from inside your home or office and recycled. Upfront pricing, free estimate.",
+    intro: [
+      "Need **electronic disposal in Centennial**? We pick up old TVs, computers, monitors, printers, stereo gear, game consoles and boxes of cords from your home, garage or office — and take them to proper **e-waste recycling** instead of the landfill.",
+      "Colorado bans most electronics from landfills, so you can't just put an old TV or computer in the trash. Our **family-owned crew** does **all the heavy lifting**, carries it out from any room, and handles the drop-off for you.",
+      "Small electronics pickups fall under our **[[min]] minimum**. Bigger loads are priced by trailer space, and we can take other junk on the same trip. Labor and hauling are included — **no hidden fees**.",
+      "Searching for electronic disposal Centennial homes and offices can book this week? Call or text " + PHONE + " or send a photo through our **free instant estimate**.",
+    ],
+    localHeading: "E-Waste Recycling and Electronics Pickup Across Centennial",
+    localText: [
+      "We work all over Centennial — Southglenn, Willow Creek, Piney Creek, Smoky Hill, Cherry Knolls and the business parks near Arapahoe Road and the Tech Center. Basement entertainment centers, home offices and storage closets are our usual starting points.",
+      "**What we take**: flat screen TVs and **old tube (CRT) TVs**, computer monitors, desktop towers, laptops, printers, copiers, fax machines, servers, networking gear, stereo and speaker systems, DVD players, game consoles, microwaves and boxes of cables and chargers.",
+      "**Protect your data.** Before pickup, we recommend wiping or removing hard drives from computers, and factory-resetting phones and tablets. Your personal information should stay with you.",
+      "**Office electronics recycling**: Centennial businesses moving, upgrading or downsizing can clear out computers, monitors, printers and office furniture in one visit. We schedule around your hours to keep downtime low.",
+      "**Big-screen and console TVs** are heavy and awkward, especially from a basement. We bring the hands and straps to get them up the stairs safely, without scratching walls or floors.",
+      "**Responsible disposal** is the whole point. We sort electronics from the rest of the load and take them to e-waste recycling outlets, where metals and components get recovered. Anything else goes to donation or a licensed disposal site.",
+      "Our promise: **upfront pricing**, **on-time arrival** and a clean space when we leave. We're **licensed and insured** and based just down the road in Parker, so **same-week pickup** is common.",
+    ],
+    faqs: [
+      ["How much does electronic disposal cost in Centennial?", "A small pickup falls under our [[min]] minimum. Larger loads are priced by trailer space, and you'll get a firm price before we load anything. Text photos to " + PHONE + "."],
+      ["Can I throw a TV or computer in the trash in Colorado?", "No. Colorado bans most electronics from landfills. We take them to proper e-waste recycling for you."],
+      ["Do you take old tube TVs?", "Yes. CRT TVs and console TVs are some of the heaviest items we haul, and we carry them out for you."],
+      ["Should I wipe my computer first?", "Yes. We recommend removing or wiping hard drives and resetting phones and tablets before pickup to protect your data."],
     ],
   },
   "denver/appliance-removal": {
@@ -339,7 +407,7 @@ function CityServicePage() {
               <MapPin className="size-4" />
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{city}, CO · {location.county}</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{`${name} ${city}`}</h1>
+            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{custom?.h1 ?? `${name} ${city}`}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
               Need {lower} in {city}? {service.summary}
             </p>
