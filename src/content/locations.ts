@@ -159,8 +159,8 @@ const raw_locations: Location[] = [
       {
         heading: "Responsible Disposal and Donation",
         paragraphs: [
-          "We sort every Centennial load. Usable furniture goes to **donation**, appliances and metal go to **recycling**, and only what can't be reused goes to a licensed disposal site. Our **family-owned**, **licensed and insured** crew treats your home like our own.",
-          "We also help **property managers**, realtors and small businesses near the Arapahoe Road and Dry Creek corridors with tenant turnovers, office furniture removal and storage unit cleanouts.",
+          "We sort every Centennial load. Usable furniture goes to donation, appliances and metal go to recycling, and only what can't be reused goes to a licensed disposal site. Our family-owned, **licensed and insured** crew treats your home like our own.",
+          "We also help property managers, realtors and small businesses near the Arapahoe Road and Dry Creek corridors with tenant turnovers, office furniture removal and storage unit cleanouts.",
         ],
       },
       {
@@ -174,15 +174,59 @@ const raw_locations: Location[] = [
       {
         heading: "Centennial Neighborhoods We Serve Every Week",
         paragraphs: [
-          "Our **Centennial junk removal** crew works in **Southglenn**, **Willow Creek**, **Homestead**, **Piney Creek**, **Cherry Knolls**, **Walnut Hills**, **Smoky Hill**, and the neighborhoods along the **Foxfield** border. Older ranch homes west of I-25 tend to need **basement cleanouts** and remodel debris hauled away, while newer two-story homes east of Parker Road usually call us for **garage cleanouts**, old playsets, and furniture swaps after a move.",
+          "Our crew works in Southglenn, Willow Creek, Homestead, Piney Creek, Cherry Knolls, Walnut Hills, Smoky Hill, and the neighborhoods along the Foxfield border. Older ranch homes west of I-25 tend to need basement cleanouts and remodel debris hauled away, while newer two-story homes east of Parker Road usually call us for garage cleanouts, old playsets, and furniture swaps after a move.",
           "Because Centennial homes often have HOA rules about what can sit on the curb, we come to you instead. There is no dumpster parked in the driveway for a week and no pile waiting for a city bulk pickup. We load from the garage, the backyard, or the basement and leave the same visit.",
         ],
       },
       {
         heading: "Property Cleanouts, Estates, and Move-Outs in Centennial",
         paragraphs: [
-          "**Estate cleanouts** and **move-out cleanouts** are some of the biggest jobs we do in Centennial. Families settling a parent's home, landlords turning over a rental, and sellers getting a house ready to list all need the same thing: everything gone fast, handled with care, and priced up front. We separate items worth **donating**, set aside anything you want to keep, and haul the rest in our **16-foot dump trailer**.",
-          "For realtors and **property managers**, we can meet a lockbox, send photos when the job is done, and work around showing schedules. One call clears an entire house, garage, and yard so the listing photos look right.",
+          "Estate cleanouts and move-out cleanouts are some of the biggest jobs we do in Centennial. Families settling a parent's home, landlords turning over a rental, and sellers getting a house ready to list all need the same thing: everything gone fast, handled with care, and priced up front. We separate items worth donating, set aside anything you want to keep, and haul the rest in our 16-foot dump trailer.",
+          "For realtors and property managers, we can meet a lockbox, send photos when the job is done, and work around showing schedules. One call clears an entire house, garage, and yard so the listing photos look right.",
+        ],
+      },
+      {
+        heading: "Garage Cleanouts in Centennial",
+        paragraphs: [
+          "Centennial garages fill up fast. Between bikes the kids outgrew, a broken treadmill, shelving that never got organized, old lawn mowers, leftover building materials, and boxes from the last move, a two-car garage can end up holding zero cars. A garage cleanout is one of the most common reasons Centennial homeowners call us.",
+          "We start by asking what stays. You can point at a few things to keep, or set aside a corner, and we clear the rest. Our crew loads everything into the trailer, separates metal and electronics for recycling, and sets usable items aside for donation. When we're done, we sweep the floor so you can actually see the concrete again.",
+          "Most garage cleanouts fit somewhere between a half trailer and a full trailer. If you aren't sure, send a few photos through the instant estimate and you'll get a price range before we ever drive over.",
+        ],
+      },
+      {
+        heading: "Furniture, Mattress, and Appliance Removal in Centennial",
+        paragraphs: [
+          "Not every job is a full cleanout. Plenty of Centennial customers just need one or two big things gone: an old sectional after a new one arrives, a mattress and box spring after a bed upgrade, a refrigerator that stopped cooling, or a washer and dryer pair replaced during a laundry room remodel.",
+          "We carry furniture out of any room, including upstairs bedrooms and finished basements. We take dressers, recliners, sleeper sofas, dining sets, desks, bookshelves, entertainment centers, and patio furniture. Mattresses of every size go too, along with bed frames and headboards. Appliances are hauled out with a dolly and straps and sent to metal recycling whenever possible.",
+          "Single items are priced individually, and multi-item jobs are priced by trailer space, so you never pay more than the load actually takes. You'll know the exact number before we lift anything.",
+        ],
+      },
+      {
+        heading: "Yard Waste, Hot Tubs, and Outdoor Junk",
+        paragraphs: [
+          "Centennial's mature neighborhoods have big trees and established landscaping, which means branches, brush piles, old sod, landscape rock, and storm cleanup after Colorado wind and hail. We bag or bundle it, load it, and send green waste to recycling when we can.",
+          "Backyards also collect bigger items: old playsets, trampolines, broken grills, above-ground pools, and hot tubs that haven't run in years. We cut down hot tubs on site, tear down small sheds and fences, and haul every piece away in the same visit. Nothing is left in the yard when we leave.",
+        ],
+      },
+      {
+        heading: "Commercial and Office Junk Removal in Centennial",
+        paragraphs: [
+          "Centennial has a strong business community along Arapahoe Road, Dry Creek Road, and the Denver Tech Center edge. We help offices, retail shops, medical suites, and property management companies clear out old desks, cubicle panels, filing cabinets, chairs, shelving, and electronics.",
+          "We schedule around your business hours, keep hallways and parking areas clear while we work, and give you one invoice when the job is done. For property managers, we handle tenant turnovers, abandoned belongings, common-area cleanups, and storage unit cleanouts across multiple properties.",
+        ],
+      },
+      {
+        heading: "How Our Centennial Junk Removal Process Works",
+        paragraphs: [
+          "Step one is a price. Call, text, or send photos through the instant estimate and we'll give you a range right away. Step two is scheduling — we offer an arrival window that works for you, and same-week appointments are common. Step three is the job itself: we show up, confirm the final price on site, load everything, and sweep up.",
+          "That's it. No dumpster rental, no trips to the landfill, and no lifting on your part. Centennial customers tell us the hardest part is deciding what to get rid of — we handle everything after that.",
+        ],
+      },
+      {
+        heading: "Why Centennial Chooses a Local, Family-Owned Crew",
+        paragraphs: [
+          "We are a family-owned business based just down the road in Parker. Ben runs the jobs himself, which means the person who quotes your job is the same person who shows up to do it. We drive a red Ford F-250 and pull a 16-foot dump trailer, so we can fit in tight driveways and cul-de-sacs where bigger trucks can't.",
+          "We are licensed and insured, we show up on time, and we treat your home and yard with respect. Whether you need a single couch gone or a whole house cleared, you get the same honest pricing and careful work every time.",
         ],
       },
     ],
@@ -374,7 +418,7 @@ const raw_locations: Location[] = [
       {
         heading: "The Heavy Work Other Aurora Haulers Pass On",
         paragraphs: [
-          "Plenty of junk removal companies take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — more than 300 decks across the metro. Metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. We cannot take hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+          "Plenty of haulers take bagged trash and call it a day. As a full junk removal company, our hauling services also cut down old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fences — more than 300 decks across the metro. Metal goes to recycling, usable furniture to donation, the rest to a licensed transfer station. We cannot take hazardous materials like wet paint, fuel, chemicals, asbestos, or medical waste.",
         ],
       },
       {
@@ -446,50 +490,50 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal Englewood Homes and Businesses Count On",
         paragraphs: [
-          "Need **junk removal in Englewood**? Our **family-owned crew** hauls furniture, mattresses, appliances, garage junk and small business cleanouts from every corner of the city — from the bungalows near Belleview Park and Cornerstone Park to the apartments off Broadway and the shops around CityCenter Englewood.",
-          "Englewood lots are small and many homes are older, so most jobs mean **hand-carrying** through narrow side yards, alley garages and steep basement stairs. That is normal work for us. We protect floors and door frames, load everything onto our 16-foot dump trailer, and sweep up before we leave.",
-          "You never drag anything to the curb. Point at what goes and we do **all the heavy lifting** — one visit, one price, nothing left behind.",
+          "Need **junk removal in Englewood**? Our locally owned, family-run crew provides local junk removal for furniture, mattresses, appliances, garage junk and small business cleanouts in every corner of the city — from the bungalows near Belleview Park and Cornerstone Park to the apartments off Broadway and the shops around CityCenter Englewood.",
+          "Englewood lots are small and many homes are older, so most jobs mean hand-carrying through narrow side yards, alley garages and steep basement stairs. That is normal work for us. We protect floors and door frames, load everything onto our 16-foot dump trailer, and sweep up before we leave.",
+          "You never drag anything to the curb. Point at what goes and we do **all the heavy lifting** — one visit, one price, nothing left behind. It's a stress free way to get your space back.",
         ],
       },
       {
         heading: "What Our Englewood Junk Removal Crew Hauls",
         paragraphs: [
-          "We take almost anything that isn't hazardous. Here are the jobs we do most often in Englewood:",
+          "Our junk removal services cover almost anything that isn't hazardous. Here are the jobs we do most often in Englewood:",
         ],
         list: [
-          { title: "Furniture and mattresses", text: "Couches at [[item:Couch]] per cushion, mattresses at [[item:Mattress]] and box springs at [[item:Box spring]], plus dressers, recliners and bed frames." },
-          { title: "Appliance removal", text: "Fridges, washers, dryers and stoves carried out and sent to **metal recycling** whenever possible." },
+          { title: "Furniture and mattresses", text: "Unwanted furniture like couches at [[item:Couch]] per cushion, mattresses at [[item:Mattress]] and box springs at [[item:Box spring]], plus dressers, recliners and bed frames." },
+          { title: "Appliance removal", text: "Fridges, washers, dryers and stoves carried out and sent to metal recycling whenever possible." },
           { title: "Garage and basement cleanouts", text: "Boxes, shelving, old bikes, yard tools and years of storage cleared in a single trip." },
-          { title: "Small commercial cleanouts", text: "Office furniture, retail fixtures and storage rooms for **Englewood businesses** along Broadway and South Santa Fe." },
-          { title: "Rental turnovers", text: "Tenant leftovers cleared fast so **landlords and property managers** can clean and re-list the unit." },
+          { title: "Small commercial cleanouts", text: "Office furniture, retail fixtures and storage rooms for Englewood businesses along Broadway and South Santa Fe." },
+          { title: "Rental turnovers", text: "Tenant leftovers and unwanted furniture cleared fast so landlords and property managers can clean and re-list the unit." },
         ],
       },
       {
         heading: "Upfront Junk Removal Pricing in Englewood",
         paragraphs: [
-          "We price by how much space your junk takes in our trailer. Pickups start at **[[min]]**, a half trailer is about **[[load:4]]**, and a **full trailer** is about **[[load:8]]**. Labor, loading, hauling and dump fees are all included — **no hidden fees** and no surprise charges at the door.",
-          "Want a number now? Send a photo through our **free instant estimate** and you'll see a price in about a minute. We're a short drive from our Parker base, so same-week pickup is common.",
+          "We price by how much space your junk takes in our trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and dump fees are all included — **no hidden fees** and no surprise charges at the door.",
+          "Want a number now? Book online with our free instant estimate and you'll see a price in about a minute. We're a short drive from our Parker base, so same-week pickup is common.",
         ],
       },
       {
         heading: "Responsible Disposal for Englewood Customers",
         paragraphs: [
-          "We sort every load. Usable furniture goes to **donation**, metal goes to **recycling**, and only what can't be reused heads to a licensed disposal site. Our customers like knowing their old stuff gets a second life when it can.",
+          "We sort every load. Usable furniture goes to **donation**, metal goes to **recycling**, and only what can't be reused heads to a licensed disposal site. Our customers like knowing their old stuff gets a second life when it can — that's what local junk removal from a locally owned crew looks like.",
         ],
-        closing: "Call or text for the soonest Englewood junk removal slot, or start your free instant estimate.",
+        closing: "Call or text for the soonest Englewood junk removal slot, or book online with your free instant estimate.",
       },
       {
         heading: "Englewood Junk Removal Along South Broadway",
         paragraphs: [
-          "The **South Broadway** corridor and the **Broadway business district** keep our **Englewood junk removal** crew busy with shop cleanouts, **office furniture removal**, and storefront remodels. Narrow alleys and limited parking are normal here, so we plan the load before we arrive and work quickly to keep driveways and loading zones clear.",
-          "Near the **Swedish Medical Center** and **Craig Hospital** area, many homes are rentals or older bungalows close to the hospital campus. We help landlords and tenants with **move-out cleanouts**, old mattresses, broken furniture, and the stuff that piles up in detached garages and alley sheds.",
+          "The South Broadway corridor and the Broadway business district keep our **Englewood junk removal** crew busy with shop cleanouts, office furniture removal, and storefront remodels. Narrow alleys and limited parking are normal here, so we plan the load before we arrive and work quickly to keep driveways and loading zones clear.",
+          "Near the Swedish Medical Center and Craig Hospital area, many homes are rentals or older bungalows close to the hospital campus. We help landlords and tenants with move-out cleanouts, old mattresses, unwanted furniture, and the stuff that piles up in detached garages and alley sheds.",
         ],
       },
       {
         heading: "Light Demolition and Commercial Hauling in Englewood",
         paragraphs: [
-          "Englewood has a lot of homes from the 1940s and 1950s, and many are being updated. We handle **light demolition** like tearing out old sheds, wood fences, carpet, and small decks, then haul the **construction debris** away in the same visit. Contractors and **small businesses** use us for drywall, tile, cabinets, and scrap lumber when a dumpster won't fit on the lot.",
-          "Every Englewood job gets **one upfront price** based on how much trailer space the load uses. A minimum pickup starts at [[min]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal fees are all included.",
+          "Englewood has a lot of homes from the 1940s and 1950s, and many are being updated. We handle light demolition like tearing out old sheds, wood fences, carpet, and small decks, then haul the construction debris away in the same visit. Contractors and small businesses use our junk removal services for drywall, tile, cabinets, and scrap lumber when a dumpster won't fit on the lot.",
+          "Every Englewood job gets **one upfront price** based on how much trailer space the load uses. A minimum pickup starts at [[min]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal fees are all included, so the whole job stays stress free.",
         ],
       },
     ],
@@ -556,6 +600,28 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Lakewood has a big mix of owners and renters, so **rental turnovers** and **move-out cleanouts** are a regular part of our week. Landlords call us for old mattresses, couches, and appliances left behind, while homeowners book **garage cleanouts**, **yard debris removal**, and old hot tub or **shed removal** in the backyard.",
           "We sort every load. Usable items go to **donation**, metal and appliances go to **recycling**, and the rest goes to a licensed disposal site. A **minimum pickup** starts at [[min]], and a full trailer of junk is [[load:8]] with disposal included.",
+        ],
+      },
+      {
+        heading: "Lakewood Junk Removal for Basements, Remodels, and Estates",
+        paragraphs: [
+          "**Basement cleanouts** are one of the most common Lakewood jobs we see. Older homes near **Belmar** and **Union Square** often have finished basements packed with **old couches**, **broken recliners**, **exercise equipment**, **boxes of paperwork**, and **holiday decorations** nobody has opened in years. We carry everything up the stairs for you, protect the walls and railings, and leave the room **empty and swept**.",
+          "**Remodel debris** is another big one. When Lakewood homeowners update a kitchen or bath, they end up with **old cabinets**, **countertops**, **tile**, **drywall**, **carpet and pad**, and **scrap lumber**. We haul **construction debris** the same day, so you don't need a **dumpster sitting in the driveway** for a week.",
+          "**Estate cleanouts** take patience and care. We work at your pace, set aside **family keepsakes**, route **usable furniture to donation**, and clear the rest so the home is ready to list or hand over. Realtors and families across **Jefferson County** use us because one call handles the **entire house, garage, and yard**.",
+        ],
+      },
+      {
+        heading: "Yard Waste and Outdoor Junk Removal in Lakewood",
+        paragraphs: [
+          "Lakewood's mature trees mean **branches**, **brush piles**, **storm debris**, and **old landscaping** every season. We bag or bundle it, load it, and take **green waste to recycling** whenever possible. We also remove **old playsets**, **trampolines**, **patio furniture**, **broken grills**, and **above-ground pools**.",
+          "Thinking about a backyard refresh? We handle **light demolition** like **shed tear-downs**, **wood fence removal**, and **small deck removal**, then haul every piece away in the same visit. Hillside lots near **Green Mountain** and **Bear Creek** are no problem — our crew is used to **long carries and steep grades**.",
+        ],
+      },
+      {
+        heading: "Fast, Local Junk Removal in Lakewood",
+        paragraphs: [
+          "We're a **family-owned**, **licensed and insured** business, and Lakewood is part of our regular west-side route. **Same-week appointments** are common, and we give you an **arrival window** so you're not waiting around all day.",
+          "Getting a price is easy. **Call or text**, or **send photos through our free instant estimate** for a price range in about a minute. Every Lakewood job comes with **upfront pricing**, **no hidden fees**, and a **clean space** when we leave — whether it's **one mattress** or a **full-house cleanout**.",
         ],
       },
     ],
