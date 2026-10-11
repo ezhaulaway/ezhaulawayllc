@@ -557,6 +557,20 @@ function CityServicePage() {
                   {rich(paragraph)}
                 </p>
               ))}
+              {custom.sections?.map((s) => (
+                <div key={s.heading} className="mt-10">
+                  <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">{s.heading}</h2>
+                  {s.paragraphs.map((p) => (
+                    <p key={p.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">{rich(p)}</p>
+                  ))}
+                  {s.subsections?.map((sub) => (
+                    <div key={sub.heading} className="mt-6">
+                      <h3 className="text-lg font-bold">{sub.heading}</h3>
+                      <p className="mt-2 leading-8 text-muted-foreground">{rich(sub.text)}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           ) : (
             <div className="mt-10">
