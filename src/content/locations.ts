@@ -109,7 +109,7 @@ const raw_locations: Location[] = [
     slug: "centennial",
     city: "Centennial",
     county: "Arapahoe County",
-    metaTitle: "Junk Removal Centennial CO | EZ Haulaway",
+    metaTitle: "Junk Removal Centennial CO | Same-Week Pickup | EZ Haulaway",
     metaDescription:
       "Junk removal in Centennial, CO — appliances, furniture, construction debris and property cleanouts. Local crew, free quotes from EZ Haulaway.",
     intro:
@@ -122,14 +122,14 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal Centennial Homeowners Actually Call Back",
         paragraphs: [
-          "Centennial covers a lot of ground, and the work changes block to block. Around Southglenn and Willow Creek we are usually hauling out the results of a remodel — old kitchen cabinets, a cast iron tub, vanity tops, and a garage full of scrap lumber and drywall offcuts. Out toward Smoky Hill and Piney Creek the calls lean residential: basements that have been collecting furniture for twenty years, treadmills nobody has touched since the kids moved out, and patio sets that did not survive another Colorado winter.",
-          "We load everything by hand from wherever it sits. You do not have to drag a sleeper sofa up the basement stairs or wrestle a refrigerator into the driveway before we show up. Our crew brings furniture blankets and floor protection, carries it out, sweeps the space, and leaves with it in one trip.",
+          "Centennial covers a lot of ground, and the work changes block to block. Around Southglenn and Willow Creek our **junk removal Centennial** crew is usually hauling out the results of a remodel — old kitchen cabinets, a cast iron tub, vanity tops, and a garage full of scrap lumber and drywall offcuts. Out toward Smoky Hill and Piney Creek the calls lean residential: basements that have been collecting furniture for twenty years, treadmills nobody has touched since the kids moved out, and patio sets that did not survive another Colorado winter.",
+          "We load everything by hand from wherever it sits — **all the heavy lifting** is on us. You do not have to drag a sleeper sofa up the basement stairs or wrestle a refrigerator into the driveway before we show up. Our crew brings furniture blankets and floor protection, carries it out, sweeps the space, and leaves with it in one trip.",
         ],
       },
       {
         heading: "Remodel and Construction Debris Removal in Centennial",
         paragraphs: [
-          "A remodel generates more waste than most people plan for, and city trash service will not touch it. We haul drywall, tile, carpet and pad, trim, scrap framing lumber, cabinets, countertops, fixtures, and broken concrete from patios and walkways. If you are working with a contractor, we can come mid-project to clear the pile so the crew keeps moving, then come back at the end for the final load.",
+          "A remodel generates more waste than most people plan for, and city trash service will not touch it. We haul **construction debris** like drywall, tile, carpet and pad, trim, scrap framing lumber, cabinets, countertops, fixtures, and broken concrete from patios and walkways. If you are working with a contractor, we can come mid-project to clear the pile so the crew keeps moving, then come back at the end for the final load.",
         ],
         list: [
           {
@@ -153,13 +153,20 @@ const raw_locations: Location[] = [
       {
         heading: "How Fast Can You Get to Centennial?",
         paragraphs: [
-          "Centennial is a short drive from our base in Parker, so same-week pickup is normal and next-day often works. We give you an arrival window, and you get a price before we load anything.",
+          "Centennial is a short drive from our base in Parker, so **same-week pickup** is normal and next-day often works. We give you an arrival window, and you get a price before we load anything.",
+        ],
+      },
+      {
+        heading: "Responsible Disposal and Donation",
+        paragraphs: [
+          "We sort every Centennial load. Usable furniture goes to **donation**, appliances and metal go to **recycling**, and only what can't be reused goes to a licensed disposal site. Our **family-owned**, **licensed and insured** crew treats your home like our own.",
+          "We also help **property managers**, realtors and small businesses near the Arapahoe Road and Dry Creek corridors with tenant turnovers, office furniture removal and storage unit cleanouts.",
         ],
       },
       {
         heading: "Straight Pricing Before We Load Anything",
         paragraphs: [
-          "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at [[min]], a quarter trailer runs [[load:2]], half is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. We quote the price on site before a single item goes on the trailer, and that number is what you pay.",
+          "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at [[min]], a quarter trailer runs [[load:2]], half is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. We quote the price on site before a single item goes on the trailer, and that number is what you pay — **no hidden fees**.",
         ],
         closing:
           "Call or text us for a same-week slot in Centennial, or send photos through our instant estimate tool for a ballpark in minutes.",
@@ -412,7 +419,7 @@ const raw_locations: Location[] = [
     slug: "englewood",
     city: "Englewood",
     county: "Arapahoe County",
-    metaTitle: "Junk Removal Englewood CO | EZ Haulaway",
+    metaTitle: "Junk Removal Englewood CO | Furniture & Cleanouts | EZ Haulaway",
     metaDescription:
       "Junk removal in Englewood, CO — furniture, mattresses, small commercial cleanouts and bulky items. Local crew, free quotes.",
     intro:
@@ -421,12 +428,49 @@ const raw_locations: Location[] = [
       "Smaller lots and older homes mean careful access and a lot of hand-carrying. That is normal work for our crew.",
     nearby: ["denver", "littleton", "centennial"],
     topServices: ["furniture-removal", "commercial-junk-removal", "mattress-and-bulky-item-removal"],
+    content: [
+      {
+        heading: "Junk Removal Englewood Homes and Businesses Count On",
+        paragraphs: [
+          "Need **junk removal in Englewood**? Our **family-owned crew** hauls furniture, mattresses, appliances, garage junk and small business cleanouts from every corner of the city — from the bungalows near Belleview Park and Cornerstone Park to the apartments off Broadway and the shops around CityCenter Englewood.",
+          "Englewood lots are small and many homes are older, so most jobs mean **hand-carrying** through narrow side yards, alley garages and steep basement stairs. That is normal work for us. We protect floors and door frames, load everything onto our 16-foot dump trailer, and sweep up before we leave.",
+          "You never drag anything to the curb. Point at what goes and we do **all the heavy lifting** — one visit, one price, nothing left behind.",
+        ],
+      },
+      {
+        heading: "What Our Englewood Junk Removal Crew Hauls",
+        paragraphs: [
+          "We take almost anything that isn't hazardous. Here are the jobs we do most often in Englewood:",
+        ],
+        list: [
+          { title: "Furniture and mattresses", text: "Couches at [[item:Couch]] per cushion, mattresses at [[item:Mattress]] and box springs at [[item:Box spring]], plus dressers, recliners and bed frames." },
+          { title: "Appliance removal", text: "Fridges, washers, dryers and stoves carried out and sent to **metal recycling** whenever possible." },
+          { title: "Garage and basement cleanouts", text: "Boxes, shelving, old bikes, yard tools and years of storage cleared in a single trip." },
+          { title: "Small commercial cleanouts", text: "Office furniture, retail fixtures and storage rooms for **Englewood businesses** along Broadway and South Santa Fe." },
+          { title: "Rental turnovers", text: "Tenant leftovers cleared fast so **landlords and property managers** can clean and re-list the unit." },
+        ],
+      },
+      {
+        heading: "Upfront Junk Removal Pricing in Englewood",
+        paragraphs: [
+          "We price by how much space your junk takes in our trailer. Pickups start at **[[min]]**, a half trailer is about **[[load:4]]**, and a **full trailer** is about **[[load:8]]**. Labor, loading, hauling and dump fees are all included — **no hidden fees** and no surprise charges at the door.",
+          "Want a number now? Send a photo through our **free instant estimate** and you'll see a price in about a minute. We're a short drive from our Parker base, so same-week pickup is common.",
+        ],
+      },
+      {
+        heading: "Responsible Disposal for Englewood Customers",
+        paragraphs: [
+          "We sort every load. Usable furniture goes to **donation**, metal goes to **recycling**, and only what can't be reused heads to a licensed disposal site. Our customers like knowing their old stuff gets a second life when it can.",
+        ],
+        closing: "Call or text for the soonest Englewood junk removal slot, or start your free instant estimate.",
+      },
+    ],
   },
   {
     slug: "lakewood",
     city: "Lakewood",
     county: "Jefferson County",
-    metaTitle: "Junk Removal Lakewood CO | EZ Haulaway",
+    metaTitle: "Junk Removal Lakewood CO | Garage & Yard Cleanouts | EZ Haulaway",
     metaDescription:
       "Junk removal in Lakewood, CO — garage cleanouts, landscaping debris and light demolition hauled away. Free quotes from EZ Haulaway.",
     intro:
@@ -435,6 +479,44 @@ const raw_locations: Location[] = [
       "Mature yards here generate serious landscaping debris, and a lot of Lakewood garages are due for a real clear-out.",
     nearby: ["denver"],
     topServices: ["yard-and-landscaping-debris", "garage-cleanouts", "light-demolition"],
+    content: [
+      {
+        heading: "Junk Removal Lakewood Homeowners Trust",
+        paragraphs: [
+          "Looking for **junk removal in Lakewood**? Our **family-owned crew** clears garages, basements, yards and whole homes across the west side of the metro — from Belmar and Green Mountain to Applewood, Bear Creek and the neighborhoods along Union Boulevard.",
+          "Lakewood has big mature trees, deep lots and lots of older ranch homes, so we see serious **landscaping debris**, packed garages and basements full of furniture. We load everything by hand from wherever it sits and leave the space swept clean.",
+          "You don't have to rent a dumpster or borrow a truck. We do **all the heavy lifting**, haul it away the same visit, and you get your space back.",
+        ],
+      },
+      {
+        heading: "Lakewood Junk Removal Services We Offer",
+        paragraphs: [
+          "From one couch to a full estate, here's what Lakewood customers book most:",
+        ],
+        list: [
+          { title: "Garage cleanouts", text: "Old tools, shelving, bikes, paint cans that are fully dried, and boxes of storage cleared in one trip." },
+          { title: "Yard and landscaping debris", text: "Branches, brush, old sod, landscape rock and storm cleanup from Lakewood's mature yards." },
+          { title: "Light demolition", text: "Old sheds, decks, fences and playsets torn down and hauled away together." },
+          { title: "Furniture and mattress removal", text: "Couches at [[item:Couch]] per cushion and mattresses at [[item:Mattress]], carried out from any room." },
+          { title: "Appliance removal", text: "Fridges, washers and dryers hauled and sent to **metal recycling** when possible." },
+          { title: "Estate and move-out cleanouts", text: "Whole-house cleanouts for families, realtors and **property managers**." },
+        ],
+      },
+      {
+        heading: "Upfront Pricing for Lakewood Junk Removal",
+        paragraphs: [
+          "We price by trailer space. A minimum pickup starts at **[[min]]**, a half trailer runs about **[[load:4]]**, and a **full trailer** is about **[[load:8]]**. Labor, loading and disposal are always included — **no hidden fees**.",
+          "Send a photo through our **free instant estimate** for a price in about a minute, or call or text for a firm quote. We show up in the window we give you.",
+        ],
+      },
+      {
+        heading: "Responsible Disposal on Every Lakewood Job",
+        paragraphs: [
+          "We sort each load so usable items go to **donation**, metal and yard waste go to **recycling** where possible, and only true trash goes to a licensed disposal site. It's **professional junk removal** done the right way.",
+        ],
+        closing: "Book Lakewood junk removal today — call or text, or start your free instant estimate.",
+      },
+    ],
   },
   {
     slug: "elizabeth",
