@@ -196,7 +196,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     }
     const { location, service, custom } = loaderData;
     const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
-    const title = `${service.name} ${location.city} CO | EZ Haulaway`;
+    const title = custom?.title ?? `${service.name} ${location.city} CO | EZ Haulaway`;
     const description =
       custom?.description ??
       `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
@@ -298,9 +298,7 @@ function CityServicePage() {
               <MapPin className="size-4" />
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{city}, CO · {location.county}</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
-              {name} {city}
-            </h1>
+            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{`${name} ${city}`}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
               Need {lower} in {city}? {service.summary}
             </p>
@@ -334,7 +332,7 @@ function CityServicePage() {
             />
             <div className="mt-6 space-y-5 leading-8 text-muted-foreground">
               {introParagraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                <p key={paragraph.slice(0, 40)}>{rich(paragraph)}</p>
               ))}
             </div>
             <h3 className="mt-10 font-display text-xl font-bold">What’s included for {city} customers</h3>
@@ -366,7 +364,7 @@ function CityServicePage() {
               </h2>
               {custom.localText.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
-                  {paragraph}
+                  {rich(paragraph)}
                 </p>
               ))}
             </div>
