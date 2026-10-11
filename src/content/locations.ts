@@ -4,6 +4,7 @@ export type LocationContentSection = {
   paragraphs: string[];
   list?: { title: string; text: string }[];
   closing?: string;
+  serviceLinks?: { slug: string; label: string }[];
 };
 
 export type Location = {
@@ -97,15 +98,91 @@ const raw_locations: Location[] = [
     slug: "castle-rock",
     city: "Castle Rock",
     county: "Douglas County",
-    metaTitle: "Junk Removal Castle Rock CO",
+    metaTitle: "Junk Removal Castle Rock CO | EZ Haulaway LLC",
+    h1: "Junk Removal Castle Rock, CO",
     metaDescription:
-      "Junk removal in Castle Rock, CO — sheds, fences, hot tubs, yard debris and full cleanouts. Fast scheduling from our Parker base. Free quotes.",
+      "Family-owned junk removal in Castle Rock, CO. Furniture, mattresses, yard waste, remodel debris and estate cleanouts. Get a free EZ Haulaway estimate.",
     intro:
-      "Castle Rock sits just down I-25 from our shop in Parker, which makes it one of the easiest areas for us to schedule quickly.",
+      "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in Parker. We handle the lifting, loading and hauling — from one old couch to a full property cleanout.",
     local:
-      "Larger lots mean larger projects here — sheds, fence lines, landscaping debris, and hot tubs that have not been filled in years.",
+      "Castle Rock is close to our Parker base and local disposal facilities, making it a practical part of our regular service area. Tell us what needs to go and we’ll confirm a price and the next available pickup.",
     nearby: ["parker", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
+    content: [
+      {
+        heading: "Local Hauling for Homes and Businesses",
+        paragraphs: [
+          "A garage full of moving boxes, an unwanted bedroom set, or a pile of boards from a weekend project can all turn into a job that keeps getting put off. Our Castle Rock junk removal service gives you one crew for the carry-out, loading and disposal. You show us what is leaving and what is staying; we confirm the scope before we touch anything.",
+          "We serve homes in The Meadows, Founders Village, Castlewood Ranch, Crystal Valley and Terrain, along with properties around downtown Castle Rock. Let us know about stairs, a narrow gate, a steep driveway or a long carry from the backyard when you request your estimate. Those details help us plan the right pickup rather than surprise you on arrival.",
+        ],
+      },
+      {
+        heading: "Furniture and Mattress Removal",
+        paragraphs: [
+          "Replacing a sofa does not always come with a way to get rid of the old one. We carry out couches, recliners, tables, dressers and unwanted household furniture from the room where they sit. Combine several pieces with boxes or other junk in the same visit instead of arranging a separate pickup for each item.",
+          "Wondering how to dispose of a mattress in Castle Rock? We pick up mattresses, box springs and bulky bedroom items, so you do not have to strap them to a vehicle or make a dump run. Tell us the size, quantity and floor they are on. We assess usable furniture for donation and sort items for recycling where appropriate; acceptance depends on condition and the receiving facility.",
+        ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Castle Rock furniture removal" },
+          { slug: "mattress-and-bulky-item-removal", label: "Castle Rock mattress and bulky-item removal" },
+        ],
+      },
+      {
+        heading: "Yard Waste and Construction Debris",
+        paragraphs: [
+          "Seasonal yard work can leave branches, brush, old landscape timbers and broken outdoor furniture taking up the driveway. Our **yard waste removal** covers the loading and haul-away, whether the pile is by the curb or behind the house. Describe heavier material separately so we can account for its weight as well as the space it takes up.",
+          "For a kitchen update, flooring replacement or other remodel, we remove construction debris such as scrap lumber, drywall, cabinets, carpet and fixtures. Share photos of the pile and tell us what materials are mixed in. This is debris removal, not a post-construction cleaning service: we haul the unwanted material and sweep the area we load from, rather than provide a full interior cleaning.",
+        ],
+        serviceLinks: [
+          { slug: "yard-and-landscaping-debris", label: "Castle Rock yard waste removal" },
+          { slug: "construction-debris-removal", label: "Castle Rock construction debris removal" },
+        ],
+      },
+      {
+        heading: "Estate, Garage and Office Cleanouts",
+        paragraphs: [
+          "An estate cleanout or move-out is easier to manage when you can decide what stays before the hauling starts. Set aside keepsakes, paperwork and anything you want to keep. We remove the agreed items from rooms, garages and storage spaces, with a clear scope and price before loading. A few leftover pieces and a whole-property cleanout need different plans, so photos are a helpful first step.",
+          "For local businesses, we handle **commercial junk removal** and office furniture removal, including unwanted desks, chairs, shelving and other bulky items. Tell us about building access, operating hours and any loading restrictions when you reach out. We can also combine furniture with garage or storage-room junk in one quote instead of treating each room as a separate project.",
+        ],
+        serviceLinks: [
+          { slug: "estate-and-property-cleanouts", label: "Castle Rock estate and property cleanouts" },
+          { slug: "garage-cleanouts", label: "Castle Rock garage cleanouts" },
+          { slug: "commercial-junk-removal", label: "Castle Rock commercial junk removal" },
+        ],
+      },
+      {
+        heading: "Appliances and Electronics",
+        paragraphs: [
+          "Old refrigerators, washers, dryers and dishwashers are awkward to move and do not belong in a regular trash bin. We handle the carry-out and haul-away after appliances are safely disconnected and ready for removal. Include the appliance type, location and any stairs in your photos or description so the estimate reflects the actual job.",
+          "We also remove unwanted electronics alongside household or office junk. Recycling and disposal requirements vary by item, so identify televisions, monitors and other equipment when asking for a quote. We sort loads for suitable recycling options rather than promise that every item can be accepted by the same facility.",
+        ],
+        serviceLinks: [
+          { slug: "appliance-removal", label: "Castle Rock appliance removal" },
+          { slug: "electronic-waste-removal", label: "Castle Rock electronics removal" },
+        ],
+      },
+      {
+        heading: "Hot Tubs, Sheds, Decks and Fences",
+        paragraphs: [
+          "Larger outdoor projects need more than a pickup truck. Our crew handles hot tub removal, shed removal, deck and fence tear-outs, and other light demolition with the haul-away included in the agreed scope. Ben’s construction and demolition experience helps us plan how a structure comes apart as well as how the debris leaves your property.",
+          "Send photos of the structure, its surroundings and the access route. Mention electrical connections, nearby landscaping or anything that must remain in place. We review the job before scheduling; hot tubs need to be drained and safely disconnected before removal. Whether it is an old backyard spa or damaged fence sections, the quote should cover the work you actually need.",
+        ],
+        serviceLinks: [
+          { slug: "hot-tub-removal", label: "Castle Rock hot tub removal" },
+          { slug: "shed-removal", label: "Castle Rock shed removal" },
+          { slug: "deck-and-fence-removal", label: "Castle Rock deck and fence removal" },
+          { slug: "light-demolition", label: "Castle Rock light demolition" },
+        ],
+      },
+      {
+        heading: "Castle Rock Junk Removal Pricing",
+        paragraphs: [
+          "For standard trailer-load jobs, pricing is based on the space your items occupy. Pickups start at [[min]], a half load is about [[load:4]], and a full load is about [[load:8]]. These prices come from our current pricing guide. Heavy materials, specialty items and demolition work need a scope-specific quote rather than a guess based only on volume.",
+          "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; Castle Rock has no separate trip charge within our regular service area.",
+        ],
+        closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
+      },
+    ],
   },
   {
     slug: "centennial",

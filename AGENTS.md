@@ -13,3 +13,4 @@
 - The Service Areas page uses a local SVG coverage map rather than a map API, keeping it fast, private, and free of usage charges.
 - MCP server (public, read-only) lives in src/lib/mcp/; tools expose only public site data — never leads or customer tables.
 - The dedicated `/instant-estimate` campaign page reuses `AiEstimator`; keep estimate generation and lead submission in that shared component so pricing and lead behavior cannot drift.
+- City content sections may declare contextual service links in location data; the shared city renderer uses typed local city-service routes so each topic links to its own city page without duplicating page templates.
