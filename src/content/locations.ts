@@ -355,7 +355,7 @@ const raw_locations: Location[] = [
         heading: "Garage and Home Cleanouts",
         paragraphs: [
           "A full garage is one of the most common calls we get. Old furniture, boxes, broken exercise gear, tools and yard equipment all go in one trip, and you get your parking space back the same day.",
-          "We also clear basements, spare rooms and move-outs. Point at what goes, and our crew does the lifting, loading and clean up. It's the same **full-service junk removal** we provide in Centennial and Denver.",
+          "We also clear basements, spare rooms and move-outs. Point at what goes, and our crew does the lifting, loading and clean up. It's the same full-service junk removal we provide in Centennial and Denver.",
         ],
       },
       {
@@ -369,7 +369,7 @@ const raw_locations: Location[] = [
         heading: "Clear Pricing",
         paragraphs: [
           "We price by trailer space with **no hidden fees or surprise charges**. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included in every quote.",
-          "For a fast quote, **text us a few photos** or use the instant estimate. A quick text is often the easiest way to get a quote, and we text back with a firm price. Same-week pickup is common for homes and businesses across the south Denver metro.",
+          "For a fast quote, text us a few photos or use the instant estimate. A quick text is often the easiest way to get a quote, and we text back with a firm price. Same-week pickup is common for homes and businesses across the south Denver metro.",
         ],
       },
     ],
