@@ -155,6 +155,43 @@ const RAW_CUSTOM_PAGES: Record<
       ],
     ],
   },
+  "denver/mattress-and-bulky-item-removal": {
+    title: "Mattress Removal Denver CO | Same-Week Pickup | EZ Haulaway LLC",
+    description:
+      "Mattress removal in Denver, CO. We carry out mattresses, box springs and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
+    intro: [
+      "Need **mattress removal in Denver**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — bedroom, basement or third-floor walkup — and haul them away in one visit. No dragging a mattress to the curb, no renting a truck.",
+      "Our two-person crew does **all the heavy lifting**. We carry the mattress down the stairs, through the hallway and out to our 16-foot trailer, then sweep up before we leave. You just show us what goes.",
+      "A mattress is **[[item:Mattress]]** and a box spring is **[[item:Box spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
+    ],
+    localHeading: "Mattress Disposal and Bulky Item Pickup Across Denver",
+    localText: [
+      "**Old mattress removal** in Denver usually means tight spaces. Narrow stairwells in Capitol Hill, basement bedrooms in Wash Park bungalows, freight elevators in LoDo and RiNo lofts — we plan the way out before we lift and protect walls, railings and door frames.",
+      "We take every size: **twin, full, queen, king and California king mattresses**, plus box springs, memory foam, hybrid and pillow-top beds, futon mattresses, cribs and adjustable bases. Bed frames and headboards go too, and we'll take them apart if needed.",
+      "**Mattress recycling** matters to us. Mattresses take up a huge amount of landfill space, so we separate steel springs, foam and wood for recycling whenever possible. Clean, usable mattresses go to local **donation** partners when they'll accept them.",
+      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]), sofas, recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
+      "Moving out of a Denver apartment, swapping in a new bed, or clearing a rental between tenants? We handle **same-week mattress pickup** for homeowners, renters and property managers, and we price multi-item jobs together so you save versus separate pickups.",
+      "Getting a price is easy: text a photo or use our free instant estimate. You'll get **upfront pricing** before we start, and we show up on time in the window we give you.",
+    ],
+    faqs: [
+      [
+        "How much does mattress removal cost in Denver?",
+        "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price.",
+      ],
+      [
+        "Do you carry the mattress down the stairs?",
+        "Yes. We remove mattresses from any room, including upstairs bedrooms, basements and apartments. You never have to move it yourself.",
+      ],
+      [
+        "What sizes of mattresses do you take?",
+        "All of them — twin, full, queen, king and California king, plus box springs, futons, crib mattresses and adjustable bases.",
+      ],
+      [
+        "What happens to my old mattress?",
+        "Usable mattresses go to donation when partners accept them. Others are broken down so steel, foam and wood can be recycled, keeping as much as possible out of the landfill.",
+      ],
+    ],
+  },
   "denver/appliance-removal": {
     description:
       "Appliance removal in Denver, CO: fridges, washers, dryers, stoves and dishwashers hauled from inside your home and recycled. Upfront pricing, free estimate.",
