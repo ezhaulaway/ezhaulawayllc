@@ -67,7 +67,7 @@ function PricingPage() {
     <PageShell>
       <PageHero
         eyebrow="Pricing"
-        title="Straightforward Pricing, No Surprise Fees"
+        title="Junk Removal Pricing With No Surprise Fees"
         text="We price by how much space your items take in the trailer and the work involved in getting them there. You approve the number before anything is loaded."
       />
 
@@ -201,11 +201,15 @@ function PricingPage() {
           />
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             {[
-              `Most **junk removal pricing** in the Denver metro area is based on **trailer volume** — how much space your items take up. Our **16-foot dump trailer** holds about 14 cubic yards. A small pickup starts at **$${MINIMUM_CHARGE}**, and a **full trailer is $${LOAD_LEVELS[LOAD_LEVELS.length - 1]?.price}**. You only pay for the space you use.`,
+              `Most **junk removal costs** in the Denver metro area are based on **trailer volume** — how much space your items take up. Our **16-foot dump trailer** holds about 14 cubic yards. A small pickup starts at **$${MINIMUM_CHARGE}**, and a **full trailer is $${LOAD_LEVELS[LOAD_LEVELS.length - 1]?.price}**. You only pay for the space you use.`,
               `**Weight matters too.** Concrete, dirt, tile, roofing, and other **heavy materials** cost more to dump at the transfer station than furniture or cardboard, so heavy loads are priced by weight and volume. We tell you this before we load, not after.`,
               `**Single items vs. full cleanouts.** If you only have one couch, mattress, or appliance, **single-item pricing** is usually the cheapest option. For garages, basements, and **estate cleanouts**, volume pricing gives you the best value per item.`,
               `**What's always included:** the crew, **all labor and loading**, hauling, **disposal fees**, and sweeping up. Extra labor at $${LABOR_RATE}/hour per crew member only applies to unusual jobs like difficult access or disassembly, and you hear about it up front.`,
-              `**Why transparent pricing matters.** Some haulers quote low on the phone, then add fuel, stair, or dump surcharges on site. Our **junk removal pricing** is the opposite: **no hidden fees**, **free quotes**, and a price you approve before anything goes in the trailer.`,
+              `**Why transparent pricing matters.** Some **junk removal companies** quote low on the phone, then add fuel, stair, or dump surcharges on site. We do the opposite: **no hidden fees**, **free quotes**, and a price you approve before anything goes in the trailer.`,
+              `**What drives your junk removal cost?** Four things: **how much space** the load fills, **what the material is**, **how hard it is to reach**, and **whether anything needs taking apart**. A couch in the garage costs less than the same couch in a third-floor walkup. The **junk removal cost** you see in our quote already covers all four.`,
+              `**How to compare junk removal companies.** Ask every hauler the same questions: Is disposal included? Is there a fuel or trip fee? Do you charge extra for stairs? Is the quote **in writing before loading**? A **professional junk removal company** answers yes, no, no, and yes. Many national **junk removal companies** charge by the truck and add fees at the end; we price by the eighth of a trailer and stick to it.`,
+              `**Ways to lower your junk removal cost.** **Group items into one visit** instead of booking several small pickups. **Bring things to the garage** if it's easy and safe. **Separate heavy materials** like dirt or concrete so we can price them right. And **send photos first** — our free instant estimate shows a price range in about a minute.`,
+              `**Why customers choose a professional junk removal company.** A dumpster rental still leaves you doing the lifting, and a borrowed truck still means a dump run. With EZ Haulaway, a **family-owned, licensed and insured** crew does **all the heavy lifting**, **donates and recycles** what it can, and leaves the space swept clean. That's the real value behind the price.`,
             ].map((p) => (
               <p key={p.slice(0, 30)}>{rich(p)}</p>
             ))}
