@@ -269,7 +269,7 @@ const raw_locations: Location[] = [
           { title: "Mattress disposal", text: "Mattresses and box springs, plus bed frames we take apart for you." },
           { title: "Appliance removal", text: "Fridges, washers, dryers, stoves and dishwashers, sent to metal recycling when possible." },
           { title: "Cleanouts", text: "Garages, basements, apartments, move-outs and estate cleanouts in one trip." },
-          { title: "Office and commercial", text: "Desks, chairs, cubicles and filing cabinets, scheduled to keep downtime low." },
+          { title: "Office and commercial junk removal", text: "Desks, chairs, cubicles and filing cabinets, scheduled to keep downtime low." },
         ],
         closing:
           "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
@@ -278,13 +278,21 @@ const raw_locations: Location[] = [
         heading: "Why Denver Customers Hire Us Instead of Curbside Pickup",
         paragraphs: [
           "Denver's large-item pickup only takes what you drag to the curb or alley. We come inside. That matters for a third-floor walkup, a basement in an old bungalow, or a couch that barely fit through the door.",
-          "We protect floors and door frames, sweep up after, and leave with everything in one trip. Usable furniture goes to donation when we can, and metal goes to recycling.",
+          "We protect floors and door frames, sweep up after, and leave with everything in one trip. Usable furniture goes to **donation** when we can, and metal and appliances go to **recycling** — less of your junk ends up in the landfill.",
+        ],
+      },
+      {
+        heading: "Neighborhoods We Serve Across Denver",
+        paragraphs: [
+          "Our **junk removal services** cover the whole city — Capitol Hill, LoDo, Wash Park, Baker, Congress Park, Harvey Park, Montbello, Green Valley Ranch and everywhere in between. Apartment buildings, historic bungalows, new townhomes and office suites all get the same full-service treatment.",
+          "Tight stairwells, freight elevators, alley access, street parking — we've worked around all of it. Tell us the situation when you book and we'll bring the right plan and equipment.",
         ],
       },
       {
         heading: "How Fast Can You Come to Denver?",
         paragraphs: [
-          "We're based in Parker, and we schedule Denver jobs every week. Same-week pickup is common. Call or text us, or start with the instant estimate, and we'll find a time that works.",
+          "We're based in Parker, and we schedule Denver jobs every week. **Same-week pickup** is common, and **same-day junk removal** opens up regularly — call or text us, or start with the free instant estimate, and we'll find a time that works.",
+          "Every job starts with a firm price before we touch anything, so you know exactly what your Denver junk removal will cost before we load the trailer.",
         ],
       },
     ],
