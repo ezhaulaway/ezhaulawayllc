@@ -1,7 +1,7 @@
 import { SectionHeader } from "@/components/site-chrome";
 
 /** Renders **bold** markers in copy as <strong>. */
-function rich(text: string) {
+export function rich(text: string) {
   return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={i} className="font-semibold text-foreground">{part}</strong> : part));
 }
 

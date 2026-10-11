@@ -143,9 +143,9 @@ function CityPage() {
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
-              Junk Removal {location.city}
+              {`Junk Removal ${location.city}`}
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{location.intro}</p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{rich(location.intro)}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               {pushInstantEstimate && (
@@ -193,7 +193,7 @@ function CityPage() {
                 </h2>
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
-                    {paragraph}
+                    {rich(paragraph)}
                   </p>
                 ))}
                 {section.list && (
@@ -201,7 +201,7 @@ function CityPage() {
                     {section.list.map((item) => (
                       <li key={item.title} className="rounded-lg border border-border bg-card p-5">
                         <h3 className="font-bold">{item.title}</h3>
-                        <p className="mt-1 leading-7 text-muted-foreground">{item.text}</p>
+                        <p className="mt-1 leading-7 text-muted-foreground">{rich(item.text)}</p>
                       </li>
                     ))}
                   </ul>
