@@ -278,7 +278,15 @@ const raw_locations: Location[] = [
         heading: "Why Denver Customers Hire Us Instead of Curbside Pickup",
         paragraphs: [
           "Denver's large-item pickup only takes what you drag to the curb or alley. We come inside. That matters for a third-floor walkup, a basement in an old bungalow, or a couch that barely fit through the door.",
-          "We protect floors and door frames, sweep up after, and leave with everything in one trip. Usable furniture goes to **donation** when we can, and metal and appliances go to **recycling** — less of your junk ends up in the landfill.",
+          "We protect floors and door frames, sweep up after, and leave with everything in one trip. Usable furniture goes to **donation** when we can, and metal and appliances go to **recycling** — less of your junk ends up in the landfill. **Responsible disposal** is part of every job, not an upsell.",
+        ],
+      },
+      {
+        heading: "Commercial Junk Removal & Construction Debris in Denver",
+        paragraphs: [
+          "We work with **property managers**, realtors and local **businesses** across Denver — tenant turnovers, office moves, retail cleanouts and storage-unit clears. **Commercial junk removal** is scheduled around your business so downtime stays low, and we can **book online** or by text when you need a fast turnaround.",
+          "Remodeling? We handle **construction debris removal** where a roll-off dumpster isn't practical — tight alleys, no driveway space, or a job too small for a container. Drywall, lumber, tile, fixtures and scrap wood from **construction sites** all go in the trailer, and we load it ourselves.",
+          "Every job is **full service**: you point at the **unwanted items**, we do the lifting, loading and hauling. It's a **professional service** at a **fair price** — the number we quote is the number you pay, with **no hidden fees** for stairs, distance or disposal.",
         ],
       },
       {
@@ -292,7 +300,7 @@ const raw_locations: Location[] = [
         heading: "How Fast Can You Come to Denver?",
         paragraphs: [
           "We're based in Parker, and we schedule Denver jobs every week. **Same-week pickup** is common, and **same-day junk removal** opens up regularly — call or text us, or start with the free instant estimate, and we'll find a time that works.",
-          "Every job starts with a firm price before we touch anything, so you know exactly what your Denver junk removal will cost before we load the trailer.",
+          "Every job starts with a firm price before we touch anything, so you know exactly what your Denver junk removal will cost before we load the trailer. One visit and the **unwanted junk** is gone — no dumpster in your driveway, no dump run in your weekend.",
         ],
       },
     ],
