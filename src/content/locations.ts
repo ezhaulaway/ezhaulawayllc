@@ -145,7 +145,7 @@ const raw_locations: Location[] = [
           "For local businesses, we handle **commercial junk removal** and office furniture removal, including unwanted desks, chairs, shelving and other bulky items. Tell us about building access, operating hours and any loading restrictions when you reach out. We can also combine furniture with garage or storage-room junk in one quote instead of treating each room as a separate project.",
         ],
         serviceLinks: [
-          { slug: "estate-and-property-cleanouts", label: "Castle Rock estate and property cleanouts" },
+          { slug: "house-and-estate-cleanouts", label: "Castle Rock estate and property cleanouts" },
           { slug: "garage-cleanouts", label: "Castle Rock garage cleanouts" },
           { slug: "commercial-junk-removal", label: "Castle Rock commercial junk removal" },
         ],
@@ -158,7 +158,7 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "appliance-removal", label: "Castle Rock appliance removal" },
-          { slug: "electronic-waste-removal", label: "Castle Rock electronics removal" },
+          { slug: "electronics-and-e-waste-removal", label: "Castle Rock electronics removal" },
         ],
       },
       {
