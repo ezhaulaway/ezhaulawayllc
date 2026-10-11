@@ -24,6 +24,7 @@ import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 const RAW_CUSTOM_PAGES: Record<
   string,
   {
+    title?: string;
     description: string;
     intro: string[];
     localHeading: string;
@@ -116,30 +117,37 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "denver/furniture-removal": {
+    title: "Furniture Removal Denver CO | EZ Haulaway LLC – Fast, Free Estimates",
     description:
-      "Furniture removal in Denver, CO: couches, sectionals, mattresses and dressers hauled from inside your home or apartment. Upfront pricing from [[min]]. Free estimate.",
+      "Furniture removal in Denver, CO. Couches, sectionals, mattresses & dressers hauled from inside your home. Upfront prices, free estimate. Book today!",
     intro: [
-      "Need furniture removal in Denver? We pick up couches, sectionals, recliners, dressers, mattresses and dining sets from inside your home, apartment or office, then haul them away the same visit.",
-      "You don't move anything to the curb. Two of us carry it down the stairs, out of the basement or through the hallway, and load it on our trailer.",
-      "A single couch or mattress falls under our [[min]] minimum. Bigger jobs are priced by trailer space, up to [[load:8]] for a full load. Labor, hauling and disposal are included.",
+      "Need **furniture removal in Denver**? We pick up couches, sectionals, recliners, dressers, mattresses, bed frames and dining sets from inside your home, apartment, condo or office — and haul everything away in the same visit. From Capitol Hill walkups and LoDo lofts to bungalows in Wash Park and ranch homes in Harvey Park, our crew handles Denver furniture removal every week.",
+      "You don't move anything to the curb. Two of us carry it down the stairs, out of the basement or through the hallway, and load it onto our 16-foot trailer. We do **all the heavy lifting** — you just point at what goes.",
+      "A single couch or mattress falls under our **[[min]] minimum**. Bigger furniture removal jobs are priced by trailer space, up to **[[load:8]] for a full load**. Labor, hauling and disposal are always included in the price we quote — no hidden fees, no stair charges.",
     ],
-    localHeading: "Couch and Sofa Removal Across Denver",
+    localHeading: "Couch and Sofa Removal Across Denver Neighborhoods",
     localText: [
-      "Denver furniture jobs come with old bungalow basements, walkup apartments and alley-only access. We plan the route before we lift, and we protect floors, railings and door frames on the way out.",
-      "Furniture in good shape goes to donation when we can. Broken pieces get sorted, and metal frames go to recycling. Want a price first? Send a photo through the instant estimate.",
+      "Denver furniture removal jobs come with old bungalow basements, third-floor walkup apartments and alley-only access. We plan the route before we lift, and we protect floors, railings and door frames on the way out. Tight stairwells in Baker, narrow doorways in Congress Park, freight elevators downtown — we've worked through all of it.",
+      "**Furniture removal in Denver** often means more than one piece. Clearing a whole room, downsizing before a move, or emptying a rental between tenants? We price the whole job by trailer space so a couch, two dressers and a mattress cost less than booking three separate pickups.",
+      "Furniture in good shape goes to **donation** whenever we can, so usable pieces stay in the community. Broken items get sorted, and metal frames and springs go to **recycling** instead of the landfill. Want a price before you book? Send a photo through our free instant estimate and you'll see your number in about a minute.",
+      "Scheduling is simple: call or text, send photos, and we'll give you a firm price and the soonest available window. Because we're in Denver every week, most furniture removal jobs are on the calendar within a few days — and we show up when we say we will.",
     ],
     faqs: [
       [
-        "How much does couch removal cost in Denver?",
-        "Couches are priced per cushion at [[item:Couch]]. One couch on its own falls under our [[min]] minimum, and that minimum covers other small items you add.",
+        "How much does furniture removal cost in Denver?",
+        "A single couch or mattress falls under our [[min]] minimum. Couches are priced per cushion at [[item:Couch]], and bigger jobs are priced by trailer space up to [[load:8]] for a full load. Text photos to " + PHONE + " for a firm price before any work starts.",
       ],
       [
         "Can you remove furniture from an upstairs apartment?",
-        "Yes. We carry furniture down stairs and out of apartments and condos. Let us know about elevators or parking rules when you book.",
+        "Yes. We carry furniture down stairs and out of apartments and condos all over Denver. Let us know about elevators, parking rules or tight stairwells when you book so we bring the right crew and equipment.",
       ],
       [
         "Do you take sleeper sofas and sectionals?",
-        "Yes. Sleeper sofas and sectionals are some of our most common Denver pickups. We take them apart if that's needed to get them out.",
+        "Yes. Sleeper sofas and sectionals are some of our most common Denver pickups. We take them apart if that's needed to get them out the door.",
+      ],
+      [
+        "What happens to my old furniture after you haul it?",
+        "Usable furniture goes to local donation centers when we can. Pieces that are broken or worn out get sorted, and metal frames and springs go to recycling. Only what truly can't be reused goes to the landfill.",
       ],
     ],
   },
