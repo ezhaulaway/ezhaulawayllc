@@ -224,8 +224,8 @@ function ServicePage() {
               {priorityLocations.map((location) => (
                 <Link
                   key={location.slug}
-                  to="/service-areas/$city"
-                  params={{ city: location.slug }}
+                  to="/service-areas/$city/$service"
+                  params={{ city: location.slug, service: service.slug }}
                   className="inline-flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold transition-colors hover:border-primary"
                 >
                   <span>
