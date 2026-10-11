@@ -11,6 +11,8 @@ export type Location = {
   city: string;
   county: string;
   metaTitle?: string;
+  /** Optional H1 override when the target search phrase puts the city first. */
+  h1?: string;
   metaDescription?: string;
   intro: string;
   local: string;
@@ -259,38 +261,68 @@ const raw_locations: Location[] = [
     slug: "highlands-ranch",
     city: "Highlands Ranch",
     county: "Douglas County",
-    metaTitle: "Junk Removal Highlands Ranch CO | EZ Haulaway",
+    h1: "Highlands Ranch Junk Removal",
+    metaTitle: "Highlands Ranch Junk Removal CO | Free Quotes | EZ Haulaway",
     metaDescription:
-      "Junk removal in Highlands Ranch, CO — furniture, mattresses, exercise equipment and garage cleanouts. Free quotes from EZ Haulaway.",
+      "Highlands Ranch junk removal: old furniture, garage cleanouts, yard debris and commercial junk removal. Hassle free, upfront pricing. Free quotes.",
     intro:
-      "We serve Highlands Ranch several times a week, from single-item pickups to complete garage and basement clearing.",
+      "We serve the area several times a week, from single-item pickups to complete garage and basement clearing.",
     local:
       "Storage-heavy homes with finished basements tend to accumulate furniture and exercise equipment nobody uses anymore. Those are some of our most common calls here.",
     nearby: ["littleton", "centennial", "lone-tree"],
     topServices: ["mattress-and-bulky-item-removal", "garage-cleanouts", "furniture-removal"],
     content: [
       {
-        heading: "Highlands Ranch Junk Removal: The Quick Answer",
+        heading: "Reliable Junk Removal, The Quick Answer",
         paragraphs: [
-          "EZ Haulaway picks up junk all over Highlands Ranch. We carry it out of your home, garage or yard and haul it away in one visit. Pricing is based on trailer space: [[min]] for a small load up to [[load:8]] for a full trailer, with labor and disposal included.",
+          "EZ Haulaway provides **Highlands Ranch junk removal** from a family-owned crew based in Parker. We carry junk out of your home, garage or yard and haul it away in one visit. Pricing is based on trailer space: [[min]] for a small load up to [[load:8]] for a full trailer, with labor and disposal included.",
+          "Our **junk removal services** are built to be **hassle free**. You point at the **unwanted items**, and we do the **heavy lifting**, loading, hauling and sweep-up. It's reliable junk removal without a dumpster in the driveway.",
         ],
       },
       {
-        heading: "What Highlands Ranch Homeowners Call Us For",
+        heading: "What Homeowners Call Us For",
         paragraphs: [
-          "Highlands Ranch homes have big basements and garages, and they fill up. These are our most common calls here:",
+          "Homes here have big basements and garages, and they fill up. These are our most common calls:",
         ],
         list: [
-          { title: "Basement furniture", text: "Old sectionals, futons, desks and bookshelves carried up the stairs for you." },
+          { title: "Basement furniture", text: "**Old furniture** like sectionals, futons, desks and bookshelves carried up the stairs for you." },
           { title: "Exercise equipment", text: "Treadmills, ellipticals, weight benches and home gyms taken apart and hauled out." },
           { title: "Mattresses", text: "Mattresses run [[item:Mattress]] and box springs [[item:Box spring]], within our [[min]] minimum." },
           { title: "Garage cleanouts", text: "Boxes, shelving, old bikes and yard tools cleared in one trip." },
         ],
       },
       {
+        heading: "Basement, Attic and Garage Cleanouts",
+        paragraphs: [
+          "Finished basements are great until they become storage for every couch, crib and box from the last fifteen years. We carry everything up the stairs and out the door, protecting floors and walls along the way. **All the heavy lifting** is on us, so you never wrestle a sleeper sofa up a staircase.",
+          "Garage cleanouts are just as common. We clear old paint cans that are fully dried, broken shelving, bikes, lawn mowers, holiday decorations and boxes of unwanted items. Tell us what stays, and we take the rest. Most garage jobs fit between a half trailer at [[load:4]] and a full trailer at [[load:8]].",
+        ],
+      },
+      {
+        heading: "Yard Debris, Hot Tubs and Remodel Waste",
+        paragraphs: [
+          "Big trees and established landscaping create plenty of **yard waste**. We haul branch piles, brush, old sod, landscape rock and storm cleanup. **Yard debris** from a weekend project or a full backyard redo goes in the trailer, and we load it ourselves.",
+          "We also remove old hot tubs, playsets, sheds and decks. Ben has torn out more than 300 decks, so the tear-down and the haul happen in one visit. Remodel waste like drywall, carpet, cabinets and scrap lumber goes too.",
+        ],
+      },
+      {
+        heading: "Responsible Disposal and Donation",
+        paragraphs: [
+          "**Responsible disposal** is part of every job. Usable furniture and household goods go to donation, metal and appliances go to recycling, and only what's left goes to a licensed disposal site. Old furniture in good shape often gets a second home.",
+          "Customers tell us they like knowing their junk didn't all end up in a landfill. That kind of **responsible disposal** is what reliable junk haulers should offer, and it's included in our price.",
+        ],
+      },
+      {
+        heading: "Commercial Junk Removal and Rentals",
+        paragraphs: [
+          "We also offer **commercial junk removal** for offices, retail shops, property managers and realtors. Tenant turnovers, office furniture, storage rooms and listing prep are all handled with one upfront price. We can meet a lockbox and send photos when the job is done.",
+        ],
+      },
+      {
         heading: "Working Around HOA Rules",
         paragraphs: [
-          "Many Highlands Ranch neighborhoods don't want junk piled at the curb for days. With us, nothing sits outside. We load straight from your garage or house and leave the same visit.",
+          "Many neighborhoods here don't want junk piled at the curb for days. With us, nothing sits outside. We load straight from your garage or house and leave the same visit. That's why so many neighbors choose Highlands Ranch junk removal from a local crew.",
+          "Need reliable junk removal this week? Our junk removal services start at [[min]], with **no hidden fees**. Call, text or use the instant estimate for a free quote on your Highlands Ranch junk removal job.",
         ],
         closing:
           "Send photos through our free instant estimate, or call or text us for a same-week slot.",
@@ -301,15 +333,39 @@ const raw_locations: Location[] = [
     slug: "lone-tree",
     city: "Lone Tree",
     county: "Douglas County",
-    metaTitle: "Junk Removal Lone Tree CO | EZ Haulaway",
+    h1: "Lone Tree Junk Removal",
+    metaTitle: "Lone Tree Junk Removal CO | Same-Week Pickup | EZ Haulaway",
     metaDescription:
-      "Junk removal in Lone Tree, CO — furniture, office cleanouts, electronics and bulky items hauled away. Same-week scheduling and free quotes.",
+      "Lone Tree junk removal: furniture, office cleanouts, electronics and bulky items hauled away. Same-week scheduling, upfront pricing and free quotes.",
     intro:
-      "Lone Tree is minutes from Parker, so same-week scheduling is usually straightforward.",
+      "Our family-owned crew is minutes away in Parker, so same-week scheduling is usually straightforward.",
     local:
       "We handle a mix of residential cleanouts and commercial work here, including office furniture and tenant turnovers around the business corridors.",
     nearby: ["parker", "centennial", "highlands-ranch", "castle-pines"],
     topServices: ["commercial-junk-removal", "furniture-removal", "electronics-and-e-waste-removal"],
+    content: [
+      {
+        heading: "Homes and Businesses We Serve",
+        paragraphs: [
+          "EZ Haulaway offers **Lone Tree junk removal** for homes in RidgeGate, Heritage Hills, Acres Green and the Terrace neighborhoods, plus businesses near Park Meadows and the Lincoln Avenue corridor. We also cover nearby Greenwood Village and the Denver Tech Center.",
+          "We carry junk out from wherever it sits, load our 16-foot dump trailer, and haul it away the same visit. You don't move anything to the curb, and we sweep up before we leave.",
+        ],
+      },
+      {
+        heading: "Office Furniture and Tenant Cleanouts",
+        paragraphs: [
+          "Offices around Park Meadows and Greenwood Village call us for **commercial junk removal**: desks, chairs, cubicle panels, filing cabinets and old electronics. We schedule around your hours to keep downtime low, and electronics go to a proper recycler.",
+          "Property managers use us for tenant turnovers and storage rooms, with one price up front and photos when the space is clear.",
+        ],
+      },
+      {
+        heading: "Clear Pricing",
+        paragraphs: [
+          "We price by trailer space with **no hidden fees**. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included.",
+          "For fast Lone Tree junk removal, call or text for a free estimate, or send photos through the instant estimate. **Same-week pickup** is common.",
+        ],
+      },
+    ],
   },
   {
     slug: "denver",
@@ -466,9 +522,10 @@ const raw_locations: Location[] = [
     slug: "littleton",
     city: "Littleton",
     county: "Arapahoe & Jefferson County",
-    metaTitle: "Junk Removal Littleton CO | EZ Haulaway",
+    h1: "Junk Removal Littleton CO",
+    metaTitle: "Junk Removal Littleton CO | Local Junk Haulers | EZ Haulaway",
     metaDescription:
-      "Junk removal in Littleton, CO — deck and fence tear-outs, basement cleanouts and yard debris hauled away. Free quotes from EZ Haulaway.",
+      "Junk removal Littleton CO: furniture removal, deck tear-outs, basement cleanouts and yard debris hauled away. Eco friendly, upfront pricing. Free quotes.",
     intro:
       "Littleton mixes long-established neighborhoods with newer development, and both keep our trailer full.",
     local:
@@ -477,22 +534,29 @@ const raw_locations: Location[] = [
     topServices: ["deck-and-fence-removal", "house-and-estate-cleanouts", "yard-and-landscaping-debris"],
     content: [
       {
-        heading: "Junk Removal in Littleton, CO",
+        heading: "Littleton Junk Removal",
         paragraphs: [
-          "Littleton junk removal with EZ Haulaway is simple: send a photo, get a price, and we carry everything out. We serve homes across Littleton, from the older streets near downtown to newer neighborhoods to the south.",
-          "Older Littleton homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down and the haul in one visit.",
+          "Need junk removal Littleton homeowners trust? EZ Haulaway makes junk removal simple: send a photo, get a price, and we carry everything out. Our junk removal crew serves homes across Littleton CO, from the older streets near downtown to newer neighborhoods to the south.",
+          "Older homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down and the junk removal in one visit.",
+          "Furniture removal is one of our most common Littleton jobs. Couches, recliners, dressers, and mattresses are carried out of any room. If you just need furniture removal for one big piece, pickups start at [[min]].",
         ],
       },
       {
-        heading: "Littleton Junk Removal: Common Questions",
-        paragraphs: ["Here are quick answers to what Littleton homeowners ask most."],
-        list: [
-          { title: "How much does junk removal cost in Littleton?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
-          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down and haul it off in the same visit." },
-          { title: "Can you clear out a basement?", text: "Yes. We carry everything up the stairs and out, so you don't lift a thing." },
-          { title: "Where does my junk go?", text: "Usable items go to donation, metal goes to recycling, and the rest goes to a licensed disposal site." },
+        heading: "Eco Friendly Disposal",
+        paragraphs: [
+          "Our junk removal is eco friendly by design. Usable items go to donation, metal goes to recycling, and only the rest goes to a licensed disposal site. Junk removal in Littleton should keep good stuff out of the landfill.",
         ],
-        closing: "Want a Littleton price now? Use our free instant estimate with a few photos.",
+      },
+      {
+        heading: "Common Questions",
+        paragraphs: ["Quick answers about junk removal Littleton customers ask most."],
+        list: [
+          { title: "How much does junk removal cost?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
+          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down and haul it off in the same visit." },
+          { title: "Can you clear a basement?", text: "Yes. Our junk removal crew carries everything up the stairs and out, so you don't lift a thing." },
+          { title: "How do I book?", text: "Call or text with an email or phone number, or use our free instant estimate with a few photos." },
+        ],
+        closing: "Want a price now? Use our free instant estimate for Littleton junk removal.",
       },
     ],
   },
@@ -689,15 +753,74 @@ const raw_locations: Location[] = [
     slug: "castle-pines",
     city: "Castle Pines",
     county: "Douglas County",
-    metaTitle: "Junk Removal Castle Pines CO | EZ Haulaway",
+    h1: "Castle Pines Junk Removal",
+    metaTitle: "Castle Pines Junk Removal | Fast, Local Pickup | EZ Haulaway",
     metaDescription:
-      "Junk removal in Castle Pines, CO — furniture swaps, mattress removal and garage cleanouts. Same-week scheduling. Free quotes from EZ Haulaway.",
+      "Castle Pines junk removal by a family-owned Douglas County crew. Furniture, hot tubs, yard waste and cleanouts hauled away. Upfront pricing, free estimate.",
     intro:
-      "Castle Pines is close to our Parker base and an easy area for same-week junk removal scheduling.",
+      "Looking for **Castle Pines junk removal** from a local crew? EZ Haulaway is a family-owned team based in nearby Parker, and we handle **all the heavy lifting** for homes across Castle Pines.",
     local:
       "Newer homes and active move-ins mean furniture swaps, mattress removals, and garage organization jobs keep us busy here.",
     nearby: ["parker", "castle-rock", "lone-tree", "highlands-ranch"],
     topServices: ["furniture-removal", "mattress-and-bulky-item-removal", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Local Junk Removal Services in Castle Pines",
+        paragraphs: [
+          "Our **junk removal services** cover everything from single item pickups to full home cleanouts. We carry your unwanted junk out of the garage, basement, backyard or upstairs bedroom, load it into our 16-foot dump trailer, and haul it away in the same visit. You never drag anything to the curb.",
+          "Castle Pines is a short drive from our Parker shop, so scheduling is easy. Same-week pickup is common, and same day service is sometimes open when our route has room. Whatever your junk removal needs look like, one call or text gets you a free estimate and a clear arrival window.",
+          "We are a small, **professional team** — Ben and his family — not a call center. The people you talk to on the phone are the same people who show up, walk the job with you, and do the work.",
+        ],
+      },
+      {
+        heading: "Castle Pines Village and Surrounding Neighborhoods",
+        paragraphs: [
+          "We work throughout Castle Pines Village, The Canyons, Lagae Ranch, Forest Park, and the homes along Castle Pines Parkway. Larger lots and rolling hills mean longer carries and steeper driveways, and that is normal work for our crew. We also serve the surrounding areas of Castle Rock, Lone Tree, Highlands Ranch, and the rest of Douglas County.",
+          "Many Castle Pines neighborhoods have HOA rules about what can sit at the curb and for how long. With us, nothing sits outside. We load straight from your home or garage and leave with everything the same day, so there is no dumpster in the driveway and no pile waiting for a bulk pickup.",
+        ],
+      },
+      {
+        heading: "Furniture, Appliance and Hot Tub Removal",
+        paragraphs: [
+          "Plenty of Castle Pines customers just need a few big things gone. We take **unwanted furniture** like sectionals, sleeper sofas, recliners, dressers, desks, and dining sets, plus mattresses, box springs, and bed frames. Appliances like refrigerators, washers, dryers, and ranges are hauled out with a dolly and straps and sent to metal recycling whenever possible.",
+          "Old hot tubs are one of our specialties. We cut the spa down, carry the pieces out of the backyard, and haul everything away, usually without touching your landscaping. If the tub sits in a deck, we can take out the deck too.",
+        ],
+        list: [
+          { title: "Single item pickups", text: "One couch, mattress, or treadmill. Pickups start at [[min]]." },
+          { title: "Mattresses and box springs", text: "Mattresses run [[item:Mattress]] and box springs [[item:Box spring]]." },
+          { title: "Hot tub removal", text: "Old spas cut down and hauled away, starting around [[item:Hot tub]]." },
+        ],
+      },
+      {
+        heading: "Yard Waste and Construction Debris",
+        paragraphs: [
+          "Mature trees and big yards create a lot of **yard waste**. We haul branch piles, brush, old landscaping rock, sod, and storm cleanup. We also take out sheds, playsets, and old wood fences, then haul the boards away in the same trip.",
+          "Remodeling? We remove **construction debris** like drywall, carpet, tile, cabinets, scrap lumber, and old fixtures. When a roll-off dumpster isn't practical or the HOA won't allow one, our trailer is the easy answer. We load it ourselves, so your contractor can stay focused on the build.",
+        ],
+      },
+      {
+        heading: "Upfront, Transparent Pricing",
+        paragraphs: [
+          "We believe in **upfront pricing** with **no hidden fees**. You pay for how much space your items take in the trailer, not how long we're there. Pickups start at [[min]], a half trailer runs about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are all included.",
+          "Get a free quote by text with a few photos, or book online with our instant estimate. We confirm the price on site before anything is loaded, and that number is what you pay. Transparent pricing is how we earn repeat customers across Castle Pines.",
+        ],
+      },
+      {
+        heading: "Donation, Recycling and E-Waste",
+        paragraphs: [
+          "We sort every load. **Usable items** like furniture and household goods go to local charities, so they get a **second life** instead of a landfill. Metal and appliances go to recycling, and e waste like old TVs and computers goes to a proper electronics recycler.",
+          "Only what can't be reused or recycled goes to a licensed disposal site. It's a responsible way to clear your space and keep unwanted items useful.",
+        ],
+      },
+      {
+        heading: "Why Castle Pines Chooses a Local Crew",
+        paragraphs: [
+          "National franchises like Junk King and JDog Junk Removal serve the area, but we are a locally owned, **licensed and insured** family business right next door in Parker. That means efficient service, honest prices, and a crew that treats your home like our own. We proudly offer thanks to first responders, teachers, and veterans who call us.",
+          "When you need Castle Pines junk removal you can count on, call or text for a free estimate. We'll handle the heavy lifting, sweep up before we leave, and give you your garage back.",
+        ],
+        closing: "Ready to clear it out? Get your free Castle Pines junk removal estimate today.",
+      },
+    ],
   },
   {
     slug: "sedalia",
