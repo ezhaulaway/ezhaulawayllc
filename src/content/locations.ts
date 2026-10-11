@@ -239,7 +239,8 @@ const raw_locations: Location[] = [
       {
         heading: "Denver Junk Removal: The Quick Answer",
         paragraphs: [
-          "EZ Haulaway is a local junk removal company serving Denver. Two of us show up with a 16-foot dump trailer, carry your junk out from wherever it sits, and haul it away the same visit. You get a price before we load anything.",
+          "EZ Haulaway is a local **junk removal company** serving Denver. Two of us show up with a 16-foot dump trailer, carry your junk out from wherever it sits, and **haul it away** the same visit. You get a price before we load anything — **upfront pricing** with no surprise fees at the end.",
+          "Whether you need to **get rid of** one couch or clear out an entire house, the process is the same: point at what goes, we **handle the heavy lifting**, and we sweep up before we leave.",
           "Prices are based on how much of the trailer you fill. A small load starts at [[min]] and a full trailer is [[load:8]]. Labor, loading, hauling and disposal are all included.",
         ],
       },
