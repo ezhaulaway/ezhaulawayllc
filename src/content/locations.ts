@@ -347,22 +347,29 @@ const raw_locations: Location[] = [
       {
         heading: "Homes and Businesses We Serve",
         paragraphs: [
-          "EZ Haulaway offers **Lone Tree junk removal** for homes in RidgeGate, Heritage Hills, Acres Green and the Terrace neighborhoods, plus businesses near Park Meadows and the Lincoln Avenue corridor. We also cover nearby Greenwood Village and the Denver Tech Center.",
-          "We carry junk out from wherever it sits, load our 16-foot dump trailer, and haul it away the same visit. You don't move anything to the curb, and we sweep up before we leave.",
+          "EZ Haulaway offers **Lone Tree junk removal** for homes in RidgeGate, Heritage Hills, Acres Green and the Terrace neighborhoods, plus businesses near Park Meadows and the Lincoln Avenue corridor. We also cover nearby Greenwood Village, Centennial and the Denver Tech Center.",
+          "We carry junk out from wherever it sits, load our 16-foot dump trailer, and haul it away the same visit. You don't move anything to the curb, and we sweep up and leave the space clean before we go.",
+        ],
+      },
+      {
+        heading: "Garage and Home Cleanouts",
+        paragraphs: [
+          "A full garage is one of the most common calls we get. Old furniture, boxes, broken exercise gear, tools and yard equipment all go in one trip, and you get your parking space back the same day.",
+          "We also clear basements, spare rooms and move-outs. Point at what goes, and our crew does the lifting, loading and clean up.",
         ],
       },
       {
         heading: "Office Furniture and Tenant Cleanouts",
         paragraphs: [
-          "Offices around Park Meadows and Greenwood Village call us for **commercial junk removal**: desks, chairs, cubicle panels, filing cabinets and old electronics. We schedule around your hours to keep downtime low, and electronics go to a proper recycler.",
-          "Property managers use us for tenant turnovers and storage rooms, with one price up front and photos when the space is clear.",
+          "Offices around Park Meadows and Greenwood Village call us for commercial junk removal: desks, chairs, cubicle panels, filing cabinets and old electronics. We schedule around your business hours to keep downtime low, and electronics go to a proper recycler.",
+          "Property managers use us for tenant turnovers and storage rooms, with one quote up front and photos when the space is clean and clear.",
         ],
       },
       {
         heading: "Clear Pricing",
         paragraphs: [
           "We price by trailer space with **no hidden fees**. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included.",
-          "For fast Lone Tree junk removal, call or text for a free estimate, or send photos through the instant estimate. **Same-week pickup** is common.",
+          "For a fast quote, call or text us a few photos, or use the instant estimate. Same-week pickup is common for homes and businesses across the south Denver metro.",
         ],
       },
     ],
@@ -539,6 +546,7 @@ const raw_locations: Location[] = [
           "Need junk removal Littleton homeowners trust? EZ Haulaway makes junk removal simple: send a photo, get a price, and we carry everything out. Our junk removal crew serves homes across Littleton CO, from the older streets near downtown to newer neighborhoods to the south.",
           "Older homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down and the junk removal in one visit.",
           "Furniture removal is one of our most common Littleton jobs. Couches, recliners, dressers, and mattresses are carried out of any room. If you just need furniture removal for one big piece, pickups start at [[min]].",
+          "Garage junk removal, yard debris, hot tubs, and full estate cleanouts are all part of the job too. Whatever the size, our junk removal service includes the lifting, loading, hauling, and sweep-up.",
         ],
       },
       {
