@@ -347,7 +347,7 @@ const raw_locations: Location[] = [
       {
         heading: "Homes and Businesses We Serve",
         paragraphs: [
-          "EZ Haulaway offers **Lone Tree junk removal** for homes in RidgeGate, Heritage Hills, Acres Green and the Terrace neighborhoods, plus businesses near Park Meadows and the Lincoln Avenue corridor. We also cover nearby Greenwood Village, Centennial and the Denver Tech Center.",
+          "EZ Haulaway offers **Lone Tree junk removal** for homes in RidgeGate, Heritage Hills, Acres Green and the Terrace neighborhoods, plus businesses near Park Meadows and the Lincoln Avenue corridor. Our junk removal crew also covers nearby Greenwood Village, Centennial, the Denver Tech Center and the rest of south Denver.",
           "We carry junk out from wherever it sits, load our 16-foot dump trailer, and haul it away the same visit. You don't move anything to the curb, and we sweep up and leave the space clean before we go.",
         ],
       },
@@ -355,7 +355,7 @@ const raw_locations: Location[] = [
         heading: "Garage and Home Cleanouts",
         paragraphs: [
           "A full garage is one of the most common calls we get. Old furniture, boxes, broken exercise gear, tools and yard equipment all go in one trip, and you get your parking space back the same day.",
-          "We also clear basements, spare rooms and move-outs. Point at what goes, and our crew does the lifting, loading and clean up.",
+          "We also clear basements, spare rooms and move-outs. Point at what goes, and our crew does the lifting, loading and clean up. It's the same **full-service junk removal** we provide in Centennial and Denver.",
         ],
       },
       {
@@ -368,8 +368,8 @@ const raw_locations: Location[] = [
       {
         heading: "Clear Pricing",
         paragraphs: [
-          "We price by trailer space with **no hidden fees**. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included.",
-          "For a fast quote, call or text us a few photos, or use the instant estimate. Same-week pickup is common for homes and businesses across the south Denver metro.",
+          "We price by trailer space with **no hidden fees or surprise charges**. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included in every quote.",
+          "For a fast quote, **text us a few photos** or use the instant estimate. A quick text is often the easiest way to get a quote, and we text back with a firm price. Same-week pickup is common for homes and businesses across the south Denver metro.",
         ],
       },
     ],
@@ -541,30 +541,37 @@ const raw_locations: Location[] = [
     topServices: ["deck-and-fence-removal", "house-and-estate-cleanouts", "yard-and-landscaping-debris"],
     content: [
       {
-        heading: "Littleton Junk Removal",
+        heading: "Local Junk Removal Services",
         paragraphs: [
-          "Need junk removal Littleton homeowners trust? EZ Haulaway makes junk removal simple: send a photo, get a price, and we carry everything out. Our junk removal crew serves homes across Littleton CO, from the older streets near downtown to newer neighborhoods to the south.",
-          "Older homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down and the junk removal in one visit.",
-          "Furniture removal is one of our most common Littleton jobs. Couches, recliners, dressers, and mattresses are carried out of any room. If you just need furniture removal for one big piece, pickups start at [[min]].",
-          "Garage junk removal, yard debris, hot tubs, and full estate cleanouts are all part of the job too. Whatever the size, our junk removal service includes the lifting, loading, hauling, and sweep-up.",
+          "Need junk removal Littleton homeowners trust? EZ Haulaway makes junk removal simple: send a photo, get a quote, and we handle the loading and hauling. Our **reliable, licensed crew** serves homes across Littleton CO, from the older streets near downtown to newer neighborhoods to the south.",
+          "Older homes often have decks and fences past their prime, plus basements full of stored furniture, boxes, and old appliances. We handle the tear-down, the loading, and the junk removal in one visit, so you get rid of it all at once.",
+          "Furniture removal is one of our most common jobs in the area. Couches, recliners, dressers, and mattresses are carried out of any room with care for your floors and walls. If you only need to get rid of one big piece of furniture, pickups start at [[min]].",
+          "Garage junk removal, yard debris, hot tubs, and full estate cleanouts are part of our services too. Whatever the size, the job includes the lifting, loading, hauling, and sweep-up.",
         ],
       },
       {
-        heading: "Eco Friendly Disposal",
+        heading: "Affordable Junk Removal Pricing",
         paragraphs: [
-          "Our junk removal is eco friendly by design. Usable items go to donation, metal goes to recycling, and only the rest goes to a licensed disposal site. Junk removal in Littleton should keep good stuff out of the landfill.",
+          "Our pricing is simple and affordable. You pay for the trailer space your junk fills, and loading, labor and dump fees are always included. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]].",
+          "Clear pricing means the quote we give is the price you pay. Most jobs in the area can be booked the same week.",
+        ],
+      },
+      {
+        heading: "Responsible Disposal",
+        paragraphs: [
+          "Our junk removal is eco friendly by design. Usable furniture goes to donation, metal goes to recycling, and only the rest goes to a licensed disposal site.",
         ],
       },
       {
         heading: "Common Questions",
-        paragraphs: ["Quick answers about junk removal Littleton customers ask most."],
+        paragraphs: ["Learn the quick answers our customers ask most."],
         list: [
-          { title: "How much does junk removal cost?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
-          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down and haul it off in the same visit." },
-          { title: "Can you clear a basement?", text: "Yes. Our junk removal crew carries everything up the stairs and out, so you don't lift a thing." },
-          { title: "How do I book?", text: "Call or text with an email or phone number, or use our free instant estimate with a few photos." },
+          { title: "How does your pricing work?", text: "We price by trailer space, with loading and disposal included. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]." },
+          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down, handle the loading and haul it off in the same visit." },
+          { title: "Can you clear a basement?", text: "Yes. Our crew carries everything up the stairs and out, so you don't lift a thing." },
+          { title: "How do I contact you?", text: "Contact us by call or text with an email or phone number, or use our free instant estimate with a few photos to get a quote today." },
         ],
-        closing: "Want a price now? Use our free instant estimate for Littleton junk removal.",
+        closing: "Want to learn your price now? Use our free instant estimate.",
       },
     ],
   },
