@@ -12,6 +12,7 @@ import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/lo
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
+import { rich } from "@/components/prose-section";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: ({ params }) => {
