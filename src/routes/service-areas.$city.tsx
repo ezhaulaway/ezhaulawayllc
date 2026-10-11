@@ -210,6 +210,21 @@ function CityPage() {
                 {section.closing && (
                   <p className="mt-6 text-lg font-semibold leading-8">{section.closing}</p>
                 )}
+                 {section.serviceLinks && (
+                   <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                     {section.serviceLinks.map((service) => (
+                       <li key={service.slug}>
+                         <Link
+                           to="/service-areas/$city/$service"
+                           params={{ city: location.slug, service: service.slug }}
+                           className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
+                         >
+                           {service.label}<ArrowRight className="size-4 shrink-0" />
+                         </Link>
+                       </li>
+                     ))}
+                   </ul>
+                 )}
               </div>
             ))}
           </div>

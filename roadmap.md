@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Strengthen the Castle Rock main page and verify links to its existing service pages
+- [ ] Research Castle Rock service-page expansion priorities — deferred until the main-page review
+
 - [ ] Refresh AI service and area photos against real EZ Haulaway equipment; preserve authentic photos
 - [ ] Check refreshed images across the website and trailer graphic
 
