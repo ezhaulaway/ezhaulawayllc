@@ -188,7 +188,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
         {showIntro && <div className="mx-auto max-w-3xl text-center">
           <p
             aria-hidden="true"
-            className="font-display text-7xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-8xl"
+            className="font-display text-7xl font-black uppercase italic leading-none tracking-tight text-primary ez-outline sm:text-8xl"
           >
             Too EZ.
           </p>
