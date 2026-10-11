@@ -98,7 +98,7 @@ const raw_locations: Location[] = [
     slug: "castle-rock",
     city: "Castle Rock",
     county: "Douglas County",
-    metaTitle: "Junk Removal Castle Rock CO | EZ Haulaway LLC",
+    metaTitle: "Castle Rock Junk Removal & Hauling Services | EZ Haulaway LLC",
     h1: "Junk Removal Castle Rock, CO",
     metaDescription:
       "Family-owned junk removal in Castle Rock, CO. Furniture, mattresses, yard waste, remodel debris and estate cleanouts. Get a free EZ Haulaway estimate.",
@@ -193,6 +193,20 @@ const raw_locations: Location[] = [
         heading: "Items We Can’t Take",
         paragraphs: [
           "For safety reasons we do not haul **hazardous waste** such as paint, solvents, pesticides, motor oil, propane tanks or chemicals. Douglas County residents can use household hazardous waste drop-off events and approved retailers for those items. If you are unsure about something in your garage, send a photo and we will tell you before pickup.",
+        ],
+      },
+      {
+        heading: "Acreage and Outbuilding Cleanouts",
+        paragraphs: [
+          "Larger lots around Castle Rock, including Founders Village, Crystal Valley and the rural edges of Douglas County, often collect years of extra stuff. Our **acreage junk removal** covers old sheds, fencing, scrap metal, broken equipment, pallets and storm branches. We load it all into our 16-foot dump trailer, so you do not need a dumpster sitting on your property for a week.",
+          "Our red Ford F-250 handles steep and gravel driveways well. Tell us how far the pile is from the driveway and whether the ground is soft. For big jobs we can come back for a second load the same day, since disposal sites are a short drive away.",
+        ],
+      },
+      {
+        heading: "Why Castle Rock Chooses EZ Haulaway",
+        paragraphs: [
+          "We are a **family-owned junk removal** company, owned by Ben and Zoe, and we are **licensed and insured**. You deal with the owners, not a call center. We give **upfront pricing** before loading, and we do all the lifting, so you never carry anything.",
+          "Our base in Parker means **fast junk removal in Castle Rock**, often next day and sometimes same day. Most junk removal companies price by trailer space, and so do we. Our trailer is easy to compare: a half load is about [[load:4]] and a full load about [[load:8]].",
         ],
       },
       {
