@@ -101,6 +101,17 @@ function WhatWeTakePage() {
               </Link>
             ))}
           </div>
+          <p className="mt-8 max-w-2xl text-sm leading-6 text-muted-foreground">
+            In Denver? See how we handle{" "}
+            <Link
+              to="/service-areas/$city/$service"
+              params={{ city: "denver", service: "furniture-removal" }}
+              className="font-bold text-primary hover:underline"
+            >
+              furniture removal in Denver
+            </Link>{" "}
+            — from single couches to whole-room cleanouts.
+          </p>
         </div>
       </section>
 
