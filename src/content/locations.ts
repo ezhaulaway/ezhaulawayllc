@@ -300,7 +300,7 @@ const raw_locations: Location[] = [
         heading: "How Fast Can You Come to Denver?",
         paragraphs: [
           "We're based in Parker, and we schedule Denver jobs every week. **Same-week pickup** is common, and **same-day junk removal** opens up regularly — call or text us, or start with the free instant estimate, and we'll find a time that works.",
-          "Every job starts with a firm price before we touch anything, so you know exactly what your Denver junk removal will cost before we load the trailer.",
+          "Every job starts with a firm price before we touch anything, so you know exactly what your Denver junk removal will cost before we load the trailer. One visit and the **unwanted junk** is gone — no dumpster in your driveway, no dump run in your weekend.",
         ],
       },
     ],
