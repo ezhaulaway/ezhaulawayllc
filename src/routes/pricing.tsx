@@ -1,4 +1,4 @@
-import { ProseSection } from "@/components/prose-section";
+import { ProseSection, rich } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { BadgeCheck, Check, Receipt, ShieldCheck, Truck } from "lucide-react";
@@ -190,6 +190,26 @@ function PricingPage() {
             </div>
           </div>
           <InlineQuoteForm />
+        </div>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="Junk removal pricing explained"
+            title="How Junk Removal Pricing Works in the Denver Metro"
+          />
+          <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
+            {[
+              `Most **junk removal pricing** in the Denver metro area is based on **trailer volume** — how much space your items take up. Our **16-foot dump trailer** holds about 14 cubic yards. A small pickup starts at **$${MINIMUM_CHARGE}**, and a **full trailer is $${LOAD_LEVELS[LOAD_LEVELS.length - 1]?.price}**. You only pay for the space you use.`,
+              `**Weight matters too.** Concrete, dirt, tile, roofing, and other **heavy materials** cost more to dump at the transfer station than furniture or cardboard, so heavy loads are priced by weight and volume. We tell you this before we load, not after.`,
+              `**Single items vs. full cleanouts.** If you only have one couch, mattress, or appliance, **single-item pricing** is usually the cheapest option. For garages, basements, and **estate cleanouts**, volume pricing gives you the best value per item.`,
+              `**What's always included:** the crew, **all labor and loading**, hauling, **disposal fees**, and sweeping up. Extra labor at $${LABOR_RATE}/hour per crew member only applies to unusual jobs like difficult access or disassembly, and you hear about it up front.`,
+              `**Why transparent pricing matters.** Some haulers quote low on the phone, then add fuel, stair, or dump surcharges on site. Our **junk removal pricing** is the opposite: **no hidden fees**, **free quotes**, and a price you approve before anything goes in the trailer.`,
+            ].map((p) => (
+              <p key={p.slice(0, 30)}>{rich(p)}</p>
+            ))}
+          </div>
         </div>
       </section>
 
