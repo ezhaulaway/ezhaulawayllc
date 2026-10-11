@@ -130,7 +130,7 @@ function InstantEstimatePage() {
             </p>
             <p
               aria-hidden="true"
-              className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary sm:text-7xl lg:text-8xl"
+              className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary ez-outline-light sm:text-7xl lg:text-8xl"
             >
               Too EZ.
             </p>

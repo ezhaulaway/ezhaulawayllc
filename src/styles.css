@@ -191,3 +191,15 @@
   filter: drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff)
     drop-shadow(0 -1px 0 #fff);
 }
+
+/* Thin adaptive outline for the "Too EZ." brand text: dark on light pages, white in dark mode */
+@utility ez-outline {
+  -webkit-text-stroke: 1.5px var(--foreground);
+  paint-order: stroke fill;
+}
+
+/* Always-white outline for "Too EZ." on sections that are dark in both themes */
+@utility ez-outline-light {
+  -webkit-text-stroke: 1.5px var(--secondary-foreground);
+  paint-order: stroke fill;
+}
