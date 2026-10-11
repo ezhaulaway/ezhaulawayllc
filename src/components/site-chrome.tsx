@@ -214,43 +214,26 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
           <ServicesDropdown />
-          <Link to="/how-it-works" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
-            How It Works
-          </Link>
           <Link to="/pricing" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             Pricing
           </Link>
-          <AreasDropdown />
-          <Link to="/faq" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
-            FAQ
-          </Link>
-          <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
-            About
-          </Link>
-          <Link to="/contact" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
-            Contact
-          </Link>
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="flex items-center gap-2 md:gap-3">
           <ThemeToggle />
-          <Button asChild variant="ghost" className="px-3">
+          <Button asChild variant="ghost" className="hidden px-3 md:inline-flex">
             <a href={`tel:${PHONE_TEL}`}>
               <Phone /> {PHONE}
             </a>
           </Button>
-          <Button asChild size="lg">
-            <Link to="/instant-estimate">Instant Estimate</Link>
-          </Button>
-        </div>
-
-        <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
-          <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway">
+          <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway" className="md:hidden">
             <a href={`tel:${PHONE_TEL}`}>
               <Phone />
             </a>
+          </Button>
+          <Button asChild size="lg" className="hidden md:inline-flex">
+            <Link to="/instant-estimate">Instant Estimate</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
