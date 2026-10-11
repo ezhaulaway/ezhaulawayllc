@@ -13,6 +13,7 @@ import { locationBySlug, locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { serviceBySlug, services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
+import { rich } from "@/components/prose-section";
 
 /**
  * Hand-written local content for priority city+service pages.
