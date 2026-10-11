@@ -322,14 +322,14 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal Aurora Neighborhood by Neighborhood",
         paragraphs: [
-          "Aurora is close to 400,000 people spread across two counties, and no two jobs here look alike. Out by Southlands and Saddle Rock we are mostly clearing garages, moving-day leftovers, and furniture from homes that are being listed. Around Heather Ridge and the older stretches off Colfax and Havana we get a lot of rental turnovers, eviction cleanouts, and apartments full of items left behind. Near the Buckley area we work with military families on short-notice moves, which usually means everything must be gone this week.",
-          "Because we are based in Parker, Aurora is a straight shot for us and there is no travel surcharge. One **family-owned crew** shows up, quotes the job in person, and loads it out the same visit — most **customers** tell us it saves a whole weekend of **time**.",
+          "Aurora is close to 400,000 people spread across two counties, and no two jobs look alike. Out by Southlands and Saddle Rock we mostly clear out garage space, moving-day leftovers, and furniture from homes being listed. Around Heather Ridge and the older stretches off Colfax and Havana we handle rental turnovers, eviction cleanouts, and apartments full of items left behind. Near Buckley we work with military families on short-notice moves, which usually means everything is gone this week.",
+          "Because we're based in Parker, Aurora is a straight shot with no travel surcharge. One **family-owned crew** arrives on time, quotes the job in person, and loads it out the same visit — most **customers** tell us it saves a whole weekend of **time**.",
         ],
       },
       {
         heading: "Rental Turnovers, Evictions, and Estate Cleanouts",
         paragraphs: [
-          "If you manage property in Aurora, you already know the clock starts the moment a unit goes empty. Our junk removal crew clears the whole thing — furniture, mattresses, appliances, carpet, trash bags, and whatever is left in the closets — so your cleaners and painters can get in the next day. Property managers are some of our best Aurora **customers**: they text photos to our **phone number**, we confirm the junk removal price, and the unit is clear before the next showing. For estate and probate cleanouts, we work slowly and respectfully, set aside anything the family wants to keep, and route usable furniture and household goods to local donation centers instead of the dump.",
+          "If you manage property in Aurora, you know the clock starts the moment a unit goes empty. Our junk removal crew clears the whole thing — furniture, mattresses, appliances, carpet, trash bags, and whatever is in the closets — so your cleaners and painters can get in the next day. Property managers are some of our best Aurora **customers**: they text photos to our **phone number**, we confirm the price, and the unit is clear before the next showing. For estate cleanouts, we work slowly and respectfully, set aside what the family wants to keep, and route usable furniture to local donation centers instead of the dump.",
         ],
         list: [
           {
@@ -353,13 +353,13 @@ const raw_locations: Location[] = [
       {
         heading: "The Heavy Work Other Aurora Haulers Pass On",
         paragraphs: [
-          "Plenty of junk removal companies will take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — we have taken out more than 300 decks across the metro. Anything metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. The only things we cannot take are hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
+          "Plenty of junk removal companies take bagged trash and call it a day. We also cut down and haul old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fence lines — more than 300 decks across the metro. Metal goes to recycling, usable furniture goes to donation, and the rest goes to a licensed transfer station. We cannot take hazardous materials like wet paint, fuel, chemicals, asbestos, and medical waste.",
         ],
       },
       {
         heading: "Why Aurora Customers Choose Our Junk Removal Services",
         paragraphs: [
-          "Our junk removal services are **full service** — you point, we lift. Customers call us for **garage cleanouts**, appliance pickups, and whole-home junk removal because one crew handles the stairs, the loading, the sweep-up, and the dump run. It is the easiest way to reclaim your **space** without spending a weekend of your **time** on it.",
+          "Our junk removal services are **full service** — you point, we lift. Customers call us for **garage cleanouts**, appliance pickups, and whole-home junk removal because one crew handles the stairs, the loading, the sweep-up, and the dump run. It is the easiest way to reclaim your **space** without spending a weekend of your **time** on it. We clear the room and hand the **space** back clean.",
           "Getting a price is simple. Call or text (720) 614-7223 — that **phone number** reaches Ben directly — or send photos through our instant estimate for a junk removal price range in minutes. Either way you get a firm number first, with **no hidden fees**.",
         ],
       },
