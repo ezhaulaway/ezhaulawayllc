@@ -24,11 +24,11 @@ const raw_locations: Location[] = [
     slug: "parker",
     city: "Parker",
     county: "Douglas County",
-    metaTitle: "Junk Removal Parker CO | Local Parker Junk Removal",
+    metaTitle: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates",
     metaDescription:
-      "Junk removal in Parker, CO from a local, family-owned crew. Furniture, appliances, hot tubs and full cleanouts hauled away. Free quotes from EZ Haulaway.",
+      "Local junk removal in Parker, CO by a family-owned crew. Furniture, appliances, hot tubs & garage cleanouts hauled away fast. Get a free quote!",
     intro:
-      "Parker is home base. EZ Haulaway is a family-owned Parker junk removal company, so junk removal in Parker, CO is a job in our own neighborhood.",
+      "Parker is home base. EZ Haulaway is a family-owned **junk removal Parker** crew serving all of **Douglas County**, so every job here is in our own neighborhood.",
     local:
       "Between newer subdivisions still filling in and established neighborhoods finally replacing that twenty-year-old deck, Parker keeps us busy with everything from single mattress pickups to full garage cleanouts.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
@@ -51,8 +51,9 @@ const raw_locations: Location[] = [
       {
         heading: "What Parker Junk Removal Includes",
         paragraphs: [
-          "Every job includes the lifting, loading, hauling, and disposal fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
-          "Common Parker jobs include couch and mattress pickups, garage cleanouts, old hot tubs, sheds, decks, fences, and yard debris. Usable items go to donation, and metal goes to recycling when we can.",
+          "Our **junk removal services** include the lifting, loading, hauling, and disposal fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
+          "Common jobs include couch and mattress pickups, **garage and basement cleanouts**, old hot tubs, sheds, decks, fences, and yard debris. Usable items go to donation, and metal goes to recycling when we can.",
+          "Need **junk removal Parker** homeowners can count on? We're local to **Douglas County, Colorado**, and our **junk removal services** cover basement cleanouts, move-outs, and single-item pickups alike.",
         ],
       },
       {
