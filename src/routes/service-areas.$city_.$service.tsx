@@ -32,6 +32,7 @@ const RAW_CUSTOM_PAGES: Record<
     localHeading: string;
     localText: string[];
     faqs: Array<[string, string]>;
+    sections?: Array<{ heading: string; paragraphs: string[]; subsections?: Array<{ heading: string; text: string }> }>;
   }
 > = {
   "castle-rock/hot-tub-removal": {
@@ -63,7 +64,7 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "castle-rock/furniture-removal": {
-    title: "Furniture Removal Castle Rock CO | EZ Haulaway LLC",
+    title: "Furniture Removal Castle Rock CO | Fast Couch & Mattress Hauling",
     h1: "Furniture Removal Castle Rock, CO",
     description:
       "Furniture removal in Castle Rock, CO from [[min]]. Couches, sectionals, dressers, recliners and office furniture carried out and hauled away. Free estimates.",
@@ -76,6 +77,41 @@ const RAW_CUSTOM_PAGES: Record<
     localText: [
       "We remove furniture in The Meadows, Founders Village, Castlewood Ranch, Crystal Valley, Terrain, Red Hawk and around downtown Castle Rock. Many homes here have tight stair turns and walkout basements, so we bring blankets, straps and a dolly and protect walls and door frames on the way out. Sectionals and sleeper sofas can be taken apart if they won’t fit through a doorway.",
       "Moving, downsizing or staging a home for sale? We handle **old furniture removal** for realtors and property managers too, and can work with a lockbox when you can’t be there. For businesses, we haul office desks, chairs, cubicle panels and filing cabinets — see our commercial junk removal service for bigger office cleanouts.",
+    ],
+    sections: [
+      {
+        heading: "Room-by-Room Furniture Removal in Castle Rock",
+        paragraphs: [
+          "Most furniture removal jobs are not one item. They are a living room refresh, a bedroom swap or a basement that finally gets cleared. Here is what we commonly haul from each part of a Castle Rock home, so you can plan one visit instead of three.",
+        ],
+        subsections: [
+          { heading: "Living Room and Family Room Furniture", text: "We remove **sectionals, sleeper sofas, leather recliners**, loveseats, coffee tables, end tables and entertainment centers. Couches are priced at [[item:Couch]] per cushion as single items, and a solid wood entertainment center is about [[item:Entertainment center]]. Sleeper sofas are heavier than they look, so we bring two people and straps for every carry-out." },
+          { heading: "Bedroom Furniture and Mattresses", text: "We haul **bed frames, headboards, dressers, armoires**, nightstands and bunk beds. We take apart bed frames and bunk beds on site when they will not fit through a doorway. A mattress is about [[item:Mattress]] and a box spring about [[item:Box spring]], and both can go on the same trip as the rest of the bedroom set." },
+          { heading: "Dining Room Furniture", text: "Dining tables, chairs, hutches and buffets are common pickups during a remodel or downsizing. A table with four chairs runs about [[item:Dining room set (table + 4 chairs)]], and a large dining room hutch about [[item:Hutch (dining room)]]. Glass doors and shelves are wrapped or removed first so nothing breaks on the way out." },
+          { heading: "Home Office and Basement Furniture", text: "We remove **office desks, filing cabinets, bookshelves**, futons, old bar stools and exercise equipment from basements and home offices. A large desk is about [[item:Desk (large)]] and a treadmill about [[item:Treadmill]]. Basement jobs often mix furniture with boxes and storage junk, and it all goes on one quote." },
+        ],
+      },
+      {
+        heading: "Tight Stairs and Walkout Basements",
+        paragraphs: [
+          "Many Castle Rock homes have two-story great rooms, split-level layouts and finished basements with tight stair turns. Getting a heavy couch or dresser out without scuffing drywall takes planning. We measure the tightest doorway first, pad railings and door frames, and remove legs, cushions and drawers to lighten the load.",
+          "If a **sectional or sleeper sofa** will not make the turn, we can take it apart at the seams or cut it down, since it is headed for disposal anyway. Walkout basements are often easiest through the back door, so we plan the shortest carry route and protect your lawn and patio along the way.",
+        ],
+      },
+      {
+        heading: "Furniture Donation and Recycling in Castle Rock",
+        paragraphs: [
+          "We look for a second life for furniture before anything goes to the landfill. Clean, working pieces with no rips, stains, pet damage or broken frames are the best candidates for **furniture donation**. Each donation center sets its own standards, so we cannot promise every item will be accepted.",
+          "Pieces that cannot be donated get sorted. Metal frames and hardware go to **scrap metal recycling**, and the rest is taken to the proper disposal facility. If you want a donation receipt for your taxes, tell us when you book and we will let you know which items are likely to qualify.",
+        ],
+      },
+      {
+        heading: "How Our Furniture Removal Pricing Works",
+        paragraphs: [
+          "Single pieces are priced individually, starting at [[min]]. When you have several items, we price by how much space they take in our 16-foot dump trailer: about [[load:4]] for a half load and about [[load:8]] for a full load. The price includes carrying, loading, hauling, disposal fees and a quick sweep.",
+          "Send photos for a **free furniture removal estimate**, or use the instant estimate on our site. We confirm the final price in person before we lift anything, so there are no surprise charges.",
+        ],
+      },
     ],
     faqs: [
       [
@@ -93,7 +129,7 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "castle-rock/appliance-removal": {
-    title: "Appliance Removal Castle Rock CO | EZ Haulaway LLC",
+    title: "Appliance Removal Castle Rock CO | Refrigerator & Washer Hauling",
     h1: "Appliance Removal Castle Rock, CO",
     description:
       "Appliance removal in Castle Rock, CO. Refrigerators, freezers, washers, dryers, stoves and water heaters hauled away and recycled. Free estimates.",
@@ -106,6 +142,41 @@ const RAW_CUSTOM_PAGES: Record<
     localText: [
       "Remodels and upgrades are common across Castle Rock, from older homes near downtown to newer builds in Crystal Valley and Terrain. If your new appliance delivery doesn’t include haul-away, or you have an old garage fridge or chest freezer that finally quit, we can usually schedule within a few days.",
       "Please make sure gas lines, water lines and hardwired electrical are safely shut off and disconnected before we arrive. Standard plug-in appliances and washer hoses are no problem. Let us know about stairs or tight turns when you request your estimate so we bring the right equipment.",
+    ],
+    sections: [
+      {
+        heading: "Refrigerator and Freezer Removal",
+        paragraphs: [
+          "Refrigerators, **chest freezers**, mini fridges and garage freezers need careful handling because of the refrigerant inside. We take them to recyclers that recover the refrigerant before the metal is processed. A full-size fridge is about [[item:Refrigerator (full size)]] and a side-by-side model about [[item:Refrigerator (side by side)]].",
+          "Please empty all food and ice and unplug the unit a day before pickup so it can drain. If your fridge has a water line for the ice maker, shut off the valve behind it. We handle the rest, including tight kitchen exits and garage stairs.",
+        ],
+      },
+      {
+        heading: "Washer and Dryer Removal",
+        paragraphs: [
+          "Stacked laundry units and second-floor laundry rooms are common in Castle Rock homes. Our crew uses an appliance dolly and straps to bring **washers and dryers** down stairs without damaging floors or walls. Each unit is about [[item:Washer / dryer (each)]].",
+          "Before we arrive, turn off the water valves behind the washer. Unplug electric dryers. Gas dryers need the gas line shut off and capped by a qualified person first. We can remove drip pans and leftover hoses as part of the job.",
+        ],
+      },
+      {
+        heading: "Stoves, Dishwashers and Water Heaters",
+        paragraphs: [
+          "We haul **electric and gas ranges**, wall ovens, microwaves, dishwashers and old water heaters. A stove is about [[item:Stove]], a dishwasher about [[item:Dishwasher]] and a water heater about [[item:Water heater]]. Water heaters must be drained and disconnected before removal.",
+        ],
+      },
+      {
+        heading: "Appliance Pickup Prep Checklist",
+        paragraphs: [
+          "A little prep makes pickup fast. **Empty fridges and freezers**, unplug them early, and shut off water lines. Have gas lines and hardwired 240-volt connections safely disconnected. Clear a path to the door, and tell us about stairs, tight turns or a long carry when you request your estimate.",
+        ],
+      },
+      {
+        heading: "Scrap Metal Recycling for Old Appliances",
+        paragraphs: [
+          "Most appliances are mostly steel, with copper and aluminum inside. We separate them from regular trash and take them to **scrap metal recycling**, keeping heavy appliances out of Douglas County landfills. Working appliances in good shape may be donated when a local center can accept them.",
+          "People sometimes ask about free appliance pickup. Scrap value no longer covers the fuel, two-person labor and disposal fees, so we charge a fair, upfront price instead. Single appliances start at [[min]], and you get a **free estimate** before any work begins.",
+        ],
+      },
     ],
     faqs: [
       [
@@ -556,6 +627,20 @@ function CityServicePage() {
                 <p key={paragraph.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
                   {rich(paragraph)}
                 </p>
+              ))}
+              {custom.sections?.map((s) => (
+                <div key={s.heading} className="mt-10">
+                  <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">{s.heading}</h2>
+                  {s.paragraphs.map((p) => (
+                    <p key={p.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">{rich(p)}</p>
+                  ))}
+                  {s.subsections?.map((sub) => (
+                    <div key={sub.heading} className="mt-6">
+                      <h3 className="text-lg font-bold">{sub.heading}</h3>
+                      <p className="mt-2 leading-8 text-muted-foreground">{rich(sub.text)}</p>
+                    </div>
+                  ))}
+                </div>
               ))}
             </div>
           ) : (
