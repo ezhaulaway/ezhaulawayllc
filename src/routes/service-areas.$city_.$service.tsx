@@ -62,6 +62,66 @@ const RAW_CUSTOM_PAGES: Record<
       ],
     ],
   },
+  "castle-rock/furniture-removal": {
+    title: "Furniture Removal Castle Rock CO | EZ Haulaway LLC",
+    h1: "Furniture Removal Castle Rock, CO",
+    description:
+      "Furniture removal in Castle Rock, CO from [[min]]. Couches, sectionals, dressers, recliners and office furniture carried out and hauled away. Free estimates.",
+    intro: [
+      "Need **furniture removal in Castle Rock**? EZ Haulaway carries out couches, sectionals, recliners, dressers, beds, tables and desks from any room in your home — upstairs bedrooms, finished basements and garages included. You point, we lift, load and haul.",
+      "Single-item pickups start at [[min]]. Multiple pieces are priced by how much trailer space they fill: about [[load:4]] for a half load and [[load:8]] for a full load. Mix furniture with boxes, mattresses or garage junk and it all goes on one quote.",
+      "We check furniture for **donation** before anything goes to the landfill. Sofas, tables and dressers in good shape can go to local thrift and donation centers, while broken pieces are sorted for wood and metal recycling where possible.",
+    ],
+    localHeading: "Furniture Pickup Across Castle Rock",
+    localText: [
+      "We remove furniture in The Meadows, Founders Village, Castlewood Ranch, Crystal Valley, Terrain, Red Hawk and around downtown Castle Rock. Many homes here have tight stair turns and walkout basements, so we bring blankets, straps and a dolly and protect walls and door frames on the way out. Sectionals and sleeper sofas can be taken apart if they won’t fit through a doorway.",
+      "Moving, downsizing or staging a home for sale? We handle **old furniture removal** for realtors and property managers too, and can work with a lockbox when you can’t be there. For businesses, we haul office desks, chairs, cubicle panels and filing cabinets — see our commercial junk removal service for bigger office cleanouts.",
+    ],
+    faqs: [
+      [
+        "How much does furniture removal cost in Castle Rock?",
+        "A single piece starts at [[min]]. Larger jobs are priced by trailer space — around [[load:4]] for a half load and [[load:8]] for a full load. We confirm the price on-site before loading.",
+      ],
+      [
+        "Do I need to bring the furniture outside?",
+        "No. We carry it out from wherever it sits, including upstairs bedrooms and basements.",
+      ],
+      [
+        "Do you donate furniture?",
+        "Yes, when it is in usable condition. Acceptance depends on the donation center, so we sort and recycle whatever they can’t take.",
+      ],
+    ],
+  },
+  "castle-rock/appliance-removal": {
+    title: "Appliance Removal Castle Rock CO | EZ Haulaway LLC",
+    h1: "Appliance Removal Castle Rock, CO",
+    description:
+      "Appliance removal in Castle Rock, CO. Refrigerators, freezers, washers, dryers, stoves and water heaters hauled away and recycled. Free estimates.",
+    intro: [
+      "Need **appliance removal in Castle Rock**? We haul away refrigerators, freezers, washers, dryers, dishwashers, stoves, microwaves and water heaters — from kitchens, laundry rooms, basements and garages.",
+      "Appliances are heavy, awkward and often tucked into tight laundry closets. Our crew uses an appliance dolly and straps, protects floors and door frames, and handles the stairs. Single appliances start at [[min]], and multiple appliances or extra junk are priced by trailer space, about [[load:4]] for a half load.",
+      "Most appliances are mostly steel, so we take them to **scrap metal recycling** instead of the landfill. Refrigerators and freezers contain refrigerant that must be handled by a certified recycler, and we deliver them to facilities that accept them.",
+    ],
+    localHeading: "Appliance Pickup for Castle Rock Homes",
+    localText: [
+      "Remodels and upgrades are common across Castle Rock, from older homes near downtown to newer builds in Crystal Valley and Terrain. If your new appliance delivery doesn’t include haul-away, or you have an old garage fridge or chest freezer that finally quit, we can usually schedule within a few days.",
+      "Please make sure gas lines, water lines and hardwired electrical are safely shut off and disconnected before we arrive. Standard plug-in appliances and washer hoses are no problem. Let us know about stairs or tight turns when you request your estimate so we bring the right equipment.",
+    ],
+    faqs: [
+      [
+        "How much does appliance removal cost in Castle Rock?",
+        "One appliance starts at [[min]]. Several appliances or appliances mixed with other junk are priced by trailer space, about [[load:4]] for a half load.",
+      ],
+      [
+        "Do you take refrigerators and freezers?",
+        "Yes. We take them to recyclers that properly handle refrigerant. Please empty food out first.",
+      ],
+      [
+        "Will you disconnect my gas dryer or stove?",
+        "Gas and hardwired connections need to be safely disconnected before we arrive. We handle everything after that.",
+      ],
+    ],
+  },
   "parker/shed-removal": {
     description:
       "Shed removal and tear-down in Parker, CO from [[load:4]]. We demolish, haul and dispose of old sheds — wood, metal or plastic — and leave the spot clean. Free quotes from your local Parker crew.",
