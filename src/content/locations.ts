@@ -182,6 +182,25 @@ const raw_locations: Location[] = [
         ],
         closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
       },
+      {
+        heading: "Where Castle Rock Junk Goes",
+        paragraphs: [
+          "Hauling junk yourself in Castle Rock usually means loading a truck, paying a gate fee at a Douglas County transfer station or landfill, and unloading it all by hand. Many facilities charge by weight or vehicle size and turn away certain items like tires, mattresses or appliances with refrigerant. **Junk removal services** take that whole errand off your list.",
+          "Because we are based in Parker, we know the local disposal and recycling options and sort each load before it leaves your driveway. Usable furniture can go to donation, metal goes to scrap recycling, clean yard waste goes to composting where accepted, and only what is left heads to the landfill. That keeps more of your **Castle Rock junk** out of the ground.",
+        ],
+      },
+      {
+        heading: "Items We Can’t Take",
+        paragraphs: [
+          "For safety reasons we do not haul **hazardous waste** such as paint, solvents, pesticides, motor oil, propane tanks or chemicals. Douglas County residents can use household hazardous waste drop-off events and approved retailers for those items. If you are unsure about something in your garage, send a photo and we will tell you before pickup.",
+        ],
+      },
+      {
+        heading: "HOA-Friendly Pickup",
+        paragraphs: [
+          "Many Castle Rock neighborhoods have HOA rules about dumpsters, trailers and how long a pile can sit at the curb. A **junk removal pickup** avoids a multi-day dumpster rental: we arrive, load and leave the same visit. We park carefully, protect lawns and driveways during the carry-out, and sweep the loading area before we go.",
+        ],
+      },
     ],
   },
   {
