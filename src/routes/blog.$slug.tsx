@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { PageShell, CtaBand } from "@/components/site-chrome";
@@ -9,7 +10,7 @@ type Json = unknown;
 function repoint(node: Json, url: string): Json {
   if (Array.isArray(node)) return node.map((n) => repoint(n, url));
   if (!node || typeof node !== "object") return node;
-  const o: Record<string, Json> = {};
+  const o: any = {};
   for (const [k, v] of Object.entries(node as Record<string, Json>)) {
     o[k] = k === "author" || k === "publisher" ? v : repoint(v, url);
   }
@@ -24,7 +25,7 @@ function repoint(node: Json, url: string): Json {
     if ("url" in o) o.url = url;
   }
   if (types.includes("BreadcrumbList") && Array.isArray(o.itemListElement) && o.itemListElement.length) {
-    const items = o.itemListElement as Record<string, Json>[];
+    const items = o.itemListElement as any[];
     const last = { ...items[items.length - 1], item: url };
     o.itemListElement = [...items.slice(0, -1), last];
   }

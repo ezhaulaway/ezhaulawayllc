@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // BabyLoveGrowth → blg_articles sync. Server-only. Never import from client code.
 const BASE = "https://api.babylovegrowth.ai/api/integrations";
 const UA = "EZHaulawayBlogSync/1.0";
@@ -51,7 +52,7 @@ export async function runBlogSync() {
   const { supabaseAdmin: db } = await import("@/integrations/supabase/client.server");
 
   const { data: leased } = await db.rpc("blg_claim_lease" as never);
-  const state = (leased as unknown as Array<Record<string, unknown>> | null)?.[0];
+  const state = (leased as unknown as Array<any> | null)?.[0];
   if (!state) return { skipped: "locked" };
 
   let calls = 0;
@@ -117,10 +118,10 @@ export async function runBlogSync() {
           break outer;
         }
         details++;
-        let d: Record<string, unknown>;
+        let d: any;
         try {
           d = await api(`/v1/articles/${s.id}`);
-          d = (d?.data as Record<string, unknown>) ?? d;
+          d = d?.data ?? d;
         } catch (e) {
           if (e instanceof HttpError && e.status === 404) {
             leftovers--;
