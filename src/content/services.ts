@@ -141,7 +141,7 @@ export type Service = {
 };
 
 const raw_services: Service[] = [
-  {
+{
     slug: "furniture-removal",
     name: "Furniture Removal",
     h1: "Furniture Removal in Parker & the Denver Metro Area",
@@ -180,7 +180,7 @@ const raw_services: Service[] = [
     ],
     related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
   },
-  {
+{
     slug: "appliance-removal",
     name: "Appliance Removal",
     h1: "Appliance Removal, Fridge Removal & Disposal in the Denver Metro",
@@ -219,7 +219,7 @@ const raw_services: Service[] = [
     ],
     related: ["electronics-and-e-waste-removal", "garage-cleanouts", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
@@ -269,7 +269,7 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
   },
-  {
+{
     slug: "light-demolition",
     name: "Light Demolition",
     h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
@@ -308,7 +308,7 @@ const raw_services: Service[] = [
     ],
     related: ["deck-and-fence-removal", "hot-tub-removal", "construction-debris-removal"],
   },
-  {
+{
     slug: "deck-and-fence-removal",
     name: "Deck & Fence Removal",
     h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
@@ -357,7 +357,7 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris", "wood-pallet-removal"],
   },
-  {
+{
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
     h1: "Construction & Renovation Debris Removal",
@@ -396,7 +396,7 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "yard-and-landscaping-debris", "commercial-junk-removal", "wood-pallet-removal"],
   },
-  {
+{
     slug: "yard-and-landscaping-debris",
     name: "Yard & Landscaping Debris",
     h1: "Yard Waste & Landscaping Debris Removal",
@@ -435,7 +435,7 @@ const raw_services: Service[] = [
     ],
     related: ["deck-and-fence-removal", "construction-debris-removal", "house-and-estate-cleanouts"],
   },
-  {
+{
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
     h1: "Garage Cleanouts in Parker & the Denver Metro",
@@ -474,7 +474,7 @@ const raw_services: Service[] = [
     ],
     related: ["house-and-estate-cleanouts", "appliance-removal", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "house-and-estate-cleanouts",
     name: "House & Estate Cleanouts",
     h1: "House, Estate & Property Cleanouts",
@@ -513,7 +513,7 @@ const raw_services: Service[] = [
     ],
     related: ["garage-cleanouts", "furniture-removal", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
@@ -564,7 +564,7 @@ const raw_services: Service[] = [
     ],
     related: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "electronics-and-e-waste-removal",
     name: "Electronics & E-Waste Removal",
     h1: "Electronics & E-Waste Removal in the Denver Metro",
@@ -603,7 +603,7 @@ const raw_services: Service[] = [
     ],
     related: ["appliance-removal", "commercial-junk-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "shed-removal",
     name: "Shed Removal",
     h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
@@ -652,7 +652,7 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "deck-and-fence-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "commercial-junk-removal",
     name: "Commercial Junk Removal",
     h1: "Office Junk Removal & Commercial Cleanouts",
@@ -674,12 +674,7 @@ const raw_services: Service[] = [
     ],
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts", "wood-pallet-removal"],
   },
-  woodPalletRemoval,
-];
-export const services = priced(raw_services);
-
-for (const service of services) {
-  const extra = serviceExtras[service.slug  {
+  {
     slug: "wood-pallet-removal",
     name: "Wood Pallet Removal",
     h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
@@ -714,8 +709,12 @@ for (const service of services) {
       ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
     ],
     related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
-  },
+  }
 ];
+export const services = priced(raw_services);
+
+for (const service of services) {
+  const extra = serviceExtras[service.slug];
   if (extra) {
     service.sections.push(...extra.sections);
     service.faqs.push(...extra.faqs);
