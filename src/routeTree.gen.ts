@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogSitemapDotxmlRouteImport } from './routes/blog-sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
@@ -20,6 +21,8 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as WhatWeTakeRouteImport } from './routes/what-we-take'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
 import { Route as ServiceAreasCityRouteImport } from './routes/service-areas.$city'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
@@ -36,6 +39,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSitemapDotxmlRoute = BlogSitemapDotxmlRouteImport.update({
+  id: '/blog-sitemap.xml',
+  path: '/blog-sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -84,6 +92,16 @@ const Char91DotwellKnownChar93OauthProtectedResourceRoute =
     path: '/.well-known/oauth-protected-resource',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
   id: '/service-areas/',
   path: '/service-areas/',
@@ -124,6 +142,7 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog-sitemap.xml': typeof BlogSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -133,8 +152,10 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/what-we-take': typeof WhatWeTakeRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
   '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
@@ -144,6 +165,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog-sitemap.xml': typeof BlogSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -153,8 +175,10 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/what-we-take': typeof WhatWeTakeRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blog': typeof BlogIndexRoute
   '/service-areas': typeof ServiceAreasIndexRoute
   '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
@@ -165,6 +189,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog-sitemap.xml': typeof BlogSitemapDotxmlRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -174,8 +199,10 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/what-we-take': typeof WhatWeTakeRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
   '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
@@ -187,6 +214,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/blog-sitemap.xml'
     | '/contact'
     | '/faq'
     | '/how-it-works'
@@ -196,8 +224,10 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/what-we-take'
     | '/.well-known/oauth-protected-resource'
+    | '/blog/$slug'
     | '/service-areas/$city'
     | '/services/$slug'
+    | '/blog/'
     | '/service-areas/'
     | '/api/public/blg-sync'
     | '/api/public/crew-leads'
@@ -207,6 +237,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/blog-sitemap.xml'
     | '/contact'
     | '/faq'
     | '/how-it-works'
@@ -216,8 +247,10 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/what-we-take'
     | '/.well-known/oauth-protected-resource'
+    | '/blog/$slug'
     | '/service-areas/$city'
     | '/services/$slug'
+    | '/blog'
     | '/service-areas'
     | '/api/public/blg-sync'
     | '/api/public/crew-leads'
@@ -227,6 +260,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/blog-sitemap.xml'
     | '/contact'
     | '/faq'
     | '/how-it-works'
@@ -236,8 +270,10 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/what-we-take'
     | '/.well-known/oauth-protected-resource'
+    | '/blog/$slug'
     | '/service-areas/$city'
     | '/services/$slug'
+    | '/blog/'
     | '/service-areas/'
     | '/api/public/blg-sync'
     | '/api/public/crew-leads'
@@ -248,6 +284,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BlogSitemapDotxmlRoute: typeof BlogSitemapDotxmlRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HowItWorksRoute: typeof HowItWorksRoute
@@ -257,8 +294,10 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   WhatWeTakeRoute: typeof WhatWeTakeRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ServiceAreasCityRoute: typeof ServiceAreasCityRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
   ApiPublicBlgSyncRoute: typeof ApiPublicBlgSyncRoute
   ApiPublicCrewLeadsRoute: typeof ApiPublicCrewLeadsRoute
@@ -280,6 +319,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog-sitemap.xml': {
+      id: '/blog-sitemap.xml'
+      path: '/blog-sitemap.xml'
+      fullPath: '/blog-sitemap.xml'
+      preLoaderRoute: typeof BlogSitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -345,6 +391,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/service-areas/': {
       id: '/service-areas/'
       path: '/service-areas'
@@ -400,6 +460,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BlogSitemapDotxmlRoute: BlogSitemapDotxmlRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HowItWorksRoute: HowItWorksRoute,
@@ -410,8 +471,10 @@ const rootRouteChildren: RootRouteChildren = {
   WhatWeTakeRoute: WhatWeTakeRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ServiceAreasCityRoute: ServiceAreasCityRoute,
   ServicesSlugRoute: ServicesSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ServiceAreasIndexRoute: ServiceAreasIndexRoute,
   ApiPublicBlgSyncRoute: ApiPublicBlgSyncRoute,
   ApiPublicCrewLeadsRoute: ApiPublicCrewLeadsRoute,
