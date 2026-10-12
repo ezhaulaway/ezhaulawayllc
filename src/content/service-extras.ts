@@ -157,10 +157,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
   "shed-removal": {
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -168,10 +165,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
     sections: [
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -179,10 +173,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
       { heading: "Shed removal and backyard tear-downs in Colorado", text: "Shed removal in Denver and the south metro means more than hauling: we take the structure apart. Wood sheds, metal kits, plastic resin sheds, and playhouses all get dismantled, loaded, and hauled off, including the contents and the old flooring. Ben's construction and demolition background is why we can tear down a shed that a standard junk truck won't touch." },
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -190,10 +181,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
       { heading: "Light demolition on the same visit", text: "While the trailer is on site, we can also handle small demolition projects — a rotting deck, a section of fence, a playset, or an old chicken coop — and clear the debris in the same trip instead of scheduling a second crew." },
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -201,10 +189,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
     ],
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -212,10 +197,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
     faqs: [
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -223,10 +205,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
       ["How much does shed removal cost?", "Most sheds land between a half and a full trailer load, roughly [[load:4]] to [[load:8]], depending on size, materials, and what's still inside."],
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -234,10 +213,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
       ["Do you remove the shed floor and base?", "Yes. We take the floor and skids, and we'll tell you up front if a concrete pad needs a separate plan."],
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -245,10 +221,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
     ],
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],
@@ -256,10 +229,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     ],
   },
   }
-  "wood-pallet-removal": {
-    sections: [
-      { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
-      { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
+  { heading: "Residential pallet pickup", text: "Just had new sod or furniture delivered? We'll swing by and grab the pallet and any other shipping debris you have, so it doesn't sit in your driveway." },
     ],
     faqs: [
       ["Do I need to stack them first?", "If they're already stacked, pickup is faster and can lower the labor portion of your quote. If not, we'll stack and load them for you."],

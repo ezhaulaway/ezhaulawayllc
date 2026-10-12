@@ -95,8 +95,7 @@ const raw_locations: Location[] = [
         serviceLinks: [
           { slug: "furniture-removal", label: "Parker couch disposal" },
           { slug: "appliance-removal", label: "Parker fridge removal and appliance disposal" },
-          { slug: "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", label: "Parker large item pickup" },
+          { slug: "mattress-and-bulky-item-removal", label: "Parker large item pickup" },
         ],
       },
       {
@@ -138,8 +137,7 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Castle Rock furniture removal" },
-          { slug: "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", label: "Castle Rock mattress and bulky-item removal" },
+          { slug: "mattress-and-bulky-item-removal", label: "Castle Rock mattress and bulky-item removal" },
         ],
       },
       {
@@ -564,8 +562,7 @@ const raw_locations: Location[] = [
         closing:
           "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
         serviceLinks: [
-          { slug: "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", label: "Large item pickup in Denver" },
+          { slug: "mattress-and-bulky-item-removal", label: "Large item pickup in Denver" },
           { slug: "furniture-removal", label: "Denver furniture removal" },
           { slug: "appliance-removal", label: "Denver fridge removal and appliance disposal" },
           { slug: "commercial-junk-removal", label: "Denver office junk removal" },
@@ -709,8 +706,7 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Littleton furniture removal" },
-          { slug: "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", label: "Littleton mattress and large item pickup" },
+          { slug: "mattress-and-bulky-item-removal", label: "Littleton mattress and large item pickup" },
         ],
       },
       {
