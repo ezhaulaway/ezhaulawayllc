@@ -304,7 +304,7 @@ const RAW_CUSTOM_PAGES: Record<
           "One big item usually falls under our [[min]] minimum. Couches are about [[item:Couch]] per cushion, treadmills about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
         ],
         subsections: [
-          { heading: "Heavy and awkward items", text: "Pianos, gun safes under our crew's limits, sleeper sofas and solid-wood furniture need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
+          { heading: "Heavy and awkward items", text: "Pianos, sleeper sofas and solid-wood furniture need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
           { heading: "Large item pickup for move-outs", text: "Moving out of a Denver apartment or house? We clear everything that isn't going with you in one trip, so the unit is ready for cleaning." },
         ],
       },
