@@ -62,6 +62,84 @@ export type Database = {
         }
         Relationships: []
       }
+      blg_articles: {
+        Row: {
+          article_created_at: string | null
+          article_updated_at: string | null
+          content_html: string | null
+          faq_json_ld: Json | null
+          hero_image_url: string | null
+          id: number
+          json_ld: Json | null
+          language_code: string | null
+          meta_description: string | null
+          previous_slugs: string[]
+          slug: string
+          synced_at: string
+          title: string
+        }
+        Insert: {
+          article_created_at?: string | null
+          article_updated_at?: string | null
+          content_html?: string | null
+          faq_json_ld?: Json | null
+          hero_image_url?: string | null
+          id: number
+          json_ld?: Json | null
+          language_code?: string | null
+          meta_description?: string | null
+          previous_slugs?: string[]
+          slug: string
+          synced_at?: string
+          title: string
+        }
+        Update: {
+          article_created_at?: string | null
+          article_updated_at?: string | null
+          content_html?: string | null
+          faq_json_ld?: Json | null
+          hero_image_url?: string | null
+          id?: number
+          json_ld?: Json | null
+          language_code?: string | null
+          meta_description?: string | null
+          previous_slugs?: string[]
+          slug?: string
+          synced_at?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      blg_sync_state: {
+        Row: {
+          backoff_seconds: number
+          id: number
+          last_run_at: string | null
+          lease_until: string | null
+          list_complete: boolean
+          list_offset: number
+          next_allowed_at: string | null
+        }
+        Insert: {
+          backoff_seconds?: number
+          id?: number
+          last_run_at?: string | null
+          lease_until?: string | null
+          list_complete?: boolean
+          list_offset?: number
+          next_allowed_at?: string | null
+        }
+        Update: {
+          backoff_seconds?: number
+          id?: number
+          last_run_at?: string | null
+          lease_until?: string | null
+          list_complete?: boolean
+          list_offset?: number
+          next_allowed_at?: string | null
+        }
+        Relationships: []
+      }
       customers: {
         Row: {
           address: string | null
@@ -286,6 +364,25 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      blg_claim_lease: {
+        Args: never
+        Returns: {
+          backoff_seconds: number
+          id: number
+          last_run_at: string | null
+          lease_until: string | null
+          list_complete: boolean
+          list_offset: number
+          next_allowed_at: string | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "blg_sync_state"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
+      blg_mark_call: { Args: { _gap_ms: number }; Returns: undefined }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
