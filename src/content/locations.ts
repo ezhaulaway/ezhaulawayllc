@@ -405,8 +405,7 @@ const raw_locations: Location[] = [
     local:
       "Storage-heavy homes with finished basements tend to accumulate furniture and exercise equipment nobody uses anymore. Those are some of our most common calls here.",
     nearby: ["littleton", "centennial", "lone-tree"],
-    topServices: ["mattress-and-bulky-item-removal",
-  "wood-pallet-removal", "garage-cleanouts", "furniture-removal"],
+    topServices: ["mattress-and-bulky-item-removal", "garage-cleanouts", "furniture-removal"],
     content: [
       {
         heading: "Reliable Junk Removal, The Quick Answer",
@@ -521,8 +520,7 @@ const raw_locations: Location[] = [
     local:
       "Denver jobs mean alleys, tight parking and narrow stairs. We plan access before we arrive, so the crew isn't figuring it out in front of your building.",
     nearby: ["englewood", "aurora"],
-    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
     content: [
       {
         heading: "Denver Junk Removal: The Quick Answer",
@@ -959,8 +957,7 @@ const raw_locations: Location[] = [
     local:
       "Newer homes and active move-ins mean furniture swaps, mattress removals, and garage organization jobs keep us busy here.",
     nearby: ["parker", "castle-rock", "lone-tree", "highlands-ranch"],
-    topServices: ["furniture-removal", "mattress-and-bulky-item-removal",
-  "wood-pallet-removal", "garage-cleanouts"],
+    topServices: ["furniture-removal", "mattress-and-bulky-item-removal", "garage-cleanouts"],
     content: [
       {
         heading: "Local Junk Removal Services in Castle Pines",
@@ -1059,5 +1056,4 @@ export const SPECIALTY_SERVICE_SLUGS = [
   "shed-removal",
   "deck-and-fence-removal",
   "mattress-and-bulky-item-removal",
-  "wood-pallet-removal",
 ] as const;
