@@ -559,6 +559,12 @@ const raw_locations: Location[] = [
         ],
         closing:
           "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
+        serviceLinks: [
+          { slug: "mattress-and-bulky-item-removal", label: "Large item pickup in Denver" },
+          { slug: "furniture-removal", label: "Denver furniture removal" },
+          { slug: "appliance-removal", label: "Denver fridge removal and appliance disposal" },
+          { slug: "commercial-junk-removal", label: "Denver office junk removal" },
+        ],
       },
       {
         heading: "Why Denver Customers Hire Us Instead of Curbside Pickup",
@@ -689,6 +695,45 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Our pricing is simple and affordable. You pay for the trailer space your junk fills, and loading, labor and dump fees are always included. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]].",
           "Clear pricing means the quote we give is the price you pay. Most jobs in the area can be booked the same week.",
+        ],
+      },
+      {
+        heading: "Furniture, Mattress and Large Item Pickup",
+        paragraphs: [
+          "Couches, sectionals, recliners, mattresses and box springs are our most common Littleton pickups. Couches are about [[item:Couch]] per cushion and a mattress is [[item:Mattress]]. We carry them out of split-level homes, basements and apartments, so you never drag anything to the curb.",
+        ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Littleton furniture removal" },
+          { slug: "mattress-and-bulky-item-removal", label: "Littleton mattress and large item pickup" },
+        ],
+      },
+      {
+        heading: "Deck, Fence and Yard Debris Removal",
+        paragraphs: [
+          "Many Littleton homes have decks and fences past their prime. Ben has taken out more than 300 decks, so we tear down the boards, framing and railings and haul it all off the same visit. Branches, brush and old landscaping go too.",
+        ],
+        serviceLinks: [
+          { slug: "deck-and-fence-removal", label: "Littleton deck and fence removal" },
+          { slug: "yard-and-landscaping-debris", label: "Littleton yard debris removal" },
+        ],
+      },
+      {
+        heading: "Fridge Removal and Appliance Disposal",
+        paragraphs: [
+          "Old fridges, freezers, washers and dryers come out of the kitchen, basement or garage once they're unplugged. A full-size fridge is about [[item:Refrigerator (full size)]]. Fridges go to recyclers that handle the refrigerant, and other appliances go to metal recycling.",
+        ],
+        serviceLinks: [
+          { slug: "appliance-removal", label: "Littleton appliance removal" },
+        ],
+      },
+      {
+        heading: "Basement, Garage and Estate Cleanouts",
+        paragraphs: [
+          "Basements full of stored boxes, garages you can't park in, and homes being cleared after a loved one passes all get the same careful crew. We set aside what you're keeping and send usable items to donation.",
+        ],
+        serviceLinks: [
+          { slug: "garage-cleanouts", label: "Littleton garage cleanouts" },
+          { slug: "house-and-estate-cleanouts", label: "Littleton estate cleanouts" },
         ],
       },
       {
