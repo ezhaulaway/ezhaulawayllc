@@ -92,6 +92,11 @@ const raw_locations: Location[] = [
           "We also handle **appliance disposal** and **fridge removal**. Once a refrigerator, freezer, washer or dryer is unplugged and the water is off, we take it from the kitchen, basement or garage. A full-size refrigerator is about [[item:Refrigerator (full size)]]. Fridges and freezers go to recyclers that handle the cooling gas, and the metal is recycled.",
           "Whether you need a **trash hauling service** for a pile of bags or a **junk collection service** for one bulky item, it's the same local crew and one upfront price.",
         ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Parker couch disposal" },
+          { slug: "appliance-removal", label: "Parker fridge removal and appliance disposal" },
+          { slug: "mattress-and-bulky-item-removal", label: "Parker large item pickup" },
+        ],
       },
       {
         heading: "Where Your Parker Junk Goes",
