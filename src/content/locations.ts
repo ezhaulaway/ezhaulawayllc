@@ -95,7 +95,8 @@ const raw_locations: Location[] = [
         serviceLinks: [
           { slug: "furniture-removal", label: "Parker couch disposal" },
           { slug: "appliance-removal", label: "Parker fridge removal and appliance disposal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Parker large item pickup" },
+          { slug: "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", label: "Parker large item pickup" },
         ],
       },
       {
@@ -137,7 +138,8 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Castle Rock furniture removal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Castle Rock mattress and bulky-item removal" },
+          { slug: "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", label: "Castle Rock mattress and bulky-item removal" },
         ],
       },
       {
@@ -405,7 +407,8 @@ const raw_locations: Location[] = [
     local:
       "Storage-heavy homes with finished basements tend to accumulate furniture and exercise equipment nobody uses anymore. Those are some of our most common calls here.",
     nearby: ["littleton", "centennial", "lone-tree"],
-    topServices: ["mattress-and-bulky-item-removal", "garage-cleanouts", "furniture-removal"],
+    topServices: ["mattress-and-bulky-item-removal",
+  "wood-pallet-removal", "garage-cleanouts", "furniture-removal"],
     content: [
       {
         heading: "Reliable Junk Removal, The Quick Answer",
@@ -520,7 +523,8 @@ const raw_locations: Location[] = [
     local:
       "Denver jobs mean alleys, tight parking and narrow stairs. We plan access before we arrive, so the crew isn't figuring it out in front of your building.",
     nearby: ["englewood", "aurora"],
-    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
     content: [
       {
         heading: "Denver Junk Removal: The Quick Answer",
@@ -560,7 +564,8 @@ const raw_locations: Location[] = [
         closing:
           "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
         serviceLinks: [
-          { slug: "mattress-and-bulky-item-removal", label: "Large item pickup in Denver" },
+          { slug: "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", label: "Large item pickup in Denver" },
           { slug: "furniture-removal", label: "Denver furniture removal" },
           { slug: "appliance-removal", label: "Denver fridge removal and appliance disposal" },
           { slug: "commercial-junk-removal", label: "Denver office junk removal" },
@@ -704,7 +709,8 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Littleton furniture removal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Littleton mattress and large item pickup" },
+          { slug: "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", label: "Littleton mattress and large item pickup" },
         ],
       },
       {
@@ -957,7 +963,8 @@ const raw_locations: Location[] = [
     local:
       "Newer homes and active move-ins mean furniture swaps, mattress removals, and garage organization jobs keep us busy here.",
     nearby: ["parker", "castle-rock", "lone-tree", "highlands-ranch"],
-    topServices: ["furniture-removal", "mattress-and-bulky-item-removal", "garage-cleanouts"],
+    topServices: ["furniture-removal", "mattress-and-bulky-item-removal",
+  "wood-pallet-removal", "garage-cleanouts"],
     content: [
       {
         heading: "Local Junk Removal Services in Castle Pines",
@@ -1056,4 +1063,5 @@ export const SPECIALTY_SERVICE_SLUGS = [
   "shed-removal",
   "deck-and-fence-removal",
   "mattress-and-bulky-item-removal",
+  "wood-pallet-removal",
 ] as const;

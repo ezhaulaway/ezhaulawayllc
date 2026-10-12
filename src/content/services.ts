@@ -13,6 +13,7 @@ import electronicsAsset from "@/assets/branded-service-electronics.webp";
 import commercialAsset from "@/assets/branded-service-commercial.webp";
 import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
+import { woodPalletRemoval } from "./wood-pallet-removal";
 
 export type Service = {
   slug: string;
@@ -28,6 +29,7 @@ export type Service = {
   sections: Array<{ heading: string; text: string }>;
   faqs: Array<[string, string]>;
   related: string[];
+  cityPages?: boolean;
 };
 
 const raw_services: Service[] = [
@@ -544,42 +546,1374 @@ const raw_services: Service[] = [
   },
   {
     slug: "commercial-junk-removal",
-    name: "Commercial Junk Removal",
-    h1: "Office Junk Removal & Commercial Cleanouts",
-    metaTitle: "Office Junk Removal & Commercial Cleanouts | EZ Haulaway LLC",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
     metaDescription:
-      "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
-    summary: "Offices, retail spaces, warehouses, and property turnovers.",
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
     image: commercialAsset,
-    imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
     intro: [
-      "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.",
-      "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work.",
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
     ],
     includes: [
-      "Office furniture, cubicles, and desks",
-      "Retail fixtures, shelving, and displays",
-      "Warehouse and storage clearing",
-      "Restaurant and kitchen equipment",
-      "Tenant turnovers and lease-end cleanouts",
-      "Ongoing scheduled pickups",
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
     ],
     sections: [
       {
-        heading: "Scheduled around your business",
-        text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it.",
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
       },
       {
-        heading: "Property managers",
-        text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in.",
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
       },
     ],
     faqs: [
-      ["Do you work with recurring clients?", "Yes. Ongoing and repeat work can be scheduled in advance."],
-      ["Can you provide an invoice for the business?", "Yes, we can invoice for commercial work."],
-      ["Do you clear whole warehouses?", "Yes, though larger spaces may take multiple loads. We will walk it and give you a plan."],
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
     ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    name: "Commercial Junk Removal",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    h1: "Office Junk Removal & Commercial Cleanouts",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    metaTitle: "Office Junk Removal & Commercial Cleanouts | EZ Haulaway LLC",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    metaDescription:
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    summary: "Offices, retail spaces, warehouses, and property turnovers.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    image: commercialAsset,
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    intro: [
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    ],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    includes: [
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Office furniture, cubicles, and desks",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Retail fixtures, shelving, and displays",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Warehouse and storage clearing",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Restaurant and kitchen equipment",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Tenant turnovers and lease-end cleanouts",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      "Ongoing scheduled pickups",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    ],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    sections: [
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      {
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+        heading: "Scheduled around your business",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+        text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      },
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      {
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+        heading: "Property managers",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+        text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in.",
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      },
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    ],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    faqs: [
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      ["Do you work with recurring clients?", "Yes. Ongoing and repeat work can be scheduled in advance."],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      ["Can you provide an invoice for the business?", "Yes, we can invoice for commercial work."],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+      ["Do you clear whole warehouses?", "Yes, though larger spaces may take multiple loads. We will walk it and give you a plan."],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
+    ],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts"],
+  {
+    slug: "wood-pallet-removal",
+    name: "Wood Pallet Removal",
+    h1: "Wood Pallet Removal & Disposal in Parker & Denver Metro",
+    metaTitle: "Wood Pallet Removal & Disposal Services | EZ Haulaway",
+    metaDescription:
+      "Wood pallet removal and disposal for businesses and residential sites across the Denver metro area. Fast pickup, upfront pricing, and responsible recycling.",
+    summary: "Fast pickup and recycling for stacks of unwanted wood pallets.",
+    image: commercialAsset,
+    imageAlt: "EZ Haulaway crew removing pallets and commercial debris",
+    intro: [
+      "Stacks of empty pallets take up valuable space and can be a fire hazard. We show up, load them, and haul them to the right recycling facility.",
+      "Whether you have a few pallets from a residential delivery or a hundred at a warehouse dock, we handle the loading and disposal so you don't have to.",
+    ],
+    includes: [
+      "Standard wood pallets",
+      "Broken pallets and scrap wood",
+      "Oversized pallets",
+      "Crates and shipping containers",
+    ],
+    sections: [
+      {
+        heading: "One-time pickup or regular clear-outs",
+        text: "We work with local businesses that need a clean dock and homeowners who just finished a delivery. Schedule a one-time haul or set up a recurring visit to keep your site clear.",
+      },
+      {
+        heading: "Responsible wood recycling",
+        text: "Wood pallets don't belong in the trash. We sort and deliver pallets to recyclers who can refurbish or grind them, keeping wood waste out of the landfill.",
+      },
+    ],
+    faqs: [
+      ["How much does pallet removal cost?", "Single pallets are about [[item:Pallet]] each, with a minimum pickup of [[min]]. Large stacks are priced by trailer space."],
+      ["Do you take broken pallets?", "Yes. We take clean wood, broken pieces, and full pallets alike."],
+    ],
+    related: ["commercial-junk-removal", "construction-debris-removal", "yard-and-landscaping-debris"],
+  },
   },
 ];
 export const services = priced(raw_services);
