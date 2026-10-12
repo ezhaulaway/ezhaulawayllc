@@ -255,7 +255,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
       ["Can you take plastic pallets?", "Yes. We handle wood and plastic pallets, though they often go to different recycling facilities."],
     ],
   },
-  },
+  }
   "wood-pallet-removal": {
     sections: [
       { heading: "Commercial and warehouse pallet removal", text: "Warehouse managers and retail owners use us to keep docks clear and stay compliant with fire codes. We can handle everything from a few dozen pallets to a full trailer load in one visit." },
