@@ -15,10 +15,16 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "Offices, retail spaces, and rental turnovers", text: "Businesses across Parker, Castle Rock, Centennial, and Denver call us for office furniture removal, retail fixture cleanouts, warehouse junk, and rental property turnovers. We work around your hours, including early mornings, so your team and customers aren't disrupted." },
       { heading: "Property managers and landlords", text: "When a tenant leaves behind furniture, mattresses, and bags of trash, you need the unit cleared fast so it can be cleaned and re-listed. Send photos, get a price, and we'll schedule the cleanout quickly — one invoice, no dump runs for your maintenance staff." },
+      { heading: "Office junk removal service", text: "Our **office junk removal service** clears **desks, office chairs, conference tables, filing cabinets** and bookshelves from suites of any size. We take apart **cubicles and modular workstations** on site, carry everything out, and haul it away. One room or a whole floor goes on a single upfront quote." },
+      { heading: "Office electronics and e-waste", text: "Old computers, monitors, printers, phones and boxes of cables pile up in storage rooms. We sort **office e-waste** from the rest of the load and send it to recycling. Please wipe or pull hard drives before pickup so your business data stays protected." },
+      { heading: "Office moves, closures and lease-end cleanouts", text: "Moving, downsizing or closing an office? We clear what the movers won't take and what isn't worth moving. Tell us about loading docks, freight elevators, parking and building rules when you book, and we'll plan around them. Early mornings, evenings and weekends keep your team working." },
+      { heading: "Office cleanout pricing", text: "Commercial jobs are priced by trailer space, starting at [[min]]. A half load is about [[load:4]] and a full load about [[load:8]], with labor, loading, hauling and disposal included. Send photos or a walkthrough video for a **free office junk removal quote**." },
     ],
     faqs: [
       ["Can you work after business hours?", "Often, yes. Tell us your schedule and we'll do our best to fit the job in when it causes the least disruption."],
       ["Do you handle recurring pickups?", "We can talk through repeat hauls for property managers and businesses with ongoing junk removal needs."],
+      ["Do you take apart cubicles?", "Yes. We break down cubicle panels and modular desks on site so they can be carried out and loaded."],
+      ["Can you provide proof of insurance for our building?", "We're licensed and insured. Let us know if your property manager needs insurance paperwork before the job."],
     ],
   },
   "construction-debris-removal": {
