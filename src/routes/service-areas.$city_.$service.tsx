@@ -522,7 +522,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
   loader: ({ params }) => {
     const location = locationBySlug(params.city);
     const service = serviceBySlug(params.service);
-    if (!location || !service) throw notFound();
+    if (!location || !service || service.cityPages === false) throw notFound();
     const custom = CUSTOM_PAGES[`${params.city}/${params.service}`] ?? null;
     return { location, service, custom };
   },
@@ -747,7 +747,14 @@ function CityServicePage() {
           <p className="font-display font-bold">More services in {city}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {otherServices.map((item) => (
-              <Link
+              item.cityPages === false ? <Link
+                key={item.slug}
+                to="/services/$slug"
+                params={{ slug: item.slug }}
+                className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+              >
+                {item.name}
+              </Link> : <Link
                 key={item.slug}
                 to="/service-areas/$city/$service"
                 params={{ city: location.slug, service: item.slug }}

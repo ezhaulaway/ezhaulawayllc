@@ -314,19 +314,26 @@ function CityPage() {
           <SectionHeader
             eyebrow={`Every service in ${location.city}`}
             title={`All Junk Removal & Hauling Services in ${location.city}, CO`}
-            text={`Each service below has its own ${location.city} page with local details, live pricing and answers to common questions.`}
+            text={`Explore pickup details, pricing and common questions for hauling services available in ${location.city}.`}
           />
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link
+                {service.cityPages === false ? <Link
+                  to="/services/$slug"
+                  params={{ slug: service.slug }}
+                  className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
+                >
+                  <span>{service.name} — serving {location.city}</span>
+                  <ArrowRight className="size-4 shrink-0" />
+                </Link> : <Link
                   to="/service-areas/$city/$service"
                   params={{ city: location.slug, service: service.slug }}
                   className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
                 >
                   <span>{location.city} {service.name.toLowerCase()}</span>
                   <ArrowRight className="size-4 shrink-0" />
-                </Link>
+                </Link>}
               </li>
             ))}
           </ul>
