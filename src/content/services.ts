@@ -13,6 +13,7 @@ import electronicsAsset from "@/assets/branded-service-electronics.webp";
 import commercialAsset from "@/assets/branded-service-commercial.webp";
 import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
+import { woodPalletRemoval } from "./wood-pallet-removal";
 
 export type Service = {
   slug: string;
@@ -25,13 +26,14 @@ export type Service = {
   imageAlt: string;
   intro: string[];
   includes: string[];
-  sections: Array<{ heading: string; text: string }>;
+  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string }> }>;
   faqs: Array<[string, string]>;
   related: string[];
+  cityPages?: boolean;
 };
 
 const raw_services: Service[] = [
-  {
+{
     slug: "furniture-removal",
     name: "Furniture Removal",
     h1: "Furniture Removal in Parker & the Denver Metro Area",
@@ -70,7 +72,7 @@ const raw_services: Service[] = [
     ],
     related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
   },
-  {
+{
     slug: "appliance-removal",
     name: "Appliance Removal",
     h1: "Appliance Removal, Fridge Removal & Disposal in the Denver Metro",
@@ -109,7 +111,7 @@ const raw_services: Service[] = [
     ],
     related: ["electronics-and-e-waste-removal", "garage-cleanouts", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
@@ -159,7 +161,7 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
   },
-  {
+{
     slug: "light-demolition",
     name: "Light Demolition",
     h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
@@ -198,7 +200,7 @@ const raw_services: Service[] = [
     ],
     related: ["deck-and-fence-removal", "hot-tub-removal", "construction-debris-removal"],
   },
-  {
+{
     slug: "deck-and-fence-removal",
     name: "Deck & Fence Removal",
     h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
@@ -245,9 +247,9 @@ const raw_services: Service[] = [
       ["Will removing the deck damage my siding?", "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed."],
       ["What happens to the lumber?", "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility."],
     ],
-    related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris"],
+    related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris", "wood-pallet-removal"],
   },
-  {
+{
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
     h1: "Construction & Renovation Debris Removal",
@@ -284,9 +286,9 @@ const raw_services: Service[] = [
       ["Can you come back multiple times during a remodel?", "Yes. Repeat pickups can be scheduled around your project timeline."],
       ["Do you take hazardous materials?", "No. Paint, solvents, asbestos, and chemicals need a licensed disposal service."],
     ],
-    related: ["light-demolition", "yard-and-landscaping-debris", "commercial-junk-removal"],
+    related: ["light-demolition", "yard-and-landscaping-debris", "commercial-junk-removal", "wood-pallet-removal"],
   },
-  {
+{
     slug: "yard-and-landscaping-debris",
     name: "Yard & Landscaping Debris",
     h1: "Yard Waste & Landscaping Debris Removal",
@@ -325,7 +327,7 @@ const raw_services: Service[] = [
     ],
     related: ["deck-and-fence-removal", "construction-debris-removal", "house-and-estate-cleanouts"],
   },
-  {
+{
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
     h1: "Garage Cleanouts in Parker & the Denver Metro",
@@ -364,7 +366,7 @@ const raw_services: Service[] = [
     ],
     related: ["house-and-estate-cleanouts", "appliance-removal", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "house-and-estate-cleanouts",
     name: "House & Estate Cleanouts",
     h1: "House, Estate & Property Cleanouts",
@@ -403,7 +405,7 @@ const raw_services: Service[] = [
     ],
     related: ["garage-cleanouts", "furniture-removal", "mattress-and-bulky-item-removal"],
   },
-  {
+{
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
@@ -454,7 +456,7 @@ const raw_services: Service[] = [
     ],
     related: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "electronics-and-e-waste-removal",
     name: "Electronics & E-Waste Removal",
     h1: "Electronics & E-Waste Removal in the Denver Metro",
@@ -493,7 +495,7 @@ const raw_services: Service[] = [
     ],
     related: ["appliance-removal", "commercial-junk-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "shed-removal",
     name: "Shed Removal",
     h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
@@ -542,45 +544,29 @@ const raw_services: Service[] = [
     ],
     related: ["light-demolition", "deck-and-fence-removal", "garage-cleanouts"],
   },
-  {
+{
     slug: "commercial-junk-removal",
     name: "Commercial Junk Removal",
     h1: "Office Junk Removal & Commercial Cleanouts",
     metaTitle: "Office Junk Removal & Commercial Cleanouts | EZ Haulaway LLC",
-    metaDescription:
-      "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
+    metaDescription: "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
     summary: "Offices, retail spaces, warehouses, and property turnovers.",
     image: commercialAsset,
     imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
-    intro: [
-      "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.",
-      "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work.",
-    ],
-    includes: [
-      "Office furniture, cubicles, and desks",
-      "Retail fixtures, shelving, and displays",
-      "Warehouse and storage clearing",
-      "Restaurant and kitchen equipment",
-      "Tenant turnovers and lease-end cleanouts",
-      "Ongoing scheduled pickups",
-    ],
+    intro: ["Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.", "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work."],
+    includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers and lease-end cleanouts", "Ongoing scheduled pickups"],
     sections: [
-      {
-        heading: "Scheduled around your business",
-        text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it.",
-      },
-      {
-        heading: "Property managers",
-        text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in.",
-      },
+      { heading: "Scheduled around your business", text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it." },
+      { heading: "Property managers", text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in." },
     ],
     faqs: [
       ["Do you work with recurring clients?", "Yes. Ongoing and repeat work can be scheduled in advance."],
       ["Can you provide an invoice for the business?", "Yes, we can invoice for commercial work."],
       ["Do you clear whole warehouses?", "Yes, though larger spaces may take multiple loads. We will walk it and give you a plan."],
     ],
-    related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts"],
+    related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts", "wood-pallet-removal"],
   },
+  woodPalletRemoval,
 ];
 export const services = priced(raw_services);
 

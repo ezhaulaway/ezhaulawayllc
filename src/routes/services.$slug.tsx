@@ -158,6 +158,11 @@ function ServicePage() {
                 <div key={section.heading}>
                   <h3 className="text-xl font-bold">{section.heading}</h3>
                   <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{rich(section.text)}</p>
+                  {section.links?.map((link) => (
+                    <Link key={link.slug} to="/services/$slug" params={{ slug: link.slug }} className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                      {link.label} <ArrowRight className="size-4 shrink-0" />
+                    </Link>
+                  ))}
                 </div>
               ))}
             </div>
@@ -214,7 +219,7 @@ function ServicePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-12 border-t border-border pt-10">
+          {service.cityPages !== false && <div className="mt-12 border-t border-border pt-10">
             <h3 className="font-display text-xl font-bold">
               {service.name} by City
             </h3>
@@ -236,7 +241,7 @@ function ServicePage() {
                 </Link>
               ))}
             </div>
-          </div>
+          </div>}
           <div className="mt-10">
             <p className="font-display font-bold">Available across the Denver metro area</p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -283,7 +288,7 @@ function ServicePage() {
         </div>
       </section>
 
-      <CtaBand title={`Need ${service.name} Today?`} text="Send photos or give us a call. We'll get you a straight answer fast." />
+      <CtaBand title={`Need ${service.name}${service.cityPages === false ? "?" : " Today?"}`} text="Send photos or give us a call. We'll get you a straight answer fast." />
     </PageShell>
   );
 }

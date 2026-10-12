@@ -99,12 +99,14 @@ function AreasDropdown() {
               </DropdownMenuItem>
               {services.map((service) => (
                 <DropdownMenuItem asChild key={service.slug}>
-                  <Link
+                  {service.cityPages === false ? <Link to="/services/$slug" params={{ slug: service.slug }}>
+                    {service.name}
+                  </Link> : <Link
                     to="/service-areas/$city/$service"
                     params={{ city: location.slug, service: service.slug }}
                   >
                     {service.name} {location.city}
-                  </Link>
+                  </Link>}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuSubContent>
@@ -359,6 +361,9 @@ export function SiteFooter() {
               ))}
               <Link to="/what-we-take" className="font-semibold text-secondary-foreground">
                 View all services
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "wood-pallet-removal" }} className="hover:text-secondary-foreground">
+                Wood Pallet Removal
               </Link>
             </nav>
           </div>
