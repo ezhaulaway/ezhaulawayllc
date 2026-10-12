@@ -291,10 +291,24 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "denver/mattress-and-bulky-item-removal": {
-    title: "Mattress Removal Denver CO | Same-Week Pickup | EZ Haulaway LLC",
+    title: "Mattress Removal & Large Item Pickup Denver CO | EZ Haulaway",
     h1: "Mattress Removal Denver",
     description:
-      "Mattress removal in Denver, CO. We carry out mattresses, box springs and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
+      "Mattress removal and large item pickup in Denver, Colorado. Mattresses, couches and bulky items carried out from any room. Upfront pricing, free estimate.",
+    sections: [
+      {
+        heading: "Large Item Pickup in Denver, Colorado",
+        paragraphs: [
+          "Need **large item pickup in Denver**? Beyond mattresses, we pick up couches, sectionals, recliners, dressers, armoires, treadmills, pianos, hot tubs, appliances and playsets. If two people can carry it and it isn't hazardous, we can usually take it.",
+          "Denver's city large-item collection only takes what you set out at the curb or alley, on a set schedule. We come inside, carry the item out and haul it away, often the same week you call.",
+          "One big item usually falls under our [[min]] minimum. Couches are about [[item:Couch]] per cushion, treadmills about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
+        ],
+        subsections: [
+          { heading: "Heavy and awkward items", text: "Pianos, gun safes under our crew's limits, sleeper sofas and solid-wood furniture need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
+          { heading: "Large item pickup for move-outs", text: "Moving out of a Denver apartment or house? We clear everything that isn't going with you in one trip, so the unit is ready for cleaning." },
+        ],
+      },
+    ],
     intro: [
       "Need **mattress removal in Denver**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — bedroom, basement or third-floor walkup — and haul them away in one visit. No dragging a mattress to the curb, no renting a truck.",
       "Our two-person crew does **all the heavy lifting**. We carry the mattress down the stairs, through the hallway and out to our 16-foot trailer, then sweep up before we leave. You just show us what goes.",
