@@ -23,6 +23,7 @@ import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } fr
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas.index'
 import { Route as ServiceAreasCityRouteImport } from './routes/service-areas.$city'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ApiPublicBlgSyncRouteImport } from './routes/api/public/blg-sync'
 import { Route as ApiPublicCrewLeadsRouteImport } from './routes/api/public/crew-leads'
 import { Route as ServiceAreasCityServiceRouteImport } from './routes/service-areas.$city_.$service'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -98,6 +99,11 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicBlgSyncRoute = ApiPublicBlgSyncRouteImport.update({
+  id: '/api/public/blg-sync',
+  path: '/api/public/blg-sync',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicCrewLeadsRoute = ApiPublicCrewLeadsRouteImport.update({
   id: '/api/public/crew-leads',
   path: '/api/public/crew-leads',
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
   '/service-areas/$city/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas': typeof ServiceAreasIndexRoute
+  '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
   '/service-areas/$city/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/service-areas/$city': typeof ServiceAreasCityRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/api/public/blg-sync': typeof ApiPublicBlgSyncRoute
   '/api/public/crew-leads': typeof ApiPublicCrewLeadsRoute
   '/service-areas/$city_/$service': typeof ServiceAreasCityServiceRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas/'
+    | '/api/public/blg-sync'
     | '/api/public/crew-leads'
     | '/service-areas/$city/$service'
     | '/lovable/email/transactional/preview'
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas'
+    | '/api/public/blg-sync'
     | '/api/public/crew-leads'
     | '/service-areas/$city/$service'
     | '/lovable/email/transactional/preview'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/service-areas/$city'
     | '/services/$slug'
     | '/service-areas/'
+    | '/api/public/blg-sync'
     | '/api/public/crew-leads'
     | '/service-areas/$city_/$service'
     | '/lovable/email/transactional/preview'
@@ -248,6 +260,7 @@ export interface RootRouteChildren {
   ServiceAreasCityRoute: typeof ServiceAreasCityRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
+  ApiPublicBlgSyncRoute: typeof ApiPublicBlgSyncRoute
   ApiPublicCrewLeadsRoute: typeof ApiPublicCrewLeadsRoute
   ServiceAreasCityServiceRoute: typeof ServiceAreasCityServiceRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -353,6 +366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/blg-sync': {
+      id: '/api/public/blg-sync'
+      path: '/api/public/blg-sync'
+      fullPath: '/api/public/blg-sync'
+      preLoaderRoute: typeof ApiPublicBlgSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/crew-leads': {
       id: '/api/public/crew-leads'
       path: '/api/public/crew-leads'
@@ -393,6 +413,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServiceAreasCityRoute: ServiceAreasCityRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServiceAreasIndexRoute: ServiceAreasIndexRoute,
+  ApiPublicBlgSyncRoute: ApiPublicBlgSyncRoute,
   ApiPublicCrewLeadsRoute: ApiPublicCrewLeadsRoute,
   ServiceAreasCityServiceRoute: ServiceAreasCityServiceRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,

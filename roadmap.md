@@ -18,3 +18,4 @@
 - [x] Add crew photo to the instant estimate page
 - [x] Track instant estimate usage + estimator_stats in crew feed
 - [x] Install Google Ads tag AW-18279521152 for call tracking
+- [x] Automated BabyLoveGrowth blog (/blog, posts, sync every 10 min, blog sitemap)

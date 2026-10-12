@@ -52,6 +52,7 @@ export const navItems = [
   { label: "Service Areas", to: "/service-areas" },
   { label: "FAQ", to: "/faq" },
   { label: "About", to: "/about" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
