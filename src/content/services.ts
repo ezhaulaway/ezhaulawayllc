@@ -545,10 +545,10 @@ const raw_services: Service[] = [
   {
     slug: "commercial-junk-removal",
     name: "Commercial Junk Removal",
-    h1: "Commercial & Office Junk Removal",
-    metaTitle: "Commercial Junk Removal in Parker, CO | EZ Haulaway",
+    h1: "Office Junk Removal & Commercial Cleanouts",
+    metaTitle: "Office Junk Removal & Commercial Cleanouts | EZ Haulaway LLC",
     metaDescription:
-      "Office cleanouts, retail fixtures, warehouse clearing, and property manager turnovers across the Denver metro area.",
+      "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
     summary: "Offices, retail spaces, warehouses, and property turnovers.",
     image: commercialAsset,
     imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",

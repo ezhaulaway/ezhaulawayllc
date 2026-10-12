@@ -86,6 +86,14 @@ const raw_locations: Location[] = [
         ],
       },
       {
+        heading: "Couch Disposal and Fridge Removal in Parker",
+        paragraphs: [
+          "Looking for **couch disposal in Parker**? We carry sofas, sectionals, sleeper sofas and recliners out of the house and haul them away the same visit. Couches run about [[item:Couch]] per cushion, and usable pieces go to donation when they qualify.",
+          "We also handle **appliance disposal** and **fridge removal**. Once a refrigerator, freezer, washer or dryer is unplugged and the water is off, we take it from the kitchen, basement or garage. A full-size refrigerator is about [[item:Refrigerator (full size)]]. Fridges and freezers go to recyclers that handle the cooling gas, and the metal is recycled.",
+          "Whether you need a **trash hauling service** for a pile of bags or a **junk collection service** for one bulky item, it's the same local crew and one upfront price.",
+        ],
+      },
+      {
         heading: "Where Your Parker Junk Goes",
         paragraphs: [
           "We sort every load. Good furniture and household goods go to local donation centers. Metal, appliances, and electronics go to recycling. Only what's left goes to the landfill. It's a responsible way to clear your space and keep usable items out of the trash.",
@@ -172,6 +180,18 @@ const raw_locations: Location[] = [
           { slug: "shed-removal", label: "Castle Rock shed removal" },
           { slug: "deck-and-fence-removal", label: "Castle Rock deck and fence removal" },
           { slug: "light-demolition", label: "Castle Rock light demolition" },
+        ],
+      },
+      {
+        heading: "Couch, Fridge and Appliance Disposal in Castle Rock",
+        paragraphs: [
+          "Many people search for **couch disposal** or **appliance disposal** because regular trash pickup won't take big items. We carry out couches, sectionals and recliners from any room. Couches run about [[item:Couch]] per cushion, and you don't have to drag anything to the curb.",
+          "Need **fridge removal**? We haul refrigerators, freezers, washers, dryers and stoves once they're unplugged and the water is shut off. A full-size refrigerator is about [[item:Refrigerator (full size)]]. Fridges and freezers go to recyclers that handle the cooling gas inside them, and the metal from other appliances is recycled instead of buried.",
+          "Think of us as your local **trash hauling service** and **junk collection service** for anything too big for the bin. One visit, one upfront price, and the crew does the lifting.",
+        ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Castle Rock couch disposal" },
+          { slug: "appliance-removal", label: "Castle Rock fridge and appliance disposal" },
         ],
       },
       {
