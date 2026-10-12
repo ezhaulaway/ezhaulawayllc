@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Build Wood Pallet Removal with scrap wood content and internal links; verify the page and links
+
 - [x] Strengthen the Castle Rock main page and verify links to its existing service pages
 - [ ] Research Castle Rock service-page expansion priorities — deferred until the main-page review
 
