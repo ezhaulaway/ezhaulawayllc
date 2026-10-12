@@ -14,3 +14,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.ezhaulawayllc.com/sitemap.xml
+Sitemap: https://www.ezhaulawayllc.com/blog-sitemap.xml
