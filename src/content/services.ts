@@ -73,10 +73,10 @@ const raw_services: Service[] = [
   {
     slug: "appliance-removal",
     name: "Appliance Removal",
-    h1: "Appliance Removal & Haul Away in the Denver Metro",
-    metaTitle: "Appliance Removal & Disposal in Parker, CO | EZ Haulaway",
+    h1: "Appliance Removal, Fridge Removal & Disposal in the Denver Metro",
+    metaTitle: "Appliance Removal & Disposal | Fridge Removal | EZ Haulaway",
     metaDescription:
-      "Refrigerators, washers, dryers, stoves, and water heaters hauled away across Parker and the Denver metro area. Free quotes from EZ Haulaway.",
+      "Appliance removal, fridge removal and appliance disposal in Parker and the Denver metro. We carry it out and recycle the metal. Upfront free quotes.",
     summary: "Refrigerators, washers, dryers, stoves, dishwashers, and water heaters.",
     image: applianceAsset,
     imageAlt: "EZ Haulaway crew loading a refrigerator onto the branded trailer",

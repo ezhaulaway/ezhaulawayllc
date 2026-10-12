@@ -291,10 +291,24 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "denver/mattress-and-bulky-item-removal": {
-    title: "Mattress Removal Denver CO | Same-Week Pickup | EZ Haulaway LLC",
+    title: "Mattress Removal & Large Item Pickup Denver CO | EZ Haulaway",
     h1: "Mattress Removal Denver",
     description:
-      "Mattress removal in Denver, CO. We carry out mattresses, box springs and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
+      "Mattress removal and large item pickup in Denver, Colorado. Mattresses, couches and bulky items carried out from any room. Upfront pricing, free estimate.",
+    sections: [
+      {
+        heading: "Large Item Pickup in Denver, Colorado",
+        paragraphs: [
+          "Need **large item pickup in Denver**? Beyond mattresses, we pick up couches, sectionals, recliners, dressers, armoires, treadmills, pianos, hot tubs, appliances and playsets. If two people can carry it and it isn't hazardous, we can usually take it.",
+          "Denver's city large-item collection only takes what you set out at the curb or alley, on a set schedule. We come inside, carry the item out and haul it away, often the same week you call.",
+          "One big item usually falls under our [[min]] minimum. Couches are about [[item:Couch]] per cushion, treadmills about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
+        ],
+        subsections: [
+          { heading: "Heavy and awkward items", text: "Pianos, sleeper sofas and solid-wood furniture need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
+          { heading: "Large item pickup for move-outs", text: "Moving out of a Denver apartment or house? We clear everything that isn't going with you in one trip, so the unit is ready for cleaning." },
+        ],
+      },
+    ],
     intro: [
       "Need **mattress removal in Denver**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — bedroom, basement or third-floor walkup — and haul them away in one visit. No dragging a mattress to the curb, no renting a truck.",
       "Our two-person crew does **all the heavy lifting**. We carry the mattress down the stairs, through the hallway and out to our 16-foot trailer, then sweep up before we leave. You just show us what goes.",
@@ -413,17 +427,42 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "denver/appliance-removal": {
+    title: "Appliance Removal Denver CO | Fridge Removal & Disposal | EZ Haulaway",
+    h1: "Appliance Removal Denver",
     description:
-      "Appliance removal in Denver, CO: fridges, washers, dryers, stoves and dishwashers hauled from inside your home and recycled. Upfront pricing, free estimate.",
+      "Appliance removal and fridge removal in Denver, CO. Washers, dryers, stoves and freezers carried out and recycled. Upfront pricing, free estimate.",
     intro: [
-      "Need appliance removal in Denver? We haul refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters from your kitchen, basement or garage.",
+      "Need **appliance removal in Denver**? We haul refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters from your kitchen, basement or garage.",
       "We do the lifting, use dollies and straps on the stairs, and protect your floors on the way out.",
       "Appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each depending on size, and a single item falls under our [[min]] minimum. Fridges and freezers with Freon have a [[adj:freon]] handling fee.",
     ],
     localHeading: "Old Appliance Pickup Anywhere in Denver",
     localText: [
       "Replacing a kitchen or laundry set? We can take the old appliances plus any other junk from the remodel in the same trip, priced by trailer space.",
+      "Denver homes make appliances hard to move. Bungalow basements in Washington Park and Platt Park have steep, narrow stairs. Capitol Hill walkups have tight landings. Alley garages in Highland and Berkeley hold old garage fridges and chest freezers. We plan the route out before we lift.",
       "Appliances go to metal recycling whenever possible instead of the landfill. Send a photo through the instant estimate for a quick price.",
+    ],
+    sections: [
+      {
+        heading: "Fridge Removal in Denver",
+        paragraphs: [
+          "**Fridge removal** is our most common Denver appliance job. We take full-size, side-by-side, French door and garage fridges, plus mini fridges and chest freezers. Empty the food, unplug it a day early so it defrosts, and shut off the ice-maker line. We do the rest.",
+          "A full-size refrigerator is about [[item:Refrigerator (full size)]] and a side-by-side is about [[item:Refrigerator (side by side)]]. The [[adj:freon]] fee covers proper handling of the refrigerant.",
+        ],
+      },
+      {
+        heading: "Appliance Disposal and Recycling",
+        paragraphs: [
+          "Denver's regular trash pickup won't take most appliances, and new-appliance delivery crews often take the old one only from the curb. Our **appliance disposal** service comes inside and carries it out for you.",
+          "**Appliance recycling** is part of every job. Fridges and freezers go to recyclers that recover the refrigerant first. Washers, dryers, stoves and water heaters go to scrap metal recycling, so the steel and copper get reused.",
+        ],
+      },
+      {
+        heading: "Before Your Appliance Pickup",
+        paragraphs: [
+          "Unplug the appliance and shut off any water line. Gas stoves, gas dryers and gas water heaters should be disconnected by a pro before we arrive. Tell us about stairs, elevators or alley access when you book so we bring the right crew.",
+        ],
+      },
     ],
     faqs: [
       [
@@ -437,6 +476,42 @@ const RAW_CUSTOM_PAGES: Record<
       [
         "Where do old appliances go?",
         "We take them to metal recycling whenever possible, so they don't end up in a landfill.",
+      ],
+      [
+        "How do I get rid of a refrigerator in Denver?",
+        "Empty it, unplug it and book fridge removal. We carry it out of the kitchen, basement or garage and take it to a recycler that handles the refrigerant.",
+      ],
+    ],
+  },
+  "parker/appliance-removal": {
+    title: "Appliance Removal Parker CO | Fridge Removal & Disposal | EZ Haulaway",
+    h1: "Appliance Removal Parker",
+    description:
+      "Appliance removal and fridge removal in Parker, CO from a local Parker crew. Washers, dryers, stoves and freezers carried out and recycled. Free quotes.",
+    intro: [
+      "Need **appliance removal in Parker**? We're based here, so old fridges, freezers, washers, dryers, stoves, dishwashers and water heaters are usually on our trailer within a few days.",
+      "Our crew carries the appliance out of the kitchen, laundry room, basement or garage. You don't drag anything to the curb.",
+      "Appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each, a single item falls under our [[min]] minimum, and fridges and freezers have a [[adj:freon]] handling fee.",
+    ],
+    localHeading: "Fridge Removal and Appliance Disposal Across Parker",
+    localText: [
+      "We pick up appliances in Stonegate, Pradera, Idyllwilde, Clarke Farms, The Pinery, Canterberry Crossing and every Parker neighborhood in between. Walkout basements, second-floor laundry rooms and three-car garages full of old freezers are routine.",
+      "**Fridge removal** is the job we get most. Empty the food, unplug it a day early and shut off the ice-maker line. We handle the dolly, stairs and loading.",
+      "**Appliance disposal** done right means **appliance recycling**. Fridges and freezers go to recyclers that recover the refrigerant, and other appliances go to scrap metal recycling instead of the landfill.",
+      "Remodeling a kitchen or laundry room? Add the old cabinets, countertops and boxes to the same trip. Bigger loads are priced by trailer space, from [[load:2]] for a quarter load to [[load:8]] for a full load.",
+    ],
+    faqs: [
+      [
+        "How much does appliance removal cost in Parker?",
+        "Most appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]]. A single item falls under our [[min]] minimum, and fridges and freezers add a [[adj:freon]] fee.",
+      ],
+      [
+        "Will Parker trash pickup take my old fridge?",
+        "Usually not with regular trash. Book fridge removal and we carry it out and take it to recycling.",
+      ],
+      [
+        "Do I need to disconnect the appliance?",
+        "Unplug it and shut off any water line. Gas appliances should be disconnected by a pro before we arrive.",
       ],
     ],
   },

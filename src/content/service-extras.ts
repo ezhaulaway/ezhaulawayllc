@@ -5,10 +5,15 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area typically runs [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] per unit, and we can add other junk to the same trip." },
       { heading: "Responsible appliance disposal", text: "Refrigerators and freezers contain refrigerants that need proper handling, and most appliances hold recyclable steel and copper. We route working units toward donation when possible and send the rest to facilities that recycle the metal instead of burying it in a landfill." },
+      { heading: "Fridge removal made simple", text: "**Fridge removal** is our most common appliance call. Full-size, side-by-side, French door, garage beer fridges, mini fridges and chest freezers all go. Empty the food, unplug it a day early so it can defrost, and shut off the ice-maker water line. We handle the dolly, the stairs and the haul away. Fridges and freezers carry a [[adj:freon]] handling fee for the refrigerant." },
+      { heading: "Appliance recycling, not the landfill", text: "**Appliance recycling** keeps tons of steel, copper and aluminum in use. We take fridges and freezers to recyclers that recover the refrigerant first, and other appliances to scrap metal recyclers. Washers, dryers, stoves, dishwashers and water heaters are mostly metal, so very little of an appliance ends up buried." },
+      { heading: "Your appliance disposal options", text: "Most trash pickup won't take appliances. Some retailers haul the old unit only when they deliver a new one, and usually only from the curb. Scrap yards take metal, but you need a truck and helpers. Our **appliance disposal** service comes inside, carries it out and handles the drop-off. One appliance falls under our [[min]] minimum, and bigger loads are priced by trailer space." },
     ],
     faqs: [
       ["Do I need to empty the fridge first?", "Yes, please empty food and remove loose shelves if you can. We'll take care of the rest, including carrying it out of the kitchen or basement."],
       ["Can you take an appliance from a basement?", "Yes. Basement and upstairs appliance removal is part of what we do — just mention it when you request your quote so we plan the right crew."],
+      ["How do I get rid of an old refrigerator?", "Empty it, unplug it and shut off the water line. Then book fridge removal. We carry it out and take it to a recycler that handles the refrigerant. A full-size fridge is about [[item:Refrigerator (full size)]]."],
+      ["Do you recycle appliances?", "Yes. Fridges and freezers go to recyclers that recover the refrigerant, and other appliances go to scrap metal recycling whenever possible."],
     ],
   },
   "commercial-junk-removal": {
