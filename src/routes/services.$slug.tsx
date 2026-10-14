@@ -157,7 +157,9 @@ function ServicePage() {
               {service.sections.map((section) => (
                 <div key={section.heading}>
                   <h3 className="text-xl font-bold">{section.heading}</h3>
-                  <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{rich(section.text)}</p>
+                  {section.text.split("\n\n").map((para, i) => (
+                    <p key={i} className="mt-3 max-w-2xl leading-7 text-muted-foreground">{rich(para)}</p>
+                  ))}
                   {section.links?.map((link) => (
                     <Link key={link.slug} to="/services/$slug" params={{ slug: link.slug }} className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
                       {link.label} <ArrowRight className="size-4 shrink-0" />
