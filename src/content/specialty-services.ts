@@ -1,6 +1,6 @@
 import dumpsterAltAsset from "@/assets/dumpster-alternative-loading.jpg.asset.json";
 import estateImage from "@/assets/branded-service-estate.webp";
-import householdImage from "@/assets/card-household.webp";
+import storageUnitAsset from "@/assets/storage-unit-cleanout-loading.jpg.asset.json";
 import type { Service } from "./services";
 
 export const dumpsterRentalAlternative: Service = {
@@ -145,8 +145,9 @@ export const storageUnitCleanout: Service = {
     "Storage unit cleanout and junk removal in Parker, Castle Rock and the Denver metro. We empty the unit, haul it away and help you stop paying monthly rent.",
   cityPages: false,
   summary: "Empty a storage unit in one visit and stop paying monthly rent.",
-  image: householdImage,
-  imageAlt: "Furniture and boxes cleared out of a storage unit ready for hauling",
+  image: storageUnitAsset.url,
+  imageAlt:
+    "EZ Haulaway crew member in a gray work shirt wheeling a cart of boxes and household items down a driveway toward the black dump trailer parked behind the red work truck",
   intro: [
     "Paying every month for a storage unit full of things you no longer need? EZ Haulaway provides **storage unit cleanouts** in Parker, Castle Rock and the Denver metro. We meet you at the facility, load everything you do not want to keep and haul it away so you can close out the unit.",
     "Bring a small car for the items you want to keep. We take the furniture, boxes, mattresses, appliances and general junk — then sweep the unit so it is ready for move-out.",
