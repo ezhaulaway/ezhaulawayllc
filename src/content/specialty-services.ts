@@ -67,7 +67,7 @@ export const dumpsterRentalAlternative: Service = {
     {
       heading: "Yard waste and large landscaping projects",
       text: "**Yard waste** is one of the most common reasons people rent a roll off dumpster. Branches, sod, old landscaping rock, shrubs and fencing are heavy and bulky.\n\nFor **large landscaping projects** that run for weeks, a dumpster can be useful. For a weekend cleanup or a single tear-out, we can haul the debris in one visit so you are not paying for a container to sit while you work.\n\nHeavy material like dirt, rock and concrete fills weight limits quickly in a dumpster; send us photos and we will tell you honestly whether it fits our trailer.",
-      links: [{ slug: "yard-debris-removal", label: "Yard debris removal" }],
+      links: [{ slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" }],
     },
     {
       heading: "Roofing debris and construction materials",
