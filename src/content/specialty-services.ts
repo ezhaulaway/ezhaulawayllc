@@ -1,4 +1,3 @@
-import trailerImage from "@/assets/branded-trailer-base.webp";
 import dumpsterAltAsset from "@/assets/dumpster-alternative-loading.jpg.asset.json";
 import estateImage from "@/assets/branded-service-estate.webp";
 import householdImage from "@/assets/card-household.webp";
