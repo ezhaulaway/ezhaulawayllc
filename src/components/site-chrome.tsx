@@ -357,7 +357,7 @@ function ChamberBadge() {
     s.onload = init;
     document.body.appendChild(s);
   }, []);
-  return <div id={CHAMBER_ID} className="max-w-[200px] rounded-lg bg-background p-2 text-xs text-foreground" />;
+  return <div id={CHAMBER_ID} className="max-w-[200px] rounded-lg bg-background p-2 text-xs text-foreground empty:hidden" />;
 }
 
 export function SiteFooter() {
