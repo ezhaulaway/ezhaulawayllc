@@ -4,6 +4,7 @@ import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import stackedSrc from "@/assets/ez-haulaway-stacked-sm.webp";
 import truckAsset from "@/assets/real-IMG_5096.jpg.asset.json";
+import rrbAsset from "@/assets/red-right-buyer.png.asset.json";
 import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -347,7 +348,7 @@ function ChamberBadge() {
       new w.MNI.Widgets.Member(CHAMBER_ID, {
         member: 17087,
         styleTemplate:
-          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name{font-weight:700}#@id .mn-widget-member-logo{max-width:100%}",
+          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name{font-weight:700;font-size:10px;line-height:1.2}#@id .mn-widget-member-logo{max-width:100%;max-height:44px;width:auto;margin:0 auto}#@id img{max-height:44px;width:auto}",
       }).create();
     };
     if (w.MNI) return init();
@@ -357,7 +358,7 @@ function ChamberBadge() {
     s.onload = init;
     document.body.appendChild(s);
   }, []);
-  return <div id={CHAMBER_ID} className="max-w-[200px] rounded-lg bg-background p-2 text-xs text-foreground empty:hidden" />;
+  return <div id={CHAMBER_ID} className="flex h-20 max-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground empty:hidden [&_img]:max-h-11 [&_img]:w-auto" />;
 }
 
 export function SiteFooter() {
@@ -428,11 +429,10 @@ export function SiteFooter() {
               href="https://redrightbuyer.com/members"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-20 items-center rounded-lg bg-background px-4 text-center font-display text-sm font-bold text-foreground"
+              aria-label="Red Right Buyer member"
+              className="flex h-20 items-center rounded-lg bg-background px-4"
             >
-              Red Right Buyer
-              <br />
-              Member
+              <img src={rrbAsset.url} alt="Red Right Buyer member badge" width={300} height={78} loading="lazy" className="h-10 w-auto" />
             </a>
             <a href="https://locatefaith.com/business/ez-haulaway" target="_blank" rel="noopener noreferrer">
               <img
