@@ -69,8 +69,7 @@ export function TrailerPricing() {
                 {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
                 <img
                   src={trailerEmpty}
-                  alt=""
-                  aria-hidden="true"
+                  alt="EZ Haulaway 16-foot black dump trailer used for junk removal pricing"
                   width={1376}
                   height={768}
                   fetchPriority="high"
@@ -80,7 +79,7 @@ export function TrailerPricing() {
                   <img
                     key={image}
                     src={image}
-                    alt={eighths === selectedEighths ? fillDescriptions[eighths] : ""}
+                    alt={`Dump trailer junk fill level: ${fillDescriptions[eighths]}`}
                     aria-hidden={eighths !== selectedEighths}
                     width={1376}
                     height={768}
