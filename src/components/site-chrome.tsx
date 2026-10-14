@@ -348,7 +348,7 @@ function ChamberBadge() {
       new w.MNI.Widgets.Member(CHAMBER_ID, {
         member: 17087,
         styleTemplate:
-          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name{font-weight:700;font-size:10px;line-height:1.2}#@id .mn-widget-member-logo{max-width:100%;max-height:44px;width:auto;margin:0 auto}#@id img{max-height:44px;width:auto}",
+          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name{display:none!important}#@id .mn-widget-member-logo{max-width:100%;max-height:44px;width:auto;margin:0 auto}#@id img{max-height:44px;width:auto}",
       }).create();
     };
     if (w.MNI) return init();
@@ -358,7 +358,7 @@ function ChamberBadge() {
     s.onload = init;
     document.body.appendChild(s);
   }, []);
-  return <div id={CHAMBER_ID} className="flex h-20 max-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground empty:hidden [&_img]:max-h-11 [&_img]:w-auto" />;
+  return <div id={CHAMBER_ID} className="flex h-20 max-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground empty:hidden [&_.mn-widget-member-name]:hidden [&_img]:max-h-11 [&_img]:w-auto" />;
 }
 
 export function SiteFooter() {
