@@ -1,4 +1,4 @@
-import trailerImage from "@/assets/branded-trailer-base.webp";
+import dumpsterAltAsset from "@/assets/dumpster-alternative-loading.jpg.asset.json";
 import estateImage from "@/assets/branded-service-estate.webp";
 import householdImage from "@/assets/card-household.webp";
 import type { Service } from "./services";
@@ -12,8 +12,8 @@ export const dumpsterRentalAlternative: Service = {
     "Thinking about a dumpster rental or roll-off? Compare dumpster rental vs junk removal in Parker, Castle Rock and Denver. We load it, haul it and you pay for space used.",
   cityPages: false,
   summary: "Skip the roll-off. We load, haul and clean up — you pay only for the trailer space you use.",
-  image: trailerImage,
-  imageAlt: "EZ Haulaway black dump trailer hitched to the red work truck, ready to haul a cleanout",
+  image: dumpsterAltAsset.url,
+  imageAlt: "EZ Haulaway crew member loading household junk from a cart into the black dump trailer beside the red work truck",
   intro: [
     "Searching for a **dumpster rental** in Parker, Castle Rock or the Denver metro? Before you book a roll-off dumpster, compare it with full-service junk removal. With a **dumpster rental alternative** like EZ Haulaway, we bring the truck and dump trailer, do the lifting and loading, sweep up and drive away — usually the same visit.",
     "A dumpster rental makes sense for some long projects. For most garage cleanouts, basement purges, estate cleanouts, move-outs and small remodels, though, homeowners end up renting a waste container, loading it themselves for days and still paying for space they never fill. Here is how **dumpster rental vs junk removal** actually compares, so you can choose the right option for your project.",
