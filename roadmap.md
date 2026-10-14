@@ -19,3 +19,6 @@
 - [x] Track instant estimate usage + estimator_stats in crew feed
 - [x] Install Google Ads tag AW-18279521152 for call tracking
 - [x] Automated BabyLoveGrowth blog (/blog, posts, sync every 10 min, blog sitemap)
+
+- [x] Dumpster Rental Alternative page (dumpster vs junk removal keywords)
+- [x] Hoarder Cleanout and Storage Unit Cleanout pages (low-KD sub-services)
