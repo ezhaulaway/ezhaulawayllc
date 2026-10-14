@@ -391,6 +391,15 @@ export function SiteFooter() {
               <Link to="/services/$slug" params={{ slug: "wood-pallet-removal" }} className="hover:text-secondary-foreground">
                 Wood Pallet Removal
               </Link>
+              <Link to="/services/$slug" params={{ slug: "dumpster-rental-alternative" }} className="hover:text-secondary-foreground">
+                Dumpster Rental Alternative
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "hoarder-cleanout" }} className="hover:text-secondary-foreground">
+                Hoarder Cleanout
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "storage-unit-cleanout" }} className="hover:text-secondary-foreground">
+                Storage Unit Cleanout
+              </Link>
             </nav>
           </div>
           <div>

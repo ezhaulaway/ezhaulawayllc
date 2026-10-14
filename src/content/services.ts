@@ -14,6 +14,7 @@ import commercialAsset from "@/assets/branded-service-commercial.webp";
 import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
 import { woodPalletRemoval } from "./wood-pallet-removal";
+import { dumpsterRentalAlternative, hoarderCleanout, storageUnitCleanout } from "./specialty-services";
 
 export type Service = {
   slug: string;
@@ -364,7 +365,7 @@ const raw_services: Service[] = [
       ["How long does a garage take?", "Most two-car garages are a half day or less depending on how full they are."],
       ["Do you sweep up afterward?", "Yes, cleanup is part of the job."],
     ],
-    related: ["house-and-estate-cleanouts", "appliance-removal", "mattress-and-bulky-item-removal"],
+    related: ["house-and-estate-cleanouts", "appliance-removal", "storage-unit-cleanout", "dumpster-rental-alternative"],
   },
 {
     slug: "house-and-estate-cleanouts",
@@ -403,7 +404,7 @@ const raw_services: Service[] = [
       ["Can you donate usable items?", "Where an item is in good condition and a local organization will take it, donating beats the landfill."],
       ["Is a whole-house cleanout one visit?", "Usually yes. Very large properties may take more than one trailer load."],
     ],
-    related: ["garage-cleanouts", "furniture-removal", "mattress-and-bulky-item-removal"],
+    related: ["garage-cleanouts", "furniture-removal", "hoarder-cleanout", "dumpster-rental-alternative"],
   },
 {
     slug: "mattress-and-bulky-item-removal",
@@ -567,6 +568,9 @@ const raw_services: Service[] = [
     related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts", "wood-pallet-removal"],
   },
   woodPalletRemoval,
+  dumpsterRentalAlternative,
+  hoarderCleanout,
+  storageUnitCleanout,
 ];
 export const services = priced(raw_services);
 
