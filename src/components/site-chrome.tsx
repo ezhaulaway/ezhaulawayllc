@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
@@ -336,6 +336,30 @@ export function SiteHeader() {
   );
 }
 
+const CHAMBER_ID = "mni-membership-639275773218557417";
+
+function ChamberBadge() {
+  useEffect(() => {
+    const w = window as unknown as { MNI?: { Widgets: { Member: new (id: string, o: object) => { create: () => void } } } };
+    const init = () => {
+      const el = document.getElementById(CHAMBER_ID);
+      if (!el || el.childElementCount || !w.MNI) return;
+      new w.MNI.Widgets.Member(CHAMBER_ID, {
+        member: 17087,
+        styleTemplate:
+          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name{font-weight:700}#@id .mn-widget-member-logo{max-width:100%}",
+      }).create();
+    };
+    if (w.MNI) return init();
+    const s = document.createElement("script");
+    s.src = "https://parkerchamberorcommerce.chambermaster.com/Content/Script/Member.js";
+    s.async = true;
+    s.onload = init;
+    document.body.appendChild(s);
+  }, []);
+  return <div id={CHAMBER_ID} className="max-w-[200px] rounded-lg bg-background p-2 text-xs text-foreground empty:hidden" />;
+}
+
 export function SiteFooter() {
   return (
     <footer className="bg-secondary py-14 text-secondary-foreground">
@@ -398,16 +422,30 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col-reverse items-start justify-between gap-4 pt-6 sm:flex-row sm:items-center">
           <p className="text-xs text-secondary-foreground/55">© 2026 EZ Haulaway LLC. All rights reserved.</p>
-          <a href="https://locatefaith.com/business/ez-haulaway" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://locatefaith.com/brand/verified-badge-v2.svg"
-              alt="Verified Christian Business on LocateFaith"
-              width={240}
-              height={107}
-              loading="lazy"
-              className="h-20 w-auto"
-            />
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <ChamberBadge />
+            <a
+              href="https://redrightbuyer.com/members"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-20 items-center rounded-lg bg-background px-4 text-center font-display text-sm font-bold text-foreground"
+            >
+              Red Right Buyer
+              <br />
+              Member
+            </a>
+            <a href="https://locatefaith.com/business/ez-haulaway" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://locatefaith.com/brand/verified-badge-v2.svg"
+                alt="Verified Christian Business on LocateFaith"
+                width={240}
+                height={107}
+                loading="lazy"
+                className="h-20 w-auto"
+              />
+            </a>
+          </div>
+
         </div>
       </div>
     </footer>
