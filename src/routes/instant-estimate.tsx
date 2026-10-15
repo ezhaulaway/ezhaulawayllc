@@ -259,6 +259,13 @@ function InstantEstimatePage() {
             <Button asChild size="lg"><a href="#instant-estimate"><Sparkles /> Start My Free Estimate</a></Button>
             <Button asChild variant="outline" size="lg"><a href={`sms:${PHONE_TEL}`}><MessageSquareText /> Text {PHONE}</a></Button>
           </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Prefer to talk to someone first, or have a unique commercial project?{" "}
+            <Link to="/contact" className="font-semibold text-primary underline underline-offset-4">
+              Contact Ben and Zoe directly
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -268,7 +275,9 @@ function InstantEstimatePage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Questions before you upload?</p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Instant Estimate FAQs</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              Get the important details before using the tool, or go straight back to the estimator whenever you are ready.
+              Get the important details before using the tool, or go straight back to the estimator whenever you are
+              ready. Have questions about trailer sizes, payment, or what we can't take? Check out our full{" "}
+              <Link to="/faq" className="font-semibold text-primary underline underline-offset-4">junk removal FAQ</Link>.
             </p>
             <Button asChild variant="outline" className="mt-6"><a href="#instant-estimate">Use the Estimator <ArrowRight /></a></Button>
           </div>
