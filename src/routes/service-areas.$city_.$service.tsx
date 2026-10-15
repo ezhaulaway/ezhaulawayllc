@@ -14,7 +14,7 @@ import { locationPhoto } from "@/content/location-images";
 import { serviceBySlug, services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { SERVICE_BENEFIT, neighborhoodList } from "@/content/local-seo";
+import { SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
 /**
  * Hand-written local content for priority city+service pages.
@@ -533,7 +533,8 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     }
     const { location, service, custom } = loaderData;
     const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
-    const title = `${service.name} in ${location.city}, CO - ${SERVICE_BENEFIT[service.slug] ?? "Upfront Pricing"} | EZ Haulaway`;
+    const benefit = SERVICE_BENEFIT[service.slug] ?? "Upfront Pricing";
+    const title = fitTitle(`${service.name} in ${location.city}, CO - ${benefit} | EZ Haulaway`, `${service.name} in ${location.city}, CO - ${benefit}`, `${service.name} in ${location.city}, CO | EZ Haulaway`, `${service.name} in ${location.city}, CO`, `${service.name} ${location.city}, CO`);
     const description =
       custom?.description ??
       `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;

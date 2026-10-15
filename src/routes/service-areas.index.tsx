@@ -112,7 +112,7 @@ function ServiceAreasPage() {
                           Junk Removal {location.city}
                         </Link>
                       </li>
-                      {services.map((service) => (
+                      {services.filter((service) => service.cityPages !== false).map((service) => (
                         <li key={service.slug}>
                           <Link
                             to="/service-areas/$city/$service"
