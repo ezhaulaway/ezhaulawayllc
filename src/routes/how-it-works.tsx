@@ -1,7 +1,7 @@
 import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Camera, CalendarCheck, HandCoins, Sparkles, Truck, UserCheck } from "lucide-react";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, SITE_URL } from "@/content/site";
@@ -159,7 +159,16 @@ function HowItWorksPage() {
             title="Before You Book"
             text="Anything else you're wondering about? Call or text and ask."
           />
-          <FaqAccordion faqs={faqs} />
+          <div>
+            <FaqAccordion faqs={faqs} />
+            <p className="mt-6 leading-8 text-muted-foreground">
+              Looking for answers on what we can or can't haul, payment options, or trailer capacity? Browse our{" "}
+              <Link to="/faq" className="font-semibold text-primary underline underline-offset-4">
+                complete junk removal FAQ
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </section>
 

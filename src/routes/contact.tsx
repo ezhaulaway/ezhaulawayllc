@@ -1,7 +1,7 @@
 import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
@@ -92,6 +92,13 @@ function ContactPage() {
               time, confirms the price before loading anything, and handles every bit of the lifting, hauling, and
               cleanup. Most jobs across Parker and the Denver metro area are finished in a single visit — and most
               customers tell us afterward they wish they'd called months earlier.
+            </p>
+            <p>
+              Need an immediate ballpark before sending details? You can use our{" "}
+              <Link to="/instant-estimate" className="font-semibold text-primary underline underline-offset-4">
+                online instant junk removal estimate tool
+              </Link>{" "}
+              to calculate pricing by trailer space in about a minute.
             </p>
           </div>
         </div>
