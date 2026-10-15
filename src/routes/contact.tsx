@@ -1,3 +1,4 @@
+import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
@@ -97,6 +98,11 @@ function ContactPage() {
       </section>
 
       <ProseSection {...pageExtras["contact"]} />
+      <NextSteps steps={[
+        { kind: "page", to: "/instant-estimate", label: "Instant Estimate", text: "Prefer not to wait? Get a price range in about a minute." },
+        { kind: "page", to: "/pricing", label: "Our Pricing", text: "See how we price by trailer space and labor." },
+        { kind: "page", to: "/about", label: "Meet the Crew", text: "Learn who shows up at your door." },
+      ]} />
       <CtaBand />
     </PageShell>
   );

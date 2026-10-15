@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { ArrowLeft } from "lucide-react";
 import { PageShell, CtaBand } from "@/components/site-chrome";
 import { SITE_URL } from "@/content/site";
+import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { getBlogPost } from "@/lib/blog.functions";
 
 type Json = unknown;
@@ -93,6 +94,7 @@ function BlogPost() {
         </Link>
         <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: p.content_html ?? "" }} />
       </article>
+      <NextSteps title="Related Services" steps={blogNextSteps(`${p.title} ${p.meta_description ?? ""}`)} />
       <CtaBand />
     </PageShell>
   );
