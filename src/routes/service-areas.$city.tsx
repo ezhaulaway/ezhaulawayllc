@@ -247,18 +247,24 @@ function CityPage() {
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {top.map((service) => (
-                <Link
+                <article
                   key={service.slug}
-                  to="/service-areas/$city/$service"
-                  params={{ city: location.slug, service: service.slug }}
-                  className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+                  className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
                 >
-                  <h3 className="font-display text-lg font-bold">{service.name}</h3>
+                  <h3 className="font-display text-lg font-bold">
+                    <Link
+                      to="/service-areas/$city/$service"
+                      params={{ city: location.slug, service: service.slug }}
+                      className="after:absolute after:inset-0 after:content-['']"
+                    >
+                      {service.name} in {location.city}, CO
+                    </Link>
+                  </h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                  <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
                     Learn more <ArrowRight className="size-4" />
                   </span>
-                </Link>
+                </article>
               ))}
             </div>
             <Link
@@ -296,20 +302,24 @@ function CityPage() {
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {specialty.map((service) => (
-              <Link
+              <article
                 key={service.slug}
-                to="/service-areas/$city/$service"
-                params={{ city: location.slug, service: service.slug }}
-                className="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+                className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
               >
                 <h3 className="font-display text-lg font-bold">
-                  {service.name} in {location.city}, CO
+                  <Link
+                    to="/service-areas/$city/$service"
+                    params={{ city: location.slug, service: service.slug }}
+                    className="after:absolute after:inset-0 after:content-['']"
+                  >
+                    {service.name} in {location.city}, CO
+                  </Link>
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
                   See {location.city} pricing and details <ArrowRight className="size-4" />
                 </span>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
