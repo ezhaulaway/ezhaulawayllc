@@ -1,3 +1,4 @@
+import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
@@ -172,6 +173,11 @@ function AboutPage() {
       </section>
 
       <ProseSection {...pageExtras["about"]} />
+      <NextSteps steps={[
+        { kind: "page", to: "/how-it-works", label: "How It Works", text: "Our six-step hauling process, from photos to a swept floor." },
+        { kind: "page", to: "/pricing", label: "Our Pricing", text: "Straight trailer-space pricing with no surprise fees." },
+        { kind: "page", to: "/service-areas", label: "Service Areas", text: "Parker, Castle Rock, Denver, and the surrounding metro." },
+      ]} />
       <CtaBand />
     </PageShell>
   );

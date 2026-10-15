@@ -1,3 +1,4 @@
+import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
@@ -187,6 +188,11 @@ function HowItWorksPage() {
       </section>
 
       <ProseSection {...pageExtras["how-it-works"]} />
+      <NextSteps steps={[
+        { kind: "page", to: "/pricing", label: "See Pricing", text: "How trailer space and labor turn into your quote." },
+        { kind: "page", to: "/what-we-take", label: "What We Take", text: "Furniture, appliances, debris, and the items we can't haul." },
+        { kind: "page", to: "/instant-estimate", label: "Instant Estimate", text: "Describe your junk and get a price range in about a minute." },
+      ]} />
       <CtaBand />
     </PageShell>
   );

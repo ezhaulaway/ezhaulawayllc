@@ -1,3 +1,4 @@
+import { NextSteps } from "@/components/next-steps";
 import { ProseSection, rich } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
@@ -246,6 +247,11 @@ function PricingPage() {
       </section>
 
       <ProseSection {...pageExtras["pricing"]} />
+      <NextSteps steps={[
+        { kind: "service", slug: "dumpster-rental-alternative", label: "Junk Removal vs. Dumpster", text: "Compare a dumpster rental with a crew that does the loading." },
+        { kind: "page", to: "/how-it-works", label: "How It Works", text: "What happens from your first text to the final sweep." },
+        { kind: "page", to: "/what-we-take", label: "What We Take", text: "Check your items before you book." },
+      ]} />
       <CtaBand title="Get a Free Quote on Your Job" text="Photos, a phone call, or a quick text — whatever's easiest for you." />
     </PageShell>
   );
