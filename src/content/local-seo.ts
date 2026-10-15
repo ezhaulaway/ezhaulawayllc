@@ -60,5 +60,5 @@ export const PRIORITY_CITY_SERVICES: Array<[string, string]> = [
 
 /** Pick the longest title variant that fits Google's ~60-character display. */
 export function fitTitle(...variants: string[]): string {
-  return variants.find((v) => v.length <= 60) ?? variants[variants.length - 1];
+  return variants.find((v) => v.length <= 60) ?? variants[variants.length - 1] ?? "";
 }
