@@ -170,7 +170,11 @@ function FaqPage() {
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
           <h2 className="font-display text-2xl font-extrabold sm:text-3xl">Still have a question?</h2>
           <p className="mt-4 leading-8 text-muted-foreground">
-            Call or text and you'll talk to Ben directly. You can also see full pricing or find your town.
+            Call or text and you'll talk to Ben directly. You can also see our{" "}
+            <Link to="/how-it-works" className="font-semibold text-primary underline underline-offset-4">
+              step-by-step junk removal process
+            </Link>{" "}
+            to see how pickup day works from arrival to clean sweep, or browse full pricing and find your town.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">
