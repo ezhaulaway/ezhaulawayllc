@@ -13,6 +13,7 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
+import { CITY_BENEFIT, neighborhoodList } from "@/content/local-seo";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: ({ params }) => {
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/service-areas/$city")({
       return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
     const { location } = loaderData;
-    const pageTitle = location.metaTitle ?? `Junk Removal ${location.city} CO | EZ Haulaway`;
+    const pageTitle = `Junk Removal in ${location.city}, CO - ${CITY_BENEFIT} | EZ Haulaway`;
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
@@ -144,10 +145,15 @@ function CityPage() {
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
-              {location.h1 ?? `Junk Removal ${location.city}`}
+              {`Junk Removal in ${location.city}, CO`}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{rich(location.intro)}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
+            {neighborhoodList(location.slug) && (
+              <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">
+                We haul from homes and businesses across {location.city}, including {neighborhoodList(location.slug)}.
+              </p>
+            )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               {pushInstantEstimate && (
                 <Button asChild size="lg">

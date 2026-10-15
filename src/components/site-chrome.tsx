@@ -426,8 +426,12 @@ export function SiteFooter() {
               <Link to="/faq" className="hover:text-secondary-foreground">FAQ</Link>
               <Link to="/privacy-policy" className="hover:text-secondary-foreground">Privacy Policy</Link>
             </nav>
-            <p className="mt-6 text-sm text-secondary-foreground/70">Parker, Colorado</p>
-            <p className="text-sm text-secondary-foreground/70">Denver metro service area</p>
+            <address className="mt-6 not-italic text-sm leading-6 text-secondary-foreground/70">
+              <span className="block font-bold text-secondary-foreground">EZ Haulaway LLC</span>
+              <span className="block">Parker, CO 80134</span>
+              <a href={`tel:${PHONE_TEL}`} className="block hover:text-secondary-foreground">(720) 614-7223</a>
+              <span className="block">Serving Douglas County &amp; the Denver metro</span>
+            </address>
           </div>
         </div>
         <div className="flex flex-col-reverse items-start justify-between gap-4 pt-6 sm:flex-row sm:items-center">

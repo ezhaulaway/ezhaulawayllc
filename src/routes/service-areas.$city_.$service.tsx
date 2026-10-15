@@ -14,6 +14,7 @@ import { locationPhoto } from "@/content/location-images";
 import { serviceBySlug, services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
+import { SERVICE_BENEFIT, neighborhoodList } from "@/content/local-seo";
 
 /**
  * Hand-written local content for priority city+service pages.
@@ -532,7 +533,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     }
     const { location, service, custom } = loaderData;
     const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
-    const title = custom?.title ?? `${service.name} ${location.city} CO | EZ Haulaway`;
+    const title = `${service.name} in ${location.city}, CO - ${SERVICE_BENEFIT[service.slug] ?? "Upfront Pricing"} | EZ Haulaway`;
     const description =
       custom?.description ??
       `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
@@ -634,10 +635,15 @@ function CityServicePage() {
               <MapPin className="size-4" />
               <span className="text-xs font-bold uppercase tracking-[0.16em]">{city}, CO · {location.county}</span>
             </div>
-            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{custom?.h1 ?? `${name} ${city}`}</h1>
+            <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{`${name} in ${city}, CO`}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
               Need {lower} in {city}? {service.summary}
             </p>
+            {neighborhoodList(location.slug) && (
+              <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">
+                Our Parker-based crew handles {lower} across {city}, including {neighborhoodList(location.slug)}.
+              </p>
+            )}
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
             <div className="mt-8">
               <Button asChild size="lg" variant="outline">
