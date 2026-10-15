@@ -7,6 +7,8 @@ import { GoogleReviewsGrid } from "@/components/google-reviews";
 import { AiEstimator } from "@/components/ai-estimator";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import { locations } from "@/content/locations";
+import { services as serviceData } from "@/content/services";
+import { PRIORITY_CITIES, PRIORITY_CITY_SERVICES } from "@/content/local-seo";
 import type { LucideIcon } from "lucide-react";
 import {
   Armchair,
@@ -76,13 +78,13 @@ const navItems = [
   ["Service Areas", "#service-area"],
 ] as const;
 
-const services: Array<{ title: string; text: string; icon: LucideIcon; image: string; imageAlt: string; position: string }> = [
-  { title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
-  { title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
-  { title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageSrc, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
-  { title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
-  { title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
-  { title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
+const services: Array<{ slug: string; title: string; text: string; icon: LucideIcon; image: string; imageAlt: string; position: string }> = [
+  { slug: "furniture-removal", title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
+  { slug: "appliance-removal", title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
+  { slug: "garage-cleanouts", title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageSrc, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
+  { slug: "house-and-estate-cleanouts", title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
+  { slug: "construction-debris-removal", title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
+  { slug: "hot-tub-removal", title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
 ];
 
 const extraServices: Array<{ label: string; slug?: string }> = [
@@ -310,8 +312,8 @@ export function HomePage() {
               <QuoteButton className="w-fit" label="Ask About Your Job" />
             </div>
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ title, text, icon: Icon, image, imageAlt, position }) => (
-                <article key={title} className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7 sm:min-h-72">
+              {services.map(({ slug, title, text, icon: Icon, image, imageAlt, position }) => (
+                <Link to="/services/$slug" params={{ slug }} key={title} className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7 sm:min-h-72">
                   <img
                     src={image}
                     alt={imageAlt}
@@ -326,7 +328,7 @@ export function HomePage() {
                   <div className="grid size-11 place-items-center rounded-md bg-white/15 text-white ring-1 ring-white/25 backdrop-blur-sm"><Icon className="size-5" /></div>
                   <h3 className="mt-6 text-xl font-bold text-white">{title}</h3>
                   <p className="mt-2 leading-6 text-white/85">{text}</p>
-                </article>
+                </Link>
               ))}
             </div>
             {showAllServices ? (
@@ -481,6 +483,30 @@ export function HomePage() {
               <Link to="/service-areas" className="mt-6 inline-block text-sm font-bold text-primary">
                 View all service areas
               </Link>
+              <p className="mt-8 font-display font-bold text-foreground">Popular local pages</p>
+              <ul className="mt-4 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+                {PRIORITY_CITIES.map((slug) => {
+                  const loc = locations.find((l) => l.slug === slug);
+                  return loc ? (
+                    <li key={slug}>
+                      <Link to="/service-areas/$city" params={{ city: slug }} className="font-semibold text-muted-foreground hover:text-foreground">
+                        Junk Removal in {loc.city}, CO
+                      </Link>
+                    </li>
+                  ) : null;
+                })}
+                {PRIORITY_CITY_SERVICES.map(([city, service]) => {
+                  const loc = locations.find((l) => l.slug === city);
+                  const svc = serviceData.find((x) => x.slug === service);
+                  return loc && svc ? (
+                    <li key={`${city}/${service}`}>
+                      <Link to="/service-areas/$city/$service" params={{ city, service }} className="text-muted-foreground hover:text-foreground">
+                        {svc.name} in {loc.city}, CO
+                      </Link>
+                    </li>
+                  ) : null;
+                })}
+              </ul>
             </div>
           </div>
         </section>
