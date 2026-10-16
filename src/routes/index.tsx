@@ -3,15 +3,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
+import heroJob640 from "@/assets/hero-job-640.webp";
+import heroJob800 from "@/assets/hero-job-800.webp";
+import heroJob1200 from "@/assets/hero-job-1200.webp";
 
 const BASELINE_RATING = { rating: 5, count: 5 };
 
 export const Route = createFileRoute("/")({
   loader: async () => {
+    // Short cap so the first page response is never held up by the reviews lookup.
     try {
       const data = await Promise.race([
         getGoogleReviews(),
-        new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
+        new Promise<null>((resolve) => setTimeout(() => resolve(null), 250)),
       ]);
       if (data?.rating && data.totalCount) return { rating: data.rating, count: data.totalCount };
     } catch {
@@ -40,6 +44,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroJob1200,
+        imageSrcSet: `${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`,
+        imageSizes: "(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)",
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {

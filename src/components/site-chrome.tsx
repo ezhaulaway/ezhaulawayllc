@@ -356,11 +356,19 @@ function ChamberBadge() {
       });
     };
     if (w.MNI) return init();
-    const s = document.createElement("script");
-    s.src = "https://parkerchamberorcommerce.chambermaster.com/Content/Script/Member.js";
-    s.async = true;
-    s.onload = init;
-    document.body.appendChild(s);
+    const el = document.getElementById(CHAMBER_ID);
+    if (!el) return;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      const s = document.createElement("script");
+      s.src = "https://parkerchamberorcommerce.chambermaster.com/Content/Script/Member.js";
+      s.async = true;
+      s.onload = init;
+      document.body.appendChild(s);
+    }, { rootMargin: "400px" });
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
   return <div id={CHAMBER_ID} className="flex h-20 w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground [&_.mn-widget-member-name]:hidden [&_.mn-widget-member-text]:hidden [&_img]:size-11 [&_img]:object-contain" />;
 }
