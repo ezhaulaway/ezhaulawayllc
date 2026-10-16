@@ -30,12 +30,19 @@ export function initAnalytics() {
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId ?? ADS_TAG_ID}`;
     document.head.appendChild(script);
   };
-  const idle = () =>
-    "requestIdleCallback" in window
-      ? (window as Window & { requestIdleCallback: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback(load, { timeout: 4000 })
-      : setTimeout(load, 2000);
-  if (document.readyState === "complete") idle();
-  else window.addEventListener("load", idle, { once: true });
+  // Wait for the first interaction (or 8s of idle) so tags never compete with first paint.
+  let done = false;
+  const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+  const fire = () => {
+    if (done) return;
+    done = true;
+    events.forEach((e) => window.removeEventListener(e, fire));
+    load();
+  };
+  events.forEach((e) => window.addEventListener(e, fire, { once: true, passive: true }));
+  const start = () => setTimeout(fire, 8000);
+  if (document.readyState === "complete") start();
+  else window.addEventListener("load", start, { once: true });
 
   window.dataLayer = window.dataLayer || [];
   // Use the canonical gtag signature: push the `arguments` object, not a rest
