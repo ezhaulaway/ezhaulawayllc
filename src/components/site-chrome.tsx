@@ -348,8 +348,12 @@ function ChamberBadge() {
       new w.MNI.Widgets.Member(CHAMBER_ID, {
         member: 17087,
         styleTemplate:
-          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name,#@id .mn-widget-member-text{display:none!important}#@id .mn-widget-member-logo{max-width:100%;max-height:44px;width:auto;margin:0 auto}#@id img{max-height:44px;width:auto}",
+          "#@id{text-align:center;position:relative}#@id .mn-widget-member-name,#@id .mn-widget-member-text{display:none!important}#@id .mn-widget-member-logo{width:44px;height:44px;aspect-ratio:1/1;object-fit:contain;margin:0 auto}#@id img{width:44px;height:44px;aspect-ratio:1/1;object-fit:contain}",
       }).create();
+      el.querySelectorAll("img").forEach((img) => {
+        img.setAttribute("width", "200");
+        img.setAttribute("height", "200");
+      });
     };
     if (w.MNI) return init();
     const s = document.createElement("script");
@@ -358,7 +362,7 @@ function ChamberBadge() {
     s.onload = init;
     document.body.appendChild(s);
   }, []);
-  return <div id={CHAMBER_ID} className="flex h-20 max-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground empty:hidden [&_.mn-widget-member-name]:hidden [&_.mn-widget-member-text]:hidden [&_img]:max-h-11 [&_img]:w-auto" />;
+  return <div id={CHAMBER_ID} className="flex h-20 w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-lg bg-background px-3 py-1 text-xs text-foreground [&_.mn-widget-member-name]:hidden [&_.mn-widget-member-text]:hidden [&_img]:size-11 [&_img]:object-contain" />;
 }
 
 export function SiteFooter() {
