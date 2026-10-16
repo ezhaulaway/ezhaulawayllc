@@ -44,6 +44,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroJob1200,
+        imageSrcSet: `${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`,
+        imageSizes: "(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)",
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {
