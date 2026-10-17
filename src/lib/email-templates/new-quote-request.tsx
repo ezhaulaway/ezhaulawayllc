@@ -18,10 +18,11 @@ interface Props {
   location?: string
   details?: string
   photoCount?: number
+  photoUrls?: string[]
   submittedAt?: string
 }
 
-const Email = ({ name, phone, location, details, photoCount, submittedAt }: Props) => (
+const Email = ({ name, phone, location, details, photoCount, photoUrls, submittedAt }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
     <Preview>{`New quote request from ${name || 'a customer'}`}</Preview>
@@ -42,6 +43,14 @@ const Email = ({ name, phone, location, details, photoCount, submittedAt }: Prop
           <Text style={value}>{details || '—'}</Text>
           <Text style={label}>Photos attached to the request</Text>
           <Text style={value}>{photoCount ? `${photoCount} photo(s)` : 'None'}</Text>
+          {(photoUrls ?? []).map((url, i) => (
+            <Text key={url} style={value}>
+              <Link href={url} style={link}>{`View photo ${i + 1}`}</Link>
+            </Text>
+          ))}
+          {photoUrls && photoUrls.length > 0 ? (
+            <Text style={muted}>Photo links work for 14 days.</Text>
+          ) : null}
         </Section>
         <Hr style={hr} />
         <Text style={muted}>
