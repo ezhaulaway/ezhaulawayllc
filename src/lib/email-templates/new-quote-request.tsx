@@ -5,6 +5,7 @@ import {
   Head,
   Heading,
   Hr,
+  Link,
   Html,
   Preview,
   Section,
@@ -97,3 +98,4 @@ const label = {
   margin: '12px 0 2px',
 }
 const value = { fontSize: '15px', color: '#111111', margin: '0', lineHeight: '22px' }
+const link = { color: '#b91c1c', textDecoration: 'underline' }
