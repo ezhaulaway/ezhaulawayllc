@@ -67,6 +67,20 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
 
     // Notify the office. A failed alert must never fail the customer's request.
     try {
+      let photoUrls: string[] = [];
+      if (data.photoPaths.length > 0) {
+        try {
+          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+          const { data: signed } = await supabaseAdmin.storage
+            .from("quote-photos")
+            .createSignedUrls(data.photoPaths, 60 * 60 * 24 * 14);
+          photoUrls = (signed ?? [])
+            .map((s) => s.signedUrl)
+            .filter((u): u is string => Boolean(u));
+        } catch (signErr) {
+          console.error("quote photo signing failed", signErr);
+        }
+      }
       const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
       await sendTemplateEmail("new-quote-request", "", {
         templateData: {
@@ -75,6 +89,7 @@ export const submitQuoteRequest = createServerFn({ method: "POST" })
           location: data.location,
           details: data.details,
           photoCount: data.photoPaths.length,
+          photoUrls,
           submittedAt: new Date().toLocaleString("en-US", {
             timeZone: "America/Denver",
             dateStyle: "medium",
