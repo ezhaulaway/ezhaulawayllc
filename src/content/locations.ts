@@ -33,7 +33,7 @@ const raw_locations: Location[] = [
     intro:
       "Parker is home base. EZ Haulaway is a family-owned **junk removal Parker** crew serving all of **Douglas County**, so every job here is in our own neighborhood.",
     local:
-      "Between newer subdivisions still filling in and established neighborhoods finally replacing that twenty-year-old deck, Parker keeps us busy with everything from single mattress pickups to full garage cleanouts.",
+      "Planning a pickup near downtown Parker landmarks such as O’Brien Park, the PACE Center or the historic 20 Mile House? Share your street address, photos of what needs to go, and any stairs or driveway access details so we can review the job and confirm scheduling. A landmark helps describe the area, but your exact address lets us plan the pickup.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
     content: [
