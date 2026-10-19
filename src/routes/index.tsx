@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
         as: "image",
         href: heroJob1200,
         imageSrcSet: `${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`,
-        imageSizes: "(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)",
+        imageSizes: "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)",
         fetchPriority: "high",
       },
     ],

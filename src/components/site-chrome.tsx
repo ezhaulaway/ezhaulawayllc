@@ -1,11 +1,10 @@
-import { type ReactNode, useEffect } from "react";
+import { type ReactNode, lazy, Suspense, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import stackedSrc from "@/assets/ez-haulaway-stacked-sm.webp";
 import truckAsset from "@/assets/real-IMG_5096.jpg.asset.json";
 import rrbAsset from "@/assets/red-right-buyer.png.asset.json";
-import { QuoteForm } from "@/components/quote-form";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -42,8 +41,13 @@ import {
 } from "@/components/ui/sheet";
 import { PHONE, PHONE_TEL } from "@/content/site";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { services } from "@/content/services";
-import { locations } from "@/content/locations";
+import { services, locations } from "@/content/navigation";
+
+const QuoteForm = lazy(() => import("@/components/quote-form").then((module) => ({ default: module.QuoteForm })));
+
+function QuoteFormPlaceholder() {
+  return <div className="min-h-72" role="status" aria-live="polite">Loading quote form…</div>;
+}
 
 export const navItems = [
   { label: "Instant Estimate", to: "/instant-estimate" },
@@ -168,7 +172,7 @@ export function QuoteButton({
             </div>
           </div>
         </DialogHeader>
-        <QuoteForm />
+        <Suspense fallback={<QuoteFormPlaceholder />}><QuoteForm /></Suspense>
       </DialogContent>
     </Dialog>
   );
@@ -183,7 +187,7 @@ export function InlineQuoteForm() {
           <p className="text-sm text-muted-foreground">Tell us what needs to go. It only takes a minute.</p>
         </div>
       </div>
-      <QuoteForm />
+      <Suspense fallback={<QuoteFormPlaceholder />}><QuoteForm /></Suspense>
     </div>
   );
 }

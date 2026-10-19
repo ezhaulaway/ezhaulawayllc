@@ -9,13 +9,15 @@ import {
   PageShell,
   SectionHeader,
 } from "@/components/site-chrome";
-import { serviceBySlug, services } from "@/content/services";
+import { services } from "@/content/services";
 import { locations, priorityLocations } from "@/content/locations";
+import { locations as navigationLocations } from "@/content/navigation";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
 
 export const Route = createFileRoute("/services/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
+    const { serviceBySlug } = await import("@/content/services");
     const service = serviceBySlug(params.slug);
     if (!service) throw notFound();
     return { service };
@@ -46,7 +48,7 @@ export const Route = createFileRoute("/services/$slug")({
             serviceType: service.name,
             description: service.metaDescription,
             url: `${SITE_URL}/services/${params.slug}`,
-            areaServed: locations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
+            areaServed: navigationLocations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
             provider: BUSINESS_SCHEMA,
           }),
         },

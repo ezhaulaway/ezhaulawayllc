@@ -95,6 +95,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
+        media: "print",
+        id: "site-fonts",
         href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap",
       },
       { rel: "icon", href: "/favicon.ico?v=3", sizes: "48x48" },
@@ -121,6 +123,9 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <HeadContent />
+        <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" />
+        </noscript>
       </head>
       <body>
         {children}
@@ -137,6 +142,8 @@ function RootComponent() {
   const router = useRouter();
 
   useEffect(() => {
+    const fonts = document.getElementById("site-fonts");
+    if (fonts instanceof HTMLLinkElement) fonts.media = "all";
     initAnalytics();
     const unsubscribe = router.subscribe("onResolved", ({ toLocation }) => {
       trackPageView(toLocation.pathname + toLocation.searchStr);
