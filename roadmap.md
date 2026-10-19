@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Apply mobile speed improvements: defer estimate/quote code, slim navigation data, prioritize the right homepage photo; verify unchanged controls
+- [x] Apply mobile speed improvements: defer estimate/quote code, slim navigation and route content downloads, load fonts without blocking text, prioritize the homepage photo; verify unchanged controls
+- [ ] Measure published mobile PageSpeed against the 90+ target — waiting for publication
 
 - [x] Add homepage FAQ structured data matching the visible answers and helpful, verified Parker landmark cues
 
