@@ -1,5 +1,6 @@
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
+import { homeFaqs } from "@/content/home-faqs";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
@@ -110,49 +111,6 @@ const reasons: Array<{ icon: LucideIcon; title: string; text: string }> = [
   { icon: ShieldCheck, title: "Respect for Your Property", text: "Careful removal and cleanup after the hauling is done." },
   { icon: Users, title: "Local & Family Owned", text: "Work with a real local business that cares about its reputation." },
 ];
-
-const faqs = [
-  [
-    "Do I have to move my junk to the curb?",
-    "No. Our crew carries items out of basements, bedrooms, garages, and backyards. Just show us what goes.",
-  ],
-  [
-    "How fast can you pick up junk in Parker?",
-    "We're based in Parker, so same-day or next-day pickup is often possible. Call or text and we'll give you the soonest time.",
-  ],
-  [
-    "Where does my junk go?",
-    "We sort every load. Usable furniture goes to donation, metal and appliances get recycled, and only the rest goes to the landfill.",
-  ],
-  [
-    "What can't you take?",
-    "We can't haul hazardous items like wet paint, chemicals, fuel, asbestos, or medical waste. Not sure? Text us a photo.",
-  ],
-  [
-    "What types of junk do you remove?",
-    "We handle furniture, appliances, household junk, yard and construction debris, storage unit and property cleanouts, mattresses, electronics, hot tubs, and select light demolition projects.",
-  ],
-  [
-    "How do I get a quote?",
-    "Use the short quote form to share your contact information and tell us what needs to go. You can also call or text us directly.",
-  ],
-  [
-    "Can I text photos?",
-    `Yes. Text photos and job details to ${PHONE} so we can better understand what you need removed.`,
-  ],
-  [
-    "Do you handle the lifting?",
-    "Yes. Our crew handles the lifting, loading, hauling, and cleanup so you do not have to.",
-  ],
-  [
-    "Do you offer larger property cleanouts?",
-    "Yes. Tell us about the size and scope of your cleanout, and we can review the job with you.",
-  ],
-  [
-    "What areas do you serve?",
-    "EZ Haulaway is based in Parker, Colorado and serves customers throughout the Denver metro area.",
-  ],
-] as const;
 
 function Wordmark() {
   return (
@@ -515,7 +473,7 @@ export function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
             <SectionHeader eyebrow="Common questions" title="Good to Know Before We Go" text="Need an answer about your specific job? Call or text and we’ll talk it through." />
             <Accordion type="single" collapsible className="border-t border-border">
-              {faqs.map(([question, answer], index) => (
+              {homeFaqs.map(([question, answer], index) => (
                 <AccordionItem key={question} value={`faq-${index}`}>
                   <AccordionTrigger className="py-5 text-base font-bold hover:no-underline">{question}</AccordionTrigger>
                   <AccordionContent className="max-w-2xl pr-8 text-base leading-7 text-muted-foreground">{answer}</AccordionContent>
