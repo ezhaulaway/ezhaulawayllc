@@ -16,3 +16,4 @@
 - City content sections may declare contextual service links in location data; the shared city renderer uses typed local city-service routes so each topic links to its own city page without duplicating page templates.
 - Service content may opt out of city pages with `cityPages: false`; local directories and navigation then link to its global service page, avoiding thin duplicated city routes.
 - Service sections may declare contextual service links in content data; the shared service renderer renders these with typed routes to keep editorial links reusable.
+- Homepage FAQ answers live in shared content consumed by both the accordion and route structured data so the visible answers and search metadata cannot drift.
