@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add homepage FAQ structured data matching the visible answers and helpful, verified Parker landmark cues
+- [x] Add homepage FAQ structured data matching the visible answers and helpful, verified Parker landmark cues
 
 - [x] Build Wood Pallet Removal with scrap wood content and internal links; verify the page and links
 
