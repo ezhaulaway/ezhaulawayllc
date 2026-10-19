@@ -443,6 +443,7 @@ export function SiteFooter() {
               <span className="block font-bold text-secondary-foreground">EZ Haulaway LLC</span>
               <span className="block">Parker, CO 80134</span>
               <a href={`tel:${PHONE_TEL}`} className="block hover:text-secondary-foreground">(720) 614-7223</a>
+              <span className="block">Mon–Sat 7:00 AM – 7:00 PM · Sun Closed</span>
               <span className="block">Serving Douglas County &amp; the Denver metro</span>
             </address>
           </div>
