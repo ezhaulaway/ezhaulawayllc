@@ -20,7 +20,12 @@ export const Route = createFileRoute("/service-areas/$city")({
     const { locationBySlug } = await import("@/content/locations");
     const location = locationBySlug(params.city);
     if (!location) throw notFound();
-    return { location };
+    const { services } = await import("@/content/services");
+    const specialtyServices = SPECIALTY_SERVICE_SLUGS.map((slug) => ({
+      slug,
+      name: services.find((service) => service.slug === slug)?.name ?? slug,
+    }));
+    return { location, specialtyServices };
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
@@ -62,7 +67,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             image: photoUrl ?? BUSINESS_SCHEMA.image,
             areaServed: { "@type": "City", name: `${location.city}, CO` },
             makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
-              const service = location.specialtyServices.find((item) => item.slug === slug);
+              const service = loaderData.specialtyServices.find((item) => item.slug === slug);
               return {
                 "@type": "Offer",
                 itemOffered: {
