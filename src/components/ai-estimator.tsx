@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Camera, Loader2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AiEstimatorIntro } from "@/components/ai-estimator-intro";
 import { generateAiEstimate, submitEstimateLead, type AiEstimate } from "@/lib/ai-estimate.functions";
 
 const LOAD_LABEL: Record<AiEstimate["load_size"], string> = {
@@ -185,23 +186,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
   return (
     <section id="instant-estimate" className={campaign ? "py-4 sm:py-6" : "py-16 sm:py-24"}>
       <div className={campaign ? "mx-auto max-w-6xl" : "mx-auto max-w-5xl px-5 lg:px-8"}>
-        {showIntro && <div className="mx-auto max-w-3xl text-center">
-          <p
-            aria-hidden="true"
-            className="font-display text-7xl font-black uppercase italic leading-none tracking-tight text-primary ez-outline sm:text-8xl"
-          >
-            Too EZ.
-          </p>
-          <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-primary">
-            100% Free · Instant Junk Removal Estimator
-          </p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
-            Get Your Free Junk Removal Price in 30 Seconds
-          </h2>
-          <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            Snap a photo or describe what needs to go — get an instant price range right on your screen.
-          </p>
-        </div>}
+        {showIntro && <AiEstimatorIntro />}
 
         <div className={`${showIntro ? "mt-10" : ""} grid gap-5 lg:grid-cols-2`}>
           <form onSubmit={submit} className={`rounded-lg border border-border bg-card shadow-sm ${campaign ? "p-5 sm:p-6" : "p-6"}`}>

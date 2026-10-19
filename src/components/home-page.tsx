@@ -5,10 +5,9 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
 import { GoogleReviewsGrid } from "@/components/google-reviews";
-import { AiEstimator } from "@/components/ai-estimator";
+import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
 import { usePriceGuide } from "@/hooks/use-price-guide";
-import { locations } from "@/content/locations";
-import { services as serviceData } from "@/content/services";
+import { locations, services as serviceData } from "@/content/navigation";
 import { PRIORITY_CITIES, PRIORITY_CITY_SERVICES } from "@/content/local-seo";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -185,7 +184,7 @@ export function HomePage() {
               <img
                 src={heroJob1200}
                 srcSet={`${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`}
-                sizes="(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 32px)"
+                sizes="(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)"
                 width={1200}
                 height={800}
                 alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
@@ -201,7 +200,7 @@ export function HomePage() {
         </section>
 
         <div id="instant-estimate" className="border-b border-border bg-background">
-          <AiEstimator />
+          <DeferredAiEstimator />
         </div>
 
         <section aria-label="Why customers choose EZ Haulaway" className="border-b border-border bg-muted">

@@ -17,3 +17,5 @@
 - Service content may opt out of city pages with `cityPages: false`; local directories and navigation then link to its global service page, avoiding thin duplicated city routes.
 - Service sections may declare contextual service links in content data; the shared service renderer renders these with typed routes to keep editorial links reusable.
 - Homepage FAQ answers live in shared content consumed by both the accordion and route structured data so the visible answers and search metadata cannot drift.
+- Header, footer, and homepage link directories use lightweight navigation identities rather than full service/city content; keep identities and ordering aligned so detailed page copy stays outside their initial download.
+- The homepage loads the shared estimator near its section, and shared quote forms load on demand; preserve the estimator intro in initial HTML so content remains visible without downloading form logic immediately.
