@@ -20,4 +20,5 @@
 - Header, footer, and homepage link directories use lightweight navigation identities rather than full service/city content; keep identities and ordering aligned so detailed page copy stays outside their initial download.
 - The homepage loads the shared estimator near its section, and shared quote forms load on demand; preserve the estimator intro in initial HTML so content remains visible without downloading form logic immediately.
 - Dynamic city/service route loaders import detailed content on demand, including custom city-service copy, so unrelated routes do not pull those datasets into the homepage's critical download.
-- Shared web fonts load as non-render-blocking stylesheets activated after hydration, with system fallbacks and a no-JavaScript stylesheet, so text can paint without waiting on font servers.
+- Shared web fonts are self-hosted Latin variable fonts declared in global CSS with font-display: swap and system fallbacks, avoiding external font connections and hydration-dependent activation.
+- Responsive header logos use one picture element with low fetch priority, so hidden logo variants are not downloaded alongside the homepage photo.

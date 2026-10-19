@@ -126,21 +126,18 @@ function AreasDropdown() {
 export function Wordmark() {
   return (
     <Link to="/" className="group inline-flex shrink-0 items-center" aria-label="EZ Haulaway home">
-      <img
-        src={stackedSrc}
-        alt="EZ Haulaway"
-        className="logo-outline h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:hidden"
-        width={240}
-        height={117}
-      />
-
-      <img
-        src={wordmarkSrc}
-        alt="EZ Haulaway"
-        className="logo-outline hidden h-12 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:block md:h-14"
-        width={480}
-        height={116}
-      />
+      <picture>
+        <source media="(max-width: 639px)" srcSet={stackedSrc} width={240} height={117} />
+        <img
+          src={wordmarkSrc}
+          alt="EZ Haulaway"
+          className="logo-outline h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:h-12 md:h-14"
+          width={480}
+          height={116}
+          decoding="async"
+          fetchPriority="low"
+        />
+      </picture>
     </Link>
   );
 }
