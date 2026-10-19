@@ -19,3 +19,5 @@
 - Homepage FAQ answers live in shared content consumed by both the accordion and route structured data so the visible answers and search metadata cannot drift.
 - Header, footer, and homepage link directories use lightweight navigation identities rather than full service/city content; keep identities and ordering aligned so detailed page copy stays outside their initial download.
 - The homepage loads the shared estimator near its section, and shared quote forms load on demand; preserve the estimator intro in initial HTML so content remains visible without downloading form logic immediately.
+- Dynamic city/service route loaders import detailed content on demand, including custom city-service copy, so unrelated routes do not pull those datasets into the homepage's critical download.
+- Shared web fonts load as non-render-blocking stylesheets activated after hydration, with system fallbacks and a no-JavaScript stylesheet, so text can paint without waiting on font servers.

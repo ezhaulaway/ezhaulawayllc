@@ -8,7 +8,7 @@ import {
   PageShell,
   SectionHeader,
 } from "@/components/site-chrome";
-import { SPECIALTY_SERVICE_SLUGS, locations } from "@/content/locations";
+import { locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
@@ -17,7 +17,7 @@ import { CITY_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: async ({ params }) => {
-    const { locationBySlug } = await import("@/content/locations");
+    const { locationBySlug, SPECIALTY_SERVICE_SLUGS } = await import("@/content/locations");
     const location = locationBySlug(params.city);
     if (!location) throw notFound();
     const { services } = await import("@/content/services");
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/service-areas/$city")({
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
     const photo = locationPhoto(location.slug);
-    const photoUrl = photo ? `${SITE_URL}${photo.src}` : undefined;
+    const photoUrl = photo?.src.startsWith("https://") ? photo.src : undefined;
     return {
       meta: [
         { title: pageTitle },
@@ -114,14 +114,14 @@ function CityNotFound() {
 const INSTANT_ESTIMATE_CITIES = ["denver", "parker", "castle-rock"];
 
 function CityPage() {
-  const { location } = Route.useLoaderData();
+  const { location, specialtyServices } = Route.useLoaderData();
   const pushInstantEstimate = INSTANT_ESTIMATE_CITIES.includes(location.slug);
   const photo = locationPhoto(location.slug);
   const top = location.topServices
     .map((slug) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
-  const specialty = SPECIALTY_SERVICE_SLUGS
-    .map((slug) => services.find((item) => item.slug === slug))
+  const specialty = specialtyServices
+    .map(({ slug }) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const faqs = [
