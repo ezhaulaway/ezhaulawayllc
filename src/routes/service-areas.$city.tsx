@@ -8,7 +8,7 @@ import {
   PageShell,
   SectionHeader,
 } from "@/components/site-chrome";
-import { SPECIALTY_SERVICE_SLUGS, locationBySlug, locations } from "@/content/locations";
+import { SPECIALTY_SERVICE_SLUGS, locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
@@ -16,7 +16,8 @@ import { rich } from "@/components/prose-section";
 import { CITY_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
 export const Route = createFileRoute("/service-areas/$city")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
+    const { locationBySlug } = await import("@/content/locations");
     const location = locationBySlug(params.city);
     if (!location) throw notFound();
     return { location };
@@ -61,7 +62,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             image: photoUrl ?? BUSINESS_SCHEMA.image,
             areaServed: { "@type": "City", name: `${location.city}, CO` },
             makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
-              const service = services.find((item) => item.slug === slug);
+              const service = location.specialtyServices.find((item) => item.slug === slug);
               return {
                 "@type": "Offer",
                 itemOffered: {
