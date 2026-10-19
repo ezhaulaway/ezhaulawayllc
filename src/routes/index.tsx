@@ -2,7 +2,7 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, SITE_URL } from "@/content/site";
+import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import heroJob640 from "@/assets/hero-job-640.webp";
 import heroJob800 from "@/assets/hero-job-800.webp";
@@ -125,6 +125,7 @@ export const Route = createFileRoute("/")({
             latitude: 39.5242,
             longitude: -104.8064,
           },
+          openingHoursSpecification: OPENING_HOURS_SPEC,
           sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
           aggregateRating: {
             "@type": "AggregateRating",

@@ -2,7 +2,7 @@ import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin, MessageSquare, Phone } from "lucide-react";
+import { Clock, MapPin, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
@@ -59,6 +59,16 @@ function ContactPage() {
                 <Button asChild className="mt-4" size="lg" variant="outline">
                   <a href={`sms:${PHONE_TEL}`}>Text {PHONE}</a>
                 </Button>
+              </div>
+              <div className="rounded-lg border border-border bg-card p-6">
+                <Clock className="size-5 text-primary" />
+                <h2 className="mt-4 text-lg font-bold">Hours</h2>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                  Monday – Saturday: 7:00 AM – 7:00 PM
+                  <br />
+                  Sunday: Closed
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">Texts and quote forms are welcome anytime — we reply during business hours.</p>
               </div>
               <div className="rounded-lg border border-border bg-card p-6">
                 <MapPin className="size-5 text-primary" />

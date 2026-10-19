@@ -4,6 +4,15 @@ export const PHONE_TEL = PHONE.replaceAll("-", "");
 export const SITE_URL = "https://www.ezhaulawayllc.com";
 export const GOOGLE_REVIEWS_URL = "https://share.google/cf9FKoYXCi9K62j84";
 export const FACEBOOK_URL = "https://www.facebook.com/ezhaulawayjunkremoval/";
+export const HOURS_TEXT = "Mon–Sat 7:00 AM – 7:00 PM · Sun Closed";
+export const OPENING_HOURS_SPEC = [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "07:00",
+    closes: "19:00",
+  },
+];
 
 export const reviews = [
   {
@@ -44,6 +53,7 @@ const raw_BUSINESS_SCHEMA = {
     addressCountry: "US",
   },
   geo: { "@type": "GeoCoordinates", latitude: 39.5242, longitude: -104.8064 },
+  openingHoursSpecification: OPENING_HOURS_SPEC,
   sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
 };
 export const BUSINESS_SCHEMA = priced(raw_BUSINESS_SCHEMA);
