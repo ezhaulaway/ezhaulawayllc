@@ -66,14 +66,13 @@ export const Route = createFileRoute("/service-areas/$city")({
             url: `${SITE_URL}/service-areas/${params.city}`,
             image: photoUrl ?? BUSINESS_SCHEMA.image,
             areaServed: { "@type": "City", name: `${location.city}, CO` },
-            makesOffer: SPECIALTY_SERVICE_SLUGS.map((slug) => {
-              const service = loaderData.specialtyServices.find((item) => item.slug === slug);
+            makesOffer: loaderData.specialtyServices.map((service) => {
               return {
                 "@type": "Offer",
                 itemOffered: {
                   "@type": "Service",
-                  name: `${service?.name ?? slug} in ${location.city}, CO`,
-                  url: `${SITE_URL}/services/${slug}`,
+                  name: `${service.name} in ${location.city}, CO`,
+                  url: `${SITE_URL}/services/${service.slug}`,
                 },
               };
             }),
