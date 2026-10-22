@@ -477,7 +477,7 @@ export function HomePage() {
               {homeFaqs.map(([question, answer], index) => (
                 <AccordionItem key={question} value={`faq-${index}`}>
                   <AccordionTrigger className="py-5 text-base font-bold hover:no-underline">{question}</AccordionTrigger>
-                  <AccordionContent className="max-w-2xl pr-8 text-base leading-7 text-muted-foreground">{answer}</AccordionContent>
+                  <AccordionContent forceMount className="max-w-2xl pr-8 text-base leading-7 text-muted-foreground">{answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

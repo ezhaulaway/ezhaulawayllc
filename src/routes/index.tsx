@@ -34,8 +34,14 @@ export const Route = createFileRoute("/")({
           "Junk removal services in Parker, CO & Denver metro. Furniture, appliances, hot tubs, cleanouts & demolition. Free estimates from EZ Haulaway LLC.",
       },
       { property: "og:title", content: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates" },
+      { name: "twitter:title", content: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates" },
       {
         property: "og:description",
+        content:
+          "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
+      },
+      {
+        name: "twitter:description",
         content:
           "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
       },
