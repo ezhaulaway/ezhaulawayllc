@@ -22,3 +22,4 @@
 - Dynamic city/service route loaders import detailed content on demand, including custom city-service copy, so unrelated routes do not pull those datasets into the homepage's critical download.
 - Shared web fonts are self-hosted Latin variable fonts declared in global CSS with font-display: swap and system fallbacks, avoiding external font connections and hydration-dependent activation.
 - Responsive header logos use one picture element with low fetch priority, so hidden logo variants are not downloaded alongside the homepage photo.
+- Live pages are allow-listed in `src/content/live-pages.ts`; loaders, `public/sitemap.xml` (regenerate with `bun scripts/build-sitemap.ts`) and link lists read from it, so retired pages never get linked or indexed.
