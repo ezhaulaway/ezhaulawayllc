@@ -415,19 +415,19 @@ const raw_services: Service[] = [
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
-    metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
+    metaTitle: "Mattress Disposal Denver | Box Spring & Large Item Pickup | EZ Haulaway",
     metaDescription:
-      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
-    summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
+      "Mattress disposal, box spring removal and large item pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
+    summary: "Mattresses, box springs and single large items: treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
     imageAlt: "EZ Haulaway crew lifting a bulky trash bin into the tandem-axle dump trailer",
     intro: [
       "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
-      "EZ Haulaway does single-item mattress disposal, couch removal, and bulky item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
+      "EZ Haulaway does single-item mattress disposal, box spring removal, and large item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
     ],
     includes: [
       "Mattresses and box springs",
-      "Couches, sectionals, and recliners",
+      "Bed frames, headboards, and adjustable bases",
       "Treadmills, ellipticals, and home gyms",
       "Pianos, organs, and pool tables",
       "Grills, smokers, and patio sets",
@@ -441,11 +441,16 @@ const raw_services: Service[] = [
       },
       {
         heading: "What single-item pickup costs",
-        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], a couch [[item:Couch]] per cushion, and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
       },
       {
         heading: "Heavy and awkward is the specialty",
         text: "Weight is one problem. Stairs, tight corners, and doorframes are the other. We bring enough crew, straps, and dollies for both, and we protect your floors and walls on the way out.",
+      },
+      {
+        heading: "Moving couches and tables too?",
+        text: "For sofas, sectionals, dining sets and other household furniture, see our furniture page.",
+        links: [{ slug: "furniture-removal", city: "denver", label: "Furniture Removal Denver" }],
       },
       {
         heading: "Quick scheduling",
