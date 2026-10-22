@@ -40,6 +40,11 @@ export const Route = createFileRoute("/")({
         content:
           "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
       },
+      {
+        name: "twitter:description",
+        content:
+          "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },
