@@ -448,8 +448,8 @@ const raw_services: Service[] = [
         text: "Weight is one problem. Stairs, tight corners, and doorframes are the other. We bring enough crew, straps, and dollies for both, and we protect your floors and walls on the way out.",
       },
       {
-        heading: "Moving couches and tables too?",
-        text: "For sofas, sectionals, dining sets and other household furniture, see our furniture page.",
+        heading: "Clearing out other household pieces?",
+        text: "Larger household pieces beyond the bed have their own page.",
         links: [{ slug: "furniture-removal", city: "denver", label: "Furniture Removal Denver" }],
       },
       {
