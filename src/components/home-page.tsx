@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { CityServiceLink } from "@/components/city-service-link";
 import { responsiveImage } from "@/lib/home-images";
 import { DeferredFaq } from "@/components/deferred-faq";
@@ -112,6 +113,46 @@ const reasons: Array<{ icon: LucideIcon; title: string; text: string }> = [
   { icon: ShieldCheck, title: "Respect for Your Property", text: "Careful removal and cleanup after the hauling is done." },
   { icon: Users, title: "Local & Family Owned", text: "Work with a real local business that cares about its reputation." },
 ];
+
+function LazyPosterVideo({ poster, src }: { poster: string; src: string }) {
+  // Browsers download a video's poster immediately, even far down the page. Wait until the video is near the
+  // viewport so the poster does not compete with the hero photo for bandwidth on phones.
+  const ref = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      controls
+      muted
+      playsInline
+      preload="none"
+      poster={near ? poster : undefined}
+      src={src}
+      className="aspect-video w-full object-cover"
+    >
+      Your browser does not support video playback.
+    </video>
+  );
+}
 
 function Wordmark() {
   return (
@@ -346,17 +387,7 @@ export function HomePage() {
             <SectionHeader center eyebrow="On the job" title="See EZ Haulaway in Action" text="See how quickly a cluttered space can become a clean one." />
           </div>
           <div className="relative mt-10 w-full overflow-hidden border-y border-border bg-secondary shadow-sm">
-            <video
-              controls
-              muted
-              playsInline
-              preload="none"
-              poster={timelapsePosterSrc}
-              src={timelapseAsset.url}
-              className="aspect-video w-full object-cover"
-            >
-              Your browser does not support video playback.
-            </video>
+            <LazyPosterVideo poster={timelapsePosterSrc} src={timelapseAsset.url} />
           </div>
         </section>
 
