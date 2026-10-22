@@ -454,7 +454,7 @@ export function HomePage() {
                     </li>
                   ) : null;
                 })}
-                {PRIORITY_CITY_SERVICES.map(([city, service]) => {
+                {PRIORITY_CITY_SERVICES.filter(([c, s]) => isLiveCityService(c, s)).map(([city, service]) => {
                   const loc = locations.find((l) => l.slug === city);
                   const svc = serviceData.find((x) => x.slug === service);
                   return loc && svc ? (

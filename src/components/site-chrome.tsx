@@ -105,7 +105,7 @@ function AreasDropdown() {
                   All services in {location.city}
                 </Link>
               </DropdownMenuItem>
-              {services.map((service) => (
+              {services.filter((service) => service.cityPages === false || isLiveCityService(location.slug, service.slug)).map((service) => (
                 <DropdownMenuItem asChild key={service.slug}>
                   {service.cityPages === false ? <Link to="/services/$slug" params={{ slug: service.slug }}>
                     {service.name}

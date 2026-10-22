@@ -239,7 +239,7 @@ function ServicePage() {
               Same crew, same pricing, same week. Pick your town to see what we haul most there.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {priorityLocations.map((location) => (
+              {priorityLocations.filter((location) => isLiveCityService(location.slug, service.slug)).map((location) => (
                 <CityServiceLink
                   key={location.slug} city={location.slug} service={service.slug}
                   className="inline-flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold transition-colors hover:border-primary"

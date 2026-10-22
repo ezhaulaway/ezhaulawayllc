@@ -114,7 +114,7 @@ function ServiceAreasPage() {
                           Junk Removal {location.city}
                         </Link>
                       </li>
-                      {services.filter((service) => service.cityPages !== false).map((service) => (
+                      {services.filter((service) => isLiveCityService(location.slug, service.slug)).map((service) => (
                         <li key={service.slug}>
                           <CityServiceLink city={location.slug} service={service.slug}
                             className="block rounded px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"

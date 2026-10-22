@@ -1,6 +1,6 @@
 import { CityServiceLink } from "@/components/city-service-link";
-import { isLiveCityService } from "@/content/live-pages";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { isLiveCity, isLiveCityService } from "@/content/live-pages";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,6 +28,9 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     const location = locationBySlug(params.city);
     const service = serviceBySlug(params.service);
     if (!location || !service || service.cityPages === false) throw notFound();
+    if (isLiveCity(params.city) && !isLiveCityService(params.city, params.service)) {
+      throw redirect({ to: "/services/$slug", params: { slug: params.service }, statusCode: 301 });
+    }
     const custom = customCityServices[`${params.city}/${params.service}`] ?? null;
     return { location, service, custom };
   },
@@ -108,7 +111,7 @@ function CityServicePage() {
   const name = service.name;
   const lower = name.toLowerCase();
   const otherServices = services.filter((item) => item.slug !== service.slug);
-  const nearby = locations.filter((item) => location.nearby.includes(item.slug));
+  const nearby = locations.filter((item) => location.nearby.includes(item.slug) && isLiveCityService(item.slug, service.slug));
 
   const faqs = custom
     ? custom.faqs
