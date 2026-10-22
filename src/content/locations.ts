@@ -349,7 +349,7 @@ const raw_locations: Location[] = [
         heading: "Commercial and Office Junk Removal in Centennial",
         paragraphs: [
           "Centennial has a strong business community along Arapahoe Road, Dry Creek Road, and the Denver Tech Center edge. We help offices, retail shops, medical suites, and property management companies clear out old desks, cubicle panels, filing cabinets, chairs, shelving, and electronics.",
-          "We schedule around your business hours, keep hallways and parking areas clear while we work, and give you one invoice when the job is done. For property managers, we handle tenant turnovers, abandoned belongings, common-area cleanups, and storage unit cleanouts across multiple properties.",
+          "We schedule around your business hours, keep hallways and parking areas clear while we work, send photos when the space is clear, and give you one invoice when the job is done. For property managers, we handle tenant turnovers, abandoned belongings, common-area cleanups, and storage unit cleanouts across multiple properties.",
         ],
       },
       {
@@ -357,6 +357,7 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Step one is a price. Call, text, or send photos through the instant estimate and we'll give you a range right away. Step two is scheduling — we offer an arrival window that works for you, and same-week appointments are common. Step three is the job itself: we show up, confirm the final price on site, load everything, and sweep up.",
           "That's it. No dumpster rental, no trips to the landfill, and no lifting on your part. Centennial customers tell us the hardest part is deciding what to get rid of — we handle everything after that.",
+          "Text a photo for a free estimate and the next arrival window. Same-day service is sometimes open when our Centennial route has room, and same-week slots are common.",
         ],
       },
       {
@@ -364,29 +365,6 @@ const raw_locations: Location[] = [
         paragraphs: [
           "We are a family-owned business based just down the road in Parker. Ben runs the jobs himself, which means the person who quotes your job is the same person who shows up to do it. We drive a red Ford F-250 and pull a 16-foot dump trailer, so we can fit in tight driveways and cul-de-sacs where bigger trucks can't.",
           "We are licensed and insured, we show up on time, and we treat your home and yard with respect. Whether you need a single couch gone or a whole house cleared, you get the same honest pricing and careful work every time.",
-        ],
-      },
-      {
-        heading: "Junk Removal Services Centennial Trusts",
-        paragraphs: [
-          "Our junk removal services in Centennial CO cover homes, rentals, offices and yards. As a locally owned junk removal team, we answer the phone ourselves, give a free estimate from photos, and show up when we say we will. Junk removal in Centennial should be simple, and that is how we run every job.",
-          "Junk removal hauling is the core of what we do. Our junk haulers load furniture, appliances, boxes, yard waste and excess junk from anywhere on your property, then haul it away in the same trip. You never carry unwanted stuff to the curb, and you never rent a dumpster that sits in the driveway for a week.",
-          "Need junk removed fast? Same day service is sometimes open when our Centennial CO route has room, and same-week junk removal is common. Text a photo and our junk removal team will reply with a free estimate and the next arrival window.",
-        ],
-      },
-      {
-        heading: "Office Space and Business Junk Removal",
-        paragraphs: [
-          "Centennial has a lot of business parks and office space near Arapahoe Road, Dry Creek and the Denver Tech Center. When a company moves, downsizes or updates its office space, we clear old desks, chairs, filing cabinets, cubicle panels and electronics. We can work around your hours so the office space stays open for staff.",
-          "Property managers use our junk removal services for tenant move-outs, common-area cleanups and storage rooms. Every job gets one price up front, and we send photos when the space is clear. It's junk removal hauling that keeps buildings rentable.",
-        ],
-      },
-      {
-        heading: "Hassle Free Junk Removal, Start to Finish",
-        paragraphs: [
-          "Hassle free junk removal means you point and we lift. Our crew handles the heavy lifting, from an old hot tub on the back deck to a basement full of boxes. We protect floors and door frames, load the trailer, and sweep before we go.",
-          "Hassle free also means honest pricing. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, junk removal hauling, and disposal are included. Get your free estimate by text or online, and see why Centennial CO homeowners keep calling a locally owned junk removal team for every cleanout.",
-          "When you need junk removal Centennial neighbors recommend, call or text for a free estimate. Our junk haulers serve every Centennial neighborhood, and we treat each home the way we would want ours treated.",
         ],
       },
     ],
