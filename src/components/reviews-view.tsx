@@ -2,9 +2,9 @@ import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GOOGLE_REVIEWS_URL, reviews as fallbackReviews } from "@/content/site";
 export type Review = { name: string; text: string; rating: number; relativeTime: string; authorPhoto: string | null; reviewUrl: string | null };
-export type ReviewsData = { reviews?: Review[]; mapsUri?: string | null; rating?: number; totalCount?: number };
+export type ReviewsData = { reviews?: Review[]; mapsUri?: string | null; rating?: number | null; totalCount?: number | null };
 export const fallback: Review[] = fallbackReviews.map((review) => ({ ...review, rating: 5, relativeTime: "", authorPhoto: null, reviewUrl: null }));
-export function ReviewsView({ data }: { data?: ReviewsData | null }) {
+export function ReviewsView({ data }: { data?: ReviewsData | null | undefined }) {
   const live = data?.reviews ?? [];
   const list = live.length > 0 ? live : fallback;
   const mapsUri = data?.mapsUri ?? GOOGLE_REVIEWS_URL;
