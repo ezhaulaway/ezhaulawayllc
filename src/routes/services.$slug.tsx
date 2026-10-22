@@ -164,11 +164,17 @@ function ServicePage() {
                   {section.text.split("\n\n").map((para, i) => (
                     <p key={i} className="mt-3 max-w-2xl leading-7 text-muted-foreground">{rich(para)}</p>
                   ))}
-                  {section.links?.map((link) => (
-                    <Link key={link.slug} to="/services/$slug" params={{ slug: link.slug }} className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      {link.label} <ArrowRight className="size-4 shrink-0" />
-                    </Link>
-                  ))}
+                  {section.links?.map((link) =>
+                    link.city ? (
+                      <CityServiceLink key={link.slug + link.city} city={link.city} service={link.slug} className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                        {link.label} <ArrowRight className="size-4 shrink-0" />
+                      </CityServiceLink>
+                    ) : (
+                      <Link key={link.slug} to="/services/$slug" params={{ slug: link.slug }} className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                        {link.label} <ArrowRight className="size-4 shrink-0" />
+                      </Link>
+                    ),
+                  )}
                 </div>
               ))}
             </div>

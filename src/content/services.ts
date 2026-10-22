@@ -27,7 +27,7 @@ export type Service = {
   imageAlt: string;
   intro: string[];
   includes: string[];
-  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string }> }>;
+  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string; city?: string }> }>;
   faqs: Array<[string, string]>;
   related: string[];
   cityPages?: boolean;
@@ -40,7 +40,7 @@ const raw_services: Service[] = [
     h1: "Furniture Removal in Parker & the Denver Metro Area",
     metaTitle: "Furniture Removal Services & Couch Removal | EZ Haulaway",
     metaDescription:
-      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, mattresses, and dressers. Free quotes, no lifting for you.",
+      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",
@@ -50,7 +50,7 @@ const raw_services: Service[] = [
     ],
     includes: [
       "Couches, sectionals, and recliners",
-      "Mattresses, box springs, and bed frames",
+      "Sofas, loveseats, and sleeper sofas",
       "Dressers, nightstands, and armoires",
       "Dining tables, chairs, and bar stools",
       "Desks, filing cabinets, and office chairs",
@@ -65,10 +65,15 @@ const raw_services: Service[] = [
         heading: "Clearing a whole house or just one piece",
         text: "One recliner or an entire furnished home, the process is the same: tell us what needs to go, get a price, and we haul it. Larger loads are quoted by volume so you know what you are paying for.",
       },
+      {
+        heading: "Just a mattress?",
+        text: "If all you need gone is an old mattress or box spring, see our dedicated mattress page.",
+        links: [{ slug: "mattress-and-bulky-item-removal", city: "denver", label: "Mattress Removal Denver" }],
+      },
     ],
     faqs: [
       ["Do I need to move the furniture outside first?", "No. Leave it where it sits. Our crew carries everything out for you."],
-      ["Can you take a mattress and box spring together?", "Yes. Mattresses and box springs are one of the most common items we haul."],
+      ["Can you take a dining table and chairs together?", "Yes. Tables, chairs, and matching sets go out in the same visit."],
       ["Will you take furniture apart?", "When something will not fit through a door intact, we break it down on site so it can be carried out safely."],
     ],
     related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
@@ -410,19 +415,19 @@ const raw_services: Service[] = [
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
-    metaTitle: "Mattress Disposal Denver | Couch & Bulky Item Removal | EZ Haulaway",
+    metaTitle: "Mattress Disposal Denver | Box Spring & Large Item Pickup | EZ Haulaway",
     metaDescription:
-      "Mattress disposal, couch removal, treadmill and piano pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
-    summary: "Single oversized items: mattresses, couches, treadmills, pianos, pool tables.",
+      "Mattress disposal, box spring removal and large item pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
+    summary: "Mattresses, box springs and single large items: treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
     imageAlt: "EZ Haulaway crew lifting a bulky trash bin into the tandem-axle dump trailer",
     intro: [
       "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
-      "EZ Haulaway does single-item mattress disposal, couch removal, and bulky item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
+      "EZ Haulaway does single-item mattress disposal, box spring removal, and large item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
     ],
     includes: [
       "Mattresses and box springs",
-      "Couches, sectionals, and recliners",
+      "Bed frames, headboards, and adjustable bases",
       "Treadmills, ellipticals, and home gyms",
       "Pianos, organs, and pool tables",
       "Grills, smokers, and patio sets",
@@ -436,11 +441,16 @@ const raw_services: Service[] = [
       },
       {
         heading: "What single-item pickup costs",
-        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], a couch [[item:Couch]] per cushion, and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
       },
       {
         heading: "Heavy and awkward is the specialty",
         text: "Weight is one problem. Stairs, tight corners, and doorframes are the other. We bring enough crew, straps, and dollies for both, and we protect your floors and walls on the way out.",
+      },
+      {
+        heading: "Clearing out other household pieces?",
+        text: "Larger household pieces beyond the bed have their own page.",
+        links: [{ slug: "furniture-removal", city: "denver", label: "Furniture Removal Denver" }],
       },
       {
         heading: "Quick scheduling",
