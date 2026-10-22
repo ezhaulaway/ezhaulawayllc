@@ -238,19 +238,19 @@ const RAW_CUSTOM_PAGES: Record<
   "denver/furniture-removal": {
     title: "Furniture Removal Denver CO | EZ Haulaway LLC – Fast, Free Estimates",
     description:
-      "Furniture removal in Denver, CO. Couches, sectionals, mattresses & dressers hauled from inside your home. Upfront prices, free estimate. Book today!",
+      "Furniture removal in Denver, CO. Couches, sectionals, tables & dressers hauled from inside your home. Upfront prices, free estimate. Book today!",
     intro: [
-      "Need **furniture removal in Denver**? We pick up couches, sectionals, recliners, dressers, mattresses, bed frames and dining sets from inside your home, apartment, condo or office — and haul everything away in the same visit. From Capitol Hill walkups and LoDo lofts to bungalows in Wash Park and ranch homes in Harvey Park, our crew handles Denver furniture removal every week.",
+      "Need **furniture removal in Denver**? We pick up couches, sectionals, recliners, dressers, tables, chairs and dining sets from inside your home, apartment, condo or office — and haul everything away in the same visit. From Capitol Hill walkups and LoDo lofts to bungalows in Wash Park and ranch homes in Harvey Park, our crew handles Denver furniture removal every week. Just need an old mattress or box spring gone? See [Mattress Removal Denver](/service-areas/denver/mattress-and-bulky-item-removal).",
       "You don't move anything to the curb. Two of us carry it down the stairs, out of the basement or through the hallway, and load it onto our 16-foot trailer. We do **all the heavy lifting** — you just point at what goes.",
-      "A single couch or mattress falls under our **[[min]] minimum**. Bigger furniture removal jobs are priced by trailer space, up to **[[load:8]] for a full load**. Labor, hauling and disposal are always included in the price we quote — no hidden fees, no stair charges.",
+      "A single couch or chair falls under our **[[min]] minimum**. Bigger furniture removal jobs are priced by trailer space, up to **[[load:8]] for a full load**. Labor, hauling and disposal are always included in the price we quote — no hidden fees, no stair charges.",
     ],
     localHeading: "Couch and Sofa Removal Across Denver Neighborhoods",
     localText: [
       "Denver furniture removal jobs come with old bungalow basements, third-floor walkup apartments and alley-only access. We plan the route before we lift, and we protect floors, railings and door frames on the way out. Tight stairwells in Baker, narrow doorways in Congress Park, freight elevators downtown — we've worked through all of it.",
       "Wondering how to **get rid of large furniture** the city won't take? Denver's scheduled large-item pickup only covers curbside items, and you do the dragging. Our **junk removal** crew is the full-service option: we **handle the heavy lifting** from wherever the piece sits, so you never touch it. If you'd rather save a little, we also **offer curbside furniture pickup** — leave it out front and we'll swing by, load it and **haul away** everything in one stop.",
-      "**Bulky furniture** is our specialty. Sleeper sofas with metal frames, oversized sectionals, solid-wood armoires, piano benches, box springs that won't bend around a landing — if it fits through the door, we'll get it out. Our **haul away services** cover single pieces all the way up to whole-house furniture disposal, priced by the trailer space your items take up.",
+      "**Bulky furniture** is our specialty. Sleeper sofas with metal frames, oversized sectionals, solid-wood armoires, piano benches, dining tables that won't turn on a landing — if it fits through the door, we'll get it out. Our **haul away services** cover single pieces all the way up to whole-house furniture disposal, priced by the trailer space your items take up.",
       "Every quote is **upfront pricing**: trailer-space rates that include labor, hauling and disposal, with **no hidden disposal fees** and no surprise charges at the door. Usable pieces go to local **furniture donation pickup** partners when we can, and we **recycle old furniture** — metal frames, springs and clean wood — to keep landfill waste down. That's removal and disposal services done the right way.",
-      "**Furniture removal in Denver** often means more than one piece. Clearing a whole room, downsizing before a move, or emptying a rental between tenants? We price the whole job by trailer space so a couch, two dressers and a mattress cost less than booking three separate pickups.",
+      "**Furniture removal in Denver** often means more than one piece. Clearing a whole room, downsizing before a move, or emptying a rental between tenants? We price the whole job by trailer space so a couch, two dressers and a dining table cost less than booking three separate pickups.",
       "Furniture in good shape goes to **donation** whenever we can, so usable pieces stay in the community. Broken items get sorted, and metal frames and springs go to **recycling** instead of the landfill. Want a price before you book? Send a photo through our free instant estimate and you'll see your number in about a minute.",
       "Scheduling is simple: call or text, send photos, and we'll give you a firm price and the soonest available window. Because we're in Denver every week, most furniture removal jobs are on the calendar within a few days — and we show up when we say we will.",
       "**Office furniture removal** is a big part of our Denver work. Desks, cubicle panels, conference tables, filing cabinets and stacks of chairs come out of offices in Cherry Creek, the Tech Center and downtown. We work early or late so your team keeps working.",
@@ -260,7 +260,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does furniture removal cost in Denver?",
-        "A single couch or mattress falls under our [[min]] minimum. Couches are priced per cushion at [[item:Couch]], and bigger jobs are priced by trailer space up to [[load:8]] for a full load. Text photos to " + PHONE + " for a firm price before any work starts.",
+        "A single couch or chair falls under our [[min]] minimum. Couches are priced per cushion at [[item:Couch]], and bigger jobs are priced by trailer space up to [[load:8]] for a full load. Text photos to " + PHONE + " for a firm price before any work starts.",
       ],
       [
         "Can you remove furniture from an upstairs apartment?",
@@ -280,17 +280,17 @@ const RAW_CUSTOM_PAGES: Record<
     title: "Mattress Removal & Large Item Pickup Denver CO | EZ Haulaway",
     h1: "Mattress Removal Denver",
     description:
-      "Mattress removal and large item pickup in Denver, Colorado. Mattresses, couches and bulky items carried out from any room. Upfront pricing, free estimate.",
+      "Mattress removal and large item pickup in Denver, Colorado. Mattresses, box springs and bulky items carried out from any room. Upfront pricing, free estimate.",
     sections: [
       {
         heading: "Large Item Pickup in Denver, Colorado",
         paragraphs: [
-          "Need **large item pickup in Denver**? Beyond mattresses, we pick up couches, sectionals, recliners, dressers, armoires, treadmills, pianos, hot tubs, appliances and playsets. If two people can carry it and it isn't hazardous, we can usually take it.",
+          "Need **large item pickup in Denver**? Beyond mattresses, we pick up treadmills, pianos, hot tubs, appliances and playsets. Household furniture has its own page: [Furniture Removal Denver](/service-areas/denver/furniture-removal). If two people can carry it and it isn't hazardous, we can usually take it.",
           "Denver's city large-item collection only takes what you set out at the curb or alley, on a set schedule. We come inside, carry the item out and haul it away, often the same week you call.",
-          "One big item usually falls under our [[min]] minimum. Couches are about [[item:Couch]] per cushion, treadmills about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
+          "One big item usually falls under our [[min]] minimum. Treadmills are about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
         ],
         subsections: [
-          { heading: "Heavy and awkward items", text: "Pianos, sleeper sofas and solid-wood furniture need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
+          { heading: "Heavy and awkward items", text: "Pianos, safes and hot tubs need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
           { heading: "Large item pickup for move-outs", text: "Moving out of a Denver apartment or house? We clear everything that isn't going with you in one trip, so the unit is ready for cleaning." },
         ],
       },
@@ -305,7 +305,7 @@ const RAW_CUSTOM_PAGES: Record<
       "**Old mattress removal** in Denver usually means tight spaces. Narrow stairwells in Capitol Hill, basement bedrooms in Wash Park bungalows, freight elevators in LoDo and RiNo lofts — we plan the way out before we lift and protect walls, railings and door frames.",
       "We take every size: **twin, full, queen, king and California king mattresses**, plus box springs, memory foam, hybrid and pillow-top beds, futon mattresses, cribs and adjustable bases. Bed frames and headboards go too, and we'll take them apart if needed.",
       "**Mattress recycling** matters to us. Mattresses take up a huge amount of landfill space, so we separate steel springs, foam and wood for recycling whenever possible. Clean, usable mattresses go to local **donation** partners when they'll accept them.",
-      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]), sofas, recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
+      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]) and exercise equipment — anything too big or heavy to handle yourself. For household furniture, see [Furniture Removal Denver](/service-areas/denver/furniture-removal).",
       "Moving out of a Denver apartment, swapping in a new bed, or clearing a rental between tenants? We handle **same-week mattress pickup** for homeowners, renters and property managers, and we price multi-item jobs together so you save versus separate pickups.",
       "Getting a price is easy: text a photo or use our free instant estimate. You'll get **upfront pricing** before we start, and we show up on time in the window we give you.",
       "Searching for mattress removal Denver homeowners actually recommend? Our **family-owned**, **licensed and insured** crew from Parker works Denver neighborhoods every week — Highland, Sloan's Lake, Park Hill, Stapleton, University and Washington Virginia Vale included.",

@@ -1,8 +1,22 @@
+import type React from "react";
 import { SectionHeader } from "@/components/site-chrome";
 
 /** Renders **bold** markers in copy as <strong>. */
+function bold(text: string, k: string) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={k + i} className="font-semibold text-foreground">{part}</strong> : part));
+}
+
+/** Renders **bold** and internal [label](/path) links inside content strings. */
 export function rich(text: string) {
-  return text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={i} className="font-semibold text-foreground">{part}</strong> : part));
+  const parts = text.split(/\[([^\[\]]+)\]\((\/[^)\s]*)\)/g);
+  const out: React.ReactNode[] = [];
+  for (let i = 0; i < parts.length; i += 3) {
+    out.push(...bold(parts[i] ?? "", `t${i}-`));
+    if (i + 2 < parts.length) {
+      out.push(<a key={`l${i}`} href={parts[i + 2]} className="font-semibold text-primary hover:underline">{parts[i + 1]}</a>);
+    }
+  }
+  return out;
 }
 
 export function ProseSection({ eyebrow, title, blocks, plainHeadings = false }: { eyebrow: string; title: string; blocks: Array<[string, string]>; plainHeadings?: boolean }) {
