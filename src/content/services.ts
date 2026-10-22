@@ -121,7 +121,7 @@ const raw_services: Service[] = [
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
-    metaTitle: "Hot Tub Removal Denver & Parker CO | Spa Disposal | EZ Haulaway",
+    metaTitle: "Hot Tub Removal Denver & Parker CO | EZ Haulaway",
     metaDescription:
       "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from [[item:Hot tub]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
@@ -171,7 +171,7 @@ const raw_services: Service[] = [
     slug: "light-demolition",
     name: "Light Demolition",
     h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
-    metaTitle: "Light Demolition Denver & Parker, CO | Tear-Out & Haul | EZ Haulaway",
+    metaTitle: "Light Demolition Denver & Parker | Tear-Out | EZ Haulaway",
     metaDescription:
       "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
@@ -415,7 +415,7 @@ const raw_services: Service[] = [
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
-    metaTitle: "Mattress Disposal Denver | Box Spring & Large Item Pickup | EZ Haulaway",
+    metaTitle: "Mattress Disposal Denver CO | Box Spring Pickup | EZ Haulaway",
     metaDescription:
       "Mattress disposal, box spring removal and large item pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
     summary: "Mattresses, box springs and single large items: treadmills, pianos, pool tables.",
