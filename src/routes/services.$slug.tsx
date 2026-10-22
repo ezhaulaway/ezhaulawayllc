@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { rich } from "@/components/prose-section";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Phone } from "lucide-react";
@@ -238,17 +240,15 @@ function ServicePage() {
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {priorityLocations.map((location) => (
-                <Link
-                  key={location.slug}
-                  to="/service-areas/$city/$service"
-                  params={{ city: location.slug, service: service.slug }}
+                <CityServiceLink
+                  key={location.slug} city={location.slug} service={service.slug}
                   className="inline-flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold transition-colors hover:border-primary"
                 >
                   <span>
                     {service.name} in {location.city}, CO
                   </span>
                   <ArrowRight className="size-4 shrink-0 text-primary" />
-                </Link>
+                </CityServiceLink>
               ))}
             </div>
           </div>}

@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -225,13 +227,11 @@ function CityPage() {
                    <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
                      {section.serviceLinks.map((service) => (
                        <li key={service.slug}>
-                         <Link
-                           to="/service-areas/$city/$service"
-                           params={{ city: location.slug, service: service.slug }}
+                         <CityServiceLink city={location.slug} service={service.slug}
                            className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
                          >
                            {service.label}<ArrowRight className="size-4 shrink-0" />
-                         </Link>
+                         </CityServiceLink>
                        </li>
                      ))}
                    </ul>
@@ -257,13 +257,11 @@ function CityPage() {
                   className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
                 >
                   <h3 className="font-display text-lg font-bold">
-                    <Link
-                      to="/service-areas/$city/$service"
-                      params={{ city: location.slug, service: service.slug }}
+                    <CityServiceLink city={location.slug} service={service.slug}
                       className="after:absolute after:inset-0 after:content-['']"
                     >
                       {service.name} in {location.city}, CO
-                    </Link>
+                    </CityServiceLink>
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
                   <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
@@ -312,13 +310,11 @@ function CityPage() {
                 className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
               >
                 <h3 className="font-display text-lg font-bold">
-                  <Link
-                    to="/service-areas/$city/$service"
-                    params={{ city: location.slug, service: service.slug }}
+                  <CityServiceLink city={location.slug} service={service.slug}
                     className="after:absolute after:inset-0 after:content-['']"
                   >
                     {service.name} in {location.city}, CO
-                  </Link>
+                  </CityServiceLink>
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
                 <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
@@ -347,14 +343,12 @@ function CityPage() {
                 >
                   <span>{service.name} — serving {location.city}</span>
                   <ArrowRight className="size-4 shrink-0" />
-                </Link> : <Link
-                  to="/service-areas/$city/$service"
-                  params={{ city: location.slug, service: service.slug }}
+                </Link> : <CityServiceLink city={location.slug} service={service.slug}
                   className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
                 >
                   <span>{location.city} {service.name.toLowerCase()}</span>
                   <ArrowRight className="size-4 shrink-0" />
-                </Link>}
+                </CityServiceLink>}
               </li>
             ))}
           </ul>

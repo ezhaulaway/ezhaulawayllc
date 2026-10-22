@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -103,13 +105,11 @@ function WhatWeTakePage() {
           </div>
           <p className="mt-8 max-w-2xl text-sm leading-6 text-muted-foreground">
             In Denver? See how we handle{" "}
-            <Link
-              to="/service-areas/$city/$service"
-              params={{ city: "denver", service: "furniture-removal" }}
+            <CityServiceLink city={"denver"} service={"furniture-removal"}
               className="font-bold text-primary hover:underline"
             >
               furniture removal in Denver
-            </Link>{" "}
+            </CityServiceLink>{" "}
             — from single couches to whole-room cleanouts.
           </p>
         </div>

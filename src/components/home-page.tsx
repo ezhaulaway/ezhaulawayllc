@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { homeFaqs } from "@/content/home-faqs";
@@ -457,9 +459,9 @@ export function HomePage() {
                   const svc = serviceData.find((x) => x.slug === service);
                   return loc && svc ? (
                     <li key={`${city}/${service}`}>
-                      <Link to="/service-areas/$city/$service" params={{ city, service }} className="text-muted-foreground hover:text-foreground">
+                      <CityServiceLink city={city} service={service} className="text-muted-foreground hover:text-foreground">
                         {svc.name} in {loc.city}, CO
-                      </Link>
+                      </CityServiceLink>
                     </li>
                   ) : null;
                 })}

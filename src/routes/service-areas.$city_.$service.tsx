@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -263,14 +265,12 @@ function CityServicePage() {
                 className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
               >
                 {item.name}
-              </Link> : <Link
-                key={item.slug}
-                to="/service-areas/$city/$service"
-                params={{ city: location.slug, service: item.slug }}
+              </Link> : <CityServiceLink
+                key={item.slug} city={location.slug} service={item.slug}
                 className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
               >
                 {item.name} {city}
-              </Link>
+              </CityServiceLink>
             ))}
           </div>
           {nearby.length > 0 && (
@@ -278,14 +278,12 @@ function CityServicePage() {
               <p className="mt-8 font-display font-bold">{name} in nearby towns</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {nearby.map((item) => (
-                  <Link
-                    key={item.slug}
-                    to="/service-areas/$city/$service"
-                    params={{ city: item.slug, service: service.slug }}
+                  <CityServiceLink
+                    key={item.slug} city={item.slug} service={service.slug}
                     className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
                   >
                     {name} {item.city}
-                  </Link>
+                  </CityServiceLink>
                 ))}
               </div>
             </>
