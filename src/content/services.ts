@@ -27,7 +27,7 @@ export type Service = {
   imageAlt: string;
   intro: string[];
   includes: string[];
-  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string }> }>;
+  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string; city?: string }> }>;
   faqs: Array<[string, string]>;
   related: string[];
   cityPages?: boolean;
@@ -68,7 +68,7 @@ const raw_services: Service[] = [
       {
         heading: "Just a mattress?",
         text: "If all you need gone is an old mattress or box spring, see our dedicated mattress page.",
-        links: [{ slug: "mattress-and-bulky-item-removal", label: "Mattress Removal Denver" }],
+        links: [{ slug: "mattress-and-bulky-item-removal", city: "denver", label: "Mattress Removal Denver" }],
       },
     ],
     faqs: [
