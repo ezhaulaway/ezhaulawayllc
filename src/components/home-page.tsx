@@ -1,4 +1,6 @@
 import { CityServiceLink } from "@/components/city-service-link";
+import { responsiveImage } from "@/lib/home-images";
+import { DeferredFaq } from "@/components/deferred-faq";
 import { isLiveCityService } from "@/content/live-pages";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
@@ -6,7 +8,7 @@ import { homeFaqs } from "@/content/home-faqs";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, MobileCtaBar, QuoteButton } from "@/components/site-chrome";
-import { GoogleReviewsGrid } from "@/components/google-reviews";
+import { DeferredReviews } from "@/components/deferred-reviews";
 import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import { locations, services as serviceData } from "@/content/navigation";
@@ -33,8 +35,6 @@ import {
 } from "lucide-react";
 import wordmarkSrc from "@/assets/ez-haulaway-wordmark-sm.webp";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
-import heroJob640 from "@/assets/hero-job-640.webp";
-import heroJob800 from "@/assets/hero-job-800.webp";
 import timelapsePosterSrc from "@/assets/timelapse-poster.webp";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
@@ -184,9 +184,8 @@ export function HomePage() {
             </div>
             <div className="relative min-w-0">
               <img
-                src={heroJob1200}
-                srcSet={`${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`}
-                sizes="(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)"
+                {...responsiveImage(heroJob1200, "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)")}
+                loading="eager"
                 width={1200}
                 height={800}
                 alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
@@ -388,7 +387,7 @@ export function HomePage() {
         <section id="reviews" className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <SectionHeader eyebrow="CUSTOMER REVIEWS" title="What Our Customers Say" text="Real 5-star reviews from EZ Haulaway customers on Google." />
-            <GoogleReviewsGrid />
+            <DeferredReviews />
           </div>
         </section>
 
@@ -473,14 +472,7 @@ export function HomePage() {
         <section className="py-20 sm:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
             <SectionHeader eyebrow="Common questions" title="Good to Know Before We Go" text="Need an answer about your specific job? Call or text and we’ll talk it through." />
-            <Accordion type="single" collapsible className="border-t border-border">
-              {homeFaqs.map(([question, answer], index) => (
-                <AccordionItem key={question} value={`faq-${index}`}>
-                  <AccordionTrigger className="py-5 text-base font-bold hover:no-underline">{question}</AccordionTrigger>
-                  <AccordionContent forceMount className="max-w-2xl pr-8 text-base leading-7 text-muted-foreground">{answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <DeferredFaq faqs={homeFaqs} />
           </div>
         </section>
 

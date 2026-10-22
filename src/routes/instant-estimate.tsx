@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { responsiveImage } from "@/lib/estimate-images";
 import {
   ArrowRight,
   Camera,
@@ -169,7 +170,7 @@ function InstantEstimatePage() {
               </div>
             </div>
             <img
-              src={crewLoadingAsset.url}
+              {...responsiveImage(crewLoadingAsset.url, "(min-width: 1280px) 450px, (min-width: 1024px) 35vw, calc(100vw - 40px)")}
               alt="Ben from EZ Haulaway loading a cabinet on a dolly into the black dump trailer"
               width={540}
               height={360}
@@ -177,8 +178,8 @@ function InstantEstimatePage() {
               loading="lazy"
             />
             <div className="mt-4 grid grid-cols-2 gap-4">
-              <img src={wagonAsset.url} alt="EZ Haulaway hauling a wagon of junk toward the red truck and trailer" width={540} height={360} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
-              <img src={dollyAsset.url} alt="Ben wheeling a cabinet down a Parker driveway on a dolly" width={360} height={540} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+              <img {...responsiveImage(wagonAsset.url, "(min-width: 1024px) 220px, calc((100vw - 56px) / 2)")} alt="EZ Haulaway hauling a wagon of junk toward the red truck and trailer" width={540} height={360} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+              <img {...responsiveImage(dollyAsset.url, "(min-width: 1024px) 220px, calc((100vw - 56px) / 2)")} alt="Ben wheeling a cabinet down a Parker driveway on a dolly" width={360} height={540} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
             </div>
           </div>
           <div className="rounded-lg bg-background p-3 text-foreground shadow-lg sm:p-5">

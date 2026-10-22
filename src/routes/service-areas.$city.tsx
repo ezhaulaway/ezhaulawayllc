@@ -1,4 +1,5 @@
 import { CityServiceLink } from "@/components/city-service-link";
+import { heroPreload, responsiveImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -58,7 +59,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             ]
           : []),
       ],
-      links: [{ rel: "canonical", href: `${SITE_URL}/service-areas/${params.city}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/service-areas/${params.city}` }, ...(photo ? [heroPreload(photo.src)] : [])],
       scripts: [
         {
           type: "application/ld+json",
@@ -185,7 +186,9 @@ function CityPage() {
           {photo && (
             <figure className="overflow-hidden rounded-xl border border-border bg-muted">
               <img
-                src={photo.src}
+                {...responsiveImage(photo.src)}
+                fetchPriority="high"
+                loading="eager"
                 alt={photo.alt}
                 width={1200}
                 height={800}

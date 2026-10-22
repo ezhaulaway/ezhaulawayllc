@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { responsiveImage } from "@/lib/trailer-images";
 import { Button } from "@/components/ui/button";
 import { TRAILER_SPEC } from "@/content/pricing";
 import { usePriceGuide } from "@/hooks/use-price-guide";
@@ -68,22 +69,25 @@ export function TrailerPricing() {
               <div className="relative aspect-[1376/768]">
                 {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
                 <img
-                  src={trailerEmpty}
+                  {...responsiveImage(trailerEmpty, "(min-width: 1280px) 756px, (min-width: 1024px) 60vw, calc(100vw - 40px)")}
                   alt="EZ Haulaway 16-foot black dump trailer used for junk removal pricing"
                   width={1376}
                   height={768}
                   fetchPriority="high"
+                  loading="eager"
                   className="absolute inset-0 h-full w-full object-contain"
                 />
                 {loadImages.map((image, eighths) => (
                   <img
                     key={image}
-                    src={image}
+                    {...responsiveImage(image, "(min-width: 1280px) 756px, (min-width: 1024px) 60vw, calc(100vw - 40px)")}
                     alt={`Dump trailer junk fill level: ${fillDescriptions[eighths]}`}
                     aria-hidden={eighths !== selectedEighths}
                     width={1376}
                     height={768}
-                    loading="eager"
+                    loading={eighths === selectedEighths ? "eager" : "lazy"}
+                    fetchPriority={eighths === selectedEighths ? "high" : "low"}
+                    hidden={eighths !== selectedEighths}
                     className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ease-out ${
                       eighths === selectedEighths ? "opacity-100" : "opacity-0"
                     }`}

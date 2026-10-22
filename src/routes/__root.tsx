@@ -14,6 +14,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import dmSansFont from "@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url";
+import manropeFont from "@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { initAnalytics, trackPageView } from "../lib/analytics";
 import { THEME_SCRIPT } from "../components/theme-toggle";
@@ -87,6 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "8oUl4Mp-ZT4fZSLPtPJoqibk3H2L-5CxbWfnEysIjXU" },
     ],
     links: [
+      { rel: "preload", as: "font", type: "font/woff2", href: dmSansFont, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: manropeFont, crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: appCss,

@@ -1,4 +1,6 @@
 import { CityServiceLink } from "@/components/city-service-link";
+import { heroPreload, responsiveImage } from "@/lib/service-images";
+import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
@@ -57,7 +59,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [{ rel: "canonical", href: url }, heroPreload(service.image)],
       scripts: [
         {
           type: "application/ld+json",
@@ -165,7 +167,9 @@ function CityServicePage() {
           </div>
           <figure className="overflow-hidden rounded-xl border border-border bg-muted">
             <img
-              src={service.image}
+              {...responsiveImage(service.image)}
+              fetchPriority="high"
+              loading="eager"
               alt={`${service.imageAlt} — ${lower} in ${city}, CO`}
               width={1200}
               height={800}
@@ -244,7 +248,7 @@ function CityServicePage() {
           )}
           {photo && (
             <figure className="mt-10 overflow-hidden rounded-xl border border-border bg-card">
-              <img src={photo.src} alt={photo.alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full object-cover" />
+              <img {...responsiveCityImage(photo.src, "(min-width: 768px) 728px, calc(100vw - 40px)")} alt={photo.alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full object-cover" />
               <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">{photo.caption}</figcaption>
             </figure>
           )}
