@@ -63,19 +63,25 @@ const CORE_FIVE = [
 
 const PRIMARY_CITIES = ["parker", "castle-rock", "highlands-ranch", "centennial", "littleton", "lone-tree", "aurora", "denver"];
 
-export const LIVE_CITY_SERVICES: Record<string, string[]> = {
-  ...Object.fromEntries(PRIMARY_CITIES.map((city) => [city, [...CORE_FIVE]])),
-  "castle-pines": ["furniture-removal", "hot-tub-removal"],
-  englewood: ["furniture-removal", "hot-tub-removal"],
-  lakewood: ["furniture-removal", "hot-tub-removal"],
-  franktown: [],
-  elizabeth: [],
-  sedalia: [],
-};
-LIVE_CITY_SERVICES.denver.push("mattress-and-bulky-item-removal");
-LIVE_CITY_SERVICES.aurora.push("mattress-and-bulky-item-removal", "deck-and-fence-removal");
-LIVE_CITY_SERVICES.parker.push("shed-removal");
-LIVE_CITY_SERVICES.centennial.push("electronics-and-e-waste-removal");
+const withExtras = (city: string, extras: string[] = []) =>
+  [city, PRIMARY_CITIES.includes(city) ? [...CORE_FIVE, ...extras] : extras] as const;
+
+export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.fromEntries([
+  withExtras("parker", ["shed-removal"]),
+  withExtras("castle-rock"),
+  withExtras("highlands-ranch"),
+  withExtras("centennial", ["electronics-and-e-waste-removal"]),
+  withExtras("littleton"),
+  withExtras("lone-tree"),
+  withExtras("aurora", ["mattress-and-bulky-item-removal", "deck-and-fence-removal"]),
+  withExtras("denver", ["mattress-and-bulky-item-removal"]),
+  ["castle-pines", ["furniture-removal", "hot-tub-removal"]],
+  ["englewood", ["furniture-removal", "hot-tub-removal"]],
+  ["lakewood", ["furniture-removal", "hot-tub-removal"]],
+  ["franktown", []],
+  ["elizabeth", []],
+  ["sedalia", []],
+]);
 
 /** Locations present in content but outside this allow-list keep today's behavior. */
 const isManagedCity = (city: string) => (LIVE_CITIES as readonly string[]).includes(city);
@@ -90,6 +96,6 @@ export function liveUrlPaths(): string[] {
     ...LIVE_TOP_LEVEL,
     ...LIVE_SERVICES.map((s) => `/services/${s}`),
     ...LIVE_CITIES.map((c) => `/service-areas/${c}`),
-    ...LIVE_CITIES.flatMap((c) => LIVE_CITY_SERVICES[c].map((s) => `/service-areas/${c}/${s}`)),
+    ...LIVE_CITIES.flatMap((c) => (LIVE_CITY_SERVICES[c] ?? []).map((s) => `/service-areas/${c}/${s}`)),
   ];
 }
