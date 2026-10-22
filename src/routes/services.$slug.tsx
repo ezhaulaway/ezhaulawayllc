@@ -1,5 +1,5 @@
 import { CityServiceLink } from "@/components/city-service-link";
-import { isLiveCityService } from "@/content/live-pages";
+import { isLiveCityService, isLiveService } from "@/content/live-pages";
 import { rich } from "@/components/prose-section";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Phone } from "lucide-react";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/services/$slug")({
   loader: async ({ params }) => {
     const { serviceBySlug } = await import("@/content/services");
     const service = serviceBySlug(params.slug);
-    if (!service) throw notFound();
+    if (!service || !isLiveService(params.slug)) throw notFound();
     return { service };
   },
   head: ({ params, loaderData }) => {
@@ -231,7 +231,7 @@ function ServicePage() {
               </article>
             ))}
           </div>
-          {service.cityPages !== false && <div className="mt-12 border-t border-border pt-10">
+          {priorityLocations.some((location) => isLiveCityService(location.slug, service.slug)) && <div className="mt-12 border-t border-border pt-10">
             <h3 className="font-display text-xl font-bold">
               {service.name} by City
             </h3>

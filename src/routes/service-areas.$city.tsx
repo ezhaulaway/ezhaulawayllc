@@ -1,5 +1,5 @@
 import { CityServiceLink } from "@/components/city-service-link";
-import { isLiveCityService } from "@/content/live-pages";
+import { isLiveCity, isLiveCityService } from "@/content/live-pages";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/service-areas/$city")({
   loader: async ({ params }) => {
     const { locationBySlug, SPECIALTY_SERVICE_SLUGS } = await import("@/content/locations");
     const location = locationBySlug(params.city);
-    if (!location) throw notFound();
+    if (!location || !isLiveCity(params.city)) throw notFound();
     const { services } = await import("@/content/services");
     const specialtyServices = SPECIALTY_SERVICE_SLUGS.map((slug) => ({
       slug,
