@@ -246,6 +246,22 @@ function CityServicePage() {
               <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">{photo.caption}</figcaption>
             </figure>
           )}
+          {(service.slug === "furniture-removal" || service.slug === "mattress-and-bulky-item-removal") && (() => {
+            const other = service.slug === "furniture-removal" ? "mattress-and-bulky-item-removal" : "furniture-removal";
+            const otherName = other === "furniture-removal" ? "Furniture Removal" : "Mattress Removal";
+            const local = isLiveCityService(location.slug, other);
+            const lead = other === "furniture-removal"
+              ? "Getting rid of couches, sofas, tables or chairs instead?"
+              : "Only need an old mattress or box spring gone?";
+            return (
+              <p className="mt-10 leading-8 text-muted-foreground">
+                {lead}{" "}
+                <CityServiceLink city={location.slug} service={other} className="font-semibold text-primary hover:underline">
+                  {local ? `${otherName} ${city}` : otherName}
+                </CityServiceLink>
+              </p>
+            );
+          })()}
         </div>
       </section>
 

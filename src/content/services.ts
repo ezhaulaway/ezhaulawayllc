@@ -40,7 +40,7 @@ const raw_services: Service[] = [
     h1: "Furniture Removal in Parker & the Denver Metro Area",
     metaTitle: "Furniture Removal Services & Couch Removal | EZ Haulaway",
     metaDescription:
-      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, mattresses, and dressers. Free quotes, no lifting for you.",
+      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",
@@ -50,7 +50,7 @@ const raw_services: Service[] = [
     ],
     includes: [
       "Couches, sectionals, and recliners",
-      "Mattresses, box springs, and bed frames",
+      "Sofas, loveseats, and sleeper sofas",
       "Dressers, nightstands, and armoires",
       "Dining tables, chairs, and bar stools",
       "Desks, filing cabinets, and office chairs",
@@ -65,10 +65,15 @@ const raw_services: Service[] = [
         heading: "Clearing a whole house or just one piece",
         text: "One recliner or an entire furnished home, the process is the same: tell us what needs to go, get a price, and we haul it. Larger loads are quoted by volume so you know what you are paying for.",
       },
+      {
+        heading: "Just a mattress?",
+        text: "If all you need gone is an old mattress or box spring, see our dedicated mattress page.",
+        links: [{ slug: "mattress-and-bulky-item-removal", label: "Mattress Removal Denver" }],
+      },
     ],
     faqs: [
       ["Do I need to move the furniture outside first?", "No. Leave it where it sits. Our crew carries everything out for you."],
-      ["Can you take a mattress and box spring together?", "Yes. Mattresses and box springs are one of the most common items we haul."],
+      ["Can you take a dining table and chairs together?", "Yes. Tables, chairs, and matching sets go out in the same visit."],
       ["Will you take furniture apart?", "When something will not fit through a door intact, we break it down on site so it can be carried out safely."],
     ],
     related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
