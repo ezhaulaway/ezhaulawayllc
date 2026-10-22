@@ -1,4 +1,6 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCity, isLiveCityService } from "@/content/live-pages";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +28,9 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     const location = locationBySlug(params.city);
     const service = serviceBySlug(params.service);
     if (!location || !service || service.cityPages === false) throw notFound();
+    if (isLiveCity(params.city) && !isLiveCityService(params.city, params.service)) {
+      throw redirect({ to: "/services/$slug", params: { slug: params.service }, statusCode: 301 });
+    }
     const custom = customCityServices[`${params.city}/${params.service}`] ?? null;
     return { location, service, custom };
   },
@@ -106,7 +111,7 @@ function CityServicePage() {
   const name = service.name;
   const lower = name.toLowerCase();
   const otherServices = services.filter((item) => item.slug !== service.slug);
-  const nearby = locations.filter((item) => location.nearby.includes(item.slug));
+  const nearby = locations.filter((item) => location.nearby.includes(item.slug) && isLiveCityService(item.slug, service.slug));
 
   const faqs = custom
     ? custom.faqs
@@ -263,14 +268,12 @@ function CityServicePage() {
                 className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
               >
                 {item.name}
-              </Link> : <Link
-                key={item.slug}
-                to="/service-areas/$city/$service"
-                params={{ city: location.slug, service: item.slug }}
+              </Link> : <CityServiceLink
+                key={item.slug} city={location.slug} service={item.slug}
                 className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
               >
                 {item.name} {city}
-              </Link>
+              </CityServiceLink>
             ))}
           </div>
           {nearby.length > 0 && (
@@ -278,14 +281,12 @@ function CityServicePage() {
               <p className="mt-8 font-display font-bold">{name} in nearby towns</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {nearby.map((item) => (
-                  <Link
-                    key={item.slug}
-                    to="/service-areas/$city/$service"
-                    params={{ city: item.slug, service: service.slug }}
+                  <CityServiceLink
+                    key={item.slug} city={item.slug} service={service.slug}
                     className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
                   >
                     {name} {item.city}
-                  </Link>
+                  </CityServiceLink>
                 ))}
               </div>
             </>

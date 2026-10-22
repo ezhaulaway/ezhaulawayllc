@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService, isLiveService } from "@/content/live-pages";
 import { rich } from "@/components/prose-section";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Check, Phone } from "lucide-react";
@@ -19,7 +21,7 @@ export const Route = createFileRoute("/services/$slug")({
   loader: async ({ params }) => {
     const { serviceBySlug } = await import("@/content/services");
     const service = serviceBySlug(params.slug);
-    if (!service) throw notFound();
+    if (!service || !isLiveService(params.slug)) throw notFound();
     return { service };
   },
   head: ({ params, loaderData }) => {
@@ -229,7 +231,7 @@ function ServicePage() {
               </article>
             ))}
           </div>
-          {service.cityPages !== false && <div className="mt-12 border-t border-border pt-10">
+          {priorityLocations.some((location) => isLiveCityService(location.slug, service.slug)) && <div className="mt-12 border-t border-border pt-10">
             <h3 className="font-display text-xl font-bold">
               {service.name} by City
             </h3>
@@ -237,18 +239,16 @@ function ServicePage() {
               Same crew, same pricing, same week. Pick your town to see what we haul most there.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {priorityLocations.map((location) => (
-                <Link
-                  key={location.slug}
-                  to="/service-areas/$city/$service"
-                  params={{ city: location.slug, service: service.slug }}
+              {priorityLocations.filter((location) => isLiveCityService(location.slug, service.slug)).map((location) => (
+                <CityServiceLink
+                  key={location.slug} city={location.slug} service={service.slug}
                   className="inline-flex items-center justify-between gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-semibold transition-colors hover:border-primary"
                 >
                   <span>
                     {service.name} in {location.city}, CO
                   </span>
                   <ArrowRight className="size-4 shrink-0 text-primary" />
-                </Link>
+                </CityServiceLink>
               ))}
             </div>
           </div>}

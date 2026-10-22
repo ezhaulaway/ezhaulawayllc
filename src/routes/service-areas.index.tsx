@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -112,15 +114,13 @@ function ServiceAreasPage() {
                           Junk Removal {location.city}
                         </Link>
                       </li>
-                      {services.filter((service) => service.cityPages !== false).map((service) => (
+                      {services.filter((service) => isLiveCityService(location.slug, service.slug)).map((service) => (
                         <li key={service.slug}>
-                          <Link
-                            to="/service-areas/$city/$service"
-                            params={{ city: location.slug, service: service.slug }}
+                          <CityServiceLink city={location.slug} service={service.slug}
                             className="block rounded px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                           >
                             {service.name} {location.city}
-                          </Link>
+                          </CityServiceLink>
                         </li>
                       ))}
                     </ul>

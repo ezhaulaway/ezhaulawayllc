@@ -1,3 +1,5 @@
+import { CityServiceLink } from "@/components/city-service-link";
+import { isLiveCityService } from "@/content/live-pages";
 import { type ReactNode, lazy, Suspense, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageSquareText, Phone } from "lucide-react";
@@ -103,16 +105,14 @@ function AreasDropdown() {
                   All services in {location.city}
                 </Link>
               </DropdownMenuItem>
-              {services.map((service) => (
+              {services.filter((service) => service.cityPages === false || isLiveCityService(location.slug, service.slug)).map((service) => (
                 <DropdownMenuItem asChild key={service.slug}>
                   {service.cityPages === false ? <Link to="/services/$slug" params={{ slug: service.slug }}>
                     {service.name}
-                  </Link> : <Link
-                    to="/service-areas/$city/$service"
-                    params={{ city: location.slug, service: service.slug }}
+                  </Link> : <CityServiceLink city={location.slug} service={service.slug}
                   >
                     {service.name} {location.city}
-                  </Link>}
+                  </CityServiceLink>}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuSubContent>
