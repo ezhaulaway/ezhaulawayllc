@@ -11,7 +11,7 @@ export function rich(text: string) {
   const parts = text.split(/\[([^\[\]]+)\]\((\/[^)\s]*)\)/g);
   const out: React.ReactNode[] = [];
   for (let i = 0; i < parts.length; i += 3) {
-    out.push(...bold(parts[i], `t${i}-`));
+    out.push(...bold(parts[i] ?? "", `t${i}-`));
     if (i + 2 < parts.length) {
       out.push(<a key={`l${i}`} href={parts[i + 2]} className="font-semibold text-primary hover:underline">{parts[i + 1]}</a>);
     }
