@@ -23,3 +23,6 @@
 - Shared web fonts are self-hosted Latin variable fonts declared in global CSS with font-display: swap and system fallbacks, avoiding external font connections and hydration-dependent activation.
 - Responsive header logos use one picture element with low fetch priority, so hidden logo variants are not downloaded alongside the homepage photo.
 - Live pages are allow-listed in `src/content/live-pages.ts`; loaders, `public/sitemap.xml` (regenerate with `bun scripts/build-sitemap.ts`) and link lists read from it, so retired pages never get linked or indexed.
+- Responsive image variants use per-page-family registries sharing one helper; hero preloads and image srcsets must match so mobile avoids duplicate downloads and unrelated asset lists stay out of initial bundles.
+- Deferred below-fold controls render matching static views in SSR, including all FAQ answers; interaction modules load near the viewport and must not alter visible text or form behavior.
+- FAQ content opens without height animation; only opacity and transform animate to keep motion compositor-friendly.

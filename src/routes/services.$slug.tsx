@@ -1,4 +1,5 @@
 import { CityServiceLink } from "@/components/city-service-link";
+import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { isLiveCityService, isLiveService } from "@/content/live-pages";
 import { rich } from "@/components/prose-section";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:url", content: `${SITE_URL}/services/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: `${SITE_URL}/services/${params.slug}` }],
+      links: [{ rel: "canonical", href: `${SITE_URL}/services/${params.slug}` }, heroPreload(service.image)],
       scripts: [
         {
           type: "application/ld+json",
@@ -128,7 +129,9 @@ function ServicePage() {
           </div>
           <div className="relative overflow-hidden rounded-lg border border-border bg-muted">
             <img
-              src={service.image}
+              {...responsiveImage(service.image)}
+              fetchPriority="high"
+              loading="eager"
               alt={service.imageAlt}
               width={1024}
               height={768}

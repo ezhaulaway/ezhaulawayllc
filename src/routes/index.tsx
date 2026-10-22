@@ -4,8 +4,7 @@ import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
 import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
-import heroJob640 from "@/assets/hero-job-640.webp";
-import heroJob800 from "@/assets/hero-job-800.webp";
+import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 
 const BASELINE_RATING = { rating: 5, count: 5 };
@@ -51,14 +50,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      {
-        rel: "preload",
-        as: "image",
-        href: heroJob1200,
-        imageSrcSet: `${heroJob640} 640w, ${heroJob800} 800w, ${heroJob1200} 1200w`,
-        imageSizes: "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)",
-        fetchPriority: "high",
-      },
+      heroPreload(heroJob1200, "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)"),
     ],
     scripts: [
       {

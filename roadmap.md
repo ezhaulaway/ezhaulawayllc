@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Optimize responsive photos and eager hero preloads without content or URL changes
+- [x] Verify pricing layout stability, font metrics and deferred components; preserve SSR FAQs and leave hosting-managed tracking untouched
+- [x] Report image sizes and skipped CSS work; published PageSpeed comparison awaits publication
+
 - [x] Correct mobile font and logo loading; verify the homepage and quote form without changing appearance or pricing
 
 - [x] Apply mobile speed improvements: defer estimate/quote code, slim navigation and route content downloads, load fonts without blocking text, prioritize the homepage photo; verify unchanged controls

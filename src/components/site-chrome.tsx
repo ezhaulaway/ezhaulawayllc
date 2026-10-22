@@ -1,4 +1,8 @@
 import { CityServiceLink } from "@/components/city-service-link";
+import { responsiveImage } from "@/lib/logo-images";
+import { DeferredFaq } from "@/components/deferred-faq";
+import { DeferredSection } from "@/components/deferred-section";
+import { QuoteFormPreview } from "@/components/quote-form-preview";
 import { isLiveCityService } from "@/content/live-pages";
 import { type ReactNode, lazy, Suspense, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
@@ -127,9 +131,9 @@ export function Wordmark() {
   return (
     <Link to="/" className="group inline-flex shrink-0 items-center" aria-label="EZ Haulaway home">
       <picture>
-        <source media="(max-width: 639px)" srcSet={stackedSrc} width={240} height={117} />
+        <source media="(max-width: 639px)" srcSet={responsiveImage(stackedSrc).srcSet} sizes="115px" width={240} height={117} />
         <img
-          src={wordmarkSrc}
+          {...responsiveImage(wordmarkSrc, "(min-width: 768px) 232px, 199px")}
           alt="EZ Haulaway"
           className="logo-outline h-14 w-auto shrink-0 object-contain transition-transform group-hover:-rotate-1 sm:h-12 md:h-14"
           width={480}
@@ -184,7 +188,9 @@ export function InlineQuoteForm() {
           <p className="text-sm text-muted-foreground">Tell us what needs to go. It only takes a minute.</p>
         </div>
       </div>
-      <Suspense fallback={<QuoteFormPlaceholder />}><QuoteForm /></Suspense>
+      <DeferredSection fallback={<QuoteFormPreview />}>
+        <Suspense fallback={<QuoteFormPreview />}><QuoteForm /></Suspense>
+      </DeferredSection>
     </div>
   );
 }
@@ -534,18 +540,7 @@ export function PageHero({
 }
 
 export function FaqAccordion({ faqs }: { faqs: ReadonlyArray<readonly [string, string]> }) {
-  return (
-    <Accordion type="single" collapsible className="border-t border-border">
-      {faqs.map(([question, answer], index) => (
-        <AccordionItem key={question} value={`faq-${index}`}>
-          <AccordionTrigger className="py-5 text-base font-bold hover:no-underline">{question}</AccordionTrigger>
-          <AccordionContent forceMount className="max-w-2xl pr-8 text-base leading-7 text-muted-foreground">
-            {answer}
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  );
+  return <DeferredFaq faqs={faqs} />;
 }
 
 export function CtaBand({

@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { AiEstimatorIntro } from "@/components/ai-estimator-intro";
+import { EstimatePreview } from "./estimate-preview";
 
 const AiEstimator = lazy(() => import("@/components/ai-estimator").then((module) => ({ default: module.AiEstimator })));
 
@@ -8,10 +9,7 @@ function EstimatePlaceholder() {
     <section className="py-16 sm:py-24" aria-busy="true">
       <div className="mx-auto max-w-5xl px-5 lg:px-8">
         <AiEstimatorIntro />
-        <div className="mt-10 grid gap-5 lg:grid-cols-2" aria-hidden="true">
-          <div className="h-[640px] rounded-lg border border-border bg-card shadow-sm" />
-          <div className="hidden rounded-lg border border-border bg-muted lg:block" />
-        </div>
+        <EstimatePreview />
       </div>
     </section>
   );
@@ -33,7 +31,7 @@ export function DeferredAiEstimator() {
         setReady(true);
         observer.disconnect();
       }
-    }, { rootMargin: "300px" });
+    }, { rootMargin: "0px" });
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
