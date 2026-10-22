@@ -2,12 +2,17 @@ import { describe, it, expect } from "vitest";
 import { liveUrlPaths, isLiveCityService } from "./live-pages";
 import { readFileSync } from "node:fs";
 describe("live pages", () => {
-  it("has 92 URLs", () => expect(liveUrlPaths().length).toBe(92));
-  it("has 51 city-service pages", () => expect(liveUrlPaths().filter((p) => p.split("/").length === 4).length).toBe(51));
+  it("has 96 URLs", () => expect(liveUrlPaths().length).toBe(96));
+  it("has 55 city-service pages", () => expect(liveUrlPaths().filter((p) => p.split("/").length === 4).length).toBe(55));
   it("keeps custom-copy pages", () => {
     expect(isLiveCityService("parker", "shed-removal")).toBe(true);
     expect(isLiveCityService("castle-pines", "appliance-removal")).toBe(false);
-    expect(isLiveCityService("sedalia", "furniture-removal")).toBe(false);
+  });
+  it("keeps the four added pages live", () => {
+    expect(isLiveCityService("parker", "construction-debris-removal")).toBe(true);
+    expect(isLiveCityService("sedalia", "furniture-removal")).toBe(true);
+    expect(isLiveCityService("franktown", "commercial-junk-removal")).toBe(true);
+    expect(isLiveCityService("sedalia", "electronics-and-e-waste-removal")).toBe(true);
   });
   it("sitemap matches allow-list", () => {
     const locs = [...readFileSync("public/sitemap.xml", "utf8").matchAll(/<loc>https:\/\/www\.ezhaulawayllc\.com([^<]*)<\/loc>/g)].map((m) => m[1]);

@@ -67,7 +67,7 @@ const withExtras = (city: string, extras: string[] = []) =>
   [city, PRIMARY_CITIES.includes(city) ? [...CORE_FIVE, ...extras] : extras] as const;
 
 export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.fromEntries([
-  withExtras("parker", ["shed-removal"]),
+  withExtras("parker", ["shed-removal", "construction-debris-removal"]),
   withExtras("castle-rock"),
   withExtras("highlands-ranch"),
   withExtras("centennial", ["electronics-and-e-waste-removal"]),
@@ -78,9 +78,9 @@ export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.from
   ["castle-pines", ["furniture-removal", "hot-tub-removal"]],
   ["englewood", ["furniture-removal", "hot-tub-removal"]],
   ["lakewood", ["furniture-removal", "hot-tub-removal"]],
-  ["franktown", []],
+  ["franktown", ["commercial-junk-removal"]],
   ["elizabeth", []],
-  ["sedalia", []],
+  ["sedalia", ["furniture-removal", "electronics-and-e-waste-removal"]],
 ]);
 
 /** Locations present in content but outside this allow-list keep today's behavior. */
