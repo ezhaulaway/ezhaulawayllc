@@ -16,7 +16,8 @@ import { services } from "@/content/services";
 import { locations, priorityLocations } from "@/content/locations";
 import { locations as navigationLocations } from "@/content/navigation";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
-import wordmarkAsset from "@/assets/ez-haulaway-wordmark.png.asset.json";
+import wordmarkSmall from "@/assets/ez-haulaway-wordmark-sm.webp";
+import { responsiveImage as logoImage } from "@/lib/logo-images";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: async ({ params }) => {
@@ -139,10 +140,11 @@ function ServicePage() {
             />
             <div className="absolute right-3 top-3 rounded-md border border-secondary-foreground/20 bg-secondary/90 px-3 py-2 shadow-lg backdrop-blur-sm sm:right-4 sm:top-4">
               <img
-                src={wordmarkAsset.url}
+                {...logoImage(wordmarkSmall, "(min-width: 640px) 144px, 112px")}
                 alt="EZ Haulaway"
                 width={1254}
                 height={302}
+                decoding="async"
                 className="h-auto w-28 sm:w-36"
               />
             </div>
