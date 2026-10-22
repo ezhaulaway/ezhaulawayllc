@@ -44,8 +44,30 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+const CANONICAL_HOST = "www.ezhaulawayllc.com";
+const PRODUCTION_HOSTS = new Set(["ezhaulawayllc.com", CANONICAL_HOST]);
+
+// Single-step 301 to https://www + no trailing slash (production domain only).
+export function canonicalRedirect(request: Request): Response | null {
+  if (request.method !== "GET" && request.method !== "HEAD") return null;
+  const url = new URL(request.url);
+  const host = url.hostname.toLowerCase();
+  if (!PRODUCTION_HOSTS.has(host)) return null;
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const isHttp = (forwardedProto ?? url.protocol.replace(":", "")) === "http";
+  let path = url.pathname;
+  if (path.length > 1 && path.endsWith("/")) path = path.replace(/\/+$/, "") || "/";
+  if (!isHttp && host === CANONICAL_HOST && path === url.pathname) return null;
+  return new Response(null, {
+    status: 301,
+    headers: { location: `https://${CANONICAL_HOST}${path}${url.search}` },
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const redirect = canonicalRedirect(request);
+    if (redirect) return redirect;
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
