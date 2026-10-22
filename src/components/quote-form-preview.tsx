@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 /** Initial quote view, matching the form while its submission code loads. */
 export function QuoteFormPreview() {
-  return <form className="mt-5 space-y-4" aria-busy="true" onSubmit={(event) => event.preventDefault()}>
+  return <form className="mt-5 space-y-4" aria-busy="true" inert onSubmit={(event) => event.preventDefault()}>
     <div className="grid gap-4 sm:grid-cols-2">
       <label className="space-y-1.5 text-sm font-semibold">Name<Input name="name" autoComplete="name" required className="h-11 bg-card" /></label>
       <label className="space-y-1.5 text-sm font-semibold">Phone number<Input name="phone" type="tel" autoComplete="tel" required className="h-11 bg-card" /></label>

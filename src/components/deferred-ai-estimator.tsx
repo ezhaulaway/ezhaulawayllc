@@ -31,7 +31,7 @@ export function DeferredAiEstimator() {
         setReady(true);
         observer.disconnect();
       }
-    }, { rootMargin: "300px" });
+    }, { rootMargin: "0px" });
     observer.observe(element);
     return () => observer.disconnect();
   }, []);

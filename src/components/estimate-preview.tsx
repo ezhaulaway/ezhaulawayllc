@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 export function EstimatePreview() {
   const inputCls = "mt-1 w-full rounded-md border border-input bg-background p-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring";
   return <div className="mt-10 grid gap-5 lg:grid-cols-2" aria-busy="true">
-    <form className="rounded-lg border border-border bg-card p-6 shadow-sm" onSubmit={(event) => event.preventDefault()}>
+    <form className="rounded-lg border border-border bg-card p-6 shadow-sm" inert onSubmit={(event) => event.preventDefault()}>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="sm:col-span-2"><label className="block text-sm font-bold" htmlFor="ai-name">Name *</label><input id="ai-name" required maxLength={100} autoComplete="name" className={inputCls} /></div>
         <div><label className="block text-sm font-bold" htmlFor="ai-city">City *</label><input id="ai-city" required maxLength={200} autoComplete="address-level2" placeholder="e.g. Parker" className={inputCls} /></div>
