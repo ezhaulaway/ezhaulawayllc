@@ -8,6 +8,10 @@ import constructionAsset from "@/assets/branded-service-construction.webp";
 import yardAsset from "@/assets/branded-service-yard.webp";
 import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
 import estateAsset from "@/assets/real-basement-panel-1000.webp";
+import basementBefore640 from "@/assets/real-basement-before-640.webp";
+import basementBefore960 from "@/assets/real-basement-before-960.webp";
+import basementAfter640 from "@/assets/real-basement-after-640.webp";
+import basementAfter960 from "@/assets/real-basement-after-960.webp";
 import bulkyAsset from "@/assets/real-IMG_5082.jpg.asset.json";
 import electronicsAsset from "@/assets/branded-service-electronics.webp";
 import commercialAsset from "@/assets/branded-service-commercial.webp";
@@ -25,6 +29,14 @@ export type Service = {
   summary: string;
   image: string;
   imageAlt: string;
+  realJob?: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    facts: string[];
+    before: { src: string; srcSet: string; alt: string };
+    after: { src: string; srcSet: string; alt: string };
+  };
   intro: string[];
   includes: string[];
   sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string; city?: string }> }>;
@@ -382,6 +394,26 @@ const raw_services: Service[] = [
     summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
     image: estateAsset,
     imageAlt: "EZ Haulaway crew member carrying a wall-art panel out of a finished basement during a house cleanout, with furniture, boxes and cables waiting to be hauled",
+    realJob: {
+      eyebrow: "Real job in Parker, CO",
+      title: "A Parker Basement Cleared in About 45 Minutes",
+      text: "This basement was full: boxes, a treadmill, a dresser, a TV, a bin of cables and a pile of general trash. Our crew carried everything out, loaded the trailer and left the floor clear and empty. These are the actual before and after photos from the job.",
+      facts: [
+        "Location: Parker, CO",
+        "Time on site: about 45 minutes",
+        "Hauled: boxes, treadmill, dresser, TV, cables and household trash",
+      ],
+      before: {
+        src: basementBefore960,
+        srcSet: `${basementBefore640} 640w, ${basementBefore960} 960w`,
+        alt: "Before: a Parker basement packed with boxes, a treadmill, a dresser, a TV and a bin of cables waiting to be hauled away",
+      },
+      after: {
+        src: basementAfter960,
+        srcSet: `${basementAfter640} 640w, ${basementAfter960} 960w`,
+        alt: "After: the same Parker basement completely cleared, with an empty wood-look floor and nothing left behind",
+      },
+    },
     intro: [
       "Clearing a house is rarely just a hauling job. Estates, foreclosures, and rental turnovers all come with a deadline and often with grief or stress attached.",
       "We work steadily, communicate clearly, and leave the property empty and swept.",

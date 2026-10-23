@@ -208,6 +208,43 @@ function ServicePage() {
         </div>
       </section>
 
+      {service.realJob && (
+        <section className="border-y border-border bg-muted py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <SectionHeader eyebrow={service.realJob.eyebrow} title={service.realJob.title} text={service.realJob.text} />
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {([
+                ["Before", service.realJob.before],
+                ["After", service.realJob.after],
+              ] as const).map(([label, photo]) => (
+                <figure key={label} className="overflow-hidden rounded-lg border border-border bg-card">
+                  <img
+                    src={photo.src}
+                    srcSet={photo.srcSet}
+                    sizes="(min-width: 1280px) 560px, (min-width: 640px) 45vw, 100vw"
+                    alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={960}
+                    height={1280}
+                    className="aspect-[3/4] w-full object-cover"
+                  />
+                  <figcaption className="px-5 py-3 text-sm font-bold uppercase tracking-[0.14em] text-muted-foreground">{label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-3">
+              {service.realJob.facts.map((fact) => (
+                <li key={fact} className="flex items-start gap-3 text-sm font-semibold">
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
           <SectionHeader

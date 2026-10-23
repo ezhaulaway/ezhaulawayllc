@@ -83,6 +83,10 @@ function AboutPage() {
               that's how we approach all of them — whether it's one mattress out of a spare room or an entire property
               cleared before a closing date.
             </p>
+            <p className="mt-5 max-w-xl leading-8 text-muted-foreground">
+              EZ Haulaway carries general liability insurance with a $1,000,000 per-occurrence limit. Realtors, property
+              managers, and HOAs are welcome to ask for a certificate of insurance before a job.
+            </p>
           </div>
         </div>
       </section>
