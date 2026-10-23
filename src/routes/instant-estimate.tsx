@@ -127,13 +127,14 @@ function InstantEstimatePage() {
     <PageShell>
       <section className="border-b border-border bg-secondary text-secondary-foreground">
         <div className="mx-auto grid max-w-7xl items-start gap-8 px-5 py-10 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:py-14">
-          <div className="min-w-0 lg:sticky lg:top-28">
+          <div className="contents lg:block lg:sticky lg:top-28">
+            <div className="order-1 min-w-0 lg:order-none">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">
               Parker, Castle Rock &amp; Denver Metro
             </p>
             <p
               aria-hidden="true"
-              className="mt-3 font-display text-6xl font-black uppercase italic leading-none tracking-tight text-primary ez-outline-light sm:text-7xl lg:text-8xl"
+              className="mt-3 font-display text-5xl font-black uppercase italic leading-none tracking-tight text-primary ez-outline-light sm:text-7xl lg:text-8xl"
             >
               Too EZ.
             </p>
@@ -148,6 +149,8 @@ function InstantEstimatePage() {
               <ArrowRight aria-hidden="true" className="size-4 text-primary" />
               <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">3. Lock it in</li>
             </ol>
+            </div>
+            <div className="order-3 min-w-0 lg:order-none">
             <p className="mt-3 text-base font-semibold">Locking in your quote is almost too EZ.</p>
             <p className="mt-5 max-w-xl text-base leading-7 text-secondary-foreground/75 sm:text-lg">
               Add your name, city and phone, then snap a photo or describe what you have. Our free junk removal
@@ -169,21 +172,24 @@ function InstantEstimatePage() {
                 <p className="mt-1 text-sm text-secondary-foreground/65">Your request goes directly to Ben and the EZ Haulaway crew.</p>
               </div>
             </div>
-            <img
-              {...responsiveImage(crewLoadingAsset.url, "(min-width: 1280px) 450px, (min-width: 1024px) 35vw, calc(100vw - 40px)")}
-              alt="Ben from EZ Haulaway loading a cabinet on a dolly into the black dump trailer"
-              width={540}
-              height={360}
-              className="mt-7 w-full rounded-lg border border-secondary-foreground/15 object-cover"
-              loading="lazy"
-            />
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <img {...responsiveImage(wagonAsset.url, "(min-width: 1024px) 220px, calc((100vw - 56px) / 2)")} alt="EZ Haulaway hauling a wagon of junk toward the red truck and trailer" width={540} height={360} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
-              <img {...responsiveImage(dollyAsset.url, "(min-width: 1024px) 220px, calc((100vw - 56px) / 2)")} alt="Ben wheeling a cabinet down a Parker driveway on a dolly" width={360} height={540} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
             </div>
           </div>
+          <div className="order-2 min-w-0 lg:order-none">
           <div className="rounded-lg bg-background p-3 text-foreground shadow-lg sm:p-5">
             <AiEstimator campaign showIntro={false} />
+          </div>
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+              <img
+                {...responsiveImage(crewLoadingAsset.url, "(min-width: 1280px) 230px, (min-width: 1024px) 19vw, (min-width: 640px) calc((100vw - 72px) / 3), calc(100vw - 40px)")}
+                alt="Ben from EZ Haulaway loading a cabinet on a dolly into the black dump trailer"
+                width={540}
+                height={360}
+                className="col-span-2 aspect-[3/2] w-full rounded-lg border border-secondary-foreground/15 object-cover sm:col-span-1 sm:aspect-[4/3]"
+                loading="lazy"
+              />
+              <img {...responsiveImage(wagonAsset.url, "(min-width: 1280px) 230px, (min-width: 1024px) 19vw, (min-width: 640px) calc((100vw - 72px) / 3), calc((100vw - 52px) / 2)")} alt="EZ Haulaway hauling a wagon of junk toward the red truck and trailer" width={540} height={360} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+              <img {...responsiveImage(dollyAsset.url, "(min-width: 1280px) 230px, (min-width: 1024px) 19vw, (min-width: 640px) calc((100vw - 72px) / 3), calc((100vw - 52px) / 2)")} alt="Ben wheeling a cabinet down a Parker driveway on a dolly" width={360} height={540} className="aspect-[4/3] w-full rounded-lg border border-secondary-foreground/15 object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>

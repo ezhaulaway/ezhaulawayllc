@@ -1,75 +1,61 @@
 import { createResponsiveImages } from "./responsive-images";
 import original0 from "@/assets/branded-area-aurora.webp";
-import variant0_640 from "@/assets/branded-area-aurora-speed-640.webp.asset.json";
-import variant0_700 from "@/assets/branded-area-aurora-speed-700.webp.asset.json";
-import variant0_1000 from "@/assets/branded-area-aurora-speed-1000.webp.asset.json";
+import hq0_800 from "@/assets/branded-area-aurora-hq-800.webp";
+import hq0_1200 from "@/assets/branded-area-aurora-hq-1200.webp";
 import original1 from "@/assets/branded-area-castle-pines.webp";
-import variant1_640 from "@/assets/branded-area-castle-pines-speed-640.webp.asset.json";
-import variant1_700 from "@/assets/branded-area-castle-pines-speed-700.webp.asset.json";
-import variant1_1000 from "@/assets/branded-area-castle-pines-speed-1000.webp.asset.json";
+import hq1_800 from "@/assets/branded-area-castle-pines-hq-800.webp";
+import hq1_1200 from "@/assets/branded-area-castle-pines-hq-1200.webp";
 import original2 from "@/assets/branded-area-castle-rock.webp";
-import variant2_640 from "@/assets/branded-area-castle-rock-speed-640.webp.asset.json";
-import variant2_700 from "@/assets/branded-area-castle-rock-speed-700.webp.asset.json";
-import variant2_1000 from "@/assets/branded-area-castle-rock-speed-1000.webp.asset.json";
+import hq2_800 from "@/assets/branded-area-castle-rock-hq-800.webp";
+import hq2_1200 from "@/assets/branded-area-castle-rock-hq-1200.webp";
 import original3 from "@/assets/branded-area-centennial.webp";
-import variant3_640 from "@/assets/branded-area-centennial-speed-640.webp.asset.json";
-import variant3_700 from "@/assets/branded-area-centennial-speed-700.webp.asset.json";
-import variant3_1000 from "@/assets/branded-area-centennial-speed-1000.webp.asset.json";
+import hq3_800 from "@/assets/branded-area-centennial-hq-800.webp";
+import hq3_1200 from "@/assets/branded-area-centennial-hq-1200.webp";
 import original4 from "@/assets/branded-area-denver.webp";
-import variant4_640 from "@/assets/branded-area-denver-speed-640.webp.asset.json";
-import variant4_700 from "@/assets/branded-area-denver-speed-700.webp.asset.json";
-import variant4_1000 from "@/assets/branded-area-denver-speed-1000.webp.asset.json";
+import hq4_800 from "@/assets/branded-area-denver-hq-800.webp";
+import hq4_1200 from "@/assets/branded-area-denver-hq-1200.webp";
 import original5 from "@/assets/branded-area-elizabeth.webp";
-import variant5_640 from "@/assets/branded-area-elizabeth-speed-640.webp.asset.json";
-import variant5_700 from "@/assets/branded-area-elizabeth-speed-700.webp.asset.json";
-import variant5_1000 from "@/assets/branded-area-elizabeth-speed-1000.webp.asset.json";
+import hq5_800 from "@/assets/branded-area-elizabeth-hq-800.webp";
+import hq5_1200 from "@/assets/branded-area-elizabeth-hq-1200.webp";
 import original6 from "@/assets/branded-area-englewood.webp";
-import variant6_640 from "@/assets/branded-area-englewood-speed-640.webp.asset.json";
-import variant6_700 from "@/assets/branded-area-englewood-speed-700.webp.asset.json";
-import variant6_1000 from "@/assets/branded-area-englewood-speed-1000.webp.asset.json";
+import hq6_800 from "@/assets/branded-area-englewood-hq-800.webp";
+import hq6_1200 from "@/assets/branded-area-englewood-hq-1200.webp";
 import original7 from "@/assets/branded-area-franktown.webp";
-import variant7_640 from "@/assets/branded-area-franktown-speed-640.webp.asset.json";
-import variant7_700 from "@/assets/branded-area-franktown-speed-700.webp.asset.json";
-import variant7_1000 from "@/assets/branded-area-franktown-speed-1000.webp.asset.json";
+import hq7_800 from "@/assets/branded-area-franktown-hq-800.webp";
+import hq7_1200 from "@/assets/branded-area-franktown-hq-1200.webp";
 import original8 from "@/assets/branded-area-highlands-ranch.webp";
-import variant8_640 from "@/assets/branded-area-highlands-ranch-speed-640.webp.asset.json";
-import variant8_700 from "@/assets/branded-area-highlands-ranch-speed-700.webp.asset.json";
-import variant8_1000 from "@/assets/branded-area-highlands-ranch-speed-1000.webp.asset.json";
+import hq8_800 from "@/assets/branded-area-highlands-ranch-hq-800.webp";
+import hq8_1200 from "@/assets/branded-area-highlands-ranch-hq-1200.webp";
 import original9 from "@/assets/branded-area-lakewood.webp";
-import variant9_640 from "@/assets/branded-area-lakewood-speed-640.webp.asset.json";
-import variant9_700 from "@/assets/branded-area-lakewood-speed-700.webp.asset.json";
-import variant9_1000 from "@/assets/branded-area-lakewood-speed-1000.webp.asset.json";
+import hq9_800 from "@/assets/branded-area-lakewood-hq-800.webp";
+import hq9_1200 from "@/assets/branded-area-lakewood-hq-1200.webp";
 import original10 from "@/assets/branded-area-littleton.webp";
-import variant10_640 from "@/assets/branded-area-littleton-speed-640.webp.asset.json";
-import variant10_700 from "@/assets/branded-area-littleton-speed-700.webp.asset.json";
-import variant10_1000 from "@/assets/branded-area-littleton-speed-1000.webp.asset.json";
+import hq10_800 from "@/assets/branded-area-littleton-hq-800.webp";
+import hq10_1200 from "@/assets/branded-area-littleton-hq-1200.webp";
 import original11 from "@/assets/branded-area-lone-tree.webp";
-import variant11_640 from "@/assets/branded-area-lone-tree-speed-640.webp.asset.json";
-import variant11_700 from "@/assets/branded-area-lone-tree-speed-700.webp.asset.json";
-import variant11_1000 from "@/assets/branded-area-lone-tree-speed-1000.webp.asset.json";
+import hq11_800 from "@/assets/branded-area-lone-tree-hq-800.webp";
+import hq11_1200 from "@/assets/branded-area-lone-tree-hq-1200.webp";
 import original12 from "@/assets/branded-area-parker.webp";
-import variant12_640 from "@/assets/branded-area-parker-speed-640.webp.asset.json";
-import variant12_700 from "@/assets/branded-area-parker-speed-700.webp.asset.json";
-import variant12_1000 from "@/assets/branded-area-parker-speed-1000.webp.asset.json";
+import hq12_800 from "@/assets/branded-area-parker-hq-800.webp";
+import hq12_1200 from "@/assets/branded-area-parker-hq-1200.webp";
 import original13 from "@/assets/branded-area-sedalia.webp";
-import variant13_640 from "@/assets/branded-area-sedalia-speed-640.webp.asset.json";
-import variant13_700 from "@/assets/branded-area-sedalia-speed-700.webp.asset.json";
-import variant13_1000 from "@/assets/branded-area-sedalia-speed-1000.webp.asset.json";
+import hq13_800 from "@/assets/branded-area-sedalia-hq-800.webp";
+import hq13_1200 from "@/assets/branded-area-sedalia-hq-1200.webp";
 
 const images = {
-  [original0]: { src: variant0_1000.url, srcSet: `${variant0_640.url} 640w, ${variant0_700.url} 700w, ${variant0_1000.url} 1000w` },
-  [original1]: { src: variant1_1000.url, srcSet: `${variant1_640.url} 640w, ${variant1_700.url} 700w, ${variant1_1000.url} 1000w` },
-  [original2]: { src: variant2_1000.url, srcSet: `${variant2_640.url} 640w, ${variant2_700.url} 700w, ${variant2_1000.url} 1000w` },
-  [original3]: { src: variant3_1000.url, srcSet: `${variant3_640.url} 640w, ${variant3_700.url} 700w, ${variant3_1000.url} 1000w` },
-  [original4]: { src: variant4_1000.url, srcSet: `${variant4_640.url} 640w, ${variant4_700.url} 700w, ${variant4_1000.url} 1000w` },
-  [original5]: { src: variant5_1000.url, srcSet: `${variant5_640.url} 640w, ${variant5_700.url} 700w, ${variant5_1000.url} 1000w` },
-  [original6]: { src: variant6_1000.url, srcSet: `${variant6_640.url} 640w, ${variant6_700.url} 700w, ${variant6_1000.url} 1000w` },
-  [original7]: { src: variant7_1000.url, srcSet: `${variant7_640.url} 640w, ${variant7_700.url} 700w, ${variant7_1000.url} 1000w` },
-  [original8]: { src: variant8_1000.url, srcSet: `${variant8_640.url} 640w, ${variant8_700.url} 700w, ${variant8_1000.url} 1000w` },
-  [original9]: { src: variant9_1000.url, srcSet: `${variant9_640.url} 640w, ${variant9_700.url} 700w, ${variant9_1000.url} 1000w` },
-  [original10]: { src: variant10_1000.url, srcSet: `${variant10_640.url} 640w, ${variant10_700.url} 700w, ${variant10_1000.url} 1000w` },
-  [original11]: { src: variant11_1000.url, srcSet: `${variant11_640.url} 640w, ${variant11_700.url} 700w, ${variant11_1000.url} 1000w` },
-  [original12]: { src: variant12_1000.url, srcSet: `${variant12_640.url} 640w, ${variant12_700.url} 700w, ${variant12_1000.url} 1000w` },
-  [original13]: { src: variant13_1000.url, srcSet: `${variant13_640.url} 640w, ${variant13_700.url} 700w, ${variant13_1000.url} 1000w` },
+  [original0]: { src: hq0_1200, srcSet: `${hq0_800} 800w, ${hq0_1200} 1200w` },
+  [original1]: { src: hq1_1200, srcSet: `${hq1_800} 800w, ${hq1_1200} 1200w` },
+  [original2]: { src: hq2_1200, srcSet: `${hq2_800} 800w, ${hq2_1200} 1200w` },
+  [original3]: { src: hq3_1200, srcSet: `${hq3_800} 800w, ${hq3_1200} 1200w` },
+  [original4]: { src: hq4_1200, srcSet: `${hq4_800} 800w, ${hq4_1200} 1200w` },
+  [original5]: { src: hq5_1200, srcSet: `${hq5_800} 800w, ${hq5_1200} 1200w` },
+  [original6]: { src: hq6_1200, srcSet: `${hq6_800} 800w, ${hq6_1200} 1200w` },
+  [original7]: { src: hq7_1200, srcSet: `${hq7_800} 800w, ${hq7_1200} 1200w` },
+  [original8]: { src: hq8_1200, srcSet: `${hq8_800} 800w, ${hq8_1200} 1200w` },
+  [original9]: { src: hq9_1200, srcSet: `${hq9_800} 800w, ${hq9_1200} 1200w` },
+  [original10]: { src: hq10_1200, srcSet: `${hq10_800} 800w, ${hq10_1200} 1200w` },
+  [original11]: { src: hq11_1200, srcSet: `${hq11_800} 800w, ${hq11_1200} 1200w` },
+  [original12]: { src: hq12_1200, srcSet: `${hq12_800} 800w, ${hq12_1200} 1200w` },
+  [original13]: { src: hq13_1200, srcSet: `${hq13_800} 800w, ${hq13_1200} 1200w` },
 };
 export const { responsiveImage, heroPreload } = createResponsiveImages(images);

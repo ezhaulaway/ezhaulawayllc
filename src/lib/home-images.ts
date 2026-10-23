@@ -1,10 +1,9 @@
 import { createResponsiveImages } from "./responsive-images";
 import original36 from "@/assets/hero-job-1200.webp";
-import variant36_640 from "@/assets/hero-job-1200-speed-640.webp.asset.json";
-import variant36_700 from "@/assets/hero-job-1200-speed-700.webp.asset.json";
-import variant36_1000 from "@/assets/hero-job-1200-speed-1000.webp.asset.json";
+import hero640 from "@/assets/hero-job-hq-640.webp";
+import hero900 from "@/assets/hero-job-hq-900.webp";
 
 const images = {
-  [original36]: { src: variant36_1000.url, srcSet: `${variant36_640.url} 640w, ${variant36_700.url} 700w, ${variant36_1000.url} 1000w` },
+  [original36]: { src: original36, srcSet: `${hero640} 640w, ${hero900} 900w, ${original36} 1200w` },
 };
 export const { responsiveImage, heroPreload } = createResponsiveImages(images);

@@ -46,6 +46,21 @@ import hotTubAsset from "@/assets/card-hot-tub.webp";
 import constructionAsset from "@/assets/card-construction.webp";
 import garageSrc from "@/assets/card-household.webp";
 import estateAsset from "@/assets/card-estate.webp";
+import furnitureHq from "@/assets/card-furniture-hq-1280.webp";
+import applianceHq from "@/assets/card-appliance-hq-1280.webp";
+import hotTubHq from "@/assets/card-hot-tub-hq-1280.webp";
+import constructionHq from "@/assets/card-construction-hq-1280.webp";
+import garageHq from "@/assets/card-household-hq-1280.webp";
+import estateHq from "@/assets/card-estate-hq-1280.webp";
+
+const cardSrcSet: Record<string, string> = {
+  [furnitureAsset]: `${furnitureAsset} 640w, ${furnitureHq} 1280w`,
+  [applianceAsset]: `${applianceAsset} 640w, ${applianceHq} 1280w`,
+  [hotTubAsset]: `${hotTubAsset} 640w, ${hotTubHq} 1280w`,
+  [constructionAsset]: `${constructionAsset} 640w, ${constructionHq} 1280w`,
+  [garageSrc]: `${garageSrc} 540w, ${garageHq} 1080w`,
+  [estateAsset]: `${estateAsset} 640w, ${estateHq} 1280w`,
+};
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -315,8 +330,11 @@ export function HomePage() {
                 <Link to="/services/$slug" params={{ slug }} key={title} className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7 sm:min-h-72">
                   <img
                     src={image}
+                    srcSet={cardSrcSet[image]}
+                    sizes="(min-width: 1024px) 405px, (min-width: 640px) 50vw, 100vw"
                     alt={imageAlt}
                     loading="lazy"
+                    decoding="async"
                     style={{ objectPosition: position }}
                     className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                   />
