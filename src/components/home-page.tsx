@@ -38,7 +38,8 @@ import heroJob1200 from "@/assets/hero-job-1200.webp";
 import timelapsePosterSrc from "@/assets/timelapse-poster.webp";
 import timelapseAsset from "@/assets/ez-haulaway-timelapse.mp4.asset.json";
 import benJobsiteAsset from "@/assets/Ben_real_photo_at_jobsite_thumbs_up.avif.asset.json";
-import benZoeAsset from "@/assets/ben_and_zoe_photo.avif.asset.json";
+import benZoe720 from "@/assets/ben-zoe-trailer-portrait-720.webp";
+import benZoe1080 from "@/assets/ben-zoe-trailer-portrait-1080.webp";
 import furnitureAsset from "@/assets/card-furniture.webp";
 import applianceAsset from "@/assets/card-appliance.webp";
 import hotTubAsset from "@/assets/card-hot-tub.webp";
@@ -423,13 +424,16 @@ export function HomePage() {
 
         <section id="about" className="bg-card py-20 sm:py-28">
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
-            <div className="rounded-lg border border-border bg-muted p-3">
+            <div className="mx-auto w-full max-w-md rounded-lg border border-border bg-muted p-3 lg:max-w-lg">
               <img
-                src={benZoeAsset.url}
-                alt="Ben and Zoe, owners of EZ Haulaway"
+                src={benZoe720}
+                srcSet={`${benZoe720} 720w, ${benZoe1080} 1080w`}
+                sizes="(min-width: 1024px) 512px, (min-width: 448px) 448px, calc(100vw - 64px)"
+                alt="Ben and Zoe, the owners of EZ Haulaway, standing in front of their dump trailer and red pickup"
                 loading="lazy"
-                width={619}
-                height={640}
+                decoding="async"
+                width={720}
+                height={960}
                 className="h-auto w-full rounded-md"
               />
             </div>
