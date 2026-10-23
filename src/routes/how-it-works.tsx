@@ -1,8 +1,9 @@
+import type { LucideIcon } from "lucide-react";
 import { NextSteps } from "@/components/next-steps";
 import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Camera, CalendarCheck, HandCoins, Sparkles, Truck, UserCheck } from "lucide-react";
+import { Camera, CalendarCheck, HandCoins, HeartHandshake, Recycle, Sparkles, Trash2, Truck, Tv, UserCheck } from "lucide-react";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, SITE_URL } from "@/content/site";
 import timelapsePoster from "@/assets/new-7247E3BB.webp.asset.json";
@@ -37,6 +38,13 @@ export const Route = createFileRoute("/how-it-works")({
   }),
   component: HowItWorksPage,
 });
+
+const disposalSteps: Array<[LucideIcon, string, string]> = [
+  [HeartHandshake, "Usable items are donated", "Furniture and household goods in good shape go to donation whenever a donation center will take them."],
+  [Recycle, "Metal and appliances are recovered", "We separate metal for recycling. Refrigerators, freezers, and AC units have their refrigerant recovered at the facility before the metal is recycled."],
+  [Tv, "Electronics stay out of the landfill", "Colorado bans most household electronics, including TVs and computer monitors, from landfills. We keep them out of the trash and take them to electronics recycling."],
+  [Trash2, "The rest goes to a licensed landfill", "Everything else goes to the Sedalia Landfill in Douglas County, which also recovers cardboard and other recyclables. Every load is covered and secured."],
+];
 
 const steps = [
   {
@@ -133,6 +141,32 @@ function HowItWorksPage() {
               <img key={src} src={src} srcSet={srcSet} sizes="(min-width: 1280px) 600px, (min-width: 640px) 50vw, 100vw" alt={alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full rounded-lg object-cover" />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="After the haul"
+            title="Where Your Junk Goes"
+            text="We sort every load and recycle what can be recycled before anything goes to a landfill."
+          />
+          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {disposalSteps.map(([Icon, heading, text]) => (
+              <article key={heading} className="bg-card p-7">
+                <Icon className="size-6 text-primary" />
+                <h3 className="mt-6 text-lg font-bold">{heading}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-8 max-w-3xl text-sm leading-6 text-muted-foreground">
+            We take almost anything, with the exception of hazardous waste such as paint, chemicals, solvents, asbestos, and fuels.{" "}
+            <Link to="/what-we-take" className="font-bold text-primary underline-offset-4 hover:underline">
+              See the full list of what we take
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
