@@ -6,7 +6,12 @@ import { HeartHandshake, Leaf, ShieldCheck, Users } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { SITE_URL, reviews, GOOGLE_REVIEWS_URL } from "@/content/site";
 import { Star } from "lucide-react";
-import benAndZoe from "@/assets/new-514DD1DD.webp.asset.json";
+import benZoe720 from "@/assets/ben-zoe-trailer-portrait-720.webp";
+import benZoe1080 from "@/assets/ben-zoe-trailer-portrait-1080.webp";
+import crewTrailer640 from "@/assets/real-crew-on-trailer-640.webp";
+import crewTrailer1000 from "@/assets/real-crew-on-trailer-1000.webp";
+import basementBen640 from "@/assets/real-basement-ben-640.webp";
+import basementBen1000 from "@/assets/real-basement-ben-1000.webp";
 import crewPhoto from "@/assets/real-Tezza-5361.jpg.asset.json";
 import ladderPhoto from "@/assets/real-IMG_5068.jpg.asset.json";
 import truckPhoto from "@/assets/new-1537FC26.webp.asset.json";
@@ -56,10 +61,14 @@ function AboutPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
           <div className="flex justify-center rounded-lg border border-border bg-muted p-4">
             <img
-              src={benAndZoe.url}
-              alt="Ben of EZ Haulaway carrying a bin past the dump trailer"
-              width={360}
-              height={540}
+              src={benZoe720}
+              srcSet={`${benZoe720} 720w, ${benZoe1080} 1080w`}
+              sizes="(min-width: 1024px) 448px, (min-width: 480px) 448px, calc(100vw - 72px)"
+              alt="Ben and Zoe, the owners of EZ Haulaway, standing in front of their dump trailer and red pickup"
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
               className="h-auto w-full max-w-md rounded-md"
             />
           </div>
@@ -81,7 +90,7 @@ function AboutPage() {
       <section className="pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeader eyebrow="On the job" title="Our Truck, Our Trailer, Our Crew" />
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               [crewPhoto.url, "EZ Haulaway crew member smiling in front of the red Ford truck and black dump trailer"],
               [ladderPhoto.url, "EZ Haulaway crew loading an old ladder into the dump trailer in a Parker neighborhood"],
@@ -89,8 +98,10 @@ function AboutPage() {
               [job3.url, "Ben of EZ Haulaway stepping off the tailgate of the red Ford truck in Parker, CO"],
               [job4.url, "Ben carrying a bin of junk toward the black EZ Haulaway dump trailer"],
               [job9.url, "Ben loading boxes from a wagon into the EZ Haulaway dump trailer"],
-            ].map(([src, alt]) => (
-              <img key={src} src={src} alt={alt} loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full rounded-lg object-cover" />
+              [crewTrailer1000, "Ben and Zoe sitting on the edge of a loaded EZ Haulaway dump trailer parked beside the red pickup", `${crewTrailer640} 640w, ${crewTrailer1000} 1000w`],
+              [basementBen1000, "Ben of EZ Haulaway carrying a box through a finished basement during a cleanout, with furniture and a treadmill waiting to go", `${basementBen640} 640w, ${basementBen1000} 1000w`],
+            ].map(([src, alt, srcSet]) => (
+              <img key={src} src={src} srcSet={srcSet} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt={alt} loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full rounded-lg object-cover" />
             ))}
           </div>
         </div>

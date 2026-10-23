@@ -7,7 +7,7 @@ import deckAsset from "@/assets/branded-service-deck.webp";
 import constructionAsset from "@/assets/branded-service-construction.webp";
 import yardAsset from "@/assets/branded-service-yard.webp";
 import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
-import estateAsset from "@/assets/branded-service-estate.webp";
+import estateAsset from "@/assets/real-basement-panel-1000.webp";
 import bulkyAsset from "@/assets/real-IMG_5082.jpg.asset.json";
 import electronicsAsset from "@/assets/branded-service-electronics.webp";
 import commercialAsset from "@/assets/branded-service-commercial.webp";
@@ -381,7 +381,7 @@ const raw_services: Service[] = [
       "Full property cleanouts for estates, rentals, and moves across the Denver metro area. Respectful, thorough work from EZ Haulaway.",
     summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
     image: estateAsset,
-    imageAlt: "EZ Haulaway crew respectfully removing furniture and boxes during an estate cleanout",
+    imageAlt: "EZ Haulaway crew member carrying a wall-art panel out of a finished basement during a house cleanout, with furniture, boxes and cables waiting to be hauled",
     intro: [
       "Clearing a house is rarely just a hauling job. Estates, foreclosures, and rental turnovers all come with a deadline and often with grief or stress attached.",
       "We work steadily, communicate clearly, and leave the property empty and swept.",

@@ -64,6 +64,9 @@ import variant42_640 from "@/assets/storage-unit-cleanout-loading-speed-640.webp
 import variant42_700 from "@/assets/storage-unit-cleanout-loading-speed-700.webp.asset.json";
 import variant42_1000 from "@/assets/storage-unit-cleanout-loading-speed-1000.webp.asset.json";
 
+import realBasementPanel640 from "@/assets/real-basement-panel-640.webp";
+import realBasementPanel1000 from "@/assets/real-basement-panel-1000.webp";
+
 const images = {
   [original14]: { src: variant14_1000.url, srcSet: `${variant14_640.url} 640w, ${variant14_700.url} 700w, ${variant14_1000.url} 1000w` },
   [original15]: { src: variant15_1000.url, srcSet: `${variant15_640.url} 640w, ${variant15_700.url} 700w, ${variant15_1000.url} 1000w` },
@@ -76,6 +79,7 @@ const images = {
   [original22]: { src: variant22_1000.url, srcSet: `${variant22_640.url} 640w, ${variant22_700.url} 700w, ${variant22_1000.url} 1000w` },
   [original23]: { src: variant23_1000.url, srcSet: `${variant23_640.url} 640w, ${variant23_700.url} 700w, ${variant23_1000.url} 1000w` },
   [original24]: { src: variant24_1000.url, srcSet: `${variant24_640.url} 640w, ${variant24_700.url} 700w, ${variant24_1000.url} 1000w` },
+  [realBasementPanel1000]: { src: realBasementPanel1000, srcSet: `${realBasementPanel640} 640w, ${realBasementPanel1000} 1000w` },
   [original35]: { src: variant35_1000.url, srcSet: `${variant35_640.url} 640w, ${variant35_700.url} 700w, ${variant35_1000.url} 1000w` },
   [original39.url]: { src: variant39_1000.url, srcSet: `${variant39_640.url} 640w, ${variant39_700.url} 700w, ${variant39_1000.url} 1000w` },
   [original40.url]: { src: variant40_1000.url, srcSet: `${variant40_640.url} 640w, ${variant40_700.url} 700w, ${variant40_1000.url} 1000w` },

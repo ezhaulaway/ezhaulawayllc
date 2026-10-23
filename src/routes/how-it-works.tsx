@@ -11,6 +11,10 @@ import job5 from "@/assets/ben-job-5.webp.asset.json";
 import job6 from "@/assets/ben-job-6.webp.asset.json";
 import job7 from "@/assets/ben-job-7.webp.asset.json";
 import job8 from "@/assets/ben-job-8.webp.asset.json";
+import basementCarry640 from "@/assets/real-basement-carry-640.webp";
+import basementCarry1000 from "@/assets/real-basement-carry-1000.webp";
+import basementPanel640 from "@/assets/real-basement-panel-640.webp";
+import basementPanel1000 from "@/assets/real-basement-panel-1000.webp";
 
 const title = "How Our Junk Removal Process Works | EZ Haulaway";
 const description =
@@ -123,8 +127,10 @@ function HowItWorksPage() {
               [job6.url, "Wheeling a dresser on a dolly to the EZ Haulaway trailer"],
               [job8.url, "Loaded wagon beside the black EZ Haulaway dump trailer"],
               [job7.url, "Closing the rear doors of the loaded EZ Haulaway dump trailer"],
-            ].map(([src, alt]) => (
-              <img key={src} src={src} alt={alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full rounded-lg object-cover" />
+              [basementCarry1000, "Zoe of EZ Haulaway carrying a wall-art panel up from a finished basement during a cleanout", `${basementCarry640} 640w, ${basementCarry1000} 1000w`],
+              [basementPanel1000, "Zoe of EZ Haulaway holding a metal wall panel in a basement filled with furniture, boxes and cables to be removed", `${basementPanel640} 640w, ${basementPanel1000} 1000w`],
+            ].map(([src, alt, srcSet]) => (
+              <img key={src} src={src} srcSet={srcSet} sizes="(min-width: 1280px) 600px, (min-width: 640px) 50vw, 100vw" alt={alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full rounded-lg object-cover" />
             ))}
           </div>
         </div>
