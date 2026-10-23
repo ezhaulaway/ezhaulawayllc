@@ -450,6 +450,38 @@ export function HomePage() {
           </div>
         </section>
 
+        <section id="partners" className="py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <SectionHeader
+              eyebrow="Realtors, landlords & property managers"
+              title="A Local Crew You Can Hand the Keys To"
+              text="Deadlines matter in real estate and rentals. We give you a clear arrival window, clear the space in one visit, and leave it broom-clean."
+            />
+            <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">
+              {[
+                [House, "Realtors and sellers", "Pre-listing cleanouts for garages, basements, and whole homes, finished before photos, staging, or closing day."],
+                [Building2, "Landlords", "Move-outs and tenant turnovers. Left-behind furniture, appliances, and trash removed in one visit so the unit is ready for the next tenant."],
+                [Users, "Property managers and HOAs", "One local crew for repeat cleanouts across your properties. A certificate of insurance is available on request."],
+              ].map(([Icon, heading, text]) => {
+                const CardIcon = Icon as LucideIcon;
+                return (
+                  <article key={heading as string} className="bg-card p-7">
+                    <CardIcon className="size-6 text-primary" />
+                    <h3 className="mt-6 text-lg font-bold">{heading as string}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{text as string}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <QuoteButton label="Request a Free Quote" />
+              <a href="/about#insurance" className="text-sm font-bold text-primary underline-offset-4 hover:underline">
+                View our certificate of insurance
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section id="service-area" className="border-y border-border bg-muted py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <SectionHeader eyebrow="Service area" title="Junk Removal & Hauling Services Across the Denver Metro" text="EZ Haulaway provides professional junk removal and hauling services throughout Parker and communities across the Denver metro area." />

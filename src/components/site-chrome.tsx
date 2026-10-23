@@ -46,6 +46,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { PHONE, PHONE_TEL } from "@/content/site";
+import { PROMO } from "@/content/promo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { services, locations } from "@/content/navigation";
 
@@ -220,8 +221,25 @@ export function SectionHeader({
   );
 }
 
+function PromoBanner() {
+  if (!PROMO.active) return null;
+  return (
+    <div className="bg-primary text-primary-foreground">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-2 text-center text-sm font-semibold lg:px-8">
+        <span className="font-extrabold uppercase tracking-wide">{PROMO.eyebrow}</span>
+        <span>{PROMO.text}</span>
+        <Link to="/instant-estimate" className="font-bold underline underline-offset-4">
+          {PROMO.linkLabel}
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export function SiteHeader() {
   return (
+    <>
+    <PromoBanner />
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
         <Wordmark />
@@ -341,6 +359,7 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
+    </>
   );
 }
 

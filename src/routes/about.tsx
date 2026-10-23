@@ -126,6 +126,42 @@ function AboutPage() {
         </div>
       </section>
 
+      <section id="insurance" className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <SectionHeader
+            center
+            eyebrow="Insured"
+            title="Insured and Accountable"
+            text="Realtors, landlords, property managers, and HOAs often ask for proof of coverage before a job. Ours is public."
+          />
+          <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              ["$1,000,000", "General liability, each occurrence"],
+              ["$2,000,000", "General liability aggregate"],
+              ["Carrier", "Palomar Excess and Surplus Insurance Company"],
+            ].map(([figure, label]) => (
+              <li key={label} className="rounded-lg border border-border bg-card p-6 text-center">
+                <p className="font-display text-2xl font-extrabold text-foreground">{figure}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{label}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-center">
+            <a
+              href="/documents/EZ-Haulaway-Certificate-of-Insurance.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-bold text-primary underline-offset-4 hover:underline"
+            >
+              Download our certificate of insurance (PDF)
+            </a>
+          </p>
+          <p className="mt-3 text-center text-xs leading-5 text-muted-foreground">
+            Need a certificate issued to your company? Call or text us.
+          </p>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeader center eyebrow="Reviews" title="What Customers Say" />
