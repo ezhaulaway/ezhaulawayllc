@@ -16,7 +16,8 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { CITY_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { fitTitle, neighborhoodList } from "@/content/local-seo";
+import { CITY_ANGLES } from "@/content/city-angles";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: async ({ params }) => {
@@ -35,7 +36,7 @@ export const Route = createFileRoute("/service-areas/$city")({
       return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
     const { location } = loaderData;
-    const pageTitle = fitTitle(`Junk Removal in ${location.city}, CO - ${CITY_BENEFIT} | EZ Haulaway`, `Junk Removal in ${location.city}, CO - ${CITY_BENEFIT}`, `Junk Removal in ${location.city}, CO | EZ Haulaway`);
+    const pageTitle = fitTitle(`Junk Removal in ${location.city}, CO | Same-Day Pickup | EZ Haulaway`, `Junk Removal in ${location.city}, CO | Same-Day Pickup`, `Junk Removal in ${location.city}, CO | EZ Haulaway`);
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
@@ -131,10 +132,13 @@ function CityPage() {
 
   const faqs = [
     [`Do you charge extra to come to ${location.city}?`, `No. ${location.city} is part of our regular service area, so there's no separate trip charge built into your quote.`],
-    ["How fast can you get here?", "Openings vary week to week, but we often have something within a few days. Call or text for the soonest slot."],
+    [`How much does junk removal cost in ${location.city}?`, "We price by the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Send photos for a preliminary estimate."],
+    ["How fast can you get here?", "Same-day and next-day pickups are common, and a 48-hour wait is rare. Call or text for the soonest slot."],
+    [`Do you work with landlords, property managers and realtors in ${location.city}?`, "Yes. We do eviction cleanouts, trash outs, make-ready haul-offs and pre-listing cleanouts, take before and after photos on every job, and can invoice your company. Property managers can be added to our certificate of insurance."],
     ["Do I have to move anything to the curb?", "No. Our crew carries everything out from wherever it sits — basement, backyard, upstairs bedroom, or storage unit."],
     [`What do you do with the junk after you leave ${location.city}?`, "We sort for donation and recycling wherever we can, and take the rest to the proper disposal facility."],
   ] as const;
+  const angle = CITY_ANGLES[location.slug];
 
   return (
     <PageShell>
@@ -246,6 +250,42 @@ function CityPage() {
           </div>
         </section>
       )}
+
+      <section className="border-y border-border bg-muted py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <SectionHeader
+            eyebrow="Landlords, property managers & realtors"
+            title={`Eviction Cleanouts, Make Readies & Pre-Listing Cleanouts in ${location.city}`}
+            text={angle}
+          />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["eviction-cleanout-and-trash-out", "Eviction cleanouts & trash outs", "Same-day and next-day haul-out of everything left behind."],
+              ["apartment-make-ready-haul-off", "Make-ready & unit turn haul-off", "We clear the unit so cleaners and painters can start."],
+              ["house-and-estate-cleanouts", "Pre-listing & estate cleanouts", "Empty the house before photos, a showing or closing."],
+              ["commercial-junk-removal", "Commercial & office cleanouts", "Offices, retail and tenant move-outs, scheduled around you."],
+            ].map(([slug, title, text]) => (
+              <article key={slug} className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+                <h3 className="font-display text-lg font-bold">
+                  <CityServiceLink city={location.slug} service={slug} className="after:absolute after:inset-0 after:content-['']">
+                    {title}
+                  </CityServiceLink>
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
+                <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                  Learn more <ArrowRight className="size-4" />
+                </span>
+              </article>
+            ))}
+          </div>
+          <ul className="mt-8 grid gap-3 text-sm font-semibold sm:grid-cols-2">
+            <li className="rounded-lg border border-border bg-card px-5 py-4">Same-day and next-day slots; a 48-hour wait is rare</li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">Before and after photos on every job</li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">Company invoicing and a certificate of insurance on request</li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">Volume or locked-in rates for guaranteed jobs</li>
+          </ul>
+        </div>
+      </section>
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
@@ -419,14 +459,14 @@ function CityPage() {
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             <p>
               It starts with a photo or a quick call. We give you a straightforward price based on how much space your
-              items take in our trailer, and we schedule around your day — not a four-hour window. When our crew
+              items take in our trailer, and we schedule around your day. When our crew
               arrives at your {location.city} property, we walk the job with you and confirm the price before anything
               is loaded, so there are no surprises at the end.
             </p>
             <p>
               Then we do all of it: the lifting, the stairs, the tight gates and doorways, the loading, and the haul
-              away. We sweep up before we leave, and we sort every load for donation and recycling before anything
-              heads to a landfill. You never touch a dolly, rent a truck, or make a dump run.
+              away. We sweep and blow off the area before we leave, and we donate and recycle what we can before the rest
+              heads to the landfill. You never touch a dolly, rent a truck, or make a dump run.
             </p>
             <p>
               The part {location.city} customers talk about most is the feeling afterward — the garage you can park in

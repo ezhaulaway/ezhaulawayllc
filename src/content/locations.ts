@@ -52,6 +52,13 @@ const raw_locations: Location[] = [
         closing: "Want a price now? Use our free instant estimate with a few photos.",
       },
       {
+        heading: "A Real Parker Job: Basement Cleared in About 45 Minutes",
+        paragraphs: [
+          "A recent Parker basement held boxes, a treadmill, a dresser, a TV, a bin of cables and a pile of trash. Our crew carried it all up the stairs, loaded the trailer and left the floor empty in about 45 minutes. We took before and after photos, as we do on every job.",
+        ],
+        serviceLinks: [{ slug: "basement-and-attic-cleanouts", label: "Basement and attic cleanouts" }],
+      },
+      {
         heading: "What Parker Junk Removal Includes",
         paragraphs: [
           "Our **junk removal services** include the lifting, loading, hauling, and disposal fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
@@ -552,6 +559,17 @@ const raw_locations: Location[] = [
         ],
       },
       {
+        heading: "Junk Removal for Denver Apartments, Condos and Rentals",
+        paragraphs: [
+          "Denver buildings come with elevators, loading rules, street parking and alley pickups, and some require a certificate of insurance before a crew can enter. Tell us about the building when you book and we plan the path and the parking before we arrive. Property managers can be added to our certificate of insurance on request.",
+          "For turnovers, we offer same-day and next-day slots, take before and after photos on every job, and can invoice your company. Landlords with several units can ask about volume discounts or locked-in rates for guaranteed jobs.",
+        ],
+        serviceLinks: [
+          { slug: "eviction-cleanout-and-trash-out", label: "Denver eviction cleanouts and trash outs" },
+          { slug: "apartment-make-ready-haul-off", label: "Denver make-ready haul-off" },
+        ],
+      },
+      {
         heading: "Commercial Junk Removal & Construction Debris in Denver",
         paragraphs: [
           "We work with **property managers**, realtors and local **businesses** across Denver — tenant turnovers, office moves, retail cleanouts and storage-unit clears. **Commercial junk removal** is scheduled around your business so downtime stays low, and we can **book online** or by text when you need a fast turnaround.",
@@ -618,6 +636,11 @@ const raw_locations: Location[] = [
             title: "Appliance and bulky item pickup",
             text: "Refrigerators and washers [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], mattresses [[item:Mattress]], box springs [[item:Box spring]], couches priced at [[item:Couch]] per cushion.",
           },
+        ],
+        closing: "Eviction cleanouts and trash outs are available same day or next day once we have the unit details, access and your go-ahead.",
+        serviceLinks: [
+          { slug: "eviction-cleanout-and-trash-out", label: "Eviction cleanouts and trash outs" },
+          { slug: "apartment-make-ready-haul-off", label: "Make-ready haul-off for unit turns" },
         ],
       },
       {
@@ -907,6 +930,37 @@ const raw_locations: Location[] = [
       "Rural lots and ranch-style homes mean bigger yards, older outbuildings, and plenty of long-stored household junk that needs to go.",
     nearby: ["parker", "franktown", "castle-rock"],
     topServices: ["garage-cleanouts", "yard-and-landscaping-debris", "house-and-estate-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Elizabeth Homes, Acreage and Outbuildings",
+        paragraphs: [
+          "Elizabeth properties tend to come with room: bigger lots, a garage or shop, sheds and older outbuildings, and years of stored household items. EZ Haulaway is a family-owned crew based in nearby Parker, so Elizabeth is part of our regular service area and there is no separate trip charge built into your quote.",
+          "We carry everything out from wherever it sits, load it on our dump trailer and haul it away in one visit. We serve homes in Spring Valley, Gold Creek and around Elizabeth's town center, as well as rural properties outside town.",
+        ],
+      },
+      {
+        heading: "What We Haul in Elizabeth",
+        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it. Common Elizabeth jobs:"],
+        list: [
+          { title: "Property and estate cleanouts", text: "The house, garage and outbuildings cleared in one visit, ready to sell, rent or hand over." },
+          { title: "Brush, fencing and yard debris", text: "Brush piles, fallen limbs, old fence posts and wire, and landscaping leftovers." },
+          { title: "Sheds and outbuildings", text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included." },
+          { title: "Garage and storage cleanouts", text: "Boxes, tools, old furniture and anything else that has been stacking up." },
+          { title: "Appliances and furniture", text: "Refrigerators, washers, couches and mattresses carried out for you." },
+        ],
+        serviceLinks: [
+          { slug: "shed-removal", label: "Shed removal" },
+          { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
+          { slug: "house-and-estate-cleanouts", label: "House and estate cleanouts" },
+        ],
+      },
+      {
+        heading: "Elizabeth Junk Removal Pricing",
+        paragraphs: [
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included. Acreage cleanouts can take more than one load, so send photos and we will quote the whole job before we start.",
+        ],
+      },
+    ],
   },
   {
     slug: "franktown",
@@ -921,6 +975,37 @@ const raw_locations: Location[] = [
       "A mix of acreage properties and older homes means fence tear-outs, shed removals, and brush cleanup are common requests.",
     nearby: ["parker", "castle-rock", "elizabeth", "sedalia"],
     topServices: ["deck-and-fence-removal", "light-demolition", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Franktown Homes and Acreage",
+        paragraphs: [
+          "Franktown sits southeast of Parker in Douglas County, near Castlewood Canyon State Park, with a mix of acreage properties and older homes. EZ Haulaway is a family-owned crew based in nearby Parker, so Franktown is a short drive and part of our regular service area, with no separate trip charge built into your quote.",
+          "We carry everything out, load it on our dump trailer and haul it away in one visit, whether it is a garage full of boxes, an old shed or a run of worn-out fence. We serve the Franktown acreage, Russellville and the Castlewood Canyon area.",
+        ],
+      },
+      {
+        heading: "What We Haul in Franktown",
+        paragraphs: ["Franktown jobs are often outdoors, and we bring the tools for tear-down as well as the trailer for the haul."],
+        list: [
+          { title: "Fence and deck tear-outs", text: "Old fencing and decks taken down and hauled away. Ben has about six years of construction and demolition experience, including more than 300 decks." },
+          { title: "Shed removal", text: "Worn-out sheds and small outbuildings torn down, contents included." },
+          { title: "Brush and acreage cleanups", text: "Brush piles, limbs, scrap lumber and yard debris." },
+          { title: "House, garage and estate cleanouts", text: "Whole properties cleared in one visit for a sale, a rental or a family transition." },
+          { title: "Furniture and appliances", text: "Couches, mattresses, refrigerators and washers carried out for you." },
+        ],
+        serviceLinks: [
+          { slug: "deck-and-fence-removal", label: "Deck and fence removal" },
+          { slug: "shed-removal", label: "Shed removal" },
+          { slug: "light-demolition", label: "Light demolition" },
+        ],
+      },
+      {
+        heading: "Franktown Junk Removal Pricing",
+        paragraphs: [
+          "Pricing is based on the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Tear-down work is quoted with the haul so you get one number up front. Send photos for a preliminary estimate.",
+        ],
+      },
+    ],
   },
   {
     slug: "castle-pines",
@@ -1008,6 +1093,37 @@ const raw_locations: Location[] = [
       "Mountain homes and rural properties here often need appliance haul-away, yard debris cleanup, and full garage clear-outs.",
     nearby: ["castle-rock", "littleton", "parker", "franktown"],
     topServices: ["yard-and-landscaping-debris", "appliance-removal", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Sedalia Homes and Rural Properties",
+        paragraphs: [
+          "Sedalia sits along Highway 85 in Douglas County, with homes in Perry Park and Indian Creek as well as rural properties and older buildings around town. EZ Haulaway is a family-owned crew based in nearby Parker, so Sedalia is part of our regular service area, with no separate trip charge built into your quote.",
+          "Much of our hauling ends at the Sedalia landfill, so this is a part of Douglas County we know well. We carry everything out, load it on our dump trailer and haul it away in one visit.",
+        ],
+      },
+      {
+        heading: "What We Haul in Sedalia",
+        paragraphs: ["Common Sedalia jobs include:"],
+        list: [
+          { title: "Appliance haul-away", text: "Refrigerators, washers, dryers and stoves carried out and sent to metal recycling when possible." },
+          { title: "Yard and landscaping debris", text: "Brush, limbs, old fencing, sod and landscaping leftovers." },
+          { title: "Garage and shed cleanouts", text: "Boxes, tools, old furniture and anything else stacked up in the garage or outbuildings." },
+          { title: "House and estate cleanouts", text: "Whole properties cleared for a sale, a rental or a family transition." },
+          { title: "Electronics", text: "TVs, computers and other electronics collected for recycling when possible." },
+        ],
+        serviceLinks: [
+          { slug: "appliance-removal", label: "Appliance removal" },
+          { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
+          { slug: "garage-cleanouts", label: "Garage cleanouts" },
+        ],
+      },
+      {
+        heading: "Sedalia Junk Removal Pricing",
+        paragraphs: [
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Send photos for a preliminary estimate and we will quote the whole job before we start.",
+        ],
+      },
+    ],
   },
 ];
 export const locations = priced(raw_locations);
