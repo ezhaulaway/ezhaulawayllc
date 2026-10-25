@@ -477,16 +477,19 @@ export function HomePage() {
             />
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">
               {[
-                [House, "Realtors and sellers", "Pre-listing cleanouts for garages, basements, and whole homes, finished before photos, staging, or closing day."],
-                [Building2, "Landlords", "Move-outs and tenant turnovers. Left-behind furniture, appliances, and trash removed in one visit so the unit is ready for the next tenant."],
-                [Users, "Property managers and HOAs", "One local crew for repeat cleanouts across your properties. A certificate of insurance is available on request."],
-              ].map(([Icon, heading, text]) => {
+                [House, "Realtors and sellers", "Pre-listing cleanouts for garages, basements, and whole homes, finished before photos, staging, or closing day.", "house-and-estate-cleanouts", "House and estate cleanouts"],
+                [Building2, "Landlords", "Eviction cleanouts and trash outs, same day or next day. Left-behind furniture, appliances, and trash removed and the area swept so the unit is ready for the next tenant.", "eviction-cleanout-and-trash-out", "Eviction cleanouts and trash outs"],
+                [Users, "Property managers and HOAs", "The haul-off step of every make ready, plus repeat cleanouts across your properties. Before and after photos on every job, company invoicing, and a certificate of insurance on request.", "apartment-make-ready-haul-off", "Make-ready and unit turnover haul-off"],
+              ].map(([Icon, heading, text, slug, linkLabel]) => {
                 const CardIcon = Icon as LucideIcon;
                 return (
                   <article key={heading as string} className="bg-card p-7">
                     <CardIcon className="size-6 text-primary" />
                     <h3 className="mt-6 text-lg font-bold">{heading as string}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">{text as string}</p>
+                    <Link to="/services/$slug" params={{ slug: slug as string }} className="mt-4 inline-block text-sm font-bold text-primary underline-offset-4 hover:underline">
+                      {linkLabel as string}
+                    </Link>
                   </article>
                 );
               })}

@@ -19,6 +19,7 @@ import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
 import { woodPalletRemoval } from "./wood-pallet-removal";
 import { dumpsterRentalAlternative, hoarderCleanout, storageUnitCleanout } from "./specialty-services";
+import { evictionCleanout, makeReadyHaulOff, basementAtticCleanout } from "./property-services";
 
 export type Service = {
   slug: string;
@@ -590,14 +591,14 @@ const raw_services: Service[] = [
 {
     slug: "commercial-junk-removal",
     name: "Commercial Junk Removal",
-    h1: "Office Junk Removal & Commercial Cleanouts",
-    metaTitle: "Office Junk Removal & Commercial Cleanouts | EZ Haulaway LLC",
-    metaDescription: "Office junk removal in Parker, Castle Rock and Denver. Desks, cubicles, chairs, e-waste and full office cleanouts. After-hours scheduling, free quotes.",
-    summary: "Offices, retail spaces, warehouses, and property turnovers.",
+    h1: "Commercial Junk Removal & Office Cleanouts",
+    metaTitle: "Commercial Junk Removal & Office Cleanouts | EZ Haulaway",
+    metaDescription: "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, and property-manager turnovers. Same-day slots, company invoicing, free quotes.",
+    summary: "Offices, retail spaces, warehouses, and property manager turnovers.",
     image: commercialAsset,
     imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
-    intro: ["Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site.", "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work."],
-    includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers and lease-end cleanouts", "Ongoing scheduled pickups"],
+    intro: ["Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site. **Commercial junk removal** from EZ Haulaway covers office cleanouts, retail and warehouse clearing, and tenant turnovers across Parker, Castle Rock, Centennial, Aurora and Denver.", "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work, including **eviction cleanouts, trash outs and make readies**, with same-day and next-day slots, company invoicing and before and after photos on every job."],
+    includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers, make readies and lease-end cleanouts", "Eviction cleanouts and trash outs", "Ongoing scheduled pickups"],
     sections: [
       { heading: "Scheduled around your business", text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it." },
       { heading: "Property managers", text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in." },
@@ -613,6 +614,9 @@ const raw_services: Service[] = [
   dumpsterRentalAlternative,
   hoarderCleanout,
   storageUnitCleanout,
+  evictionCleanout,
+  makeReadyHaulOff,
+  basementAtticCleanout,
 ];
 export const services = priced(raw_services);
 

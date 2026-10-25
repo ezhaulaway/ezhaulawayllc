@@ -17,6 +17,9 @@ export const services: Array<{ slug: string; name: string; cityPages?: false }> 
   { slug: "dumpster-rental-alternative", name: "Dumpster Rental Alternative", cityPages: false },
   { slug: "hoarder-cleanout", name: "Hoarder Cleanout", cityPages: false },
   { slug: "storage-unit-cleanout", name: "Storage Unit Cleanout", cityPages: false },
+  { slug: "eviction-cleanout-and-trash-out", name: "Eviction Cleanout & Trash Out", cityPages: false },
+  { slug: "apartment-make-ready-haul-off", name: "Apartment Make-Ready Haul-Off", cityPages: false },
+  { slug: "basement-and-attic-cleanouts", name: "Basement & Attic Cleanouts", cityPages: false },
 ];
 
 export const locations = [

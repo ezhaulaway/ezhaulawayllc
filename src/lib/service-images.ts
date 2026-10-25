@@ -53,6 +53,15 @@ import variant42_640 from "@/assets/storage-unit-cleanout-loading-speed-640.webp
 import variant42_700 from "@/assets/storage-unit-cleanout-loading-speed-700.webp.asset.json";
 import variant42_1000 from "@/assets/storage-unit-cleanout-loading-speed-1000.webp.asset.json";
 
+import realBasementStaged640 from "@/assets/real-basement-staged-640.webp";
+import realBasementStaged1000 from "@/assets/real-basement-staged-1000.webp";
+import realBasementStaged1400 from "@/assets/real-basement-staged-1400.webp";
+import realBasementRoom640 from "@/assets/real-basement-room-640.webp";
+import realBasementRoom1000 from "@/assets/real-basement-room-1000.webp";
+import realBasementRoom1400 from "@/assets/real-basement-room-1400.webp";
+import realBasementStairs640 from "@/assets/real-basement-stairs-640.webp";
+import realBasementStairs1000 from "@/assets/real-basement-stairs-1000.webp";
+import realBasementStairs1400 from "@/assets/real-basement-stairs-1400.webp";
 import realBasementPanel640 from "@/assets/real-basement-panel-640.webp";
 import realBasementPanel1000 from "@/assets/real-basement-panel-1000.webp";
 
@@ -69,6 +78,9 @@ const images = {
   [original23]: { src: hq23_1200, srcSet: `${hq23_800} 800w, ${hq23_1200} 1200w` },
   [original24]: { src: hq24_1200, srcSet: `${hq24_800} 800w, ${hq24_1200} 1200w` },
   [realBasementPanel1000]: { src: realBasementPanel1000, srcSet: `${realBasementPanel640} 640w, ${realBasementPanel1000} 1000w` },
+  [realBasementStaged1000]: { src: realBasementStaged1000, srcSet: `${realBasementStaged640} 640w, ${realBasementStaged1000} 1000w, ${realBasementStaged1400} 1400w` },
+  [realBasementRoom1000]: { src: realBasementRoom1000, srcSet: `${realBasementRoom640} 640w, ${realBasementRoom1000} 1000w, ${realBasementRoom1400} 1400w` },
+  [realBasementStairs1000]: { src: realBasementStairs1000, srcSet: `${realBasementStairs640} 640w, ${realBasementStairs1000} 1000w, ${realBasementStairs1400} 1400w` },
   [original35]: { src: variant35_1000.url, srcSet: `${variant35_640.url} 640w, ${variant35_700.url} 700w, ${variant35_1000.url} 1000w, ${original35} 1200w` },
   [original39.url]: { src: variant39_1000.url, srcSet: `${variant39_640.url} 640w, ${variant39_700.url} 700w, ${variant39_1000.url} 1000w, ${original39.url} 1620w` },
   [original40.url]: { src: variant40_1000.url, srcSet: `${variant40_640.url} 640w, ${variant40_700.url} 700w, ${variant40_1000.url} 1000w` },

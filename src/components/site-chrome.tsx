@@ -438,6 +438,15 @@ export function SiteFooter() {
               <Link to="/services/$slug" params={{ slug: "storage-unit-cleanout" }} className="hover:text-secondary-foreground">
                 Storage Unit Cleanout
               </Link>
+              <Link to="/services/$slug" params={{ slug: "eviction-cleanout-and-trash-out" }} className="hover:text-secondary-foreground">
+                Eviction Cleanout & Trash Out
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "apartment-make-ready-haul-off" }} className="hover:text-secondary-foreground">
+                Apartment Make-Ready Haul-Off
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "basement-and-attic-cleanouts" }} className="hover:text-secondary-foreground">
+                Basement & Attic Cleanouts
+              </Link>
             </nav>
           </div>
           <div>

@@ -19,7 +19,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
 "commercial-junk-removal": {
     sections: [
       { heading: "Offices, retail spaces, and rental turnovers", text: "Businesses across Parker, Castle Rock, Centennial, and Denver call us for office furniture removal, retail fixture cleanouts, warehouse junk, and rental property turnovers. We work around your hours, including early mornings, so your team and customers aren't disrupted." },
-      { heading: "Property managers and landlords", text: "When a tenant leaves behind furniture, mattresses, and bags of trash, you need the unit cleared fast so it can be cleaned and re-listed. Send photos, get a price, and we'll schedule the cleanout quickly — one invoice, no dump runs for your maintenance staff." },
+      { heading: "Property managers and landlords", text: "When a tenant leaves behind furniture, mattresses, and bags of trash, you need the unit cleared fast so it can be cleaned and re-listed. Send photos, get a price, and we'll schedule the cleanout quickly: **same day or next day**, with a 48-hour wait the rare exception. We take **before and after photos on every job**, **invoice your company**, and can **add your company to our certificate of insurance**. Ask about **volume discounts or locked-in rates** if you have guaranteed jobs.", links: [{ slug: "eviction-cleanout-and-trash-out", label: "Eviction cleanouts and trash outs" }, { slug: "apartment-make-ready-haul-off", label: "Apartment make-ready and unit turnover haul-off" }] },
       { heading: "Office junk removal service", text: "Our **office junk removal service** clears **desks, office chairs, conference tables, filing cabinets** and bookshelves from suites of any size. We take apart **cubicles and modular workstations** on site, carry everything out, and haul it away. One room or a whole floor goes on a single upfront quote." },
       { heading: "Office electronics and e-waste", text: "Old computers, monitors, printers, phones and boxes of cables pile up in storage rooms. We sort **office e-waste** from the rest of the load and send it to recycling. Please wipe or pull hard drives before pickup so your business data stays protected." },
       { heading: "Office moves, closures and lease-end cleanouts", text: "Moving, downsizing or closing an office? We clear what the movers won't take and what isn't worth moving. Tell us about loading docks, freight elevators, parking and building rules when you book, and we'll plan around them. Early mornings, evenings and weekends keep your team working." },
@@ -29,7 +29,9 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
       ["Can you work after business hours?", "Often, yes. Tell us your schedule and we'll do our best to fit the job in when it causes the least disruption."],
       ["Do you handle recurring pickups?", "We can talk through repeat hauls for property managers and businesses with ongoing junk removal needs."],
       ["Do you take apart cubicles?", "Yes. We break down cubicle panels and modular desks on site so they can be carried out and loaded."],
-      ["Can you provide proof of insurance for our building?", "We're licensed and insured. Let us know if your property manager needs insurance paperwork before the job."],
+      ["Can you provide proof of insurance for our building?", "We're licensed and insured, and property managers can be added to our certificate of insurance. Let us know what your building or owner requires before the job."],
+      ["Do you do make readies, trash outs and eviction cleanouts?", "We handle the haul-off step: clearing out furniture, mattresses, trash and household items, then sweeping and blowing off the area. Same-day and next-day slots are available. We do not clean, paint or repair."],
+      ["Can you invoice my company?", "Yes. We can invoice a company, and we offer volume discounts or locked-in rates for guaranteed jobs."],
     ],
   },
 "construction-debris-removal": {
@@ -88,11 +90,16 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
 "house-and-estate-cleanouts": {
     sections: [
       { heading: "Handled with patience and respect", text: "Estate cleanouts often come at an emotional time. Our family-owned crew works carefully and at your pace, setting aside keepsakes, paperwork, and anything you want to hold onto while clearing the rest of the home in Parker, Castle Rock, or anywhere in the Denver metro area." },
+      { heading: "After an estate sale", text: "When an estate sale ends, what did not sell still has to go: leftover furniture, boxes, appliances, electronics and household items. We clear what is left, load it, sweep and haul it away, so the home can be listed, rented or handed over. Tell us what stays with the family or the estate sale company and what goes." },
+      { heading: "Pre-listing cleanouts and listing prep", text: "Realtors and sellers often need a house, garage or basement emptied before photos or a showing. Give us the date and we will tell you honestly whether we can meet it. We sweep and blow off after loading, and property managers and agents can ask about before and after photos for their file." },
+      { heading: "Estate cleanout pricing", text: "Estate and house cleanouts are priced by how much space the items take in our 14-cubic-yard dump trailer, not by the hour. Our minimum is [[min]], a half trailer is about [[load:4]] and a full trailer about [[load:8]]. Whole houses can take several loads, so we quote the full scope up front. Send photos or a walkthrough video for a preliminary estimate." },
       { heading: "Move-outs, foreclosures, and hoarding situations", text: "Whole-house cleanouts can involve every room, the basement, the garage, and the yard. We quote the full scope up front, bring the crew size the job needs, and sort donations and recycling along the way so the property is ready to list, sell, or move into." },
     ],
     faqs: [
       ["Can you work with realtors or family out of state?", "Yes. We can coordinate with a realtor, executor, or family member remotely using photos and phone updates."],
       ["Will you donate usable items?", "Whenever possible, usable furniture and household goods are set aside for donation instead of the landfill."],
+      ["Can you clear a house after an estate sale?", "Yes. We haul what is left after the sale, from furniture and boxes to appliances and household items, then sweep and blow off the area."],
+      ["How much does an estate cleanout cost?", "Pricing is based on trailer space used: a minimum of [[min]], about [[load:4]] for a half trailer and about [[load:8]] for a full one. Whole houses can need several loads, and we give you the full number before we start."],
     ],
   },
 "light-demolition": {
