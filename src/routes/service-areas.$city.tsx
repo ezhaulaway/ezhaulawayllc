@@ -259,12 +259,12 @@ function CityPage() {
             text={angle}
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
+            {([
               ["eviction-cleanout-and-trash-out", "Eviction cleanouts & trash outs", "Same-day and next-day haul-out of everything left behind."],
               ["apartment-make-ready-haul-off", "Make-ready & unit turn haul-off", "We clear the unit so cleaners and painters can start."],
               ["house-and-estate-cleanouts", "Pre-listing & estate cleanouts", "Empty the house before photos, a showing or closing."],
               ["commercial-junk-removal", "Commercial & office cleanouts", "Offices, retail and tenant move-outs, scheduled around you."],
-            ].map(([slug, title, text]) => (
+            ] as Array<[string, string, string]>).map(([slug, title, text]) => (
               <article key={slug} className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
                 <h3 className="font-display text-lg font-bold">
                   <CityServiceLink city={location.slug} service={slug} className="after:absolute after:inset-0 after:content-['']">

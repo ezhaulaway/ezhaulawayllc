@@ -204,7 +204,7 @@ export function SectionHeader({
 }: {
   eyebrow: string;
   title: string;
-  text?: string;
+  text?: string | undefined;
   center?: boolean;
 }) {
   return (
