@@ -1,6 +1,6 @@
 import { priced } from "@/lib/price-store";
 // Extra long-form copy per service page (unique text for SEO depth).
-const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; text: string }>; faqs: Array<[string, string]> }> = {
+const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string }> }>; faqs: Array<[string, string]> }> = {
 "appliance-removal": {
     sections: [
       { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area typically runs [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] per unit, and we can add other junk to the same trip." },

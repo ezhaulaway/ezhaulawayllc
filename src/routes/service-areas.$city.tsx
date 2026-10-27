@@ -259,7 +259,7 @@ function CityPage() {
             text={angle}
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
+            {([
               ["eviction-cleanout-and-trash-out", "Eviction cleanouts & trash outs", "Same-day and next-day haul-out of everything left behind."],
               ["apartment-make-ready-haul-off", "Make-ready & unit turn haul-off", "We clear the unit so cleaners and painters can start."],
               ["house-and-estate-cleanouts", "Pre-listing & estate cleanouts", "Empty the house before photos, a showing or closing."],
