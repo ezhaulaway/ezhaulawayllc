@@ -1,3 +1,4 @@
+import { PARKER_NEIGHBORHOODS_COPY } from "@/content/parker-neighborhoods";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
@@ -18,7 +19,6 @@ import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
 import { SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
-import { PARKER_NEIGHBORHOODS_COPY } from "@/content/parker-neighborhoods";
 
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
