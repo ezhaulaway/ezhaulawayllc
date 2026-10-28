@@ -23,6 +23,22 @@ export const Route = createFileRoute("/faq")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/faq` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        // Same questions and answer text as the visible page (groups resolves price tokens).
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": `${SITE_URL}/faq#faq`,
+          mainEntity: groups.flatMap((g) => g.items).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.paragraphs.join(" ") },
+          })),
+        }),
+      },
+    ],
   }),
   component: FaqPage,
 });

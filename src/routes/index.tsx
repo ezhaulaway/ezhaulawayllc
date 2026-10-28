@@ -2,7 +2,7 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, SITE_URL } from "@/content/site";
+import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
@@ -77,14 +77,11 @@ export const Route = createFileRoute("/")({
           url: SITE_URL,
           telephone: "+1-720-614-7223",
           priceRange: "[[min]] - [[load:8]]",
+          openingHoursSpecification: OPENING_HOURS_SPEC,
           areaServed: [
-            { "@type": "City", name: "Parker, CO" },
+            ...SERVICE_AREA_CITIES.map((city) => ({ "@type": "City", name: `${city}, CO` })),
             { "@type": "AdministrativeArea", name: "Douglas County, CO" },
             { "@type": "AdministrativeArea", name: "Arapahoe County, CO" },
-            { "@type": "City", name: "Denver, CO" },
-            { "@type": "City", name: "Castle Rock, CO" },
-            { "@type": "City", name: "Centennial, CO" },
-            { "@type": "City", name: "Highlands Ranch, CO" },
           ],
           address: {
             "@type": "PostalAddress",
