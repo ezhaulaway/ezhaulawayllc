@@ -1,3 +1,4 @@
+import { priceText } from "@/lib/price-store";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
@@ -16,7 +17,6 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { priceText } from "@/lib/price-store";
 import { fitTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
 
