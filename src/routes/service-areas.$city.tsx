@@ -16,7 +16,7 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { fitTitle, neighborhoodList } from "@/content/local-seo";
+import { HUB_TITLE_OVERRIDES, fitTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
 
 export const Route = createFileRoute("/service-areas/$city")({
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/service-areas/$city")({
       return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
     const { location } = loaderData;
-    const pageTitle = fitTitle(`Junk Removal in ${location.city}, CO | Same-Day Pickup | EZ Haulaway`, `Junk Removal in ${location.city}, CO | Same-Day Pickup`, `Junk Removal in ${location.city}, CO | EZ Haulaway`);
+    const pageTitle = HUB_TITLE_OVERRIDES[location.slug] ?? fitTitle(`Junk Removal in ${location.city}, CO | Same-Day Pickup | EZ Haulaway`, `Junk Removal in ${location.city}, CO | Same-Day Pickup`, `Junk Removal in ${location.city}, CO | EZ Haulaway`);
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;

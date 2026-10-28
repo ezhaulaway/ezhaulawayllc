@@ -8,8 +8,7 @@ export const dumpsterRentalAlternative: Service = {
   name: "Dumpster Rental Alternative",
   h1: "Dumpster Rental Alternative: Full-Service Junk Removal",
   metaTitle: "Dumpster Rental Alternative Parker, CO | EZ Haulaway",
-  metaDescription:
-    "Thinking about a dumpster rental or roll-off? Compare dumpster rental vs junk removal in Parker, Castle Rock and Denver. We load it, haul it and you pay for space used.",
+  metaDescription: "Dumpster rental or junk removal? Compare the two in Parker, Castle Rock and Denver. We load and haul it, and you pay only for the space used.",
   cityPages: false,
   summary: "Skip the roll-off. We load, haul and clean up — you pay only for the trailer space you use.",
   image: dumpsterAltAsset.url,
@@ -101,8 +100,7 @@ export const hoarderCleanout: Service = {
   name: "Hoarder Cleanout",
   h1: "Hoarder Cleanout & Extreme Clutter Removal",
   metaTitle: "Hoarder Cleanout in Parker & Denver, CO | EZ Haulaway",
-  metaDescription:
-    "Respectful, discreet hoarder cleanout and clutter removal in Parker, Castle Rock and the Denver metro. We sort, load and haul away so the home is usable again.",
+  metaDescription: "Respectful, discreet hoarder cleanout in Parker, Castle Rock and the Denver metro. We sort, load and haul away so the home is usable again.",
   cityPages: false,
   summary: "Discreet, judgment-free hoarder cleanouts and extreme clutter removal.",
   image: estateImage,

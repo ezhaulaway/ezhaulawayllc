@@ -17,7 +17,7 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { CITY_SERVICE_DESCRIPTION, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
@@ -46,6 +46,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
     const title = fitTitle(`${service.name} in ${location.city}, CO - ${benefit} | EZ Haulaway`, `${service.name} in ${location.city}, CO - ${benefit}`, `${service.name} in ${location.city}, CO | EZ Haulaway`, `${service.name} in ${location.city}, CO`, `${service.name} ${location.city}, CO`);
     const description =
       custom?.description ??
+      CITY_SERVICE_DESCRIPTION[service.slug]?.replace("{City}", location.city) ??
       `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
     return {
       meta: [

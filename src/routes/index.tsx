@@ -26,14 +26,14 @@ export const Route = createFileRoute("/")({
   staleTime: 60 * 60 * 1000,
   head: ({ loaderData }) => ({
     meta: [
-      { title: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates" },
+      { title: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
       {
         name: "description",
         content:
           "Junk removal services in Parker, CO & Denver metro. Furniture, appliances, hot tubs, cleanouts & demolition. Free estimates from EZ Haulaway LLC.",
       },
-      { property: "og:title", content: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates" },
-      { name: "twitter:title", content: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates" },
+      { property: "og:title", content: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
+      { name: "twitter:title", content: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
       {
         property: "og:description",
         content:
