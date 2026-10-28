@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 
-const title = "Junk Removal FAQ | EZ Haulaway Parker CO — Prices & Answers";
+const title = "Junk Removal FAQ: Prices & Answers | EZ Haulaway";
 const description =
   "Straight answers about junk removal pricing, trailer size, same-day pickups, what we can't take, and how quotes work. EZ Haulaway, Parker CO.";
 

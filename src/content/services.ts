@@ -52,8 +52,7 @@ const raw_services: Service[] = [
     name: "Furniture Removal",
     h1: "Furniture Removal in Parker & the Denver Metro Area",
     metaTitle: "Furniture Removal Services & Couch Removal | EZ Haulaway",
-    metaDescription:
-      "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
+    metaDescription: "Furniture and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",
@@ -135,8 +134,7 @@ const raw_services: Service[] = [
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
     metaTitle: "Hot Tub Removal Denver & Parker CO | EZ Haulaway",
-    metaDescription:
-      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from [[item:Hot tub]].",
+    metaDescription: "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. From [[item:Hot tub]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset,
     imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
@@ -272,7 +270,7 @@ const raw_services: Service[] = [
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
     h1: "Construction & Renovation Debris Removal",
-    metaTitle: "Construction Debris Removal in Parker, CO | EZ Haulaway",
+    metaTitle: "Construction Debris Removal Denver Metro | EZ Haulaway",
     metaDescription:
       "Drywall, lumber, flooring, roofing, and remodel debris cleared from job sites across Parker and the Denver metro area.",
     summary: "Drywall, lumber, flooring, roofing, and remodel debris.",
@@ -350,7 +348,7 @@ const raw_services: Service[] = [
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
     h1: "Garage Cleanouts in Parker & the Denver Metro",
-    metaTitle: "Garage Cleanout Service in Parker, CO | EZ Haulaway",
+    metaTitle: "Garage Cleanout Service Denver Metro | EZ Haulaway",
     metaDescription:
       "Get the garage back. EZ Haulaway clears years of stored junk from garages across Parker and the Denver metro area. Free quote.",
     summary: "Years of stored clutter cleared out so you can park in there again.",
@@ -448,7 +446,7 @@ const raw_services: Service[] = [
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
-    metaTitle: "Mattress Disposal Denver CO | Box Spring Pickup | EZ Haulaway",
+    metaTitle: "Mattress Disposal Denver CO | Box Spring Pickup",
     metaDescription:
       "Mattress disposal, box spring removal and large item pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
     summary: "Mattresses, box springs and single large items: treadmills, pianos, pool tables.",
@@ -543,9 +541,8 @@ const raw_services: Service[] = [
     slug: "shed-removal",
     name: "Shed Removal",
     h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
-    metaTitle: "Shed Removal & Demolition Denver & Parker, CO | EZ Haulaway",
-    metaDescription:
-      "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board. Free quote.",
+    metaTitle: "Shed Removal Denver & Parker CO | EZ Haulaway",
+    metaDescription: "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board.",
     summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
     image: shedImage,
     imageAlt: "Crew dismantling an old wooden backyard shed next to a black dump trailer",
@@ -593,7 +590,7 @@ const raw_services: Service[] = [
     name: "Commercial Junk Removal",
     h1: "Commercial Junk Removal & Office Cleanouts",
     metaTitle: "Commercial Junk Removal & Office Cleanouts | EZ Haulaway",
-    metaDescription: "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, and property-manager turnovers. Same-day slots, company invoicing, free quotes.",
+    metaDescription: "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, turnovers. Same-day slots, company invoicing.",
     summary: "Offices, retail spaces, warehouses, and property manager turnovers.",
     image: commercialAsset,
     imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",

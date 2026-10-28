@@ -19,8 +19,7 @@ export const evictionCleanout: Service = {
   name: "Eviction Cleanout & Trash Out",
   h1: "Eviction Cleanouts & Trash Outs in Parker and the Denver Metro",
   metaTitle: "Eviction Cleanout & Trash Out Services | EZ Haulaway",
-  metaDescription:
-    "Same-day and next-day eviction cleanouts and trash outs for landlords and property managers in Parker, Castle Rock, Aurora and Denver. Before and after photos, company invoicing.",
+  metaDescription: "Same-day and next-day eviction cleanouts and trash outs for landlords and property managers. Before and after photos, company invoicing.",
   cityPages: false,
   summary: "Same-day and next-day eviction cleanouts and trash outs for landlords and property managers.",
   image: realBasementStaged1000,
@@ -85,9 +84,8 @@ export const makeReadyHaulOff: Service = {
   slug: "apartment-make-ready-haul-off",
   name: "Apartment Make-Ready Haul-Off",
   h1: "Make-Ready & Unit Turnover Junk Removal",
-  metaTitle: "Apartment Make-Ready Junk Removal & Turnovers | EZ Haulaway",
-  metaDescription:
-    "Junk removal for apartment make readies and unit turnovers in Parker, Castle Rock, Aurora and Denver. Same-day and next-day haul-off so your cleaners and painters can start.",
+  metaTitle: "Apartment Make-Ready Junk Removal | EZ Haulaway",
+  metaDescription: "Apartment make-ready junk removal in Parker, Castle Rock, Aurora and Denver. Same-day and next-day haul-off so cleaners and painters can start.",
   cityPages: false,
   summary: "The haul-off step of a make ready: we clear the unit so cleaners and painters can start.",
   image: realBasementRoom1000,
@@ -152,8 +150,7 @@ export const basementAtticCleanout: Service = {
   name: "Basement & Attic Cleanouts",
   h1: "Basement & Attic Cleanouts in Parker and the Denver Metro",
   metaTitle: "Basement & Attic Cleanout Services Parker, CO | EZ Haulaway",
-  metaDescription:
-    "Basement and attic cleanouts in Parker, Castle Rock and Denver. We carry it up the stairs, load it and haul it away. See a real Parker basement cleared in about 45 minutes.",
+  metaDescription: "Basement and attic cleanouts in Parker, Castle Rock and Denver. We carry it up the stairs, load it and haul it. Free quote.",
   cityPages: false,
   summary: "We carry it up the stairs or down the attic ladder, load it and haul it away.",
   image: realBasementStairs1000,

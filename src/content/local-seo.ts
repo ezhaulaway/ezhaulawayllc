@@ -39,6 +39,23 @@ export const SERVICE_BENEFIT: Record<string, string> = {
   "commercial-junk-removal": "Fast Office Cleanouts",
 };
 
+/** Meta description patterns for city x service pages without a hand-written description. {City} is the city name. */
+export const CITY_SERVICE_DESCRIPTION: Record<string, string> = {
+  "furniture-removal": "Furniture removal in {City}, CO. Couches, sectionals, dressers and tables carried out and hauled away. Free quote: 720-614-7223.",
+  "appliance-removal": "Appliance removal in {City}, CO. Fridges, washers, dryers and stoves carried out and recycled. Free quote: 720-614-7223.",
+  "hot-tub-removal": "Hot tub removal in {City}, CO. We drain, cut up and haul away old hot tubs and spas in one visit. Free quote: 720-614-7223.",
+  "garage-cleanouts": "Garage cleanouts in {City}, CO. Years of clutter cleared in one visit so you can park again. Free quote: 720-614-7223.",
+  "house-and-estate-cleanouts": "House and estate cleanouts in {City}, CO. Respectful whole-home, rental and estate cleanouts. Free quote: 720-614-7223.",
+  "electronics-and-e-waste-removal": "Electronics and e-waste removal in {City}, CO. TVs, computers and monitors picked up and recycled. Free quote: 720-614-7223.",
+  "commercial-junk-removal": "Commercial junk removal in {City}, CO. Offices, retail and property-manager turnovers cleared fast. Free quote: 720-614-7223.",
+  "construction-debris-removal": "Construction debris removal in {City}, CO. Drywall, lumber, flooring and remodel debris hauled away. Free quote: 720-614-7223.",
+};
+
+/** Hub titles that need to be shorter than the default pattern. */
+export const HUB_TITLE_OVERRIDES: Record<string, string> = {
+  lakewood: "Junk Removal in Lakewood, CO | Same-Day Pickup",
+};
+
 export const CITY_BENEFIT = "Upfront Pricing, Local Crew";
 
 /** Priority city hubs and city-service pages linked from the homepage. */

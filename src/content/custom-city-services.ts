@@ -22,8 +22,7 @@ const RAW_CUSTOM_PAGES: Record<
   }
 > = {
   "castle-rock/hot-tub-removal": {
-    description:
-      "Hot tub removal in Castle Rock, CO from [[item:Hot tub]]. We cut up, haul out and dispose of old spas and hot tubs — including decks and pads they sit on. Free quotes, family-owned crew from Parker.",
+    description: "Hot tub removal in Castle Rock, CO from [[item:Hot tub]]. We cut up and haul out old spas, including the decks and pads they sit on. Free quotes.",
     intro: [
       "Castle Rock backyards are full of hot tubs that came with the house — and half of them haven't run in years. Whether your spa is dead, cracked, or you're reclaiming the patio in The Meadows, Founders Village or Castlewood Ranch, we remove the whole thing: shell, cabinet, cover, pump and wiring.",
       "Most hot tubs won't fit through a gate or over a fence in one piece, so we cut them into manageable sections with a reciprocating saw, carry every piece out by hand, and load it into our 16-foot dump trailer. You don't touch anything — we disconnect, demolish, haul and sweep the pad when we're done.",
@@ -180,8 +179,7 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "parker/shed-removal": {
-    description:
-      "Shed removal and tear-down in Parker, CO from [[load:4]]. We demolish, haul and dispose of old sheds — wood, metal or plastic — and leave the spot clean. Free quotes from your local Parker crew.",
+    description: "Shed removal and tear-down in Parker, CO from [[load:4]]. We demolish and haul old sheds, wood, metal or plastic, and leave the spot clean. Free quotes.",
     intro: [
       "We're based right here in Parker, so shed removal is practically our hometown specialty. From leaning metal sheds in older Parker neighborhoods to rotting wood sheds out toward Pinery and Stonegate, we tear them down, load every scrap into our trailer, and rake the spot clean.",
       "Most Parker shed removals run [[load:4]] to [[load:8]] depending on size, construction and what's still stored inside. If the shed is full of old tools, paint cans and junk, we clear that out first and price it with the load — one visit, one price, nothing left behind.",
@@ -208,8 +206,7 @@ const RAW_CUSTOM_PAGES: Record<
     ],
   },
   "aurora/deck-and-fence-removal": {
-    description:
-      "Deck and fence tear-out in Aurora, CO. 300+ decks of construction experience — we demolish, haul and dispose of old decks, rails and fence lines. Free quotes, one price up front.",
+    description: "Deck and fence tear-out in Aurora, CO. 300+ decks of construction experience. We demolish and haul old decks, rails and fence lines. Free quotes.",
     intro: [
       "Aurora's housing boom left thousands of aging cedar decks and leaning privacy fences, and we tear them out every week — from the older neighborhoods near Heather Ridge and Buckingham to newer builds out by Southlands where builders' grade decks are already failing.",
       "This isn't a side service for us. Our crew comes from construction with 300+ decks of hands-on experience, so we know exactly how a deck is put together — ledger boards, joist hangers, footings and all — which means we take it apart fast, safely, and without damaging your house.",
@@ -279,8 +276,7 @@ const RAW_CUSTOM_PAGES: Record<
   "denver/mattress-and-bulky-item-removal": {
     title: "Mattress Removal & Large Item Pickup Denver CO | EZ Haulaway",
     h1: "Mattress Removal Denver",
-    description:
-      "Mattress removal and large item pickup in Denver, Colorado. Mattresses, box springs and bulky items carried out from any room. Upfront pricing, free estimate.",
+    description: "Mattress removal and large item pickup in Denver, CO. Mattresses, box springs and bulky items carried out. Upfront pricing, free estimate.",
     sections: [
       {
         heading: "Large Item Pickup in Denver, Colorado",
@@ -347,8 +343,7 @@ const RAW_CUSTOM_PAGES: Record<
   "aurora/mattress-and-bulky-item-removal": {
     title: "Mattress Removal Aurora CO | Mattress Disposal & Pickup | EZ Haulaway",
     h1: "Mattress Removal Aurora",
-    description:
-      "Mattress removal in Aurora, CO. We carry out mattresses, box springs, bed frames and bulky items from any room, then donate or recycle. Upfront pricing, free estimate.",
+    description: "Mattress removal in Aurora, CO. We carry out mattresses, box springs, bed frames and bulky items, then donate or recycle. Free estimate.",
     intro: [
       "Need **mattress removal in Aurora**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — upstairs bedroom, basement or apartment — and haul everything away in one visit. No dragging it to the curb and no truck rental.",
       "Our **family-owned crew** does **all the heavy lifting**. We carry the mattress down the stairs, out the door and onto our 16-foot trailer, then sweep up before we go. You just show us what goes.",
@@ -384,8 +379,7 @@ const RAW_CUSTOM_PAGES: Record<
   "centennial/electronics-and-e-waste-removal": {
     title: "Electronic Disposal Centennial CO | E-Waste Recycling | EZ Haulaway",
     h1: "Electronic Disposal Centennial",
-    description:
-      "Electronic disposal in Centennial, CO. TVs, computers, monitors, printers and e-waste picked up from inside your home or office and recycled. Upfront pricing, free estimate.",
+    description: "Electronics disposal in Centennial, CO. TVs, computers, monitors and printers picked up from your home or office and recycled. Free estimate.",
     intro: [
       "Need **electronic disposal in Centennial**? We pick up old TVs, computers, monitors, printers, stereo gear, game consoles and boxes of cords from your home, garage or office — and take them to proper **electronics recycling** instead of the landfill.",
       "Colorado bans most electronics from landfills, so you can't just put an old TV or computer in the trash. Our family-owned crew does **all the heavy lifting**, carries it out from any room, and handles the drop-off for you.",

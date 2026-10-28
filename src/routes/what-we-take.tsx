@@ -11,7 +11,7 @@ import cleanoutAsset from "@/assets/real-IMG_5076.jpg.asset.json";
 
 const title = "What We Take — Junk Removal Services | EZ Haulaway";
 const description =
-  "Furniture, appliances, hot tubs, construction debris, yard waste, cleanouts, electronics and more. See everything EZ Haulaway hauls across the Denver metro.";
+  "Furniture, appliances, hot tubs, construction debris, yard waste, cleanouts, electronics and more. See what EZ Haulaway hauls in the Denver metro.";
 
 export const Route = createFileRoute("/what-we-take")({
   head: () => ({

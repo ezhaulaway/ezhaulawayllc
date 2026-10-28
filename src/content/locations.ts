@@ -455,8 +455,7 @@ const raw_locations: Location[] = [
     county: "Douglas County",
     h1: "Lone Tree Junk Removal",
     metaTitle: "Lone Tree Junk Removal CO | Same-Week Pickup | EZ Haulaway",
-    metaDescription:
-      "Lone Tree junk removal: furniture, office cleanouts, electronics and bulky items hauled away. Same-week scheduling, upfront pricing and free quotes.",
+    metaDescription: "Lone Tree junk removal: furniture, office cleanouts, electronics and bulky items hauled away. Same-day pickup available, upfront pricing and free quotes.",
     intro:
       "Our family-owned crew is minutes away in Parker, so same-week scheduling is usually straightforward.",
     local:

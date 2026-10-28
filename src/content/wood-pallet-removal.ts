@@ -6,7 +6,7 @@ export const woodPalletRemoval: Service = {
   name: "Wood Pallet Removal",
   h1: "Wood Pallet Removal",
   metaTitle: "Wood Pallet Removal in Parker & Denver | EZ Haulaway",
-  metaDescription: "Wood pallet removal in Parker, Castle Rock and the Denver metro. We haul unwanted pallets, broken pallets and scrap wood. Send photos for a free pickup quote.",
+  metaDescription: "Wood pallet removal in Parker, Castle Rock and the Denver metro. We haul unwanted and broken pallets and scrap wood. Send photos for a free quote.",
   cityPages: false,
   summary: "Unwanted wood pallets, broken pallet stacks, scrap lumber and wood offcuts.",
   image: palletImage,
