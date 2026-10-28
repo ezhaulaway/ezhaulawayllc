@@ -10,7 +10,6 @@ export const Route = createFileRoute("/blog-sitemap.xml")({
         const posts = await listBlogPosts();
         const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
         const urls = [
-          `<url><loc>${SITE_URL}/</loc></url>`,
           `<url><loc>${SITE_URL}/blog</loc></url>`,
           ...posts.map(
             (p) =>

@@ -471,6 +471,7 @@ export function SiteFooter() {
               <Link to="/about" className="hover:text-secondary-foreground">About Ben &amp; Zoe</Link>
               <Link to="/contact" className="hover:text-secondary-foreground">Contact</Link>
               <Link to="/faq" className="hover:text-secondary-foreground">FAQ</Link>
+              <Link to="/blog" className="hover:text-secondary-foreground">Junk Removal Blog</Link>
               <Link to="/privacy-policy" className="hover:text-secondary-foreground">Privacy Policy</Link>
             </nav>
             <address className="mt-6 not-italic text-sm leading-6 text-secondary-foreground/70">

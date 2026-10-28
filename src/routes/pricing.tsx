@@ -3,6 +3,7 @@ import { ProseSection, rich } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, Check, Receipt, ShieldCheck, Truck } from "lucide-react";
+import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { TrailerPricing } from "@/components/trailer-pricing";
 import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
@@ -264,6 +265,7 @@ function PricingPage() {
         { kind: "page", to: "/how-it-works", label: "How It Works", text: "What happens from your first text to the final sweep." },
         { kind: "page", to: "/what-we-take", label: "What We Take", text: "Check your items before you book." },
       ]} />
+      <HelpfulGuides path="/pricing" />
       <CtaBand title="Get a Free Quote on Your Job" text="Photos, a phone call, or a quick text — whatever's easiest for you." />
     </PageShell>
   );
