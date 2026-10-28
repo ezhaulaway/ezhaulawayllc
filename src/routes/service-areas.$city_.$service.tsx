@@ -17,7 +17,7 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { PARKER_NEIGHBORHOODS_COPY, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
@@ -244,6 +244,12 @@ function CityServicePage() {
                 Why {city} Calls EZ Haulaway
               </h2>
               <p className="mt-5 leading-8 text-muted-foreground">{location.intro}</p>
+            </div>
+          )}
+          {location.slug === "parker" && PARKER_NEIGHBORHOODS_COPY[service.slug] && (
+            <div className="mt-10">
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">Parker neighborhoods we serve</h2>
+              <p className="mt-5 leading-8 text-muted-foreground">{PARKER_NEIGHBORHOODS_COPY[service.slug]}</p>
             </div>
           )}
           {photo && (

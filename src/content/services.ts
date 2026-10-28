@@ -272,7 +272,7 @@ const raw_services: Service[] = [
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
     h1: "Construction & Renovation Debris Removal",
-    metaTitle: "Construction Debris Removal in Parker, CO | EZ Haulaway",
+    metaTitle: "Construction Debris Removal Denver Metro | EZ Haulaway",
     metaDescription:
       "Drywall, lumber, flooring, roofing, and remodel debris cleared from job sites across Parker and the Denver metro area.",
     summary: "Drywall, lumber, flooring, roofing, and remodel debris.",
@@ -350,7 +350,7 @@ const raw_services: Service[] = [
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
     h1: "Garage Cleanouts in Parker & the Denver Metro",
-    metaTitle: "Garage Cleanout Service in Parker, CO | EZ Haulaway",
+    metaTitle: "Garage Cleanout Service Denver Metro | EZ Haulaway",
     metaDescription:
       "Get the garage back. EZ Haulaway clears years of stored junk from garages across Parker and the Denver metro area. Free quote.",
     summary: "Years of stored clutter cleared out so you can park in there again.",
