@@ -104,7 +104,7 @@ function AboutPage() {
               [job4.url, "Ben carrying a bin of junk toward the black EZ Haulaway dump trailer"],
               [job9.url, "Ben loading boxes from a wagon into the EZ Haulaway dump trailer"],
               [crewTrailer1000, "Ben and Zoe sitting on the edge of a loaded EZ Haulaway dump trailer parked beside the red pickup", `${crewTrailer640} 640w, ${crewTrailer1000} 1000w`],
-              [basementBen1000, "Ben of EZ Haulaway carrying a box through a finished basement during a cleanout, with furniture and a treadmill waiting to go", `${basementBen640} 640w, ${basementBen1000} 1000w`],
+              [basementBen1000, "Ben carrying a box through a basement during a cleanout", `${basementBen640} 640w, ${basementBen1000} 1000w`],
             ].map(([src, alt, srcSet]) => (
               <img key={src} src={src} srcSet={srcSet} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt={alt} loading="lazy" width={1200} height={900} className="aspect-[4/3] w-full rounded-lg object-cover" />
             ))}

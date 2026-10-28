@@ -97,9 +97,9 @@ const navItems = [
 ] as const;
 
 const services: Array<{ slug: string; title: string; text: string; icon: LucideIcon; image: string; imageAlt: string; position: string }> = [
-  { slug: "furniture-removal", title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO — couch and living room furniture loaded into the EZ Haulaway dump trailer", position: "50% 40%" },
-  { slug: "appliance-removal", title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO — EZ Haulaway crew loading a refrigerator onto the branded dump trailer", position: "50% 35%" },
-  { slug: "garage-cleanouts", title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageSrc, imageAlt: "Residential junk removal in Parker, CO — garage cleanout with household junk loaded into the dump trailer", position: "50% 45%" },
+  { slug: "furniture-removal", title: "Furniture", text: "Couches, tables, chairs, shelving, and more.", icon: Armchair, image: furnitureAsset, imageAlt: "Furniture removal in Parker, CO: couch loaded into the dump trailer", position: "50% 40%" },
+  { slug: "appliance-removal", title: "Appliances", text: "Large and small household appliances.", icon: Refrigerator, image: applianceAsset, imageAlt: "Appliance removal in Parker, CO: crew loading a refrigerator", position: "50% 35%" },
+  { slug: "garage-cleanouts", title: "Household Junk", text: "Clutter, boxes, unwanted items, and general junk.", icon: House, image: garageSrc, imageAlt: "Residential junk removal in Parker, CO: garage cleanout loaded into the trailer", position: "50% 45%" },
   { slug: "house-and-estate-cleanouts", title: "Property Cleanouts", text: "Garages, storage units, homes, and other spaces.", icon: Building2, image: estateAsset, imageAlt: "Property cleanout in Parker, CO — EZ Haulaway trailer loaded with furniture, boxes and stored junk", position: "50% 40%" },
   { slug: "construction-debris-removal", title: "Yard & Construction Debris", text: "Branches, lumber, renovation debris, and more.", icon: Trees, image: constructionAsset, imageAlt: "Yard and construction debris removal in Parker, CO — renovation waste loaded into the dump trailer", position: "50% 45%" },
   { slug: "hot-tub-removal", title: "Hot Tubs & Light Demolition", text: "Hot tubs, decks, pergolas, and select structures.", icon: Construction, image: hotTubAsset, imageAlt: "Hot tub removal in Parker, CO — EZ Haulaway crew cutting out and hauling away a backyard spa", position: "50% 40%" },
@@ -333,6 +333,8 @@ export function HomePage() {
                     srcSet={cardSrcSet[image]}
                     sizes="(min-width: 1024px) 405px, (min-width: 640px) 50vw, 100vw"
                     alt={imageAlt}
+                    width={640}
+                    height={480}
                     loading="lazy"
                     decoding="async"
                     style={{ objectPosition: position }}
@@ -418,6 +420,9 @@ export function HomePage() {
                 src={benJobsiteAsset.url}
                 alt="Ben from EZ Haulaway giving a thumbs up in front of the dump trailer at a jobsite"
                 loading="lazy"
+                decoding="async"
+                width={1200}
+                height={900}
                 className="mt-8 aspect-[4/3] w-full rounded-lg border border-border object-cover"
               />
             </div>

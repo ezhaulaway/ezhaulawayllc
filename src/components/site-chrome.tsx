@@ -560,6 +560,9 @@ export function PageHero({
           <img
             src={image}
             alt={imageAlt ?? ""}
+            width={1200}
+            height={900}
+            decoding="async"
             className="aspect-[4/3] w-full rounded-lg border border-border object-cover"
           />
         ) : null}

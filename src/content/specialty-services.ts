@@ -12,7 +12,7 @@ export const dumpsterRentalAlternative: Service = {
   cityPages: false,
   summary: "Skip the roll-off. We load, haul and clean up — you pay only for the trailer space you use.",
   image: dumpsterAltAsset.url,
-  imageAlt: "EZ Haulaway crew member loading household junk from a cart into the black dump trailer beside the red work truck, a dumpster rental alternative",
+  imageAlt: "Crew loading household junk from a cart into the dump trailer",
   intro: [
     "Searching for a **dumpster rental** in Parker, Castle Rock or the Denver metro? Before you book a roll-off dumpster, compare it with full-service junk removal. With a **dumpster rental alternative** like EZ Haulaway, we bring the truck and dump trailer, do the lifting and loading, sweep up and drive away — usually the same visit.",
     "A dumpster rental makes sense for some long projects. For most garage cleanouts, basement purges, estate cleanouts, move-outs and small remodels, though, homeowners end up renting a waste container, loading it themselves for days and still paying for space they never fill. Here is how **dumpster rental vs junk removal** actually compares, so you can choose the right option for your project.",
@@ -181,7 +181,7 @@ export const storageUnitCleanout: Service = {
   summary: "Empty a storage unit in one visit and stop paying monthly rent.",
   image: storageUnitAsset.url,
   imageAlt:
-    "EZ Haulaway crew member wheeling a cart of boxes from a storage unit cleanout toward the black dump trailer behind the red work truck",
+    "Crew wheeling a cart of boxes from a storage unit to the trailer",
   intro: [
     "Paying every month for a storage unit full of things you no longer need? EZ Haulaway provides **storage unit cleanout services** in Parker, Castle Rock and the Denver metro. We meet you at the facility, load everything you do not want to keep and haul it away so you can close out the unit.",
     "Bring a small car for the items you want to keep. We take the furniture, boxes, mattresses, appliances and general junk — then sweep the unit so it is ready for move-out.",

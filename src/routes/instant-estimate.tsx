@@ -165,6 +165,8 @@ function InstantEstimatePage() {
               <img
                 src={benHeadshot}
                 alt="Ben, owner of EZ Haulaway"
+                width={240}
+                height={240}
                 className="size-14 rounded-full border-2 border-primary object-cover"
               />
               <div>

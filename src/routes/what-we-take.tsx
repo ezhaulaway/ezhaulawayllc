@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { services } from "@/content/services";
 import { SITE_URL } from "@/content/site";
+import { responsiveImage } from "@/lib/service-images";
 import cleanoutAsset from "@/assets/real-IMG_5076.jpg.asset.json";
 
 const title = "What We Take — Junk Removal Services | EZ Haulaway";
@@ -88,9 +89,12 @@ function WhatWeTakePage() {
                 className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7"
               >
                 <img
-                  src={service.image}
+                  {...responsiveImage(service.image, "(min-width: 1024px) 405px, (min-width: 640px) 50vw, 100vw")}
                   alt={service.imageAlt}
+                  width={1200}
+                  height={896}
                   loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
                 <div
