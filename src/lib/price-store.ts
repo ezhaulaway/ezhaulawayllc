@@ -21,6 +21,9 @@ export function subscribeGuide(l: () => void) {
 
 const money = (n: number) => `$${n.toLocaleString("en-US")}`;
 
+/** Used only when the live crew-app feed is unreachable, so [[adj:id]] never leaks into page HTML. Mirrors the crew app. */
+const FALLBACK_ADJUSTMENTS: Record<string, string> = { freon: "$100" };
+
 function findItem(list: { item: string; price: string }[], key: string) {
   const k = key.toLowerCase();
   return list.find((s) => s.item.toLowerCase() === k) ?? list.find((s) => s.item.toLowerCase().startsWith(k)) ?? list.find((s) => s.item.toLowerCase().includes(k));
@@ -38,7 +41,7 @@ function resolve(token: string, g: PriceGuide): string | null {
     const price = (findItem(g.specialty, arg) ?? findItem(FALLBACK_GUIDE.specialty, arg))?.price;
     return price ? price.replace(/^starting at\s*/i, "").replace(/\s*per cushion$/i, "") : null;
   }
-  if (kind === "adj") return g.adjustments.find((a) => a.id === arg)?.amount ?? null;
+  if (kind === "adj") return g.adjustments.find((a) => a.id === arg)?.amount ?? FALLBACK_ADJUSTMENTS[arg] ?? null;
   return null;
 }
 
