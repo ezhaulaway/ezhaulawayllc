@@ -17,7 +17,8 @@ import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { PARKER_NEIGHBORHOODS_COPY, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { PARKER_NEIGHBORHOODS_COPY } from "@/content/parker-neighborhoods";
 
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
