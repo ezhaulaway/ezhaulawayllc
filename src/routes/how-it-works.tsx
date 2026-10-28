@@ -4,6 +4,7 @@ import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Camera, CalendarCheck, HandCoins, HeartHandshake, Recycle, Sparkles, Trash2, Truck, Tv, UserCheck } from "lucide-react";
+import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, FaqAccordion, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, SITE_URL } from "@/content/site";
 import timelapsePoster from "@/assets/new-7247E3BB.webp.asset.json";
@@ -244,6 +245,7 @@ function HowItWorksPage() {
         { kind: "page", to: "/what-we-take", label: "What We Take", text: "Furniture, appliances, debris, and the items we can't haul." },
         { kind: "page", to: "/instant-estimate", label: "Instant Estimate", text: "Describe your junk and get a price range in about a minute." },
       ]} />
+      <HelpfulGuides path="/how-it-works" />
       <CtaBand />
     </PageShell>
   );

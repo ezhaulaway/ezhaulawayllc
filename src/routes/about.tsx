@@ -3,6 +3,7 @@ import { ProseSection } from "@/components/prose-section";
 import { pageExtras } from "@/content/page-extras";
 import { createFileRoute } from "@tanstack/react-router";
 import { HeartHandshake, Leaf, ShieldCheck, Users } from "lucide-react";
+import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { SITE_URL, reviews, GOOGLE_REVIEWS_URL } from "@/content/site";
 import { Star } from "lucide-react";
@@ -231,6 +232,7 @@ function AboutPage() {
         { kind: "page", to: "/pricing", label: "Our Pricing", text: "Straight trailer-space pricing with no surprise fees." },
         { kind: "page", to: "/service-areas", label: "Service Areas", text: "Parker, Castle Rock, Denver, and the surrounding metro." },
       ]} />
+      <HelpfulGuides path="/about" />
       <CtaBand />
     </PageShell>
   );

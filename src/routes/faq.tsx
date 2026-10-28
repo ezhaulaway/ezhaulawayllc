@@ -2,6 +2,7 @@ import { priced } from "@/lib/price-store";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 
@@ -194,6 +195,7 @@ function FaqPage() {
         </div>
       </section>
 
+      <HelpfulGuides path="/faq" />
       <CtaBand />
     </PageShell>
   );

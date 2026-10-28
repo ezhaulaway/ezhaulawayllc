@@ -1,3 +1,4 @@
+import { HelpfulGuides } from "@/components/blog-links";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { isLiveCityService, isLiveService } from "@/content/live-pages";
@@ -348,6 +349,7 @@ function ServicePage() {
         </div>
       </section>
 
+      <HelpfulGuides path={`/services/${service.slug}`} />
       <CtaBand title={`Need ${service.name}${service.cityPages === false ? "?" : " Today?"}`} text="Send photos or give us a call. We'll get you a straight answer fast." />
     </PageShell>
   );
