@@ -56,7 +56,7 @@ const raw_services: Service[] = [
       "Furniture removal services and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
-    imageAlt: "Crew carrying a sofa beside a maroon pickup and black tandem-axle dump trailer",
+    imageAlt: "Crew carrying a sofa to a pickup and dump trailer",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. EZ Haulaway takes the whole problem off your hands — you point at the sofa, we carry it out.",
       "We work in occupied homes every week, so floors, doorframes, and corners get treated carefully on the way out.",
@@ -100,7 +100,7 @@ const raw_services: Service[] = [
       "Appliance removal, fridge removal and appliance disposal in Parker and the Denver metro. We carry it out and recycle the metal. Upfront free quotes.",
     summary: "Refrigerators, washers, dryers, stoves, dishwashers, and water heaters.",
     image: applianceAsset,
-    imageAlt: "EZ Haulaway crew loading a refrigerator onto the branded trailer",
+    imageAlt: "Crew loading a refrigerator onto the dump trailer",
     intro: [
       "Appliances are heavy, sharp-edged, and a real risk to your back and your flooring. We bring the dollies, the straps, and the crew.",
       "Whether your old unit sits in the garage or still needs to come out of the laundry room, we load it and take it away the same visit.",
@@ -139,7 +139,7 @@ const raw_services: Service[] = [
       "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down, and haul old spas the same visit. Free quote — from [[item:Hot tub]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset,
-    imageAlt: "Hot tub set up outdoors in a Denver metro backyard, ready for removal",
+    imageAlt: "Backyard hot tub ready for removal",
     intro: [
       "A hot tub that no longer runs is one of the hardest things to get rid of on your own. It is too heavy to move whole, too big for a dumpster, and still full of water, foam, and wiring.",
       "EZ Haulaway handles hot tub removal and disposal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. We cut the spa down on site, load every piece, and leave you with an open patio the same day.",
@@ -228,7 +228,7 @@ const raw_services: Service[] = [
       "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of experience. Every board hauled, site raked. Free quote.",
     summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
     image: deckAsset,
-    imageAlt: "EZ Haulaway crew loading dismantled deck boards into a tandem-axle dump trailer",
+    imageAlt: "Crew loading deck boards into the dump trailer",
     intro: [
       "Colorado weather is hard on wood. When a deck starts splintering or a fence line starts leaning, tearing it out is the first step toward whatever comes next.",
       "EZ Haulaway handles deck demolition and fence removal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. This is Ben's strongest area — he has worked on more than 300 decks, so he knows exactly how they were built and how they come apart without wrecking your siding or your yard.",
@@ -277,7 +277,7 @@ const raw_services: Service[] = [
       "Drywall, lumber, flooring, roofing, and remodel debris cleared from job sites across Parker and the Denver metro area.",
     summary: "Drywall, lumber, flooring, roofing, and remodel debris.",
     image: constructionAsset,
-    imageAlt: "EZ Haulaway crew loading organized renovation debris at a Denver metro jobsite",
+    imageAlt: "Crew loading renovation debris at a jobsite",
     intro: [
       "Renting a dumpster means paying for the days it sits in the driveway. We show up when the pile is ready, load it, and leave.",
       "We work with homeowners mid-remodel and with contractors who need a site cleared between phases.",
@@ -355,7 +355,7 @@ const raw_services: Service[] = [
       "Get the garage back. EZ Haulaway clears years of stored junk from garages across Parker and the Denver metro area. Free quote.",
     summary: "Years of stored clutter cleared out so you can park in there again.",
     image: garageAsset.url,
-    imageAlt: "EZ Haulaway crew loading garage cleanout boxes from a cart into the black dump trailer in Parker, CO",
+    imageAlt: "Crew loading garage cleanout boxes into the trailer",
     intro: [
       "Garages collect everything nobody wants to decide about. Paint cans aside, most of it can leave today.",
       "You point out what stays. We clear the rest and sweep the floor before we go.",
@@ -394,7 +394,7 @@ const raw_services: Service[] = [
       "Full property cleanouts for estates, rentals, and moves across the Denver metro area. Respectful, thorough work from EZ Haulaway.",
     summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
     image: estateAsset,
-    imageAlt: "EZ Haulaway crew member carrying a wall-art panel out of a finished basement during a house cleanout, with furniture, boxes and cables waiting to be hauled",
+    imageAlt: "Crew carrying a panel out of a cluttered basement",
     realJob: {
       eyebrow: "Real job in Parker, CO",
       title: "A Parker Basement Cleared in About 45 Minutes",
@@ -407,12 +407,12 @@ const raw_services: Service[] = [
       before: {
         src: basementBefore960,
         srcSet: `${basementBefore640} 640w, ${basementBefore960} 960w`,
-        alt: "Before: a Parker basement packed with boxes, a treadmill, a dresser, a TV and a bin of cables waiting to be hauled away",
+        alt: "Before: a Parker basement packed with boxes and furniture",
       },
       after: {
         src: basementAfter960,
         srcSet: `${basementAfter640} 640w, ${basementAfter960} 960w`,
-        alt: "After: the same Parker basement completely cleared, with an empty wood-look floor and nothing left behind",
+        alt: "After: the same Parker basement completely cleared",
       },
     },
     intro: [
@@ -453,7 +453,7 @@ const raw_services: Service[] = [
       "Mattress disposal, box spring removal and large item pickup in Denver, Parker, Castle Rock and Highlands Ranch. Single items welcome, carried out for you.",
     summary: "Mattresses, box springs and single large items: treadmills, pianos, pool tables.",
     image: bulkyAsset.url,
-    imageAlt: "EZ Haulaway crew lifting a bulky trash bin into the tandem-axle dump trailer",
+    imageAlt: "Crew lifting a bulky bin into the dump trailer",
     intro: [
       "Some items are just one thing — but that one thing weighs 300 pounds and will not fit down the stairs alone. Curbside pickup will not touch most of them, and the recycling center wants you to deliver it yourself.",
       "EZ Haulaway does single-item mattress disposal, box spring removal, and large item pickup across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. No minimum truckload, no pressure to find more junk to justify the trip, and no asking you to drag it to the curb first.",
@@ -509,7 +509,7 @@ const raw_services: Service[] = [
       "TVs, monitors, computers, printers, and office electronics collected for responsible recycling across the Denver metro area.",
     summary: "TVs, monitors, computers, printers, and office electronics.",
     image: electronicsAsset,
-    imageAlt: "EZ Haulaway crew collecting televisions, computers, and electronics for recycling",
+    imageAlt: "Crew collecting TVs and computers for recycling",
     intro: [
       "Electronics cannot go in the trash in most places, and hauling a 60-inch TV to a recycling center is nobody's idea of a Saturday.",
       "We pick it up and route it to the right facility.",
@@ -548,7 +548,7 @@ const raw_services: Service[] = [
       "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board. Free quote.",
     summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
     image: shedImage,
-    imageAlt: "Crew dismantling an old wooden backyard shed next to a black dump trailer",
+    imageAlt: "Crew dismantling an old backyard shed",
     intro: [
       "A shed that has gone soft, leaky, or full of mice is not something you want to take apart on a weekend. We handle the whole thing: tear down the structure, load every board, and haul it off the same visit.",
       "EZ Haulaway does shed removal and backyard demolition across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. Wood, metal, vinyl, or plastic — if it is standing in your yard and you want it gone, it is a normal job for us. Ben brings roughly six years of construction and demolition experience, so the tear-down is planned, not improvised.",
@@ -596,7 +596,7 @@ const raw_services: Service[] = [
     metaDescription: "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, and property-manager turnovers. Same-day slots, company invoicing, free quotes.",
     summary: "Offices, retail spaces, warehouses, and property manager turnovers.",
     image: commercialAsset,
-    imageAlt: "EZ Haulaway crew removing office furniture from a Denver metro business",
+    imageAlt: "Crew removing office furniture from a business",
     intro: ["Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site. **Commercial junk removal** from EZ Haulaway covers office cleanouts, retail and warehouse clearing, and tenant turnovers across Parker, Castle Rock, Centennial, Aurora and Denver.", "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work, including **eviction cleanouts, trash outs and make readies**, with same-day and next-day slots, company invoicing and before and after photos on every job."],
     includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers, make readies and lease-end cleanouts", "Eviction cleanouts and trash outs", "Ongoing scheduled pickups"],
     sections: [

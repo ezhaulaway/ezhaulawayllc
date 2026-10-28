@@ -25,7 +25,7 @@ export const evictionCleanout: Service = {
   summary: "Same-day and next-day eviction cleanouts and trash outs for landlords and property managers.",
   image: realBasementStaged1000,
   imageAlt:
-    "EZ Haulaway crew member clearing furniture, boxes and cables out of a finished basement during a cleanout in Parker, CO",
+    "Crew member clearing furniture and boxes from a Parker basement",
   intro: [
     "When an eviction is finished and the property is back in your hands, it still has to be emptied before it can be cleaned, repaired and re-rented. EZ Haulaway handles **eviction cleanouts** and **trash outs** for landlords, property managers and owners in Parker, Castle Rock, Aurora, Denver and the south Denver metro. We clear furniture, mattresses, clothing, boxes, appliances and bags of trash, then sweep and blow the area off.",
     "**Same-day** eviction cleanouts and trash outs are available. Once we have the property details, access and your go-ahead, we schedule the crew. Next day is the usual fallback, and a 48-hour wait is rare.",
@@ -92,7 +92,7 @@ export const makeReadyHaulOff: Service = {
   summary: "The haul-off step of a make ready: we clear the unit so cleaners and painters can start.",
   image: realBasementRoom1000,
   imageAlt:
-    "EZ Haulaway crew member walking through an open basement room with furniture, boxes and cables staged for loading",
+    "Crew member walking through a basement staged for loading",
   intro: [
     "A **make ready** is the work between one resident moving out and the next moving in: clear the unit, clean it, patch and paint, fix what is broken and get it ready to rent. EZ Haulaway is the **haul-off step**. We remove the furniture, mattresses, appliances, boxes and bags of trash left behind, then sweep and blow the area off so your vendors can start.",
     "We serve property managers, landlords and apartment communities in Parker, Castle Rock, Aurora, Denver and the south Denver metro with **same-day** and **next-day** slots. A 48-hour wait is rare.",
@@ -158,7 +158,7 @@ export const basementAtticCleanout: Service = {
   summary: "We carry it up the stairs or down the attic ladder, load it and haul it away.",
   image: realBasementStairs1000,
   imageAlt:
-    "EZ Haulaway crew member carrying a wall-art panel past the stairs of a finished basement during a cleanout in Parker, CO",
+    "Crew member carrying a panel past basement stairs in Parker, CO",
   realJob: {
     eyebrow: "Real job in Parker, CO",
     title: "A Parker Basement Cleared in About 45 Minutes",
@@ -171,12 +171,12 @@ export const basementAtticCleanout: Service = {
     before: {
       src: basementBefore960,
       srcSet: `${basementBefore640} 640w, ${basementBefore960} 960w`,
-      alt: "Before: a Parker basement packed with boxes, a treadmill, a dresser, a TV and a bin of cables waiting to be hauled away",
+      alt: "Before: a Parker basement packed with boxes and furniture",
     },
     after: {
       src: basementAfter960,
       srcSet: `${basementAfter640} 640w, ${basementAfter960} 960w`,
-      alt: "After: the same Parker basement completely cleared, with an empty wood-look floor and nothing left behind",
+      alt: "After: the same Parker basement completely cleared",
     },
   },
   intro: [

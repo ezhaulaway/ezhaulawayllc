@@ -15,15 +15,15 @@ import trailerJunk7 from "@/assets/branded-trailer-junk-7.webp";
 import trailerJunk8 from "@/assets/branded-trailer-junk-8.webp";
 
 const fillDescriptions: Record<number, string> = {
-  0: "Illustrated EZ Haulaway black tandem-axle dump trailer with a small minimum load at the rear",
-  1: "Illustrated black tandem-axle dump trailer about one-eighth full of junk, building from the rear",
-  2: "Illustrated black tandem-axle dump trailer about one-quarter full of junk, building from the rear",
-  3: "Illustrated black tandem-axle dump trailer about three-eighths full of junk, building from the rear",
-  4: "Illustrated black tandem-axle dump trailer half full of household junk, building from the rear",
-  5: "Illustrated black tandem-axle dump trailer about five-eighths full of junk, building from the rear",
-  6: "Illustrated black tandem-axle dump trailer three-quarters full of junk, building from the rear",
-  7: "Illustrated black tandem-axle dump trailer seven-eighths full of junk, building from the rear",
-  8: "Illustrated black tandem-axle dump trailer heaping full of furniture, appliances, boxes, and bags",
+  0: "minimum load, a few items at the rear",
+  1: "about one-eighth full",
+  2: "about one-quarter full",
+  3: "about three-eighths full",
+  4: "half full of household junk",
+  5: "about five-eighths full",
+  6: "three-quarters full",
+  7: "seven-eighths full",
+  8: "heaping full of furniture, appliances and boxes",
 };
 
 const loadImages = [
@@ -81,7 +81,7 @@ export function TrailerPricing() {
                   <img
                     key={image}
                     {...responsiveImage(image, "(min-width: 1280px) 756px, (min-width: 1024px) 60vw, calc(100vw - 40px)")}
-                    alt={`Dump trailer junk fill level: ${fillDescriptions[eighths]}`}
+                    alt={`Illustrated dump trailer fill level: ${fillDescriptions[eighths]}`}
                     aria-hidden={eighths !== selectedEighths}
                     width={1376}
                     height={768}
