@@ -70,7 +70,9 @@ const withExtras = (city: string, extras: string[] = []) =>
   [city, PRIMARY_CITIES.includes(city) ? [...CORE_FIVE, ...extras] : extras] as const;
 
 export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.fromEntries([
-  withExtras("parker", ["shed-removal", "construction-debris-removal"]),
+  // Parker consolidation (option C): only the two pages that rank stay as Parker-specific pages.
+  // The other five Parker city-service URLs 301 to their /services/ page via the route loader.
+  ["parker", ["garage-cleanouts", "construction-debris-removal"]],
   withExtras("castle-rock"),
   withExtras("highlands-ranch"),
   withExtras("centennial", ["electronics-and-e-waste-removal"]),

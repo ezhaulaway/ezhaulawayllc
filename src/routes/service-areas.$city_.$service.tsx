@@ -1,3 +1,4 @@
+import { PARKER_NEIGHBORHOODS_COPY } from "@/content/parker-neighborhoods";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
@@ -245,6 +246,12 @@ function CityServicePage() {
                 Why {city} Calls EZ Haulaway
               </h2>
               <p className="mt-5 leading-8 text-muted-foreground">{location.intro}</p>
+            </div>
+          )}
+          {location.slug === "parker" && PARKER_NEIGHBORHOODS_COPY[service.slug] && (
+            <div className="mt-10">
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">Parker neighborhoods we serve</h2>
+              <p className="mt-5 leading-8 text-muted-foreground">{PARKER_NEIGHBORHOODS_COPY[service.slug]}</p>
             </div>
           )}
           {photo && (
