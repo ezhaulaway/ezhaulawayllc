@@ -7,6 +7,7 @@ import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
+import { BLOG_AUTHOR_NAME, blogDates, blogSchemas } from "@/lib/blog-schema";
 
 type Json = unknown;
 
@@ -49,9 +50,12 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData: p }) => {
     if (!p) return { meta: [{ title: "Article not found — EZ Haulaway Blog" }] };
     const url = `${SITE_URL}/blog/${p.slug}`;
+    // Posts synced without their own structured data get BlogPosting + BreadcrumbList from the post fields.
+    const generated = p.json_ld == null ? blogSchemas(p) : [];
     const scripts = [p.json_ld, p.faq_json_ld]
       .filter((x) => x != null)
-      .map((x) => ({ type: "application/ld+json", children: ser(repoint(x, url)) }));
+      .map((x) => ({ type: "application/ld+json", children: ser(repoint(x, url)) }))
+      .concat(generated.map((x) => ({ type: "application/ld+json", children: ser(x) })));
     const desc = p.meta_description ?? "";
     return {
       meta: [
@@ -94,6 +98,7 @@ function BlogPost() {
         <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
           <ArrowLeft className="size-4" /> Back to blog
         </Link>
+        <PostDates created={p.article_created_at} updated={p.article_updated_at} />
         <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: p.content_html ?? "" }} />
       </article>
       {BLOG_RELATED[p.slug] ? (
@@ -103,5 +108,19 @@ function BlogPost() {
       )}
       <CtaBand />
     </PageShell>
+  );
+}
+
+const fmtDate = (d: string) => new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "America/Denver" });
+
+function PostDates({ created, updated }: { created: string | null; updated: string | null }) {
+  const { published, modified } = blogDates({ article_created_at: created, article_updated_at: updated });
+  if (!published) return null;
+  const showUpdated = modified && fmtDate(modified) !== fmtDate(published);
+  return (
+    <p className="mt-6 text-sm text-muted-foreground">
+      By {BLOG_AUTHOR_NAME}, EZ Haulaway · Published <time dateTime={published}>{fmtDate(published)}</time>
+      {showUpdated ? <> · Updated <time dateTime={modified!}>{fmtDate(modified!)}</time></> : null}
+    </p>
   );
 }

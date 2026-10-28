@@ -14,6 +14,12 @@ export const OPENING_HOURS_SPEC = [
   },
 ];
 
+/** All 14 live service areas, used for areaServed in structured data. */
+export const SERVICE_AREA_CITIES = [
+  "Parker", "Castle Rock", "Castle Pines", "Centennial", "Highlands Ranch", "Lone Tree", "Littleton",
+  "Englewood", "Lakewood", "Denver", "Aurora", "Franktown", "Elizabeth", "Sedalia",
+] as const;
+
 export const reviews = [
   {
     name: "Renee Thompson",

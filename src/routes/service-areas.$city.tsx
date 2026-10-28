@@ -1,3 +1,4 @@
+import { priceText } from "@/lib/price-store";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
@@ -88,6 +89,19 @@ export const Route = createFileRoute("/service-areas/$city")({
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${SITE_URL}/service-areas/${params.city}#faq`,
+            mainEntity: cityFaqs(location.city).map(([question, answer]) => ({
+              "@type": "Question",
+              name: question,
+              acceptedAnswer: { "@type": "Answer", text: priceText(answer) },
+            })),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
@@ -117,6 +131,16 @@ function CityNotFound() {
   );
 }
 
+/** Visible "<City> Questions" block; also feeds the FAQPage JSON-LD so both stay identical. */
+const cityFaqs = (city: string) => [
+  [`Do you charge extra to come to ${city}?`, `No. ${city} is part of our regular service area, so there's no separate trip charge built into your quote.`],
+  [`How much does junk removal cost in ${city}?`, "We price by the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Send photos for a preliminary estimate."],
+  ["How fast can you get here?", "Same-day and next-day pickups are common, and a 48-hour wait is rare. Call or text for the soonest slot."],
+  [`Do you work with landlords, property managers and realtors in ${city}?`, "Yes. We do eviction cleanouts, trash outs, make-ready haul-offs and pre-listing cleanouts, take before and after photos on every job, and can invoice your company. Property managers can be added to our certificate of insurance."],
+  ["Do I have to move anything to the curb?", "No. Our crew carries everything out from wherever it sits — basement, backyard, upstairs bedroom, or storage unit."],
+  [`What do you do with the junk after you leave ${city}?`, "We sort for donation and recycling wherever we can, and take the rest to the proper disposal facility."],
+] as const;
+
 const INSTANT_ESTIMATE_CITIES = ["denver", "parker", "castle-rock"];
 
 function CityPage() {
@@ -130,14 +154,7 @@ function CityPage() {
     .map(({ slug }) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const faqs = [
-    [`Do you charge extra to come to ${location.city}?`, `No. ${location.city} is part of our regular service area, so there's no separate trip charge built into your quote.`],
-    [`How much does junk removal cost in ${location.city}?`, "We price by the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Send photos for a preliminary estimate."],
-    ["How fast can you get here?", "Same-day and next-day pickups are common, and a 48-hour wait is rare. Call or text for the soonest slot."],
-    [`Do you work with landlords, property managers and realtors in ${location.city}?`, "Yes. We do eviction cleanouts, trash outs, make-ready haul-offs and pre-listing cleanouts, take before and after photos on every job, and can invoice your company. Property managers can be added to our certificate of insurance."],
-    ["Do I have to move anything to the curb?", "No. Our crew carries everything out from wherever it sits — basement, backyard, upstairs bedroom, or storage unit."],
-    [`What do you do with the junk after you leave ${location.city}?`, "We sort for donation and recycling wherever we can, and take the rest to the proper disposal facility."],
-  ] as const;
+  const faqs = cityFaqs(location.city);
   const angle = CITY_ANGLES[location.slug];
 
   return (
