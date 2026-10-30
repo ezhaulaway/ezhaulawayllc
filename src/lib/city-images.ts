@@ -35,9 +35,8 @@ import hq10_1200 from "@/assets/branded-area-littleton-hq-1200.webp";
 import original11 from "@/assets/branded-area-lone-tree.webp";
 import hq11_800 from "@/assets/branded-area-lone-tree-hq-800.webp";
 import hq11_1200 from "@/assets/branded-area-lone-tree-hq-1200.webp";
-import original12 from "@/assets/branded-area-parker.webp";
-import hq12_800 from "@/assets/branded-area-parker-hq-800.webp";
-import hq12_1200 from "@/assets/branded-area-parker-hq-1200.webp";
+import original12 from "@/assets/real-parker-crew-trailer-1200.webp";
+import hq12_800 from "@/assets/real-parker-crew-trailer-800.webp";
 import original13 from "@/assets/branded-area-sedalia.webp";
 import hq13_800 from "@/assets/branded-area-sedalia-hq-800.webp";
 import hq13_1200 from "@/assets/branded-area-sedalia-hq-1200.webp";
@@ -55,7 +54,7 @@ const images = {
   [original9]: { src: hq9_1200, srcSet: `${hq9_800} 800w, ${hq9_1200} 1200w` },
   [original10]: { src: hq10_1200, srcSet: `${hq10_800} 800w, ${hq10_1200} 1200w` },
   [original11]: { src: hq11_1200, srcSet: `${hq11_800} 800w, ${hq11_1200} 1200w` },
-  [original12]: { src: hq12_1200, srcSet: `${hq12_800} 800w, ${hq12_1200} 1200w` },
+  [original12]: { src: original12, srcSet: `${hq12_800} 800w, ${original12} 1200w` },
   [original13]: { src: hq13_1200, srcSet: `${hq13_800} 800w, ${hq13_1200} 1200w` },
 };
 export const { responsiveImage, heroPreload } = createResponsiveImages(images);
