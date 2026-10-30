@@ -64,6 +64,9 @@ import realBasementStairs1000 from "@/assets/real-basement-stairs-1000.webp";
 import realBasementStairs1400 from "@/assets/real-basement-stairs-1400.webp";
 import realBasementPanel640 from "@/assets/real-basement-panel-640.webp";
 import realBasementPanel1000 from "@/assets/real-basement-panel-1000.webp";
+import realFurnitureCouch640 from "@/assets/real-furniture-couch-640.webp";
+import realFurnitureCouch1000 from "@/assets/real-furniture-couch-1000.webp";
+import realFurnitureCouch1280 from "@/assets/real-furniture-couch-1280.webp";
 
 const images = {
   [original14]: { src: hq14_1200, srcSet: `${hq14_800} 800w, ${hq14_1200} 1200w` },
@@ -77,6 +80,7 @@ const images = {
   [original22]: { src: hq22_1200, srcSet: `${hq22_800} 800w, ${hq22_1200} 1200w` },
   [original23]: { src: hq23_1200, srcSet: `${hq23_800} 800w, ${hq23_1200} 1200w` },
   [original24]: { src: hq24_1200, srcSet: `${hq24_800} 800w, ${hq24_1200} 1200w` },
+  [realFurnitureCouch1000]: { src: realFurnitureCouch1000, srcSet: `${realFurnitureCouch640} 640w, ${realFurnitureCouch1000} 1000w, ${realFurnitureCouch1280} 1280w` },
   [realBasementPanel1000]: { src: realBasementPanel1000, srcSet: `${realBasementPanel640} 640w, ${realBasementPanel1000} 1000w` },
   [realBasementStaged1000]: { src: realBasementStaged1000, srcSet: `${realBasementStaged640} 640w, ${realBasementStaged1000} 1000w, ${realBasementStaged1400} 1400w` },
   [realBasementRoom1000]: { src: realBasementRoom1000, srcSet: `${realBasementRoom640} 640w, ${realBasementRoom1000} 1000w, ${realBasementRoom1400} 1400w` },

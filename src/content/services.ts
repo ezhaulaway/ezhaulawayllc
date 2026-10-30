@@ -1,5 +1,5 @@
 import { priced } from "@/lib/price-store";
-import furnitureAsset from "@/assets/branded-service-furniture.webp";
+import furnitureAsset from "@/assets/real-furniture-couch-1000.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
 import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
 import lightDemolitionAsset from "@/assets/branded-service-demolition.webp";
@@ -55,7 +55,7 @@ const raw_services: Service[] = [
     metaDescription: "Furniture and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
-    imageAlt: "Crew carrying a sofa to a pickup and dump trailer",
+    imageAlt: "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. EZ Haulaway takes the whole problem off your hands — you point at the sofa, we carry it out.",
       "We work in occupied homes every week, so floors, doorframes, and corners get treated carefully on the way out.",
