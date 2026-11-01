@@ -10,9 +10,9 @@ import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
 import { SITE_URL } from "@/content/site";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 
-const title = "Junk Removal Pricing & Free Quotes | EZ Haulaway";
+const title = "Junk Removal Prices & Cost in Denver Metro | EZ Haulaway";
 const description =
-  "How EZ Haulaway prices junk removal in the Denver metro area: free quotes, all-inclusive pricing by load size, and no surprise fees after the job.";
+  "What junk removal costs in Parker, Denver and nearby. All-inclusive pricing by trailer load, free photo quotes and no surprise fees. Call 720-614-7223.";
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
