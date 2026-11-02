@@ -80,7 +80,7 @@ const raw_services: Service[] = [
       },
       {
         heading: "What furniture removal costs in Denver",
-        text: "Single pieces are priced individually: a small couch starts at [[item:Couch]], a recliner or loveseat is [[item:Recliner]], and a dresser is [[item:Dresser]], with a [[min]] minimum on any visit. Sleeper sofas and large sectionals cost more, and several pieces together are priced by the space they take in the trailer, whichever works out cheaper for you. A quarter trailer is [[load:2]] and a half trailer is [[load:4]]. Send a couple of photos and you get a firm number before we arrive.",
+        text: "A single couch is often just our [[min]] minimum, and so is a single dresser. Bigger or heavier pieces like sleeper sofas and large sectionals, or several pieces together, are priced by the space they take in the trailer, whichever works out cheaper for you. A quarter trailer is [[load:2]] and a half trailer is [[load:4]]. Send a couple of photos and you get a firm number before we arrive.",
       },
       {
         heading: "Office furniture removal in Denver",
@@ -95,7 +95,7 @@ const raw_services: Service[] = [
     ],
     faqs: [
       ["Do I need to move the furniture outside first?", "No. Leave it where it sits. Our crew carries everything out for you."],
-      ["How much does furniture removal cost in Denver?", "A small couch starts at [[item:Couch]], a recliner or loveseat is [[item:Recliner]], and a dresser is [[item:Dresser]], with a [[min]] minimum per visit. Bigger jobs are priced by trailer space instead, whichever is cheaper for you, and a photo quote gives you the exact number up front."],
+      ["How much does furniture removal cost in Denver?", "A single couch is often just our [[min]] minimum per visit, and so is a single dresser. Bigger or heavier pieces like sleeper sofas and large sectionals, or several pieces together, are priced by trailer space instead, whichever is cheaper for you, and a photo quote gives you the exact number up front."],
       ["Do you remove office furniture in Denver?", "Yes. Desks, cubicles, conference tables, filing cabinets, and chairs go out in the same visit, from a single office to a full tenant turnover."],
       ["Can you take a dining table and chairs together?", "Yes. Tables, chairs, and matching sets go out in the same visit."],
       ["Which areas do you serve for furniture removal?", "Denver, Parker, Castle Rock, Centennial, Englewood, Lakewood, Aurora, Littleton, Highlands Ranch, and the surrounding metro. See the service areas page for the full list."],
