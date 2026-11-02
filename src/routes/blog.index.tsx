@@ -57,7 +57,7 @@ function BlogIndex() {
                   className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg"
                 >
                   {p.hero_image_url ? (
-                    <img src={p.hero_image_url} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
+                    <img src={p.hero_image_url} alt="" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover" />
                   ) : null}
                   <div className="p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">{fmt(p.article_created_at)}</p>
