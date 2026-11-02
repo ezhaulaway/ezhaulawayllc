@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { BLOG_RELATED, BLOG_TITLES, LINK_LABELS, PAGE_GUIDES } from "@/content/blog-links";
+import { BLOG_CALLOUTS, BLOG_RELATED, BLOG_TITLES, LINK_LABELS, PAGE_GUIDES } from "@/content/blog-links";
 
 /** Renders an internal path as a router link (plain <a href> in the server HTML). */
 function SiteLink({ href, className, children }: { href: string; className?: string; children: React.ReactNode }) {
@@ -9,6 +9,25 @@ function SiteLink({ href, className, children }: { href: string; className?: str
   const city = href.match(/^\/service-areas\/([^/]+)$/);
   if (city) return <Link to="/service-areas/$city" params={{ city: city[1]! }} className={className}>{children}</Link>;
   return <Link to={href as "/pricing"} className={className}>{children}</Link>;
+}
+
+/** Top-of-post quote prompt for posts listed in BLOG_CALLOUTS. Returns null for every other post. */
+export function BlogCallout({ slug }: { slug: string }) {
+  const c = BLOG_CALLOUTS[slug];
+  if (!c) return null;
+  return (
+    <aside className="mt-6 rounded-lg border border-border bg-muted/50 p-5" aria-label="Get a quote">
+      <p className="font-semibold text-foreground">{c.text}</p>
+      <p className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+        <SiteLink href={c.href} className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
+          {c.label} <ArrowRight className="size-4" />
+        </SiteLink>
+        <Link to="/instant-estimate" className="inline-flex items-center gap-2 font-bold text-foreground hover:text-primary">
+          Get a free quote <ArrowRight className="size-4" />
+        </Link>
+      </p>
+    </aside>
+  );
 }
 
 /** Bottom-of-post box: hand-picked service links plus a quote link. Returns null for unmapped posts. */

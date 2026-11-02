@@ -50,15 +50,15 @@ const raw_services: Service[] = [
 {
     slug: "furniture-removal",
     name: "Furniture Removal",
-    h1: "Furniture Removal in Parker & the Denver Metro Area",
-    metaTitle: "Furniture Removal Services & Couch Removal | EZ Haulaway",
-    metaDescription: "Furniture and couch removal in Parker and the Denver metro. We carry out sofas, tables, chairs and dressers. Free quotes, no lifting for you.",
+    h1: "Furniture Removal in Denver, Parker & the Metro Area",
+    metaTitle: "Furniture Removal in Denver & Parker, CO | EZ Haulaway",
+    metaDescription: "Furniture removal in Denver and Parker: couches, dressers, tables and office furniture. We carry it out and haul it away. Free photo quotes, 720-614-7223.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. EZ Haulaway takes the whole problem off your hands — you point at the sofa, we carry it out.",
-      "We work in occupied homes every week, so floors, doorframes, and corners get treated carefully on the way out.",
+      "We work in occupied homes every week, so floors, doorframes, and corners get treated carefully on the way out. We haul furniture from homes, apartments, and offices across Denver, Parker, Castle Rock, and the rest of the metro.",
     ],
     includes: [
       "Couches, sectionals, and recliners",
@@ -66,6 +66,7 @@ const raw_services: Service[] = [
       "Dressers, nightstands, and armoires",
       "Dining tables, chairs, and bar stools",
       "Desks, filing cabinets, and office chairs",
+      "Office furniture: cubicles, conference tables, and reception desks",
       "Bookshelves, entertainment centers, and cabinets",
     ],
     sections: [
@@ -78,6 +79,15 @@ const raw_services: Service[] = [
         text: "One recliner or an entire furnished home, the process is the same: tell us what needs to go, get a price, and we haul it. Larger loads are quoted by volume so you know what you are paying for.",
       },
       {
+        heading: "What furniture removal costs in Denver",
+        text: "Single pieces are priced individually: a small couch starts at [[item:Couch]], a recliner or loveseat is [[item:Recliner]], and a dresser is [[item:Dresser]], with a [[min]] minimum on any visit. Sleeper sofas and large sectionals cost more, and several pieces together are priced by the space they take in the trailer, whichever works out cheaper for you. A quarter trailer is [[load:2]] and a half trailer is [[load:4]]. Send a couple of photos and you get a firm number before we arrive.",
+      },
+      {
+        heading: "Office furniture removal in Denver",
+        text: "Desks, cubicles, conference tables, filing cabinets, and chairs come out the same way home furniture does, and office loads are priced by trailer space starting at [[min]]. We handle a single office cleanout, a tenant turnover, or a lease-end move-out, and larger commercial jobs have their own page.",
+        links: [{ slug: "commercial-junk-removal", city: "denver", label: "Commercial Junk Removal Denver" }],
+      },
+      {
         heading: "Just a mattress?",
         text: "If all you need gone is an old mattress or box spring, see our dedicated mattress page.",
         links: [{ slug: "mattress-and-bulky-item-removal", city: "denver", label: "Mattress Removal Denver" }],
@@ -85,7 +95,10 @@ const raw_services: Service[] = [
     ],
     faqs: [
       ["Do I need to move the furniture outside first?", "No. Leave it where it sits. Our crew carries everything out for you."],
+      ["How much does furniture removal cost in Denver?", "A small couch starts at [[item:Couch]], a recliner or loveseat is [[item:Recliner]], and a dresser is [[item:Dresser]], with a [[min]] minimum per visit. Bigger jobs are priced by trailer space instead, whichever is cheaper for you, and a photo quote gives you the exact number up front."],
+      ["Do you remove office furniture in Denver?", "Yes. Desks, cubicles, conference tables, filing cabinets, and chairs go out in the same visit, from a single office to a full tenant turnover."],
       ["Can you take a dining table and chairs together?", "Yes. Tables, chairs, and matching sets go out in the same visit."],
+      ["Which areas do you serve for furniture removal?", "Denver, Parker, Castle Rock, Centennial, Englewood, Lakewood, Aurora, Littleton, Highlands Ranch, and the surrounding metro. See the service areas page for the full list."],
       ["Will you take furniture apart?", "When something will not fit through a door intact, we break it down on site so it can be carried out safely."],
     ],
     related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],

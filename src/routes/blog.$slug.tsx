@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { PageShell, CtaBand } from "@/components/site-chrome";
 import { SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
-import { BlogRelatedServices } from "@/components/blog-links";
+import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
 import { optimizeBlogImages } from "@/lib/blog-html";
@@ -100,6 +100,7 @@ function BlogPost() {
           <ArrowLeft className="size-4" /> Back to blog
         </Link>
         <PostDates created={p.article_created_at} updated={p.article_updated_at} />
+        <BlogCallout slug={p.slug} />
         <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: optimizeBlogImages(p.content_html ?? "") }} />
       </article>
       {BLOG_RELATED[p.slug] ? (

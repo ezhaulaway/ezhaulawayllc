@@ -57,6 +57,15 @@ export const BLOG_RELATED: Record<string, string[]> = {
   "furniture-disposal-denver": ["/services/furniture-removal", "/service-areas/denver"],
 };
 
+/** Short quote prompt shown at the top of a post, for posts that already rank for hauling-away searches. */
+export const BLOG_CALLOUTS: Record<string, { text: string; href: string; label: string }> = {
+  "furniture-disposal-denver": {
+    text: "Skip the heavy lifting. We carry furniture out of homes and offices across Denver and Parker and haul it away in one visit.",
+    href: "/services/furniture-removal",
+    label: "See furniture removal in Denver",
+  },
+};
+
 /** "Helpful guides" blocks (max 2 posts) shown near the bottom of main-site pages. */
 export const PAGE_GUIDES: Record<string, string[]> = {
   "/pricing": ["junk-removal-cost", "basement-cleanout-cost"],
