@@ -37,6 +37,7 @@ export const LIVE_SERVICES = [
   "eviction-cleanout-and-trash-out",
   "apartment-make-ready-haul-off",
   "basement-and-attic-cleanouts",
+  "realtor-and-attorney-cleanouts",
 ] as const;
 
 export const LIVE_CITIES = [

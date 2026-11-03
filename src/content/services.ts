@@ -19,7 +19,7 @@ import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
 import { woodPalletRemoval } from "./wood-pallet-removal";
 import { dumpsterRentalAlternative, hoarderCleanout, storageUnitCleanout } from "./specialty-services";
-import { evictionCleanout, makeReadyHaulOff, basementAtticCleanout } from "./property-services";
+import { evictionCleanout, makeReadyHaulOff, basementAtticCleanout, realtorAttorneyCleanout } from "./property-services";
 
 export type Service = {
   slug: string;
@@ -399,11 +399,11 @@ const raw_services: Service[] = [
 {
     slug: "house-and-estate-cleanouts",
     name: "House & Estate Cleanouts",
-    h1: "House, Estate & Property Cleanouts",
-    metaTitle: "Estate & House Cleanouts in Parker, CO | EZ Haulaway",
+    h1: "House, Estate & Large-Scale Cleanouts in Parker and the Denver Metro",
+    metaTitle: "Estate & Whole-House Cleanouts | Parker & Denver Metro",
     metaDescription:
-      "Full property cleanouts for estates, rentals, and moves across the Denver metro area. Respectful, thorough work from EZ Haulaway.",
-    summary: "Whole-home, rental, and estate cleanouts handled respectfully.",
+      "Whole-house, estate and large cleanouts in Parker and the Denver metro. Firm price up front, before and after photos, insured, company invoicing.",
+    summary: "Whole-house, estate and multi-load cleanouts: one firm price, photos on every job, insured.",
     image: estateAsset,
     imageAlt: "Crew carrying a panel out of a cluttered basement",
     realJob: {
@@ -427,33 +427,45 @@ const raw_services: Service[] = [
       },
     },
     intro: [
-      "Clearing a house is rarely just a hauling job. Estates, foreclosures, and rental turnovers all come with a deadline and often with grief or stress attached.",
-      "We work steadily, communicate clearly, and leave the property empty and swept.",
+      "A house cleanout is more than a hauling job. There is a deadline, a family or a buyer waiting, and usually more in the house than anyone expected. EZ Haulaway clears whole houses, estates, big basements and garages, and multi-load properties across Parker, Castle Rock, Denver and the south metro.",
+      "A multi-load job usually starts within a day or two. You get one firm price for the whole job before we begin, we take before and after photos, and we leave the property swept. We are insured, and we can invoice companies, law firms and property managers.",
     ],
     includes: [
-      "Full-home and multi-room cleanouts",
-      "Estate and downsizing cleanouts",
-      "Rental and tenant turnovers",
-      "Foreclosure and real estate prep",
-      "Basement, attic, and crawlspace clearing",
+      "Whole-house cleanouts, from one room to every room",
+      "Estate cleanouts for families and executors",
+      "Pre-listing and post-closing cleanouts for real estate agents",
+      "Foreclosure, vacant and rental property cleanouts",
+      "Basements, attics, crawlspaces, garages and sheds in the same job",
+      "Yard debris and outdoor clutter",
       "Hoarding situations handled discreetly",
     ],
     sections: [
       {
-        heading: "Working with families",
-        text: "If you need to set items aside for family members or donation, tell us up front. We will keep those separate as we work.",
+        heading: "How a large cleanout works",
+        text: "**1. Send photos or a short walkthrough video.** Every room, the garage, the basement and any outbuildings.\n\n**2. Get one firm price for the whole job.** You know the full number before we start, even when it takes several loads.\n\n**3. We schedule the crew.** A multi-load job usually starts within a day or two, and we bring as many loads and people as the house needs.\n\n**4. We clear it and photograph it.** Anything you want kept is set aside as we go. We take before and after photos, sweep, and you or your agent get the photos for your file.",
       },
       {
-        heading: "Real estate deadlines",
-        text: "Agents and property managers often need a home empty before photos or a closing date. Give us the date and we will tell you honestly whether we can hit it.",
+        heading: "A same-day closing cleanout",
+        text: "One of our first big jobs started with a call from a buyer's real estate agent. The sellers had left a basement full of couches, boxes and junk. We cleared it the same day so the new owners could move into a clean house and not deal with what was left behind.",
+        links: [{ slug: "realtor-and-attorney-cleanouts", label: "Cleanouts for realtors, estate attorneys and executors" }],
+      },
+      {
+        heading: "Working with families",
+        text: "If you need to set items aside for family members or donation, tell us up front. We will keep those separate as we work. If you live out of state, we coordinate with you, your agent or the executor by phone and photos.",
+      },
+      {
+        heading: "Insured, invoiced and documented",
+        text: "We carry **$1,000,000 general liability insurance**, and a certificate is available on request (see our About page). We can **invoice your business or law firm**, and we take **before and after photos on every job**.",
       },
     ],
     faqs: [
       ["Do I have to be there the whole time?", "No. Many clients walk us through at the start and check back at the end."],
-      ["Can you donate usable items?", "Where an item is in good condition and a local organization will take it, donating beats the landfill."],
-      ["Is a whole-house cleanout one visit?", "Usually yes. Very large properties may take more than one trailer load."],
+      ["How fast can you start a whole-house cleanout?", "A multi-load job usually starts within a day or two. Smaller jobs can often be done sooner, and we will tell you honestly whether we can meet a closing date."],
+      ["Can you invoice my company or law firm?", "Yes. We can invoice businesses, attorneys and property managers."],
+      ["Will I get before and after photos?", "Yes. We take them on every job, and we can send them to you, your agent or the executor."],
+      ["Is a whole-house cleanout one visit?", "Often, but large properties take more than one trailer load. We quote the whole job up front, so the price does not change as loads go out."],
     ],
-    related: ["garage-cleanouts", "furniture-removal", "hoarder-cleanout", "dumpster-rental-alternative"],
+    related: ["realtor-and-attorney-cleanouts", "hoarder-cleanout", "commercial-junk-removal", "garage-cleanouts"],
   },
 {
     slug: "mattress-and-bulky-item-removal",
@@ -627,6 +639,7 @@ const raw_services: Service[] = [
   evictionCleanout,
   makeReadyHaulOff,
   basementAtticCleanout,
+  realtorAttorneyCleanout,
 ];
 export const services = priced(raw_services);
 

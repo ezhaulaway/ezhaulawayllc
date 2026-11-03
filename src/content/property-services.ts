@@ -228,3 +228,74 @@ export const basementAtticCleanout: Service = {
   ],
   related: ["garage-cleanouts", "house-and-estate-cleanouts", "hoarder-cleanout", "storage-unit-cleanout"],
 };
+
+/**
+ * Partner page for people who send cleanouts to us: real estate agents, estate attorneys and executors.
+ * Property managers have their own pages (make-ready, eviction cleanouts), so they are linked here, not repeated.
+ * Facts from Ben: multi-load jobs usually start within a day or two, before-and-after photos on every job,
+ * invoicing for businesses and attorneys, $1,000,000 general liability with a certificate on request.
+ */
+export const realtorAttorneyCleanout: Service = {
+  slug: "realtor-and-attorney-cleanouts",
+  name: "Cleanouts for Realtors & Attorneys",
+  h1: "Cleanouts for Realtors, Estate Attorneys & Executors",
+  metaTitle: "Cleanouts for Realtors & Estate Attorneys | EZ Haulaway",
+  metaDescription: "A cleanout partner for realtors, estate attorneys and executors in Parker and Denver. Multi-load jobs start in a day or two. Photos on every job.",
+  cityPages: false,
+  summary: "A hauling partner for agents, attorneys and executors: one price, fast start, photos and invoicing.",
+  image: realBasementStaged1000,
+  imageAlt: "Crew member clearing furniture and boxes from a Parker basement",
+  intro: [
+    "When a house has to be emptied for a sale, a closing or an estate, someone has to find a crew they can trust and then wait on it. EZ Haulaway is that crew for **real estate agents, estate attorneys and executors** in Parker, Castle Rock, Denver and the south metro.",
+    "You send the address and a few photos. We give you one firm price for the whole job, start a multi-load cleanout **usually within a day or two**, and send **before and after photos** when we are done. We **invoice your business or law firm**, and we carry **$1,000,000 general liability insurance**.",
+  ],
+  includes: [
+    "Pre-listing cleanouts before photos and showings",
+    "Post-closing and seller-left-behind cleanouts",
+    "Estate cleanouts for executors and out-of-state heirs",
+    "Foreclosure and vacant property cleanouts",
+    "Basements, attics, garages, sheds and yard debris in one job",
+    "Hoarding situations handled discreetly",
+  ],
+  sections: [
+    {
+      heading: "For real estate agents",
+      text: "Listings stall when a house is still full, and closings get tense when the sellers leave their junk behind. We have cleared a basement full of couches and boxes the same day so the buyers could move into a clean home. Give us the address, the deadline and a few photos, and we will tell you honestly whether we can meet it. Before and after photos go to you for your file.",
+    },
+    {
+      heading: "For estate attorneys and executors",
+      text: "Heirs are often out of state and the house still has to be emptied. We work from photos and phone updates, set aside keepsakes, paperwork and anything the family wants to keep, and clear the rest in as many loads as the house needs. You get one price, one contact, before and after photos for the file, and an invoice made out to your firm or the estate.\n\nWe haul. We do not appraise belongings, run estate sales or give legal advice.",
+    },
+    {
+      heading: "How a partner job works",
+      text: "**1. Text or call 720-614-7223** with the address and a few photos or a short walkthrough video.\n\n**2. We quote the whole job** up front, even when it takes several loads.\n\n**3. We schedule the crew.** Small and mid-size jobs can often be done sooner, and a multi-load job usually starts within a day or two.\n\n**4. We clear it, photograph it and sweep.** Items to keep are set aside as we go.\n\n**5. You get the photos and the invoice.**",
+    },
+    {
+      heading: "Insured and accountable",
+      text: "We carry **$1,000,000 general liability insurance** with a certificate available on request, and many agents and attorneys ask for it before the first job. You can see the details on our About page. If you send us work regularly, ask about volume or locked-in rates.",
+      links: [{ slug: "house-and-estate-cleanouts", label: "House, estate and large-scale cleanouts" }],
+    },
+    {
+      heading: "Property managers and landlords",
+      text: "Turning units or clearing an eviction? Property managers have their own pages with same-day and next-day scheduling and company invoicing.",
+      links: [
+        { slug: "apartment-make-ready-haul-off", label: "Apartment make-ready junk removal" },
+        { slug: "eviction-cleanout-and-trash-out", label: "Eviction cleanouts and trash outs" },
+      ],
+    },
+    {
+      heading: "Pricing",
+      text: "We price by how much space the items take in our 14-cubic-yard dump trailer, not by the hour. Our minimum is **[[min]]**, a half trailer is about **[[load:4]]** and a full trailer is about **[[load:8]]**. Whole houses can take several loads, so we quote the full job before we start. Send photos for a preliminary number.",
+    },
+  ],
+  faqs: [
+    ["How fast can you start a whole-house cleanout?", "A multi-load job usually starts within a day or two. Smaller jobs can often be done sooner. Tell us your deadline and we will say honestly whether we can meet it."],
+    ["Can you invoice our firm or brokerage?", "Yes. We can invoice businesses, law firms and the estate."],
+    ["Do you send photos for the file?", "Yes. We take before and after photos on every job and send them to you."],
+    ["Can you work with an executor or heir who lives out of state?", "Yes. We coordinate by phone and photos, so nobody has to travel to be there."],
+    ["Do you provide a certificate of insurance?", "Yes. We carry $1,000,000 general liability coverage, and a certificate is available on request."],
+    ["Will you set aside items the family wants to keep?", "Yes. Tell us what stays before we start and we keep it separate as we work."],
+    ["Do you appraise items or run estate sales?", "No. We haul and clear. If the family wants an estate sale first, we clear what is left afterward."],
+  ],
+  related: ["house-and-estate-cleanouts", "hoarder-cleanout", "apartment-make-ready-haul-off", "commercial-junk-removal"],
+};
