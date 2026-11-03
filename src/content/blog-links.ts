@@ -55,6 +55,7 @@ export const BLOG_RELATED: Record<string, string[]> = {
   "office-cleanout-denver": ["/services/commercial-junk-removal", "/services/electronics-and-e-waste-removal"],
   "fence-removal-cost": ["/services/deck-and-fence-removal", "/pricing"],
   "furniture-disposal-denver": ["/services/furniture-removal", "/service-areas/denver"],
+  "yard-waste-brush-removal-cost-parker": ["/services/yard-and-landscaping-debris", "/services/light-demolition", "/pricing"],
 };
 
 /** Short quote prompt shown at the top of a post, for posts that already rank for hauling-away searches. */
