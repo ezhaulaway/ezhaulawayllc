@@ -8,6 +8,8 @@ import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
 import { optimizeBlogImages } from "@/lib/blog-html";
+import { priceText } from "@/lib/price-store";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 import { BLOG_AUTHOR_NAME, blogDates, blogSchemas } from "@/lib/blog-schema";
 
 type Json = unknown;
@@ -93,6 +95,7 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function BlogPost() {
   const p = Route.useLoaderData();
+  usePriceGuide(); // re-render when live prices change
   return (
     <PageShell>
       <article lang={p.language_code ?? undefined} className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
@@ -101,14 +104,17 @@ function BlogPost() {
         </Link>
         <PostDates created={p.article_created_at} updated={p.article_updated_at} />
         <BlogCallout slug={p.slug} />
-        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: optimizeBlogImages(p.content_html ?? "") }} />
+        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: priceText(optimizeBlogImages(p.content_html ?? "")) }} />
       </article>
       {BLOG_RELATED[p.slug] ? (
         <BlogRelatedServices slug={p.slug} />
       ) : (
         <NextSteps title="Related Services" steps={blogNextSteps(`${p.title} ${p.meta_description ?? ""}`)} />
       )}
-      <CtaBand />
+      <CtaBand
+        title="Need it gone? Get a free photo quote."
+        text={priceText("Send a few photos or call or text 720-614-7223, Monday to Saturday, 7am to 7pm. Small pickups start at [[min]].")}
+      />
     </PageShell>
   );
 }
