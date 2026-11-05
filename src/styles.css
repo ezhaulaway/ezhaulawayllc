@@ -249,6 +249,8 @@
 .blog-prose a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
 .blog-prose img, .blog-prose video, .blog-prose iframe { max-width: 100%; height: auto; border-radius: .5rem; margin: 1.5rem 0; }
 .blog-prose iframe { width: 100%; aspect-ratio: 16 / 9; }
+/* Blog pictures are all 16:9; reserving the box stops the page jumping as they load. */
+.blog-prose img[src*="blog-images/"] { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .blog-prose blockquote { border-left: 4px solid var(--primary); padding-left: 1rem; color: var(--muted-foreground); font-style: italic; }
 .blog-prose table { display: block; overflow-x: auto; border-collapse: collapse; width: 100%; }
 .blog-prose th, .blog-prose td { border: 1px solid var(--border); padding: .5rem .75rem; text-align: left; }

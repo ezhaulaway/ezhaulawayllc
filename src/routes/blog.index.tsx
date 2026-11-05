@@ -3,6 +3,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { PageHero, PageShell, CtaBand } from "@/components/site-chrome";
 import { SITE_URL } from "@/content/site";
 import { listBlogPosts } from "@/lib/blog.functions";
+import { blogImageSrcSet, resizedBlogImage } from "@/lib/blog-html";
 
 const postsQuery = queryOptions({ queryKey: ["blog", "list"], queryFn: () => listBlogPosts() });
 
@@ -57,7 +58,15 @@ function BlogIndex() {
                   className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg"
                 >
                   {p.hero_image_url ? (
-                    <img src={p.hero_image_url} alt="" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover" />
+                    <img
+                      src={resizedBlogImage(p.hero_image_url, 800) ?? p.hero_image_url}
+                      srcSet={blogImageSrcSet(p.hero_image_url) ?? undefined}
+                      sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[16/9] w-full object-cover"
+                    />
                   ) : null}
                   <div className="p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">{fmt(p.article_created_at)}</p>
