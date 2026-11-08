@@ -10,7 +10,7 @@ import { locations } from "@/content/locations";
 
 const title = "Contact EZ Haulaway — Free Junk Removal Quotes";
 const description =
-  "Call or text EZ Haulaway at 720-614-7223 for a free junk removal quote in Parker and the Denver metro area, or send us your job details online.";
+  `Call or text EZ Haulaway at ${PHONE} for a free junk removal quote in Parker and the Denver metro area, or send us your job details online.`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

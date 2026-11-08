@@ -16,6 +16,7 @@ import {
 import { AiEstimator } from "@/components/ai-estimator";
 import { FaqAccordion, PageShell } from "@/components/site-chrome";
 import { Button } from "@/components/ui/button";
+import { serviceAreaList, SERVICE_AREA_CITIES } from "@/content/service-areas";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 import benHeadshot from "@/assets/ben-headshot.webp";
 import wagonAsset from "@/assets/new-B8EC4C72.webp.asset.json";
@@ -26,7 +27,7 @@ const title = "Instant Junk Removal Quote Online | EZ Haulaway";
 const description =
   "Get a free instant junk removal estimate online. Upload photos or describe your items for fast pricing in Parker, Castle Rock and the Denver metro.";
 
-const faqs = [
+const faqs: Array<[string, string]> = [
   [
     "How can I get an instant junk removal quote online?",
     "Upload up to four clear photos or describe what you need removed. Our junk removal cost estimator reviews the amount, item types, access details, and current EZ Haulaway pricing to show a preliminary price range on your screen.",
@@ -45,9 +46,9 @@ const faqs = [
   ],
   [
     "What areas can use the online junk removal estimator?",
-    "The estimator is available for jobs in Parker, Castle Rock, Centennial, Aurora, Highlands Ranch, Lone Tree, Denver, Littleton, Englewood, Lakewood, Elizabeth, Franktown, Castle Pines, and Sedalia.",
+    `The estimator is available for jobs in ${serviceAreaList()}.`,
   ],
-] as const;
+];
 
 const steps = [
   {
@@ -102,7 +103,7 @@ export const Route = createFileRoute("/instant-estimate")({
               name: "Instant Online Junk Removal Estimate",
               serviceType: "Junk removal estimate by photo",
               provider: { "@id": `${SITE_URL}/#localbusiness` },
-              areaServed: ["Parker", "Castle Rock", "Denver Metro"],
+              areaServed: SERVICE_AREA_CITIES.map((city) => `${city}, CO`),
               url: `${SITE_URL}/instant-estimate`,
               description,
             },

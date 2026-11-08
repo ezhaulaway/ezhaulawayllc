@@ -7,12 +7,14 @@ import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { TrailerPricing } from "@/components/trailer-pricing";
 import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
-import { SITE_URL } from "@/content/site";
+import { PHONE, SITE_URL } from "@/content/site";
+import { eighthPrice } from "@/lib/price-guide";
+import { priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 
 const title = "Junk Removal Prices & Cost in Denver Metro | EZ Haulaway";
 const description =
-  "What junk removal costs in Parker, Denver and nearby. All-inclusive pricing by trailer load, free photo quotes and no surprise fees. Call 720-614-7223.";
+  `What junk removal costs in Parker, Denver and nearby. All-inclusive pricing by trailer load, free photo quotes and no surprise fees. Call ${PHONE}.`;
 
 export const Route = createFileRoute("/pricing")({
   head: () => ({
@@ -205,21 +207,21 @@ function PricingPage() {
           />
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             {[
-              `Most **junk removal costs** in the Denver metro area are based on **trailer volume** — how much space your items take up. Our **16-foot dump trailer** holds about 14 cubic yards. A small pickup starts at **$${MINIMUM_CHARGE}**, and a **full trailer is $${LOAD_LEVELS[LOAD_LEVELS.length - 1]?.price}**. You only pay for the space you use.`,
+              `Most **junk removal costs** in the Denver metro area are based on **trailer volume** — how much space your items take up. Our **16-foot dump trailer** holds about 14 cubic yards. A small pickup starts at **$${MINIMUM_CHARGE}**, and a **full trailer is ${eighthPrice(guide, 8)}**. You only pay for the space you use.`,
               `**Weight matters too.** Concrete, dirt, tile, roofing, and other **heavy materials** cost more to dump at the transfer station than furniture or cardboard, so heavy loads are priced by weight and volume. We tell you this before we load, not after.`,
               `**Single items vs. full cleanouts.** If you only have one couch, mattress, or appliance, **single-item pricing** is usually the cheapest option. For garages, basements, and **estate cleanouts**, volume pricing gives you the best value per item.`,
               `**What's always included:** the crew, **all labor and loading**, hauling, **disposal fees**, and sweeping up. Extra labor at $${LABOR_RATE}/hour per crew member only applies to unusual jobs like difficult access or disassembly, and you hear about it up front.`,
               `**Why transparent pricing matters.** Some **junk removal companies** quote low on the phone, then add fuel, stair, or dump surcharges on site. We do the opposite: **no hidden fees**, **free quotes**, and a price you approve before anything goes in the trailer.`,
               `**What drives your junk removal cost?** Four things: **how much space** the load fills, **what the material is**, **how hard it is to reach**, and **whether anything needs taking apart**. A couch in the garage costs less than the same couch in a third-floor walkup. The **junk removal cost** you see in our quote already covers all four.`,
-              `**How to compare junk removal companies.** Ask every hauler the same questions: Is disposal included? Is there a fuel or trip fee? Do you charge extra for stairs? Is the quote **in writing before loading**? A **professional junk removal company** answers yes, no, no, and yes. Many national **junk removal companies** charge by the truck and add fees at the end; we price by the eighth of a trailer and stick to it.`,
+              `**How to compare junk removal companies.** Ask every hauler the same questions: Is disposal included? Is any travel fee stated before you book? Do you charge extra for stairs? Is the quote **in writing before loading**? With us, disposal is included, there is [[travel]], we do not add a stair charge, and the quote is in writing before loading. Many national **junk removal companies** charge by the truck and add fees at the end; we price by the eighth of a trailer and stick to it.`,
               `**Ways to lower your junk removal cost.** **Group items into one visit** instead of booking several small pickups. **Bring things to the garage** if it's easy and safe. **Separate heavy materials** like dirt or concrete so we can price them right. And **send photos first** — our free instant estimate shows a price range in about a minute.`,
-              `**Truck load vs. trailer load.** Many junk haulers quote by the truck load, so a "full truck" price can be confusing when your pile only fills part of the truck. A truck load price only helps you if you actually fill the full truck. We break every load into eighths, so you see exactly how much truck space and trailer space your items use. A quarter load is $${LOAD_LEVELS[1]?.price ?? MINIMUM_CHARGE}, and a full truck-sized trailer load is $${LOAD_LEVELS[LOAD_LEVELS.length - 1]?.price}.`,
+              `**Truck load vs. trailer load.** Many junk haulers quote by the truck load, so a "full truck" price can be confusing when your pile only fills part of the truck. A truck load price only helps you if you actually fill the full truck. We break every load into eighths, so you see exactly how much truck space and trailer space your items use. An eighth of a trailer is ${eighthPrice(guide, 1)}, a quarter load is ${eighthPrice(guide, 2)}, and a full truck-sized trailer load is ${eighthPrice(guide, 8)}.`,
               `**Removal cost by job type.** The removal cost for a single recliner is very different from the removal cost for a whole basement. Our junk removal services cover both, and the removal cost always includes labor, hauling and disposal. Other removal services may quote the haul and then add the dump fee later — we never do.`,
               `**Avoiding extra fees.** Before you hire anyone, ask about extra fees for stairs, distance, fuel, or weekend pickups. Many junk removal companies add extra fees once the truck shows up. With us, the only way the price changes is if the load is bigger than the photos showed, and you approve that before we load.`,
               `**How to save money on junk removal.** The easiest way to save money is to book everything at once — one full truck costs less than three small trips. Our removal services also include donation sorting, which keeps usable items out of the dump and keeps your junk removal price down.`,
 
             ].map((p) => (
-              <p key={p.slice(0, 30)}>{rich(p)}</p>
+              <p key={p.slice(0, 40)}>{rich(priceText(p))}</p>
             ))}
             <p>
               {rich(
@@ -245,10 +247,9 @@ function PricingPage() {
           />
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             <p>
-              Every EZ Haulaway price includes the full service: a courteous crew, all the lifting and carrying from
-              wherever your items sit, careful protection of your walls and floors, loading, hauling, disposal fees,
-              and a sweep-up before we leave. There are no fuel surcharges, no "stair fees" invented on site, and no
-              number that mysteriously grows once the trailer is loaded.
+              {priceText(
+                "Every EZ Haulaway price includes the full service: a courteous crew, all the lifting and carrying from wherever your items sit, careful protection of your walls and floors, loading, hauling, disposal fees, and a sweep-up before we leave. There is [[travel]]. We do not add a stair fee on site, and the number does not grow once the trailer is loaded.",
+              )}
             </p>
             <p>
               What you're really buying is your weekend back. No truck rental, no dump run, no sore back, no begging

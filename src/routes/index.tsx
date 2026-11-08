@@ -2,7 +2,7 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
+import { BUSINESS_NAME, FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
@@ -71,11 +71,11 @@ export const Route = createFileRoute("/")({
         children: priceText(JSON.stringify({
           "@context": "https://schema.org",
           "@type": "JunkRemovalService",
-          name: "EZ Haulaway LLC",
+          name: BUSINESS_NAME,
           description:
             "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Trailer load pricing from [[min]] with full cleanup included.",
           url: SITE_URL,
-          telephone: "+1-720-614-7223",
+          telephone: PHONE_E164,
           priceRange: "[[min]] - [[load:8]]",
           openingHoursSpecification: OPENING_HOURS_SPEC,
           areaServed: [
@@ -105,9 +105,9 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": `${SITE_URL}/#localbusiness`,
-          name: "EZ Haulaway LLC",
+          name: BUSINESS_NAME,
           url: SITE_URL,
-          telephone: "+1-720-614-7223",
+          telephone: PHONE_E164,
           priceRange: "[[min]] - [[load:8]]",
           address: {
             "@type": "PostalAddress",

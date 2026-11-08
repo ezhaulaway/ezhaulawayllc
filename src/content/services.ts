@@ -1,3 +1,4 @@
+import { PHONE } from "@/content/site";
 import { priced } from "@/lib/price-store";
 import furnitureAsset from "@/assets/real-furniture-couch-1000.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
@@ -52,7 +53,7 @@ const raw_services: Service[] = [
     name: "Furniture Removal",
     h1: "Furniture Removal in Denver, Parker & the Metro Area",
     metaTitle: "Furniture Removal in Denver & Parker, CO | EZ Haulaway",
-    metaDescription: "Furniture removal in Denver and Parker: couches, dressers, tables and office furniture. We carry it out and haul it away. Free photo quotes, 720-614-7223.",
+    metaDescription: `Furniture removal in Denver and Parker: couches, dressers, tables and office furniture. We carry it out and haul it away. Free photo quotes, ${PHONE}.`,
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
@@ -147,7 +148,7 @@ const raw_services: Service[] = [
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
     metaTitle: "Hot Tub Removal Denver & Parker CO | EZ Haulaway",
-    metaDescription: "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. From [[item:Hot tub]].",
+    metaDescription: "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. A standard spa is [[item:hot-tub-standard]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset,
     imageAlt: "Backyard hot tub ready for removal",
@@ -178,11 +179,11 @@ const raw_services: Service[] = [
       },
       {
         heading: "What hot tub removal costs in the Denver metro",
-        text: "Hot tub and spa removal starts around [[item:Hot tub]] and depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
+        text: "A standard hot tub (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. The price also depends on size, access, and whether decking comes out with it. Send a couple of photos from your phone and we will give you a firm number before we ever show up — no on-site upsell.",
       },
     ],
     faqs: [
-      ["How much does hot tub removal cost in Denver?", "Hot tub removal starts around [[item:Hot tub]] in the Denver metro area. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
+      ["How much does hot tub removal cost in Denver?", "A standard hot tub (4–6 people) is [[item:hot-tub-standard]] in the Denver metro area. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
       ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
       ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
       ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
@@ -497,7 +498,7 @@ const raw_services: Service[] = [
       },
       {
         heading: "What single-item pickup costs",
-        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:Mattress]], a box spring [[item:Box spring]], and a treadmill [[item:Treadmill]], with a [[min]] minimum on any visit. Upright pianos start around [[item:Piano]]. You know the number before we arrive.",
+        text: "Single items are priced individually rather than by trailer space: a mattress runs [[item:mattress]], a box spring [[item:box-spring]], and a treadmill [[item:treadmill]], with a [[min]] minimum on any visit. Upright pianos are [[item:piano]]. You know the number before we arrive.",
       },
       {
         heading: "Heavy and awkward is the specialty",
@@ -514,10 +515,10 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]], with a [[min]] minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]], with a [[min]] minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
       ["Do I have to put the mattress at the curb?", "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment."],
       ["Is there a minimum charge?", "Yes, [[min]] covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
-      ["Can you take a piano?", "Upright pianos start around [[item:Piano]]. Grand pianos depend on access — send photos first."],
+      ["Can you take a piano?", "Upright pianos are [[item:piano]]. Grand pianos depend on access — send photos first."],
       ["Do you take trampolines and above-ground pools?", "Yes, including disassembly on site."],
       ["What happens to an old mattress?", "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped."],
     ],

@@ -1,3 +1,5 @@
+import { SERVICE_AREA_SLUGS } from "@/content/service-areas";
+
 /**
  * Single allow-list of live (indexable, linked) pages.
  * Route loaders, public/sitemap.xml (via scripts/build-sitemap.ts) and every
@@ -40,22 +42,7 @@ export const LIVE_SERVICES = [
   "realtor-and-attorney-cleanouts",
 ] as const;
 
-export const LIVE_CITIES = [
-  "parker",
-  "castle-rock",
-  "highlands-ranch",
-  "centennial",
-  "littleton",
-  "lone-tree",
-  "aurora",
-  "denver",
-  "castle-pines",
-  "englewood",
-  "lakewood",
-  "franktown",
-  "elizabeth",
-  "sedalia",
-] as const;
+export const LIVE_CITIES = SERVICE_AREA_SLUGS;
 
 const CORE_FIVE = [
   "furniture-removal",
@@ -86,6 +73,7 @@ export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.from
   ["lakewood", ["furniture-removal", "hot-tub-removal"]],
   ["franktown", ["commercial-junk-removal"]],
   ["elizabeth", []],
+  ["monument", []],
   ["sedalia", ["furniture-removal", "electronics-and-e-waste-removal"]],
 ]);
 

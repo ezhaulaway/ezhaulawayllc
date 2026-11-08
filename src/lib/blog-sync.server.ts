@@ -50,6 +50,9 @@ export async function runBlogSync() {
   const key = process.env["BABYLOVEGROWTH_API_KEY"];
   if (!key) return { error: "missing key" };
   const { supabaseAdmin: db } = await import("@/integrations/supabase/client.server");
+  const { loadPriceGuide } = await import("@/lib/pricing.functions");
+  const { rewriteEzPriceJson, rewriteEzPriceText } = await import("@/lib/blog-ez-prices");
+  const guide = await loadPriceGuide();
 
   const { data: leased } = await db.rpc("blg_claim_lease" as never);
   const state = (leased as unknown as Array<any> | null)?.[0];
@@ -139,12 +142,12 @@ export async function runBlogSync() {
           slug,
           previous_slugs: [...prev],
           title: String(d.title ?? ""),
-          meta_description: (d.meta_description as string) ?? null,
+          meta_description: d.meta_description ? rewriteEzPriceText(String(d.meta_description), guide) : null,
           hero_image_url: (d.hero_image_url as string) ?? null,
           language_code: (d.languageCode as string) ?? (d.language_code as string) ?? null,
-          content_html: d.content_html ? cleanHtml(String(d.content_html)) : null,
-          json_ld: (d.jsonLd as never) ?? null,
-          faq_json_ld: (d.faqJsonLd as never) ?? null,
+          content_html: d.content_html ? rewriteEzPriceText(cleanHtml(String(d.content_html)), guide) : null,
+          json_ld: (d.jsonLd != null ? rewriteEzPriceJson(d.jsonLd, guide) : null) as never,
+          faq_json_ld: (d.faqJsonLd != null ? rewriteEzPriceJson(d.faqJsonLd, guide) : null) as never,
           article_created_at: (d.created_at as string) ?? null,
           article_updated_at: (d.updated_at as string) ?? s.updated_at ?? null,
           synced_at: new Date().toISOString(),

@@ -1,4 +1,6 @@
-/** Lightweight link identities; keep in sync with service and location content. */
+import { SERVICE_AREAS } from "@/content/service-areas";
+
+/** Lightweight link identities. Cities come from the service-area list; names stay aligned with service content. */
 export const services: Array<{ slug: string; name: string; cityPages?: false }> = [
   { slug: "furniture-removal", name: "Furniture Removal" },
   { slug: "appliance-removal", name: "Appliance Removal" },
@@ -23,19 +25,4 @@ export const services: Array<{ slug: string; name: string; cityPages?: false }> 
   { slug: "realtor-and-attorney-cleanouts", name: "Cleanouts for Realtors & Attorneys", cityPages: false },
 ];
 
-export const locations = [
-  { slug: "parker", city: "Parker" },
-  { slug: "castle-rock", city: "Castle Rock" },
-  { slug: "centennial", city: "Centennial" },
-  { slug: "highlands-ranch", city: "Highlands Ranch" },
-  { slug: "lone-tree", city: "Lone Tree" },
-  { slug: "denver", city: "Denver" },
-  { slug: "aurora", city: "Aurora" },
-  { slug: "littleton", city: "Littleton" },
-  { slug: "englewood", city: "Englewood" },
-  { slug: "lakewood", city: "Lakewood" },
-  { slug: "elizabeth", city: "Elizabeth" },
-  { slug: "franktown", city: "Franktown" },
-  { slug: "castle-pines", city: "Castle Pines" },
-  { slug: "sedalia", city: "Sedalia" },
-];
+export const locations = SERVICE_AREAS.map(({ slug, city }) => ({ slug, city }));

@@ -5,6 +5,7 @@ import basementBefore640 from "@/assets/real-basement-before-640.webp";
 import basementBefore960 from "@/assets/real-basement-before-960.webp";
 import basementAfter640 from "@/assets/real-basement-after-640.webp";
 import basementAfter960 from "@/assets/real-basement-after-960.webp";
+import { PHONE } from "@/content/site";
 import type { Service } from "./services";
 
 /**
@@ -268,7 +269,7 @@ export const realtorAttorneyCleanout: Service = {
     },
     {
       heading: "How a partner job works",
-      text: "**1. Text or call 720-614-7223** with the address and a few photos or a short walkthrough video.\n\n**2. We quote the whole job** up front, even when it takes several loads.\n\n**3. We schedule the crew.** Small and mid-size jobs can often be done sooner, and a multi-load job usually starts within a day or two.\n\n**4. We clear it, photograph it and sweep.** Items to keep are set aside as we go.\n\n**5. You get the photos and the invoice.**",
+      text: `**1. Text or call ${PHONE}** with the address and a few photos or a short walkthrough video.\n\n**2. We quote the whole job** up front, even when it takes several loads.\n\n**3. We schedule the crew.** Small and mid-size jobs can often be done sooner, and a multi-load job usually starts within a day or two.\n\n**4. We clear it, photograph it and sweep.** Items to keep are set aside as we go.\n\n**5. You get the photos and the invoice.**`,
     },
     {
       heading: "Insured and accountable",

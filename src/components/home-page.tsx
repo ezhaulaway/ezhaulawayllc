@@ -86,7 +86,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const PHONE = "720-614-7223";
+import { serviceAreaList } from "@/content/service-areas";
+import { PHONE } from "@/content/site";
+import { eighthPrice } from "@/lib/price-guide";
 
 const navItems = [
   ["Services", "#services"],
@@ -197,8 +199,7 @@ function SectionHeader({ eyebrow, title, text, center = false }: { eyebrow: stri
 
 export function HomePage() {
   const guide = usePriceGuide();
-  const fullLoad = guide.loads.find((l) => l.eighths === 8);
-  const fullPrice = guide.live && fullLoad ? `$${fullLoad.price}` : `$${fullLoad?.price ?? 800}`;
+  const fullPrice = eighthPrice(guide, 8);
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (
@@ -276,16 +277,16 @@ export function HomePage() {
             <p className="mt-3 leading-7 text-muted-foreground">
               EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
               metro area. Pricing starts at ${guide.minimum} and a full 16-foot trailer load (14 cubic yards) runs {fullPrice},
-              with labor, loading, hauling, and disposal included. Our <strong className="text-foreground">junk removal services</strong> cover homes, businesses, and job sites. Call or text 720-614-7223 for a <strong className="text-foreground">free estimate</strong>.
+              with labor, loading, hauling, and disposal included. Our <strong className="text-foreground">junk removal services</strong> cover homes, businesses, and job sites. Call or text {PHONE} for a <strong className="text-foreground">free estimate</strong>.
             </p>
             <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
               {[
                 ["Based in", "Parker, CO"],
-                ["Service area", "Parker, Castle Rock, Denver, Aurora, Centennial, Highlands Ranch and nearby towns"],
+                ["Service area", serviceAreaList()],
                 ["Pricing", `$${guide.minimum} minimum · full trailer ${fullPrice}`],
                 ["Specialties", "Hot tubs, sheds, decks & fences, mattresses, appliances, cleanouts"],
                 ["Quotes", "Free — text photos or use the AI estimate"],
-                ["Contact", "720-614-7223 (call or text)"],
+                ["Contact", `${PHONE} (call or text)`],
               ].map(([k, v]) => (
                 <div key={k} className="rounded-md border border-border bg-muted p-4">
                   <dt className="font-bold text-foreground">{k}</dt>

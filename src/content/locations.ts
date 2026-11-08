@@ -1,3 +1,4 @@
+import { PHONE, PHONE_DISPLAY } from "@/content/site";
 import { priced } from "@/lib/price-store";
 export type LocationContentSection = {
   heading: string;
@@ -95,8 +96,8 @@ const raw_locations: Location[] = [
       {
         heading: "Couch Disposal and Fridge Removal in Parker",
         paragraphs: [
-          "Looking for **couch disposal in Parker**? We carry sofas, sectionals, sleeper sofas and recliners out of the house and haul them away the same visit. Couches run about [[item:Couch]] per cushion, and usable pieces go to donation when they qualify.",
-          "We also handle **appliance disposal** and **fridge removal**. Once a refrigerator, freezer, washer or dryer is unplugged and the water is off, we take it from the kitchen, basement or garage. A full-size refrigerator is about [[item:Refrigerator (full size)]]. Fridges and freezers go to recyclers that handle the cooling gas, and the metal is recycled.",
+          "Looking for **couch disposal in Parker**? We carry sofas, sectionals, sleeper sofas and recliners out of the house and haul them away the same visit. A small couch (2–3 seats) is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. Usable pieces go to donation when they qualify.",
+          "We also handle **appliance disposal** and **fridge removal**. Once a refrigerator, freezer, washer or dryer is unplugged and the water is off, we take it from the kitchen, basement or garage. A full-size refrigerator is about [[item:fridge-full]]. Fridges and freezers go to recyclers that handle the cooling gas, and the metal is recycled.",
           "Whether you need a **trash hauling service** for a pile of bags or a **junk collection service** for one bulky item, it's the same local crew and one upfront price.",
         ],
         serviceLinks: [
@@ -126,7 +127,7 @@ const raw_locations: Location[] = [
       "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in Parker. We handle the lifting, loading and hauling — from one old couch to a full property cleanout.",
     local:
       "Castle Rock is close to our Parker base and local disposal facilities, making it a practical part of our regular service area. Tell us what needs to go and we’ll confirm a price and the next available pickup.",
-    nearby: ["parker", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
+    nearby: ["parker", "monument", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
     content: [
       {
@@ -197,8 +198,8 @@ const raw_locations: Location[] = [
       {
         heading: "Couch, Fridge and Appliance Disposal in Castle Rock",
         paragraphs: [
-          "Many people search for **couch disposal** or **appliance disposal** because regular trash pickup won't take big items. We carry out couches, sectionals and recliners from any room. Couches run about [[item:Couch]] per cushion, and you don't have to drag anything to the curb.",
-          "Need **fridge removal**? We haul refrigerators, freezers, washers, dryers and stoves once they're unplugged and the water is shut off. A full-size refrigerator is about [[item:Refrigerator (full size)]]. Fridges and freezers go to recyclers that handle the cooling gas inside them, and the metal from other appliances is recycled instead of buried.",
+          "Many people search for **couch disposal** or **appliance disposal** because regular trash pickup won't take big items. We carry out couches, sectionals and recliners from any room. A small couch (2–3 seats) is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. You don't have to drag anything to the curb.",
+          "Need **fridge removal**? We haul refrigerators, freezers, washers, dryers and stoves once they're unplugged and the water is shut off. A full-size refrigerator is about [[item:fridge-full]]. Fridges and freezers go to recyclers that handle the cooling gas inside them, and the metal from other appliances is recycled instead of buried.",
           "Think of us as your local **trash hauling service** and **junk collection service** for anything too big for the bin. One visit, one upfront price, and the crew does the lifting.",
         ],
         serviceLinks: [
@@ -210,7 +211,7 @@ const raw_locations: Location[] = [
         heading: "Castle Rock Junk Removal Pricing",
         paragraphs: [
           "For standard trailer-load jobs, pricing is based on the space your items occupy. Pickups start at [[min]], a half load is about [[load:4]], and a full load is about [[load:8]]. These prices come from our current pricing guide. Heavy materials, specialty items and demolition work need a scope-specific quote rather than a guess based only on volume.",
-          "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; Castle Rock has no separate trip charge within our regular service area.",
+          "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; There is [[travel]].",
         ],
         closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
       },
@@ -250,6 +251,44 @@ const raw_locations: Location[] = [
     ],
   },
   {
+    slug: "monument",
+    city: "Monument",
+    county: "El Paso County",
+    metaTitle: "Junk Removal Monument CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Monument, CO, on the I-25 south corridor from Parker. Furniture, appliances, and cleanouts with upfront pricing. Free quotes from EZ Haulaway.",
+    intro:
+      "Monument is on the I-25 corridor south of Castle Rock. EZ Haulaway serves it from our Parker base.",
+    local:
+      "Share the address, photos of what needs to go, and how we will reach it — stairs, a long carry, or a narrow gate. We confirm the price before we load anything.",
+    nearby: ["castle-rock", "parker", "lone-tree"],
+    topServices: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Monument",
+        paragraphs: [
+          "EZ Haulaway is a family-owned crew based in Parker. Monument is part of the I-25 south corridor we serve, along with Castle Rock.",
+          "We carry items out from where they sit, load them on our dump trailer, and haul them away in one visit. There is [[travel]].",
+        ],
+      },
+      {
+        heading: "What We Haul in Monument",
+        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it."],
+        list: [
+          { title: "Furniture and mattresses", text: "Couches, mattresses, and other household furniture carried out of the room they are in. A small couch (2–3 seats) is [[item:couch-small]] and a mattress is [[item:mattress]]." },
+          { title: "Appliances", text: "Refrigerators, washers, and dryers once they are unplugged and disconnected. A full-size fridge or freezer is [[item:fridge-full]]. A washer or dryer is [[item:washer-dryer]]." },
+          { title: "Garage and property cleanouts", text: "Garages, storage, and move-out piles loaded in one visit." },
+        ],
+      },
+      {
+        heading: "Monument Junk Removal Pricing",
+        paragraphs: [
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included in that price. There is [[travel]].",
+        ],
+      },
+    ],
+  },
+  {
     slug: "centennial",
     city: "Centennial",
     county: "Arapahoe County",
@@ -278,7 +317,7 @@ const raw_locations: Location[] = [
         list: [
           {
             title: "Appliance disposal",
-            text: "Refrigerators, washers, dryers, dishwashers, and ranges run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each and go to metal recycling rather than a landfill.",
+            text: "Refrigerators, washers, dryers, dishwashers, and ranges include a full-size fridge or freezer at [[item:fridge-full]]. Other sizes are a call or text for a quote. They go to metal recycling rather than a landfill.",
           },
           {
             title: "Basement and garage cleanouts",
@@ -286,11 +325,11 @@ const raw_locations: Location[] = [
           },
           {
             title: "Hot tubs and decks",
-            text: "We cut down and haul old spas starting around [[item:Hot tub]], and we have torn out more than 300 decks across the south metro.",
+            text: "A standard spa (4–6 people) is [[item:hot-tub-standard]], a small tub is [[item:hot-tub-small]], and a large spa is [[item:hot-tub-large]]. We cut down and haul old spas, and we have torn out more than 300 decks across the south metro.",
           },
           {
             title: "Furniture and mattresses",
-            text: "Mattresses are [[item:Mattress]], box springs [[item:Box spring]], and sectional couches are priced per cushion at [[item:Couch]].",
+            text: "A mattress is [[item:mattress]], a box spring is [[item:box-spring]], a small couch is [[item:couch-small]], and a large sectional is [[item:sectional-large]].",
           },
         ],
       },
@@ -407,7 +446,7 @@ const raw_locations: Location[] = [
         list: [
           { title: "Basement furniture", text: "**Old furniture** like sectionals, futons, desks and bookshelves carried up the stairs for you." },
           { title: "Exercise equipment", text: "Treadmills, ellipticals, weight benches and home gyms taken apart and hauled out." },
-          { title: "Mattresses", text: "Mattresses run [[item:Mattress]] and box springs [[item:Box spring]], within our [[min]] minimum." },
+          { title: "Mattresses", text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]], within our [[min]] minimum." },
           { title: "Garage cleanouts", text: "Boxes, shelving, old bikes and yard tools cleared in one trip." },
         ],
       },
@@ -573,7 +612,7 @@ const raw_locations: Location[] = [
         paragraphs: [
           "We work with **property managers**, realtors and local **businesses** across Denver — tenant turnovers, office moves, retail cleanouts and storage-unit clears. **Commercial junk removal** is scheduled around your business so downtime stays low, and we can **book online** or by text when you need a fast turnaround.",
           "Remodeling? We handle **construction debris removal** where a roll-off dumpster isn't practical — tight alleys, no driveway space, or a job too small for a container. Drywall, lumber, tile, fixtures and scrap wood from **construction sites** all go in the trailer, and we load it ourselves.",
-          "Every job is **full service**: you point at the **unwanted items**, we do the lifting, loading and hauling. It's a **professional service** at a **fair price** — the number we quote is the number you pay, with **no hidden fees** for stairs, distance or disposal.",
+          "Every job is **full service**: you point at the **unwanted items**, we do the lifting, loading and hauling. It's a **professional service** at a **fair price** — the number we quote is the number you pay, with no stair charge and no disposal add-on after the quote. There is [[travel]].",
         ],
       },
       {
@@ -610,7 +649,7 @@ const raw_locations: Location[] = [
         heading: "Junk Removal Aurora Neighborhood by Neighborhood",
         paragraphs: [
           "Aurora is close to 400,000 people spread across two counties, and no two jobs look alike. Out by Southlands and Saddle Rock we mostly clear out garage space, moving-day leftovers, and furniture from homes being listed. Around Heather Ridge and the older stretches off Colfax and Havana we handle rental turnovers, eviction cleanouts, and apartments full of items left behind. Near Buckley we work with military families on short-notice moves, which usually means everything is gone this week.",
-          "Because we're based in Parker, Aurora is a straight shot with no travel surcharge. One **family-owned crew** arrives on time, quotes the job in person, and loads it out the same visit — most **customers** tell us it saves a whole weekend of **time**.",
+          "Because we're based in Parker, Aurora is a straight shot. There is [[travel]]. One **family-owned crew** arrives on time, quotes the job in person, and loads it out the same visit — most **customers** tell us it saves a whole weekend of **time**.",
         ],
       },
       {
@@ -633,7 +672,7 @@ const raw_locations: Location[] = [
           },
           {
             title: "Appliance and bulky item pickup",
-            text: "Refrigerators and washers [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], mattresses [[item:Mattress]], box springs [[item:Box spring]], couches priced at [[item:Couch]] per cushion.",
+            text: "A full-size fridge or freezer is [[item:fridge-full]] and a washer or dryer is [[item:washer-dryer]]. A side-by-side refrigerator is a call or text for a quote. A mattress is [[item:mattress]], a box spring is [[item:box-spring]], a small couch is [[item:couch-small]], and a large sectional is [[item:sectional-large]].",
           },
         ],
         closing: "Eviction cleanouts and trash outs are available same day or next day once we have the unit details, access and your go-ahead.",
@@ -645,23 +684,23 @@ const raw_locations: Location[] = [
       {
         heading: "The Heavy Work Other Aurora Haulers Pass On",
         paragraphs: [
-          "Plenty of haulers take bagged trash and call it a day. As a full junk removal company, our hauling services also cut down old hot tubs starting around [[item:Hot tub]], tear down sheds, and remove worn-out decks and fences — more than 300 decks across the metro. Metal goes to recycling, usable furniture to donation, the rest to a licensed transfer station. We cannot take hazardous materials like wet paint, fuel, chemicals, asbestos, or medical waste.",
+          "Plenty of haulers take bagged trash and call it a day. As a full junk removal company, our hauling services also cut down old hot tubs (a standard spa is [[item:hot-tub-standard]]), tear down sheds, and remove worn-out decks and fences — more than 300 decks across the metro. Metal goes to recycling, usable furniture to donation, the rest to a licensed transfer station. We cannot take hazardous materials like wet paint, fuel, chemicals, asbestos, or medical waste.",
         ],
       },
       {
         heading: "Why Aurora Customers Choose Our Junk Removal Services",
         paragraphs: [
           "Our junk removal services are **full service** — you point, we lift. Customers call us for **garage cleanouts**, appliance pickups, and whole-home junk removal because one crew handles the stairs, the loading, the sweep-up, and the dump run. It is the easiest way to reclaim your **space** without spending a weekend of your **time** on it. We clear the room and hand the **space** back clean.",
-          "Getting a price is simple. Call or text (720) 614-7223 — that **phone number** reaches Ben directly — or send photos through our instant estimate for a junk removal price range in minutes. Either way you get a firm number first, with **no hidden fees**.",
+          `Getting a price is simple. Call or text ${PHONE_DISPLAY} — that **phone number** reaches Ben directly — or send photos through our instant estimate for a junk removal price range in minutes. Either way you get a firm number first, with **no hidden fees**.`,
         ],
       },
       {
         heading: "Aurora Junk Removal Pricing",
         paragraphs: [
-          "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, with no extra trip charge for Aurora. Every customer gets the same **upfront junk removal pricing**, whether the job is one mattress or a full **garage**.",
+          "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, There is [[travel]]. Every customer gets the same **upfront junk removal pricing**, whether the job is one mattress or a full **garage**.",
         ],
         closing:
-          "Call or text 720-614-7223 for an Aurora junk removal slot, or send photos through our instant estimate for a price range in minutes.",
+          `Call or text ${PHONE} for an Aurora junk removal slot, or send photos through our instant estimate for a price range in minutes.`,
       },
     ],
   },
@@ -700,7 +739,7 @@ const raw_locations: Location[] = [
       {
         heading: "Furniture, Mattress and Large Item Pickup",
         paragraphs: [
-          "Couches, sectionals, recliners, mattresses and box springs are our most common Littleton pickups. Couches are about [[item:Couch]] per cushion and a mattress is [[item:Mattress]]. We carry them out of split-level homes, basements and apartments, so you never drag anything to the curb.",
+          "Couches, sectionals, recliners, mattresses and box springs are our most common Littleton pickups. A small couch is [[item:couch-small]], a large sectional is [[item:sectional-large]], and a mattress is [[item:mattress]]. We carry them out of split-level homes, basements and apartments, so you never drag anything to the curb.",
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Littleton furniture removal" },
@@ -720,7 +759,7 @@ const raw_locations: Location[] = [
       {
         heading: "Fridge Removal and Appliance Disposal",
         paragraphs: [
-          "Old fridges, freezers, washers and dryers come out of the kitchen, basement or garage once they're unplugged. A full-size fridge is about [[item:Refrigerator (full size)]]. Fridges go to recyclers that handle the refrigerant, and other appliances go to metal recycling.",
+          "Old fridges, freezers, washers and dryers come out of the kitchen, basement or garage once they're unplugged. A full-size fridge is about [[item:fridge-full]]. Fridges go to recyclers that handle the refrigerant, and other appliances go to metal recycling.",
         ],
         serviceLinks: [
           { slug: "appliance-removal", label: "Littleton appliance removal" },
@@ -783,7 +822,7 @@ const raw_locations: Location[] = [
           "Our junk removal services cover almost anything that isn't hazardous. Here are the jobs we do most often in Englewood:",
         ],
         list: [
-          { title: "Furniture and mattresses", text: "Unwanted furniture like couches at [[item:Couch]] per cushion, mattresses at [[item:Mattress]] and box springs at [[item:Box spring]], plus dressers, recliners and bed frames." },
+          { title: "Furniture and mattresses", text: "Unwanted furniture like a small couch at [[item:couch-small]], a sleeper at [[item:sleeper-couch]], mattresses at [[item:mattress]] and box springs at [[item:box-spring]], plus dressers, recliners and bed frames." },
           { title: "Appliance removal", text: "Fridges, washers, dryers and stoves carried out and sent to metal recycling whenever possible." },
           { title: "Garage and basement cleanouts", text: "Boxes, shelving, old bikes, yard tools and years of storage cleared in a single trip." },
           { title: "Small commercial cleanouts", text: "Office furniture, retail fixtures and storage rooms for Englewood businesses along Broadway and South Santa Fe." },
@@ -851,7 +890,7 @@ const raw_locations: Location[] = [
           { title: "Garage cleanouts", text: "Old tools, shelving, bikes, paint cans that are fully dried, and boxes of storage cleared in one trip." },
           { title: "Yard and landscaping debris", text: "Branches, brush, old sod, landscape rock and storm cleanup from Lakewood's mature yards." },
           { title: "Light demolition", text: "Old sheds, decks, fences and playsets torn down and hauled away together." },
-          { title: "Furniture and mattress removal", text: "Couches at [[item:Couch]] per cushion and mattresses at [[item:Mattress]], carried out from any room." },
+          { title: "Furniture and mattress removal", text: "A small couch is [[item:couch-small]] and a mattress is [[item:mattress]], carried out from any room." },
           { title: "Appliance removal", text: "Fridges, washers and dryers hauled and sent to **metal recycling** when possible." },
           { title: "Estate and move-out cleanouts", text: "Whole-house cleanouts for families, realtors and **property managers**." },
         ],
@@ -933,7 +972,7 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal for Elizabeth Homes, Acreage and Outbuildings",
         paragraphs: [
-          "Elizabeth properties tend to come with room: bigger lots, a garage or shop, sheds and older outbuildings, and years of stored household items. EZ Haulaway is a family-owned crew based in nearby Parker, so Elizabeth is part of our regular service area and there is no separate trip charge built into your quote.",
+          "Elizabeth properties tend to come with room: bigger lots, a garage or shop, sheds and older outbuildings, and years of stored household items. EZ Haulaway is a family-owned crew based in nearby Parker, so Elizabeth is part of our regular service area. There is [[travel]].",
           "We carry everything out from wherever it sits, load it on our dump trailer and haul it away in one visit. We serve homes in Spring Valley, Gold Creek and around Elizabeth's town center, as well as rural properties outside town.",
         ],
       },
@@ -978,7 +1017,7 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal for Franktown Homes and Acreage",
         paragraphs: [
-          "Franktown sits southeast of Parker in Douglas County, near Castlewood Canyon State Park, with a mix of acreage properties and older homes. EZ Haulaway is a family-owned crew based in nearby Parker, so Franktown is a short drive and part of our regular service area, with no separate trip charge built into your quote.",
+          "Franktown sits southeast of Parker in Douglas County, near Castlewood Canyon State Park, with a mix of acreage properties and older homes. EZ Haulaway is a family-owned crew based in nearby Parker, so Franktown is a short drive and part of our regular service area. There is [[travel]].",
           "We carry everything out, load it on our dump trailer and haul it away in one visit, whether it is a garage full of boxes, an old shed or a run of worn-out fence. We serve the Franktown acreage, Russellville and the Castlewood Canyon area.",
         ],
       },
@@ -1044,8 +1083,8 @@ const raw_locations: Location[] = [
         ],
         list: [
           { title: "Single item pickups", text: "One couch, mattress, or treadmill. Pickups start at [[min]]." },
-          { title: "Mattresses and box springs", text: "Mattresses run [[item:Mattress]] and box springs [[item:Box spring]]." },
-          { title: "Hot tub removal", text: "Old spas cut down and hauled away, starting around [[item:Hot tub]]." },
+          { title: "Mattresses and box springs", text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]]." },
+          { title: "Hot tub removal", text: "A standard spa (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]." },
         ],
       },
       {
@@ -1096,7 +1135,7 @@ const raw_locations: Location[] = [
       {
         heading: "Junk Removal for Sedalia Homes and Rural Properties",
         paragraphs: [
-          "Sedalia sits along Highway 85 in Douglas County, with homes in Perry Park and Indian Creek as well as rural properties and older buildings around town. EZ Haulaway is a family-owned crew based in nearby Parker, so Sedalia is part of our regular service area, with no separate trip charge built into your quote.",
+          "Sedalia sits along Highway 85 in Douglas County, with homes in Perry Park and Indian Creek as well as rural properties and older buildings around town. EZ Haulaway is a family-owned crew based in nearby Parker, so Sedalia is part of our regular service area. There is [[travel]].",
           "Much of our hauling ends at the Sedalia landfill, so this is a part of Douglas County we know well. We carry everything out, load it on our dump trailer and haul it away in one visit.",
         ],
       },

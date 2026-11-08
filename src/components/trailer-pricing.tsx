@@ -2,6 +2,7 @@ import { useState } from "react";
 import { responsiveImage } from "@/lib/trailer-images";
 import { Button } from "@/components/ui/button";
 import { TRAILER_SPEC } from "@/content/pricing";
+import { formatDiscount } from "@/lib/price-guide";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import trailerEmpty from "@/assets/branded-trailer-base.webp";
 import trailerJunk0 from "@/assets/branded-trailer-junk-0.webp";
@@ -132,11 +133,24 @@ export function TrailerPricing() {
             {guide.adjustments.length > 0 && (
               <ul className="mt-5 space-y-1 text-sm">
                 {guide.adjustments.map((a) => (
-                  <li key={a.label} className="flex justify-between gap-3">
+                  <li key={a.id} className="flex justify-between gap-3">
                     <span className="text-muted-foreground">{a.label}</span>
                     <span className="font-bold">{a.amount}</span>
                   </li>
                 ))}
+              </ul>
+            )}
+            {guide.discounts.length > 0 && (
+              <ul className="mt-4 space-y-1 text-sm">
+                {guide.discounts.map((discount) => {
+                  const shown = formatDiscount(discount);
+                  return (
+                    <li key={discount.id} className="flex justify-between gap-3">
+                      <span className="text-muted-foreground">{shown.label}</span>
+                      {shown.amount ? <span className="font-bold">{shown.amount}</span> : null}
+                    </li>
+                  );
+                })}
               </ul>
             )}
             <p className="mt-6 text-xs leading-5 text-muted-foreground">
