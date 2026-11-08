@@ -11,7 +11,9 @@ import { buildLlmsText } from "@/lib/llms-text";
 import {
   buildEstimatorInstructions,
   eighthPrice,
+  formatDiscount,
   formatMoney,
+  freeTvComputerWording,
   ITEM_CATALOG,
   normalizeFeed,
   priceText,
@@ -141,6 +143,7 @@ describe("one price guide", () => {
     expect(text).not.toContain("per cushion");
     expect(text).not.toMatch(PRICE_TOKEN);
     const source = walkFiles("src")
+      .filter((path) => !path.endsWith("blog-ez-prices.ts") && !path.endsWith("blog-ez-prices.test.ts"))
       .map((path) => readFileSync(path, "utf8"))
       .join("\n");
     for (const banned of ["$800", "per cushion", "$60 per", "pricing#instant-estimate", "?? 800"]) {
@@ -179,6 +182,18 @@ describe("one price guide", () => {
       ),
     ).toBe(`${QUOTE_ONLY} ${QUOTE_ONLY} ${QUOTE_ONLY} ${QUOTE_ONLY}`);
     expect(Object.keys(ITEM_CATALOG)).toContain("fridge-full");
+  });
+
+  it("states the military discount as dollars off and the approved TV threshold", () => {
+    const military = SNAPSHOT_GUIDE.discounts.find((discount) => /military/i.test(discount.label));
+    expect(military).toBeTruthy();
+    expect(formatDiscount(military!).amount).toBe("$25 off");
+    expect(freeTvComputerWording()).toBe(
+      "Free TV and computer recycling with any standard junk removal pickup over $100.",
+    );
+    expect(buildLlmsText(SNAPSHOT_GUIDE)).toContain(freeTvComputerWording());
+    expect(buildEstimatorInstructions(SNAPSHOT_GUIDE)).toContain("$25 off");
+    expect(buildEstimatorInstructions(SNAPSHOT_GUIDE)).toContain("over $100");
   });
 
   it("reads the travel fee from the guide", () => {

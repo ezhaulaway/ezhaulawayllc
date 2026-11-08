@@ -10,6 +10,13 @@ import snapshotJson from "../content/price-snapshot.json";
 export const QUOTE_ONLY = "call or text for a quote";
 export const PRICE_SOURCE = "https://ezhaulawaycrew.lovable.app/api/public/pricing";
 
+/** Ben approved this. The crew feed's free TV/computer discount does not include the minimum. */
+export const FREE_TV_COMPUTER_MINIMUM = 100;
+
+export function freeTvComputerWording(): string {
+  return `Free TV and computer recycling with any standard junk removal pickup over ${formatMoney(FREE_TV_COMPUTER_MINIMUM)}.`;
+}
+
 export type PriceUnit = "each" | "flat rate" | "starting at";
 
 /** Content tokens such as [[item:mattress]] map to one exact feed item name. */
@@ -106,6 +113,21 @@ const FRACTIONS: ReadonlyArray<readonly [string, number]> = [
 
 export function formatMoney(amount: number): string {
   return `$${amount.toLocaleString("en-US")}`;
+}
+
+/** Military is a flat dollar amount off. Free TV/computer uses the approved $100 policy, not the feed's $0. */
+export function formatDiscount(discount: Discount): { label: string; amount: string | null } {
+  const label = discount.label;
+  if (/military/i.test(label) && discount.amountNumber != null) {
+    return { label, amount: `${formatMoney(discount.amountNumber)} off` };
+  }
+  if (/tv|computer/i.test(label)) {
+    return { label: freeTvComputerWording(), amount: null };
+  }
+  return {
+    label,
+    amount: discount.amountNumber != null ? formatMoney(discount.amountNumber) : discount.amount,
+  };
 }
 
 function finiteNumber(value: unknown): number | null {
@@ -342,11 +364,15 @@ export function publicPricing(guide: PriceGuide) {
       label: adjustment.label,
       amount: adjustment.amountNumber ?? adjustment.amount,
     })),
-    discounts: guide.discounts.map((discount) => ({
-      id: discount.id,
-      label: discount.label,
-      amount: discount.amountNumber ?? discount.amount,
-    })),
+    discounts: guide.discounts.map((discount) => {
+      const shown = formatDiscount(discount);
+      return {
+        id: discount.id,
+        label: shown.label,
+        amount: shown.amount ?? discount.amountNumber ?? discount.amount,
+      };
+    }),
+    freeTvComputerRecycling: freeTvComputerWording(),
     specialty: guide.specialty.map((item) => ({
       item: item.item,
       price: item.amount ?? item.price,
@@ -375,10 +401,10 @@ export function buildEstimatorInstructions(guide: PriceGuide): string {
     )
     .join("; ");
   const discounts = guide.discounts
-    .map(
-      (discount) =>
-        `${discount.label}: ${discount.amountNumber != null ? formatMoney(discount.amountNumber) : discount.amount}`,
-    )
+    .map((discount) => {
+      const shown = formatDiscount(discount);
+      return shown.amount ? `${shown.label}: ${shown.amount}` : shown.label;
+    })
     .join("; ");
 
   return `You are the estimating assistant for EZ Haulaway, a junk removal company based in Parker, Colorado.

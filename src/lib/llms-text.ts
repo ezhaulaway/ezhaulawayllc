@@ -10,8 +10,10 @@ import {
 } from "@/content/site";
 import {
   eighthPrice,
+  formatDiscount,
   formatItemPrice,
   formatMoney,
+  freeTvComputerWording,
   ITEM_CATALOG,
   priceText,
   travelPhrase,
@@ -39,10 +41,10 @@ export function buildLlmsText(guide: PriceGuide): string {
     )
     .join("\n");
   const discounts = guide.discounts
-    .map(
-      (discount) =>
-        `- ${discount.label}: ${discount.amountNumber != null ? formatMoney(discount.amountNumber) : discount.amount}`,
-    )
+    .map((discount) => {
+      const shown = formatDiscount(discount);
+      return shown.amount ? `- ${shown.label}: ${shown.amount}` : `- ${shown.label}`;
+    })
     .join("\n");
   const serviceLines = services
     .map((service) => `- [${service.name}](${SITE_URL}/services/${service.slug})`)
@@ -66,6 +68,7 @@ export function buildLlmsText(guide: PriceGuide): string {
 - Price guide version: ${guide.version}
 - Price range: [[min]] minimum to [[load:8]] for a full trailer
 - Travel: [[travel]]
+- ${freeTvComputerWording()}
 - Service model: the crew does the lifting, loading, sweeping, and disposal.
 - Disposal: metal is recycled, usable items are donated when possible, and the rest goes to the proper facility.
 

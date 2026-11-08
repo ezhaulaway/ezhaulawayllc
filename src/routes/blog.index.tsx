@@ -4,6 +4,8 @@ import { PageHero, PageShell, CtaBand } from "@/components/site-chrome";
 import { SITE_URL } from "@/content/site";
 import { listBlogPosts } from "@/lib/blog.functions";
 import { blogImageSrcSet, resizedBlogImage } from "@/lib/blog-html";
+import { rewriteEzPriceText } from "@/lib/blog-ez-prices";
+import { usePriceGuide } from "@/hooks/use-price-guide";
 
 const postsQuery = queryOptions({ queryKey: ["blog", "list"], queryFn: () => listBlogPosts() });
 
@@ -36,6 +38,7 @@ function fmt(d: string | null) {
 
 function BlogIndex() {
   const { data: posts } = useSuspenseQuery(postsQuery);
+  const guide = usePriceGuide();
   return (
     <PageShell>
       <PageHero
@@ -71,7 +74,7 @@ function BlogIndex() {
                   <div className="p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">{fmt(p.article_created_at)}</p>
                     <h2 className="mt-2 text-xl font-extrabold leading-snug text-foreground group-hover:text-primary">{p.title}</h2>
-                    {p.meta_description ? <p className="mt-3 line-clamp-3 text-muted-foreground">{p.meta_description}</p> : null}
+                    {p.meta_description ? <p className="mt-3 line-clamp-3 text-muted-foreground">{rewriteEzPriceText(p.meta_description, guide)}</p> : null}
                   </div>
                 </Link>
               ))}

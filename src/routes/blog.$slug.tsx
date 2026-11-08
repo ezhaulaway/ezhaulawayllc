@@ -8,7 +8,8 @@ import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
 import { optimizeBlogImages } from "@/lib/blog-html";
-import { priceText } from "@/lib/price-store";
+import { rewriteEzPriceJson, rewriteEzPriceText } from "@/lib/blog-ez-prices";
+import { getGuide, priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import { BLOG_AUTHOR_NAME, blogDates, blogSchemas } from "@/lib/blog-schema";
 
@@ -54,12 +55,13 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!p) return { meta: [{ title: "Article not found — EZ Haulaway Blog" }] };
     const url = `${SITE_URL}/blog/${p.slug}`;
     // Posts synced without their own structured data get BlogPosting + BreadcrumbList from the post fields.
-    const generated = p.json_ld == null ? blogSchemas(p) : [];
+    const guide = getGuide();
+    const desc = rewriteEzPriceText(p.meta_description ?? "", guide);
+    const generated = p.json_ld == null ? blogSchemas({ ...p, meta_description: desc }) : [];
     const scripts = [p.json_ld, p.faq_json_ld]
       .filter((x) => x != null)
-      .map((x) => ({ type: "application/ld+json", children: ser(repoint(x, url)) }))
+      .map((x) => ({ type: "application/ld+json", children: ser(repoint(rewriteEzPriceJson(x, guide), url)) }))
       .concat(generated.map((x) => ({ type: "application/ld+json", children: ser(x) })));
-    const desc = p.meta_description ?? "";
     return {
       meta: [
         { title: `${p.title} | EZ Haulaway Blog` },
@@ -104,7 +106,7 @@ function BlogPost() {
         </Link>
         <PostDates created={p.article_created_at} updated={p.article_updated_at} />
         <BlogCallout slug={p.slug} />
-        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: priceText(optimizeBlogImages(p.content_html ?? "")) }} />
+        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: rewriteEzPriceText(priceText(optimizeBlogImages(p.content_html ?? "")), getGuide()) }} />
       </article>
       {BLOG_RELATED[p.slug] ? (
         <BlogRelatedServices slug={p.slug} />
