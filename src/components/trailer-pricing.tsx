@@ -132,9 +132,19 @@ export function TrailerPricing() {
             {guide.adjustments.length > 0 && (
               <ul className="mt-5 space-y-1 text-sm">
                 {guide.adjustments.map((a) => (
-                  <li key={a.label} className="flex justify-between gap-3">
+                  <li key={a.id} className="flex justify-between gap-3">
                     <span className="text-muted-foreground">{a.label}</span>
                     <span className="font-bold">{a.amount}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {guide.discounts.length > 0 && (
+              <ul className="mt-4 space-y-1 text-sm">
+                {guide.discounts.map((discount) => (
+                  <li key={discount.id} className="flex justify-between gap-3">
+                    <span className="text-muted-foreground">{discount.label}</span>
+                    <span className="font-bold">{discount.amount}</span>
                   </li>
                 ))}
               </ul>

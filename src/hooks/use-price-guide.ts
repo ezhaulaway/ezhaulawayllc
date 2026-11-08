@@ -5,7 +5,7 @@ import { getGuide, setGuide, subscribeGuide } from "@/lib/price-store";
 
 let timerStarted = false;
 
-/** Live price guide from the crew app; refreshes every 5 minutes, falls back to built-in prices. */
+/** Live price guide from the crew app; refreshes every 5 minutes and falls back to the validated snapshot. */
 export function usePriceGuide(): PriceGuide {
   const fetchGuide = useServerFn(getPriceGuide);
   useEffect(() => {

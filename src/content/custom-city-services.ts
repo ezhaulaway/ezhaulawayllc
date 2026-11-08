@@ -22,11 +22,11 @@ const RAW_CUSTOM_PAGES: Record<
   }
 > = {
   "castle-rock/hot-tub-removal": {
-    description: "Hot tub removal in Castle Rock, CO from [[item:Hot tub]]. We cut up and haul out old spas, including the decks and pads they sit on. Free quotes.",
+    description: "Hot tub removal in Castle Rock, CO. A standard spa (4–6 people) is [[item:hot-tub-standard]]. We cut up and haul out old spas, including the decks and pads they sit on. Free quotes.",
     intro: [
       "Castle Rock backyards are full of hot tubs that came with the house — and half of them haven't run in years. Whether your spa is dead, cracked, or you're reclaiming the patio in The Meadows, Founders Village or Castlewood Ranch, we remove the whole thing: shell, cabinet, cover, pump and wiring.",
       "Most hot tubs won't fit through a gate or over a fence in one piece, so we cut them into manageable sections with a reciprocating saw, carry every piece out by hand, and load it into our 16-foot dump trailer. You don't touch anything — we disconnect, demolish, haul and sweep the pad when we're done.",
-      "Hot tub removal in Castle Rock starts at [[item:Hot tub]] and goes up with size, access and whether the tub is sunk into a deck. Text us a few photos and we'll give you a firm price before we ever start the saw.",
+      "A standard Castle Rock hot tub (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. The job goes up with size, access and whether the tub is sunk into a deck. Text us a few photos and we'll give you a firm price before we ever start the saw.",
     ],
     localHeading: "Hot Tub Removal Across Castle Rock Neighborhoods",
     localText: [
@@ -36,7 +36,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does hot tub removal cost in Castle Rock?",
-        `Most Castle Rock hot tub removals run [[item:Hot tub]] to $800 depending on the tub's size, whether it's sunk into a deck, and how far we have to carry the pieces. Text photos to ${PHONE} for a firm quote — the price we give you is the price you pay.`,
+        `A small hot tub is [[item:hot-tub-small]], a standard spa (4–6 people) is [[item:hot-tub-standard]], and a large spa or swim spa is [[item:hot-tub-large]]. A tub sunk into a deck or a long carry is a call or text for a quote. Text photos to ${PHONE} for a firm quote — the price we give you is the price you pay.`,
       ],
       [
         "Can you remove a hot tub that's built into my deck?",
@@ -70,10 +70,10 @@ const RAW_CUSTOM_PAGES: Record<
           "Most furniture removal jobs are not one item. They are a living room refresh, a bedroom swap or a basement that finally gets cleared. Here is what we commonly haul from each part of a Castle Rock home, so you can plan one visit instead of three.",
         ],
         subsections: [
-          { heading: "Living Room and Family Room Furniture", text: "We remove **sectionals, sleeper sofas, leather recliners**, loveseats, coffee tables, end tables and entertainment centers. Couches are priced at [[item:Couch]] per cushion as single items, and a solid wood entertainment center is about [[item:Entertainment center]]. Sleeper sofas are heavier than they look, so we bring two people and straps for every carry-out." },
-          { heading: "Bedroom Furniture and Mattresses", text: "We haul **bed frames, headboards, dressers, armoires**, nightstands and bunk beds. We take apart bed frames and bunk beds on site when they will not fit through a doorway. A mattress is about [[item:Mattress]] and a box spring about [[item:Box spring]], and both can go on the same trip as the rest of the bedroom set." },
-          { heading: "Dining Room Furniture", text: "Dining tables, chairs, hutches and buffets are common pickups during a remodel or downsizing. A table with four chairs runs about [[item:Dining room set (table + 4 chairs)]], and a large dining room hutch about [[item:Hutch (dining room)]]. Glass doors and shelves are wrapped or removed first so nothing breaks on the way out." },
-          { heading: "Home Office and Basement Furniture", text: "We remove **office desks, filing cabinets, bookshelves**, futons, old bar stools and exercise equipment from basements and home offices. A large desk is about [[item:Desk (large)]] and a treadmill about [[item:Treadmill]]. Basement jobs often mix furniture with boxes and storage junk, and it all goes on one quote." },
+          { heading: "Living Room and Family Room Furniture", text: "We remove **sectionals, sleeper sofas, leather recliners**, loveseats, coffee tables, end tables and entertainment centers. A small couch (2–3 seats) is [[item:couch-small]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. An entertainment center is a call or text for a quote. Sleeper sofas are heavier than they look, so we bring two people and straps for every carry-out." },
+          { heading: "Bedroom Furniture and Mattresses", text: "We haul **bed frames, headboards, dressers, armoires**, nightstands and bunk beds. We take apart bed frames and bunk beds on site when they will not fit through a doorway. A mattress is about [[item:mattress]] and a box spring about [[item:box-spring]], and both can go on the same trip as the rest of the bedroom set." },
+          { heading: "Dining Room Furniture", text: "Dining tables, chairs, hutches and buffets are common pickups during a remodel or downsizing. A dining set or hutch is a call or text for a quote. Glass doors and shelves are wrapped or removed first so nothing breaks on the way out." },
+          { heading: "Home Office and Basement Furniture", text: "We remove **office desks, filing cabinets, bookshelves**, futons, old bar stools and exercise equipment from basements and home offices. A treadmill is [[item:treadmill]]. A desk is a call or text for a quote. Basement jobs often mix furniture with boxes and storage junk, and it all goes on one quote." },
         ],
       },
       {
@@ -132,21 +132,21 @@ const RAW_CUSTOM_PAGES: Record<
       {
         heading: "Refrigerator and Freezer Removal",
         paragraphs: [
-          "Refrigerators, **chest freezers**, mini fridges and garage freezers need careful handling because of the refrigerant inside. We take them to recyclers that recover the refrigerant before the metal is processed. A full-size fridge is about [[item:Refrigerator (full size)]] and a side-by-side model about [[item:Refrigerator (side by side)]].",
+          "Refrigerators, **chest freezers**, mini fridges and garage freezers need careful handling because of the refrigerant inside. We take them to recyclers that recover the refrigerant before the metal is processed. A full-size fridge or freezer is [[item:fridge-full]]. A side-by-side refrigerator is a call or text for a quote.",
           "Please empty all food and ice and unplug the unit a day before pickup so it can drain. If your fridge has a water line for the ice maker, shut off the valve behind it. We handle the rest, including tight kitchen exits and garage stairs.",
         ],
       },
       {
         heading: "Washer and Dryer Removal",
         paragraphs: [
-          "Stacked laundry units and second-floor laundry rooms are common in Castle Rock homes. Our crew uses an appliance dolly and straps to bring **washers and dryers** down stairs without damaging floors or walls. Each unit is about [[item:Washer / dryer (each)]].",
+          "Stacked laundry units and second-floor laundry rooms are common in Castle Rock homes. Our crew uses an appliance dolly and straps to bring **washers and dryers** down stairs without damaging floors or walls. A washer or dryer is [[item:washer-dryer]].",
           "Before we arrive, turn off the water valves behind the washer. Unplug electric dryers. Gas dryers need the gas line shut off and capped by a qualified person first. We can remove drip pans and leftover hoses as part of the job.",
         ],
       },
       {
         heading: "Stoves, Dishwashers and Water Heaters",
         paragraphs: [
-          "We haul **electric and gas ranges**, wall ovens, microwaves, dishwashers and old water heaters. A stove is about [[item:Stove]], a dishwasher about [[item:Dishwasher]] and a water heater about [[item:Water heater]]. Water heaters must be drained and disconnected before removal.",
+          "We haul **electric and gas ranges**, wall ovens, microwaves, dishwashers and old water heaters. A water heater is [[item:water-heater]]. A stove or dishwasher is a call or text for a quote. Water heaters must be drained and disconnected before removal.",
         ],
       },
       {
@@ -210,7 +210,7 @@ const RAW_CUSTOM_PAGES: Record<
     intro: [
       "Aurora's housing boom left thousands of aging cedar decks and leaning privacy fences, and we tear them out every week — from the older neighborhoods near Heather Ridge and Buckingham to newer builds out by Southlands where builders' grade decks are already failing.",
       "This isn't a side service for us. Our crew comes from construction with 300+ decks of hands-on experience, so we know exactly how a deck is put together — ledger boards, joist hangers, footings and all — which means we take it apart fast, safely, and without damaging your house.",
-      "Deck and fence removal in Aurora is priced by trailer volume with a [[min]] minimum, and most full deck tear-outs run $800 to $2,500 depending on size, height and whether you want the footings pulled. Text photos for a firm quote before we start.",
+      "Deck and fence removal in Aurora is priced by trailer volume with a [[min]] minimum, Full deck tear-outs are a call or text for a quote. The price depends on size, height, and whether you want the footings pulled. Text photos for a firm quote before we start.",
     ],
     localHeading: "Deck & Fence Tear-Out Across Aurora",
     localText: [
@@ -220,7 +220,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does deck removal cost in Aurora?",
-        `Most full deck tear-outs in Aurora run $800 to $2,500 depending on size, height off the ground, and footing removal. Fence lines are priced by the trailer load with a [[min]] minimum. Text photos to ${PHONE} for a firm quote.`,
+        `Full deck tear-outs in Aurora are a call or text for a quote. The price depends on size, height off the ground, and footing removal. Fence lines are priced by the trailer load with a [[min]] minimum. Text photos to ${PHONE} for a firm quote.`,
       ],
       [
         "Will tearing off the deck damage my house?",
@@ -257,7 +257,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does furniture removal cost in Denver?",
-        "A single couch or chair falls under our [[min]] minimum. Couches are priced per cushion at [[item:Couch]], and bigger jobs are priced by trailer space up to [[load:8]] for a full load. Text photos to " + PHONE + " for a firm price before any work starts.",
+        "A single couch or chair falls under our [[min]] minimum. A small couch (2–3 seats) is [[item:couch-small]], a sleeper is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. Bigger jobs are priced by trailer space up to [[load:8]] for a full load. Text photos to " + PHONE + " for a firm price before any work starts.",
       ],
       [
         "Can you remove furniture from an upstairs apartment?",
@@ -283,7 +283,7 @@ const RAW_CUSTOM_PAGES: Record<
         paragraphs: [
           "Need **large item pickup in Denver**? Beyond mattresses, we pick up treadmills, pianos, hot tubs, appliances and playsets. Household furniture has its own page: [Furniture Removal Denver](/service-areas/denver/furniture-removal). If two people can carry it and it isn't hazardous, we can usually take it.",
           "Denver's city large-item collection only takes what you set out at the curb or alley, on a set schedule. We come inside, carry the item out and haul it away, often the same week you call.",
-          "One big item usually falls under our [[min]] minimum. Treadmills are about [[item:Treadmill]] and pianos start around [[item:Piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
+          "One big item usually falls under our [[min]] minimum. Treadmills are about [[item:treadmill]] and pianos are [[item:piano]]. Several large items are priced together by trailer space, up to [[load:8]] for a full load.",
         ],
         subsections: [
           { heading: "Heavy and awkward items", text: "Pianos, safes and hot tubs need more hands and the right straps. Tell us about stairs and tight turns so we plan the carry-out." },
@@ -294,14 +294,14 @@ const RAW_CUSTOM_PAGES: Record<
     intro: [
       "Need **mattress removal in Denver**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — bedroom, basement or third-floor walkup — and haul them away in one visit. No dragging a mattress to the curb, no renting a truck.",
       "Our two-person crew does **all the heavy lifting**. We carry the mattress down the stairs, through the hallway and out to our 16-foot trailer, then sweep up before we leave. You just show us what goes.",
-      "A mattress is **[[item:Mattress]]** and a box spring is **[[item:Box spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
+      "A mattress is **[[item:mattress]]** and a box spring is **[[item:box-spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
     ],
     localHeading: "Mattress Disposal, Box Spring Removal and Bulky Item Pickup Across the Denver Metro Area",
     localText: [
       "**Old mattress removal** in Denver usually means tight spaces. Narrow stairwells in Capitol Hill, basement bedrooms in Wash Park bungalows, freight elevators in LoDo and RiNo lofts — we plan the way out before we lift and protect walls, railings and door frames.",
       "We take every size: **twin, full, queen, king and California king mattresses**, plus box springs, memory foam, hybrid and pillow-top beds, futon mattresses, cribs and adjustable bases. Bed frames and headboards go too, and we'll take them apart if needed.",
       "**Mattress recycling** matters to us. Mattresses take up a huge amount of landfill space, so we separate steel springs, foam and wood for recycling whenever possible. Clean, usable mattresses go to local **donation** partners when they'll accept them.",
-      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]) and exercise equipment — anything too big or heavy to handle yourself. For household furniture, see [Furniture Removal Denver](/service-areas/denver/furniture-removal).",
+      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:treadmill]]), pianos ([[item:piano]]) and exercise equipment — anything too big or heavy to handle yourself. For household furniture, see [Furniture Removal Denver](/service-areas/denver/furniture-removal).",
       "Moving out of a Denver apartment, swapping in a new bed, or clearing a rental between tenants? We handle **same-week mattress pickup** for homeowners, renters and property managers, and we price multi-item jobs together so you save versus separate pickups.",
       "Getting a price is easy: text a photo or use our free instant estimate. You'll get **upfront pricing** before we start, and we show up on time in the window we give you.",
       "Searching for mattress removal Denver homeowners actually recommend? Our **family-owned**, **licensed and insured** crew from Parker works Denver neighborhoods every week — Highland, Sloan's Lake, Park Hill, Stapleton, University and Washington Virginia Vale included.",
@@ -324,7 +324,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does mattress removal cost in Denver?",
-        "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price.",
+        "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price.",
       ],
       [
         "Do you carry the mattress down the stairs?",
@@ -347,7 +347,7 @@ const RAW_CUSTOM_PAGES: Record<
     intro: [
       "Need **mattress removal in Aurora**? We pick up old mattresses, box springs, bed frames and other bulky items from any room in your home — upstairs bedroom, basement or apartment — and haul everything away in one visit. No dragging it to the curb and no truck rental.",
       "Our **family-owned crew** does **all the heavy lifting**. We carry the mattress down the stairs, out the door and onto our 16-foot trailer, then sweep up before we go. You just show us what goes.",
-      "A mattress is **[[item:Mattress]]** and a box spring is **[[item:Box spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
+      "A mattress is **[[item:mattress]]** and a box spring is **[[item:box-spring]]**. Add more items and the job is priced by trailer space, starting at our **[[min]] minimum**. Labor, hauling and disposal are included — **no hidden fees**.",
       "Looking for mattress removal Aurora residents can book fast? Call or text " + PHONE + " or send a photo through our **free instant estimate** for a price in about a minute.",
     ],
     localHeading: "Mattress Disposal and Bulky Item Pickup Across Aurora",
@@ -356,7 +356,7 @@ const RAW_CUSTOM_PAGES: Record<
       "We take every size: **twin, full, queen, king and California king mattresses**, plus box springs, memory foam, hybrid and pillow-top beds, futon mattresses, crib mattresses and adjustable bases. **Bed frame removal** is included, and we take frames apart when needed.",
       "**Mattress recycling** matters. Mattresses take up a lot of landfill space, so we send them for recycling when we can, and clean, usable mattresses go to **donation** partners that accept them.",
       "Why not leave it out with the trash? Most Aurora trash haulers and HOAs limit bulky items, and a mattress left outside in rain or snow gets heavy and moldy fast. A scheduled **mattress pickup** keeps it off the curb and out of HOA trouble.",
-      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:Treadmill]]), pianos (from [[item:Piano]]), sofas at [[item:Couch]] per cushion, recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
+      "Beyond mattresses, our **bulky item removal** covers treadmills ([[item:treadmill]]), pianos ([[item:piano]]), a small couch at [[item:couch-small]], a large sectional at [[item:sectional-large]], recliners, dressers, armoires and exercise equipment — anything too big or heavy to handle yourself.",
       "**Landlords and property managers**: we clear multiple mattresses and furniture from rentals and tenant turnovers in one trip, with one invoice. Bigger jobs are priced by trailer space, from **[[load:2]]** for a quarter trailer up to **[[load:8]]** for a full load.",
       "**Bed frames and headboards.** Metal bed frames, wooden platform bed frames, bunk bed frames, daybeds, trundles and headboards all go too. We bring the tools to take bed frames apart in the room, so they fit down the stairs without scraping walls.",
       "**Adjustable bases and heavy beds.** Power adjustable bases, split-king frames and memory foam mattresses can weigh well over 100 pounds. We unplug them, break them down when possible, and carry them out with two people so nothing gets dropped on the stairs or scraped against a wall.",
@@ -370,7 +370,7 @@ const RAW_CUSTOM_PAGES: Record<
 
     ],
     faqs: [
-      ["How much does mattress removal cost in Aurora?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price."],
+      ["How much does mattress removal cost in Aurora?", "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]]. Larger jobs are priced by trailer space starting at our [[min]] minimum. Text photos to " + PHONE + " for a firm price."],
       ["Do you carry the mattress out of my home?", "Yes. We remove mattresses from any room, including upstairs bedrooms, basements and apartments. You never have to move it yourself."],
       ["What sizes do you take?", "All of them — twin, full, queen, king and California king, plus box springs, futons, crib mattresses and adjustable bases."],
       ["What happens to my old mattress?", "Usable mattresses go to donation when partners accept them. Others go to recycling when possible, keeping as much as we can out of the landfill."],
@@ -414,7 +414,7 @@ const RAW_CUSTOM_PAGES: Record<
     intro: [
       "Need **appliance removal in Denver**? We haul refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters from your kitchen, basement or garage.",
       "We do the lifting, use dollies and straps on the stairs, and protect your floors on the way out.",
-      "Appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each depending on size, and a single item falls under our [[min]] minimum. Fridges and freezers with Freon have a [[adj:freon]] handling fee.",
+      "Appliances run [[item:fridge-full]] for a full-size fridge or freezer. Other sizes are a call or text for a quote. A single item falls under our [[min]] minimum. Fridges and freezers with Freon have a [[adj:freon]] handling fee.",
     ],
     localHeading: "Old Appliance Pickup Anywhere in Denver",
     localText: [
@@ -427,7 +427,7 @@ const RAW_CUSTOM_PAGES: Record<
         heading: "Fridge Removal in Denver",
         paragraphs: [
           "**Fridge removal** is our most common Denver appliance job. We take full-size, side-by-side, French door and garage fridges, plus mini fridges and chest freezers. Empty the food, unplug it a day early so it defrosts, and shut off the ice-maker line. We do the rest.",
-          "A full-size refrigerator is about [[item:Refrigerator (full size)]] and a side-by-side is about [[item:Refrigerator (side by side)]]. The [[adj:freon]] fee covers proper handling of the refrigerant.",
+          "A full-size refrigerator is about [[item:fridge-full]]. A side-by-side is a call or text for a quote. The [[adj:freon]] fee covers proper handling of the refrigerant.",
         ],
       },
       {
@@ -447,7 +447,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does appliance removal cost in Denver?",
-        "Most appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]]. A single item falls under our [[min]] minimum. Fridges and freezers add a [[adj:freon]] Freon fee.",
+        "Most appliances run [[item:fridge-full]] for a full-size fridge or freezer. Other sizes are a call or text for a quote. A single item falls under our [[min]] minimum. Fridges and freezers add a [[adj:freon]] Freon fee.",
       ],
       [
         "Do I need to disconnect my appliance first?",
@@ -471,7 +471,7 @@ const RAW_CUSTOM_PAGES: Record<
     intro: [
       "Need **appliance removal in Parker**? We're based here, so old fridges, freezers, washers, dryers, stoves, dishwashers and water heaters are usually on our trailer within a few days.",
       "Our crew carries the appliance out of the kitchen, laundry room, basement or garage. You don't drag anything to the curb.",
-      "Appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] each, a single item falls under our [[min]] minimum, and fridges and freezers have a [[adj:freon]] handling fee.",
+      "Appliances run [[item:fridge-full]] for a full-size fridge or freezer. Other sizes are a call or text for a quote. A single item falls under our [[min]] minimum, and fridges and freezers have a [[adj:freon]] handling fee.",
     ],
     localHeading: "Fridge Removal and Appliance Disposal Across Parker",
     localText: [
@@ -483,7 +483,7 @@ const RAW_CUSTOM_PAGES: Record<
     faqs: [
       [
         "How much does appliance removal cost in Parker?",
-        "Most appliances run [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]]. A single item falls under our [[min]] minimum, and fridges and freezers add a [[adj:freon]] fee.",
+        "Most appliances run [[item:fridge-full]] for a full-size fridge or freezer. Other sizes are a call or text for a quote. A single item falls under our [[min]] minimum, and fridges and freezers add a [[adj:freon]] fee.",
       ],
       [
         "Will Parker trash pickup take my old fridge?",

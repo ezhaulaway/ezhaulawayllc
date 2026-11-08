@@ -45,7 +45,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { PHONE, PHONE_TEL } from "@/content/site";
+import { HOURS_TEXT, PHONE, PHONE_DISPLAY, PHONE_TEL } from "@/content/site";
 import { PROMO } from "@/content/promo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { services, locations } from "@/content/navigation";
@@ -477,8 +477,8 @@ export function SiteFooter() {
             <address className="mt-6 not-italic text-sm leading-6 text-secondary-foreground/70">
               <span className="block font-bold text-secondary-foreground">EZ Haulaway LLC</span>
               <span className="block">Parker, CO 80134</span>
-              <a href={`tel:${PHONE_TEL}`} className="block hover:text-secondary-foreground">(720) 614-7223</a>
-              <span className="block">Mon–Sat 7:00 AM – 7:00 PM · Sun Closed</span>
+              <a href={`tel:${PHONE_TEL}`} className="block hover:text-secondary-foreground">{PHONE_DISPLAY}</a>
+              <span className="block">{HOURS_TEXT}</span>
               <span className="block">Serving Douglas County &amp; the Denver metro</span>
             </address>
           </div>

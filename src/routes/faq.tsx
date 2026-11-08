@@ -4,6 +4,7 @@ import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
+import { serviceAreaList } from "@/content/service-areas";
 import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
 
 const title = "Junk Removal FAQ: Prices & Answers | EZ Haulaway";
@@ -58,7 +59,7 @@ const raw_groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
         question: "How much does junk removal cost in Parker and the Denver metro area?",
         paragraphs: [
           "We price by how much room your junk takes up in our dump trailer, and we confirm the number in person before anything is loaded. A minimum load starts at [[min]]. A quarter trailer runs [[load:2]], a half trailer is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. Extra labor beyond normal loading is [[labor]] per hour.",
-          "There is no travel fee inside our service area, no fuel surcharge, and no dump-fee add-on after the fact. The price we say out loud is the price you pay.",
+          "There is [[travel]]. We do not add a fuel surcharge or a dump-fee add-on after the fact. The price we say out loud is the price you pay.",
         ],
       },
       {
@@ -70,7 +71,7 @@ const raw_groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
       {
         question: "What do individual items cost to haul away?",
         paragraphs: [
-          "Common single items: mattress [[item:Mattress]], box spring [[item:Box spring]], couch [[item:Couch]] per cushion, refrigerator or washer [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], treadmill [[item:Treadmill]], piano from [[item:Piano]], and hot tub removal from [[item:Hot tub]]. Sheds generally run [[load:4]] to [[load:8]] depending on size and construction. Single-item pickups still fall under the [[min]] minimum load.",
+          "Common single items: a mattress is [[item:mattress]], a box spring is [[item:box-spring]], a small couch (2–3 seats) is [[item:couch-small]], a full-size fridge or freezer is [[item:fridge-full]], a washer or dryer is [[item:washer-dryer]], a treadmill is [[item:treadmill]], and a piano is [[item:piano]]. A standard hot tub (4–6 people) is [[item:hot-tub-standard]], a small one is [[item:hot-tub-small]], and a large spa or swim spa is [[item:hot-tub-large]]. For a side-by-side refrigerator or any item not on that list, call or text for a quote. Sheds generally run [[load:4]] to [[load:8]] depending on size and construction. Single-item pickups still fall under the [[min]] minimum load.",
         ],
       },
     ],
@@ -82,7 +83,7 @@ const raw_groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
       {
         question: "Can I just text photos to get a quote?",
         paragraphs: [
-          `Yes, and it is the fastest way. Text photos of the pile, room, or item to ${PHONE} and we will send back a price range, usually the same day. You can also use the instant estimate tool on our pricing page — upload up to four photos, describe the job, and it returns a preliminary price range in under a minute.`,
+          `Yes, and it is the fastest way. Text photos of the pile, room, or item to ${PHONE} and we will send back a price range, usually the same day. You can also use the instant estimate at /instant-estimate — upload up to four photos, describe the job, and it returns a preliminary price from our current guide.`,
         ],
       },
       {
@@ -142,7 +143,7 @@ const raw_groups: { heading: string; eyebrow: string; items: Answer[] }[] = [
       {
         question: "Which towns do you serve?",
         paragraphs: [
-          "Parker, Castle Rock, Castle Pines, Centennial, Highlands Ranch, Lone Tree, Littleton, Englewood, Denver, Aurora, Lakewood, Elizabeth, Franktown, and Sedalia. If your town is nearby but not on that list, ask — we usually still come out.",
+          `${serviceAreaList()}. If your town is nearby but not on that list, ask — there is [[travel]] when the job is beyond that distance from Parker.`,
         ],
       },
       {

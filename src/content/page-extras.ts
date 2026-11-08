@@ -1,3 +1,5 @@
+import { serviceAreaList } from "@/content/service-areas";
+import { PHONE } from "@/content/site";
 import { priced } from "@/lib/price-store";
 type Extra = { eyebrow: string; title: string; blocks: Array<[string, string]> };
 
@@ -6,13 +8,13 @@ const raw_pageExtras = {
     eyebrow: "Local junk removal",
     title: "Why Parker Homeowners Call EZ Haulaway",
     blocks: [
-      ["How much does junk removal cost in Parker?", "Our **junk removal services** are priced by how much space your junk takes in our 16-foot trailer. Small pickups start at a [[min]] minimum. A half load is about [[load:4]], and a full trailer is about [[load:8]]. That price covers labor, loading, hauling, and disposal fees, so junk removal stays **affordable** with no surprise fuel or mileage charges. We **agree** on the upfront price before loading starts, and we **accept** all standard payment methods once your unwanted items are completely **removed**."],
-      ["Get a free estimate from pictures", "Want a **free estimate** fast? Text pictures of your items to 720-614-7223, or upload pictures to our instant estimator. A few pictures from different angles help us price your junk removal accurately before we ever show up. You can also **check** our availability and book a pickup window online in about a minute."],
+      ["How much does junk removal cost in Parker?", "Our **junk removal services** are priced by how much space your junk takes in our 16-foot trailer. Small pickups start at a [[min]] minimum. A half load is about [[load:4]], and a full trailer is about [[load:8]]. That price covers labor, loading, hauling, and disposal fees. There is [[travel]]. We **agree** on the upfront price before loading starts, and we **accept** all standard payment methods once your unwanted items are completely **removed**."],
+      ["Get a free estimate from pictures", `Want a **free estimate** fast? Text pictures of your items to ${PHONE}, or upload pictures to our instant estimator at /instant-estimate. A few pictures from different angles help us price your junk removal accurately before we ever show up. You can also **check** our availability and book a pickup window online in about a minute.`],
       ["Full-service junk removal vs. renting a dumpster", "A **dumpster rental** sits in your driveway for days, may need a permit, and you still load it yourself. With full-service junk removal, our crew does **all the heavy lifting**, the trailer leaves the same day, and the price includes disposal. For most homeowners, junk removal is the more convenient and affordable choice over a dumpster."],
       ["What does EZ Haulaway pick up?", "**Old furniture** like couches and tables, mattresses, appliances, hot tubs, sheds, decks, yard waste, remodel debris, and full garage or whole-house cleanouts. If it's not hazardous and two people can load it, our junk removal crew can usually take it."],
       ["We handle all the heavy lifting", "You don't need to drag anything to the curb. We carry items out of the house, from attics, basements, bedrooms, and garages. **Heavy lifting** is our job, so you can just point and we'll haul it away."],
       ["Yard waste and debris removal", "Our **debris removal** covers branches, brush, old fencing, landscape waste, and storm cleanup. Construction debris removal for remodels and deck tear-outs is part of our everyday junk removal work too."],
-      ["Serving Parker, Castle Rock, and the Denver metro", "From our Parker **location**, we provide **efficient**, **timely**, and **reliable** junk removal services daily in Castle Rock, Castle Pines, Highlands Ranch, Lone Tree, Centennial, Aurora, Littleton, Englewood, Lakewood, Denver, Elizabeth, Franktown, and Sedalia."],
+      ["Serving Parker, Castle Rock, and the Denver metro", `From our Parker **location**, we provide **efficient**, **timely**, and **reliable** junk removal services in ${serviceAreaList()}.`],
       ["Donate, recycle, then dispose", "Every junk removal load is sorted before it heads to the landfill. Usable old furniture goes toward donation, and metal, appliances, and electronics are recycled whenever possible."],
       ["Same-day junk removal pickup", "Moving day, a closing date, or a rental turnover can't wait. We keep room for **same-day pickup** and next-day junk removal in Parker, Castle Rock, Lone Tree, Centennial, and Denver whenever the trailer is free."],
       ["Mattress, couch, and appliance pickup", "Most calls start with one item: mattress disposal, couch disposal, a refrigerator, a washer and dryer, or a treadmill. A **single-item pickup** starts at [[min]], and we carry it out of the house ourselves."],
@@ -32,7 +34,7 @@ const raw_pageExtras = {
     eyebrow: "Quick answers",
     title: "Before You Reach Out",
     blocks: [
-      ["Best way to get a fast price", "Text a few photos of the items or the space to 720-614-7223. Photos from a couple of angles, plus a note about stairs or long carries, let us give you an accurate junk removal quote quickly."],
+      ["Best way to get a fast price", `Text a few photos of the items or the space to ${PHONE}. Photos from a couple of angles, plus a note about stairs or long carries, let us give you an accurate junk removal quote quickly.`],
       ["Scheduling", "We work throughout the week across Parker and the Denver metro area and can often fit jobs in within a few days. Let us know if you have a deadline, such as a move-out or closing date."],
       ["What to have ready", "Nothing, really. You don't need to bag, sort, or move items to the curb. Just make sure we can access the area, and our crew handles the rest."],
       ["Need same-day junk removal?", "Call or text if it's urgent. Same-day and next-day junk removal in Parker, Castle Rock, Lone Tree, Centennial, and Denver is often possible when the trailer isn't already booked."],
@@ -51,10 +53,10 @@ const raw_pageExtras = {
     eyebrow: "Pricing examples",
     title: "What Typical Jobs Cost",
     blocks: [
-      ["Single items", "One couch, mattress, or appliance usually falls near our [[min]] minimum. Couches are about [[item:Couch]] per cushion, mattresses [[item:Mattress]], box springs [[item:Box spring]], refrigerators [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], and treadmills [[item:Treadmill]]."],
+      ["Single items", "One couch, mattress, or appliance usually falls near our [[min]] minimum. A small couch is [[item:couch-small]], a mattress is [[item:mattress]], a box spring is [[item:box-spring]], a full-size fridge or freezer is [[item:fridge-full]], and a treadmill is [[item:treadmill]]. A side-by-side refrigerator is a call or text for a quote."],
       ["Garage and room cleanouts", "Most garage cleanouts and single-room cleanouts fill a quarter to a half trailer, roughly [[load:2]] to [[load:4]], depending on weight and access."],
-      ["Whole-house and large projects", "Estate cleanouts, remodel debris, and deck tear-outs can fill a full trailer — about [[load:8]] — or more than one load. Hot tubs start around [[item:Hot tub]] and pianos around [[item:Piano]]."],
-      ["Specialty removal and disposal pricing", "Some jobs are priced by the item instead of by trailer space: hot tub removal from [[item:Hot tub]], piano removal from [[item:Piano]], mattress disposal [[item:Mattress]], box spring [[item:Box spring]], couch disposal about [[item:Couch]] per cushion, refrigerator disposal [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]], and treadmill removal [[item:Treadmill]]."],
+      ["Whole-house and large projects", "Estate cleanouts, remodel debris, and deck tear-outs can fill a full trailer — about [[load:8]] — or more than one load. A standard hot tub is [[item:hot-tub-standard]] and pianos are [[item:piano]]."],
+      ["Specialty removal and disposal pricing", "Some jobs are priced by the item instead of by trailer space: a standard hot tub is [[item:hot-tub-standard]], piano removal is [[item:piano]], mattress disposal [[item:mattress]], box spring [[item:box-spring]], a small couch is [[item:couch-small]], a full-size fridge or freezer is [[item:fridge-full]], and a treadmill is [[item:treadmill]]. A side-by-side refrigerator is a call or text for a quote."],
       ["Cheaper than a dumpster rental", "A dumpster in Denver sits in your driveway for a week and you still load it yourself. Our price includes the labor, the loading, the hauling, and the disposal fees, and the trailer leaves the same day."],
     ],
   },
@@ -68,7 +70,7 @@ const raw_pageExtras = {
       ["Arapahoe, Elbert, and Jefferson Counties", "We regularly haul junk in Centennial, Aurora, Littleton, Englewood, Elizabeth, and Lakewood, from suburban garages to rural acreage cleanups."],
       ["Denver", "From alley pickups to bungalow basement cleanouts, we serve Denver neighborhoods with the same straightforward pricing we offer everywhere else."],
       ["Specialty hauling in every city we serve", "Hot tub removal in Castle Rock, deck demolition in Highlands Ranch, shed removal in Parker, mattress disposal in Denver, and estate cleanouts in Littleton — the same crew and the same trailer covers all of it."],
-      ["Searching for junk removal near you", "If you're looking up junk removal near me in Parker, Castle Rock, Centennial, Highlands Ranch, Aurora, Littleton, or Denver, you're inside our normal route, so there's no travel surcharge."],
+      ["Searching for junk removal near you", "If you're looking up junk removal near me in Parker, Castle Rock, Monument, Centennial, Highlands Ranch, Aurora, Littleton, or Denver, send photos for a quote. There is [[travel]]."],
     ],
   },
   "what-we-take": {

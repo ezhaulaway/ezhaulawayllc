@@ -3,7 +3,7 @@ import { priced } from "@/lib/price-store";
 const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string }> }>; faqs: Array<[string, string]> }> = {
 "appliance-removal": {
     sections: [
-      { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area typically runs [[item:Refrigerator (full size)]] to [[item:Refrigerator (side by side)]] per unit, and we can add other junk to the same trip." },
+      { heading: "Refrigerators, freezers, washers, dryers, and more", text: "Old appliances are heavy, awkward, and often stuck in basements or laundry rooms with tight turns. Our crew disconnects nothing live, but once your unit is unplugged and water lines are shut off, we handle the dolly work, the stairs, and the loading. Refrigerator removal in Parker and the Denver metro area is [[item:fridge-full]] for a full-size fridge or freezer. Other sizes are a call or text for a quote, and we can add other junk to the same trip." },
       { heading: "Responsible appliance disposal", text: "Refrigerators and freezers contain refrigerants that need proper handling, and most appliances hold recyclable steel and copper. We route working units toward donation when possible and send the rest to facilities that recycle the metal instead of burying it in a landfill." },
       { heading: "Fridge removal made simple", text: "**Fridge removal** is our most common appliance call. Full-size, side-by-side, French door, garage beer fridges, mini fridges and chest freezers all go. Empty the food, unplug it a day early so it can defrost, and shut off the ice-maker water line. We handle the dolly, the stairs and the haul away. Fridges and freezers carry a [[adj:freon]] handling fee for the refrigerant." },
       { heading: "Appliance recycling, not the landfill", text: "**Appliance recycling** keeps tons of steel, copper and aluminum in use. We take fridges and freezers to recyclers that recover the refrigerant first, and other appliances to scrap metal recyclers. Washers, dryers, stoves, dishwashers and water heaters are mostly metal, so very little of an appliance ends up buried." },
@@ -12,7 +12,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     faqs: [
       ["Do I need to empty the fridge first?", "Yes, please empty food and remove loose shelves if you can. We'll take care of the rest, including carrying it out of the kitchen or basement."],
       ["Can you take an appliance from a basement?", "Yes. Basement and upstairs appliance removal is part of what we do — just mention it when you request your quote so we plan the right crew."],
-      ["How do I get rid of an old refrigerator?", "Empty it, unplug it and shut off the water line. Then book fridge removal. We carry it out and take it to a recycler that handles the refrigerant. A full-size fridge is about [[item:Refrigerator (full size)]]."],
+      ["How do I get rid of an old refrigerator?", "Empty it, unplug it and shut off the water line. Then book fridge removal. We carry it out and take it to a recycler that handles the refrigerant. A full-size fridge is about [[item:fridge-full]]."],
       ["Do you recycle appliances?", "Yes. Fridges and freezers go to recyclers that recover the refrigerant, and other appliances go to scrap metal recycling whenever possible."],
     ],
   },
@@ -58,7 +58,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
     sections: [
       { heading: "How to get rid of a couch or sofa", text: "You have four main options: donate it, sell it, put it out for bulk trash, or hire couch removal. Donation centers usually want clean pieces with no rips or stains. Bulk trash often means dragging it to the curb yourself. Our couch removal service is the easy route: we remove a couch from any room, carry it out, and haul it away the same visit." },
       { heading: "Furniture removal services we offer", text: "Our furniture removal services cover sofas, sectionals, recliners, dressers, tables, chairs, desks, and office furniture. Need one piece gone or a whole house? Either way, we're a local furniture removal company that does the lifting, loading, and disposal for you." },
-      { heading: "Couch, sectional, and table removal pricing", text: "Couches are priced at about [[item:Couch]] per cushion. Larger furniture loads are priced by how much trailer space they take, starting at our [[min]] minimum. You'll know the exact number before we lift anything." },
+      { heading: "Couch, sectional, and table removal pricing", text: "A small couch (2–3 seats) is [[item:couch-small]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. Larger furniture loads are priced by how much trailer space they take, starting at our [[min]] minimum. You'll know the exact number before we lift anything." },
       { heading: "Donation first when furniture is still usable", text: "A lot of furniture we pick up still has life in it. When pieces are in good shape, we set them aside for local donation rather than the landfill, so your old dresser or dining set can help another Denver-area family." },
       { heading: "Sofa removal and furniture hauling in Denver", text: "Sofas, sectionals, sleeper sofas, and recliners are the most common furniture we haul in Denver. Sleeper sofas are heavy and awkward, and older Denver homes have narrow doors and steep stairs. We bring the hands and tools to get it out without scraping walls. Alley pickups, walkup apartments, and basements are all part of the job." },
       { heading: "Couch removal, sectionals, and heavy pieces", text: "**Couch removal** is our most common call. We take **sleeper sofas**, reclining sectionals, loveseats, and futons, and we break down oversized pieces when they won't clear a doorway. Our two-person crew does **all the heavy lifting**, so nobody in your house strains a back on the stairs." },
@@ -72,7 +72,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
       ["What's the easiest way to dispose of a sofa?", "Book sofa removal. We carry it out of the house, load it, and haul it away. You don't need a truck or helpers."],
       ["Can you take furniture the same week?", "Usually, yes. Send photos and we'll offer the soonest available time that works for you."],
       ["Do I need to disassemble anything?", "No. If a piece needs to come apart to get out a door, our crew handles it."],
-      ["How much does sofa removal cost in Denver?", "Couches are about [[item:Couch]] per cushion. A single sofa usually lands near our [[min]] minimum. Sectionals and bigger loads are priced by trailer space."],
+      ["How much does sofa removal cost in Denver?", "A small couch is [[item:couch-small]] and a large sectional is [[item:sectional-large]]. A single sofa usually lands near our [[min]] minimum. Bigger loads are priced by trailer space."],
       ["Do you remove sleeper sofas and sectionals?", "Yes. Sleeper sofas, sectionals, and power recliners are heavy, but our crew handles them every week."],
       ["Do you donate furniture?", "Yes. If a piece is clean and in good shape, we set it aside for local donation instead of the landfill."],
     ],
@@ -124,7 +124,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
   },
 "hot-tub-removal": {
     sections: [
-      { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "Hot tub removal in Denver and the south metro starts around [[item:Hot tub]] for a standard backyard spa. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
+      { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "A standard backyard spa (4–6 people) is [[item:hot-tub-standard]]. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
       { heading: "Safe electrical shutoff before we cut", text: "Safety comes first. The spa circuit gets shut off at the breaker, and **hard-wired 240-volt tubs** should be disconnected by a licensed electrician before we arrive. Once the tub is safely dead, our crew handles the **spa removal** from start to finish." },
       { heading: "Swim spas, in-ground tubs, and gazebos", text: "We remove **swim spas**, jetted tubs, inflatable spas, and old **gazebos or pergolas** that cover them. Spas set into a deck can come out together with the surrounding framing, so you get one crew, one visit, and **one upfront price** for the whole backyard project." },
       { heading: "Where your old spa goes", text: "A hot tub is mostly wood, foam, plastic, and metal. We separate the **metal parts for recycling** — pumps, heaters, and frames — and haul the rest to a licensed disposal site. It is **responsible disposal**, not a pile behind a fence." },
@@ -134,7 +134,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
       { heading: "Tight gates, decks, and second-story patios", text: "Most spas were set in place before the fence went up, so the only way out is to cut. We protect gates, siding, and landscaping while we work, and we can remove a spa surround or deck section at the same time if the tub is built in." },
     ],
     faqs: [
-      ["How much does hot tub removal cost in Denver?", "Most hot tub removals start around [[item:Hot tub]] and go up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
+      ["How much does hot tub removal cost in Denver?", "A standard hot tub is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. The price goes up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
       ["Do you disconnect the electrical?", "We shut off the breaker and disconnect the whip at the tub, but any panel work should be done by a licensed electrician."],
     ],
   },
@@ -150,13 +150,13 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
   },
 "mattress-and-bulky-item-removal": {
     sections: [
-      { heading: "Mattress disposal, box spring removal, and large item pickup", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are [[item:Mattress]], box springs [[item:Box spring]], treadmills [[item:Treadmill]], and pianos start around [[item:Piano]]. Mattresses, box springs, bed frames, and exercise equipment all come out of the room they're in, not just off the curb." },
+      { heading: "Mattress disposal, box spring removal, and large item pickup", text: "Mattress disposal in Denver is one of the most searched junk problems in Colorado, and it's simple with us: mattresses are [[item:mattress]], box springs [[item:box-spring]], treadmills [[item:treadmill]], and pianos are [[item:piano]]. Mattresses, box springs, bed frames, and exercise equipment all come out of the room they're in, not just off the curb." },
       { heading: "Stairs, apartments, and awkward turns", text: "Bulky items rarely come out the way they went in. We bring straps, dollies, and the extra hands to get a king mattress down a stairwell or a box spring through a narrow hallway without damaging walls or doorframes." },
       { heading: "Why mattress disposal in Denver is a hassle", text: "Most Denver trash pickup won't take a mattress with the regular cans, and many dumps charge extra or refuse them. Mattresses also don't fit in most cars. We pick it up from your bedroom, load it, and handle the disposal fee. Clean mattresses can often be recycled for their steel, foam, and wood." },
       { heading: "How to get ready for mattress pickup", text: "Strip the sheets and mattress cover. If the bed frame is staying, leave it. If it's going, we can take it apart for you. That's it — you don't need to bag it or carry it downstairs." },
     ],
     faqs: [
-      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:Mattress]] and a box spring is [[item:Box spring]]. If they're part of a bigger load, we price the whole load by trailer space instead."],
+      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]]. If they're part of a bigger load, we price the whole load by trailer space instead."],
       ["Can you take just one mattress?", "Yes. A single mattress pickup usually falls near our [[min]] minimum, and we'll carry it out for you."],
       ["Does Denver trash pickup take mattresses?", "Usually not with regular trash. Denver's large-item pickup is limited and scheduled weeks out. We can often come the same week."],
       ["Can you take a mattress from an upstairs bedroom or apartment?", "Yes. We carry it down the stairs and out the door. Third-floor walkups and tight stairwells are no problem."],

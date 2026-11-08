@@ -10,6 +10,7 @@ import areaHighlandsRanch from "@/assets/branded-area-highlands-ranch.webp";
 import areaLakewood from "@/assets/branded-area-lakewood.webp";
 import areaLittleton from "@/assets/branded-area-littleton.webp";
 import areaLoneTree from "@/assets/branded-area-lone-tree.webp";
+import areaMonument from "@/assets/branded-trailer-base.webp";
 import areaParker from "@/assets/real-parker-crew-trailer-1200.webp";
 import areaSedalia from "@/assets/branded-area-sedalia.webp";
 
@@ -28,6 +29,11 @@ export const locationPhotos: Record<string, LocationPhoto> = {
     alt: "EZ Haulaway crew with the red truck and 14-yard dump trailer on a Parker, CO street after a junk removal job",
     caption:
       "The EZ Haulaway crew and our 14-yard dump trailer on a Parker, CO street — we load everything and haul it away in a single visit.",
+  },
+  monument: {
+    src: areaMonument,
+    alt: "EZ Haulaway dump trailer used for junk removal, including trips to Monument, CO",
+    caption: "The dump trailer we bring to Monument, CO. Send photos of the items and the access, and we confirm the price before we schedule.",
   },
   "castle-rock": {
     src: areaCastleRock,

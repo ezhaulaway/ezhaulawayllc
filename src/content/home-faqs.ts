@@ -1,3 +1,5 @@
+import { PHONE } from "@/content/site";
+
 /** Shared by the homepage accordion and its structured data. */
 export const homeFaqs = [
   [
@@ -26,7 +28,7 @@ export const homeFaqs = [
   ],
   [
     "Can I text photos?",
-    "Yes. Text photos and job details to 720-614-7223 so we can better understand what you need removed.",
+    `Yes. Text photos and job details to ${PHONE} so we can better understand what you need removed.`,
   ],
   [
     "Do you handle the lifting?",

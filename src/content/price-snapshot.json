@@ -1,0 +1,174 @@
+{
+  "minimum": 120,
+  "laborRate": 50,
+  "loads": [
+    {
+      "label": "Minimum / small load",
+      "price": 120,
+      "volume": "Small pickup",
+      "eighths": 0,
+      "shortLabel": "Min"
+    },
+    {
+      "label": "1/8 trailer",
+      "price": 120,
+      "volume": "1.75 yd\u00b3",
+      "eighths": 1,
+      "shortLabel": "\u215b"
+    },
+    {
+      "label": "1/4 trailer",
+      "price": 240,
+      "volume": "3.5 yd\u00b3",
+      "eighths": 2,
+      "shortLabel": "\u00bc"
+    },
+    {
+      "label": "3/8 trailer",
+      "price": 360,
+      "volume": "5.25 yd\u00b3",
+      "eighths": 3,
+      "shortLabel": "\u215c"
+    },
+    {
+      "label": "1/2 trailer",
+      "price": 420,
+      "volume": "7.0 yd\u00b3",
+      "eighths": 4,
+      "shortLabel": "\u00bd"
+    },
+    {
+      "label": "5/8 trailer",
+      "price": 540,
+      "volume": "8.75 yd\u00b3",
+      "eighths": 5,
+      "shortLabel": "\u215d"
+    },
+    {
+      "label": "3/4 trailer",
+      "price": 660,
+      "volume": "10.5 yd\u00b3",
+      "eighths": 6,
+      "shortLabel": "\u00be"
+    },
+    {
+      "label": "7/8 trailer",
+      "price": 780,
+      "volume": "12.25 yd\u00b3",
+      "eighths": 7,
+      "shortLabel": "\u215e"
+    },
+    {
+      "label": "Full trailer",
+      "price": 840,
+      "volume": "14 yd\u00b3",
+      "eighths": 8,
+      "shortLabel": "Full"
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "freon",
+      "label": "Freon appliance (fridge, freezer, AC, dehumidifier) \u2014 per unit",
+      "amount": 100
+    },
+    {
+      "id": "heavy",
+      "label": "Heavy materials (concrete, dirt, rock, tile, shingles) \u2014 per cubic yard, 2 yd\u00b3 minimum, priced on their own",
+      "amount": 225
+    },
+    {
+      "id": "9737cd7e-dced-478c-afc6-48acdf775769",
+      "label": "Distance fee \u2014 job more than 30 miles from Parker",
+      "amount": 50
+    }
+  ],
+  "discounts": [
+    {
+      "id": "5e7755f5-c7f9-496e-b33f-1fcc6376b3e3",
+      "label": "Curbside pickup",
+      "amount": 50
+    },
+    {
+      "id": "dde5fe81-1e9a-4a27-ab86-bfa0e006cbf6",
+      "label": "Free tv/computer removal",
+      "amount": 0
+    },
+    {
+      "id": "e5338475-21f3-4353-9dc4-15b1423f71c9",
+      "label": "Military Discount",
+      "amount": 25
+    }
+  ],
+  "specialty": [
+    {
+      "item": "Hot tub \u2014 small (2\u20133 person), flat rate",
+      "price": 400
+    },
+    {
+      "item": "Hot tub \u2014 standard (4\u20136 person), flat rate",
+      "price": 500
+    },
+    {
+      "item": "Hot tub \u2014 large (7+ person / swim spa), flat rate",
+      "price": 700
+    },
+    {
+      "item": "Mattress",
+      "price": 150
+    },
+    {
+      "item": "Box spring",
+      "price": 75
+    },
+    {
+      "item": "Fridge / Freezer (full size)",
+      "price": 150
+    },
+    {
+      "item": "Washer / dryer (each)",
+      "price": 100
+    },
+    {
+      "item": "Water heater",
+      "price": 125
+    },
+    {
+      "item": "Dresser",
+      "price": 85
+    },
+    {
+      "item": "Treadmill",
+      "price": 150
+    },
+    {
+      "item": "Piano (starting)",
+      "price": 375
+    },
+    {
+      "item": "TV / monitor",
+      "price": 40
+    },
+    {
+      "item": "BBQ grill",
+      "price": 75
+    },
+    {
+      "item": "Couch small (2-3 seat)",
+      "price": 150
+    },
+    {
+      "item": "Recliner/loveseat",
+      "price": 125
+    },
+    {
+      "item": "Sleeper Couch",
+      "price": 250
+    },
+    {
+      "item": "Sectional couch large (6+ seats)",
+      "price": 350
+    }
+  ],
+  "updatedAt": "2026-10-30T19:51:18.158506+00:00"
+}

@@ -2,7 +2,7 @@
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { PageShell, CtaBand } from "@/components/site-chrome";
-import { SITE_URL } from "@/content/site";
+import { HOURS_TEXT, PHONE, SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_RELATED } from "@/content/blog-links";
@@ -113,7 +113,7 @@ function BlogPost() {
       )}
       <CtaBand
         title="Need it gone? Get a free photo quote."
-        text={priceText("Send a few photos or call or text 720-614-7223, Monday to Saturday, 7am to 7pm. Small pickups start at [[min]].")}
+        text={priceText(`Send a few photos or call or text ${PHONE}. Hours: ${HOURS_TEXT}. Small pickups start at [[min]].`)}
       />
     </PageShell>
   );
