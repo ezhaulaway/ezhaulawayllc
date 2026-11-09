@@ -2,7 +2,7 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { BUSINESS_NAME, FACEBOOK_URL, GOOGLE_REVIEWS_URL, OPENING_HOURS_SPEC, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
+import { BUSINESS_JSONLD, OPENING_HOURS_SPEC, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/")({
         children: priceText(JSON.stringify({
           "@context": "https://schema.org",
           "@type": "JunkRemovalService",
-          name: BUSINESS_NAME,
+          ...BUSINESS_JSONLD,
           description:
             "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Trailer load pricing from [[min]] with full cleanup included.",
           url: SITE_URL,
@@ -89,7 +89,6 @@ export const Route = createFileRoute("/")({
             addressRegion: "CO",
             addressCountry: "US",
           },
-          sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
           makesOffer: {
             "@type": "AggregateOffer",
             priceCurrency: "USD",
@@ -105,7 +104,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": `${SITE_URL}/#localbusiness`,
-          name: BUSINESS_NAME,
+          ...BUSINESS_JSONLD,
           url: SITE_URL,
           telephone: PHONE_E164,
           priceRange: "[[min]] - [[load:8]]",
@@ -121,7 +120,6 @@ export const Route = createFileRoute("/")({
             longitude: -104.8064,
           },
           openingHoursSpecification: OPENING_HOURS_SPEC,
-          sameAs: [GOOGLE_REVIEWS_URL, FACEBOOK_URL],
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: (loaderData ?? BASELINE_RATING).rating.toFixed(1),

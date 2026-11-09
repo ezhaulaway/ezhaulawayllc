@@ -1,13 +1,13 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GOOGLE_REVIEWS_URL, reviews as fallbackReviews } from "@/content/site";
+import { GOOGLE_PROFILE_URL, GOOGLE_REVIEW_URL, reviews as fallbackReviews } from "@/content/site";
 export type Review = { name: string; text: string; rating: number; relativeTime: string; authorPhoto: string | null; reviewUrl: string | null };
 export type ReviewsData = { reviews?: Review[]; mapsUri?: string | null; rating?: number | null; totalCount?: number | null };
 export const fallback: Review[] = fallbackReviews.map((review) => ({ ...review, rating: 5, relativeTime: "", authorPhoto: null, reviewUrl: null }));
 export function ReviewsView({ data }: { data?: ReviewsData | null | undefined }) {
   const live = data?.reviews ?? [];
   const list = live.length > 0 ? live : fallback;
-  const mapsUri = data?.mapsUri ?? GOOGLE_REVIEWS_URL;
+  const profileUrl = data?.mapsUri && !data.mapsUri.includes("share.google") ? data.mapsUri : GOOGLE_PROFILE_URL;
   return (
     <>
       {data?.rating && data.totalCount ? (
@@ -51,12 +51,12 @@ export function ReviewsView({ data }: { data?: ReviewsData | null | undefined })
       </div>
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
         <Button asChild variant="outline">
-          <a href={mapsUri} target="_blank" rel="noopener noreferrer">
+          <a href={profileUrl} target="_blank" rel="noopener noreferrer">
             Read More Reviews on Google
           </a>
         </Button>
         <Button asChild>
-          <a href={`${mapsUri}`} target="_blank" rel="noopener noreferrer">
+          <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
             Leave Us a Review
           </a>
         </Button>
