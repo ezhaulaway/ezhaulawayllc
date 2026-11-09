@@ -6,6 +6,7 @@ import { locations } from "@/content/locations";
 import { LIVE_CITIES } from "@/content/live-pages";
 import { locations as navLocations } from "@/content/navigation";
 import { SERVICE_AREAS } from "@/content/service-areas";
+import { retiredCityRedirect } from "@/lib/retired-cities";
 import { BUSINESS_ID, PHONE } from "@/content/site";
 import { buildLlmsText } from "@/lib/llms-text";
 import {
@@ -79,7 +80,7 @@ function renderedSite(guide: PriceGuide): string {
     buildEstimatorInstructions(guide),
     JSON.stringify(publicPricing(guide)),
     priceText(
-      cityFaqs("Monument")
+      cityFaqs("Castle Rock")
         .map((row) => row.join(" "))
         .join("\n"),
       guide,
@@ -212,7 +213,7 @@ describe("one price guide", () => {
 });
 
 describe("one service area and one business", () => {
-  it("publishes Monument from the same city list everywhere", () => {
+  it("publishes one city list and leaves Monument off every public surface", () => {
     const content = locations.map((location) => ({
       slug: location.slug,
       city: location.city,
@@ -225,12 +226,21 @@ describe("one service area and one business", () => {
       SERVICE_AREAS.map((area) => area.slug),
     );
     expect([...LIVE_CITIES]).toEqual(SERVICE_AREAS.map((area) => area.slug));
-    expect(SERVICE_AREAS.map((area) => area.city)).toContain("Monument");
+    expect(SERVICE_AREAS.map((area) => area.city)).not.toContain("Monument");
+    expect(retiredCityRedirect("monument")).toBe("/service-areas");
     const sitemap = readFileSync("public/sitemap.xml", "utf8");
-    expect(sitemap).toContain("https://www.ezhaulawayllc.com/service-areas/monument");
-    expect(buildLlmsText(SNAPSHOT_GUIDE)).toContain("/service-areas/monument");
-    expect(buildLlmsText(SNAPSHOT_GUIDE)).toContain("/instant-estimate");
-    expect(buildLlmsText(SNAPSHOT_GUIDE)).not.toContain("pricing#instant-estimate");
+    expect(sitemap.toLowerCase()).not.toContain("monument");
+    const llms = buildLlmsText(SNAPSHOT_GUIDE);
+    expect(llms.toLowerCase()).not.toContain("monument");
+    expect(llms).toContain("/instant-estimate");
+    expect(llms).not.toContain("pricing#instant-estimate");
+    expect(buildEstimatorInstructions(SNAPSHOT_GUIDE).toLowerCase()).not.toContain("monument");
+    expect(JSON.stringify(publicPricing(SNAPSHOT_GUIDE)).toLowerCase()).not.toContain("monument");
+    const published = walkFiles("src")
+      .filter((path) => !path.endsWith("retired-cities.ts"))
+      .map((path) => readFileSync(path, "utf8"))
+      .join("\n");
+    expect(published.toLowerCase()).not.toContain("monument");
   });
 
   it("keeps a single business id and a single phone literal", () => {

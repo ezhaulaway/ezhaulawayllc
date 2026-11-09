@@ -2,7 +2,8 @@ import { priceText } from "@/lib/price-store";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { retiredCityRedirect } from "@/lib/retired-cities";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +24,7 @@ import { CITY_ANGLES } from "@/content/city-angles";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: async ({ params }) => {
+    if (retiredCityRedirect(params.city)) throw redirect({ to: "/service-areas", statusCode: 301 });
     const { locationBySlug, SPECIALTY_SERVICE_SLUGS } = await import("@/content/locations");
     const location = locationBySlug(params.city);
     if (!location || !isLiveCity(params.city)) throw notFound();

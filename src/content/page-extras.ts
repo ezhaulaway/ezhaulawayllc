@@ -70,7 +70,7 @@ const raw_pageExtras = {
       ["Arapahoe, Elbert, and Jefferson Counties", "We regularly haul junk in Centennial, Aurora, Littleton, Englewood, Elizabeth, and Lakewood, from suburban garages to rural acreage cleanups."],
       ["Denver", "From alley pickups to bungalow basement cleanouts, we serve Denver neighborhoods with the same straightforward pricing we offer everywhere else."],
       ["Specialty hauling in every city we serve", "Hot tub removal in Castle Rock, deck demolition in Highlands Ranch, shed removal in Parker, mattress disposal in Denver, and estate cleanouts in Littleton — the same crew and the same trailer covers all of it."],
-      ["Searching for junk removal near you", "If you're looking up junk removal near me in Parker, Castle Rock, Monument, Centennial, Highlands Ranch, Aurora, Littleton, or Denver, send photos for a quote. There is [[travel]]."],
+      ["Searching for junk removal near you", "If you're looking up junk removal near me in Parker, Castle Rock, Centennial, Highlands Ranch, Aurora, Littleton, or Denver, send photos for a quote. There is [[travel]]."],
     ],
   },
   "what-we-take": {

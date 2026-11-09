@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { retiredPathRedirect } from "./lib/retired-cities";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -47,13 +48,15 @@ function isH3SwallowedErrorBody(body: string): boolean {
 const CANONICAL_HOST = "www.ezhaulawayllc.com";
 const APEX_HOST = "ezhaulawayllc.com";
 
-// Single-step 301: strip trailing slash (any host); apex host -> https://www (exact match only).
+// Single-step 301: retired city paths, strip a trailing slash (any host), and send the apex host to https://www.
 export function canonicalRedirect(request: Request): Response | null {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
   const url = new URL(request.url);
   const isApex = url.hostname.toLowerCase() === APEX_HOST;
   let path = url.pathname;
   if (path.length > 1 && path.endsWith("/")) path = path.replace(/\/+$/, "") || "/";
+  const retired = retiredPathRedirect(path);
+  if (retired) path = retired;
   if (!isApex && path === url.pathname) return null;
   const location = isApex
     ? `https://${CANONICAL_HOST}${path}${url.search}`
