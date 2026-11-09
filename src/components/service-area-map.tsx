@@ -18,6 +18,7 @@ const cityPoints: Record<string, { x: number; y: number; labelX: number; labelY:
   "castle-rock": { x: 359, y: 514, labelX: 344, labelY: 536, anchor: "end" },
   monument: { x: 418, y: 572, labelX: 434, labelY: 564, anchor: "start" },
   elizabeth: { x: 650, y: 525, labelX: 634, labelY: 547, anchor: "end" },
+  kiowa: { x: 692, y: 498, labelX: 692, labelY: 480, anchor: "middle" },
 };
 
 export function ServiceAreaMap() {
@@ -34,11 +35,11 @@ export function ServiceAreaMap() {
             >
               <title id="service-map-title">EZ Haulaway Denver metro service area map</title>
               <desc id="service-map-description">
-                An outlined service region covering the published cities from Denver through the I-25 south corridor to Monument, with Parker marked as the home base.
+                An outlined service region connecting sixteen communities from Denver south to Monument and east to Kiowa, with Parker marked as the home base.
               </desc>
 
               <path
-                d="M60 108 C92 58 170 35 247 52 C322 68 379 61 448 76 C523 92 581 148 589 218 C598 285 565 338 610 395 C658 456 718 489 690 554 C648 588 565 571 497 552 C423 573 347 565 276 548 C191 565 103 531 73 465 C43 399 75 338 61 278 C45 211 28 160 60 108Z"
+                d="M60 108 C92 58 170 35 247 52 C322 68 379 61 448 76 C523 92 581 148 589 218 C598 285 565 338 610 395 C668 448 748 488 720 530 C680 580 565 571 497 552 C423 573 347 565 276 548 C191 565 103 531 73 465 C43 399 75 338 61 278 C45 211 28 160 60 108Z"
                 className="fill-primary/10 stroke-primary"
                 strokeWidth="3"
                 strokeDasharray="10 8"

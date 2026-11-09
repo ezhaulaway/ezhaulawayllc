@@ -3,9 +3,10 @@
  * llms.txt, and FAQs read this. City page copy lives in locations.ts and must
  * include every slug here.
  *
- * Ben's named area is Parker, Castle Rock, Lone Tree, Elizabeth, Franktown,
- * Aurora, Englewood, and the I-25 south corridor through Monument. Other cities
- * already published on the site stay in this list until he decides to retire them.
+ * Ben's named area is Parker, Castle Rock, Lone Tree, Elizabeth, Kiowa, Franktown,
+ * Aurora, Englewood, and the I-25 south corridor through Monument. Kiowa is
+ * the Elbert County town east of Elizabeth. Other cities already published on
+ * the site stay in this list until he decides to retire them.
  */
 export type ServiceArea = {
   slug: string;
@@ -26,6 +27,7 @@ export const SERVICE_AREAS = [
   { slug: "englewood", city: "Englewood", county: "Arapahoe County" },
   { slug: "lakewood", city: "Lakewood", county: "Jefferson County" },
   { slug: "elizabeth", city: "Elizabeth", county: "Elbert County" },
+  { slug: "kiowa", city: "Kiowa", county: "Elbert County" },
   { slug: "franktown", city: "Franktown", county: "Douglas County" },
   { slug: "castle-pines", city: "Castle Pines", county: "Douglas County" },
   { slug: "sedalia", city: "Sedalia", county: "Douglas County" },
