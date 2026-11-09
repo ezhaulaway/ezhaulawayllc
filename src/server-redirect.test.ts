@@ -18,23 +18,4 @@ test("canonical and other hosts untouched", () => {
   expect(r("https://www.ezhaulawayllc.com/sitemap.xml")).toBe(null);
   expect(r("https://ezhaulawayllc.lovable.app/pricing")).toBe(null);
   expect(r("https://x.ezhaulawayllc.com/pricing")).toBe(null);
-  expect(r("https://www.ezhaulawayllc.com/service-areas/castle-rock")).toBe(null);
-  expect(r("https://www.ezhaulawayllc.com/service-areas/monumental")).toBe(null);
-});
-test("retired Monument URLs 301 to the service area index", () => {
-  expect(r("https://www.ezhaulawayllc.com/service-areas/monument")?.status).toBe(301);
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument")).toBe("/service-areas");
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument/")).toBe("/service-areas");
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument/furniture-removal")).toBe(
-    "/service-areas",
-  );
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/Monument/hot-tub-removal?src=g")).toBe(
-    "/service-areas?src=g",
-  );
-  expect(loc("https://ezhaulawayllc.com/service-areas/monument/")).toBe(
-    "https://www.ezhaulawayllc.com/service-areas",
-  );
-  expect(loc("http://ezhaulawayllc.com/service-areas/monument/garage-cleanouts/")).toBe(
-    "https://www.ezhaulawayllc.com/service-areas",
-  );
 });

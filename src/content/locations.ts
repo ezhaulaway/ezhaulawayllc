@@ -127,7 +127,7 @@ const raw_locations: Location[] = [
       "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in Parker. We handle the lifting, loading and hauling — from one old couch to a full property cleanout.",
     local:
       "Castle Rock is close to our Parker base and local disposal facilities, making it a practical part of our regular service area. Tell us what needs to go and we’ll confirm a price and the next available pickup.",
-    nearby: ["parker", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
+    nearby: ["parker", "monument", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
     content: [
       {
@@ -246,6 +246,44 @@ const raw_locations: Location[] = [
         heading: "HOA-Friendly Pickup",
         paragraphs: [
           "Many Castle Rock neighborhoods have HOA rules about dumpsters, trailers and how long a pile can sit at the curb. A **junk removal pickup** avoids a multi-day dumpster rental: we arrive, load and leave the same visit. We park carefully, protect lawns and driveways during the carry-out, and sweep the loading area before we go.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "monument",
+    city: "Monument",
+    county: "El Paso County",
+    metaTitle: "Junk Removal Monument CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Monument, CO, on the I-25 south corridor from Parker. Furniture, appliances, and cleanouts with upfront pricing. Free quotes from EZ Haulaway.",
+    intro:
+      "Monument is on the I-25 corridor south of Castle Rock. EZ Haulaway serves it from our Parker base.",
+    local:
+      "Share the address, photos of what needs to go, and how we will reach it — stairs, a long carry, or a narrow gate. We confirm the price before we load anything.",
+    nearby: ["castle-rock", "parker", "lone-tree"],
+    topServices: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Monument",
+        paragraphs: [
+          "EZ Haulaway is a family-owned crew based in Parker. Monument is part of the I-25 south corridor we serve, along with Castle Rock.",
+          "We carry items out from where they sit, load them on our dump trailer, and haul them away in one visit. There is [[travel]].",
+        ],
+      },
+      {
+        heading: "What We Haul in Monument",
+        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it."],
+        list: [
+          { title: "Furniture and mattresses", text: "Couches, mattresses, and other household furniture carried out of the room they are in. A small couch (2–3 seats) is [[item:couch-small]] and a mattress is [[item:mattress]]." },
+          { title: "Appliances", text: "Refrigerators, washers, and dryers once they are unplugged and disconnected. A full-size fridge or freezer is [[item:fridge-full]]. A washer or dryer is [[item:washer-dryer]]." },
+          { title: "Garage and property cleanouts", text: "Garages, storage, and move-out piles loaded in one visit." },
+        ],
+      },
+      {
+        heading: "Monument Junk Removal Pricing",
+        paragraphs: [
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included in that price. There is [[travel]].",
         ],
       },
     ],
