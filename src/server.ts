@@ -1,7 +1,10 @@
 import "./lib/error-capture";
 
+import { canonicalRedirect } from "./lib/canonical-redirect";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+
+export { canonicalRedirect };
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -44,26 +47,17 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
-const CANONICAL_HOST = "www.ezhaulawayllc.com";
-const APEX_HOST = "ezhaulawayllc.com";
-
-// Single-step 301: strip trailing slash (any host); apex host -> https://www (exact match only).
-export function canonicalRedirect(request: Request): Response | null {
-  if (request.method !== "GET" && request.method !== "HEAD") return null;
-  const url = new URL(request.url);
-  const isApex = url.hostname.toLowerCase() === APEX_HOST;
-  let path = url.pathname;
-  if (path.length > 1 && path.endsWith("/")) path = path.replace(/\/+$/, "") || "/";
-  if (!isApex && path === url.pathname) return null;
-  const location = isApex
-    ? `https://${CANONICAL_HOST}${path}${url.search}`
-    : `${path}${url.search}`;
-  return new Response(null, { status: 301, headers: { location } });
-}
-
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
-    const redirect = canonicalRedirect(request);
+    // Host/proto canonicalization before SSR. Keep this outside the SSR try so a
+    // redirect returns immediately, and catch a bad URL so it cannot become an
+    // unhandled worker exception.
+    let redirect: Response | null = null;
+    try {
+      redirect = canonicalRedirect(request);
+    } catch (error) {
+      console.error(error);
+    }
     if (redirect) return redirect;
     try {
       const handler = await getServerEntry();
