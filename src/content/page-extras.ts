@@ -67,7 +67,7 @@ const raw_pageExtras = {
       ["Parker junk removal from our home base", "EZ Haulaway is based in Parker, where we handle single-item pickups, furniture and appliance removal, garage cleanouts, hot tubs, sheds, decks, fences, and other hauling projects for our neighbors."],
       ["Castle Rock junk removal just down I-25", "Castle Rock is one of our core service areas. We regularly help with larger-property projects such as shed and fence removal, landscaping debris, hot tubs, household junk, and full cleanouts."],
       ["Douglas County", "Parker, Castle Rock, Castle Pines, Highlands Ranch, Lone Tree, Franktown, and Sedalia are all part of our regular service area."],
-      ["Arapahoe, Elbert, and Jefferson Counties", "We regularly haul junk in Centennial, Aurora, Littleton, Englewood, Elizabeth, and Lakewood, from suburban garages to rural acreage cleanups."],
+      ["Arapahoe, Elbert, and Jefferson Counties", "We regularly haul junk in Centennial, Aurora, Littleton, Englewood, Elizabeth, Kiowa, and Lakewood, from suburban garages to rural acreage cleanups."],
       ["Denver", "From alley pickups to bungalow basement cleanouts, we serve Denver neighborhoods with the same straightforward pricing we offer everywhere else."],
       ["Specialty hauling in every city we serve", "Hot tub removal in Castle Rock, deck demolition in Highlands Ranch, shed removal in Parker, mattress disposal in Denver, and estate cleanouts in Littleton — the same crew and the same trailer covers all of it."],
       ["Searching for junk removal near you", "If you're looking up junk removal near me in Parker, Castle Rock, Centennial, Highlands Ranch, Aurora, Littleton, or Denver, send photos for a quote. There is [[travel]]."],

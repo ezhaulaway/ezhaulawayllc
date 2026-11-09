@@ -928,7 +928,7 @@ const raw_locations: Location[] = [
       "EZ Haulaway makes the trip out to Elizabeth for everything from single heavy items to full property cleanouts.",
     local:
       "Rural lots and ranch-style homes mean bigger yards, older outbuildings, and plenty of long-stored household junk that needs to go.",
-    nearby: ["parker", "franktown", "castle-rock"],
+    nearby: ["parker", "franktown", "kiowa", "castle-rock"],
     topServices: ["garage-cleanouts", "yard-and-landscaping-debris", "house-and-estate-cleanouts"],
     content: [
       {
@@ -963,6 +963,50 @@ const raw_locations: Location[] = [
     ],
   },
   {
+    slug: "kiowa",
+    city: "Kiowa",
+    county: "Elbert County",
+    metaTitle: "Junk Removal Kiowa CO | EZ Haulaway",
+    metaDescription:
+      "Junk removal in Kiowa, CO — ranch and acreage cleanouts, barns, sheds, fencing and brush. Free quotes from EZ Haulaway in Parker.",
+    intro:
+      "Kiowa is the Elbert County seat, east of Elizabeth on Highway 86. We come out from Parker for ranch cleanouts, outbuildings and the heavy items a small-town trash day will not take.",
+    local:
+      "Most places here are acreage: a house, a barn or shop, and a run of fence, with a long drive off the highway.",
+    nearby: ["elizabeth", "franktown"],
+    topServices: ["house-and-estate-cleanouts", "yard-and-landscaping-debris", "garage-cleanouts"],
+    content: [
+      {
+        heading: "Junk Removal for Kiowa Ranches, Acreage and Outbuildings",
+        paragraphs: [
+          "Kiowa sits on the plains of Elbert County, east of Elizabeth along Highway 86. Town is about 20 miles from Parker in a straight line and about 26 miles by road through Elizabeth. There is [[travel]]. Those road miles stay inside that distance, so a job in Kiowa itself does not add the fee. We use the job address, not the town sign: a ranch farther east can pass the line, and the quote says so before we load.",
+          "The usual property is a house plus a barn, shop or other outbuilding, corrals, and fencing, with household junk and scrap that has piled up for years. We carry it out from where it sits, load the dump trailer and haul it away in one visit. Elizabeth is the next town west, and Franktown is farther west toward Parker.",
+        ],
+      },
+      {
+        heading: "What We Haul in Kiowa",
+        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it. The work on these properties tends to be:"],
+        list: [
+          { title: "Ranch and acreage cleanouts", text: "The house, barn and yard cleared in one visit for a sale, an estate or a handoff to the next owner." },
+          { title: "Barns, sheds and outbuildings", text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included." },
+          { title: "Fence, brush and scrap", text: "Old posts and wire, brush piles, scrap lumber and metal that has collected along a fence line." },
+          { title: "Appliances and furniture", text: "Refrigerators, washers, couches and mattresses carried out of the house or shop. A full-size fridge is [[item:fridge-full]] and a small couch is [[item:couch-small]]." },
+        ],
+        serviceLinks: [
+          { slug: "shed-removal", label: "Shed removal" },
+          { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
+          { slug: "house-and-estate-cleanouts", label: "House and estate cleanouts" },
+        ],
+      },
+      {
+        heading: "Kiowa Junk Removal Pricing",
+        paragraphs: [
+          "We price by how much space the load takes in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included. A ranch cleanout can take more than one load, so send photos of the house, the outbuildings and the driveway and we will quote the whole job before we start. There is [[travel]].",
+        ],
+      },
+    ],
+  },
+  {
     slug: "franktown",
     city: "Franktown",
     county: "Douglas County",
@@ -973,7 +1017,7 @@ const raw_locations: Location[] = [
       "Franktown is a quick run southeast of Parker, and we handle junk removal and light demolition jobs here regularly.",
     local:
       "A mix of acreage properties and older homes means fence tear-outs, shed removals, and brush cleanup are common requests.",
-    nearby: ["parker", "castle-rock", "elizabeth", "sedalia"],
+    nearby: ["parker", "elizabeth", "kiowa", "castle-rock", "sedalia"],
     topServices: ["deck-and-fence-removal", "light-demolition", "garage-cleanouts"],
     content: [
       {

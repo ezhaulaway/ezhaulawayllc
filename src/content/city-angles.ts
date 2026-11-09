@@ -28,6 +28,8 @@ export const CITY_ANGLES: Record<string, string> = {
     "Castle Pines homes in The Village, The Canyons and Lagae Ranch are often newer, so the usual jobs are move-outs, move-ins and clearing a house before it is listed. We carry everything out and leave the garage and floors swept.",
   elizabeth:
     "Out in Elizabeth, sellers and owners often have acreage, outbuildings and a house that has not been cleared in years. We handle the whole property in one visit, from the house and garage to sheds and brush piles.",
+  kiowa:
+    "Kiowa places are usually a house plus a barn, shop or other outbuilding on acreage along Highway 86. For a sale, an estate or a turnover, we clear the house and the outbuildings in one visit and confirm the job address against the distance fee before we schedule.",
   franktown:
     "Franktown properties are often acreage with older homes, sheds and fencing. For sales, estates and rentals we can clear the house and the outbuildings in the same visit.",
   sedalia:

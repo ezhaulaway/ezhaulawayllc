@@ -4,6 +4,7 @@ import areaCastleRock from "@/assets/branded-area-castle-rock.webp";
 import areaCentennial from "@/assets/branded-area-centennial.webp";
 import areaDenver from "@/assets/branded-area-denver.webp";
 import areaElizabeth from "@/assets/branded-area-elizabeth.webp";
+import areaKiowa from "@/assets/branded-trailer-base.webp";
 import areaEnglewood from "@/assets/branded-area-englewood.webp";
 import areaFranktown from "@/assets/branded-area-franktown.webp";
 import areaHighlandsRanch from "@/assets/branded-area-highlands-ranch.webp";
@@ -88,6 +89,12 @@ export const locationPhotos: Record<string, LocationPhoto> = {
     alt: "Rural property cleanout with scrap metal and lumber in Elizabeth, CO",
     caption:
       "Illustrated service example: Elizabeth, CO property cleanout — scrap metal, outbuilding lumber and stored junk cleared from acreage.",
+  },
+  kiowa: {
+    src: areaKiowa,
+    alt: "EZ Haulaway dump trailer used for junk removal on trips to Kiowa, CO",
+    caption:
+      "The dump trailer we bring to Kiowa, CO. Send photos of the house, the outbuildings and the driveway, and we confirm the price before we schedule.",
   },
   franktown: {
     src: areaFranktown,
