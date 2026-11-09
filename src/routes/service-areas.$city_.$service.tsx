@@ -3,7 +3,6 @@ import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
-import { retiredCityRedirect } from "@/lib/retired-cities";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +28,6 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
       import("@/content/services"),
       import("@/content/custom-city-services"),
     ]);
-    if (retiredCityRedirect(params.city)) throw redirect({ to: "/service-areas", statusCode: 301 });
     const location = locationBySlug(params.city);
     const service = serviceBySlug(params.service);
     if (!location || !service || service.cityPages === false) throw notFound();
