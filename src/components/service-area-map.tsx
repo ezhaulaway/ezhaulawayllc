@@ -16,7 +16,6 @@ const cityPoints: Record<string, { x: number; y: number; labelX: number; labelY:
   sedalia: { x: 190, y: 462, labelX: 175, labelY: 451, anchor: "end" },
   franktown: { x: 481, y: 492, labelX: 496, labelY: 482, anchor: "start" },
   "castle-rock": { x: 359, y: 514, labelX: 344, labelY: 536, anchor: "end" },
-  monument: { x: 418, y: 572, labelX: 434, labelY: 564, anchor: "start" },
   elizabeth: { x: 650, y: 525, labelX: 634, labelY: 547, anchor: "end" },
 };
 
@@ -34,7 +33,7 @@ export function ServiceAreaMap() {
             >
               <title id="service-map-title">EZ Haulaway Denver metro service area map</title>
               <desc id="service-map-description">
-                An outlined service region covering the published cities from Denver through the I-25 south corridor to Monument, with Parker marked as the home base.
+                An outlined service region connecting fourteen communities from Denver to Elizabeth, with Parker marked as the home base.
               </desc>
 
               <path

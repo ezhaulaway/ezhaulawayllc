@@ -4,8 +4,8 @@
  * include every slug here.
  *
  * Ben's named area is Parker, Castle Rock, Lone Tree, Elizabeth, Franktown,
- * Aurora, Englewood, and the I-25 south corridor through Monument. Other cities
- * already published on the site stay in this list until he decides to retire them.
+ * Aurora, and Englewood. The I-25 south corridor stops at Castle Rock. Other
+ * cities already published on the site stay in this list until he decides to retire them.
  */
 export type ServiceArea = {
   slug: string;
@@ -16,7 +16,6 @@ export type ServiceArea = {
 export const SERVICE_AREAS = [
   { slug: "parker", city: "Parker", county: "Douglas County" },
   { slug: "castle-rock", city: "Castle Rock", county: "Douglas County" },
-  { slug: "monument", city: "Monument", county: "El Paso County" },
   { slug: "centennial", city: "Centennial", county: "Arapahoe County" },
   { slug: "highlands-ranch", city: "Highlands Ranch", county: "Douglas County" },
   { slug: "lone-tree", city: "Lone Tree", county: "Douglas County" },
