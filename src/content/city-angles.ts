@@ -26,6 +26,8 @@ export const CITY_ANGLES: Record<string, string> = {
     "Lakewood's mix of older homes, rentals and apartments near Belmar, Green Mountain and Bear Creek means regular turnovers and pre-sale cleanouts. Property managers can send photos for a price and get a crew on the schedule fast.",
   "castle-pines":
     "Castle Pines homes in The Village, The Canyons and Lagae Ranch are often newer, so the usual jobs are move-outs, move-ins and clearing a house before it is listed. We carry everything out and leave the garage and floors swept.",
+  monument:
+    "Monument is on the I-25 corridor south of Castle Rock. We schedule it from our Parker base and confirm the price, including any travel fee, before we load.",
   elizabeth:
     "Out in Elizabeth, sellers and owners often have acreage, outbuildings and a house that has not been cleared in years. We handle the whole property in one visit, from the house and garage to sheds and brush piles.",
   kiowa:

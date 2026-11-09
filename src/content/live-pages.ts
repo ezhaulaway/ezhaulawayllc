@@ -74,6 +74,7 @@ export const LIVE_CITY_SERVICES: Record<string, readonly string[]> = Object.from
   ["franktown", ["commercial-junk-removal"]],
   ["elizabeth", []],
   ["kiowa", []],
+  ["monument", []],
   ["sedalia", ["furniture-removal", "electronics-and-e-waste-removal"]],
 ]);
 

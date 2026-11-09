@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { isNotFound, isRedirect } from "@tanstack/react-router";
+import { Route as cityRoute } from "./routes/service-areas.$city";
 import { canonicalRedirect } from "./server";
 import { test, expect } from "vitest";
 const r = (u: string) => canonicalRedirect(new Request(u));
@@ -18,23 +21,20 @@ test("canonical and other hosts untouched", () => {
   expect(r("https://www.ezhaulawayllc.com/sitemap.xml")).toBe(null);
   expect(r("https://ezhaulawayllc.lovable.app/pricing")).toBe(null);
   expect(r("https://x.ezhaulawayllc.com/pricing")).toBe(null);
-  expect(r("https://www.ezhaulawayllc.com/service-areas/castle-rock")).toBe(null);
-  expect(r("https://www.ezhaulawayllc.com/service-areas/monumental")).toBe(null);
 });
-test("retired Monument URLs 301 to the service area index", () => {
-  expect(r("https://www.ezhaulawayllc.com/service-areas/monument")?.status).toBe(301);
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument")).toBe("/service-areas");
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument/")).toBe("/service-areas");
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/monument/furniture-removal")).toBe(
-    "/service-areas",
-  );
-  expect(loc("https://www.ezhaulawayllc.com/service-areas/Monument/hot-tub-removal?src=g")).toBe(
-    "/service-areas?src=g",
-  );
-  expect(loc("https://ezhaulawayllc.com/service-areas/monument/")).toBe(
-    "https://www.ezhaulawayllc.com/service-areas",
-  );
-  expect(loc("http://ezhaulawayllc.com/service-areas/monument/garage-cleanouts/")).toBe(
-    "https://www.ezhaulawayllc.com/service-areas",
-  );
+test("Monument city page returns 200 and is in the sitemap", async () => {
+  const sitemap = readFileSync("public/sitemap.xml", "utf8");
+  expect(sitemap).toContain("https://www.ezhaulawayllc.com/service-areas/monument");
+  const request = new Request("https://www.ezhaulawayllc.com/service-areas/monument");
+  expect(canonicalRedirect(request)).toBe(null);
+  const loader = cityRoute.options.loader;
+  if (typeof loader !== "function") throw new Error("Monument city loader is missing");
+  let status = 200;
+  try {
+    const data = await loader({ params: { city: "monument" } } as Parameters<typeof loader>[0]);
+    expect(data.location.city).toBe("Monument");
+  } catch (error) {
+    status = isRedirect(error) ? error.status : isNotFound(error) ? 404 : 500;
+  }
+  expect(status).toBe(200);
 });

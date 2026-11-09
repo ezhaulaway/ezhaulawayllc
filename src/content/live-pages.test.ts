@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { liveUrlPaths, isLiveCityService } from "./live-pages";
 import { readFileSync } from "node:fs";
 describe("live pages", () => {
-  it("lists every live URL", () => expect(liveUrlPaths().length).toBe(96));
+  it("lists every live URL", () => expect(liveUrlPaths().length).toBe(97));
   it("has 55 city-service pages", () => expect(liveUrlPaths().filter((p) => p.split("/").length === 4).length).toBe(50));
   it("keeps custom-copy pages", () => {
     expect(isLiveCityService("parker", "garage-cleanouts")).toBe(true);
@@ -14,17 +14,18 @@ describe("live pages", () => {
     expect(isLiveCityService("sedalia", "furniture-removal")).toBe(true);
     expect(isLiveCityService("franktown", "commercial-junk-removal")).toBe(true);
     expect(isLiveCityService("sedalia", "electronics-and-e-waste-removal")).toBe(true);
+    expect(liveUrlPaths()).toContain("/service-areas/monument");
   });
   it("publishes Kiowa as a city page with no city-service URLs", () => {
     expect(liveUrlPaths()).toContain("/service-areas/kiowa");
     expect(liveUrlPaths().some((path) => path.startsWith("/service-areas/kiowa/"))).toBe(false);
     expect(isLiveCityService("kiowa", "furniture-removal")).toBe(false);
   });
-  it("sitemap matches allow-list and has no Monument URL", () => {
+  it("sitemap matches allow-list", () => {
     const xml = readFileSync("public/sitemap.xml", "utf8");
     const locs = [...xml.matchAll(/<loc>https:\/\/www\.ezhaulawayllc\.com([^<]*)<\/loc>/g)].map((m) => m[1]);
     expect(locs).toEqual(liveUrlPaths());
-    expect(xml.toLowerCase()).not.toContain("monument");
-    expect(liveUrlPaths().some((path) => path.toLowerCase().includes("monument"))).toBe(false);
+    expect(locs).toContain("/service-areas/monument");
+    expect(locs).toContain("/service-areas/kiowa");
   });
 });
