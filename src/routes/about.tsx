@@ -5,7 +5,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { HeartHandshake, Leaf, ShieldCheck, Users } from "lucide-react";
 import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
-import { SITE_URL, reviews, GOOGLE_REVIEWS_URL } from "@/content/site";
+import { SITE_URL, reviews, GOOGLE_PROFILE_URL } from "@/content/site";
 import { Star } from "lucide-react";
 import benZoe720 from "@/assets/ben-zoe-trailer-portrait-720.webp";
 import benZoe1080 from "@/assets/ben-zoe-trailer-portrait-1080.webp";
@@ -186,7 +186,7 @@ function AboutPage() {
           </div>
           <div className="mt-10 text-center">
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={GOOGLE_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
               className="text-sm font-bold text-primary underline-offset-4 hover:underline"

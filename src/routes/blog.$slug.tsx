@@ -11,7 +11,7 @@ import { optimizeBlogImages } from "@/lib/blog-html";
 import { rewriteEzPriceJson, rewriteEzPriceText } from "@/lib/blog-ez-prices";
 import { getGuide, priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
-import { BLOG_AUTHOR_NAME, blogDates, blogSchemas } from "@/lib/blog-schema";
+import { applyBusinessIdentity, BLOG_AUTHOR_NAME, blogDates, blogSchemas } from "@/lib/blog-schema";
 
 type Json = unknown;
 
@@ -60,8 +60,8 @@ export const Route = createFileRoute("/blog/$slug")({
     const generated = p.json_ld == null ? blogSchemas({ ...p, meta_description: desc }) : [];
     const scripts = [p.json_ld, p.faq_json_ld]
       .filter((x) => x != null)
-      .map((x) => ({ type: "application/ld+json", children: ser(repoint(rewriteEzPriceJson(x, guide), url)) }))
-      .concat(generated.map((x) => ({ type: "application/ld+json", children: ser(x) })));
+      .map((x) => ({ type: "application/ld+json", children: ser(applyBusinessIdentity(repoint(rewriteEzPriceJson(x, guide), url))) }))
+      .concat(generated.map((x) => ({ type: "application/ld+json", children: ser(applyBusinessIdentity(x)) })));
     return {
       meta: [
         { title: `${p.title} | EZ Haulaway Blog` },

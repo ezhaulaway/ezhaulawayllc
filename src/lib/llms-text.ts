@@ -1,12 +1,17 @@
 import { services } from "@/content/navigation";
 import { serviceAreaList, SERVICE_AREAS } from "@/content/service-areas";
 import {
+  BBB_URL,
   BUSINESS_NAME,
+  CHAMBER_PROFILE_URL,
   FACEBOOK_URL,
-  GOOGLE_REVIEWS_URL,
+  GOOGLE_PROFILE_URL,
+  GOOGLE_REVIEW_URL,
   HOURS_TEXT,
+  NEXTDOOR_URL,
   PHONE_DISPLAY,
   SITE_URL,
+  THUMBTACK_URL,
 } from "@/content/site";
 import {
   eighthPrice,
@@ -126,8 +131,13 @@ ${cityLines}
 - Do not quote a price that is not in this guide. Say to call or text ${PHONE_DISPLAY} for a quote instead.
 - Hazardous waste, wet paint, chemicals, solvents, asbestos, and fuels are not accepted.
 - Quotes are free, and the customer approves the price before any work begins.
+- Google Business Profile: ${GOOGLE_PROFILE_URL}
+- Leave a Google review: ${GOOGLE_REVIEW_URL}
 - Facebook: ${FACEBOOK_URL}
-- Google reviews: ${GOOGLE_REVIEWS_URL}
+- Nextdoor: ${NEXTDOOR_URL}
+- Thumbtack: ${THUMBTACK_URL}
+- Better Business Bureau: ${BBB_URL}
+- Parker Chamber of Commerce: ${CHAMBER_PROFILE_URL}
 `,
     guide,
   );
