@@ -53,10 +53,25 @@ export const CITY_SERVICE_DESCRIPTION: Record<string, string> = {
   "construction-debris-removal": `Construction debris removal in {City}, CO. Drywall, lumber, flooring and remodel debris hauled away. Free quote: ${PHONE}.`,
 };
 
-/** Hub titles that need to be shorter than the default pattern. */
+/** Hub titles that should not use the shared pattern. */
 export const HUB_TITLE_OVERRIDES: Record<string, string> = {
-  lakewood: "Junk Removal in Lakewood, CO | Same-Day Pickup",
+  parker: "Junk Removal in Parker, CO | Family-Owned Crew",
 };
+
+/**
+ * City hub title. Same-day service is offered when the trailer is open,
+ * so the title says that instead of promising a same-day pickup.
+ */
+export function cityHubTitle(city: string, slug: string): string {
+  return (
+    HUB_TITLE_OVERRIDES[slug] ??
+    fitTitle(
+      `Junk Removal in ${city}, CO | Same-Day When Available`,
+      `Junk Removal in ${city}, CO | Fast Scheduling`,
+      `Junk Removal in ${city}, CO | EZ Haulaway`,
+    )
+  );
+}
 
 export const CITY_BENEFIT = "Upfront Pricing, Local Crew";
 

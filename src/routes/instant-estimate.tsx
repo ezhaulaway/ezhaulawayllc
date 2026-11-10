@@ -38,7 +38,7 @@ const faqs: Array<[string, string]> = [
   ],
   [
     "Is the instant estimate really free?",
-    "Yes. The online estimate is free, requires no phone call, and does not obligate you to book. You only share contact details after seeing the preliminary range if you want the crew to confirm your quote.",
+    "Yes. The online estimate is free and does not obligate you to book. The form asks for your name, city, and phone first, then photos or a description. The preliminary range shows on your screen after you submit, and the crew receives the request so they can confirm the job with you.",
   ],
   [
     "Is the price on screen the final price?",
@@ -54,27 +54,27 @@ const steps = [
   {
     icon: Camera,
     number: "01",
-    title: "Show Us the Junk",
-    text: "Snap up to four photos or describe the furniture, appliances, boxes, debris, or other items you want gone.",
+    title: "Tell Us Who and What",
+    text: "Add your name, city, and phone. Then snap up to four photos or describe the furniture, appliances, boxes, debris, or other items you want gone.",
   },
   {
     icon: Sparkles,
     number: "02",
     title: "See Your Estimate",
-    text: "Get a preliminary junk removal price range on your screen based on your items and our current pricing guide.",
+    text: "After you submit, a preliminary price range shows on your screen, based on your items and our current pricing guide.",
   },
   {
     icon: Truck,
     number: "03",
-    title: "Request the Actual Quote",
-    text: "Like the range? Add your contact details, address, and preferred day. Ben and the crew will confirm the job with you.",
+    title: "We Confirm the Job",
+    text: "The request goes to Ben and the crew. They follow up with the actual quote, and you approve the price before anything is loaded.",
   },
 ] as const;
 
 const comparisons = [
-  ["Wait for an on-site estimate", "See a price range online"],
+  ["Wait for an on-site estimate", "See a preliminary range on your screen"],
   ["Explain everything on a phone call", "Send photos or type a description"],
-  ["Share contact details before seeing a price", "See the estimate before entering your information"],
+  ["Hear a different number when the truck arrives", "Approve the final price before we load"],
   ["Guess what fees are included", "Pricing follows EZ Haulaway's live crew guide"],
 ] as const;
 
@@ -144,18 +144,18 @@ function InstantEstimatePage() {
             </h1>
             <p className="mt-4 text-xl font-bold text-primary">NO PHONE CALL REQUIRED</p>
             <ol className="mt-5 flex flex-wrap items-center gap-2 text-sm font-bold uppercase tracking-wide">
-              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">1. Snap it</li>
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">1. Your details</li>
               <ArrowRight aria-hidden="true" className="size-4 text-primary" />
-              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">2. See your price</li>
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">2. Photos or a note</li>
               <ArrowRight aria-hidden="true" className="size-4 text-primary" />
-              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">3. Lock it in</li>
+              <li className="rounded-full bg-primary px-3 py-1 text-primary-foreground">3. See the range</li>
             </ol>
             </div>
             <div className="order-3 min-w-0 lg:order-none">
             <p className="mt-3 text-base font-semibold">Locking in your quote is almost too EZ.</p>
             <p className="mt-5 max-w-xl text-base leading-7 text-secondary-foreground/75 sm:text-lg">
-              Add your name, city and phone, then snap a photo or describe what you have. Our free junk removal
-              cost estimator gives you a preliminary price range in seconds.
+              Add your name, city, and phone, then snap a photo or describe what you have. Our free junk removal
+              cost estimator shows a preliminary price range on this page, usually within a minute.
             </p>
             <ul className="mt-7 grid gap-3 text-sm font-semibold sm:grid-cols-2 lg:grid-cols-1">
               <li className="flex items-center gap-2"><Clock3 className="size-4 text-primary" /> Estimate shown right on your screen</li>
@@ -224,8 +224,9 @@ function InstantEstimatePage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">A faster way to price the job</p>
             <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Skip the Waiting. Keep the Control.</h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              Use the estimator when you want a fast answer without scheduling a sales visit. You can check the likely
-              cost first, then decide whether you want EZ Haulaway to contact you about the actual quote.
+              Use the estimator when you want a preliminary number without scheduling a sales visit. You enter your
+              name, city, and phone first. After you describe the job, the range appears on the screen and the request
+              goes to the crew so they can confirm it with you. You do not have to book.
             </p>
           </div>
           <div className="overflow-hidden rounded-lg border border-border">

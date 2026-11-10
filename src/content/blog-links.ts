@@ -58,6 +58,15 @@ export const BLOG_RELATED: Record<string, string[]> = {
   "yard-waste-brush-removal-cost-parker": ["/services/yard-and-landscaping-debris", "/services/light-demolition", "/pricing"],
 };
 
+/** Full document title and meta description for a post whose synced title is a weak snippet. */
+export const BLOG_HEAD_OVERRIDES: Record<string, { title: string; description: string }> = {
+  "furniture-disposal-denver": {
+    title: "Furniture Disposal in Denver, CO | Costs & Options",
+    description:
+      "Furniture disposal in Denver: city large-item pickup, donation rules, drop-off, and what a paid haul-away costs. How to choose and how to prepare.",
+  },
+};
+
 /** Short quote prompt shown at the top of a post, for posts that already rank for hauling-away searches. */
 export const BLOG_CALLOUTS: Record<string, { text: string; href: string; label: string }> = {
   "furniture-disposal-denver": {

@@ -18,7 +18,7 @@ import { services } from "@/content/services";
 import { cityFaqs } from "@/content/city-faqs";
 import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_ID, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { HUB_TITLE_OVERRIDES, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { cityHubTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
 
 export const Route = createFileRoute("/service-areas/$city")({
@@ -38,7 +38,8 @@ export const Route = createFileRoute("/service-areas/$city")({
       return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
     }
     const { location } = loaderData;
-    const pageTitle = HUB_TITLE_OVERRIDES[location.slug] ?? fitTitle(`Junk Removal in ${location.city}, CO | Same-Day Pickup | EZ Haulaway`, `Junk Removal in ${location.city}, CO | Same-Day Pickup`, `Junk Removal in ${location.city}, CO | EZ Haulaway`);
+    const pageTitle = cityHubTitle(location.city, location.slug);
+    const faqs = location.faqs ?? cityFaqs(location.city);
     const pageDescription =
       location.metaDescription ??
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
@@ -97,7 +98,7 @@ export const Route = createFileRoute("/service-areas/$city")({
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "@id": `${SITE_URL}/service-areas/${params.city}#faq`,
-            mainEntity: cityFaqs(location.city).map(([question, answer]) => ({
+            mainEntity: faqs.map(([question, answer]) => ({
               "@type": "Question",
               name: question,
               acceptedAnswer: { "@type": "Answer", text: priceText(answer) },
@@ -150,7 +151,7 @@ function CityPage() {
     .map(({ slug }) => services.find((item) => item.slug === slug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const faqs = cityFaqs(location.city);
+  const faqs = location.faqs ?? cityFaqs(location.city);
   const angle = CITY_ANGLES[location.slug];
 
   return (
@@ -195,8 +196,8 @@ function CityPage() {
             </div>
             {pushInstantEstimate && (
               <p className="mt-4 text-sm font-medium text-muted-foreground">
-                Free · Instant · No phone call required — snap a photo or describe your items and get a price
-                for {location.city} junk removal in seconds.
+                Add your name, city, and phone, then photos or a short description. A preliminary price range
+                for {location.city} junk removal shows on the next screen.
               </p>
             )}
           </div>
@@ -340,8 +341,8 @@ function CityPage() {
               <div className="mb-6 rounded-lg border border-primary/40 bg-primary/5 p-6">
                 <p className="font-display text-lg font-bold">Need a price right now?</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  Snap a photo or just describe your items and get an instant online estimate for{" "}
-                  {location.city} junk removal — no waiting on a callback.
+                  Add your name, city, and phone, then photos or a description, for a preliminary{" "}
+                  {location.city} junk removal range. The crew confirms the final price before loading.
                 </p>
                 <Button asChild size="lg" className="mt-4 w-full">
                   <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
@@ -495,11 +496,11 @@ function CityPage() {
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center lg:px-8">
             <div>
               <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
-                Get a {location.city} Junk Removal Price in 30 Seconds
+                Get a Preliminary {location.city} Junk Removal Price
               </h2>
               <p className="mt-3 max-w-xl leading-7 text-muted-foreground">
-                Skip the phone call. Send a photo or a quick description and see your price range on screen right
-                now — free, instant, and no obligation.
+                The online estimate is free. Enter your name, city, and phone, then add photos or a description
+                to see a preliminary range. There is no obligation to book.
               </p>
             </div>
             <Button asChild size="lg" className="w-full shrink-0 sm:w-auto">

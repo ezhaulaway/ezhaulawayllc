@@ -8,10 +8,10 @@ export function AiEstimatorIntro() {
         100% Free · Instant Junk Removal Estimator
       </p>
       <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">
-        Get Your Free Junk Removal Price in 30 Seconds
+        Get a Free Preliminary Junk Removal Price
       </h2>
       <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-        Snap a photo or describe what needs to go — get an instant price range right on your screen.
+        Add your name, city, and phone, then a photo or a short description. A preliminary price range shows on your screen.
       </p>
     </div>
   );
