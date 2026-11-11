@@ -67,10 +67,10 @@ export const Route = createFileRoute("/")({
           "@type": "JunkRemovalService",
           ...BUSINESS_JSONLD,
           description:
-            "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Trailer load pricing from [[min]] with full cleanup included.",
+            "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Pricing starts at [[min]], with cleanup included.",
           url: SITE_URL,
           telephone: PHONE_E164,
-          priceRange: "[[min]] - [[load:8]]",
+          priceRange: "[[min]]",
           openingHoursSpecification: OPENING_HOURS_SPEC,
           areaServed: [
             ...SERVICE_AREA_CITIES.map((city) => ({ "@type": "City", name: `${city}, CO` })),
@@ -87,7 +87,6 @@ export const Route = createFileRoute("/")({
             "@type": "AggregateOffer",
             priceCurrency: "USD",
             lowPrice: "[[min]]",
-            highPrice: "[[load:8]]",
             itemOffered: { "@type": "Service", name: "Junk Removal & Hauling Services" },
           },
         })).replace(/"(low|high)Price":"\$([\d,]+)"/g, (_m, k, n) => `"${k}Price":"${n.replace(/,/g, "")}"`),
@@ -101,7 +100,7 @@ export const Route = createFileRoute("/")({
           ...BUSINESS_JSONLD,
           url: SITE_URL,
           telephone: PHONE_E164,
-          priceRange: "[[min]] - [[load:8]]",
+          priceRange: "[[min]]",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Parker",

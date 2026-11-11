@@ -4,7 +4,7 @@ import { PHONE } from "@/content/site";
 export const homeFaqs = [
   [
     "How much does junk removal cost?",
-    "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free quote, or use the free instant estimate.",
+    "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price.",
   ],
   [
     "Do I have to move my junk to the curb?",

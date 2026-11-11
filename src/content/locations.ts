@@ -42,7 +42,7 @@ const raw_locations: Location[] = [
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
     faqs: [
-      ["How much does junk removal cost in Parker?", "We price by the space your items take in a 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included. A few single items have their own prices: a small couch is [[item:couch-small]], a mattress is [[item:mattress]], and a full-size fridge or freezer is [[item:fridge-full]]. We confirm the number before anything is loaded."],
+      ["How much does junk removal cost in Parker?", "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price."],
       ["Do you charge extra to come to Parker?", "No. Parker is home base, so a Parker address does not get a distance fee. Jobs farther out can include [[travel]], and we put that on the quote before we schedule."],
       ["Which Parker neighborhoods do you serve?", "Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Bradbury Ranch, Clarke Farms, Compark, Pradera, and the homes around Mainstreet and the Cherry Creek Trail. Acreage toward Hilltop Road, Franktown, and Elizabeth is a regular stop for brush, old fencing, and shed tear-downs."],
       ["What will you haul, and what do you leave?", "We take furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, hot tubs, sheds, decks, fences, and yard debris such as branches and brush. We do not take wet paint, chemicals, solvents, asbestos, or fuels."],
@@ -82,14 +82,12 @@ const raw_locations: Location[] = [
       {
         heading: "How Parker Junk Removal Pricing Works",
         paragraphs: [
-          "The price is the space the load takes in our 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included in that number.",
-          "A few pieces on their own use the item prices above instead of a trailer fraction. We do not add those item prices on top of a trailer-load price. Extra labor for a hard carry, when it applies, is [[labor]] per hour per crew member. Parker addresses do not get a distance fee. Farther jobs can include [[travel]], and that is on the quote before we book.",
-          "We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
+          "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Parker addresses do not get a distance fee.",
+          "For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate). We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
         ],
         list: [
           { title: "Small pickup", text: "One or two bulky items, or a tight pile of boxes. Starts at [[min]]." },
-          { title: "Partial load", text: "A garage corner or a couple of rooms. A half trailer is about [[load:4]]." },
-          { title: "Full cleanout", text: "A move-out, an estate, or a whole house. A full trailer is about [[load:8]], and a bigger house can take more than one load. We quote the whole job first." },
+          { title: "Larger jobs", text: "A garage, a few rooms, or a whole-house cleanout. Send a free photo quote, or use the free instant estimate, and we quote the whole job before we schedule." },
         ],
       },
       {
@@ -235,7 +233,7 @@ const raw_locations: Location[] = [
       {
         heading: "Castle Rock Junk Removal Pricing",
         paragraphs: [
-          "For standard trailer-load jobs, pricing is based on the space your items occupy. Pickups start at [[min]], a half load is about [[load:4]], and a full load is about [[load:8]]. These prices come from our current pricing guide. Heavy materials, specialty items and demolition work need a scope-specific quote rather than a guess based only on volume.",
+          "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Heavy materials, specialty items, and demolition work need a look at the actual pile. For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate).",
           "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; There is [[travel]].",
         ],
         closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
@@ -264,7 +262,7 @@ const raw_locations: Location[] = [
         heading: "Why Castle Rock Chooses EZ Haulaway",
         paragraphs: [
           "We are a **family-owned junk removal** company, owned by Ben and Zoe, and we are **licensed and insured**. You deal with the owners, not a call center. We give **upfront pricing** before loading, and we do all the lifting, so you never carry anything.",
-          "Our base in Parker means **fast junk removal in Castle Rock**, often next day and sometimes same day. Most junk removal companies price by trailer space, and so do we. Our trailer is easy to compare: a half load is about [[load:4]] and a full load about [[load:8]].",
+          "Our base in Parker means **fast junk removal in Castle Rock**. Same-day and next-day appointments often available. Pickups start at [[min]]. For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate).",
         ],
       },
       {

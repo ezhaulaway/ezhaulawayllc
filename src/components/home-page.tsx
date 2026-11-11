@@ -88,7 +88,7 @@ import {
 
 import { serviceAreaList } from "@/content/service-areas";
 import { PHONE } from "@/content/site";
-import { eighthPrice, formatMoney } from "@/lib/price-guide";
+import { formatMoney } from "@/lib/price-guide";
 
 const navItems = [
   ["Services", "#services"],
@@ -199,7 +199,6 @@ function SectionHeader({ eyebrow, title, text, center = false }: { eyebrow: stri
 
 export function HomePage() {
   const guide = usePriceGuide();
-  const fullPrice = eighthPrice(guide, 8);
   const [showAllServices, setShowAllServices] = useState(false);
 
   return (
@@ -298,14 +297,16 @@ export function HomePage() {
             <h2 id="fast-facts-heading" className="text-2xl font-extrabold text-foreground">EZ Haulaway at a Glance</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
               EZ Haulaway LLC is a family-owned junk removal company based in Parker, Colorado, serving the Denver
-              metro area. Pricing starts at ${guide.minimum} and a full 16-foot trailer load (14 cubic yards) runs {fullPrice},
-              with labor, loading, hauling, and disposal included. Our <strong className="text-foreground">junk removal services</strong> cover homes, businesses, and job sites. Call or text {PHONE} for a <strong className="text-foreground">free estimate</strong>.
+              metro area. Pricing starts at {formatMoney(guide.minimum)}, with labor, loading, hauling, and disposal
+              included in the price we confirm before we load. For an exact price, send a free photo quote or get a{" "}
+              <Link to="/instant-estimate" className="font-semibold text-primary hover:underline">free instant estimate</Link>.
+              Our <strong className="text-foreground">junk removal services</strong> cover homes, businesses, and job sites. Call or text {PHONE}.
             </p>
             <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
               {[
                 ["Based in", "Parker, CO"],
                 ["Service area", serviceAreaList()],
-                ["Pricing", `$${guide.minimum} minimum · full trailer ${fullPrice}`],
+                ["Pricing", `From ${formatMoney(guide.minimum)}`],
                 ["Specialties", "Hot tubs, sheds, decks & fences, mattresses, appliances, cleanouts"],
                 ["Quotes", "Free — text photos or use the AI estimate"],
                 ["Contact", `${PHONE} (call or text)`],

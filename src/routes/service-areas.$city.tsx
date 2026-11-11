@@ -46,6 +46,10 @@ export const Route = createFileRoute("/service-areas/$city")({
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
     const photo = locationPhoto(location.slug);
     const photoUrl = photo?.src.startsWith("https://") ? photo.src : undefined;
+    const businessSchema =
+      location.slug === "parker" || location.slug === "castle-rock"
+        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]") }
+        : BUSINESS_SCHEMA;
     return {
       meta: [
         { title: pageTitle },
@@ -71,7 +75,7 @@ export const Route = createFileRoute("/service-areas/$city")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              BUSINESS_SCHEMA,
+              businessSchema,
               {
                 "@type": "Service",
                 "@id": `${SITE_URL}/service-areas/${params.city}#service`,
