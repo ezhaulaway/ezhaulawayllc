@@ -2,8 +2,8 @@ import { PHONE } from "@/content/site";
 
 /** Real neighborhoods per city, used in local intros. */
 export const NEIGHBORHOODS: Record<string, string[]> = {
-  parker: ["Stonegate", "The Pinery", "Idyllwilde", "Canterberry Crossing", "Bradbury Ranch"],
-  "castle-rock": ["The Meadows", "Founders Village", "Castlewood Ranch", "Crystal Valley", "Terrain"],
+  parker: ["Stonegate", "The Pinery", "Idyllwilde", "Stroh Ranch", "Canterberry Crossing", "Clarke Farms", "Mainstreet"],
+  "castle-rock": ["The Meadows", "Crystal Valley Ranch", "Castlewood Ranch", "Plum Creek", "Founders Village"],
   centennial: ["Willow Creek", "Southglenn", "Smoky Hill", "Cherry Knolls", "Piney Creek"],
   "highlands-ranch": ["Westridge", "Eastridge", "Northridge", "Southridge", "BackCountry"],
   "lone-tree": ["RidgeGate", "Heritage Hills", "Carriage Club", "Montecito"],

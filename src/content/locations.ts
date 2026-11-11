@@ -31,28 +31,33 @@ const raw_locations: Location[] = [
     city: "Parker",
     county: "Douglas County",
     metaTitle: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates",
-    metaDescription: `Family-owned junk removal in Parker, CO. Furniture, appliances, garages, and yard debris from Stonegate to The Pinery. Free photo quote: ${PHONE_DISPLAY}.`,
+    metaDescription:
+      "Junk removal in Parker, CO from [[min]]. Stonegate, Stroh Ranch, The Pinery, and Mainstreet. Free photo quotes. Call " +
+      PHONE_DISPLAY +
+      ".",
     intro:
-      "Parker is home base. EZ Haulaway is a family-owned crew, and a Parker job is in our own neighborhood. Call or text and you reach Ben and Zoe, the same people who put the truck on the schedule.",
+      "Parker is home base. EZ Haulaway is a family-owned crew, and a Parker job is in our own neighborhood. Call or text and you reach Ben and Zoe, the same people who put the truck on the schedule. EZ in, junk out.",
     local:
       "Share the street address, photos of what needs to go, and anything that changes the carry: stairs, a locked gate, a steep driveway, or a long walk from the backyard. Landmarks such as O’Brien Park, the PACE Center, or the historic 20 Mile House help describe the area. The address is what we use to plan the stop.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
     faqs: [
-      ["How much does junk removal cost in Parker?", "We price by the space your items take in a 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included. A few single items have their own prices: a small couch is [[item:couch-small]], a mattress is [[item:mattress]], and a full-size fridge or freezer is [[item:fridge-full]]. We confirm the number before anything is loaded."],
+      ["How much does junk removal cost in Parker?", "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price."],
       ["Do you charge extra to come to Parker?", "No. Parker is home base, so a Parker address does not get a distance fee. Jobs farther out can include [[travel]], and we put that on the quote before we schedule."],
       ["Which Parker neighborhoods do you serve?", "Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Bradbury Ranch, Clarke Farms, Compark, Pradera, and the homes around Mainstreet and the Cherry Creek Trail. Acreage toward Hilltop Road, Franktown, and Elizabeth is a regular stop for brush, old fencing, and shed tear-downs."],
       ["What will you haul, and what do you leave?", "We take furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, hot tubs, sheds, decks, fences, and yard debris such as branches and brush. We do not take wet paint, chemicals, solvents, asbestos, or fuels."],
-      ["How do I book, and how soon can you come?", `Call or text ${PHONE_DISPLAY}, or use the online estimate. That form asks for your name, city, and phone first, then photos or a description, and then shows a preliminary range. Hours are ${HOURS_TEXT}. Same-day pickup happens when the trailer is open. If it is not, we tell you the next time that works.`],
+      ["How do I book, and how soon can you come?", `Call or text ${PHONE_DISPLAY}, or use the free instant estimate. That form asks for your name, city, and phone first, then photos or a description, and then shows a preliminary range. Hours are ${HOURS_TEXT}. Same-day and next-day appointments often available. If the trailer is already booked, we tell you the next time that works.`],
       ["Do I have to be home or drag everything to the curb?", "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone."],
       ["Does Parker trash service take couches and mattresses?", "Most Parker trash service, and many HOAs, limit bulky items or how long a pile can sit in the driveway. We take the couches, mattresses, and appliances those services will not, and we schedule a window so the pile is not left out for days."],
       ["Where does the junk go after you leave Parker?", "Usable furniture and household goods go to donation when a partner will accept them. Metal, appliances, and electronics go to recycling. What cannot be reused goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill."],
+      ["Do you serve Stroh Ranch and downtown Mainstreet?", "Yes. Stroh Ranch, along the Cherry Creek Trail, is a regular Parker stop, along with Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Clarke Farms, and the houses around downtown Mainstreet. Garage cleanouts in those HOA neighborhoods are a common call."],
     ],
     content: [
       {
         heading: "Parker Neighborhoods We Serve",
         paragraphs: [
           "Stonegate, Canterberry Crossing, and Bradbury Ranch are HOA neighborhoods. A couch or a pile of boxes in the driveway usually needs to be gone the same week, not left until the next trash cycle. Tell us if the HOA has a deadline, and we will give you the soonest window the trailer actually has.",
+          "Stroh Ranch sits at the south end of Parker along the Cherry Creek Trail. It is an HOA neighborhood, like Stonegate and Canterberry Crossing, and a couch or a garage pile in the driveway is the kind of thing neighbors notice. We carry the boxes, old gear, mattresses, and shelving out of the garage, so you do not have to leave them at the curb. Clarke Farms and the houses around downtown Mainstreet get the same treatment: we work from the room the junk is in.",
           "The Pinery and the larger lots toward Hilltop Road are a different kind of stop. Driveways are longer, gates are common, and the load is often old fencing, a shed, or furniture from a house with more rooms than a typical subdivision. Idyllwilde, Clarke Farms, and Pradera calls are usually move-in leftovers and garage cleanouts.",
           "Around Mainstreet, parking and alley access matter more than the size of the load. Say whether we should use the alley, a visitor spot, or the driveway so the trailer is not blocking the street. Compark is the business side of town. Office furniture, retail fixtures, and storage rooms are booked the same way as a house: photos first, then a time that fits the building.",
           "Acreage toward Franktown and Elizabeth is a regular route for brush piles, old fencing, and shed tear-downs. If the drive from our Parker base is long enough to add a distance fee, we say so before we schedule. Parker addresses themselves do not get that fee.",
@@ -77,21 +82,19 @@ const raw_locations: Location[] = [
       {
         heading: "How Parker Junk Removal Pricing Works",
         paragraphs: [
-          "The price is the space the load takes in our 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included in that number.",
-          "A few pieces on their own use the item prices above instead of a trailer fraction. We do not add those item prices on top of a trailer-load price. Extra labor for a hard carry, when it applies, is [[labor]] per hour per crew member. Parker addresses do not get a distance fee. Farther jobs can include [[travel]], and that is on the quote before we book.",
-          "We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
+          "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Parker addresses do not get a distance fee.",
+          "For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate). We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
         ],
         list: [
           { title: "Small pickup", text: "One or two bulky items, or a tight pile of boxes. Starts at [[min]]." },
-          { title: "Partial load", text: "A garage corner or a couple of rooms. A half trailer is about [[load:4]]." },
-          { title: "Full cleanout", text: "A move-out, an estate, or a whole house. A full trailer is about [[load:8]], and a bigger house can take more than one load. We quote the whole job first." },
+          { title: "Larger jobs", text: "A garage, a few rooms, or a whole-house cleanout. Send a free photo quote, or use the free instant estimate, and we quote the whole job before we schedule." },
         ],
       },
       {
         heading: "How Booking Works in Parker",
         paragraphs: [
-          `Hours are ${HOURS_TEXT}. Call or text ${PHONE_DISPLAY} with a few photos, or use the online estimate. That form asks for your name, city, and phone first, then photos or a description. After you submit, a preliminary range shows on the screen and the request comes to us.`,
-          "We tell you the soonest time the trailer is actually open. Same-day pickup happens when that day is free. If it is not, we say so and offer the next window. On site we walk the pile with you, confirm the price, then load. Floors, door frames, and walls get blankets and a careful carry, and we sweep the area we loaded from.",
+          `Hours are ${HOURS_TEXT}. Call or text ${PHONE_DISPLAY} with a few photos, or use the [free instant estimate](/instant-estimate). That form asks for your name, city, and phone first, then photos or a description. After you submit, a preliminary range shows on the screen and the request comes to us.`,
+          "We tell you the soonest time the trailer is actually open. Same-day and next-day appointments often available. If that day is already booked, we say so and offer the next window. On site we walk the pile with you, confirm the price, then load. Floors, door frames, and walls get blankets and a careful carry, and we sweep the area we loaded from.",
           "You do not have to be home for a curbside or garage pickup if we can get in and take payment by phone. We text you when the load is gone.",
         ],
       },
@@ -118,19 +121,43 @@ const raw_locations: Location[] = [
     metaTitle: "Castle Rock Junk Removal & Hauling Services | EZ Haulaway LLC",
     h1: "Junk Removal Castle Rock, CO",
     metaDescription:
-      "Family-owned junk removal in Castle Rock, CO. Furniture, mattresses, yard waste, remodel debris and estate cleanouts. Get a free EZ Haulaway estimate.",
+      "Junk removal in Castle Rock, CO from [[min]]. The Meadows, Plum Creek, Castlewood Ranch, and Crystal Valley Ranch. Free photo quotes.",
     intro:
-      "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in Parker. We handle the lifting, loading and hauling — from one old couch to a full property cleanout.",
+      "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in [Parker](/service-areas/parker). EZ in, junk out. We handle the lifting, loading, and hauling — from one old couch to a property cleanout.",
     local:
       "Castle Rock is close to our Parker base and local disposal facilities, making it a practical part of our regular service area. Tell us what needs to go and we’ll confirm a price and the next available pickup.",
     nearby: ["parker", "monument", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
+    faqs: [
+      ["How much does junk removal cost in Castle Rock?", "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free quote, or use the free instant estimate."],
+      ["What will you take in Castle Rock?", "Furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, branches and brush, and hot tubs, sheds, decks, and fences when you want them gone. We do not take wet paint, chemicals, solvents, fuels, or other hazardous waste."],
+      ["How soon can you get to Castle Rock?", "Same-day and next-day appointments often available. Castle Rock is a short run from our Parker base. Call or text and we will tell you the next open window."],
+      ["Do you donate and recycle what you haul from Castle Rock?", "Usable furniture and household goods go to donation when a partner will accept them. Metal and appliances go to recycling. What cannot be reused goes to a licensed disposal site. The Town of Castle Rock does not run curbside trash or recycling, and neighborhood carts are not meant for a couch, a mattress, or a garage cleanout."],
+      ["Do I need to be home for a Castle Rock pickup?", "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone."],
+      ["Which Castle Rock neighborhoods do you serve?", "The Meadows, Crystal Valley Ranch, Castlewood Ranch, Plum Creek, Founders Village, Terrain, and homes around downtown Castle Rock. Tell us about stairs, a narrow gate, or a long carry when you send photos."],
+      ["What about HOA rules and hazardous items?", "A same-visit pickup avoids a pile or a dumpster sitting in the driveway, which many Castle Rock HOAs restrict. We do not haul wet paint, solvents, fuels, or other hazardous waste. Douglas County lists a household hazardous waste collection for residents, and a slash and mulch site for branches, leaves, and grass."],
+      ["Do you charge extra to come to Castle Rock?", "There is [[travel]]. We confirm that on the quote before any work starts."],
+    ],
     content: [
       {
         heading: "Local Hauling for Homes and Businesses",
         paragraphs: [
           "A garage full of moving boxes, an unwanted bedroom set, or a pile of boards from a weekend project can all turn into a job that keeps getting put off. Our Castle Rock junk removal service gives you one crew for the carry-out, loading and disposal. You show us what is leaving and what is staying; we confirm the scope before we touch anything.",
-          "We serve homes in The Meadows, Founders Village, Castlewood Ranch, Crystal Valley and Terrain, along with properties around downtown Castle Rock. Let us know about stairs, a narrow gate, a steep driveway or a long carry from the backyard when you request your estimate. Those details help us plan the right pickup rather than surprise you on arrival.",
+          "We serve homes in The Meadows, Crystal Valley Ranch, Castlewood Ranch, Plum Creek, Founders Village, and Terrain, along with properties around downtown Castle Rock. Let us know about stairs, a narrow gate, a steep driveway or a long carry from the backyard when you request your estimate. Those details help us plan the right pickup rather than surprise you on arrival.",
+        ],
+      },
+      {
+        heading: "Castle Rock Neighborhoods We Serve",
+        paragraphs: [
+          "The Meadows and Castlewood Ranch calls are often a garage that filled up over a few moves, or furniture left after a sale. Crystal Valley Ranch and Plum Creek sit on larger lots, so the pile might be in the backyard, past a gate, or next to a shed. Founders Village and Terrain are on the same route, and downtown Castle Rock adds tighter parking and shorter driveways.",
+          "Many of these communities have an HOA. A dumpster in the driveway for a week, or a mattress left at the curb, can draw a notice. We arrive, load, and leave the same visit, and we park so we are not blocking the street. You show us what is going and what is staying before we carry anything out.",
+        ],
+      },
+      {
+        heading: "Disposal and Recycling for Castle Rock",
+        paragraphs: [
+          "The Town of Castle Rock does not provide curbside trash or recycling. Neighborhoods with an HOA usually get carts through the association, and homes without one arrange their own hauler. Those carts are for weekly household trash, not a couch, a mattress, or a garage cleanout.",
+          "Douglas County lists a household hazardous waste collection for residents and a slash and mulch site that accepts branches, leaves, and grass. We do not haul wet paint, solvents, fuels, or other hazardous waste. Usable furniture goes to donation when a partner will accept it. Metal and appliances go to recycling. What is left goes to a licensed disposal site.",
         ],
       },
       {
@@ -206,7 +233,7 @@ const raw_locations: Location[] = [
       {
         heading: "Castle Rock Junk Removal Pricing",
         paragraphs: [
-          "For standard trailer-load jobs, pricing is based on the space your items occupy. Pickups start at [[min]], a half load is about [[load:4]], and a full load is about [[load:8]]. These prices come from our current pricing guide. Heavy materials, specialty items and demolition work need a scope-specific quote rather than a guess based only on volume.",
+          "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Heavy materials, specialty items, and demolition work need a look at the actual pile. For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate).",
           "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; There is [[travel]].",
         ],
         closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
@@ -227,7 +254,7 @@ const raw_locations: Location[] = [
       {
         heading: "Acreage and Outbuilding Cleanouts",
         paragraphs: [
-          "Larger lots around Castle Rock, including Founders Village, Crystal Valley and the rural edges of Douglas County, often collect years of extra stuff. Our **acreage junk removal** covers old sheds, fencing, scrap metal, broken equipment, pallets and storm branches. We load it all into our 16-foot dump trailer, so you do not need a dumpster sitting on your property for a week.",
+          "Larger lots around Castle Rock, including Founders Village, Crystal Valley Ranch, Plum Creek, and the rural edges of Douglas County, often collect years of extra stuff. Our **acreage junk removal** covers old sheds, fencing, scrap metal, broken equipment, pallets and storm branches. We load it all into our 16-foot dump trailer, so you do not need a dumpster sitting on your property for a week.",
           "Our red Ford F-250 handles steep and gravel driveways well. Tell us how far the pile is from the driveway and whether the ground is soft. For big jobs we can come back for a second load the same day, since disposal sites are a short drive away.",
         ],
       },
@@ -235,7 +262,7 @@ const raw_locations: Location[] = [
         heading: "Why Castle Rock Chooses EZ Haulaway",
         paragraphs: [
           "We are a **family-owned junk removal** company, owned by Ben and Zoe, and we are **licensed and insured**. You deal with the owners, not a call center. We give **upfront pricing** before loading, and we do all the lifting, so you never carry anything.",
-          "Our base in Parker means **fast junk removal in Castle Rock**, often next day and sometimes same day. Most junk removal companies price by trailer space, and so do we. Our trailer is easy to compare: a half load is about [[load:4]] and a full load about [[load:8]].",
+          "Our base in Parker means **fast junk removal in Castle Rock**. Same-day and next-day appointments often available. Pickups start at [[min]]. For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate).",
         ],
       },
       {

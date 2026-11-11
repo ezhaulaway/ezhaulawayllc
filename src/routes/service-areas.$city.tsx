@@ -20,6 +20,7 @@ import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_ID, BUSINESS_SCHEMA, processSteps 
 import { rich } from "@/components/prose-section";
 import { cityHubTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
+import { CITY_HIGHLIGHTS } from "@/content/city-highlights";
 
 export const Route = createFileRoute("/service-areas/$city")({
   loader: async ({ params }) => {
@@ -45,6 +46,10 @@ export const Route = createFileRoute("/service-areas/$city")({
       `Local junk removal and hauling in ${location.city}, Colorado. Furniture, appliances, hot tubs, cleanouts and debris hauled away by EZ Haulaway. Free quotes.`;
     const photo = locationPhoto(location.slug);
     const photoUrl = photo?.src.startsWith("https://") ? photo.src : undefined;
+    const businessSchema =
+      location.slug === "parker" || location.slug === "castle-rock"
+        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]") }
+        : BUSINESS_SCHEMA;
     return {
       meta: [
         { title: pageTitle },
@@ -70,7 +75,7 @@ export const Route = createFileRoute("/service-areas/$city")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              BUSINESS_SCHEMA,
+              businessSchema,
               {
                 "@type": "Service",
                 "@id": `${SITE_URL}/service-areas/${params.city}#service`,
@@ -153,6 +158,7 @@ function CityPage() {
 
   const faqs = location.faqs ?? cityFaqs(location.city);
   const angle = CITY_ANGLES[location.slug];
+  const highlights = CITY_HIGHLIGHTS[location.slug];
 
   return (
     <PageShell>
@@ -175,6 +181,15 @@ function CityPage() {
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
               {`Junk Removal in ${location.city}, CO`}
             </h1>
+            {highlights && (
+              <ul className="mt-5 grid max-w-2xl gap-x-6 gap-y-2 sm:grid-cols-2">
+                {highlights.map((item) => (
+                  <li key={item} className="text-sm font-semibold leading-6 text-foreground">
+                    {rich(priceText(item))}
+                  </li>
+                ))}
+              </ul>
+            )}
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{rich(location.intro)}</p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
             {neighborhoodList(location.slug) && (

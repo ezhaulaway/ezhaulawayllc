@@ -2,7 +2,7 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { BUSINESS_JSONLD, OPENING_HOURS_SPEC, PHONE_DISPLAY, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
+import { BUSINESS_JSONLD, OPENING_HOURS_SPEC, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
@@ -10,7 +10,8 @@ import heroJob1200 from "@/assets/hero-job-1200.webp";
 const BASELINE_RATING = { rating: 5, count: 5 };
 
 const title = "Parker CO Junk Removal | Family-Owned | Free Photo Quote";
-const description = `Family-owned junk removal in Parker, CO. Free photo quote, or call ${PHONE_DISPLAY}. We haul furniture, appliances, and cleanouts. EZ in, junk out.`;
+const descriptionTemplate =
+  "Family-owned junk removal in Parker, CO from [[min]]. Same-day and next-day appointments often available. Free photo quotes. EZ in, junk out.";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -27,7 +28,9 @@ export const Route = createFileRoute("/")({
     return BASELINE_RATING;
   },
   staleTime: 60 * 60 * 1000,
-  head: ({ loaderData }) => ({
+  head: ({ loaderData }) => {
+    const description = priceText(descriptionTemplate);
+    return {
     meta: [
       { title },
       { name: "description", content: description },
@@ -53,7 +56,7 @@ export const Route = createFileRoute("/")({
           mainEntity: homeFaqs.map(([question, answer]) => ({
             "@type": "Question",
             name: question,
-            acceptedAnswer: { "@type": "Answer", text: answer },
+            acceptedAnswer: { "@type": "Answer", text: priceText(answer) },
           })),
         }),
       },
@@ -64,10 +67,10 @@ export const Route = createFileRoute("/")({
           "@type": "JunkRemovalService",
           ...BUSINESS_JSONLD,
           description:
-            "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Trailer load pricing from [[min]] with full cleanup included.",
+            "Local, family-owned junk removal, hauling services, and light demolition serving Parker and the Denver metro area. Pricing starts at [[min]], with cleanup included.",
           url: SITE_URL,
           telephone: PHONE_E164,
-          priceRange: "[[min]] - [[load:8]]",
+          priceRange: "[[min]]",
           openingHoursSpecification: OPENING_HOURS_SPEC,
           areaServed: [
             ...SERVICE_AREA_CITIES.map((city) => ({ "@type": "City", name: `${city}, CO` })),
@@ -84,7 +87,6 @@ export const Route = createFileRoute("/")({
             "@type": "AggregateOffer",
             priceCurrency: "USD",
             lowPrice: "[[min]]",
-            highPrice: "[[load:8]]",
             itemOffered: { "@type": "Service", name: "Junk Removal & Hauling Services" },
           },
         })).replace(/"(low|high)Price":"\$([\d,]+)"/g, (_m, k, n) => `"${k}Price":"${n.replace(/,/g, "")}"`),
@@ -98,7 +100,7 @@ export const Route = createFileRoute("/")({
           ...BUSINESS_JSONLD,
           url: SITE_URL,
           telephone: PHONE_E164,
-          priceRange: "[[min]] - [[load:8]]",
+          priceRange: "[[min]]",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Parker",
@@ -121,6 +123,7 @@ export const Route = createFileRoute("/")({
         })),
       },
     ],
-  }),
+  };
+  },
   component: HomePage,
 });

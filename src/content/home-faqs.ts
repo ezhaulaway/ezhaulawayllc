@@ -3,12 +3,16 @@ import { PHONE } from "@/content/site";
 /** Shared by the homepage accordion and its structured data. */
 export const homeFaqs = [
   [
+    "How much does junk removal cost?",
+    "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price.",
+  ],
+  [
     "Do I have to move my junk to the curb?",
     "No. Our crew carries items out of basements, bedrooms, garages, and backyards. Just show us what goes.",
   ],
   [
     "How fast can you pick up junk in Parker?",
-    "We're based in Parker, so same-day or next-day pickup is often possible. Call or text and we'll give you the soonest time.",
+    "We're based in Parker. Same-day and next-day appointments often available. Call or text and we'll give you the soonest time.",
   ],
   [
     "Where does my junk go?",
@@ -24,7 +28,7 @@ export const homeFaqs = [
   ],
   [
     "How do I get a quote?",
-    "Use the short quote form to share your contact information and tell us what needs to go. You can also call or text us directly.",
+    "Use the free instant estimate, text us photos, or call. The online form asks for your name, city, and phone, then photos or a short description. The quote is free.",
   ],
   [
     "Can I text photos?",
@@ -40,6 +44,6 @@ export const homeFaqs = [
   ],
   [
     "What areas do you serve?",
-    "EZ Haulaway is based in Parker, Colorado and serves customers throughout the Denver metro area.",
+    "EZ Haulaway is based in Parker, Colorado. Castle Rock is a regular stop, and we also serve the rest of the Denver metro area.",
   ],
 ] as const;

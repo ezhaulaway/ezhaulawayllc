@@ -304,7 +304,18 @@ function ServicePage() {
             </div>
           </div>}
           <div className="mt-10">
-            <p className="font-display font-bold">Available across the Denver metro area</p>
+            <p className="font-display font-bold">Junk removal by city</p>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+              Every city we serve has its own page, including{" "}
+              <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
+                Parker
+              </Link>{" "}
+              and{" "}
+              <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
+                Castle Rock
+              </Link>
+              .
+            </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {locations.map((location) => (
                 <Link
@@ -340,7 +351,15 @@ function ServicePage() {
               recycling wherever we can, so less of your load ends up in a landfill.
             </p>
             <p>
-              What customers across Parker, Castle Rock, and the Denver metro area mention most is the feeling
+              What customers in{" "}
+              <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
+                Parker
+              </Link>
+              ,{" "}
+              <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
+                Castle Rock
+              </Link>
+              , and the rest of the Denver metro mention most is the feeling
               afterward: the space is back, the project is finally off the to-do list, and it took one visit instead
               of a whole weekend. That's how {service.name.toLowerCase()} should feel — easy from the first call to
               the final sweep.
