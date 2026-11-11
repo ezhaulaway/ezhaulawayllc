@@ -226,6 +226,20 @@ export function rewriteEzPriceText(input: string, guide: PriceGuide): string {
     [/quarter trailer is \$[\d,]+/gi, `quarter trailer is ${quarter}`],
     [/minimum or small load is \$[\d,]+/gi, `minimum or small load is ${min}`],
     [/minimum load is \$[\d,]+/gi, `minimum load is ${min}`],
+    [/minimum load at \$[\d,]+/gi, `minimum load at ${min}`],
+    [/starts at \$[\d,]+ for a minimum load/gi, `starts at ${min} for a minimum load`],
+    [
+      /\$[\d,]+ minimum, \$[\d,]+ for a quarter trailer, \$[\d,]+ for a half and \$[\d,]+ for a full trailer/gi,
+      `${min} minimum, ${quarter} for a quarter trailer, ${half} for a half and ${full} for a full trailer`,
+    ],
+    [
+      /Our loads start at \$[\d,]+ and run to \$[\d,]+ for a full trailer/gi,
+      `Our loads start at ${min} and run to ${full} for a full trailer`,
+    ],
+    [
+      /A treadmill on its own is \$[\d,]+, which is the same as our minimum load/gi,
+      `A treadmill on its own is ${treadmill}. The minimum for a pickup is ${min}`,
+    ],
     [/\$[\d,]+\s+for a mattress/gi, `${mattress} for a mattress`],
     [/from \$[\d,]+\s+for a piano/gi, `${piano} for a piano`],
     [/\$[\d,]+\s+for a full trailer/gi, `${full} for a full trailer`],
@@ -277,6 +291,15 @@ export function rewriteEzPriceText(input: string, guide: PriceGuide): string {
   out = out.replace(
     /additional labor is \$50 per hour/gi,
     `additional labor is ${formatMoney(guide.laborRate)} per hour`,
+  );
+  out = out.replace(
+    /(minimum or small load is\s*(?:<a\b[^>]*>)?)\$\d+(?:,\d{3})*/gi,
+    (_match, prefix: string) => `${prefix}${min}`,
+  );
+  out = out.replace(
+    /mattress and bulky item removal(<\/a>)?\s+service handles them for \$[\d,]+ each/gi,
+    (_match, close: string | undefined) =>
+      `mattress and bulky item removal${close ?? ""} service handles them for ${mattress} each`,
   );
   out = out.replace(/fits the \$150 minimum/gi, `fits the ${min} minimum`);
   out = out.replace(/Ours is \$150 for a small load/gi, `Ours is ${min} for a small load`);

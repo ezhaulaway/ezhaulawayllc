@@ -1,4 +1,4 @@
-import { PHONE, PHONE_DISPLAY } from "@/content/site";
+import { HOURS_TEXT, PHONE, PHONE_DISPLAY } from "@/content/site";
 import { priced } from "@/lib/price-store";
 export type LocationContentSection = {
   heading: string;
@@ -21,6 +21,8 @@ export type Location = {
   nearby: string[];
   topServices: string[];
   content?: LocationContentSection[];
+  /** When set, the city page FAQ accordion and FAQPage schema both use this list. */
+  faqs?: Array<[string, string]>;
 };
 
 const raw_locations: Location[] = [
@@ -29,28 +31,69 @@ const raw_locations: Location[] = [
     city: "Parker",
     county: "Douglas County",
     metaTitle: "Junk Removal Parker CO | EZ Haulaway LLC – Fast, Free Estimates",
-    metaDescription:
-      "Local junk removal in Parker, CO by a family-owned crew. Furniture, appliances, hot tubs & garage cleanouts hauled away fast. Get a free quote!",
+    metaDescription: `Family-owned junk removal in Parker, CO. Furniture, appliances, garages, and yard debris from Stonegate to The Pinery. Free photo quote: ${PHONE_DISPLAY}.`,
     intro:
-      "Parker is home base. EZ Haulaway is a family-owned **junk removal Parker** crew serving all of **Douglas County**, so every job here is in our own neighborhood.",
+      "Parker is home base. EZ Haulaway is a family-owned crew, and a Parker job is in our own neighborhood. Call or text and you reach Ben and Zoe, the same people who put the truck on the schedule.",
     local:
-      "Planning a pickup near downtown Parker landmarks such as O’Brien Park, the PACE Center or the historic 20 Mile House? Share your street address, photos of what needs to go, and any stairs or driveway access details so we can review the job and confirm scheduling. A landmark helps describe the area, but your exact address lets us plan the pickup.",
+      "Share the street address, photos of what needs to go, and anything that changes the carry: stairs, a locked gate, a steep driveway, or a long walk from the backyard. Landmarks such as O’Brien Park, the PACE Center, or the historic 20 Mile House help describe the area. The address is what we use to plan the stop.",
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
+    faqs: [
+      ["How much does junk removal cost in Parker?", "We price by the space your items take in a 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included. A few single items have their own prices: a small couch is [[item:couch-small]], a mattress is [[item:mattress]], and a full-size fridge or freezer is [[item:fridge-full]]. We confirm the number before anything is loaded."],
+      ["Do you charge extra to come to Parker?", "No. Parker is home base, so a Parker address does not get a distance fee. Jobs farther out can include [[travel]], and we put that on the quote before we schedule."],
+      ["Which Parker neighborhoods do you serve?", "Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Bradbury Ranch, Clarke Farms, Compark, Pradera, and the homes around Mainstreet and the Cherry Creek Trail. Acreage toward Hilltop Road, Franktown, and Elizabeth is a regular stop for brush, old fencing, and shed tear-downs."],
+      ["What will you haul, and what do you leave?", "We take furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, hot tubs, sheds, decks, fences, and yard debris such as branches and brush. We do not take wet paint, chemicals, solvents, asbestos, or fuels."],
+      ["How do I book, and how soon can you come?", `Call or text ${PHONE_DISPLAY}, or use the online estimate. That form asks for your name, city, and phone first, then photos or a description, and then shows a preliminary range. Hours are ${HOURS_TEXT}. Same-day pickup happens when the trailer is open. If it is not, we tell you the next time that works.`],
+      ["Do I have to be home or drag everything to the curb?", "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone."],
+      ["Does Parker trash service take couches and mattresses?", "Most Parker trash service, and many HOAs, limit bulky items or how long a pile can sit in the driveway. We take the couches, mattresses, and appliances those services will not, and we schedule a window so the pile is not left out for days."],
+      ["Where does the junk go after you leave Parker?", "Usable furniture and household goods go to donation when a partner will accept them. Metal, appliances, and electronics go to recycling. What cannot be reused goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill."],
+    ],
     content: [
       {
-        heading: "Parker Junk Removal: Common Questions",
+        heading: "Parker Neighborhoods We Serve",
         paragraphs: [
-          "Most Parker homeowners ask the same few things before they book. Here are straight answers.",
+          "Stonegate, Canterberry Crossing, and Bradbury Ranch are HOA neighborhoods. A couch or a pile of boxes in the driveway usually needs to be gone the same week, not left until the next trash cycle. Tell us if the HOA has a deadline, and we will give you the soonest window the trailer actually has.",
+          "The Pinery and the larger lots toward Hilltop Road are a different kind of stop. Driveways are longer, gates are common, and the load is often old fencing, a shed, or furniture from a house with more rooms than a typical subdivision. Idyllwilde, Clarke Farms, and Pradera calls are usually move-in leftovers and garage cleanouts.",
+          "Around Mainstreet, parking and alley access matter more than the size of the load. Say whether we should use the alley, a visitor spot, or the driveway so the trailer is not blocking the street. Compark is the business side of town. Office furniture, retail fixtures, and storage rooms are booked the same way as a house: photos first, then a time that fits the building.",
+          "Acreage toward Franktown and Elizabeth is a regular route for brush piles, old fencing, and shed tear-downs. If the drive from our Parker base is long enough to add a distance fee, we say so before we schedule. Parker addresses themselves do not get that fee.",
+        ],
+      },
+      {
+        heading: "What We Haul in Parker",
+        paragraphs: [
+          "We carry items out of the garage, basement, backyard, or upstairs bedroom. You do not drag anything to the curb. The usual Parker loads are couches, sectionals, mattresses, and appliances, plus garage and basement cleanouts before a move or a listing.",
+          "A small couch (2–3 seats) is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. A mattress is [[item:mattress]]. Once a refrigerator, freezer, washer, or dryer is unplugged and the water is off, we take it from the kitchen, basement, or garage. A full-size fridge or freezer is [[item:fridge-full]], and those units go to recyclers that handle the cooling gas.",
+          "Hot tubs, sheds, decks, and fences are part of the same visit when you want them gone, not a second contractor. Yard debris means branches, brush, and storm mess that will not fit in the trash cart. We do not take wet paint, chemicals, solvents, asbestos, or fuels.",
+        ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Parker furniture removal" },
+          { slug: "appliance-removal", label: "Parker appliance removal" },
+          { slug: "mattress-and-bulky-item-removal", label: "Parker mattress and bulky-item pickup" },
+          { slug: "garage-cleanouts", label: "Parker garage cleanouts" },
+          { slug: "hot-tub-removal", label: "Parker hot tub removal" },
+          { slug: "deck-and-fence-removal", label: "Parker deck and fence removal" },
+        ],
+      },
+      {
+        heading: "How Parker Junk Removal Pricing Works",
+        paragraphs: [
+          "The price is the space the load takes in our 16-foot dump trailer, about 14 cubic yards. A small pickup starts at [[min]]. A quarter trailer is [[load:2]], a half trailer is [[load:4]], and a full trailer is [[load:8]]. Labor, loading, hauling, and disposal are included in that number.",
+          "A few pieces on their own use the item prices above instead of a trailer fraction. We do not add those item prices on top of a trailer-load price. Extra labor for a hard carry, when it applies, is [[labor]] per hour per crew member. Parker addresses do not get a distance fee. Farther jobs can include [[travel]], and that is on the quote before we book.",
+          "We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
         ],
         list: [
-          { title: "How much does junk removal cost in Parker?", text: "We price by trailer space. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, and dump fees are included." },
-          { title: "Does Parker trash service take big items?", text: "Most Parker trash haulers and HOAs limit bulky items like couches, mattresses, and appliances. We take them, plus anything else you need gone." },
-          { title: "How fast can you come?", text: "We're based in Parker, so same-day or next-day pickup is often possible. Call or text and we'll give you the soonest time." },
-          { title: "Do you serve acreage and rural Parker?", text: "Yes. Larger lots out toward Franktown and Elizabeth are a regular stop for brush piles, old fencing, and shed tear-downs." },
-          { title: "Do I have to be home?", text: "Not always. For curbside or garage pickups, you can pay by phone and we'll text you when it's done." },
+          { title: "Small pickup", text: "One or two bulky items, or a tight pile of boxes. Starts at [[min]]." },
+          { title: "Partial load", text: "A garage corner or a couple of rooms. A half trailer is about [[load:4]]." },
+          { title: "Full cleanout", text: "A move-out, an estate, or a whole house. A full trailer is about [[load:8]], and a bigger house can take more than one load. We quote the whole job first." },
         ],
-        closing: "Want a price now? Use our free instant estimate with a few photos.",
+      },
+      {
+        heading: "How Booking Works in Parker",
+        paragraphs: [
+          `Hours are ${HOURS_TEXT}. Call or text ${PHONE_DISPLAY} with a few photos, or use the online estimate. That form asks for your name, city, and phone first, then photos or a description. After you submit, a preliminary range shows on the screen and the request comes to us.`,
+          "We tell you the soonest time the trailer is actually open. Same-day pickup happens when that day is free. If it is not, we say so and offer the next window. On site we walk the pile with you, confirm the price, then load. Floors, door frames, and walls get blankets and a careful carry, and we sweep the area we loaded from.",
+          "You do not have to be home for a curbside or garage pickup if we can get in and take payment by phone. We text you when the load is gone.",
+        ],
       },
       {
         heading: "A Real Parker Job: Basement Cleared in About 45 Minutes",
@@ -60,58 +103,11 @@ const raw_locations: Location[] = [
         serviceLinks: [{ slug: "basement-and-attic-cleanouts", label: "Basement and attic cleanouts" }],
       },
       {
-        heading: "What Parker Junk Removal Includes",
+        heading: "Where a Parker Load Goes",
         paragraphs: [
-          "Our **junk removal services** include the lifting, loading, hauling, and disposal fees. We carry items out of the garage, basement, backyard, or upstairs bedroom. You don't drag anything to the curb.",
-          "Common jobs include couch and mattress pickups, **garage and basement cleanouts**, old hot tubs, sheds, decks, fences, and yard debris. Usable items go to donation, and metal goes to recycling when we can.",
-          "Need **junk removal Parker** homeowners can count on? We're local to **Douglas County, Colorado**, and our **junk removal services** cover basement cleanouts, move-outs, and single-item pickups alike.",
+          "We sort on the job. Clean, sturdy furniture and household goods go to donation when a partner will take them. Stained, torn, or broken pieces usually will not. Metal, appliances, and electronics go to recycling. What is left goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill.",
         ],
-      },
-      {
-        heading: "Affordable Junk Removal Services in Parker, CO",
-        paragraphs: [
-          "Our junk removal services in Parker are priced by how much space your items take in the trailer. That keeps pickup affordable for a single couch and fair for a full house cleanout. You get a free estimate before we load anything, and the price we agree on is the price you pay.",
-          "We're a local, family-owned crew, not a franchise call center. When you call or text, you reach the people who show up. That makes scheduling simple and communication clear from start to finish.",
-        ],
-        list: [
-          { title: "Single-item pickup", text: "One old sofa, recliner, mattress, or treadmill. Pickups start at [[min]]." },
-          { title: "Partial loads", text: "A few rooms of furniture or a garage corner. A half trailer runs about [[load:4]]." },
-          { title: "Full cleanouts", text: "Estate, move-out, and whole-house cleanouts. A full trailer is about [[load:8]]." },
-        ],
-      },
-      {
-        heading: "Parker Neighborhoods We Serve",
-        paragraphs: [
-          "We haul junk all over Parker every week, including Stonegate, The Pinery, Idyllwilde, Compark, Canterberry Crossing, Clarke Farms, Bradbury Ranch, and the homes around Mainstreet and the Cherry Creek Trail. We also cover acreage out toward Hilltop Road and the county line.",
-          "HOA neighborhoods often limit how long a pile can sit in the driveway. We schedule a tight arrival window and clear it in one visit, so nothing sits out for days.",
-        ],
-      },
-      {
-        heading: "How Our Parker Junk Removal Works",
-        paragraphs: [
-          "Booking takes a few minutes. Text a few photos or use the instant estimate, pick a time, and our crew shows up ready to work. We walk the job with you, confirm the price, and handle all the heavy lifting.",
-          "We protect floors, door frames, and walls with blankets and careful carrying. After the trailer is loaded, we sweep the area so your garage or yard is clean when we leave.",
-        ],
-      },
-      {
-        heading: "Couch Disposal and Fridge Removal in Parker",
-        paragraphs: [
-          "Looking for **couch disposal in Parker**? We carry sofas, sectionals, sleeper sofas and recliners out of the house and haul them away the same visit. A small couch (2–3 seats) is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper couch is [[item:sleeper-couch]], and a large sectional is [[item:sectional-large]]. Usable pieces go to donation when they qualify.",
-          "We also handle **appliance disposal** and **fridge removal**. Once a refrigerator, freezer, washer or dryer is unplugged and the water is off, we take it from the kitchen, basement or garage. A full-size refrigerator is about [[item:fridge-full]]. Fridges and freezers go to recyclers that handle the cooling gas, and the metal is recycled.",
-          "Whether you need a **trash hauling service** for a pile of bags or a **junk collection service** for one bulky item, it's the same local crew and one upfront price.",
-        ],
-        serviceLinks: [
-          { slug: "furniture-removal", label: "Parker couch disposal" },
-          { slug: "appliance-removal", label: "Parker fridge removal and appliance disposal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Parker large item pickup" },
-        ],
-      },
-      {
-        heading: "Where Your Parker Junk Goes",
-        paragraphs: [
-          "We sort every load. Good furniture and household goods go to local donation centers. Metal, appliances, and electronics go to recycling. Only what's left goes to the landfill. It's a responsible way to clear your space and keep usable items out of the trash.",
-        ],
-        closing: "Ready to clear it out? Get a free estimate from Parker's local junk removal crew today.",
+        closing: "Ready to clear it out? Call, text, or send photos for a free estimate from the Parker crew.",
       },
     ],
   },

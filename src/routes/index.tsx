@@ -2,12 +2,15 @@ import { priceText } from "@/lib/price-store";
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/home-page";
 import { homeFaqs } from "@/content/home-faqs";
-import { BUSINESS_JSONLD, OPENING_HOURS_SPEC, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
+import { BUSINESS_JSONLD, OPENING_HOURS_SPEC, PHONE_DISPLAY, PHONE_E164, SERVICE_AREA_CITIES, SITE_URL } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 
 const BASELINE_RATING = { rating: 5, count: 5 };
+
+const title = "Parker CO Junk Removal | Family-Owned | Free Photo Quote";
+const description = `Family-owned junk removal in Parker, CO. Free photo quote, or call ${PHONE_DISPLAY}. We haul furniture, appliances, and cleanouts. EZ in, junk out.`;
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -26,24 +29,12 @@ export const Route = createFileRoute("/")({
   staleTime: 60 * 60 * 1000,
   head: ({ loaderData }) => ({
     meta: [
-      { title: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
-      {
-        name: "description",
-        content:
-          "Junk removal services in Parker, CO & Denver metro. Furniture, appliances, hot tubs, cleanouts & demolition. Free estimates from EZ Haulaway LLC.",
-      },
-      { property: "og:title", content: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
-      { name: "twitter:title", content: "Junk Removal Parker CO | EZ Haulaway – Free Estimates" },
-      {
-        property: "og:description",
-        content:
-          "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "Fast, reliable junk removal and hauling services throughout the Denver metro area from a local, family-owned business.",
-      },
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { name: "twitter:title", content: title },
+      { property: "og:description", content: description },
+      { name: "twitter:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
       { name: "twitter:card", content: "summary_large_image" },

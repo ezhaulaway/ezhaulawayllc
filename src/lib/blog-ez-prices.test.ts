@@ -28,6 +28,42 @@ describe("blog EZ price rewrite", () => {
     expect(out).not.toContain("$800");
   });
 
+  it("updates a minimum quoted as 'at $150' and leaves specialty item prices", () => {
+    const input =
+      'A 2–3 seat couch is $150. If you also have a couple of boxes and a lamp, the minimum load at $150 would cover the boxes and lamp. A mattress is $150. Our <a href="/services/mattress-and-bulky-item-removal">mattress and bulky item removal</a> service handles them for $100 each.';
+    const out = rewriteEzPriceText(input, guide);
+    expect(out).toContain("A 2–3 seat couch is $150.");
+    expect(out).toContain("the minimum load at $120");
+    expect(out).toContain("A mattress is $150.");
+    expect(out).toContain(
+      '<a href="/services/mattress-and-bulky-item-removal">mattress and bulky item removal</a> service handles them for $150 each',
+    );
+    expect(out).not.toContain("minimum load at $150");
+    expect(out).not.toContain("for $100 each");
+  });
+
+  it("updates other EZ minimum wording without touching a fence-guide minimum", () => {
+    const input = [
+      "In the Denver area, our haul-away pricing starts at $150 for a minimum load.",
+      'A minimum or small load is <a href="/pricing">$150, a quarter trailer is $240 and a full trailer is $840</a>.',
+      "Larger gyms are priced by trailer load: $150 minimum, $240 for a quarter trailer, $450 for a half and $800 for a full trailer.",
+      "Our loads start at $150 and run to $800 for a full trailer.",
+      "A treadmill on its own is $150, which is the same as our minimum load.",
+      "Fence removal has a minimum charge of roughly $150 to $400 on short runs.",
+    ].join(" ");
+    const out = rewriteEzPriceText(input, guide);
+    expect(out).toContain("starts at $120 for a minimum load");
+    expect(out).toContain('<a href="/pricing">$120, a quarter trailer is $240');
+    expect(out).toContain(
+      "$120 minimum, $240 for a quarter trailer, $420 for a half and $840 for a full trailer",
+    );
+    expect(out).toContain("Our loads start at $120 and run to $840 for a full trailer");
+    expect(out).toContain("A treadmill on its own is $150. The minimum for a pickup is $120");
+    expect(out).toContain("minimum charge of roughly $150 to $400");
+    expect(out).not.toContain("starts at $150 for a minimum");
+    expect(out).not.toContain("$800 for a full trailer");
+  });
+
   it("leaves national averages, fence math, dump fees, and third-party fees alone", () => {
     const samples = [
       "Junk removal usually costs between about $100 and $800 per job.",

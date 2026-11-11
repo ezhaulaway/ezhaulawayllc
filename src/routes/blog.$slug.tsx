@@ -5,7 +5,7 @@ import { PageShell, CtaBand } from "@/components/site-chrome";
 import { HOURS_TEXT, PHONE, SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
-import { BLOG_RELATED } from "@/content/blog-links";
+import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
 import { optimizeBlogImages } from "@/lib/blog-html";
 import { rewriteEzPriceJson, rewriteEzPriceText } from "@/lib/blog-ez-prices";
@@ -56,7 +56,9 @@ export const Route = createFileRoute("/blog/$slug")({
     const url = `${SITE_URL}/blog/${p.slug}`;
     // Posts synced without their own structured data get BlogPosting + BreadcrumbList from the post fields.
     const guide = getGuide();
-    const desc = rewriteEzPriceText(p.meta_description ?? "", guide);
+    const override = BLOG_HEAD_OVERRIDES[p.slug];
+    const title = override?.title ?? `${p.title} | EZ Haulaway Blog`;
+    const desc = rewriteEzPriceText(override?.description ?? p.meta_description ?? "", guide);
     const generated = p.json_ld == null ? blogSchemas({ ...p, meta_description: desc }) : [];
     const scripts = [p.json_ld, p.faq_json_ld]
       .filter((x) => x != null)
@@ -64,9 +66,9 @@ export const Route = createFileRoute("/blog/$slug")({
       .concat(generated.map((x) => ({ type: "application/ld+json", children: ser(applyBusinessIdentity(x)) })));
     return {
       meta: [
-        { title: `${p.title} | EZ Haulaway Blog` },
+        { title },
         { name: "description", content: desc },
-        { property: "og:title", content: p.title },
+        { property: "og:title", content: override?.title ?? p.title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
@@ -77,7 +79,7 @@ export const Route = createFileRoute("/blog/$slug")({
             ]
           : []),
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: p.title },
+        { name: "twitter:title", content: override?.title ?? p.title },
         { name: "twitter:description", content: desc },
       ],
       links: [{ rel: "canonical", href: url }],

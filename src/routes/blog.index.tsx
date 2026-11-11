@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { PageHero, PageShell, CtaBand } from "@/components/site-chrome";
+import { BLOG_HEAD_OVERRIDES } from "@/content/blog-links";
 import { SITE_URL } from "@/content/site";
 import { listBlogPosts } from "@/lib/blog.functions";
 import { blogImageSrcSet, resizedBlogImage } from "@/lib/blog-html";
@@ -73,8 +74,8 @@ function BlogIndex() {
                   ) : null}
                   <div className="p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">{fmt(p.article_created_at)}</p>
-                    <h2 className="mt-2 text-xl font-extrabold leading-snug text-foreground group-hover:text-primary">{p.title}</h2>
-                    {p.meta_description ? <p className="mt-3 line-clamp-3 text-muted-foreground">{rewriteEzPriceText(p.meta_description, guide)}</p> : null}
+                    <h2 className="mt-2 text-xl font-extrabold leading-snug text-foreground group-hover:text-primary">{BLOG_HEAD_OVERRIDES[p.slug]?.title ?? p.title}</h2>
+                    {(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description) ? <p className="mt-3 line-clamp-3 text-muted-foreground">{rewriteEzPriceText(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description ?? "", guide)}</p> : null}
                   </div>
                 </Link>
               ))}
