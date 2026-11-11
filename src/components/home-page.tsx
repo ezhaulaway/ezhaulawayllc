@@ -88,7 +88,7 @@ import {
 
 import { serviceAreaList } from "@/content/service-areas";
 import { PHONE } from "@/content/site";
-import { eighthPrice } from "@/lib/price-guide";
+import { eighthPrice, formatMoney } from "@/lib/price-guide";
 
 const navItems = [
   ["Services", "#services"],
@@ -214,14 +214,36 @@ export function HomePage() {
                 <MapPin className="size-3.5 text-primary" /> PARKER, CO · DENVER METRO
               </div>
               <h1 className="mt-6 max-w-xl text-lg font-extrabold uppercase tracking-[0.08em] leading-tight text-foreground sm:text-xl lg:text-2xl">
-                Junk Removal <span className="text-primary">Parker</span>
+                Junk Removal in <span className="text-primary">Parker, CO</span>
               </h1>
               <h2 className="mt-3 max-w-2xl text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
                 <span className="block">YOU POINT,</span>
                 <span className="block text-primary">WE HAUL.</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-                Professional residential and commercial junk removal that takes the stress out of clearing out unwanted furniture, old appliances, and everyday clutter. Made EZ.
+                Family-owned junk removal in Parker. You point, we haul — EZ in, junk out. We carry out the furniture, appliances, and clutter, donate what is still usable, and recycle what we can.
+              </p>
+              <ul className="mt-6 grid max-w-xl gap-2 text-sm font-semibold leading-6 text-foreground sm:grid-cols-2">
+                <li>Starting at {formatMoney(guide.minimum)}</li>
+                <li>Same-day and next-day appointments often available</li>
+                <li>
+                  <Link to="/instant-estimate" className="text-primary underline-offset-4 hover:underline">
+                    Free instant estimate
+                  </Link>{" "}
+                  or a free photo quote
+                </li>
+                <li>Usable items donated, recyclables recycled</li>
+              </ul>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">
+                Home base is{" "}
+                <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
+                  junk removal in Parker
+                </Link>
+                . We also haul in{" "}
+                <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
+                  Castle Rock
+                </Link>{" "}
+                and the rest of the Denver metro.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
@@ -396,7 +418,15 @@ export function HomePage() {
               <p>
                 What you're left with is the part customers talk about most: a garage you can park in again, a spare
                 room that becomes an office, a backyard where the kids can actually play. That's the real product we
-                sell across Parker, Castle Rock, and the Denver metro area — not just junk removal, but getting your
+                sell across{" "}
+                <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
+                  Parker
+                </Link>
+                ,{" "}
+                <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
+                  Castle Rock
+                </Link>
+                , and the Denver metro area — not just junk removal, but getting your
                 space and your peace of mind back.
               </p>
             </div>

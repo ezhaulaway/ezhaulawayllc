@@ -5,9 +5,9 @@
  */
 export const CITY_ANGLES: Record<string, string> = {
   parker:
-    "Parker is home base, so quick turnarounds are easiest here. Whether it is a rental in Stonegate or Canterberry Crossing, a home being prepped for sale near The Pinery, or a property manager with several units, one call puts a crew on the schedule, and same-day slots are often possible.",
+    "Parker is home base, so quick turnarounds are easiest here. Whether it is a rental in Stonegate, Stroh Ranch, or Canterberry Crossing, a home being prepped for sale near The Pinery, or a property manager with several units, one call puts a crew on the schedule. Same-day and next-day appointments often available.",
   "castle-rock":
-    "Castle Rock has a steady flow of move-outs, home sales and rentals across The Meadows, Founders Village and Terrain, and many properties sit inside HOAs that do not want junk left out. We clear what is left inside and out so the property is ready for the next owner or tenant.",
+    "Castle Rock has a steady flow of move-outs, home sales, and rentals across The Meadows, Castlewood Ranch, Crystal Valley Ranch, and Plum Creek. Many of those properties sit inside HOAs that do not want junk left out. We clear what is left inside and out so the property is ready for the next owner or tenant.",
   centennial:
     "Established Centennial neighborhoods like Willow Creek, Southglenn and Cherry Knolls produce plenty of pre-sale cleanouts and rental turnovers. Send us the address and the date your cleaners, painters or photographer are coming, and we will work back from there.",
   "highlands-ranch":
