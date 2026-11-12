@@ -261,7 +261,8 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
 
-    const eventId = await logEstimateEvent(data, estimate, inputTokens, outputTokens);
+    const rawEventId = await logEstimateEvent(data, estimate, inputTokens, outputTokens);
+    const eventId = rawEventId ? await signEventId(rawEventId) : null;
     return { ok: true, estimate, eventId };
   });
 
@@ -319,8 +320,30 @@ async function logEstimateEvent(
   }
 }
 
+// Event IDs handed to the browser are HMAC-signed so a caller can only lock in
+// the estimate event that the server just created for them.
+async function eventHmac(id: string): Promise<string | null> {
+  const secret = process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"];
+  if (!secret) return null;
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(`estimate-event:${secret}`), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(id));
+  return Array.from(new Uint8Array(sig)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function signEventId(id: string): Promise<string | null> {
+  const sig = await eventHmac(id);
+  return sig ? `${id}.${sig}` : null;
+}
+
+async function verifyEventToken(token: string): Promise<string | null> {
+  const [id, sig] = token.split(".");
+  if (!id || !sig || !z.string().uuid().safeParse(id).success) return null;
+  const expected = await eventHmac(id);
+  return expected && expected === sig ? id : null;
+}
+
 const lockInSchema = z.object({
-  eventId: z.string().uuid().nullable().optional(),
+  eventId: z.string().max(200).nullable().optional(),
   name: z.string().trim().min(1).max(100),
   phone: z.string().trim().min(7).max(30),
   address: z.string().trim().min(3).max(200),
@@ -348,13 +371,16 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
       },
       data.estimate as unknown as AiEstimate,
     );
-    if (data.eventId) {
+    const verifiedId = data.eventId ? await verifyEventToken(data.eventId) : null;
+    if (verifiedId) {
       try {
         const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
         await supabaseAdmin
           .from("estimate_events")
           .update({ locked_in: true, locked_in_at: new Date().toISOString() })
-          .eq("id", data.eventId);
+          .eq("id", verifiedId)
+          .eq("locked_in", false)
+          .gte("created_at", new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString());
       } catch (e) {
         console.error("estimate event lock-in update failed", e);
       }
