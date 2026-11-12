@@ -15,7 +15,7 @@
       {
         "name": "get_pricing",
         "title": "Get pricing",
-        "description": "Get EZ Haulaway's current junk removal price guide: minimum, labor rate, trailer load prices, extra charges and specialty items.",
+        "description": "Get EZ Haulaway's current junk removal price guide: minimum, labor rate, trailer load prices, travel fee, discounts and specialty items. Every number comes from one EZ Crew guide.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
