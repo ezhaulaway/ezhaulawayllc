@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { signEstimate, verifyEstimate, type SignedEstimateFields } from "./estimate-token";
 
 const trackSchema = z
   .object({
@@ -12,11 +13,14 @@ const trackSchema = z
   })
   .optional();
 
+const MAX_IMAGE_CHARS = 2_000_000;
+
 const inputSchema = z.object({
   track: trackSchema,
   description: z.string().trim().min(5).max(2000),
   images: z
-    .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
+    // The browser shrinks photos to 1024px JPEG (well under 1 MB); anything far larger is not from our form.
+    .array(z.string().max(MAX_IMAGE_CHARS).regex(/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/))
     .max(4)
     .default([]),
 });
@@ -56,13 +60,19 @@ function createSupabaseFetch(key: string): typeof fetch {
 
 async function recordLead(
   lead: { name: string; phone: string; address: string; description: string; photoCount: number },
-  estimate: AiEstimate,
+  estimate: SignedEstimateFields | null,
 ) {
-  const priceRange =
-    Math.round(estimate.price_low) === Math.round(estimate.price_high)
+  // A null estimate means the price sent back by the browser did not match what the server
+  // issued. The lead is still saved, but without a price anyone could have typed in.
+  const priceRange = !estimate
+    ? "Not verified \u2013 quote this job manually"
+    : Math.round(estimate.price_low) === Math.round(estimate.price_high)
       ? `$${Math.round(estimate.price_low)}`
       : `$${Math.round(estimate.price_low)}\u2013$${Math.round(estimate.price_high)}`;
-  const loadSize = LOAD_TEXT[estimate.load_size] ?? estimate.load_size;
+  const loadSize = estimate ? (LOAD_TEXT[estimate.load_size] ?? estimate.load_size) : "Not verified";
+  const summary = estimate
+    ? estimate.summary
+    : "The estimate could not be verified against the one the site issued. Quote this job manually.";
   const leadId = crypto.randomUUID();
 
   try {
@@ -82,10 +92,10 @@ async function recordLead(
         description: lead.description,
         photo_count: lead.photoCount,
         load_size: loadSize,
-        price_low: Math.round(estimate.price_low),
-        price_high: Math.round(estimate.price_high),
-        items_identified: estimate.items_identified ?? [],
-        summary: estimate.summary,
+        price_low: estimate ? Math.round(estimate.price_low) : null,
+        price_high: estimate ? Math.round(estimate.price_high) : null,
+        items_identified: estimate?.items_identified ?? [],
+        summary,
         status: "new",
       });
       if (error) console.error("ai estimate lead insert error", error);
@@ -105,8 +115,8 @@ async function recordLead(
         photoCount: lead.photoCount,
         priceRange,
         loadSize,
-        itemsIdentified: (estimate.items_identified ?? []).join(", "),
-        summary: estimate.summary,
+        itemsIdentified: (estimate?.items_identified ?? []).join(", "),
+        summary,
         submittedAt: new Date().toLocaleString("en-US", {
           timeZone: "America/Denver",
           dateStyle: "medium",
@@ -184,6 +194,15 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     const key = process.env["LOVABLE_API_KEY"];
     if (!key) return { ok: false, error: "Estimator is not configured." };
 
+    const { allowRequest, ESTIMATE_RULE } = await import("./abuse-guard.server");
+    if (!(await allowRequest(ESTIMATE_RULE))) {
+      return { ok: false, error: "The estimator is busy right now. Please call or text us for a quote." };
+    }
+
+    const { loadPriceGuide } = await import("./pricing.functions");
+    const { buildEstimatorInstructions, FREE_TV_COMPUTER_MINIMUM } = await import("./price-guide");
+    const guide = await loadPriceGuide();
+
     const content: any[] = [{ type: "input_text", text: `Customer description:\n${data.description}` }];
     for (const url of data.images) content.push({ type: "input_image", image_url: url });
 
@@ -196,11 +215,7 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         model: "openai/gpt-6-astra",
-        instructions: await (async () => {
-          const { loadPriceGuide } = await import("./pricing.functions");
-          const { buildEstimatorInstructions } = await import("./price-guide");
-          return buildEstimatorInstructions(await loadPriceGuide());
-        })(),
+        instructions: buildEstimatorInstructions(guide),
         input: [{ role: "user", content }],
         stream: true,
         store: false,
@@ -256,13 +271,18 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     if (refused || !text) return { ok: false, error: "We couldn't estimate from that info. Please send a quote request instead." };
     let estimate: AiEstimate;
     try {
-      estimate = JSON.parse(text) as AiEstimate;
+      estimate = estimateSchema.parse(JSON.parse(text)) as AiEstimate;
     } catch {
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
+    // Whatever the description says, the price never drops below the lowest price we offer.
+    const floor = Math.min(guide.minimum, FREE_TV_COMPUTER_MINIMUM);
+    estimate.price_low = Math.max(floor, Math.round(estimate.price_low));
+    estimate.price_high = Math.max(estimate.price_low, Math.round(estimate.price_high));
 
     const rawEventId = await logEstimateEvent(data, estimate, inputTokens, outputTokens);
-    const eventId = rawEventId ? await signEventId(rawEventId) : null;
+    const secret = tokenSecret();
+    const eventId = secret ? await signEstimate(secret, rawEventId ?? crypto.randomUUID(), estimate) : null;
     return { ok: true, estimate, eventId };
   });
 
@@ -320,30 +340,33 @@ async function logEstimateEvent(
   }
 }
 
-// Event IDs handed to the browser are HMAC-signed so a caller can only lock in
-// the estimate event that the server just created for them.
-async function eventHmac(id: string): Promise<string | null> {
-  const secret = process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"];
-  if (!secret) return null;
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(`estimate-event:${secret}`), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(id));
-  return Array.from(new Uint8Array(sig)).map((b) => b.toString(16).padStart(2, "0")).join("");
+// The token handed to the browser signs the estimate itself (see estimate-token.ts), so the
+// lock-in step only trusts a price, load size and summary that this server issued.
+function tokenSecret(): string | null {
+  return process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"] ?? null;
 }
 
-async function signEventId(id: string): Promise<string | null> {
-  const sig = await eventHmac(id);
-  return sig ? `${id}.${sig}` : null;
-}
-
-async function verifyEventToken(token: string): Promise<string | null> {
-  const [id, sig] = token.split(".");
-  if (!id || !sig || !z.string().uuid().safeParse(id).success) return null;
-  const expected = await eventHmac(id);
-  return expected && expected === sig ? id : null;
-}
+const estimateSchema = z.object({
+  load_size: z.enum([
+    "minimum", "eighth", "quarter", "three_eighths", "half",
+    "five_eighths", "three_quarters", "seven_eighths", "full", "multiple_loads",
+  ]),
+  price_low: z.number().finite().nonnegative(),
+  price_high: z.number().finite().nonnegative(),
+  // Trimmed to the same limits the lock-in step accepts, so a long answer never blocks a lead.
+  summary: z.string().transform((v) => v.slice(0, 2000)),
+  items_identified: z.array(z.string()).transform((list) => list.slice(0, 30).map((v) => v.slice(0, 200))),
+  special_items: z.array(z.object({ item: z.string(), note: z.string() })),
+  recommended_service: z.string(),
+  crew_and_time: z.string(),
+  prep_tips: z.array(z.string()),
+  confidence: z.enum(["low", "medium", "high"]),
+});
 
 const lockInSchema = z.object({
   eventId: z.string().max(200).nullable().optional(),
+  // Hidden field real visitors never see or fill in. Bots that fill every field are dropped.
+  website: z.string().max(200).optional(),
   name: z.string().trim().min(1).max(100),
   phone: z.string().trim().min(7).max(30),
   address: z.string().trim().min(3).max(200),
@@ -361,6 +384,17 @@ const lockInSchema = z.object({
 export const submitEstimateLead = createServerFn({ method: "POST" })
   .validator((data: unknown) => lockInSchema.parse(data))
   .handler(async ({ data }) => {
+    if (data.website) return { ok: true as const };
+
+    const { allowRequest, ESTIMATE_LEAD_RULE } = await import("./abuse-guard.server");
+    if (!(await allowRequest(ESTIMATE_LEAD_RULE))) {
+      throw new Error("Too many requests. Please call or text us.");
+    }
+
+    const secret = tokenSecret();
+    const verifiedId =
+      secret && data.eventId ? await verifyEstimate(secret, data.eventId, data.estimate) : null;
+    if (!verifiedId) console.warn("estimate lead arrived without a valid estimate token");
     await recordLead(
       {
         name: data.name,
@@ -369,9 +403,8 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
         description: data.description,
         photoCount: data.photoCount,
       },
-      data.estimate as unknown as AiEstimate,
+      verifiedId ? data.estimate : null,
     );
-    const verifiedId = data.eventId ? await verifyEventToken(data.eventId) : null;
     if (verifiedId) {
       try {
         const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
