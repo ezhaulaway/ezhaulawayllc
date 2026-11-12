@@ -2,12 +2,23 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
 
+const PHOTO_PATH =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\/[A-Za-z0-9_-]{1,60}\.(?:jpe?g|png|webp|heic|heif|gif)$/;
+
 const quoteSchema = z.object({
   name: z.string().trim().min(1).max(100),
   phone: z.string().trim().min(1).max(30),
   location: z.string().trim().min(1).max(100),
   details: z.string().trim().min(1).max(2000),
-  photoPaths: z.array(z.string()).max(10).default([]),
+  // Paths are created by our form as <uuid folder>/<safe file name>; anything else is refused
+  // so a caller cannot point the office alert at files they did not upload in this request.
+  photoPaths: z
+    .array(z.string().max(120).regex(PHOTO_PATH))
+    .max(10)
+    .default([])
+    .refine((paths) => new Set(paths.map((p) => p.split("/")[0])).size <= 1, "Photos must share one folder"),
+  // Hidden field real visitors never see or fill in. Bots that fill every field are dropped.
+  website: z.string().max(200).optional(),
 });
 
 export type QuoteInput = z.infer<typeof quoteSchema>;
@@ -35,6 +46,13 @@ function createSupabaseFetch(key: string): typeof fetch {
 export const submitQuoteRequest = createServerFn({ method: "POST" })
   .validator((data: unknown) => quoteSchema.parse(data))
   .handler(async ({ data }) => {
+    if (data.website) return { success: true };
+
+    const { allowRequest, QUOTE_RULE } = await import("@/lib/abuse-guard.server");
+    if (!(await allowRequest(QUOTE_RULE))) {
+      throw new Error("Too many requests. Please call or text us.");
+    }
+
     const { createClient } = await import("@supabase/supabase-js");
 
     const url = process.env["SUPABASE_URL"];

@@ -7,7 +7,7 @@ import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
-import { optimizeBlogImages } from "@/lib/blog-html";
+import { cleanHtml, optimizeBlogImages } from "@/lib/blog-html";
 import { rewriteEzPriceJson, rewriteEzPriceText } from "@/lib/blog-ez-prices";
 import { getGuide, priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
@@ -108,7 +108,7 @@ function BlogPost() {
         </Link>
         <PostDates created={p.article_created_at} updated={p.article_updated_at} />
         <BlogCallout slug={p.slug} />
-        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: rewriteEzPriceText(priceText(optimizeBlogImages(p.content_html ?? "")), getGuide()) }} />
+        <div className="blog-prose mt-8" dangerouslySetInnerHTML={{ __html: rewriteEzPriceText(priceText(optimizeBlogImages(cleanHtml(p.content_html ?? ""))), getGuide()) }} />
       </article>
       {BLOG_RELATED[p.slug] ? (
         <BlogRelatedServices slug={p.slug} />
