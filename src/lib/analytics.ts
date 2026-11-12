@@ -60,8 +60,17 @@ export function initAnalytics() {
   document.addEventListener(
     "click",
     (e) => {
-      const link = (e.target as HTMLElement | null)?.closest?.('a[href^="tel:"]');
+      const el = e.target as HTMLElement | null;
+      // Texting us is a lead too: tell Analytics (no Ads conversion for it).
+      if (el?.closest?.('a[href^="sms:"]') && window.gtag)
+        window.gtag("event", "text_click", { transport_type: "beacon" });
+      const link = el?.closest?.('a[href^="tel:"]');
       if (!link || !window.gtag) return;
+      // Analytics: a phone tap, marked as a key event in GA4 (Admin → Events).
+      window.gtag("event", "phone_call_click", {
+        page_path: window.location.pathname,
+        transport_type: "beacon",
+      });
       window.gtag("event", "conversion", {
         send_to: CALL_CONVERSION,
         value: 1.0,
@@ -81,7 +90,11 @@ export function trackPageView(path: string) {
   window.gtag("event", "page_view", { page_path: path });
 }
 
-/** Custom events, e.g. trackEvent("generate_lead", { method: "quote_form" }). */
+/**
+ * Custom events. The lead events GA4 counts as key events (Admin → Events):
+ * generate_lead (method quote_form | instant_estimate), phone_call_click.
+ * estimate_generated and text_click are sent too but aren't key events.
+ */
 export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (!initialized || !window.gtag) return;
   window.gtag("event", name, params);

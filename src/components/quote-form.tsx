@@ -8,6 +8,7 @@ import { PHONE, PHONE_TEL } from "@/content/site";
 import { supabase } from "@/integrations/supabase/client";
 import { submitQuoteRequest, type QuoteInput } from "@/lib/quote.functions";
 import { useServerFn } from "@tanstack/react-start";
+import { trackEvent } from "@/lib/analytics";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
@@ -138,6 +139,7 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
 
       if (result.success) {
         setSubmitted(true);
+        trackEvent("generate_lead", { method: "quote_form" });
         if (uploadErrors.length > 0) {
           console.warn("Some photos failed to upload:", uploadErrors);
         }

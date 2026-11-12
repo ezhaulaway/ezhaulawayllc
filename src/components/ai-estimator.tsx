@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
+import { trackEvent } from "@/lib/analytics";
 import { Camera, Loader2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AiEstimatorIntro } from "@/components/ai-estimator-intro";
@@ -142,6 +143,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
       const res = await run({ data: { description, images, track: trackingInfo() } });
       if (res.ok) {
         setEstimate(res.estimate);
+        trackEvent("estimate_generated", { photos: images.length });
         setEventId(res.eventId);
         void sendLead(res.estimate, res.eventId);
       }
@@ -174,6 +176,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
         },
       });
       setLeadSent(true);
+      trackEvent("generate_lead", { method: "instant_estimate" });
     } catch {
       setLeadError("We couldn't send your info. Please call or text us to lock this in.");
     } finally {
