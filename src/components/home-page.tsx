@@ -222,28 +222,6 @@ export function HomePage() {
               <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
                 Family-owned junk removal in Parker. You point, we haul — EZ in, junk out. We carry out the furniture, appliances, and clutter, donate what is still usable, and recycle what we can.
               </p>
-              <ul className="mt-6 grid max-w-xl gap-2 text-sm font-semibold leading-6 text-foreground sm:grid-cols-2">
-                <li>Starting at {formatMoney(guide.minimum)}</li>
-                <li>Same-day and next-day appointments often available</li>
-                <li>
-                  <Link to="/instant-estimate" className="text-primary underline-offset-4 hover:underline">
-                    Free instant estimate
-                  </Link>{" "}
-                  or a free photo quote
-                </li>
-                <li>Usable items donated, recyclables recycled</li>
-              </ul>
-              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">
-                Home base is{" "}
-                <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
-                  junk removal in Parker
-                </Link>
-                . We also haul in{" "}
-                <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
-                  Castle Rock
-                </Link>{" "}
-                and the rest of the Denver metro.
-              </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
                   <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
@@ -259,6 +237,30 @@ export function HomePage() {
                   <ShieldCheck className="size-4 text-primary" /> Licensed &amp; Insured
                 </span>
               </p>
+              <div className="mt-6 max-w-xl rounded-lg border border-border bg-card p-5 shadow-sm">
+                <ul className="grid gap-3 text-sm font-semibold leading-6 text-foreground sm:grid-cols-2">
+                <li className="flex items-start gap-2"><Check className="mt-1 size-4 shrink-0 text-primary" /><span>Starting at {formatMoney(guide.minimum)}</span></li>
+                <li className="flex items-start gap-2"><Check className="mt-1 size-4 shrink-0 text-primary" /><span>Same-day and next-day appointments often available</span></li>
+                <li className="flex items-start gap-2"><Check className="mt-1 size-4 shrink-0 text-primary" /><span>
+                  <Link to="/instant-estimate" className="text-primary underline-offset-4 hover:underline">
+                    Free instant estimate
+                  </Link>{" "}
+                  or a free photo quote
+                </span></li>
+                <li className="flex items-start gap-2"><Check className="mt-1 size-4 shrink-0 text-primary" /><span>Usable items donated, recyclables recycled</span></li>
+              </ul>
+<p className="mt-4 border-t border-border pt-4 text-sm leading-6 text-muted-foreground">
+                Home base is{" "}
+                <Link to="/service-areas/$city" params={{ city: "parker" }} className="font-semibold text-primary hover:underline">
+                  junk removal in Parker
+                </Link>
+                . We also haul in{" "}
+                <Link to="/service-areas/$city" params={{ city: "castle-rock" }} className="font-semibold text-primary hover:underline">
+                  Castle Rock
+                </Link>{" "}
+                and the rest of the Denver metro.
+              </p>
+              </div>
             </div>
             <div className="relative min-w-0">
               <img
