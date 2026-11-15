@@ -6,7 +6,7 @@ import { freeTvComputerWording } from "@/lib/price-guide";
  * The $100 TV/computer threshold is the approved policy in price-guide.ts.
  */
 export const PROMO = {
-  active: true,
+  active: false,
   eyebrow: "Fall promo",
   text: freeTvComputerWording(),
   linkLabel: "Get an instant estimate",
