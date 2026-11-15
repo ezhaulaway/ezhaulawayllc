@@ -34,62 +34,42 @@ const LOAD_TEXT: Record<string, string> = {
   multiple_loads: "More than one trailer",
 };
 
-function isNewSupabaseApiKey(value: string): boolean {
-  return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_");
-}
-
-function createSupabaseFetch(key: string): typeof fetch {
-  return (input, init) => {
-    const headers = new Headers(
-      typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
-    );
-    if (init?.headers) {
-      new Headers(init.headers).forEach((value, k) => headers.set(k, value));
-    }
-    if (isNewSupabaseApiKey(key) && headers.get("Authorization") === `Bearer ${key}`) {
-      headers.delete("Authorization");
-    }
-    headers.set("apikey", key);
-    return fetch(input, { ...init, headers });
-  };
-}
+type StoredEstimate = {
+  load_size: string | null;
+  price_low: number | null;
+  price_high: number | null;
+  items_identified: string[];
+  summary: string | null;
+};
 
 async function recordLead(
   lead: { name: string; phone: string; address: string; description: string; photoCount: number },
-  estimate: AiEstimate,
+  estimate: StoredEstimate,
 ) {
+  const lo = estimate.price_low;
+  const hi = estimate.price_high;
   const priceRange =
-    Math.round(estimate.price_low) === Math.round(estimate.price_high)
-      ? `$${Math.round(estimate.price_low)}`
-      : `$${Math.round(estimate.price_low)}\u2013$${Math.round(estimate.price_high)}`;
-  const loadSize = LOAD_TEXT[estimate.load_size] ?? estimate.load_size;
+    lo == null || hi == null ? "Not available" : lo === hi ? `$${lo}` : `$${lo}\u2013$${hi}`;
+  const loadSize = estimate.load_size ?? "Not available";
   const leadId = crypto.randomUUID();
 
   try {
-    const url = process.env["SUPABASE_URL"];
-    const key = process.env["SUPABASE_PUBLISHABLE_KEY"];
-    if (url && key) {
-      const { createClient } = await import("@supabase/supabase-js");
-      const supabasePublic = createClient(url, key, {
-        auth: { persistSession: false, autoRefreshToken: false, storage: undefined },
-        global: { fetch: createSupabaseFetch(key) },
-      });
-      const { error } = await supabasePublic.from("ai_estimate_requests").insert({
-        id: leadId,
-        name: lead.name,
-        phone: lead.phone,
-        address: lead.address,
-        description: lead.description,
-        photo_count: lead.photoCount,
-        load_size: loadSize,
-        price_low: Math.round(estimate.price_low),
-        price_high: Math.round(estimate.price_high),
-        items_identified: estimate.items_identified ?? [],
-        summary: estimate.summary,
-        status: "new",
-      });
-      if (error) console.error("ai estimate lead insert error", error);
-    }
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { error } = await supabaseAdmin.from("ai_estimate_requests").insert({
+      id: leadId,
+      name: lead.name,
+      phone: lead.phone,
+      address: lead.address,
+      description: lead.description,
+      photo_count: lead.photoCount,
+      load_size: estimate.load_size,
+      price_low: lo,
+      price_high: hi,
+      items_identified: estimate.items_identified ?? [],
+      summary: estimate.summary,
+      status: "new",
+    });
+    if (error) console.error("ai estimate lead insert error", error);
   } catch (dbError) {
     console.error("ai estimate lead insert failed", dbError);
   }
@@ -106,7 +86,7 @@ async function recordLead(
         priceRange,
         loadSize,
         itemsIdentified: (estimate.items_identified ?? []).join(", "),
-        summary: estimate.summary,
+        summary: estimate.summary ?? "",
         submittedAt: new Date().toLocaleString("en-US", {
           timeZone: "America/Denver",
           dateStyle: "medium",
@@ -361,6 +341,38 @@ const lockInSchema = z.object({
 export const submitEstimateLead = createServerFn({ method: "POST" })
   .validator((data: unknown) => lockInSchema.parse(data))
   .handler(async ({ data }) => {
+    // Prices, load size and items come only from the estimate the server itself
+    // generated and recorded; client-supplied price values are never trusted.
+    const verifiedId = data.eventId ? await verifyEventToken(data.eventId) : null;
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    let stored: StoredEstimate = {
+      load_size: null,
+      price_low: null,
+      price_high: null,
+      items_identified: [],
+      summary: data.estimate.summary.slice(0, 2000),
+    };
+    if (verifiedId) {
+      try {
+        const { data: ev } = await supabaseAdmin
+          .from("estimate_events")
+          .select("load_size, price_low, price_high, items_identified")
+          .eq("id", verifiedId)
+          .gte("created_at", new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString())
+          .maybeSingle();
+        if (ev) {
+          stored = {
+            ...stored,
+            load_size: ev.load_size,
+            price_low: ev.price_low,
+            price_high: ev.price_high,
+            items_identified: ev.items_identified ?? [],
+          };
+        }
+      } catch (e) {
+        console.error("estimate event lookup failed", e);
+      }
+    }
     await recordLead(
       {
         name: data.name,
@@ -369,12 +381,10 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
         description: data.description,
         photoCount: data.photoCount,
       },
-      data.estimate as unknown as AiEstimate,
+      stored,
     );
-    const verifiedId = data.eventId ? await verifyEventToken(data.eventId) : null;
     if (verifiedId) {
       try {
-        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
         await supabaseAdmin
           .from("estimate_events")
           .update({ locked_in: true, locked_in_at: new Date().toISOString() })
