@@ -56,6 +56,7 @@ export const BLOG_RELATED: Record<string, string[]> = {
   "fence-removal-cost": ["/services/deck-and-fence-removal", "/pricing"],
   "furniture-disposal-denver": ["/services/furniture-removal", "/service-areas/denver"],
   "yard-waste-brush-removal-cost-parker": ["/services/yard-and-landscaping-debris", "/services/light-demolition", "/pricing"],
+  "christmas-tree-disposal": ["/services/yard-and-landscaping-debris", "/pricing"],
 };
 
 /** Full document title and meta description for a post whose synced title is a weak snippet. */
