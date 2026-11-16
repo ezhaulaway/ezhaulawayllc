@@ -1,4 +1,3 @@
-import { PHONE } from "@/content/site";
 import { priced } from "@/lib/price-store";
 import furnitureAsset from "@/assets/real-furniture-couch-1000.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
@@ -19,8 +18,17 @@ import commercialAsset from "@/assets/branded-service-commercial.webp";
 import shedImage from "@/assets/branded-service-shed.webp";
 import { serviceExtras } from "./service-extras";
 import { woodPalletRemoval } from "./wood-pallet-removal";
-import { dumpsterRentalAlternative, hoarderCleanout, storageUnitCleanout } from "./specialty-services";
-import { evictionCleanout, makeReadyHaulOff, basementAtticCleanout, realtorAttorneyCleanout } from "./property-services";
+import {
+  dumpsterRentalAlternative,
+  hoarderCleanout,
+  storageUnitCleanout,
+} from "./specialty-services";
+import {
+  evictionCleanout,
+  makeReadyHaulOff,
+  basementAtticCleanout,
+  realtorAttorneyCleanout,
+} from "./property-services";
 
 export type Service = {
   slug: string;
@@ -41,25 +49,31 @@ export type Service = {
   };
   intro: string[];
   includes: string[];
-  sections: Array<{ heading: string; text: string; links?: Array<{ slug: string; label: string; city?: string }> }>;
+  sections: Array<{
+    heading: string;
+    text: string;
+    links?: Array<{ slug: string; label: string; city?: string }>;
+  }>;
   faqs: Array<[string, string]>;
   related: string[];
   cityPages?: boolean;
 };
 
 const raw_services: Service[] = [
-{
+  {
     slug: "furniture-removal",
     name: "Furniture Removal",
-    h1: "Furniture Removal in Parker, Denver & the Metro",
-    metaTitle: "Furniture Removal Parker & Denver | We Carry It Out",
-    metaDescription: `Couches, sectionals, dressers, and office furniture carried out in Parker and Denver. Donation when a piece qualifies. Free photo quote: ${PHONE}.`,
+    h1: "Furniture and Sofa Removal Across Parker and the South Metro",
+    metaTitle: "Furniture Removal Company | Sofa & Couch Haul",
+    metaDescription:
+      "Sofas, sectionals, and office furniture carried out across Parker, Castle Rock, Centennial, and the south metro. From [[min]]. Free photo quote.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
-    imageAlt: "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
+    imageAlt:
+      "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. Point at the sofa, the dresser, or the whole room. We carry it out from where it sits.",
-      "We work in occupied homes, apartments, and offices across Parker, Denver, Castle Rock, and the rest of the metro. Floors, doorframes, and corners get blankets and a careful carry on the way out.",
+      "We work in occupied homes, apartments, and offices across Parker, Castle Rock, Centennial, Highlands Ranch, Aurora, and Denver. Floors, doorframes, and corners get blankets and a careful carry on the way out. Denver apartments, alleys, and offices are on the [Denver furniture and sofa removal](/service-areas/denver/furniture-removal) page.",
     ],
     includes: [
       "Couches, sectionals, recliners, and sleeper sofas",
@@ -75,7 +89,9 @@ const raw_services: Service[] = [
       {
         heading: "What furniture we take",
         text: "If two people can carry it and it is not hazardous, we can usually take it. That includes living-room pieces, bedroom sets, dining sets, home-office furniture, and patio furniture. Built-in cabinets and anything that is part of the structure are a different job. Tell us if a piece is attached to the wall.\n\nMattresses and box springs have their own pickup. A mattress is [[item:mattress]] and a box spring is [[item:box-spring]]. Pianos start at [[item:piano]]. If the only thing going is a mattress, the mattress page is the right place. If the mattress is leaving with a bedroom set, it can ride on the same trailer.",
-        links: [{ slug: "mattress-and-bulky-item-removal", label: "Mattress and bulky-item removal" }],
+        links: [
+          { slug: "mattress-and-bulky-item-removal", label: "Mattress and bulky-item removal" },
+        ],
       },
       {
         heading: "Donation and recycling",
@@ -90,8 +106,11 @@ const raw_services: Service[] = [
         text: "Empty drawers and take personal items out of cushions and shelves. Clear a walking path and open the doors between the piece and the exit. Mention stairs, an elevator, a narrow hallway, or a long carry from a backyard or alley.\n\nIf a doorway looks tight, we can take the piece apart on site. You do not need to do that first, and you do not need to drag anything to the curb. Point out what stays. If you hope to donate something, tell us about rips, stains, or pet hair so we know whether donation is realistic.",
       },
       {
-        heading: "Stairs, apartments, and tight Denver houses",
-        text: "Most furniture is not waiting in the driveway. Narrow stairwells, third-floor walkups, basement turns, and alley pickups are part of the job. Older Denver houses often have steep stairs and tight doorways. Sleeper sofas and sectionals are the pieces that usually need to come apart. We protect floors and door frames and sweep up after the load is out.",
+        heading: "Stairs, apartments, and tight doorways",
+        text: "Most furniture is not waiting in the driveway. Narrow stairwells, upper-floor apartments, basement turns, and alley pickups are part of the job across Parker and the south metro. Sleeper sofas and sectionals are the pieces that usually need to come apart. We protect floors and door frames and sweep up after the load is out.\n\nDenver walkups, alley parking, and office buildings have their own details: elevators, loading docks, and buildings that ask for a certificate of insurance.",
+        links: [
+          { slug: "furniture-removal", label: "Furniture removal in Denver", city: "denver" },
+        ],
       },
       {
         heading: "Office furniture",
@@ -100,18 +119,46 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["What furniture do you take?", "Couches, sectionals, recliners, sleeper sofas, dressers, tables, chairs, bed frames, bookshelves, entertainment centers, patio furniture, and office furniture. If it is built in or hazardous, ask us before you book."],
-      ["Do I need to move the furniture outside first?", "No. Leave it where it sits. Our crew carries it out, including down stairs and through tight hallways."],
-      ["How much does furniture removal cost?", "A small couch is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper is [[item:sleeper-couch]], a large sectional is [[item:sectional-large]], and a dresser is [[item:dresser]]. A roomful is priced by trailer space, from [[min]] up to [[load:8]] for a full trailer. Item prices are not added on top of a load price. A photo quote gives you the number before we schedule."],
-      ["Do you donate or recycle furniture?", "Clean, sturdy pieces go to donation when a partner will accept them. Metal frames and springs go to recycling when a yard will take them. Stained, torn, or broken furniture usually goes to a licensed disposal site. Tell us the condition so we do not plan on a donation that will be turned away."],
-      ["How should I prepare?", "Empty drawers, clear a path, and tell us about stairs or a tight doorway. You do not need to disassemble anything or move it to the curb. If a piece will not fit through a door, we take it apart on site."],
-      ["Will you take a sleeper sofa or a sectional apart?", "Yes. Sleepers and large sectionals are heavy and often will not clear a doorway in one piece. We break them down and carry them out."],
-      ["Do you remove office furniture?", "Yes. Desks, cubicles, conference tables, filing cabinets, and chairs go in the same visit, from one office to a tenant turnover. The load is priced by trailer space, starting at [[min]]."],
-      ["Which areas do you serve?", "Parker, Denver, Castle Rock, Centennial, Highlands Ranch, Lone Tree, Aurora, Littleton, Englewood, Lakewood, and the surrounding metro. The service areas page has the full list."],
+      [
+        "What furniture do you take?",
+        "Couches, sectionals, recliners, sleeper sofas, dressers, tables, chairs, bed frames, bookshelves, entertainment centers, patio furniture, and office furniture. If it is built in or hazardous, ask us before you book.",
+      ],
+      [
+        "Do I need to move the furniture outside first?",
+        "No. Leave it where it sits. Our crew carries it out, including down stairs and through tight hallways.",
+      ],
+      [
+        "How much does furniture removal cost?",
+        "A small couch is [[item:couch-small]], a recliner or loveseat is [[item:recliner]], a sleeper is [[item:sleeper-couch]], a large sectional is [[item:sectional-large]], and a dresser is [[item:dresser]]. A roomful is priced by trailer space, from [[min]] up to [[load:8]] for a full trailer. Item prices are not added on top of a load price. A photo quote gives you the number before we schedule.",
+      ],
+      [
+        "Do you donate or recycle furniture?",
+        "Clean, sturdy pieces go to donation when a partner will accept them. Metal frames and springs go to recycling when a yard will take them. Stained, torn, or broken furniture usually goes to a licensed disposal site. Tell us the condition so we do not plan on a donation that will be turned away.",
+      ],
+      [
+        "How should I prepare?",
+        "Empty drawers, clear a path, and tell us about stairs or a tight doorway. You do not need to disassemble anything or move it to the curb. If a piece will not fit through a door, we take it apart on site.",
+      ],
+      [
+        "Will you take a sleeper sofa or a sectional apart?",
+        "Yes. Sleepers and large sectionals are heavy and often will not clear a doorway in one piece. We break them down and carry them out.",
+      ],
+      [
+        "Do you remove office furniture?",
+        "Yes. Desks, cubicles, conference tables, filing cabinets, and chairs go in the same visit, from one office to a tenant turnover. The load is priced by trailer space, starting at [[min]].",
+      ],
+      [
+        "Which areas do you serve?",
+        "Parker, Denver, Castle Rock, Centennial, Highlands Ranch, Lone Tree, Aurora, Littleton, Englewood, Lakewood, and the surrounding metro. The service areas page has the full list.",
+      ],
     ],
-    related: ["mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    related: [
+      "mattress-and-bulky-item-removal",
+      "house-and-estate-cleanouts",
+      "commercial-junk-removal",
+    ],
   },
-{
+  {
     slug: "appliance-removal",
     name: "Appliance Removal",
     h1: "Appliance Removal, Fridge Removal & Disposal in the Denver Metro",
@@ -144,18 +191,29 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do you disconnect appliances?", "We can disconnect simple plug-in units. Anything on a gas or hard-plumbed line should be shut off by a qualified plumber or electrician first."],
-      ["Can you get a fridge out of a basement?", "Yes. Stairs and tight turns are routine for us. Let us know when you book so we send the right crew size."],
+      [
+        "Do you disconnect appliances?",
+        "We can disconnect simple plug-in units. Anything on a gas or hard-plumbed line should be shut off by a qualified plumber or electrician first.",
+      ],
+      [
+        "Can you get a fridge out of a basement?",
+        "Yes. Stairs and tight turns are routine for us. Let us know when you book so we send the right crew size.",
+      ],
       ["Do you take one appliance only?", "Yes. Single-item pickups are welcome."],
     ],
-    related: ["electronics-and-e-waste-removal", "garage-cleanouts", "mattress-and-bulky-item-removal"],
+    related: [
+      "electronics-and-e-waste-removal",
+      "garage-cleanouts",
+      "mattress-and-bulky-item-removal",
+    ],
   },
-{
+  {
     slug: "hot-tub-removal",
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
     metaTitle: "Hot Tub Removal Denver & Parker CO | EZ Haulaway",
-    metaDescription: "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. A standard spa is [[item:hot-tub-standard]].",
+    metaDescription:
+      "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. A standard spa is [[item:hot-tub-standard]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset,
     imageAlt: "Backyard hot tub ready for removal",
@@ -190,16 +248,34 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["How much does hot tub removal cost in Denver?", "A standard hot tub (4–6 people) is [[item:hot-tub-standard]] in the Denver metro area. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
-      ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
-      ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
-      ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
-      ["Can you remove the deck around the hot tub too?", "Yes. Surrounding decking, skirting, and steps can all be removed on the same visit."],
-      ["Do you take swim spas and above-ground pools?", "Yes. Swim spas, jetted tubs, and above-ground pools are all jobs we do regularly."],
+      [
+        "How much does hot tub removal cost in Denver?",
+        "A standard hot tub (4–6 people) is [[item:hot-tub-standard]] in the Denver metro area. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front.",
+      ],
+      [
+        "Do I need to drain the hot tub first?",
+        "You do not have to. If it is already drained, that shortens the job and can lower the price.",
+      ],
+      [
+        "Does the power need to be disconnected?",
+        "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it.",
+      ],
+      [
+        "What if there is no gate access to the backyard?",
+        "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line.",
+      ],
+      [
+        "Can you remove the deck around the hot tub too?",
+        "Yes. Surrounding decking, skirting, and steps can all be removed on the same visit.",
+      ],
+      [
+        "Do you take swim spas and above-ground pools?",
+        "Yes. Swim spas, jetted tubs, and above-ground pools are all jobs we do regularly.",
+      ],
     ],
     related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
   },
-{
+  {
     slug: "light-demolition",
     name: "Light Demolition",
     h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
@@ -208,7 +284,8 @@ const raw_services: Service[] = [
       "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
     summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
     image: lightDemolitionAsset,
-    imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
+    imageAlt:
+      "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
     intro: [
       "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day, anywhere in the Denver metro area.",
       "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks. That is the difference between a demolition crew and a hauling crew with a pry bar.",
@@ -232,13 +309,22 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do you pull permits?", "Some municipalities require a permit for structures over a certain size. We will tell you when we think one applies so you can check with your city."],
-      ["Do you handle asbestos or hazardous material?", "No. Hazardous materials need a licensed abatement contractor."],
-      ["Can you demo and haul on the same day?", "That is the standard approach for most jobs of this size."],
+      [
+        "Do you pull permits?",
+        "Some municipalities require a permit for structures over a certain size. We will tell you when we think one applies so you can check with your city.",
+      ],
+      [
+        "Do you handle asbestos or hazardous material?",
+        "No. Hazardous materials need a licensed abatement contractor.",
+      ],
+      [
+        "Can you demo and haul on the same day?",
+        "That is the standard approach for most jobs of this size.",
+      ],
     ],
     related: ["deck-and-fence-removal", "hot-tub-removal", "construction-debris-removal"],
   },
-{
+  {
     slug: "deck-and-fence-removal",
     name: "Deck & Fence Removal",
     h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
@@ -279,15 +365,35 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["How much does deck removal cost in the Denver metro?", "Most residential deck tear-outs are priced by size, height, and how much concrete is in the ground. Send photos with a rough footprint and we will give you a firm number before the job."],
-      ["Do you dig out concrete fence footings?", "Yes, in most cases. Let us know the post count so we can price the job accurately."],
-      ["Can you remove just part of a deck?", "Yes. Partial removals, railing-only jobs, and stair replacements are all common."],
-      ["Will removing the deck damage my siding?", "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed."],
-      ["What happens to the lumber?", "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility."],
+      [
+        "How much does deck removal cost in the Denver metro?",
+        "Most residential deck tear-outs are priced by size, height, and how much concrete is in the ground. Send photos with a rough footprint and we will give you a firm number before the job.",
+      ],
+      [
+        "Do you dig out concrete fence footings?",
+        "Yes, in most cases. Let us know the post count so we can price the job accurately.",
+      ],
+      [
+        "Can you remove just part of a deck?",
+        "Yes. Partial removals, railing-only jobs, and stair replacements are all common.",
+      ],
+      [
+        "Will removing the deck damage my siding?",
+        "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed.",
+      ],
+      [
+        "What happens to the lumber?",
+        "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility.",
+      ],
     ],
-    related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris", "wood-pallet-removal"],
+    related: [
+      "light-demolition",
+      "construction-debris-removal",
+      "yard-and-landscaping-debris",
+      "wood-pallet-removal",
+    ],
   },
-{
+  {
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
     h1: "Construction & Renovation Debris Removal",
@@ -320,13 +426,27 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Is there a weight limit?", "Dense material like concrete and tile is priced by weight as well as volume. Send photos and we will give you an honest number."],
-      ["Can you come back multiple times during a remodel?", "Yes. Repeat pickups can be scheduled around your project timeline."],
-      ["Do you take hazardous materials?", "No. Paint, solvents, asbestos, and chemicals need a licensed disposal service."],
+      [
+        "Is there a weight limit?",
+        "Dense material like concrete and tile is priced by weight as well as volume. Send photos and we will give you an honest number.",
+      ],
+      [
+        "Can you come back multiple times during a remodel?",
+        "Yes. Repeat pickups can be scheduled around your project timeline.",
+      ],
+      [
+        "Do you take hazardous materials?",
+        "No. Paint, solvents, asbestos, and chemicals need a licensed disposal service.",
+      ],
     ],
-    related: ["light-demolition", "yard-and-landscaping-debris", "commercial-junk-removal", "wood-pallet-removal"],
+    related: [
+      "light-demolition",
+      "yard-and-landscaping-debris",
+      "commercial-junk-removal",
+      "wood-pallet-removal",
+    ],
   },
-{
+  {
     slug: "yard-and-landscaping-debris",
     name: "Yard & Landscaping Debris",
     h1: "Yard Waste & Landscaping Debris Removal",
@@ -359,13 +479,23 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do you cut down trees?", "We do not do tree felling. We haul away what has already been cut or fallen."],
-      ["Can you take dirt and rock?", "Yes, in manageable amounts. Heavy material is priced by weight."],
+      [
+        "Do you cut down trees?",
+        "We do not do tree felling. We haul away what has already been cut or fallen.",
+      ],
+      [
+        "Can you take dirt and rock?",
+        "Yes, in manageable amounts. Heavy material is priced by weight.",
+      ],
       ["Do I need to bag anything?", "No. Leave the pile as it is."],
     ],
-    related: ["deck-and-fence-removal", "construction-debris-removal", "house-and-estate-cleanouts"],
+    related: [
+      "deck-and-fence-removal",
+      "construction-debris-removal",
+      "house-and-estate-cleanouts",
+    ],
   },
-{
+  {
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
     h1: "Garage Cleanouts in Parker & the Denver Metro",
@@ -398,20 +528,32 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Can you take paint and chemicals?", "No. Paint, solvents, oil, and chemicals must go to a household hazardous waste facility."],
-      ["How long does a garage take?", "Most two-car garages are a half day or less depending on how full they are."],
+      [
+        "Can you take paint and chemicals?",
+        "No. Paint, solvents, oil, and chemicals must go to a household hazardous waste facility.",
+      ],
+      [
+        "How long does a garage take?",
+        "Most two-car garages are a half day or less depending on how full they are.",
+      ],
       ["Do you sweep up afterward?", "Yes, cleanup is part of the job."],
     ],
-    related: ["house-and-estate-cleanouts", "appliance-removal", "storage-unit-cleanout", "dumpster-rental-alternative"],
+    related: [
+      "house-and-estate-cleanouts",
+      "appliance-removal",
+      "storage-unit-cleanout",
+      "dumpster-rental-alternative",
+    ],
   },
-{
+  {
     slug: "house-and-estate-cleanouts",
     name: "House & Estate Cleanouts",
     h1: "House, Estate & Large-Scale Cleanouts in Parker and the Denver Metro",
     metaTitle: "Estate & Whole-House Cleanouts | Parker & Denver Metro",
     metaDescription:
       "Whole-house, estate and large cleanouts in Parker and the Denver metro. Firm price up front, before and after photos, insured, company invoicing.",
-    summary: "Whole-house, estate and multi-load cleanouts: one firm price, photos on every job, insured.",
+    summary:
+      "Whole-house, estate and multi-load cleanouts: one firm price, photos on every job, insured.",
     image: estateAsset,
     imageAlt: "Crew carrying a panel out of a cluttered basement",
     realJob: {
@@ -455,7 +597,12 @@ const raw_services: Service[] = [
       {
         heading: "A same-day closing cleanout",
         text: "One of our first big jobs started with a call from a buyer's real estate agent. The sellers had left a basement full of couches, boxes and junk. We cleared it the same day so the new owners could move into a clean house and not deal with what was left behind.",
-        links: [{ slug: "realtor-and-attorney-cleanouts", label: "Cleanouts for realtors, estate attorneys and executors" }],
+        links: [
+          {
+            slug: "realtor-and-attorney-cleanouts",
+            label: "Cleanouts for realtors, estate attorneys and executors",
+          },
+        ],
       },
       {
         heading: "Working with families",
@@ -467,15 +614,35 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do I have to be there the whole time?", "No. Many clients walk us through at the start and check back at the end."],
-      ["How fast can you start a whole-house cleanout?", "A multi-load job usually starts within a day or two. Smaller jobs can often be done sooner, and we will tell you honestly whether we can meet a closing date."],
-      ["Can you invoice my company or law firm?", "Yes. We can invoice businesses, attorneys and property managers."],
-      ["Will I get before and after photos?", "Yes. We take them on every job, and we can send them to you, your agent or the executor."],
-      ["Is a whole-house cleanout one visit?", "Often, but large properties take more than one trailer load. We quote the whole job up front, so the price does not change as loads go out."],
+      [
+        "Do I have to be there the whole time?",
+        "No. Many clients walk us through at the start and check back at the end.",
+      ],
+      [
+        "How fast can you start a whole-house cleanout?",
+        "A multi-load job usually starts within a day or two. Smaller jobs can often be done sooner, and we will tell you honestly whether we can meet a closing date.",
+      ],
+      [
+        "Can you invoice my company or law firm?",
+        "Yes. We can invoice businesses, attorneys and property managers.",
+      ],
+      [
+        "Will I get before and after photos?",
+        "Yes. We take them on every job, and we can send them to you, your agent or the executor.",
+      ],
+      [
+        "Is a whole-house cleanout one visit?",
+        "Often, but large properties take more than one trailer load. We quote the whole job up front, so the price does not change as loads go out.",
+      ],
     ],
-    related: ["realtor-and-attorney-cleanouts", "hoarder-cleanout", "commercial-junk-removal", "garage-cleanouts"],
+    related: [
+      "realtor-and-attorney-cleanouts",
+      "hoarder-cleanout",
+      "commercial-junk-removal",
+      "garage-cleanouts",
+    ],
   },
-{
+  {
     slug: "mattress-and-bulky-item-removal",
     name: "Mattress & Bulky Item Removal",
     h1: "Mattress Disposal & Bulky Item Removal in Denver & Parker, CO",
@@ -522,16 +689,31 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["How much does mattress disposal cost in Denver?", "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]], with a [[min]] minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value."],
-      ["Do I have to put the mattress at the curb?", "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment."],
-      ["Is there a minimum charge?", "Yes, [[min]] covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you."],
-      ["Can you take a piano?", "Upright pianos are [[item:piano]]. Grand pianos depend on access — send photos first."],
+      [
+        "How much does mattress disposal cost in Denver?",
+        "A mattress is [[item:mattress]] and a box spring is [[item:box-spring]], with a [[min]] minimum per visit. If you have both, or a few other items going at the same time, it is usually the same trip and better value.",
+      ],
+      [
+        "Do I have to put the mattress at the curb?",
+        "No. We carry it out from wherever it is — bedroom, basement, or an upstairs apartment.",
+      ],
+      [
+        "Is there a minimum charge?",
+        "Yes, [[min]] covers a visit. Anything beyond that is priced by the item or by trailer space, whichever is cheaper for you.",
+      ],
+      [
+        "Can you take a piano?",
+        "Upright pianos are [[item:piano]]. Grand pianos depend on access — send photos first.",
+      ],
       ["Do you take trampolines and above-ground pools?", "Yes, including disassembly on site."],
-      ["What happens to an old mattress?", "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped."],
+      [
+        "What happens to an old mattress?",
+        "Mattresses are taken to the appropriate disposal or recycling facility rather than dumped.",
+      ],
     ],
     related: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
   },
-{
+  {
     slug: "electronics-and-e-waste-removal",
     name: "Electronics & E-Waste Removal",
     h1: "Electronics & E-Waste Removal in the Denver Metro",
@@ -564,18 +746,28 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do you wipe hard drives?", "We do not perform data wiping. Remove or destroy drives containing sensitive data before pickup."],
-      ["Are electronics recycled?", "Electronics are routed to appropriate recycling facilities rather than general landfill."],
-      ["Can I leave items outside?", "If you will not be home, arrange it with us in advance and leave items accessible."],
+      [
+        "Do you wipe hard drives?",
+        "We do not perform data wiping. Remove or destroy drives containing sensitive data before pickup.",
+      ],
+      [
+        "Are electronics recycled?",
+        "Electronics are routed to appropriate recycling facilities rather than general landfill.",
+      ],
+      [
+        "Can I leave items outside?",
+        "If you will not be home, arrange it with us in advance and leave items accessible.",
+      ],
     ],
     related: ["appliance-removal", "commercial-junk-removal", "garage-cleanouts"],
   },
-{
+  {
     slug: "shed-removal",
     name: "Shed Removal",
     h1: "Shed Removal & Demolition in Denver, Parker & Castle Rock, CO",
     metaTitle: "Shed Removal Denver & Parker CO | EZ Haulaway",
-    metaDescription: "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board.",
+    metaDescription:
+      "Shed removal and demolition in Denver, Parker, Castle Rock and Highlands Ranch. We tear down wood, metal and plastic sheds and haul every board.",
     summary: "Tear down and haul away wood, metal, vinyl, and plastic backyard sheds.",
     image: shedImage,
     imageAlt: "Crew dismantling an old backyard shed",
@@ -610,35 +802,79 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do I need a permit to remove a shed?", "Most residential shed removals in the Denver metro do not require a permit, but rules vary by town and HOA. If yours is large, on a slab, or has power run to it, check with your local building department first."],
-      ["What if the shed has electricity run to it?", "The circuit needs to be disconnected by a qualified electrician before we start. Once it is safely dead, we can remove the structure and the wiring inside it."],
-      ["Can you take out the concrete slab underneath?", "Often yes, in manageable amounts. Send a photo with a rough size and we will quote the slab separately from the shed."],
-      ["How long does shed removal take?", "A typical backyard shed comes down and gets loaded in a few hours. Larger structures or ones packed with contents can take most of a day."],
-      ["What happens to the material?", "Metal is recycled, usable lumber and contents can be set aside if you want them, and the rest is hauled to the appropriate facility."],
+      [
+        "Do I need a permit to remove a shed?",
+        "Most residential shed removals in the Denver metro do not require a permit, but rules vary by town and HOA. If yours is large, on a slab, or has power run to it, check with your local building department first.",
+      ],
+      [
+        "What if the shed has electricity run to it?",
+        "The circuit needs to be disconnected by a qualified electrician before we start. Once it is safely dead, we can remove the structure and the wiring inside it.",
+      ],
+      [
+        "Can you take out the concrete slab underneath?",
+        "Often yes, in manageable amounts. Send a photo with a rough size and we will quote the slab separately from the shed.",
+      ],
+      [
+        "How long does shed removal take?",
+        "A typical backyard shed comes down and gets loaded in a few hours. Larger structures or ones packed with contents can take most of a day.",
+      ],
+      [
+        "What happens to the material?",
+        "Metal is recycled, usable lumber and contents can be set aside if you want them, and the rest is hauled to the appropriate facility.",
+      ],
     ],
     related: ["light-demolition", "deck-and-fence-removal", "garage-cleanouts"],
   },
-{
+  {
     slug: "commercial-junk-removal",
     name: "Commercial Junk Removal",
     h1: "Commercial Junk Removal & Office Cleanouts",
     metaTitle: "Commercial Junk Removal & Office Cleanouts | EZ Haulaway",
-    metaDescription: "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, turnovers. Same-day slots, company invoicing.",
+    metaDescription:
+      "Commercial junk removal in Parker, Castle Rock and Denver: office cleanouts, retail and warehouse clearing, turnovers. Same-day slots, company invoicing.",
     summary: "Offices, retail spaces, warehouses, and property manager turnovers.",
     image: commercialAsset,
     imageAlt: "Crew removing office furniture from a business",
-    intro: ["Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site. **Commercial junk removal** from EZ Haulaway covers office cleanouts, retail and warehouse clearing, and tenant turnovers across Parker, Castle Rock, Centennial, Aurora and Denver.", "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work, including **eviction cleanouts, trash outs and make readies**, with same-day and next-day slots, company invoicing and before and after photos on every job."],
-    includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers, make readies and lease-end cleanouts", "Eviction cleanouts and trash outs", "Ongoing scheduled pickups"],
+    intro: [
+      "Businesses need the mess gone without disrupting operations. We schedule around your hours and work efficiently once we are on site. **Commercial junk removal** from EZ Haulaway covers office cleanouts, retail and warehouse clearing, and tenant turnovers across Parker, Castle Rock, Centennial, Aurora and Denver.",
+      "Property managers, contractors, and small business owners across the Denver metro area use us for repeat work, including **eviction cleanouts, trash outs and make readies**, with same-day and next-day slots, company invoicing and before and after photos on every job.",
+    ],
+    includes: [
+      "Office furniture, cubicles, and desks",
+      "Retail fixtures, shelving, and displays",
+      "Warehouse and storage clearing",
+      "Restaurant and kitchen equipment",
+      "Tenant turnovers, make readies and lease-end cleanouts",
+      "Eviction cleanouts and trash outs",
+      "Ongoing scheduled pickups",
+    ],
     sections: [
-      { heading: "Scheduled around your business", text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it." },
-      { heading: "Property managers", text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in." },
+      {
+        heading: "Scheduled around your business",
+        text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it.",
+      },
+      {
+        heading: "Property managers",
+        text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in.",
+      },
     ],
     faqs: [
-      ["Do you work with recurring clients?", "Yes. Ongoing and repeat work can be scheduled in advance."],
+      [
+        "Do you work with recurring clients?",
+        "Yes. Ongoing and repeat work can be scheduled in advance.",
+      ],
       ["Can you provide an invoice for the business?", "Yes, we can invoice for commercial work."],
-      ["Do you clear whole warehouses?", "Yes, though larger spaces may take multiple loads. We will walk it and give you a plan."],
+      [
+        "Do you clear whole warehouses?",
+        "Yes, though larger spaces may take multiple loads. We will walk it and give you a plan.",
+      ],
     ],
-    related: ["construction-debris-removal", "electronics-and-e-waste-removal", "house-and-estate-cleanouts", "wood-pallet-removal"],
+    related: [
+      "construction-debris-removal",
+      "electronics-and-e-waste-removal",
+      "house-and-estate-cleanouts",
+      "wood-pallet-removal",
+    ],
   },
   woodPalletRemoval,
   dumpsterRentalAlternative,
