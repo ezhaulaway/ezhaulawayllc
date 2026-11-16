@@ -1,17 +1,69 @@
 import type { Database } from "@/integrations/supabase/types";
+import { scheduledArticleJsonLd, scheduledFaqJsonLd } from "@/lib/blog-schema";
 
 /**
- * Blog posts written in-house. Each one is hidden until its publish_at time, then shows up on /blog,
- * in the blog sitemap and at /blog/<slug> with no redeploy. Add a post here once Ben has approved it.
- * Prices are tokens ([[min]] [[load:4]] ...) and resolve from the crew app at render time.
- * Never put customer names, phone numbers of customers or the street address in a post.
+ * In-house blog posts. A post stays hidden until its publish_at time, then shows on /blog,
+ * at /blog/<slug>, and in /blog-sitemap.xml. lastmod is publish_at. No redeploy.
+ *
+ * Ben gave standing permission on Nov 15, 2026 to publish in-house blog posts without
+ * per-post approval. Add the post to SCHEDULED_POSTS and it goes live at publish_at.
+ *
+ * Fields:
+ * - slug: lowercase hyphenated URL segment. If a BabyLoveGrowth post in blg_articles already
+ *   uses this slug, this post replaces it at that URL, on the index (one card, no duplicate),
+ *   and in the sitemap once publish_at passes. Before that time the imported post keeps showing.
+ * - title: 60 characters or fewer.
+ * - meta_description: 155 characters or fewer.
+ * - publish_at: ISO-8601 at 7:00 AM America/Denver. Mountain Standard Time (winter) is 14:00 UTC,
+ *   for example "2026-11-16T14:00:00.000Z". Mountain Daylight Time (summer) is 13:00 UTC,
+ *   for example "2026-07-16T13:00:00.000Z".
+ * - content_html: the article body, starting with one <h1>. Prices are tokens only:
+ *   [[min]] [[labor]] [[travel]] [[load:0-8]] [[item:mattress]] [[adj:freon]].
+ *   They resolve from the crew app at render time. Never write a dollar amount.
+ *   Never name a customer, give a customer's phone number, or put in a street address.
+ * - hero (optional): { src, alt, width, height }. Commit a 16:9 WebP under public/blog/<slug>/
+ *   (about 1600×900, long edge 1600px or less, file about 200KB or less).
+ *   src is the root path, such as "/blog/<slug>/hero.webp". It renders under the title on the
+ *   post, on the blog index card, as og:image, and as the Article image. Do not repeat that
+ *   file in content_html. Do not use a path containing "blog-images"; that name is reserved
+ *   for hosted pictures and those are cropped to 16:9.
+ * - Inline images live in the same folder, same WebP rules. In content_html:
+ *   <img src="/blog/<slug>/pile.webp" alt="Brush pile on a driveway" width="1600" height="900">
+ *   Always set alt, width, and height to the file's real pixel size so the page does not jump.
+ *   Inline images load lazily. Keep the src on this site.
+ * - faqs (optional): { question, answer }[]. Answers may use price tokens. The same list is
+ *   shown at the bottom of the post and emitted as FAQPage JSON-LD. Do not copy it into
+ *   content_html.
+ *
+ * BlogPosting JSON-LD (headline, description, image, datePublished, dateModified, author and
+ * publisher EZ Haulaway, plus breadcrumbs) is built from these fields. You do not write json_ld
+ * or faq_json_ld by hand.
+ *
+ * IndexNow: the key file is the public/<32 hex characters>.txt whose file name and body are the
+ * key. After a post is live, ping
+ * https://www.bing.com/indexnow?url=https://www.ezhaulawayllc.com/blog/<slug>&key=<that key>
+ * so Bing can recrawl it.
  */
+export type ScheduledImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type ScheduledFaq = {
+  question: string;
+  answer: string;
+};
+
 export type ScheduledPost = {
   slug: string;
   title: string; // 60 characters or fewer
   meta_description: string; // 155 characters or fewer
   publish_at: string; // ISO time; 7:00 AM Mountain
   content_html: string;
+  hero?: ScheduledImage;
+  faqs?: ScheduledFaq[];
 };
 
 export const SCHEDULED_POSTS: ScheduledPost[] = [
@@ -38,25 +90,97 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
 
 type Row = Database["public"]["Tables"]["blg_articles"]["Row"];
 
+export type InHouseFields = {
+  hero_image_alt: string | null;
+  hero_image_width: number | null;
+  hero_image_height: number | null;
+  faqs: ScheduledFaq[] | null;
+};
+
+export type BlogArticle = Row & InHouseFields;
+
 export function livePosts(now = Date.now()): ScheduledPost[] {
   return SCHEDULED_POSTS.filter((p) => Date.parse(p.publish_at) <= now);
 }
 
 /** Shapes a scheduled post like a blg_articles row so the blog pages treat both the same. Ids are negative so they never clash. */
-export function toRow(p: ScheduledPost, index: number): Row {
+export function toRow(p: ScheduledPost, index: number): BlogArticle {
   return {
     id: -(index + 1),
     slug: p.slug,
     previous_slugs: [],
     title: p.title,
     meta_description: p.meta_description,
-    hero_image_url: null,
+    hero_image_url: p.hero?.src ?? null,
+    hero_image_alt: p.hero?.alt ?? null,
+    hero_image_width: p.hero?.width ?? null,
+    hero_image_height: p.hero?.height ?? null,
     content_html: p.content_html,
-    json_ld: null,
-    faq_json_ld: null,
+    json_ld: scheduledArticleJsonLd({
+      slug: p.slug,
+      title: p.title,
+      meta_description: p.meta_description,
+      publish_at: p.publish_at,
+      hero: p.hero ?? null,
+    }),
+    faq_json_ld: scheduledFaqJsonLd(p.slug, p.faqs ?? []),
+    faqs: p.faqs && p.faqs.length > 0 ? p.faqs : null,
     language_code: "en",
     article_created_at: p.publish_at,
     article_updated_at: p.publish_at,
     synced_at: p.publish_at,
+  };
+}
+
+/** The in-house post for this slug once publish_at has passed, or null while the imported post should keep showing. */
+export function publishedScheduledPost(
+  posts: readonly ScheduledPost[],
+  slug: string,
+  now: number,
+): BlogArticle | null {
+  const index = posts.findIndex((post) => post.slug === slug);
+  if (index < 0) return null;
+  const post = posts[index];
+  if (!post || Date.parse(post.publish_at) > now) return null;
+  return toRow(post, index);
+}
+
+export function scheduledPostForSlug(slug: string, now = Date.now()): BlogArticle | null {
+  return publishedScheduledPost(SCHEDULED_POSTS, slug, now);
+}
+
+/** Imported rows have no in-house image or FAQ fields. */
+export function importedArticle(row: Row): BlogArticle {
+  return {
+    ...row,
+    hero_image_alt: null,
+    hero_image_width: null,
+    hero_image_height: null,
+    faqs: null,
+  };
+}
+
+/** Hero rendered on an in-house post. Imported posts keep the pictures already in their HTML. */
+export function articleHero(post: {
+  id: number;
+  hero_image_url: string | null;
+  hero_image_alt: string | null;
+  hero_image_width: number | null;
+  hero_image_height: number | null;
+}): ScheduledImage | null {
+  if (
+    post.id >= 0 ||
+    !post.hero_image_url ||
+    post.hero_image_alt == null ||
+    post.hero_image_width == null ||
+    post.hero_image_height == null
+  ) {
+    return null;
+  }
+  return {
+    src: post.hero_image_url,
+    alt: post.hero_image_alt,
+    width: post.hero_image_width,
+    height: post.hero_image_height,
   };
 }

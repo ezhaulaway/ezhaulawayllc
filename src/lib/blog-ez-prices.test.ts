@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { rewriteEzPriceText } from "@/lib/blog-ez-prices";
-import { SNAPSHOT_GUIDE } from "@/lib/price-guide";
+import { fillBlogPriceText, rewriteEzPriceText } from "@/lib/blog-ez-prices";
+import { formatMoney, SNAPSHOT_GUIDE } from "@/lib/price-guide";
 
 const guide = SNAPSHOT_GUIDE;
 
@@ -82,5 +82,12 @@ describe("blog EZ price rewrite", () => {
     for (const sample of samples) {
       expect(rewriteEzPriceText(sample, guide)).toBe(sample);
     }
+  });
+
+  it("resolves price tokens before the stale-dollar rewrite", () => {
+    expect(fillBlogPriceText("Brush piles in Parker.", guide)).toBe("Brush piles in Parker.");
+    expect(fillBlogPriceText("Small piles start at [[min]].", guide)).toBe(
+      `Small piles start at ${formatMoney(guide.minimum)}.`,
+    );
   });
 });

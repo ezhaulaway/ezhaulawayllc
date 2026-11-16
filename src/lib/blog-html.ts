@@ -3,7 +3,8 @@
 // image waits until it is near the viewport so long posts do not download all their pictures up front.
 // Pictures stored in our own blog-images bucket are served resized (WebP) through Supabase image transformation.
 
-const STORAGE_IMAGE = /^(https:\/\/[a-z0-9-]+\.supabase\.co)\/storage\/v1\/object\/public\/(blog-images\/[^?#\s"'&<>]+\.(?:jpe?g|png|webp))$/i;
+const STORAGE_IMAGE =
+  /^(https:\/\/[a-z0-9-]+\.supabase\.co)\/storage\/v1\/object\/public\/(blog-images\/[^?#\s"'&<>]+\.(?:jpe?g|png|webp))$/i;
 export const BLOG_IMAGE_WIDTHS = [480, 800, 1280] as const;
 const QUALITY = 70;
 
@@ -15,7 +16,10 @@ export function resizedBlogImage(url: string, width: number): string | null {
 }
 
 /** srcset covering the standard widths, or null for an image that cannot be resized. */
-export function blogImageSrcSet(url: string, widths: readonly number[] = BLOG_IMAGE_WIDTHS): string | null {
+export function blogImageSrcSet(
+  url: string,
+  widths: readonly number[] = BLOG_IMAGE_WIDTHS,
+): string | null {
   const parts = widths.map((w) => {
     const u = resizedBlogImage(url, w);
     return u ? `${u} ${w}w` : null;
@@ -25,18 +29,44 @@ export function blogImageSrcSet(url: string, widths: readonly number[] = BLOG_IM
 
 const ARTICLE_SIZES = "(min-width: 768px) 728px, calc(100vw - 40px)";
 
+function escapeAttr(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+/** Puts a post's hero image directly under its h1 so the title stays first. */
+export function insertPostHero(
+  html: string,
+  hero: { src: string; alt: string; width: number; height: number } | null,
+): string {
+  if (!hero) return html;
+  const img = `<img src="${escapeAttr(hero.src)}" alt="${escapeAttr(hero.alt)}" width="${hero.width}" height="${hero.height}">`;
+  const h1 = /<\/h1>/i.exec(html);
+  if (!h1) return img + html;
+  const at = h1.index + h1[0].length;
+  return html.slice(0, at) + img + html.slice(at);
+}
+
 export function optimizeBlogImages(html: string): string {
   let n = 0;
   return html.replace(/<img\b([^>]*?)(\/?)>/gi, (_m, attrs: string, slash: string) => {
-    let base = attrs.replace(/\s+(loading|decoding|fetchpriority)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "");
+    let base = attrs.replace(
+      /\s+(loading|decoding|fetchpriority)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi,
+      "",
+    );
     const src = /\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)')/i.exec(base);
     const url = src?.[1] ?? src?.[2];
     const srcset = url ? blogImageSrcSet(url) : null;
     if (src && url && srcset) {
       base = base.replace(/\s+(srcset|sizes)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "");
-      base = base.replace(src[0], ` src="${resizedBlogImage(url, 800)}" srcset="${srcset}" sizes="${ARTICLE_SIZES}"`);
+      base = base.replace(
+        src[0],
+        ` src="${resizedBlogImage(url, 800)}" srcset="${srcset}" sizes="${ARTICLE_SIZES}"`,
+      );
     }
-    const hints = n++ === 0 ? ' loading="eager" fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"';
+    const hints =
+      n++ === 0
+        ? ' loading="eager" fetchpriority="high" decoding="async"'
+        : ' loading="lazy" decoding="async"';
     return `<img${base}${hints}${slash ? " /" : ""}>`;
   });
 }
