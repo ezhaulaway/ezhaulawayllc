@@ -338,3 +338,19 @@ export function rewriteEzPriceJson(value: unknown, guide: PriceGuide): unknown {
   }
   return value;
 }
+
+/** Price tokens first, then the same stale-dollar rewrite imported posts already use. */
+export function fillBlogPriceText(value: string, guide: PriceGuide): string {
+  return rewriteEzPriceText(priceText(value, guide), guide);
+}
+
+export function fillBlogPriceJson(value: unknown, guide: PriceGuide): unknown {
+  if (typeof value === "string") return fillBlogPriceText(value, guide);
+  if (Array.isArray(value)) return value.map((entry) => fillBlogPriceJson(entry, guide));
+  if (value && typeof value === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [key, entry] of Object.entries(value)) out[key] = fillBlogPriceJson(entry, guide);
+    return out;
+  }
+  return value;
+}

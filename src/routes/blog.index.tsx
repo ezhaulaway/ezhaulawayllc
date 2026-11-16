@@ -34,7 +34,9 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function fmt(d: string | null) {
-  return d ? new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "";
+  return d
+    ? new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
+    : "";
 }
 
 function BlogIndex() {
@@ -50,7 +52,9 @@ function BlogIndex() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           {posts.length === 0 ? (
-            <p className="text-center text-lg text-muted-foreground">New articles are on the way — check back soon.</p>
+            <p className="text-center text-lg text-muted-foreground">
+              New articles are on the way — check back soon.
+            </p>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((p) => (
@@ -66,16 +70,30 @@ function BlogIndex() {
                       src={resizedBlogImage(p.hero_image_url, 800) ?? p.hero_image_url}
                       srcSet={blogImageSrcSet(p.hero_image_url) ?? undefined}
                       sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-                      alt=""
+                      alt={p.hero_image_alt ?? ""}
+                      {...(p.hero_image_width != null && p.hero_image_height != null
+                        ? { width: p.hero_image_width, height: p.hero_image_height }
+                        : {})}
                       loading="lazy"
                       decoding="async"
                       className="aspect-[16/9] w-full object-cover"
                     />
                   ) : null}
                   <div className="p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">{fmt(p.article_created_at)}</p>
-                    <h2 className="mt-2 text-xl font-extrabold leading-snug text-foreground group-hover:text-primary">{BLOG_HEAD_OVERRIDES[p.slug]?.title ?? p.title}</h2>
-                    {(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description) ? <p className="mt-3 line-clamp-3 text-muted-foreground">{rewriteEzPriceText(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description ?? "", guide)}</p> : null}
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
+                      {fmt(p.article_created_at)}
+                    </p>
+                    <h2 className="mt-2 text-xl font-extrabold leading-snug text-foreground group-hover:text-primary">
+                      {BLOG_HEAD_OVERRIDES[p.slug]?.title ?? p.title}
+                    </h2>
+                    {(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description) ? (
+                      <p className="mt-3 line-clamp-3 text-muted-foreground">
+                        {rewriteEzPriceText(
+                          BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description ?? "",
+                          guide,
+                        )}
+                      </p>
+                    ) : null}
                   </div>
                 </Link>
               ))}

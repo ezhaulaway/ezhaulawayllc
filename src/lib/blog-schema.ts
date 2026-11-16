@@ -1,4 +1,5 @@
 import { BUSINESS_JSONLD, SITE_URL } from "@/content/site";
+import type { Json } from "@/integrations/supabase/types";
 
 type PostLike = {
   slug: string;
@@ -81,4 +82,91 @@ export function blogSchemas(p: PostLike): unknown[] {
       ],
     },
   ];
+}
+
+/** Absolute URL for a root-relative site path. Leaves http(s) URLs unchanged. */
+export function absoluteSiteUrl(src: string): string {
+  if (/^https?:\/\//i.test(src)) return src;
+  return `${SITE_URL}${src.startsWith("/") ? src : `/${src}`}`;
+}
+
+type ScheduledHero = { src: string; alt: string; width: number; height: number };
+
+function organizationNode(withLogo: boolean): Json {
+  return {
+    "@type": "Organization",
+    name: BUSINESS_JSONLD.name,
+    legalName: BUSINESS_JSONLD.legalName,
+    sameAs: [...BUSINESS_JSONLD.sameAs],
+    hasMap: BUSINESS_JSONLD.hasMap,
+    url: `${SITE_URL}/`,
+    ...(withLogo
+      ? { logo: { "@type": "ImageObject", url: `${SITE_URL}/apple-touch-icon.png` } }
+      : {}),
+  };
+}
+
+/** BlogPosting + BreadcrumbList for an in-house post. Author and publisher are EZ Haulaway. */
+export function scheduledArticleJsonLd(p: {
+  slug: string;
+  title: string;
+  meta_description: string;
+  publish_at: string;
+  hero: ScheduledHero | null;
+}): Json {
+  const url = `${SITE_URL}/blog/${p.slug}`;
+  const image: Json = p.hero
+    ? {
+        "@type": "ImageObject",
+        url: absoluteSiteUrl(p.hero.src),
+        width: p.hero.width,
+        height: p.hero.height,
+        caption: p.hero.alt,
+      }
+    : `${SITE_URL}/apple-touch-icon.png`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": `${url}#article`,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      url,
+      headline: p.title,
+      description: p.meta_description,
+      image,
+      datePublished: p.publish_at,
+      dateModified: p.publish_at,
+      author: organizationNode(false),
+      publisher: organizationNode(true),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 3, name: p.title, item: url },
+      ],
+    },
+  ];
+}
+
+/** FAQPage for an in-house post, or null when the post has no questions. */
+export function scheduledFaqJsonLd(
+  slug: string,
+  faqs: readonly { question: string; answer: string }[],
+): Json | null {
+  if (faqs.length === 0) return null;
+  const url = `${SITE_URL}/blog/${slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
 }
