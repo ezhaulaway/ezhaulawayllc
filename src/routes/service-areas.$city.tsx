@@ -57,7 +57,7 @@ export const Route = createFileRoute("/service-areas/$city")({
     const photoUrl = photo?.src.startsWith("https://") ? photo.src : undefined;
     const businessSchema =
       location.slug === "parker" || location.slug === "castle-rock"
-        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]") }
+        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]-[[load:8]]") }
         : BUSINESS_SCHEMA;
     return {
       meta: [

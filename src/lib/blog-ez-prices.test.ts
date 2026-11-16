@@ -84,6 +84,46 @@ describe("blog EZ price rewrite", () => {
     }
   });
 
+  it("updates the crawl's stale EZ prices and leaves cited ranges", () => {
+    const samples = [
+      "A minimum load costs $150, and a quarter trailer is $240.",
+      "Our pricing starts at $150.",
+      "Pricing is by trailer load: $150 minimum, $175 for an eighth of a trailer, $450 for a half, $840 for a full trailer.",
+      "Mattress removal with us is $100.",
+      "At our published rates that is $275 to $800.",
+      "can fall under the $120 minimum or the $175 one-eighth trailer tier.",
+      "would involve the $100 mattress price, $180 for the couch, and a small trailer share",
+      "A basement that's about half full of ordinary household items is $450.",
+      "might land in the half-trailer range, which is $450.",
+      "Mattress removal: $100",
+      "Washer or dryer: $100 each",
+      "commonly a 1/2 trailer ($450).",
+      "If you've budgeted a $450 half-trailer job, a $20 tip per crew member is a small addition.",
+      "puts a quarter truckload at $150 to $275, a half truckload at $250 to $400 and a full truckload at $600 to $800",
+    ];
+    const out = rewriteEzPriceText(samples.join("\n"), guide);
+    expect(out).toContain("A minimum load costs $120, and a quarter trailer is $240.");
+    expect(out).toContain("Our pricing starts at $120.");
+    expect(out).toContain(
+      "Pricing is by trailer load: $120 minimum, $120 for an eighth of a trailer, $420 for a half, $840 for a full trailer.",
+    );
+    expect(out).toContain("Mattress removal with us is $150.");
+    expect(out).toContain("At our published rates that is $240 to $840.");
+    expect(out).toContain("the $120 minimum or the $120 one-eighth trailer tier.");
+    expect(out).toContain("the $150 mattress price, $150 for the couch");
+    expect(out).toContain("about half full of ordinary household items is $420.");
+    expect(out).toContain("half-trailer range, which is $420.");
+    expect(out).toContain("Mattress removal: $150");
+    expect(out).toContain("Washer or dryer: $100 each");
+    expect(out).toContain("commonly a 1/2 trailer ($420).");
+    expect(out).toContain("a $420 half-trailer job");
+    expect(out).toContain("quarter truckload at $150 to $275");
+    expect(out).toContain("full truckload at $600 to $800");
+    expect(out).not.toContain("$175");
+    expect(out).not.toContain("$180");
+    expect(out).not.toContain("$275 to $800");
+  });
+
   it("resolves price tokens before the stale-dollar rewrite", () => {
     expect(fillBlogPriceText("Brush piles in Parker.", guide)).toBe("Brush piles in Parker.");
     expect(fillBlogPriceText("Small piles start at [[min]].", guide)).toBe(

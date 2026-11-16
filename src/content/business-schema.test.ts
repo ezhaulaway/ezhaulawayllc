@@ -101,5 +101,13 @@ describe("business profile structured data", () => {
     const llms = buildLlmsText(SNAPSHOT_GUIDE);
     for (const url of BUSINESS_SAME_AS) expect(llms).toContain(url);
     expect(llms).not.toContain("share.google");
+    expect(llms).not.toContain("thumbtack");
+    expect(llms).toContain("https://www.instagram.com/ezhaulawayllc/");
+    expect(JSON.stringify(BUSINESS_SCHEMA)).not.toContain("thumbtack");
+    expect(BUSINESS_SCHEMA.priceRange).toBe("$120-$840");
+    const priceRanges = blocks
+      .map((block) => JSON.parse(block) as { priceRange?: string })
+      .map((data) => data.priceRange);
+    expect(priceRanges).toEqual(["$120-$840", "$120-$840"]);
   });
 });
