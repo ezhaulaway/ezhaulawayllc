@@ -17,25 +17,13 @@ WITH CHECK (
   AND char_length(array_to_string(photo_paths, '')) <= 1200
 );
 
--- Same idea for the estimate leads table: cap the fields the earlier rule left open.
+-- AI estimate leads are inserted with the service role. Main already dropped the
+-- public insert policy and revoked anon/authenticated INSERT
+-- (drizzle/migrations/0001_lock_ai_estimate_inserts.sql). Repeat that lock here so
+-- applying this migration cannot open the table to the public key again.
 DROP POLICY IF EXISTS "Anyone can submit an AI estimate request" ON public.ai_estimate_requests;
-
-CREATE POLICY "Anyone can submit an AI estimate request"
-ON public.ai_estimate_requests
-FOR INSERT
-TO anon, authenticated
-WITH CHECK (
-  status = 'new'
-  AND char_length(trim(name)) BETWEEN 1 AND 100
-  AND char_length(trim(phone)) BETWEEN 1 AND 30
-  AND char_length(trim(description)) BETWEEN 1 AND 2000
-  AND photo_count >= 0 AND photo_count <= 10
-  AND char_length(coalesce(address, '')) <= 200
-  AND char_length(coalesce(load_size, '')) <= 60
-  AND char_length(coalesce(summary, '')) <= 2000
-  AND coalesce(array_length(items_identified, 1), 0) <= 30
-  AND char_length(array_to_string(items_identified, '')) <= 6000
-);
+REVOKE INSERT ON public.ai_estimate_requests FROM anon, authenticated;
+GRANT ALL ON public.ai_estimate_requests TO service_role;
 
 -- Quote photos: cap each file at 25 MB if no cap is set yet (phone photos are well under this).
 UPDATE storage.buckets

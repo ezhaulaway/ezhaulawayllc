@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { signEstimate, verifyEstimate, type SignedEstimateFields } from "./estimate-token";
+import { signEstimate, verifyEstimate } from "./estimate-token";
 
 const trackSchema = z
   .object({
@@ -38,68 +38,56 @@ const LOAD_TEXT: Record<string, string> = {
   multiple_loads: "More than one trailer",
 };
 
-function isNewSupabaseApiKey(value: string): boolean {
-  return value.startsWith("sb_publishable_") || value.startsWith("sb_secret_");
-}
-
-function createSupabaseFetch(key: string): typeof fetch {
-  return (input, init) => {
-    const headers = new Headers(
-      typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
-    );
-    if (init?.headers) {
-      new Headers(init.headers).forEach((value, k) => headers.set(k, value));
-    }
-    if (isNewSupabaseApiKey(key) && headers.get("Authorization") === `Bearer ${key}`) {
-      headers.delete("Authorization");
-    }
-    headers.set("apikey", key);
-    return fetch(input, { ...init, headers });
-  };
-}
+type StoredEstimate = {
+  load_size: string | null;
+  price_low: number | null;
+  price_high: number | null;
+  items_identified: string[];
+  summary: string | null;
+  /**
+   * The browser sent a token that does not match the estimate the server signed.
+   * The lead is still saved, with no price anyone could have typed in.
+   */
+  unverified: boolean;
+};
 
 async function recordLead(
   lead: { name: string; phone: string; address: string; description: string; photoCount: number },
-  estimate: SignedEstimateFields | null,
+  estimate: StoredEstimate,
 ) {
-  // A null estimate means the price sent back by the browser did not match what the server
-  // issued. The lead is still saved, but without a price anyone could have typed in.
-  const priceRange = !estimate
+  const lo = estimate.unverified ? null : estimate.price_low;
+  const hi = estimate.unverified ? null : estimate.price_high;
+  const priceRange = estimate.unverified
     ? "Not verified \u2013 quote this job manually"
-    : Math.round(estimate.price_low) === Math.round(estimate.price_high)
-      ? `$${Math.round(estimate.price_low)}`
-      : `$${Math.round(estimate.price_low)}\u2013$${Math.round(estimate.price_high)}`;
-  const loadSize = estimate ? (LOAD_TEXT[estimate.load_size] ?? estimate.load_size) : "Not verified";
-  const summary = estimate
-    ? estimate.summary
-    : "The estimate could not be verified against the one the site issued. Quote this job manually.";
+    : lo == null || hi == null
+      ? "Not available"
+      : lo === hi
+        ? `$${lo}`
+        : `$${lo}\u2013$${hi}`;
+  const loadSize = estimate.unverified ? "Not verified" : (estimate.load_size ?? "Not available");
+  const summary = estimate.unverified
+    ? "The estimate could not be verified against the one the site issued. Quote this job manually."
+    : (estimate.summary ?? "");
+  const items = estimate.unverified ? [] : (estimate.items_identified ?? []);
   const leadId = crypto.randomUUID();
 
   try {
-    const url = process.env["SUPABASE_URL"];
-    const key = process.env["SUPABASE_PUBLISHABLE_KEY"];
-    if (url && key) {
-      const { createClient } = await import("@supabase/supabase-js");
-      const supabasePublic = createClient(url, key, {
-        auth: { persistSession: false, autoRefreshToken: false, storage: undefined },
-        global: { fetch: createSupabaseFetch(key) },
-      });
-      const { error } = await supabasePublic.from("ai_estimate_requests").insert({
-        id: leadId,
-        name: lead.name,
-        phone: lead.phone,
-        address: lead.address,
-        description: lead.description,
-        photo_count: lead.photoCount,
-        load_size: loadSize,
-        price_low: estimate ? Math.round(estimate.price_low) : null,
-        price_high: estimate ? Math.round(estimate.price_high) : null,
-        items_identified: estimate?.items_identified ?? [],
-        summary,
-        status: "new",
-      });
-      if (error) console.error("ai estimate lead insert error", error);
-    }
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { error } = await supabaseAdmin.from("ai_estimate_requests").insert({
+      id: leadId,
+      name: lead.name,
+      phone: lead.phone,
+      address: lead.address,
+      description: lead.description,
+      photo_count: lead.photoCount,
+      load_size: estimate.unverified ? "Not verified" : estimate.load_size,
+      price_low: lo,
+      price_high: hi,
+      items_identified: items,
+      summary,
+      status: "new",
+    });
+    if (error) console.error("ai estimate lead insert error", error);
   } catch (dbError) {
     console.error("ai estimate lead insert failed", dbError);
   }
@@ -115,7 +103,7 @@ async function recordLead(
         photoCount: lead.photoCount,
         priceRange,
         loadSize,
-        itemsIdentified: (estimate?.items_identified ?? []).join(", "),
+        itemsIdentified: items.join(", "),
         summary,
         submittedAt: new Date().toLocaleString("en-US", {
           timeZone: "America/Denver",
@@ -340,8 +328,9 @@ async function logEstimateEvent(
   }
 }
 
-// The token handed to the browser signs the estimate itself (see estimate-token.ts), so the
-// lock-in step only trusts a price, load size and summary that this server issued.
+// The token handed to the browser signs the estimate itself (see estimate-token.ts).
+// Lock-in accepts it only when the browser returns that same estimate, then copies the
+// price, load size and items from the row this server recorded.
 function tokenSecret(): string | null {
   return process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"] ?? null;
 }
@@ -391,10 +380,45 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
       throw new Error("Too many requests. Please call or text us.");
     }
 
+    // The token must match the estimate the server signed. Prices, load size and items
+    // still come only from the row the server recorded, never from the browser payload.
     const secret = tokenSecret();
     const verifiedId =
       secret && data.eventId ? await verifyEstimate(secret, data.eventId, data.estimate) : null;
-    if (!verifiedId) console.warn("estimate lead arrived without a valid estimate token");
+    if (data.eventId && !verifiedId) console.warn("estimate lead arrived without a valid estimate token");
+
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const signedSummary = data.estimate.summary.slice(0, 2000);
+    let stored: StoredEstimate = {
+      load_size: null,
+      price_low: null,
+      price_high: null,
+      items_identified: [],
+      summary: data.eventId && !verifiedId ? null : signedSummary,
+      unverified: Boolean(data.eventId) && !verifiedId,
+    };
+    if (verifiedId) {
+      try {
+        const { data: ev } = await supabaseAdmin
+          .from("estimate_events")
+          .select("load_size, price_low, price_high, items_identified")
+          .eq("id", verifiedId)
+          .gte("created_at", new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString())
+          .maybeSingle();
+        if (ev) {
+          stored = {
+            load_size: ev.load_size,
+            price_low: ev.price_low,
+            price_high: ev.price_high,
+            items_identified: ev.items_identified ?? [],
+            summary: signedSummary,
+            unverified: false,
+          };
+        }
+      } catch (e) {
+        console.error("estimate event lookup failed", e);
+      }
+    }
     await recordLead(
       {
         name: data.name,
@@ -403,11 +427,10 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
         description: data.description,
         photoCount: data.photoCount,
       },
-      verifiedId ? data.estimate : null,
+      stored,
     );
     if (verifiedId) {
       try {
-        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
         await supabaseAdmin
           .from("estimate_events")
           .update({ locked_in: true, locked_in_at: new Date().toISOString() })
