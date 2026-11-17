@@ -15,9 +15,10 @@ import { articleHero } from "@/content/scheduled-posts";
 import {
   applyBusinessIdentity,
   absoluteSiteUrl,
-  BLOG_AUTHOR_NAME,
+  BLOG_BYLINE,
   blogDates,
   blogSchemas,
+  normalizeArticleAuthors,
 } from "@/lib/blog-schema";
 
 type Json = unknown;
@@ -78,12 +79,14 @@ export const Route = createFileRoute("/blog/$slug")({
     const scripts = [...stored, ...(p.faq_json_ld == null ? [] : [p.faq_json_ld])]
       .map((x) => ({
         type: "application/ld+json",
-        children: ser(applyBusinessIdentity(repoint(fillBlogPriceJson(x, guide), url))),
+        children: ser(
+          applyBusinessIdentity(normalizeArticleAuthors(repoint(fillBlogPriceJson(x, guide), url))),
+        ),
       }))
       .concat(
         generated.map((x) => ({
           type: "application/ld+json",
-          children: ser(applyBusinessIdentity(x)),
+          children: ser(applyBusinessIdentity(normalizeArticleAuthors(x))),
         })),
       );
     const image = p.hero_image_url ? absoluteSiteUrl(p.hero_image_url) : null;
@@ -219,8 +222,7 @@ function PostDates({ created, updated }: { created: string | null; updated: stri
   const showUpdated = modified && fmtDate(modified) !== fmtDate(published);
   return (
     <p className="mt-6 text-sm text-muted-foreground">
-      By {BLOG_AUTHOR_NAME}, EZ Haulaway · Published{" "}
-      <time dateTime={published}>{fmtDate(published)}</time>
+      {BLOG_BYLINE} · Published <time dateTime={published}>{fmtDate(published)}</time>
       {showUpdated ? (
         <>
           {" "}
