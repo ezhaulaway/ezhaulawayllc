@@ -194,6 +194,98 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
       },
     ],
   },
+  {
+    slug: "previous-owner-left-junk",
+    title: "Previous Owner Left Junk Behind? What to Do After Closing",
+    meta_description:
+      "Previous owner left junk in your new house? What to do after closing in Colorado: photos, your contract, the seller, and quick haul-away near Denver.",
+    publish_at: "2026-11-18T14:00:00.000Z",
+    hero: {
+      src: "/blog/previous-owner-left-junk/hero.webp",
+      alt: "Basement in a Parker home filled with boxes, shelving, a cabinet, a trash can and a bin of cables as an EZ Haulaway crew member walks through before a cleanout",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Previous Owner Left Junk Behind? What to Do After Closing</h1>
+<p>If the previous owner left junk in your new house, start with photos of everything, then have your real estate agent contact the seller's agent before you throw anything out. Check your contract for what was supposed to stay. Then decide whether the seller picks it up, pays for removal, or you just have it hauled so you can move in.</p>
+<p>One of our first big jobs started with a call from a buyer's agent. The sellers had left a basement full of couches, boxes and junk, and we cleared it the same day so the new owners could move into a clean house. Here's how to handle it, step by step, with the Colorado details that matter.</p>
+<h2>What should you do first when the previous owner left stuff in the house?</h2>
+<p>Don't start hauling yet. Walk every room, the garage, the basement, the attic, any shed and the yard, and take photos or a video of everything the seller left. Write a simple list. Then call your agent. That record is what you'll lean on if you ask the seller to come back for it or to pay for removal.</p>
+<p>Good places to check, because sellers forget them most:</p>
+<ul>
+<li>Garage rafters, shelving and the corners behind the water heater</li>
+<li>Basement storage rooms and under the stairs</li>
+<li>Attic and crawl space</li>
+<li>Kitchen cabinets, closets and bathroom vanities</li>
+<li>Sheds, side yards and the area under a deck</li>
+</ul>
+<h2>Is a seller allowed to leave things behind in Colorado?</h2>
+<p>Only what the contract says stays. Colorado real estate brokers generally have to use the Real Estate Commission's standard Contract to Buy and Sell Real Estate. It lists inclusions that convey with the house and says the property is delivered in the condition it was in on the contract date, ordinary wear and tear excepted. The seller's leftover boxes aren't inclusions unless someone wrote them in.</p>
+<p>Some things are supposed to stay, though, and people are sometimes surprised by them. Under the 2026 version of the form, items like window coverings, curtain rods, fireplace screens and storage sheds are included if they were on the property on the contract date, unless they were excluded. Read the inclusions and exclusions with your agent before you decide what counts as junk.</p>
+<p>One more check: if you signed a Post-Closing Occupancy Agreement (a rent-back), that agreement controls when the seller has to be out. Their things may still be there legitimately until it ends.</p>
+<h2>Who owns the items a seller leaves behind after closing?</h2>
+<p>It depends on your contract and on state law, so there isn't one answer that fits every closing. An agent quoted by Realtor.com says buyers own the belongings once the sale closes. Other legal guides advise giving the seller written notice first. If anything looks valuable or personal, talk to your agent or a real estate attorney before you toss it.</p>
+<p>In practice it splits into two piles. Obvious trash, like broken furniture, old carpet and bags of garbage, is rarely something anyone comes back for. Things with real value, family photos, paperwork, tools or a working appliance, are worth a message through the agents first. A short, polite deadline in writing ("please arrange pickup by this date or we'll donate or dispose of it") keeps everybody on the same page.</p>
+<h2>Can you make the seller pay to haul it away?</h2>
+<p>Sometimes. If the contract required the house to be left in a certain condition and it wasn't, your agent or a real estate attorney can ask the seller to cover a reasonable removal bill. Keep the before photos and the invoice.</p>
+<p>If they won't, Colorado's county courts have a <a href="https://www.coloradojudicial.gov/self-help/opening-case" rel="noopener">small claims division</a> for disputes of 7,500 dollars or less, without a jury. Whether that's worth your time depends on the amount. For a single trailer load, it may make more sense to skip the court date and just get it done. Either way, this is a question for your agent or a real estate attorney, not your junk hauler.</p>
+<img src="/blog/previous-owner-left-junk/basement-before-after.webp" alt="Before and after of a basement cleanout we did in Parker: boxes, shelving, a cabinet and a bin of cables on the left, the same basement empty and swept on the right" width="1600" height="900" loading="lazy">
+<h2>How do you avoid this at the final walk-through?</h2>
+<p>Use the walk-through. Colorado's standard contract gives buyers the right, with reasonable notice, to walk through the property before closing and check that it matches the contract. Open every closet, cabinet, storage room and the garage. If stuff is still there, say so before you sign, not after you have the keys.</p>
+<p>If you find things at the walk-through, your agent has more options then than later. They can ask the seller to clear it before closing, write a removal deadline into the contract's additional provisions, or ask for money held back at closing to cover the haul-off. A verbal "we'll come back for it" is easy to forget once the seller's truck is gone.</p>
+<h2>How much does it cost to haul away what the previous owner left?</h2>
+<p>We price by how much space the items take in our 14-cubic-yard dump trailer, not by the hour. Small loads start at our [[min]] minimum. A quarter trailer is about [[load:2]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. That covers the labor, loading, hauling and disposal fees. See the full breakdown on our <a href="/pricing">pricing page</a>.</p>
+<p>A few things in the garage is often a small load. A furnished basement is more. Send photos through our <a href="/instant-estimate">instant estimate</a> and you'll know the number before we show up.</p>
+<h2>What if the seller left paint, chemicals or a full house?</h2>
+<p>Leftover paint cans and garage chemicals are common, and they're one thing we can't take. Paint, solvents, chemicals, fuel, oil and propane tanks need a licensed disposal facility. We'll haul everything else around them. If you aren't sure about an item, text us a photo and we'll tell you straight.</p>
+<p>A full house is a different job. Our <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a> cover every room, the basement, the garage and the yard, with one firm price for the whole job before we start, even when it takes several loads. A multi-load job usually starts within a day or two. We sort out what can be donated or recycled along the way.</p>
+<h2>Realtors: who handles it when sellers leave junk at closing?</h2>
+<p>Agents call us when a closing gets tense because a house isn't empty. Our <a href="/services/realtor-and-attorney-cleanouts">cleanouts for realtors and attorneys</a> cover post-closing and seller-left-behind jobs. Send the address, the deadline and a few photos. We quote the whole job up front, take before and after photos for your file, and can invoice your brokerage.</p>
+<p>We'll tell you honestly whether we can meet a date. We also carry general liability insurance, and a certificate is available on request, which a lot of agents ask for before the first job.</p>
+<h2>Do you have to put leftover junk at the curb yourself?</h2>
+<p>No. We do all the lifting and loading from wherever it is, including basements, attics and backyards. That matters in the south metro, because Douglas County doesn't provide residential curbside trash pickup. If you want to set a pile out, check with your HOA or trash hauler first about what they'll pick up.</p>
+<p>If it's already at the curb, ask about our curbside discount. Ben spent about six years in construction, including leading a deck-building crew, before starting EZ Haulaway in 2026, so old lumber, tile and leftover building materials in a garage don't scare us either. For smaller leftovers, see our <a href="/services/garage-cleanouts">garage cleanouts</a> and <a href="/services/basement-and-attic-cleanouts">basement and attic cleanouts</a>.</p>
+<h2>Need it gone?</h2>
+<p>We're a family-owned, insured junk removal company based in Parker, and we serve Castle Rock, Highlands Ranch, Lone Tree, Castle Pines, Aurora, Denver and the rest of the metro. If you just closed on a house in town, here's our <a href="/service-areas/parker">Parker junk removal</a> page.</p>
+<p>Call or text us at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send a few photos and we'll text back a free quote, or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. Jobs start at our [[min]] minimum. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "Can I throw away things the previous owner left?",
+        answer:
+          "Clear trash like broken furniture or garbage bags is usually fine to get rid of. For anything valuable or personal, like photos, paperwork, tools or working appliances, take photos and have your agent contact the seller's agent first. If you're unsure, ask a real estate attorney before you toss it.",
+      },
+      {
+        question: "Does the seller's storage shed stay with the house in Colorado?",
+        answer:
+          "Usually, yes. Colorado's standard residential contract lists storage sheds as included if they were on the property on the contract date, unless they were excluded. Check the inclusions and exclusions in your contract. If you don't want the shed, we can tear it down and haul it away.",
+      },
+      {
+        question: "What does the final walk-through check in Colorado?",
+        answer:
+          "Colorado's standard contract gives the buyer the right, with reasonable notice, to walk through before closing and confirm the property and inclusions are in the condition the contract requires. Use it to open every closet, cabinet, storage room and the garage so leftover items get handled before you sign.",
+      },
+      {
+        question: "Can my real estate agent help if the seller left junk behind?",
+        answer:
+          "Yes, and they're the right first call. Your agent can reach the seller's agent, ask the seller to pick things up by a set date, or ask them to cover a removal bill. Send your agent your photos and a list of what was left.",
+      },
+      {
+        question: "How much does it cost to remove what the seller left behind?",
+        answer:
+          "We price by how much of our trailer it fills. Small loads start at [[min]], a quarter trailer is about [[load:2]], a half trailer about [[load:4]] and a full trailer about [[load:8]]. That includes labor, loading, hauling and disposal. Send photos for a firm quote.",
+      },
+      {
+        question: "Will you take paint and chemicals the previous owner left?",
+        answer:
+          "No. Paint, solvents, chemicals, fuel, oil and propane tanks need a licensed disposal facility, so we leave those. We'll haul the furniture, boxes, appliances and other junk around them, and we'll tell you if we're unsure about an item.",
+      },
+      {
+        question: "How fast can you clear a house after closing?",
+        answer:
+          "Smaller jobs can often be done quickly, and a multi-load whole-house cleanout usually starts within a day or two. Tell us your move-in date and we'll say honestly whether we can meet it. You get one firm price for the whole job before we start.",
+      },
+    ],
+  },
 ];
 
 type Row = Database["public"]["Tables"]["blg_articles"]["Row"];
