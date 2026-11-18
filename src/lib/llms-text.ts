@@ -8,10 +8,10 @@ import {
   GOOGLE_PROFILE_URL,
   GOOGLE_REVIEW_URL,
   HOURS_TEXT,
+  INSTAGRAM_URL,
   NEXTDOOR_URL,
   PHONE_DISPLAY,
   SITE_URL,
-  THUMBTACK_URL,
 } from "@/content/site";
 import {
   eighthPrice,
@@ -134,8 +134,8 @@ ${cityLines}
 - Google Business Profile: ${GOOGLE_PROFILE_URL}
 - Leave a Google review: ${GOOGLE_REVIEW_URL}
 - Facebook: ${FACEBOOK_URL}
+- Instagram: ${INSTAGRAM_URL}
 - Nextdoor: ${NEXTDOOR_URL}
-- Thumbtack: ${THUMBTACK_URL}
 - Better Business Bureau: ${BBB_URL}
 - Parker Chamber of Commerce: ${CHAMBER_PROFILE_URL}
 `,

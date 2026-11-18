@@ -10,9 +10,9 @@ import { SITE_URL } from "@/content/site";
 import { responsiveImage } from "@/lib/service-images";
 import cleanoutAsset from "@/assets/real-IMG_5076.jpg.asset.json";
 
-const title = "What We Take — Junk Removal Services | EZ Haulaway";
+const title = "What We'll Haul Away | And What We Can't";
 const description =
-  "Furniture, appliances, hot tubs, construction debris, yard waste, cleanouts, electronics and more. See what EZ Haulaway hauls in the Denver metro.";
+  "What EZ Haulaway will haul away in Parker and the Denver metro — furniture, appliances, debris, and cleanouts — and the items we can't take.";
 
 export const Route = createFileRoute("/what-we-take")({
   head: () => ({
@@ -44,8 +44,8 @@ function WhatWeTakePage() {
     <PageShell>
       <PageHero
         eyebrow="What we haul"
-        title="If You Want It Gone, We'll Take It"
-        text="From a single mattress to an entire property, EZ Haulaway loads it, hauls it, and cleans up after. Pick a service below to see how it works."
+        title="What We'll Haul Away"
+        text="From a single mattress to a whole property, this is what EZ Haulaway will haul away in Parker and the Denver metro — and, just below, what we can't take."
         image={cleanoutAsset.url}
         imageAlt="EZ Haulaway crew moving a wheeled bin beside the black dump trailer"
       />
@@ -59,15 +59,16 @@ function WhatWeTakePage() {
           />
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             <p>
-              Send us photos or describe the job, and we'll give you a straightforward price before we arrive. Our
-              crew handles all the lifting, loading, and hauling from anywhere on your property — basements, backyards,
-              attics, and storage units included. When the trailer is loaded, we sweep the area and sort the load for
-              donation and recycling wherever we can.
+              Send us photos or describe the job, and we'll give you a straightforward price before
+              we arrive. Our crew handles all the lifting, loading, and hauling from anywhere on
+              your property — basements, backyards, attics, and storage units included. When the
+              trailer is loaded, we sweep the area and sort the load for donation and recycling
+              wherever we can.
             </p>
             <p>
-              Customers across Parker and the Denver metro area tell us the best part isn't watching the junk leave —
-              it's what comes back: a garage you can park in, a room you can use, a yard you can enjoy. Pick your
-              service below and let's get your space back.
+              Customers across Parker and the Denver metro area tell us the best part isn't watching
+              the junk leave — it's what comes back: a garage you can park in, a room you can use, a
+              yard you can enjoy. Pick your service below and let's get your space back.
             </p>
           </div>
         </div>
@@ -89,7 +90,10 @@ function WhatWeTakePage() {
                 className="group relative isolate flex min-h-64 flex-col justify-end overflow-hidden bg-secondary p-7"
               >
                 <img
-                  {...responsiveImage(service.image, "(min-width: 1024px) 405px, (min-width: 640px) 50vw, 100vw")}
+                  {...responsiveImage(
+                    service.image,
+                    "(min-width: 1024px) 405px, (min-width: 640px) 50vw, 100vw",
+                  )}
                   alt={service.imageAlt}
                   width={1200}
                   height={896}
@@ -111,7 +115,9 @@ function WhatWeTakePage() {
           </div>
           <p className="mt-8 max-w-2xl text-sm leading-6 text-muted-foreground">
             In Denver? See how we handle{" "}
-            <CityServiceLink city={"denver"} service={"furniture-removal"}
+            <CityServiceLink
+              city={"denver"}
+              service={"furniture-removal"}
               className="font-bold text-primary hover:underline"
             >
               furniture removal in Denver

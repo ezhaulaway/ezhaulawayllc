@@ -16,7 +16,14 @@ import { locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { cityFaqs } from "@/content/city-faqs";
-import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_ID, BUSINESS_SCHEMA, processSteps } from "@/content/site";
+import {
+  PHONE,
+  PHONE_TEL,
+  SITE_URL,
+  BUSINESS_ID,
+  BUSINESS_SCHEMA,
+  processSteps,
+} from "@/content/site";
 import { rich } from "@/components/prose-section";
 import { cityHubTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
@@ -36,10 +43,12 @@ export const Route = createFileRoute("/service-areas/$city")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Area not found — EZ Haulaway" }, { name: "robots", content: "noindex" }],
+      };
     }
     const { location } = loaderData;
-    const pageTitle = cityHubTitle(location.city, location.slug);
+    const pageTitle = priceText(cityHubTitle(location.city, location.slug));
     const faqs = location.faqs ?? cityFaqs(location.city);
     const pageDescription =
       location.metaDescription ??
@@ -48,7 +57,7 @@ export const Route = createFileRoute("/service-areas/$city")({
     const photoUrl = photo?.src.startsWith("https://") ? photo.src : undefined;
     const businessSchema =
       location.slug === "parker" || location.slug === "castle-rock"
-        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]") }
+        ? { ...BUSINESS_SCHEMA, priceRange: priceText("[[min]]-[[load:8]]") }
         : BUSINESS_SCHEMA;
     return {
       meta: [
@@ -68,7 +77,10 @@ export const Route = createFileRoute("/service-areas/$city")({
             ]
           : []),
       ],
-      links: [{ rel: "canonical", href: `${SITE_URL}/service-areas/${params.city}` }, ...(photo ? [heroPreload(photo.src)] : [])],
+      links: [
+        { rel: "canonical", href: `${SITE_URL}/service-areas/${params.city}` },
+        ...(photo ? [heroPreload(photo.src)] : []),
+      ],
       scripts: [
         {
           type: "application/ld+json",
@@ -117,8 +129,18 @@ export const Route = createFileRoute("/service-areas/$city")({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
-              { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Service Areas",
+                item: `${SITE_URL}/service-areas`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: location.city,
+                item: `${SITE_URL}/service-areas/${params.city}`,
+              },
             ],
           }),
         },
@@ -134,7 +156,9 @@ function CityNotFound() {
     <PageShell>
       <div className="mx-auto max-w-3xl px-5 py-24 text-center">
         <h1 className="text-3xl font-extrabold">We couldn’t find that area</h1>
-        <p className="mt-4 text-muted-foreground">See every city we serve across the Denver metro area.</p>
+        <p className="mt-4 text-muted-foreground">
+          See every city we serve across the Denver metro area.
+        </p>
         <Button asChild className="mt-8" size="lg">
           <Link to="/service-areas">View Service Areas</Link>
         </Button>
@@ -165,9 +189,13 @@ function CityPage() {
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">Home</Link>
+            <Link to="/" className="hover:text-foreground">
+              Home
+            </Link>
             <span className="px-2">/</span>
-            <Link to="/service-areas" className="hover:text-foreground">Service Areas</Link>
+            <Link to="/service-areas" className="hover:text-foreground">
+              Service Areas
+            </Link>
             <span className="px-2">/</span>
             <span className="font-semibold text-foreground">{location.city}</span>
           </nav>
@@ -176,7 +204,9 @@ function CityPage() {
           <div>
             <div className="flex items-center gap-2 text-primary">
               <MapPin className="size-4" />
-              <span className="text-xs font-bold uppercase tracking-[0.16em]">{location.county}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.16em]">
+                {location.county}
+              </span>
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">
               {`Junk Removal in ${location.city}, CO`}
@@ -190,11 +220,14 @@ function CityPage() {
                 ))}
               </ul>
             )}
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{rich(location.intro)}</p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
+              {rich(location.intro)}
+            </p>
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
             {neighborhoodList(location.slug) && (
               <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">
-                We haul from homes and businesses across {location.city}, including {neighborhoodList(location.slug)}.
+                We haul from homes and businesses across {location.city}, including{" "}
+                {neighborhoodList(location.slug)}.
               </p>
             )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -211,8 +244,8 @@ function CityPage() {
             </div>
             {pushInstantEstimate && (
               <p className="mt-4 text-sm font-medium text-muted-foreground">
-                Add your name, city, and phone, then photos or a short description. A preliminary price range
-                for {location.city} junk removal shows on the next screen.
+                Add your name, city, and phone, then photos or a short description. A preliminary
+                price range for {location.city} junk removal shows on the next screen.
               </p>
             )}
           </div>
@@ -261,19 +294,22 @@ function CityPage() {
                 {section.closing && (
                   <p className="mt-6 text-lg font-semibold leading-8">{section.closing}</p>
                 )}
-                 {section.serviceLinks && (
-                   <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
-                     {section.serviceLinks.map((service) => (
-                       <li key={service.slug}>
-                         <CityServiceLink city={location.slug} service={service.slug}
-                           className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
-                         >
-                           {service.label}<ArrowRight className="size-4 shrink-0" />
-                         </CityServiceLink>
-                       </li>
-                     ))}
-                   </ul>
-                 )}
+                {section.serviceLinks && (
+                  <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                    {section.serviceLinks.map((service) => (
+                      <li key={service.slug}>
+                        <CityServiceLink
+                          city={location.slug}
+                          service={service.slug}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
+                        >
+                          {service.label}
+                          <ArrowRight className="size-4 shrink-0" />
+                        </CityServiceLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -288,30 +324,66 @@ function CityPage() {
             text={angle}
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {([
-              ["eviction-cleanout-and-trash-out", "Eviction cleanouts & trash outs", "Same-day and next-day haul-out of everything left behind."],
-              ["apartment-make-ready-haul-off", "Make-ready & unit turn haul-off", "We clear the unit so cleaners and painters can start."],
-              ["house-and-estate-cleanouts", "Pre-listing & estate cleanouts", "Empty the house before photos, a showing or closing."],
-              ["commercial-junk-removal", "Commercial & office cleanouts", "Offices, retail and tenant move-outs, scheduled around you."],
-            ] as Array<[string, string, string]>).map(([slug, title, text]) => (
-              <article key={slug} className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary">
+            {(
+              [
+                [
+                  "eviction-cleanout-and-trash-out",
+                  "Eviction cleanouts & trash outs",
+                  "Same-day and next-day haul-out of everything left behind.",
+                ],
+                [
+                  "apartment-make-ready-haul-off",
+                  "Make-ready & unit turn haul-off",
+                  "We clear the unit so cleaners and painters can start.",
+                ],
+                [
+                  "house-and-estate-cleanouts",
+                  "Pre-listing & estate cleanouts",
+                  "Empty the house before photos, a showing or closing.",
+                ],
+                [
+                  "commercial-junk-removal",
+                  "Commercial & office cleanouts",
+                  "Offices, retail and tenant move-outs, scheduled around you.",
+                ],
+              ] as Array<[string, string, string]>
+            ).map(([slug, title, text]) => (
+              <article
+                key={slug}
+                className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
+              >
                 <h3 className="font-display text-lg font-bold">
-                  <CityServiceLink city={location.slug} service={slug} className="after:absolute after:inset-0 after:content-['']">
+                  <CityServiceLink
+                    city={location.slug}
+                    service={slug}
+                    className="after:absolute after:inset-0 after:content-['']"
+                  >
                     {title}
                   </CityServiceLink>
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
-                <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                <span
+                  aria-hidden="true"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                >
                   Learn more <ArrowRight className="size-4" />
                 </span>
               </article>
             ))}
           </div>
           <ul className="mt-8 grid gap-3 text-sm font-semibold sm:grid-cols-2">
-            <li className="rounded-lg border border-border bg-card px-5 py-4">Same-day and next-day slots; a 48-hour wait is rare</li>
-            <li className="rounded-lg border border-border bg-card px-5 py-4">Before and after photos on every job</li>
-            <li className="rounded-lg border border-border bg-card px-5 py-4">Company invoicing and a certificate of insurance on request</li>
-            <li className="rounded-lg border border-border bg-card px-5 py-4">Volume or locked-in rates for guaranteed jobs</li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">
+              Same-day and next-day slots; a 48-hour wait is rare
+            </li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">
+              Before and after photos on every job
+            </li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">
+              Company invoicing and a certificate of insurance on request
+            </li>
+            <li className="rounded-lg border border-border bg-card px-5 py-4">
+              Volume or locked-in rates for guaranteed jobs
+            </li>
           </ul>
         </div>
       </section>
@@ -331,14 +403,19 @@ function CityPage() {
                   className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
                 >
                   <h3 className="font-display text-lg font-bold">
-                    <CityServiceLink city={location.slug} service={service.slug}
+                    <CityServiceLink
+                      city={location.slug}
+                      service={service.slug}
                       className="after:absolute after:inset-0 after:content-['']"
                     >
                       {service.name} in {location.city}, CO
                     </CityServiceLink>
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
-                  <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                  <span
+                    aria-hidden="true"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                  >
                     Learn more <ArrowRight className="size-4" />
                   </span>
                 </article>
@@ -357,7 +434,8 @@ function CityPage() {
                 <p className="font-display text-lg font-bold">Need a price right now?</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   Add your name, city, and phone, then photos or a description, for a preliminary{" "}
-                  {location.city} junk removal range. The crew confirms the final price before loading.
+                  {location.city} junk removal range. The crew confirms the final price before
+                  loading.
                 </p>
                 <Button asChild size="lg" className="mt-4 w-full">
                   <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
@@ -368,7 +446,6 @@ function CityPage() {
           </div>
         </div>
       </section>
-
 
       <section className="border-y border-border bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -384,14 +461,19 @@ function CityPage() {
                 className="relative rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary"
               >
                 <h3 className="font-display text-lg font-bold">
-                  <CityServiceLink city={location.slug} service={service.slug}
+                  <CityServiceLink
+                    city={location.slug}
+                    service={service.slug}
                     className="after:absolute after:inset-0 after:content-['']"
                   >
                     {service.name} in {location.city}, CO
                   </CityServiceLink>
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.summary}</p>
-                <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+                <span
+                  aria-hidden="true"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                >
                   See {location.city} pricing and details <ArrowRight className="size-4" />
                 </span>
               </article>
@@ -410,28 +492,34 @@ function CityPage() {
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <li key={service.slug}>
-                {service.cityPages === false ? <Link
-                  to="/services/$slug"
-                  params={{ slug: service.slug }}
-                  className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
-                >
-                  <span>{service.name} — serving {location.city}</span>
-                  <ArrowRight className="size-4 shrink-0" />
-                </Link> : <CityServiceLink city={location.slug} service={service.slug}
-                  className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
-                >
-                  <span>{location.city} {service.name.toLowerCase()}</span>
-                  <ArrowRight className="size-4 shrink-0" />
-                </CityServiceLink>}
+                {service.cityPages === false ? (
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
+                    className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <span>
+                      {service.name} — serving {location.city}
+                    </span>
+                    <ArrowRight className="size-4 shrink-0" />
+                  </Link>
+                ) : (
+                  <CityServiceLink
+                    city={location.slug}
+                    service={service.slug}
+                    className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-5 py-4 font-semibold transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <span>
+                      {location.city} {service.name.toLowerCase()}
+                    </span>
+                    <ArrowRight className="size-4 shrink-0" />
+                  </CityServiceLink>
+                )}
               </li>
             ))}
           </ul>
         </div>
       </section>
-
-
-
-
 
       <section className="bg-secondary py-16 text-secondary-foreground sm:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -487,20 +575,22 @@ function CityPage() {
           />
           <div className="mt-10 space-y-6 leading-8 text-muted-foreground">
             <p>
-              It starts with a photo or a quick call. We give you a straightforward price based on how much space your
-              items take in our trailer, and we schedule around your day. When our crew
-              arrives at your {location.city} property, we walk the job with you and confirm the price before anything
-              is loaded, so there are no surprises at the end.
+              It starts with a photo or a quick call. We give you a straightforward price based on
+              how much space your items take in our trailer, and we schedule around your day. When
+              our crew arrives at your {location.city} property, we walk the job with you and
+              confirm the price before anything is loaded, so there are no surprises at the end.
             </p>
             <p>
-              Then we do all of it: the lifting, the stairs, the tight gates and doorways, the loading, and the haul
-              away. We sweep and blow off the area before we leave, and we donate and recycle what we can before the rest
-              heads to the landfill. You never touch a dolly, rent a truck, or make a dump run.
+              Then we do all of it: the lifting, the stairs, the tight gates and doorways, the
+              loading, and the haul away. We sweep and blow off the area before we leave, and we
+              donate and recycle what we can before the rest heads to the landfill. You never touch
+              a dolly, rent a truck, or make a dump run.
             </p>
             <p>
-              The part {location.city} customers talk about most is the feeling afterward — the garage you can park in
-              again, the basement that's finally usable, the backyard without the old hot tub or broken fence. One
-              visit, and a project that felt overwhelming is simply done.
+              The part {location.city} customers talk about most is the feeling afterward — the
+              garage you can park in again, the basement that's finally usable, the backyard without
+              the old hot tub or broken fence. One visit, and a project that felt overwhelming is
+              simply done.
             </p>
           </div>
         </div>
@@ -514,8 +604,8 @@ function CityPage() {
                 Get a Preliminary {location.city} Junk Removal Price
               </h2>
               <p className="mt-3 max-w-xl leading-7 text-muted-foreground">
-                The online estimate is free. Enter your name, city, and phone, then add photos or a description
-                to see a preliminary range. There is no obligation to book.
+                The online estimate is free. Enter your name, city, and phone, then add photos or a
+                description to see a preliminary range. There is no obligation to book.
               </p>
             </div>
             <Button asChild size="lg" className="w-full shrink-0 sm:w-auto">

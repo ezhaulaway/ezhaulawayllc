@@ -2,8 +2,22 @@ import { PHONE } from "@/content/site";
 
 /** Real neighborhoods per city, used in local intros. */
 export const NEIGHBORHOODS: Record<string, string[]> = {
-  parker: ["Stonegate", "The Pinery", "Idyllwilde", "Stroh Ranch", "Canterberry Crossing", "Clarke Farms", "Mainstreet"],
-  "castle-rock": ["The Meadows", "Crystal Valley Ranch", "Castlewood Ranch", "Plum Creek", "Founders Village"],
+  parker: [
+    "Stonegate",
+    "The Pinery",
+    "Idyllwilde",
+    "Stroh Ranch",
+    "Canterberry Crossing",
+    "Clarke Farms",
+    "Mainstreet",
+  ],
+  "castle-rock": [
+    "The Meadows",
+    "Crystal Valley Ranch",
+    "Castlewood Ranch",
+    "Plum Creek",
+    "Founders Village",
+  ],
   centennial: ["Willow Creek", "Southglenn", "Smoky Hill", "Cherry Knolls", "Piney Creek"],
   "highlands-ranch": ["Westridge", "Eastridge", "Northridge", "Southridge", "BackCountry"],
   "lone-tree": ["RidgeGate", "Heritage Hills", "Carriage Club", "Montecito"],
@@ -56,6 +70,7 @@ export const CITY_SERVICE_DESCRIPTION: Record<string, string> = {
 /** Hub titles that should not use the shared pattern. */
 export const HUB_TITLE_OVERRIDES: Record<string, string> = {
   parker: "Junk Removal in Parker, CO | Family-Owned Crew",
+  centennial: "Junk Removal in Centennial, CO | From [[min]]",
 };
 
 /**
@@ -76,7 +91,16 @@ export function cityHubTitle(city: string, slug: string): string {
 export const CITY_BENEFIT = "Upfront Pricing, Local Crew";
 
 /** Priority city hubs and city-service pages linked from the homepage. */
-export const PRIORITY_CITIES = ["parker", "castle-rock", "denver", "highlands-ranch", "centennial", "littleton", "aurora", "lone-tree"];
+export const PRIORITY_CITIES = [
+  "parker",
+  "castle-rock",
+  "denver",
+  "highlands-ranch",
+  "centennial",
+  "littleton",
+  "aurora",
+  "lone-tree",
+];
 export const PRIORITY_CITY_SERVICES: Array<[string, string]> = [
   ["parker", "furniture-removal"],
   ["parker", "appliance-removal"],
