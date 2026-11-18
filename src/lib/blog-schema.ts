@@ -10,7 +10,45 @@ type PostLike = {
   article_updated_at: string | null;
 };
 
-export const BLOG_AUTHOR_NAME = "Ben";
+/** The only person credited on a post. In-house posts may instead name the business. */
+export const BLOG_AUTHOR_NAME = "Ben Herrera";
+export const BLOG_BYLINE = "By Ben Herrera, owner of EZ Haulaway";
+
+function personAuthor() {
+  return {
+    "@type": "Person" as const,
+    name: BLOG_AUTHOR_NAME,
+    jobTitle: "Owner",
+    worksFor: { "@type": "Organization" as const, ...BUSINESS_JSONLD },
+  };
+}
+
+function isArticleType(type: unknown): boolean {
+  return schemaTypes(type).some((item) => /Article|BlogPosting|NewsArticle/.test(item));
+}
+
+/** Replace a made-up or first-name-only person. An organization author is left for the business stamp. */
+function approvedAuthor(author: unknown): unknown {
+  if (Array.isArray(author)) return author.map((item) => approvedAuthor(item));
+  if (!author || typeof author !== "object") return personAuthor();
+  const record = author as Record<string, unknown>;
+  const types = schemaTypes(record["@type"]);
+  if (types.includes("Organization")) return record;
+  return personAuthor();
+}
+
+/** Imported articles can arrive with a persona in their stored JSON-LD. Keep only Ben Herrera or the business. */
+export function normalizeArticleAuthors(node: unknown): unknown {
+  if (Array.isArray(node)) return node.map((item) => normalizeArticleAuthors(item));
+  if (!node || typeof node !== "object") return node;
+  const next: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(node as Record<string, unknown>)) {
+    next[key] = key === "author" ? value : normalizeArticleAuthors(value);
+  }
+  if (isArticleType(next["@type"]) && "author" in next)
+    next["author"] = approvedAuthor(next["author"]);
+  return next;
+}
 
 const BUSINESS_NODE_TYPES = new Set(["LocalBusiness", "JunkRemovalService", "Organization"]);
 
@@ -65,11 +103,7 @@ export function blogSchemas(p: PostLike): unknown[] {
       image: p.hero_image_url ?? `${SITE_URL}/apple-touch-icon.png`,
       ...(published ? { datePublished: published } : {}),
       ...(modified ? { dateModified: modified } : {}),
-      author: {
-        "@type": "Person",
-        name: BLOG_AUTHOR_NAME,
-        worksFor: { "@type": "Organization", ...BUSINESS_JSONLD },
-      },
+      author: personAuthor(),
       publisher,
     },
     {
