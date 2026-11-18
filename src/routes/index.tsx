@@ -7,7 +7,8 @@ import { getGoogleReviews } from "@/lib/google-reviews.functions";
 import { heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 
-const BASELINE_RATING = { rating: 5, count: 5 };
+/** Google Business Profile on Nov 17, 2026. Used when the live lookup does not return in time. */
+const BASELINE_RATING = { rating: 5, count: 21 };
 
 const title = "Parker CO Junk Removal | Family-Owned | Free Photo Quote";
 const descriptionTemplate =

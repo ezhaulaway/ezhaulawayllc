@@ -29,6 +29,23 @@ export function blogImageSrcSet(
 
 const ARTICLE_SIZES = "(min-width: 768px) 728px, calc(100vw - 40px)";
 
+function escapeAttr(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+/** Puts a post's hero image directly under its h1 so the title stays first. */
+export function insertPostHero(
+  html: string,
+  hero: { src: string; alt: string; width: number; height: number } | null,
+): string {
+  if (!hero) return html;
+  const img = `<img src="${escapeAttr(hero.src)}" alt="${escapeAttr(hero.alt)}" width="${hero.width}" height="${hero.height}">`;
+  const h1 = /<\/h1>/i.exec(html);
+  if (!h1) return img + html;
+  const at = h1.index + h1[0].length;
+  return html.slice(0, at) + img + html.slice(at);
+}
+
 export function optimizeBlogImages(html: string): string {
   let n = 0;
   return html.replace(/<img\b([^>]*?)(\/?)>/gi, (_m, attrs: string, slash: string) => {
