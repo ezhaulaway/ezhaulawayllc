@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { cleanHtml } from "@/lib/blog-html";
 // BabyLoveGrowth → blg_articles sync. Server-only. Never import from client code.
 const BASE = "https://api.babylovegrowth.ai/api/integrations";
 const UA = "EZHaulawayBlogSync/1.0";
@@ -6,6 +7,8 @@ const GAP_MS = 2100;
 const MAX_CALLS = 25;
 const MAX_DETAILS = 20;
 const PAGE = 50;
+
+export { cleanHtml };
 
 type Summary = { id: number; slug: string; updated_at?: string };
 
@@ -18,32 +21,6 @@ class HttpError extends Error {
   constructor(public status: number) {
     super(`http ${status}`);
   }
-}
-
-export function cleanHtml(html: string): string {
-  let h = html;
-  h = h.replace(/<script\b[^>]*type\s*=\s*["']?application\/ld\+json["']?[^>]*>[\s\S]*?<\/script>/gi, "");
-  h = h.replace(/\s+on[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "");
-  h = h.replace(/\s+(href|src|xlink:href)\s*=\s*("\s*(javascript|data):[^"]*"|'\s*(javascript|data):[^']*'|(javascript|data):[^\s>]+)/gi, "");
-  h = h.replace(/\s+srcdoc\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "");
-  h = h.replace(/<(object|embed)\b[\s\S]*?<\/\1\s*>/gi, "");
-  h = h.replace(/<(object|embed|base)\b[^>]*\/?>/gi, "");
-  h = h.replace(/<iframe\b([^>]*)>([\s\S]*?)<\/iframe\s*>/gi, (_m, attrs: string, inner: string) => {
-    const src = /\ssrc\s*=\s*["']([^"']+)["']/i.exec(attrs)?.[1] ?? "";
-    let host = "";
-    try {
-      host = new URL(src, "https://x.invalid").hostname.replace(/^www\./, "");
-    } catch {
-      return "";
-    }
-    const ok = ["youtube.com", "youtube-nocookie.com", "vimeo.com", "player.vimeo.com"].some(
-      (d) => host === d || host.endsWith("." + d),
-    );
-    if (!ok) return "";
-    const a = attrs.replace(/\s+sandbox\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "");
-    return `<iframe${a} sandbox="allow-scripts allow-same-origin allow-presentation">${inner}</iframe>`;
-  });
-  return h;
 }
 
 export async function runBlogSync() {

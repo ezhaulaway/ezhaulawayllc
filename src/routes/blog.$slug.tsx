@@ -7,7 +7,7 @@ import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
 import { getBlogPost } from "@/lib/blog.functions";
-import { insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
+import { cleanHtml, insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
 import { fillBlogPriceJson, fillBlogPriceText } from "@/lib/blog-ez-prices";
 import { getGuide, priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
@@ -159,7 +159,7 @@ function BlogPost() {
           className="blog-prose mt-8"
           dangerouslySetInnerHTML={{
             __html: fillBlogPriceText(
-              optimizeBlogImages(insertPostHero(p.content_html ?? "", hero)),
+              optimizeBlogImages(insertPostHero(cleanHtml(p.content_html ?? ""), hero)),
               guide,
             ),
           }}

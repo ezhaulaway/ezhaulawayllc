@@ -61,6 +61,7 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [rootError, setRootError] = useState("");
+  const [website, setWebsite] = useState("");
   const submit = useServerFn(submitQuoteRequest);
 
   if (submitted) {
@@ -134,6 +135,7 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
           location: parsed.data.location,
           details: parsed.data.details,
           photoPaths,
+          website,
         },
       });
 
@@ -156,6 +158,11 @@ export function QuoteForm({ children }: { children?: ReactNode }) {
 
   return (
     <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+      {/* Spam trap: hidden from people and screen readers; only bots fill it in. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
+        <label htmlFor="quote-hp">Leave this field empty</label>
+        <input id="quote-hp" name="hp_field" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+      </div>
       {children}
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-1.5 text-sm font-semibold">

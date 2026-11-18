@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { signEstimate, verifyEstimate } from "./estimate-token";
 
 const trackSchema = z
   .object({
@@ -12,11 +13,14 @@ const trackSchema = z
   })
   .optional();
 
+const MAX_IMAGE_CHARS = 2_000_000;
+
 const inputSchema = z.object({
   track: trackSchema,
   description: z.string().trim().min(5).max(2000),
   images: z
-    .array(z.string().regex(/^data:image\/(jpeg|png|webp);base64,/))
+    // The browser shrinks photos to 1024px JPEG (well under 1 MB); anything far larger is not from our form.
+    .array(z.string().max(MAX_IMAGE_CHARS).regex(/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/))
     .max(4)
     .default([]),
 });
@@ -40,17 +44,31 @@ type StoredEstimate = {
   price_high: number | null;
   items_identified: string[];
   summary: string | null;
+  /**
+   * The browser sent a token that does not match the estimate the server signed.
+   * The lead is still saved, with no price anyone could have typed in.
+   */
+  unverified: boolean;
 };
 
 async function recordLead(
   lead: { name: string; phone: string; address: string; description: string; photoCount: number },
   estimate: StoredEstimate,
 ) {
-  const lo = estimate.price_low;
-  const hi = estimate.price_high;
-  const priceRange =
-    lo == null || hi == null ? "Not available" : lo === hi ? `$${lo}` : `$${lo}\u2013$${hi}`;
-  const loadSize = estimate.load_size ?? "Not available";
+  const lo = estimate.unverified ? null : estimate.price_low;
+  const hi = estimate.unverified ? null : estimate.price_high;
+  const priceRange = estimate.unverified
+    ? "Not verified \u2013 quote this job manually"
+    : lo == null || hi == null
+      ? "Not available"
+      : lo === hi
+        ? `$${lo}`
+        : `$${lo}\u2013$${hi}`;
+  const loadSize = estimate.unverified ? "Not verified" : (estimate.load_size ?? "Not available");
+  const summary = estimate.unverified
+    ? "The estimate could not be verified against the one the site issued. Quote this job manually."
+    : (estimate.summary ?? "");
+  const items = estimate.unverified ? [] : (estimate.items_identified ?? []);
   const leadId = crypto.randomUUID();
 
   try {
@@ -62,11 +80,11 @@ async function recordLead(
       address: lead.address,
       description: lead.description,
       photo_count: lead.photoCount,
-      load_size: estimate.load_size,
+      load_size: estimate.unverified ? "Not verified" : estimate.load_size,
       price_low: lo,
       price_high: hi,
-      items_identified: estimate.items_identified ?? [],
-      summary: estimate.summary,
+      items_identified: items,
+      summary,
       status: "new",
     });
     if (error) console.error("ai estimate lead insert error", error);
@@ -85,8 +103,8 @@ async function recordLead(
         photoCount: lead.photoCount,
         priceRange,
         loadSize,
-        itemsIdentified: (estimate.items_identified ?? []).join(", "),
-        summary: estimate.summary ?? "",
+        itemsIdentified: items.join(", "),
+        summary,
         submittedAt: new Date().toLocaleString("en-US", {
           timeZone: "America/Denver",
           dateStyle: "medium",
@@ -164,6 +182,15 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     const key = process.env["LOVABLE_API_KEY"];
     if (!key) return { ok: false, error: "Estimator is not configured." };
 
+    const { allowRequest, ESTIMATE_RULE } = await import("./abuse-guard.server");
+    if (!(await allowRequest(ESTIMATE_RULE))) {
+      return { ok: false, error: "The estimator is busy right now. Please call or text us for a quote." };
+    }
+
+    const { loadPriceGuide } = await import("./pricing.functions");
+    const { buildEstimatorInstructions, FREE_TV_COMPUTER_MINIMUM } = await import("./price-guide");
+    const guide = await loadPriceGuide();
+
     const content: any[] = [{ type: "input_text", text: `Customer description:\n${data.description}` }];
     for (const url of data.images) content.push({ type: "input_image", image_url: url });
 
@@ -176,11 +203,7 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         model: "openai/gpt-6-astra",
-        instructions: await (async () => {
-          const { loadPriceGuide } = await import("./pricing.functions");
-          const { buildEstimatorInstructions } = await import("./price-guide");
-          return buildEstimatorInstructions(await loadPriceGuide());
-        })(),
+        instructions: buildEstimatorInstructions(guide),
         input: [{ role: "user", content }],
         stream: true,
         store: false,
@@ -236,13 +259,18 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     if (refused || !text) return { ok: false, error: "We couldn't estimate from that info. Please send a quote request instead." };
     let estimate: AiEstimate;
     try {
-      estimate = JSON.parse(text) as AiEstimate;
+      estimate = estimateSchema.parse(JSON.parse(text)) as AiEstimate;
     } catch {
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
+    // Whatever the description says, the price never drops below the lowest price we offer.
+    const floor = Math.min(guide.minimum, FREE_TV_COMPUTER_MINIMUM);
+    estimate.price_low = Math.max(floor, Math.round(estimate.price_low));
+    estimate.price_high = Math.max(estimate.price_low, Math.round(estimate.price_high));
 
     const rawEventId = await logEstimateEvent(data, estimate, inputTokens, outputTokens);
-    const eventId = rawEventId ? await signEventId(rawEventId) : null;
+    const secret = tokenSecret();
+    const eventId = secret ? await signEstimate(secret, rawEventId ?? crypto.randomUUID(), estimate) : null;
     return { ok: true, estimate, eventId };
   });
 
@@ -300,30 +328,34 @@ async function logEstimateEvent(
   }
 }
 
-// Event IDs handed to the browser are HMAC-signed so a caller can only lock in
-// the estimate event that the server just created for them.
-async function eventHmac(id: string): Promise<string | null> {
-  const secret = process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"];
-  if (!secret) return null;
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(`estimate-event:${secret}`), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(id));
-  return Array.from(new Uint8Array(sig)).map((b) => b.toString(16).padStart(2, "0")).join("");
+// The token handed to the browser signs the estimate itself (see estimate-token.ts).
+// Lock-in accepts it only when the browser returns that same estimate, then copies the
+// price, load size and items from the row this server recorded.
+function tokenSecret(): string | null {
+  return process.env["LOVABLE_API_KEY"] ?? process.env["SUPABASE_SERVICE_ROLE_KEY"] ?? null;
 }
 
-async function signEventId(id: string): Promise<string | null> {
-  const sig = await eventHmac(id);
-  return sig ? `${id}.${sig}` : null;
-}
-
-async function verifyEventToken(token: string): Promise<string | null> {
-  const [id, sig] = token.split(".");
-  if (!id || !sig || !z.string().uuid().safeParse(id).success) return null;
-  const expected = await eventHmac(id);
-  return expected && expected === sig ? id : null;
-}
+const estimateSchema = z.object({
+  load_size: z.enum([
+    "minimum", "eighth", "quarter", "three_eighths", "half",
+    "five_eighths", "three_quarters", "seven_eighths", "full", "multiple_loads",
+  ]),
+  price_low: z.number().finite().nonnegative(),
+  price_high: z.number().finite().nonnegative(),
+  // Trimmed to the same limits the lock-in step accepts, so a long answer never blocks a lead.
+  summary: z.string().transform((v) => v.slice(0, 2000)),
+  items_identified: z.array(z.string()).transform((list) => list.slice(0, 30).map((v) => v.slice(0, 200))),
+  special_items: z.array(z.object({ item: z.string(), note: z.string() })),
+  recommended_service: z.string(),
+  crew_and_time: z.string(),
+  prep_tips: z.array(z.string()),
+  confidence: z.enum(["low", "medium", "high"]),
+});
 
 const lockInSchema = z.object({
   eventId: z.string().max(200).nullable().optional(),
+  // Hidden field real visitors never see or fill in. Bots that fill every field are dropped.
+  website: z.string().max(200).optional(),
   name: z.string().trim().min(1).max(100),
   phone: z.string().trim().min(7).max(30),
   address: z.string().trim().min(3).max(200),
@@ -341,16 +373,29 @@ const lockInSchema = z.object({
 export const submitEstimateLead = createServerFn({ method: "POST" })
   .validator((data: unknown) => lockInSchema.parse(data))
   .handler(async ({ data }) => {
-    // Prices, load size and items come only from the estimate the server itself
-    // generated and recorded; client-supplied price values are never trusted.
-    const verifiedId = data.eventId ? await verifyEventToken(data.eventId) : null;
+    if (data.website) return { ok: true as const };
+
+    const { allowRequest, ESTIMATE_LEAD_RULE } = await import("./abuse-guard.server");
+    if (!(await allowRequest(ESTIMATE_LEAD_RULE))) {
+      throw new Error("Too many requests. Please call or text us.");
+    }
+
+    // The token must match the estimate the server signed. Prices, load size and items
+    // still come only from the row the server recorded, never from the browser payload.
+    const secret = tokenSecret();
+    const verifiedId =
+      secret && data.eventId ? await verifyEstimate(secret, data.eventId, data.estimate) : null;
+    if (data.eventId && !verifiedId) console.warn("estimate lead arrived without a valid estimate token");
+
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const signedSummary = data.estimate.summary.slice(0, 2000);
     let stored: StoredEstimate = {
       load_size: null,
       price_low: null,
       price_high: null,
       items_identified: [],
-      summary: data.estimate.summary.slice(0, 2000),
+      summary: data.eventId && !verifiedId ? null : signedSummary,
+      unverified: Boolean(data.eventId) && !verifiedId,
     };
     if (verifiedId) {
       try {
@@ -362,11 +407,12 @@ export const submitEstimateLead = createServerFn({ method: "POST" })
           .maybeSingle();
         if (ev) {
           stored = {
-            ...stored,
             load_size: ev.load_size,
             price_low: ev.price_low,
             price_high: ev.price_high,
             items_identified: ev.items_identified ?? [],
+            summary: signedSummary,
+            unverified: false,
           };
         }
       } catch (e) {

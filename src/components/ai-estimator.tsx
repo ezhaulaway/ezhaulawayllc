@@ -117,6 +117,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
   const [leadError, setLeadError] = useState<string | null>(null);
   const [leadSent, setLeadSent] = useState(false);
   const [eventId, setEventId] = useState<string | null>(null);
+  const [website, setWebsite] = useState("");
 
   async function addFiles(files: FileList | null) {
     if (!files) return;
@@ -166,6 +167,7 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
             : description,
           photoCount: images.length,
           eventId: evId,
+          website,
           estimate: {
             load_size: est.load_size,
             price_low: est.price_low,
@@ -193,6 +195,11 @@ export function AiEstimator({ campaign = false, showIntro = true }: AiEstimatorP
 
         <div className={`${showIntro ? "mt-10" : ""} grid gap-5 lg:grid-cols-2`}>
           <form onSubmit={submit} className={`rounded-lg border border-border bg-card shadow-sm ${campaign ? "p-5 sm:p-6" : "p-6"}`}>
+            {/* Spam trap: hidden from people and screen readers; only bots fill it in. */}
+            <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
+              <label htmlFor="ai-hp">Leave this field empty</label>
+              <input id="ai-hp" name="hp_field" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+            </div>
 
 
             <div className="grid gap-3 sm:grid-cols-2">
