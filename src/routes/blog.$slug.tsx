@@ -15,6 +15,7 @@ import { articleHero } from "@/content/scheduled-posts";
 import {
   applyBusinessIdentity,
   absoluteSiteUrl,
+  BLOG_AUTHOR_NAME,
   BLOG_BYLINE,
   blogDates,
   blogSchemas,
@@ -221,7 +222,7 @@ function PostDates({ created, updated }: { created: string | null; updated: stri
   if (!published) return null;
   const showUpdated = modified && fmtDate(modified) !== fmtDate(published);
   return (
-    <p className="mt-6 text-sm text-muted-foreground">
+    <p className="mt-6 text-sm text-muted-foreground" data-author={BLOG_AUTHOR_NAME}>
       {BLOG_BYLINE} · Published <time dateTime={published}>{fmtDate(published)}</time>
       {showUpdated ? (
         <>
