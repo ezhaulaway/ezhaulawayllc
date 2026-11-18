@@ -6,6 +6,7 @@ import { HOURS_TEXT, PHONE, SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
+import { BLOG_SLUG_REDIRECTS } from "@/content/redirects";
 import { getBlogPost } from "@/lib/blog.functions";
 import { cleanHtml, insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
 import { fillBlogPriceJson, fillBlogPriceText } from "@/lib/blog-ez-prices";
@@ -56,6 +57,8 @@ const ser = (d: Json) => JSON.stringify(d).replace(/</g, "\\u003c");
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
+    const retired = BLOG_SLUG_REDIRECTS[params.slug];
+    if (retired) throw redirect({ to: "/blog/$slug", params: { slug: retired }, statusCode: 301 });
     const res = await getBlogPost({ data: { slug: params.slug } });
     if (!res.post) {
       if (res.redirectTo)

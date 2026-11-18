@@ -3,6 +3,8 @@ import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
+import { retiredCityServicePath } from "@/content/redirects";
+import { faqPageJsonLd } from "@/lib/faq-schema";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,9 +22,30 @@ import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
 import { CITY_SERVICE_DESCRIPTION, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
+function cityServiceFaqs(
+  service: { name: string; faqs: Array<[string, string]> },
+  city: string,
+  custom: { faqs: Array<[string, string]> } | null,
+): Array<[string, string]> {
+  if (custom) return custom.faqs;
+  const lower = service.name.toLowerCase();
+  return [
+    [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a [[min]] minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts. There is [[travel]].`],
+    [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
+    ...service.faqs.slice(0, 3),
+  ];
+}
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
   loader: async ({ params }) => {
+    const retired = retiredCityServicePath(params.city, params.service);
+    if (retired?.startsWith("/service-areas/")) {
+      const [, , city, service] = retired.split("/");
+      throw redirect({ to: "/service-areas/$city/$service", params: { city: city!, service: service! }, statusCode: 301 });
+    }
+    if (retired?.startsWith("/services/")) {
+      throw redirect({ to: "/services/$slug", params: { slug: retired.slice("/services/".length) }, statusCode: 301 });
+    }
     const [{ locationBySlug }, { serviceBySlug }, { customCityServices }] = await Promise.all([
       import("@/content/locations"),
       import("@/content/services"),
@@ -78,6 +101,10 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
         },
         {
           type: "application/ld+json",
+          children: JSON.stringify(faqPageJsonLd(cityServiceFaqs(service, location.city, custom), `${url}#faq`)),
+        },
+        {
+          type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -119,13 +146,7 @@ function CityServicePage() {
   const otherServices = services.filter((item) => item.slug !== service.slug);
   const nearby = locations.filter((item) => location.nearby.includes(item.slug) && isLiveCityService(item.slug, service.slug));
 
-  const faqs = custom
-    ? custom.faqs
-    : ([
-        [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a [[min]] minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts. There is [[travel]].`],
-        [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
-        ...service.faqs.slice(0, 3),
-      ] as Array<[string, string]>);
+  const faqs = cityServiceFaqs(service, city, custom);
 
   const introParagraphs = custom ? custom.intro : service.intro;
 

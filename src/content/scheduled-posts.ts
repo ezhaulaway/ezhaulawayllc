@@ -68,25 +68,6 @@ export type ScheduledPost = {
 
 export const SCHEDULED_POSTS: ScheduledPost[] = [
   {
-    slug: "yard-waste-brush-removal-cost-parker",
-    title: "Yard Waste and Brush Removal Cost in Parker, CO",
-    meta_description:
-      "What yard waste and brush removal costs in Parker, what counts as yard debris, and how we cleared a chicken coop and brush piles. Free photo quote.",
-    publish_at: "2026-11-04T14:00:00.000Z",
-    content_html: `<h1>Yard Waste and Brush Removal Cost in Parker, CO</h1>
-<p>Yard waste and brush removal in Parker is priced by how much of our trailer it fills. Small piles start at our [[min]] minimum. A quarter trailer is about [[load:2]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Send a couple of photos and you get a firm number before we show up.</p>
-<h2>What counts as yard debris</h2>
-<p>Most curbside pickups won't take a big pile of yard waste, and it fills a truck bed fast. Our <a href="/services/yard-and-landscaping-debris">yard and landscaping debris removal</a> takes branches, limbs and brush, storm damage, old sod, dirt and landscape rock, leaves and clippings, planters and edging, and old playground equipment.</p>
-<p>You don't need to bag or cut anything. Leave the pile as it is. We don't cut down trees, but we haul away what is already cut or fallen.</p>
-<h2>How the price works</h2>
-<p>We price by the space your pile takes up in our 16-foot trailer, not by the hour. That covers labor, loading, hauling and disposal fees, and we agree on the price before we load anything. Heavy material like dirt and rock is priced by weight. You can see the full breakdown on our <a href="/pricing">pricing page</a>.</p>
-<h2>A real job: a chicken coop and piles of brush</h2>
-<p>A customer reached out about some yard debris he needed gone. When we got there, it was a chicken coop, plus several piles of brush spread across his land. We took the coop down, hauled it away, and cleared every brush pile.</p>
-<p>That happens a lot. People say yard debris and mean a whole structure. If there is a shed, coop, fence or playset in the mix, put it in your photos. Our <a href="/services/light-demolition">light demolition service</a> takes it down and hauls it in the same visit.</p>
-<h2>Serving Parker and the south metro</h2>
-<p>We work out of Parker and cover the Denver metro. See everything we do on our <a href="/service-areas/parker">Parker junk removal page</a>, or skip ahead and get a <a href="/instant-estimate">free photo quote</a>.</p>`,
-  },
-  {
     slug: "christmas-tree-disposal",
     title: "Christmas Tree Disposal in Parker and Denver: Every Option",
     meta_description:
@@ -240,11 +221,11 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
 <p>Leftover paint cans and garage chemicals are common, and they're one thing we can't take. Paint, solvents, chemicals, fuel, oil and propane tanks need a licensed disposal facility. We'll haul everything else around them. If you aren't sure about an item, text us a photo and we'll tell you straight.</p>
 <p>A full house is a different job. Our <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a> cover every room, the basement, the garage and the yard, with one firm price for the whole job before we start, even when it takes several loads. A multi-load job usually starts within a day or two. We sort out what can be donated or recycled along the way.</p>
 <h2>Realtors: who handles it when sellers leave junk at closing?</h2>
-<p>Agents call us when a closing gets tense because a house isn't empty. Our <a href="/services/realtor-and-attorney-cleanouts">cleanouts for realtors and attorneys</a> cover post-closing and seller-left-behind jobs. Send the address, the deadline and a few photos. We quote the whole job up front, take before and after photos for your file, and can invoice your brokerage.</p>
+<p>Agents call us when a closing gets tense because a house isn't empty. Our <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a> cover post-closing and seller-left-behind jobs for agents and attorneys. Send the address, the deadline and a few photos. We quote the whole job up front, take before and after photos for your file, and can invoice your brokerage.</p>
 <p>We'll tell you honestly whether we can meet a date. We also carry general liability insurance, and a certificate is available on request, which a lot of agents ask for before the first job.</p>
 <h2>Do you have to put leftover junk at the curb yourself?</h2>
 <p>No. We do all the lifting and loading from wherever it is, including basements, attics and backyards. That matters in the south metro, because Douglas County doesn't provide residential curbside trash pickup. If you want to set a pile out, check with your HOA or trash hauler first about what they'll pick up.</p>
-<p>If it's already at the curb, ask about our curbside discount. Ben spent about six years in construction, including leading a deck-building crew, before starting EZ Haulaway in 2026, so old lumber, tile and leftover building materials in a garage don't scare us either. For smaller leftovers, see our <a href="/services/garage-cleanouts">garage cleanouts</a> and <a href="/services/basement-and-attic-cleanouts">basement and attic cleanouts</a>.</p>
+<p>If it's already at the curb, ask about our curbside discount. Ben spent about six years in construction, including leading a deck-building crew, before starting EZ Haulaway in 2026, so old lumber, tile and leftover building materials in a garage don't scare us either. For smaller leftovers, see our <a href="/services/garage-cleanouts">garage cleanouts</a> and <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a>.</p>
 <h2>Need it gone?</h2>
 <p>We're a family-owned, insured junk removal company based in Parker, and we serve Castle Rock, Highlands Ranch, Lone Tree, Castle Pines, Aurora, Denver and the rest of the metro. If you just closed on a house in town, here's our <a href="/service-areas/parker">Parker junk removal</a> page.</p>
 <p>Call or text us at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send a few photos and we'll text back a free quote, or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. Jobs start at our [[min]] minimum. EZ in, junk out.</p>`,

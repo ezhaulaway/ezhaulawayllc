@@ -2,8 +2,10 @@ import { HelpfulGuides } from "@/components/blog-links";
 import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { isLiveCityService, isLiveService } from "@/content/live-pages";
+import { retiredServicePath } from "@/content/redirects";
+import { faqPageJsonLd } from "@/lib/faq-schema";
 import { rich } from "@/components/prose-section";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,6 +24,10 @@ import { responsiveImage as logoImage } from "@/lib/logo-images";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: async ({ params }) => {
+    const retired = retiredServicePath(params.slug);
+    if (retired) {
+      throw redirect({ to: "/services/$slug", params: { slug: retired.slice("/services/".length) }, statusCode: 301 });
+    }
     const { serviceBySlug } = await import("@/content/services");
     const service = serviceBySlug(params.slug);
     if (!service || !isLiveService(params.slug)) throw notFound();
@@ -58,6 +64,10 @@ export const Route = createFileRoute("/services/$slug")({
             areaServed: navigationLocations.map((location) => ({ "@type": "City", name: `${location.city}, CO` })),
             provider: BUSINESS_SCHEMA,
           }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(faqPageJsonLd(service.faqs, `${SITE_URL}/services/${params.slug}#faq`)),
         },
         {
           type: "application/ld+json",

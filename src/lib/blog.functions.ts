@@ -8,6 +8,7 @@ import {
   scheduledPostForSlug,
   toRow,
 } from "@/content/scheduled-posts";
+import { BLOG_SLUG_REDIRECTS } from "@/content/redirects";
 import { mergeBlogPosts, toBlogListItem } from "@/lib/blog-feed";
 
 function publicClient() {
@@ -36,7 +37,7 @@ export const listBlogPosts = createServerFn({ method: "GET" }).handler(async () 
   if (error) throw new Error("Could not load blog posts");
   const mine = livePosts().map((p) => toBlogListItem(toRow(p, SCHEDULED_POSTS.indexOf(p))));
   const imported = (data ?? []).map((row) => toBlogListItem(row));
-  return mergeBlogPosts(imported, mine);
+  return mergeBlogPosts(imported, mine).filter((post) => !(post.slug in BLOG_SLUG_REDIRECTS));
 });
 
 export const getBlogPost = createServerFn({ method: "GET" })

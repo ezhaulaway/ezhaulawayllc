@@ -4,7 +4,6 @@ import furnitureAsset from "@/assets/real-furniture-couch-1000.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
 import hotTubAsset from "@/assets/branded-service-hot-tub.webp";
 import lightDemolitionAsset from "@/assets/branded-service-demolition.webp";
-import deckAsset from "@/assets/branded-service-deck.webp";
 import constructionAsset from "@/assets/branded-service-construction.webp";
 import yardAsset from "@/assets/branded-service-yard.webp";
 import garageAsset from "@/assets/real-IMG_5005.jpg.asset.json";
@@ -17,10 +16,12 @@ import bulkyAsset from "@/assets/real-IMG_5082.jpg.asset.json";
 import electronicsAsset from "@/assets/branded-service-electronics.webp";
 import commercialAsset from "@/assets/branded-service-commercial.webp";
 import shedImage from "@/assets/branded-service-shed.webp";
+import { deckRemoval, DEMOLITION_PERMIT_NOTE, fenceRemoval } from "./demolition-services";
+import { dirtRockMulchDelivery, sodAndLawnRemoval } from "./landscape-services";
 import { serviceExtras } from "./service-extras";
+import { rentalCleanout } from "./property-services";
 import { woodPalletRemoval } from "./wood-pallet-removal";
 import { dumpsterRentalAlternative, hoarderCleanout, storageUnitCleanout } from "./specialty-services";
-import { evictionCleanout, makeReadyHaulOff, basementAtticCleanout, realtorAttorneyCleanout } from "./property-services";
 
 export type Service = {
   slug: string;
@@ -174,7 +175,7 @@ const raw_services: Service[] = [
     sections: [
       {
         heading: "How our hot tub removal works, start to finish",
-        text: "First we confirm the power is off at the breaker and the unit is safely dead. Then we drain the tub, pull the cover and skirting, and cut the shell and frame into sections we can carry by hand. Every piece leaves on our trailer, and we sweep the pad before we go. Most backyard spas take two to four hours.",
+        text: "The electrical disconnect has to be done by a licensed electrician before we arrive. You arrange that, or it is arranged separately. We do not do electrical work, and we do not open the panel. Once the spa is safely disconnected, we drain the tub, pull the cover and skirting, and cut the shell and frame into sections we can carry by hand. Every piece leaves on our trailer, and we sweep the pad before we go. Most backyard spas take two to four hours.",
       },
       {
         heading: "No gate access? That is the normal job, not the hard one",
@@ -192,101 +193,96 @@ const raw_services: Service[] = [
     faqs: [
       ["How much does hot tub removal cost in Denver?", "A standard hot tub (4–6 people) is [[item:hot-tub-standard]] in the Denver metro area. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. Price depends on the size of the spa, how tight the access is, and whether surrounding decking needs to come out too. Send photos and we will quote it firmly up front."],
       ["Do I need to drain the hot tub first?", "You do not have to. If it is already drained, that shortens the job and can lower the price."],
-      ["Does the power need to be disconnected?", "The circuit should be shut off at the breaker before we arrive. Hard-wired 240-volt spas should be disconnected by a qualified electrician; once it is safely dead, we remove the tub and the wiring at it."],
+      ["Does the power need to be disconnected?", "Yes. A licensed electrician has to do the electrical disconnect. You arrange that, or it is arranged separately from the haul. We do not do electrical work. Once the spa is safely disconnected, we remove the tub."],
       ["What if there is no gate access to the backyard?", "We cut the tub into smaller sections so it can come out through whatever access exists — a narrow side gate, a walkout basement, or over a fence line."],
       ["Can you remove the deck around the hot tub too?", "Yes. Surrounding decking, skirting, and steps can all be removed on the same visit."],
       ["Do you take swim spas and above-ground pools?", "Yes. Swim spas, jetted tubs, and above-ground pools are all jobs we do regularly."],
     ],
-    related: ["light-demolition", "deck-and-fence-removal", "yard-and-landscaping-debris"],
+    related: ["light-demolition", "deck-removal", "yard-and-landscaping-debris"],
   },
 {
     slug: "light-demolition",
     name: "Light Demolition",
-    h1: "Light Demolition in Denver, Parker & Castle Rock, CO",
-    metaTitle: "Light Demolition Denver & Parker | Tear-Out | EZ Haulaway",
+    h1: "Light Demolition in Denver, Parker & Castle Rock",
+    metaTitle: "Light Demolition in Denver & Parker | EZ Haulaway",
     metaDescription:
-      "Light demolition in Denver, Parker and Castle Rock — sheds, decks, pergolas, playsets and interior tear-outs demolished and hauled away in one visit.",
-    summary: "Sheds, pergolas, playsets, interior tear-outs, and small structures.",
+      "Light demolition in Parker and the Denver metro: playsets, pergolas, and interior tear-outs, hauled the same day. Free photo quote.",
+    summary: "Playsets, pergolas, gazebos, and non-structural interior tear-outs, demolished and hauled.",
     image: lightDemolitionAsset,
-    imageAlt: "EZ Haulaway crew safely dismantling a backyard shed beside a tandem-axle dump trailer",
+    imageAlt: "EZ Haulaway crew dismantling a wood structure beside the dump trailer",
     intro: [
-      "Demolition and disposal usually come as two separate headaches. We do both: take the structure down and haul every piece away the same day, anywhere in the Denver metro area.",
-      "Ben brings roughly six years of hands-on construction and demolition experience, including work on more than 300 decks. That is the difference between a demolition crew and a hauling crew with a pry bar.",
+      "Some demolition jobs are a whole structure with its own page: a deck, a fence, a shed, or a hot tub. Everything else that still fits a trailer and hand tools lives here.",
+      "Ben brings roughly six years of construction and demolition experience, including work on more than 300 decks. We show up with tools and a trailer, take the structure or the tear-out apart, and haul it the same visit. If the job needs an excavator, an engineer, or a licensed abatement crew, we will say so.",
     ],
     includes: [
-      "Sheds and small outbuildings",
-      "Decks, pergolas, and gazebos",
       "Playsets and swing sets",
-      "Fencing and retaining walls",
-      "Interior tear-outs: cabinets, flooring, shelving",
-      "Hot tubs and spa pads",
+      "Pergolas, arbors, and freestanding gazebos",
+      "Small hand-scale patio pads, not driveways",
+      "Interior tear-outs: carpet, tile, non-structural drywall, cabinets",
+      "Chicken coops and other small wood structures that are not a shed",
+      "Haul-away of the debris in the same visit",
     ],
     sections: [
       {
-        heading: "One crew, start to finish",
-        text: "You are not coordinating a demolition contractor and then a hauling company. We arrive with tools and a trailer, take it apart, and leave the site swept.",
+        heading: "Start with the job that has its own page",
+        text: "Decks, fences, sheds, and hot tubs are the demolition work we get asked for most, and each one has a full page so you are not guessing which service you booked. This page is the hub for the rest, and the place to start if the job is a mix.",
+        links: [
+          { slug: "deck-removal", label: "Deck removal and deck demolition" },
+          { slug: "fence-removal", label: "Fence removal" },
+          { slug: "shed-removal", label: "Shed removal" },
+          { slug: "hot-tub-removal", label: "Hot tub removal" },
+        ],
       },
       {
-        heading: "What counts as light demolition",
-        text: "Non-structural work: anything that is not holding up your home and does not require heavy equipment or engineering. If you are not sure where your project lands, send photos and we will tell you straight.",
+        heading: "Playset and swing set removal",
+        text: "A wooden playset or a metal swing set comes apart in the yard. We take off the swings and the fort, pull or cut the anchors, and haul the wood, plastic, and metal. Legs set in concrete are the part that takes time. Tell us if the posts are buried, and whether you want the concrete out or cut at grade.\n\nA trampoline that is only a frame and a mat is often a bulky-item haul. If it is built into a play structure, it can go with this job. Send one photo of the whole set and one of a leg.",
+        links: [{ slug: "mattress-and-bulky-item-removal", label: "Mattress and bulky-item removal, including trampolines" }],
+      },
+      {
+        heading: "Pergolas and gazebos",
+        text: "A freestanding pergola or gazebo comes down the way a small frame does: roof slats or panels, then posts. If it is bolted to a deck that is also going, book the deck page and mention the pergola so it is one visit. If the gazebo is only covering a hot tub, the hot tub page covers the spa and the cover over it.\n\nWe do not crane anything out. If it will not come apart by hand and fit through the gate in pieces, it is not this job.",
+      },
+      {
+        heading: "Interior tear-outs",
+        text: "Carpet, pad, tile, non-structural drywall, and cabinets that are screwed to the wall can come out and leave on the trailer. This is the work in a room you are redoing, not a gut of the house.\n\nWe do not remove load-bearing walls, and we do not open a wall to find out if it is structural. If you are not sure, ask a contractor or an engineer before we schedule. Cabinets that are only storage come out. A wall that is holding up the floor above does not.\n\nTile and mortar are heavy. A bathroom floor is a different load from a bedroom of carpet. Send photos of each room.\n\nIf the debris is already in a pile because you did the tear-out, that is construction debris removal, not demolition.",
+        links: [{ slug: "construction-debris-removal", label: "Construction debris removal when the tear-out is already done" }],
+      },
+      {
+        heading: "Older homes, paint, and materials we will not disturb",
+        text: "We are not an EPA lead-safe certified firm, and we do not remove lead paint, asbestos, or mold. For interior work in a home built before 1978, painted drywall, trim, and old flooring can fall under those rules. Tell us the year the home was built. If the material should be tested first, we leave it alone or we decline that part of the job.\n\nA playset in the yard is not the same question as opening a wall inside an older house. Ask us which one you have. We would rather turn down a room than guess.",
+      },
+      {
+        heading: "Small concrete, and what is too big",
+        text: "A small patio pad or a few stepping areas we can break by hand and load may fit. A driveway, a garage slab, or anything that needs a jackhammer crew and a heavy truck does not. Concrete disposal of a pile that is already broken is a haul, and it is still limited by what the trailer can legally carry. Send photos and the thickness if you know it. We will tell you if it fits.",
+      },
+      {
+        heading: "How the job goes, and what changes the price",
+        text: "Photos, a price, then the tear-down. We confirm the number on site before we start. Most of these jobs are a few hours to a day, depending on anchors, access, and how much material there is.\n\nPrice follows the structure, not a flat demo rate. What we look at: how it is anchored, whether concrete comes out, how far we carry it, stairs for interior work, and weight. Tile, dirt, and concrete fill the trailer by weight. Carpet and a wood playset fill it by space. A small visit still starts at [[min]].\n\nYou do not have to empty a playset of toys before we arrive, but personal items should be out of cabinets we are taking. Clear a path to the trailer.",
+      },
+      {
+        heading: "Permits",
+        text: DEMOLITION_PERMIT_NOTE,
+      },
+      {
+        heading: "What we do not do",
+        text: "No structural demolition, no retaining walls that hold up a slope, no machine grading or excavation, no tree felling, and no biohazard. We do not do electrical or plumbing work. If a structure has power, a licensed electrician disconnects it first, arranged by you or arranged separately.\n\nHazardous materials, including paint, solvents, asbestos, and fuel, need a licensed disposal service. We will point at what we can take and leave the rest.",
       },
     ],
     faqs: [
-      ["Do you pull permits?", "Some municipalities require a permit for structures over a certain size. We will tell you when we think one applies so you can check with your city."],
-      ["Do you handle asbestos or hazardous material?", "No. Hazardous materials need a licensed abatement contractor."],
-      ["Can you demo and haul on the same day?", "That is the standard approach for most jobs of this size."],
+      ["What counts as light demolition?", "Work that is not holding up the house and does not need heavy equipment: playsets, swing sets, pergolas, gazebos, small hand-broken pads, and interior tear-outs like carpet, tile, non-structural drywall, and cabinets. Decks, fences, sheds, and hot tubs have their own pages."],
+      ["How much does it cost to remove a playset or swing set?", "It depends on the size, whether the legs are in concrete, and access to the trailer. Send a photo of the whole set and of one leg. We quote it before we schedule. There is no flat playset price on this page."],
+      ["Do you remove pergolas and gazebos?", "Yes, when they come apart by hand. If the pergola is part of a deck that is also going, start with deck removal and mention it."],
+      ["Can you tear out carpet, tile, drywall, and cabinets?", "Yes, when the work is non-structural. We do not remove load-bearing walls. Tile is heavy, so photos of each room matter. If the pile is already demoed, that is a construction debris haul."],
+      ["Do you do demolition inside older homes?", "Tell us the year the home was built. We are not an EPA lead-safe certified firm, and we do not remove asbestos, mold, or lead paint. If painted surfaces or old flooring in a pre-1978 home should be tested first, we leave that material alone."],
+      ["Do I need a permit?", "Sometimes. Unincorporated Douglas County may require a demolition permit when a structure is permanently removed, and towns have their own rules. We do not pull the permit. Check with your building department, or ask us which office to call."],
+      ["Do you remove concrete patios?", "Only small pads we can break by hand and load. Driveways and thick slabs that need machines are outside this trailer. Send photos and we will say which one you have."],
+      ["Can you demo and haul the same day?", "That is the usual plan for a job this size, when the schedule is open. Call with photos and we will tell you the soonest day."],
+      ["Do I need to be home?", "Someone should walk the job at the start, especially for interior work, so we know what stays. You do not have to watch the whole tear-out."],
     ],
-    related: ["deck-and-fence-removal", "hot-tub-removal", "construction-debris-removal"],
+    related: ["deck-removal", "fence-removal", "shed-removal", "construction-debris-removal"],
   },
-{
-    slug: "deck-and-fence-removal",
-    name: "Deck & Fence Removal",
-    h1: "Deck Removal & Fence Demolition in Denver, Parker & Castle Rock",
-    metaTitle: "Deck Removal & Fence Demolition Denver, CO | EZ Haulaway",
-    metaDescription:
-      "Deck demolition and fence removal in Denver, Parker, Castle Rock and Highlands Ranch. 300+ decks of experience. Every board hauled, site raked. Free quote.",
-    summary: "Aging decks, pergolas, railings, and fence lines torn out and hauled away.",
-    image: deckAsset,
-    imageAlt: "Crew loading deck boards into the dump trailer",
-    intro: [
-      "Colorado weather is hard on wood. When a deck starts splintering or a fence line starts leaning, tearing it out is the first step toward whatever comes next.",
-      "EZ Haulaway handles deck demolition and fence removal across Denver, Parker, Castle Rock, Centennial, and Highlands Ranch. This is Ben's strongest area — he has worked on more than 300 decks, so he knows exactly how they were built and how they come apart without wrecking your siding or your yard.",
-    ],
-    includes: [
-      "Wood and composite decks",
-      "Pergolas, arbors, and gazebos",
-      "Railings, stairs, and landings",
-      "Wood, vinyl, and chain link fencing",
-      "Fence posts and concrete footings",
-      "Full haul away and site cleanup",
-    ],
-    sections: [
-      {
-        heading: "300+ decks of experience, not a guess with a crowbar",
-        text: "A deck attached to a house is fastened to a ledger board against your siding. Pulled the wrong way, that is a water-intrusion repair you did not budget for. Ben has spent roughly six years in construction and demolition and worked on over 300 decks, so we take the structure apart in the order it went up — flashing and ledger last, and carefully.",
-      },
-      {
-        heading: "Clean tear-out, clean site",
-        text: "Boards, framing, hardware, posts, and concrete footings all leave with us. We rake and sweep the footprint so you can walk it barefoot without finding a nail, and so your landscaper or builder can start immediately.",
-      },
-      {
-        heading: "Fence lines, post by post",
-        text: "Wood, vinyl, and chain link all come out, including the concrete footings when you want them gone. Shared fence lines with a neighbor are common here — tell us which side is yours and we will work to the property line.",
-      },
-      {
-        heading: "Rebuilding after the tear-out?",
-        text: "If a new deck or fence is going in, tell us up front. We can pull the old structure in a way that leaves the site ready for your builder, and we coordinate timing so your contractor is not waiting on a pile of old lumber.",
-      },
-    ],
-    faqs: [
-      ["How much does deck removal cost in the Denver metro?", "Most residential deck tear-outs are priced by size, height, and how much concrete is in the ground. Send photos with a rough footprint and we will give you a firm number before the job."],
-      ["Do you dig out concrete fence footings?", "Yes, in most cases. Let us know the post count so we can price the job accurately."],
-      ["Can you remove just part of a deck?", "Yes. Partial removals, railing-only jobs, and stair replacements are all common."],
-      ["Will removing the deck damage my siding?", "That is exactly why the ledger connection gets handled last and by hand. We separate it carefully and let you know what the wall behind it looks like once it is exposed."],
-      ["What happens to the lumber?", "Usable material can be set aside if you want it; metal is recycled and everything else is hauled to the proper facility."],
-    ],
-    related: ["light-demolition", "construction-debris-removal", "yard-and-landscaping-debris", "wood-pallet-removal"],
-  },
+  deckRemoval,
+  fenceRemoval,
 {
     slug: "construction-debris-removal",
     name: "Construction Debris Removal",
@@ -324,7 +320,7 @@ const raw_services: Service[] = [
       ["Can you come back multiple times during a remodel?", "Yes. Repeat pickups can be scheduled around your project timeline."],
       ["Do you take hazardous materials?", "No. Paint, solvents, asbestos, and chemicals need a licensed disposal service."],
     ],
-    related: ["light-demolition", "yard-and-landscaping-debris", "commercial-junk-removal", "wood-pallet-removal"],
+    related: ["light-demolition", "deck-removal", "yard-and-landscaping-debris", "wood-pallet-removal"],
   },
 {
     slug: "yard-and-landscaping-debris",
@@ -332,8 +328,8 @@ const raw_services: Service[] = [
     h1: "Yard Waste & Landscaping Debris Removal",
     metaTitle: "Yard Debris Removal in Parker, CO | EZ Haulaway",
     metaDescription:
-      "Branches, brush, sod, rock, and storm debris hauled out of Denver metro yards. Free quotes from EZ Haulaway in Parker, CO.",
-    summary: "Branches, brush, sod, rock, storm damage, and landscaping waste.",
+      "Branches, brush, limbs, and storm debris hauled from Parker and Denver metro yards. Sod and material delivery have their own pages.",
+    summary: "Branches, brush, limbs, leaves, and storm debris.",
     image: yardAsset,
     imageAlt: "EZ Haulaway crew loading branches and yard debris into a tandem-axle dump trailer",
     intro: [
@@ -343,10 +339,9 @@ const raw_services: Service[] = [
     includes: [
       "Tree branches, limbs, and brush",
       "Storm damage and fallen debris",
-      "Old sod, dirt, and landscape rock",
       "Leaves, clippings, and garden waste",
-      "Planters, edging, and irrigation scrap",
-      "Old playground equipment and lawn items",
+      "Planters, edging, and loose irrigation scrap",
+      "Brush piles on acreage",
     ],
     sections: [
       {
@@ -354,17 +349,33 @@ const raw_services: Service[] = [
         text: "Colorado hail and wind leave a mess. We can clear downed limbs and debris so your yard is usable again.",
       },
       {
-        heading: "Landscaping projects",
-        text: "Ripping out sod or replacing rock creates more volume than most people expect. Tell us the square footage and we will size the job right.",
+        heading: "Sod, rock, and material coming in",
+        text: "Cutting out a lawn, hauling landscape rock, or bringing in a small load of dirt, mulch, or new rock is not this page. Those jobs have their own write-ups so the quote matches the work. If the yard has both a brush pile and a lawn coming out, mention both and we will price them together.",
+        links: [
+          { slug: "sod-and-lawn-removal", label: "Sod and lawn removal, including landscape rock haul-away" },
+          { slug: "dirt-rock-mulch-delivery", label: "Small-load dirt, rock, and mulch delivery" },
+        ],
+      },
+      {
+        heading: "A coop in the brush pile",
+        text: "A Parker-area job that started as yard debris was a chicken coop plus several piles of brush. We took the coop down and cleared the piles in the same visit. If the photos include a shed, a coop, a fence, or a playset, say so. Brush is this page. A structure is light demolition, or the shed or fence page when that is the whole job.",
+        links: [
+          { slug: "light-demolition", label: "Light demolition for coops, playsets, and pergolas" },
+          { slug: "shed-removal", label: "Shed removal" },
+        ],
       },
     ],
     faqs: [
       ["Do you cut down trees?", "We do not do tree felling. We haul away what has already been cut or fallen."],
-      ["Can you take dirt and rock?", "Yes, in manageable amounts. Heavy material is priced by weight."],
+      ["Can you take dirt and rock?", "Hauling a pile of dirt or landscape rock that is already in the yard is a weight job. Send photos. New dirt, rock, or mulch coming to you is small-load delivery, not this page."],
+      ["Do you remove sod?", "Yes, as its own service. Sod and lawn removal covers the cutting and the haul-away."],
       ["Do I need to bag anything?", "No. Leave the pile as it is."],
+      ["What does a yard cleanup consist of with you?", "Branches, limbs, brush, leaves, and storm debris, loaded and hauled. We do not mow, trim hedges, or fell trees. Sod, rock delivery, and standing structures are linked above."],
     ],
-    related: ["deck-and-fence-removal", "construction-debris-removal", "house-and-estate-cleanouts"],
+    related: ["sod-and-lawn-removal", "dirt-rock-mulch-delivery", "deck-removal", "light-demolition"],
   },
+  sodAndLawnRemoval,
+  dirtRockMulchDelivery,
 {
     slug: "garage-cleanouts",
     name: "Garage Cleanouts",
@@ -455,7 +466,23 @@ const raw_services: Service[] = [
       {
         heading: "A same-day closing cleanout",
         text: "One of our first big jobs started with a call from a buyer's real estate agent. The sellers had left a basement full of couches, boxes and junk. We cleared it the same day so the new owners could move into a clean house and not deal with what was left behind.",
-        links: [{ slug: "realtor-and-attorney-cleanouts", label: "Cleanouts for realtors, estate attorneys and executors" }],
+      },
+      {
+        heading: "For realtors, estate attorneys, and executors",
+        text: "Agents, attorneys, and executors use the same cleanout. Send the address, the deadline, and photos. We quote the whole job, start a multi-load house usually within a day or two, and send before and after photos for the file. We can invoice a brokerage, a law firm, or the estate.\n\nHeirs are often out of state. We work from photos and phone updates, and we set aside keepsakes and paperwork you name before we start. We do not appraise belongings, run estate sales, or give legal advice. If the family wants a sale first, we clear what is left.\n\nWe carry **$1,000,000 general liability insurance**, and a certificate is available on request.",
+      },
+      {
+        heading: "Basements, attics, and one room",
+        text: "A basement or an attic is often the whole job, not a side note. We carry it up the stairs or down the pull-down ladder. A recent Parker basement — boxes, a treadmill, a dresser, a TV, cables, and trash — was empty in about 45 minutes. The photos are above.\n\nAttics are low, hot in summer, and full of boxes that have sat for years. Ask for a morning slot. Tell us about the stairs and where the trailer can park.\n\nA single basement is this service. A garage that is the only room is the garage page. A rental unit after an eviction or a make-ready is the rental page, because the buyer and the paperwork are different.",
+        links: [
+          { slug: "garage-cleanouts", label: "Garage cleanouts" },
+          { slug: "rental-cleanout-and-make-ready", label: "Rental cleanouts, trash-outs, and make-ready haul-off" },
+          { slug: "storage-unit-cleanout", label: "Storage unit cleanouts" },
+        ],
+      },
+      {
+        heading: "What we will not take",
+        text: "We haul household goods and ordinary debris. We do not take paint, solvents, chemicals, fuel, asbestos, or mold, and we do not do biohazard cleanup. If a house has sewage, needles, or material that needs a licensed crew, we will say so and leave that part alone.\n\nUsable furniture goes to donation when a partner will accept it. We do not name a charity unless we know they will take the load. Metal and appliances go to recycling when a yard will take them. What is left goes to a licensed disposal site. Loads from Parker that are not donated or recycled go to the Sedalia landfill.\n\nMany south-metro neighborhoods are HOAs. A dumpster in the driveway is often against the rules. We are in and out the same visit, so nothing has to sit at the curb. If your HOA has its own rule about work hours, tell us.",
       },
       {
         heading: "Working with families",
@@ -473,7 +500,7 @@ const raw_services: Service[] = [
       ["Will I get before and after photos?", "Yes. We take them on every job, and we can send them to you, your agent or the executor."],
       ["Is a whole-house cleanout one visit?", "Often, but large properties take more than one trailer load. We quote the whole job up front, so the price does not change as loads go out."],
     ],
-    related: ["realtor-and-attorney-cleanouts", "hoarder-cleanout", "commercial-junk-removal", "garage-cleanouts"],
+    related: ["rental-cleanout-and-make-ready", "hoarder-cleanout", "garage-cleanouts", "commercial-junk-removal"],
   },
 {
     slug: "mattress-and-bulky-item-removal",
@@ -610,13 +637,13 @@ const raw_services: Service[] = [
       },
     ],
     faqs: [
-      ["Do I need a permit to remove a shed?", "Most residential shed removals in the Denver metro do not require a permit, but rules vary by town and HOA. If yours is large, on a slab, or has power run to it, check with your local building department first."],
-      ["What if the shed has electricity run to it?", "The circuit needs to be disconnected by a qualified electrician before we start. Once it is safely dead, we can remove the structure and the wiring inside it."],
+      ["Do I need a permit to remove a shed?", DEMOLITION_PERMIT_NOTE],
+      ["What if the shed has electricity run to it?", "A licensed electrician has to disconnect it. You arrange that, or it is arranged separately. We do not do electrical work. Once the shed is safely disconnected, we take the structure down."],
       ["Can you take out the concrete slab underneath?", "Often yes, in manageable amounts. Send a photo with a rough size and we will quote the slab separately from the shed."],
       ["How long does shed removal take?", "A typical backyard shed comes down and gets loaded in a few hours. Larger structures or ones packed with contents can take most of a day."],
       ["What happens to the material?", "Metal is recycled, usable lumber and contents can be set aside if you want them, and the rest is hauled to the appropriate facility."],
     ],
-    related: ["light-demolition", "deck-and-fence-removal", "garage-cleanouts"],
+    related: ["light-demolition", "deck-removal", "fence-removal", "garage-cleanouts"],
   },
 {
     slug: "commercial-junk-removal",
@@ -631,7 +658,7 @@ const raw_services: Service[] = [
     includes: ["Office furniture, cubicles, and desks", "Retail fixtures, shelving, and displays", "Warehouse and storage clearing", "Restaurant and kitchen equipment", "Tenant turnovers, make readies and lease-end cleanouts", "Eviction cleanouts and trash outs", "Ongoing scheduled pickups"],
     sections: [
       { heading: "Scheduled around your business", text: "Early mornings, evenings, or weekends — tell us when the space is free and we will plan the visit around it." },
-      { heading: "Property managers", text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in." },
+      { heading: "Property managers", text: "Unit turnovers rarely come with much notice. Keep our number handy and we will tell you quickly whether we can fit the job in. Eviction cleanouts and make-ready haul-off have their own page.", links: [{ slug: "rental-cleanout-and-make-ready", label: "Rental cleanouts and make-ready haul-off" }] },
     ],
     faqs: [
       ["Do you work with recurring clients?", "Yes. Ongoing and repeat work can be scheduled in advance."],
@@ -644,10 +671,7 @@ const raw_services: Service[] = [
   dumpsterRentalAlternative,
   hoarderCleanout,
   storageUnitCleanout,
-  evictionCleanout,
-  makeReadyHaulOff,
-  basementAtticCleanout,
-  realtorAttorneyCleanout,
+  rentalCleanout,
 ];
 export const services = priced(raw_services);
 

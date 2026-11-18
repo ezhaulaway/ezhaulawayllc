@@ -37,7 +37,8 @@ export const woodPalletRemoval: Service = {
       text: "If the pallets are only part of the mess, include the scrap wood in your photos. We can review lumber offcuts, packing wood, loose boards and leftover project material together. Describe any paint, pressure treatment, glue, oil or chemical contamination rather than calling every piece clean wood. Different materials can need different disposal routes. A pile containing drywall, roofing or other remodel waste belongs in a broader construction debris quote; an attached deck or standing fence needs demolition rather than pickup of loose boards.",
       links: [
         { slug: "construction-debris-removal", label: "Construction debris removal for mixed renovation waste" },
-        { slug: "deck-and-fence-removal", label: "Deck and fence removal for structures still standing" },
+        { slug: "deck-removal", label: "Deck removal for a structure that is still standing" },
+        { slug: "fence-removal", label: "Fence removal" },
       ],
     },
     {
@@ -75,5 +76,5 @@ export const woodPalletRemoval: Service = {
     ["Can you take treated wood or contaminated pallets?", "Send photos and describe the treatment or contamination first. Acceptance and disposal requirements vary. We do not accept hazardous waste, chemicals, solvents or asbestos; unknown or contaminated material needs review before scheduling."],
     ["Can I book pallet removal in Parker or Castle Rock?", "Yes. We serve Parker, Castle Rock and the surrounding Denver metro. Send your city, photos and access details for a quote and available pickup times."],
   ],
-  related: ["construction-debris-removal", "commercial-junk-removal", "deck-and-fence-removal"],
+  related: ["construction-debris-removal", "commercial-junk-removal", "deck-removal"],
 };

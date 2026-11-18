@@ -114,7 +114,11 @@ const extraServices: Array<{ label: string; slug?: string }> = [
   { label: "Storage unit cleanouts" },
   { label: "Mattress removal", slug: "mattress-and-bulky-item-removal" },
   { label: "Electronics removal", slug: "electronics-and-e-waste-removal" },
-  { label: "Deck and pergola removal", slug: "deck-and-fence-removal" },
+  { label: "Deck removal", slug: "deck-removal" },
+  { label: "Fence removal", slug: "fence-removal" },
+  { label: "Light demolition", slug: "light-demolition" },
+  { label: "Sod and lawn removal", slug: "sod-and-lawn-removal" },
+  { label: "Dirt, rock and mulch", slug: "dirt-rock-mulch-delivery" },
 ];
 
 const trustSignals: Array<{ icon: LucideIcon; label: string }> = [
@@ -517,8 +521,8 @@ export function HomePage() {
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">
               {[
                 [House, "Realtors and sellers", "Pre-listing cleanouts for garages, basements, and whole homes, finished before photos, staging, or closing day.", "house-and-estate-cleanouts", "House and estate cleanouts"],
-                [Building2, "Landlords", "Eviction cleanouts and trash outs, same day or next day. Left-behind furniture, appliances, and trash removed and the area swept so the unit is ready for the next tenant.", "eviction-cleanout-and-trash-out", "Eviction cleanouts and trash outs"],
-                [Users, "Property managers and HOAs", "The haul-off step of every make ready, plus repeat cleanouts across your properties. Before and after photos on every job, company invoicing, and a certificate of insurance on request.", "apartment-make-ready-haul-off", "Make-ready and unit turnover haul-off"],
+                [Building2, "Landlords", "Eviction cleanouts and trash outs, same day or next day. Left-behind furniture, appliances, and trash removed and the area swept so the unit is ready for the next tenant.", "rental-cleanout-and-make-ready", "Rental cleanouts and trash-outs"],
+                [Users, "Property managers and HOAs", "The haul-off step of every make ready, plus repeat cleanouts across your properties. Before and after photos on every job, company invoicing, and a certificate of insurance on request.", "rental-cleanout-and-make-ready", "Make-ready and unit turnover haul-off"],
               ].map(([Icon, heading, text, slug, linkLabel]) => {
                 const CardIcon = Icon as LucideIcon;
                 return (

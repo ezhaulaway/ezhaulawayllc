@@ -6,9 +6,12 @@ export const services: Array<{ slug: string; name: string; cityPages?: false }> 
   { slug: "appliance-removal", name: "Appliance Removal" },
   { slug: "hot-tub-removal", name: "Hot Tub Removal" },
   { slug: "light-demolition", name: "Light Demolition" },
-  { slug: "deck-and-fence-removal", name: "Deck & Fence Removal" },
+  { slug: "deck-removal", name: "Deck Removal" },
+  { slug: "fence-removal", name: "Fence Removal", cityPages: false },
   { slug: "construction-debris-removal", name: "Construction Debris Removal" },
   { slug: "yard-and-landscaping-debris", name: "Yard & Landscaping Debris" },
+  { slug: "sod-and-lawn-removal", name: "Sod & Lawn Removal", cityPages: false },
+  { slug: "dirt-rock-mulch-delivery", name: "Dirt, Rock & Mulch Delivery", cityPages: false },
   { slug: "garage-cleanouts", name: "Garage Cleanouts" },
   { slug: "house-and-estate-cleanouts", name: "House & Estate Cleanouts" },
   { slug: "mattress-and-bulky-item-removal", name: "Mattress & Bulky Item Removal" },
@@ -19,10 +22,7 @@ export const services: Array<{ slug: string; name: string; cityPages?: false }> 
   { slug: "dumpster-rental-alternative", name: "Dumpster Rental Alternative", cityPages: false },
   { slug: "hoarder-cleanout", name: "Hoarder Cleanout", cityPages: false },
   { slug: "storage-unit-cleanout", name: "Storage Unit Cleanout", cityPages: false },
-  { slug: "eviction-cleanout-and-trash-out", name: "Eviction Cleanout & Trash Out", cityPages: false },
-  { slug: "apartment-make-ready-haul-off", name: "Apartment Make-Ready Haul-Off", cityPages: false },
-  { slug: "basement-and-attic-cleanouts", name: "Basement & Attic Cleanouts", cityPages: false },
-  { slug: "realtor-and-attorney-cleanouts", name: "Cleanouts for Realtors & Attorneys", cityPages: false },
+  { slug: "rental-cleanout-and-make-ready", name: "Rental Cleanout & Make-Ready", cityPages: false },
 ];
 
 export const locations = SERVICE_AREAS.map(({ slug, city }) => ({ slug, city }));

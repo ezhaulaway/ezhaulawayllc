@@ -19,7 +19,7 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
 "commercial-junk-removal": {
     sections: [
       { heading: "Offices, retail spaces, and rental turnovers", text: "Businesses across Parker, Castle Rock, Centennial, and Denver call us for office furniture removal, retail fixture cleanouts, warehouse junk, and rental property turnovers. We work around your hours, including early mornings, so your team and customers aren't disrupted." },
-      { heading: "Property managers and landlords", text: "When a tenant leaves behind furniture, mattresses, and bags of trash, you need the unit cleared fast so it can be cleaned and re-listed. Send photos, get a price, and we'll schedule the cleanout quickly: **same day or next day**, with a 48-hour wait the rare exception. We take **before and after photos on every job**, **invoice your company**, and can **add your company to our certificate of insurance**. Ask about **volume discounts or locked-in rates** if you have guaranteed jobs.", links: [{ slug: "eviction-cleanout-and-trash-out", label: "Eviction cleanouts and trash outs" }, { slug: "apartment-make-ready-haul-off", label: "Apartment make-ready and unit turnover haul-off" }] },
+      { heading: "Property managers and landlords", text: "When a tenant leaves behind furniture, mattresses, and bags of trash, you need the unit cleared fast so it can be cleaned and re-listed. Send photos, get a price, and we'll schedule the cleanout quickly: **same day or next day**, with a 48-hour wait the rare exception. We take **before and after photos on every job**, **invoice your company**, and can **add your company to our certificate of insurance**. Ask about **volume discounts or locked-in rates** if you have guaranteed jobs.", links: [{ slug: "rental-cleanout-and-make-ready", label: "Rental cleanouts, trash-outs, and make-ready haul-off" }] },
       { heading: "Office junk removal service", text: "Our **office junk removal service** clears **desks, office chairs, conference tables, filing cabinets** and bookshelves from suites of any size. We take apart **cubicles and modular workstations** on site, carry everything out, and haul it away. One room or a whole floor goes on a single upfront quote." },
       { heading: "Office electronics and e-waste", text: "Old computers, monitors, printers, phones and boxes of cables pile up in storage rooms. We sort **office e-waste** from the rest of the load and send it to recycling. Please wipe or pull hard drives before pickup so your business data stays protected." },
       { heading: "Office moves, closures and lease-end cleanouts", text: "Moving, downsizing or closing an office? We clear what the movers won't take and what isn't worth moving. Tell us about loading docks, freight elevators, parking and building rules when you book, and we'll plan around them. Early mornings, evenings and weekends keep your team working." },
@@ -91,48 +91,56 @@ const raw_serviceExtras: Record<string, { sections: Array<{ heading: string; tex
   },
 "light-demolition": {
     sections: [
-      { heading: "Tear-out and haul-away in one visit", text: "Most demolition companies won't touch small jobs, and most junk haulers won't swing a hammer. We do both — taking down sheds, playsets, old decks, fences, interior cabinets, and non-structural walls, then loading all the debris on our trailer the same day." },
-      { heading: "Real construction experience", text: "Ben has around six years of hands-on construction and demolition work, including more than 300 decks. That experience means we know how to take things apart cleanly without damaging siding, landscaping, or the parts of your property that are staying." },
+      { heading: "Tear-out and haul-away in one visit", text: "Most demolition companies won't touch a playset or a cabinet tear-out, and most junk haulers won't take the structure apart. We do both, then load the debris the same day. Decks, fences, sheds, and hot tubs are booked on their own pages so the scope is clear." },
+      { heading: "Real construction experience", text: "Ben has around six years of hands-on construction and demolition work, including more than 300 decks. That is why a ledger, a buried playset leg, or a cabinet run comes apart without a guess." },
     ],
     faqs: [
-      ["Do you remove structural walls?", "No. We handle non-structural light demolition only. Load-bearing work needs a licensed contractor and engineer."],
-      ["Do you remove concrete footings?", "Small footings can often be handled — send photos and we'll let you know what's realistic for your job."],
+      ["Do you remove structural walls?", "No. We handle non-structural light demolition only. Load-bearing work needs a licensed contractor and an engineer."],
+      ["Do you remove concrete footings?", "Small footings on a playset, pergola, or shed can often be pulled or cut at grade. Send photos and we will say what is realistic. Retaining walls that hold up a slope are not this job."],
     ],
   },
 "yard-and-landscaping-debris": {
     sections: [
-      { heading: "Storm cleanup, branches, and landscaping projects", text: "Colorado hail, wind, and spring snow leave broken branches and limbs across yards in Parker, Castle Rock, and Elizabeth. We haul branches, brush, old sod, landscape rock, railroad ties, and bagged leaves, so your yard is clean without multiple trips to the dump." },
+      { heading: "Storm cleanup, branches, and brush", text: "Colorado hail, wind, and spring snow leave broken branches and limbs across yards in Parker, Castle Rock, and Elizabeth. We haul branches, brush, railroad ties, and bagged leaves. Sod and landscape rock that still have to be cut or dug out are on the sod page. A small load of new material coming in is on the dirt, rock, and mulch page." },
       { heading: "Acreage and rural properties", text: "Larger lots in Franktown, Elizabeth, and Sedalia often collect years of scrap fencing, old lumber, and brush piles. Our 16-foot dump trailer is built for these bigger outdoor cleanups, and we price by how much space the load takes." },
     ],
     faqs: [
-      ["Do you take dirt and rock?", "Yes, in reasonable amounts. Because they're heavy, we'll price them based on weight and volume."],
+      ["Do you take a pile of dirt or rock that is already loose?", "Yes, in amounts the trailer can legally carry. Because they are heavy, we price them by weight and volume. Delivery of new material is a different page."],
       ["Do I need to bag leaves and branches?", "Bagged leaves are easiest, but loose branches and brush are fine — we'll load them as they are."],
     ],
   },
 "hot-tub-removal": {
     sections: [
       { heading: "Hot tub removal and spa disposal in Denver, Parker, and Castle Rock", text: "A standard backyard spa (4–6 people) is [[item:hot-tub-standard]]. We drain what's left in the shell, cut the tub down into sections that fit through gates and side yards, load the frame, cover, and steps, and haul everything away the same visit. Hot tub disposal is one of the jobs most haulers turn down, and it's one we do every week." },
-      { heading: "Safe electrical shutoff before we cut", text: "Safety comes first. The spa circuit gets shut off at the breaker, and **hard-wired 240-volt tubs** should be disconnected by a licensed electrician before we arrive. Once the tub is safely dead, our crew handles the **spa removal** from start to finish." },
+      { heading: "Safe electrical shutoff before we cut", text: "The electrical disconnect must be done by a licensed electrician before we cut. You arrange that, or it is arranged separately. We do not do electrical work, and we do not open the panel. Once the spa is safely disconnected, we drain it, cut it, and haul it." },
       { heading: "Swim spas, in-ground tubs, and gazebos", text: "We remove **swim spas**, jetted tubs, inflatable spas, and old **gazebos or pergolas** that cover them. Spas set into a deck can come out together with the surrounding framing, so you get one crew, one visit, and **one upfront price** for the whole backyard project." },
       { heading: "Where your old spa goes", text: "A hot tub is mostly wood, foam, plastic, and metal. We separate the **metal parts for recycling** — pumps, heaters, and frames — and haul the rest to a licensed disposal site. It is **responsible disposal**, not a pile behind a fence." },
       { heading: "What to do before we arrive", text: "Clear a path to the tub, unlock the gate, and let us know about pets, sprinklers, or soft ground. If you can drain the tub a day early, great — if not, we'll handle it. We leave the pad **swept clean** and ready for a new spa, a patio set, or grass." },
-      { heading: "How hot tub removal works, step by step", text: "Every **hot tub removal** follows the same steps. First the power is off and the **electrical is disconnected**. Next we **drain the spa** and pull the cover, steps, and cabinet panels. Then we **cut the shell into sections** small enough to carry through a gate, load the frame and pieces into our **16-foot dump trailer**, and sweep the pad. Most backyard spas are gone in **two to three hours**." },
+      { heading: "How hot tub removal works, step by step", text: "Every **hot tub removal** follows the same steps. A licensed electrician disconnects the spa first. That is arranged by you or arranged separately. We do not do that work. Next we **drain the spa** and pull the cover, steps, and cabinet panels. Then we **cut the shell into sections** small enough to carry through a gate, load the frame and pieces into our **16-foot dump trailer**, and sweep the pad. Most backyard spas are gone in **two to three hours**." },
       { heading: "Recessed and deck-surround hot tubs", text: "A tub set into a deck takes more work than one sitting on a pad. We can remove the **deck surround**, the tub, and the framing together, or leave the deck in place and lift the spa out. Either way you get **one crew, one visit**, and the price before we start, so you can **reclaim your backyard space** without a second contractor." },
       { heading: "Tight gates, decks, and second-story patios", text: "Most spas were set in place before the fence went up, so the only way out is to cut. We protect gates, siding, and landscaping while we work, and we can remove a spa surround or deck section at the same time if the tub is built in." },
     ],
     faqs: [
       ["How much does hot tub removal cost in Denver?", "A standard hot tub is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. The price goes up with size, access, and whether a deck or surround has to come apart. We confirm the price before any cutting starts."],
-      ["Do you disconnect the electrical?", "We shut off the breaker and disconnect the whip at the tub, but any panel work should be done by a licensed electrician."],
+      ["Do you disconnect the electrical?", "No. A licensed electrician has to disconnect the spa. You arrange that, or it is arranged separately. We start only after it is safely disconnected."],
     ],
   },
-"deck-and-fence-removal": {
+"deck-removal": {
     sections: [
-      { heading: "Deck demolition and fence removal across the Denver metro", text: "Ben has torn out and rebuilt more than 300 decks, so deck demolition in Denver, Parker, Castle Rock, and Highlands Ranch is familiar ground. We take out boards, framing, posts, footings where possible, railings, and old fence panels, then haul every piece of lumber and hardware away so the yard is clear." },
-      { heading: "Old fencing, posts, and concrete", text: "Wood fence removal, chain link, and leaning cedar panels all come out the same day. Post concrete is heavy, so we price it with the load, and we tell you up front whether footings are coming out or being cut at grade." },
+      { heading: "Deck demolition across the Denver metro", text: "Ben has worked on more than 300 decks, so deck demolition in Denver, Parker, Castle Rock, Highlands Ranch, and Aurora is familiar ground. We take out boards, framing, stairs, and railings, then haul the lumber and hardware so the yard is clear." },
+      { heading: "Footings", text: "Concrete footings can come out or be cut at grade. Post concrete is heavy, so it is part of the quote, not a surprise at the end. Say which you want when you send photos." },
     ],
     faqs: [
-      ["How much does deck removal cost?", "Small decks often fit in one trailer load, while large multi-level decks take more than one. Send photos with rough dimensions and we'll quote it before we start."],
-      ["Will the siding be damaged where the deck attaches?", "We separate the ledger board carefully and leave the wall ready for repair, and we'll point out anything we find behind it."],
+      ["How much does deck removal cost?", "Small ground-level decks are a different job from a large elevated deck. Send photos with rough dimensions and we will quote it before we start. We do not add a disposal fee after the fact."],
+      ["Will the siding be damaged where the deck attaches?", "We separate the ledger by hand and leave the wall for your repair. We will point out anything we find behind it. We do not patch siding."],
+    ],
+  },
+"fence-removal": {
+    sections: [
+      { heading: "Old fencing, posts, and concrete", text: "Wood, vinyl, and chain link come out in one visit, including the posts. Concrete is heavy, so we say up front whether the footings are coming out or being cut at grade." },
+    ],
+    faqs: [
+      ["Can you take one bad section?", "Yes. Mark the panels that go and the ones that stay, especially on a shared line."],
     ],
   },
 "mattress-and-bulky-item-removal": {
