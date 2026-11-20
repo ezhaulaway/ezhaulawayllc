@@ -267,6 +267,107 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
       },
     ],
   },
+  {
+    slug: "kitchen-cabinet-removal-cost",
+    title: "Kitchen Cabinet Removal Cost: Tear-Out and Haul-Away",
+    meta_description:
+      "Kitchen cabinet removal cost in Parker and the south Denver metro: tear-out and haul-away priced by trailer space, ReStore donation rules and lead paint.",
+    publish_at: "2026-11-20T14:00:00.000Z",
+    hero: {
+      src: "/blog/kitchen-cabinet-removal-cost/hero.webp",
+      alt: "Worker in a dust mask carrying out an old base cabinet with its laminate countertop during a kitchen tear-out, with the upper cabinets already removed",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Kitchen Cabinet Removal Cost: Tear-Out and Haul-Away</h1>
+<p>Kitchen cabinet removal cost with us comes down to two things. How much of my trailer the old cabinets and debris take up, and how much tear-out work there is if we're the ones pulling them off the wall. Haulaway starts at [[min]]. A quarter trailer runs about [[load:2]] and a half about [[load:4]], and loading, hauling and dump fees are all in there. If there's tear-out, I add that time to the quote so you get one number before we start.</p>
+<p>I'm Ben, I own EZ Haulaway here in Parker. I spent about six years in construction before this, and part of that was leading a deck crew. Pulling a run of cabinets off a wall is normal work for me.</p>
+<h2>How much does kitchen cabinet removal cost?</h2>
+<p>We price by trailer space, not by the linear foot. Our 16-foot dump trailer holds about 14 cubic yards. Small loads start at [[min]]. A quarter trailer is about [[load:2]], half is about [[load:4]], three-quarters about [[load:6]] and a full trailer about [[load:8]]. Loading, hauling and disposal are included.</p>
+<p>Tear-out is separate. If we're the ones taking the cabinets down, that's extra labor at [[labor]] per hour per crew member. I put it in the quote up front. Totally understand if you'd rather pull them yourself and save on labor. Then it's just the haulaway.</p>
+<p>National guides like Angi price cabinet removal by the linear foot or by the hour, then tell you to budget for debris removal on top of that. With us it's one total. Send me a couple photos and I'll get you a number, and we lock in the exact price on site before anything comes off the wall. Full breakdown's on our <a href="/pricing">pricing page</a>.</p>
+<p>Here's a real one. A customer sent screenshots of a remodel pile with wood, old cabinets, drywall, some checkerboard tile and a set of stairs. Plus two toilets and a dishwasher. Just from the photos I figured it at a half to five-eighths of the trailer.</p>
+<p>So when you're pricing cabinet removal, look at the whole pile, not just the boxes.</p>
+<p>To be straight with you, full kitchen tear-outs haven't been a big part of our work yet. We opened in June 2026, and 6 of the 39 jobs we've finished since then were construction debris or heavy stuff like concrete and tile. A recent one was about 6 cubic yards of wood, fencing, and stone and tile pieces out of a backyard in Aurora. I quoted it by text off the customer's photos.</p>
+<h2>What changes the price of a cabinet tear-out?</h2>
+<p>Mostly four things. Are we tearing them out or just hauling them? What are the countertops made of? Is there tile? And how far do we carry it all to the trailer? A few uppers in a condo isn't the same job as a full kitchen with an island and stone tops, so the quote follows what you've actually got.</p>
+<ul>
+<li><strong>Tear-out or haul only.</strong> If you or your remodeler already pulled them, that's a <a href="/services/construction-debris-removal">construction debris removal</a> job and it's less work for us. If we're taking them off the wall, it's <a href="/services/light-demolition">light demolition</a>.</li>
+<li><strong>Countertops.</strong> Laminate is light. Granite and quartz are way heavier, so send a photo and I'll tell you how we'll price them.</li>
+<li><strong>Backsplash and tile.</strong> Tile counts as heavy material, [[adj:heavy]] per cubic yard with a 2-yard minimum. It fills the trailer by weight long before it fills it by space.</li>
+<li><strong>Stairs and long carries.</strong> No stair charge. I just need to know about it so we plan the time.</li>
+<li><strong>Everything else.</strong> The old dishwasher, flooring, drywall and trim can ride in the same load.</li>
+</ul>
+<h2>Do I need to disconnect the sink and appliances first?</h2>
+<p>Yes. We don't do plumbing or electrical. Before we pull base cabinets, have a plumber shut off and cap the sink and dishwasher lines, and get an electrician for anything hardwired. Gas range going too? Have a pro disconnect it. After that the cabinets, the sink and the old <a href="/services/appliance-removal">appliances</a> can all go in one trip.</p>
+<p>Empty the cabinets before we get there. Dishes, food, the stuff under the sink, all of it. Cleaners, paint or any other chemicals can't go in our trailer, so just set those aside.</p>
+<h2>How long does it take to remove kitchen cabinets?</h2>
+<p>Should take a few hours to a day. That's the range for most of our light demolition jobs. A small kitchen with the plumbing already capped is on the quicker end, and a big one with an island, stone tops and a tile backsplash takes longer. I'll tell you which one yours looks like from your photos.</p>
+<p>We take the uppers down first, then the countertops, then the base cabinets. We load as we go so nothing piles up in your house.</p>
+<p>I've spent a lot of years taking decks apart, and in my experience anything that went together with screws comes apart the same way, just backwards. A cabinet box is no different.</p>
+<p>Someone should walk the kitchen with us at the start so we know what stays. When we leave, the debris is gone and the floor's swept.</p>
+<img src="/blog/kitchen-cabinet-removal-cost/cabinets-pulled.webp" alt="Kitchen mid tear-out with the upper cabinets gone, base cabinets pulled from the wall, a stainless sink on the floor and a reciprocating saw nearby" width="1600" height="900">
+<h2>Can old kitchen cabinets be donated in Denver?</h2>
+<p>Yes, if they're in decent shape. Habitat for Humanity of Metro Denver's ReStores take cabinet sets, single cabinets and vanities, as long as every door and drawer is attached, the boxes are structurally sound and no nails or screws are sticking out. Loose cabinet parts by themselves are a no, and staff make the final call in person.</p>
+<p>For most of Parker the closest one is the Aurora ReStore at 1640 S. Abilene St. There are also stores in Denver, Littleton and Arvada. Donation docks are open every day from 10 a.m. to 5:30 p.m.</p>
+<p>Habitat does have a standard pickup, but it costs a fee and those drivers can't come inside. The cabinets need to already be in the garage or driveway. Check their <a href="https://habitatmetrodenver.org/restore/donate/donate-guide/" rel="noopener">donation guidelines</a> before you go.</p>
+<p>If you want to donate, they have to come off clean. That means unscrewing them from the wall and from each other, not prying them off. Let me know ahead of time and we'll take them down carefully and set the good ones aside.</p>
+<p>We separate out metal for recycling and donate reusable stuff whenever we can. Honestly, I'd rather see a solid set of oak cabinets end up in somebody's garage than in the landfill.</p>
+<h2>Where do cabinets go if they can't be reused?</h2>
+<p>Water damaged, swollen, or broke coming off the wall? Then they go to a licensed disposal site with the rest of the debris. For us that's a landfill like the one in Sedalia, where we've taken loads, or the Denver Arapahoe Disposal Site in Aurora that the Town of Parker points residents to. Either way, you're not hauling it.</p>
+<p>That matters out here. The Town of Parker doesn't provide trash service, and Douglas County doesn't have residential curbside pickup. A pile of remodel debris in a south metro garage doesn't really have an easy way out.</p>
+<img src="/blog/kitchen-cabinet-removal-cost/loading-the-trailer.webp" alt="EZ Haulaway crew member in a company T-shirt carrying a load to our black dump trailer parked on a residential street" width="1080" height="1350">
+<h2>Should I hire a junk removal company or rent a dumpster?</h2>
+<p>My take: a dumpster makes sense when a remodel runs for weeks and your crew is filling it every day. If the cabinets are coming out in one day, a haulaway is easier. We do the tear-out and the loading, and nothing sits in your driveway for a week. Our <a href="/services/dumpster-rental-alternative">dumpster rental alternative</a> page goes over how they compare.</p>
+<p>Some remodel calls are a mix. One customer in Parker wanted a couple of sectional pieces, a dresser, a bathroom vanity top, cabinets and some construction debris gone all at once.</p>
+<p>One load, one price. Not three separate pickups.</p>
+<h2>Do you remove cabinets in older homes?</h2>
+<p>Tell me what year your house was built before we schedule. The EPA lists removing kitchen cabinets as work that can disturb paint. In homes built before 1978, its Renovation, Repair and Painting Rule says anyone paid to do that work generally has to be a lead-safe certified firm. We're not an EPA lead-safe certified firm.</p>
+<p>So if your place is pre-1978 and the cabinets or the walls around them are painted, we'll leave that tear-out to a certified renovator or pass on that part of the job.</p>
+<p>We also don't remove asbestos, mold or lead paint, and we don't take out walls. Cabinets that are just storage come out. A wall holding up the floor above stays put.</p>
+<h2>Do you remove cabinets from offices and businesses?</h2>
+<p>Yes. Break room and storage cabinets that are screwed to the wall come out the same way a kitchen does. We can plan around your hours, early mornings included, so your team isn't working around us. See our <a href="/services/commercial-junk-removal">commercial junk removal</a> page, or just send photos and I'll quote it the same way.</p>
+<h2>Need it gone?</h2>
+<p>We're family-owned, insured and based in Parker. We do junk removal and light demolition all over the south metro, including <a href="/service-areas/highlands-ranch">Highlands Ranch</a>, <a href="/service-areas/castle-rock">Castle Rock</a> and <a href="/service-areas/aurora">Aurora</a>. If you're in town, here's our <a href="/service-areas/parker">Parker junk removal</a> page and our <a href="/service-areas/parker/construction-debris-removal">Parker construction debris removal</a> page.</p>
+<p>Call or text me at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send me a couple photos of the kitchen and I'll text back a price, or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. Jobs start at our [[min]] minimum. Let me know if you have any questions. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "Can you haul the cabinets, drywall and tile from my remodel in one trip?",
+        answer:
+          "Yes, as long as it fits in the trailer. Cabinets, drywall, wood and tile can all go in one load for one price. One remodel pile I quoted from photos, with cabinets, drywall, tile and stairs, came out to a half to five-eighths of the trailer. Tile is priced as heavy material, so send me a photo of it.",
+      },
+      {
+        question: "Can you take the old dishwasher and toilets with the cabinets?",
+        answer:
+          "Yep. Old appliances and fixtures can go in the same load as the cabinets. Just have a plumber shut off and cap the water lines first, since we don't do plumbing or electrical. Send me a couple photos and it all goes on one quote.",
+      },
+      {
+        question: "Can you carry the debris down the stairs for me?",
+        answer:
+          "Yes. We do all the carrying and loading. Upstairs, basement, garage, backyard, doesn't matter. There's no stair charge. Just mention the stairs when you send photos so we plan the time.",
+      },
+      {
+        question: "How much does it cost to remove kitchen cabinets?",
+        answer:
+          "We price the haulaway by how much of our 14-cubic-yard trailer the job fills. Small loads start at [[min]], a quarter trailer is about [[load:2]], half about [[load:4]] and a full trailer about [[load:8]]. If we do the tear-out, that's extra labor at [[labor]] per hour per crew member, and it's in the quote up front.",
+      },
+      {
+        question: "Will Habitat for Humanity take my old kitchen cabinets?",
+        answer:
+          "If they're in good shape, yes. Habitat for Humanity of Metro Denver's ReStores take cabinet sets, single cabinets and vanities with all the doors and drawers attached, structurally sound, with no nails or screws sticking out. Loose cabinet parts by themselves won't work, and staff approve every donation in person.",
+      },
+      {
+        question: "Do you remove painted cabinets in older homes?",
+        answer:
+          "Tell me the year your home was built. EPA rules generally require a lead-safe certified firm for paid work that disturbs paint in homes built before 1978, and removing kitchen cabinets is one of EPA's examples. We're not a certified firm, so we leave that work to a certified renovator.",
+      },
+      {
+        question: "Do I need a permit to remove kitchen cabinets?",
+        answer:
+          "We don't pull permits. If the cabinets are part of a bigger remodel, check with the Town of Parker or your county building department about what the whole project needs before anybody starts.",
+      },
+    ],
+  },
 ];
 
 type Row = Database["public"]["Tables"]["blg_articles"]["Row"];
