@@ -368,6 +368,94 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
       },
     ],
   },
+  {
+    slug: "estate-cleanout-cost",
+    title: "Estate Cleanout Cost in Parker and the South Metro",
+    meta_description:
+      "Estate cleanout cost in Parker and the south Denver metro, priced by trailer space. What drives the price, what to donate first and how to get a quote.",
+    publish_at: "2026-11-22T14:00:00.000Z",
+    hero: {
+      src: "/blog/estate-cleanout-cost/hero.webp",
+      alt: "EZ Haulaway crew member tipping a gray reclining sofa onto a hand truck outside a townhome",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Estate Cleanout Cost in Parker and the South Metro</h1>
+<p>Estate cleanout cost with us depends on one thing more than anything: how much of my trailer the stuff fills. Small loads start at [[min]], half a trailer is about [[load:4]] and a full trailer is about [[load:8]]. Loading, hauling and dump fees are in that number. A full house with a garage and basement can take more than one load, so send me photos and I'll give you a real number before we start.</p>
+<p>I'm Ben. I own EZ Haulaway here in Parker, and my wife helps me run it. We're local, insured and family-owned. Estate jobs are different from a couch pickup. It's somebody's whole life in that house, so I try to keep it simple for the family.</p>
+
+<h2>How much does an estate cleanout cost?</h2>
+<p>We don't charge by the room or by the square foot. We charge by trailer space. A quarter trailer runs about [[load:2]], half about [[load:4]], three-quarters about [[load:6]] and a full trailer about [[load:8]]. That covers the carrying, loading, the drive and the landfill. If the house needs more than one full load, each extra load is priced the same way, and you hear the total before anything moves.</p>
+<p>For reference, our biggest junk jobs so far each filled most or all of the trailer. That includes a job at an old double-wide in Kiowa and others in Parker, Highlands Ranch, Aurora and Centennial. Those six were the big ones out of about 40 jobs since we opened in June. A packed house with a full garage and basement can go past one load.</p>
+<p>Want to see every price? It's all on our <a href="/pricing">pricing page</a>, and you can get a ballpark in a couple minutes on the <a href="/instant-estimate">instant estimate</a>.</p>
+
+<h2>What makes an estate cleanout cost more?</h2>
+<p>Mostly volume. Then it's the stuff that costs me more to dump. Fridges, freezers and other appliances with Freon are [[adj:freon]] each, because they have to be handled separately. Dirt, rock, tile and concrete get priced separately too. A half trailer of concrete weighs way more than a half trailer of couches, and the landfill charges by weight.</p>
+<p>Old fridges show up more than you'd think. This fall we had one job with five old fridges and another with two Freon appliances. If there's an old fridge or chest freezer in the garage, tell me up front so it's in the quote.</p>
+<p>Stairs matter too. Carrying a basement full of boxes up one at a time is slower than loading a garage. That goes into the price I give you, so there's no add-on at the end.</p>
+
+<h2>What does a typical estate cleanout request look like?</h2>
+<p>Here's a real one from this month, no names. Someone filled out our form and said they were "just getting prices." The list: a two-car garage with an old refrigerator, lots of kids' toys and baby items, bunk beds in great shape, a couple dressers, a couch and loveseat under 10 years old, plus some stuff upstairs.</p>
+<p>Honestly that's what most of these look like. Some trash, some stuff somebody could use, and one old fridge. The bunk beds and a newer couch shouldn't go to the landfill if somebody can use them. So yeah, send me photos of all of it. Not just the big stuff.</p>
+<img src="/blog/estate-cleanout-cost/table.webp" alt="EZ Haulaway crew member carrying a dark wood table upside down on his shoulder down a sidewalk" width="1600" height="900">
+
+<h2>Can I sell or donate things before the cleanout?</h2>
+<p>Yes, and you should if there's time. Anything the family sells or donates first is stuff you're not paying to haul. Family takes what they want first. Then sell what's worth selling, donate what you can, and call me for the rest.</p>
+<p>Habitat for Humanity of Metro Denver ReStores take gently used furniture and household goods. They have ReStores in Denver, Littleton, Arvada and Aurora, and they'll pick up for a small fee. Two catches. Their crews can't go inside the house, so items have to be outside or in the garage. And they don't take mattresses, electronics, paint or appliances that don't work.</p>
+<p>Stuff we haul doesn't all go to the dump either. If it's still good, I set it aside. This month we sold a couch and a couple other things we hauled on Facebook Marketplace, and my wife sometimes meets the buyers. And honestly, if I see something worth real money, I'll tell you. You should be the one selling it, not me.</p>
+
+<h2>Where does estate junk go in Douglas County?</h2>
+<p>Douglas County has no county trash pickup. Most homes here use a private hauler or an HOA contract, and regular trash service isn't set up for a garage full of furniture. Regular junk from our jobs goes to the Sedalia landfill or the WM site in Aurora.</p>
+<p>Some things shouldn't go in the trailer at all. Douglas County GreenWorks in Sedalia takes household hazardous waste and electronics for free from county residents. You need an appointment and proof of residency. We don't haul paint, solvents, chemicals, fuel or propane tanks, so those go there. TVs and other electronics we can take, or county residents can drop them at GreenWorks.</p>
+
+<h2>Who has to approve the cleanout?</h2>
+<p>Make sure the right person says yes first. In Colorado, when an estate goes through probate, the court appoints a personal representative. That person has authority over the estate's property, including the house contents. I'm not a lawyer, so if there's any question about who gets what, sort that out first. Once the stuff is in my trailer, it's gone.</p>
+<p>Get the family's keep list settled before you book. It makes the day a lot easier.</p>
+
+<h2>How do I get an exact price for an estate cleanout?</h2>
+<p>Send me a couple photos of every room, the garage, the basement and any sheds. Text them to (720) 614-7223, or use the <a href="/instant-estimate">instant estimate</a>. Send me the job details and I'll get you a number.</p>
+<p>For a bigger house I'll come walk it. Earlier this month I walked a Parker job on a Tuesday, gave a price on site, and we had it cleared that Friday. A walkthrough also lets you point at what stays, what goes and what to set aside.</p>
+<p>If you're a realtor or attorney handling the estate for a family, I'm happy to work with you directly.</p>
+
+<h2>What we'll do on the day</h2>
+<p>We walk it with you or whoever has the keys and confirm the price. Then my crew starts carrying. If you told me to watch for papers, photos or anything else, we set it aside instead of tossing it.</p>
+<p>We handle full <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a>, plus <a href="/services/garage-cleanouts">garage cleanouts</a> and basement and attic cleanouts on their own. We work Parker, <a href="/service-areas/castle-rock">Castle Rock</a>, <a href="/service-areas/highlands-ranch">Highlands Ranch</a>, Aurora, Denver and the rest of the south metro. Not sure if we take something? Check <a href="/what-we-take">what we take</a>.</p>
+
+<h2>Need it gone?</h2>
+<p>Call or text me at (720) 614-7223 with a few photos, or get a price on the <a href="/instant-estimate">instant estimate</a>. Small jobs start at [[min]]. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "How much does an estate cleanout cost in Parker?",
+        answer:
+          "We price by trailer space. Small loads start at [[min]], half a trailer is about [[load:4]] and a full trailer is about [[load:8]], with loading, hauling and dump fees included. A full house with a garage and basement can need more than one load. Send photos and I'll give you the total before we start.",
+      },
+      {
+        question: "Is an estate cleanout cheaper if I donate things first?",
+        answer:
+          "Yes. Anything sold, donated or kept by family first is space you aren't paying for in my trailer. Habitat for Humanity of Metro Denver ReStores take gently used furniture, but their crews won't go inside, so items need to be outside or in the garage.",
+      },
+      {
+        question: "Do you charge extra for old refrigerators and freezers?",
+        answer:
+          "Yes. Appliances with Freon, like fridges, freezers and AC units, are [[adj:freon]] each on top of the load price, because they have to be handled separately. Tell me about them up front so they're in the quote.",
+      },
+      {
+        question: "Who can approve an estate cleanout in Colorado?",
+        answer:
+          "If the estate is in probate, the court-appointed personal representative has authority over the estate's property. Make sure that person signs off before anything leaves the house. If there's any question about who gets what, check with the estate's attorney first.",
+      },
+      {
+        question: "Can you take paint and chemicals from an estate garage?",
+        answer:
+          "We don't haul paint, solvents, chemicals, fuel or propane tanks. Douglas County residents can take household hazardous waste and electronics to Douglas County GreenWorks in Sedalia for free with an appointment and proof of residency.",
+      },
+      {
+        question: "Do you have to see the house before giving a price?",
+        answer:
+          "Not always. Photos of every room, the garage and the basement usually get you a solid range. For bigger houses I'll come walk it and give you a firm price on site.",
+      },
+    ],
+  },
 ];
 
 type Row = Database["public"]["Tables"]["blg_articles"]["Row"];
