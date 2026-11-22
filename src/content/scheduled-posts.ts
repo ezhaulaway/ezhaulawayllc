@@ -415,7 +415,7 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
 <h2>How do I get an exact price for an estate cleanout?</h2>
 <p>Send me a couple photos of every room, the garage, the basement and any sheds. Text them to (720) 614-7223, or use the <a href="/instant-estimate">instant estimate</a>. Send me the job details and I'll get you a number.</p>
 <p>For a bigger house I'll come walk it. Earlier this month I walked a Parker job on a Tuesday, gave a price on site, and we had it cleared that Friday. A walkthrough also lets you point at what stays, what goes and what to set aside.</p>
-<p>If you're a realtor or attorney handling the estate for a family, we do those too. See realtor and attorney cleanouts.</p>
+<p>If you're a realtor or attorney handling the estate for a family, I'm happy to work with you directly.</p>
 
 <h2>What we'll do on the day</h2>
 <p>We walk it with you or whoever has the keys and confirm the price. Then my crew starts carrying. If you told me to watch for papers, photos or anything else, we set it aside instead of tossing it.</p>
