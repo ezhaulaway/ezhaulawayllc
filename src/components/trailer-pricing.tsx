@@ -1,43 +1,32 @@
 import { useState } from "react";
-import { responsiveImage } from "@/lib/trailer-images";
 import { Button } from "@/components/ui/button";
 import { TRAILER_SPEC } from "@/content/pricing";
 import { formatDiscount } from "@/lib/price-guide";
 import { usePriceGuide } from "@/hooks/use-price-guide";
-import trailerEmpty from "@/assets/branded-trailer-base.webp";
-import trailerJunk0 from "@/assets/branded-trailer-junk-0.webp";
-import trailerJunk1 from "@/assets/branded-trailer-junk-1.webp";
-import trailerJunk2 from "@/assets/branded-trailer-junk-2.webp";
-import trailerJunk3 from "@/assets/branded-trailer-junk-3.webp";
-import trailerJunk4 from "@/assets/branded-trailer-junk-4.webp";
-import trailerJunk5 from "@/assets/branded-trailer-junk-5.webp";
-import trailerJunk6 from "@/assets/branded-trailer-junk-6.webp";
-import trailerJunk7 from "@/assets/branded-trailer-junk-7.webp";
-import trailerJunk8 from "@/assets/branded-trailer-junk-8.webp";
+// Rendered from the 3D model of our own trailer, one frame per eighth. All nine share one crop so they line up.
+import fill0 from "@/assets/trailer-3d-fill-0.webp";
+import fill1 from "@/assets/trailer-3d-fill-1.webp";
+import fill2 from "@/assets/trailer-3d-fill-2.webp";
+import fill3 from "@/assets/trailer-3d-fill-3.webp";
+import fill4 from "@/assets/trailer-3d-fill-4.webp";
+import fill5 from "@/assets/trailer-3d-fill-5.webp";
+import fill6 from "@/assets/trailer-3d-fill-6.webp";
+import fill7 from "@/assets/trailer-3d-fill-7.webp";
+import fill8 from "@/assets/trailer-3d-fill-8.webp";
 
 const fillDescriptions: Record<number, string> = {
-  0: "minimum load, a few items at the rear",
-  1: "about one-eighth full",
-  2: "about one-quarter full",
-  3: "about three-eighths full",
-  4: "half full of household junk",
-  5: "about five-eighths full",
-  6: "three-quarters full",
-  7: "seven-eighths full",
-  8: "heaping full of furniture, appliances and boxes",
+  0: "one cubic yard marked at the front, the size of a minimum pickup",
+  1: "one-eighth of the bed filled",
+  2: "one-quarter of the bed filled",
+  3: "three-eighths of the bed filled",
+  4: "half of the bed filled",
+  5: "five-eighths of the bed filled",
+  6: "three-quarters of the bed filled",
+  7: "seven-eighths of the bed filled",
+  8: "the whole bed filled",
 };
 
-const loadImages = [
-  trailerJunk0,
-  trailerJunk1,
-  trailerJunk2,
-  trailerJunk3,
-  trailerJunk4,
-  trailerJunk5,
-  trailerJunk6,
-  trailerJunk7,
-  trailerJunk8,
-];
+const loadImages = [fill0, fill1, fill2, fill3, fill4, fill5, fill6, fill7, fill8];
 
 export function TrailerPricing() {
   const guide = usePriceGuide();
@@ -45,6 +34,8 @@ export function TrailerPricing() {
   const MINIMUM_CHARGE = guide.minimum;
   const LABOR_RATE = guide.laborRate;
   const [selectedEighths, setSelectedEighths] = useState(2);
+  // Only the chosen frame loads with the page. The rest load on first touch so dragging is smooth.
+  const [warm, setWarm] = useState(false);
   const selected = LOAD_LEVELS.find((level) => level.eighths === selectedEighths) ?? LOAD_LEVELS[0];
 
   if (!selected) return null;
@@ -56,7 +47,7 @@ export function TrailerPricing() {
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Trailer fill level guide</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">How Much Trailer Space Do You Need?</h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            Choose a fill level to see the price. Prices are based on our{" "}
+            Drag the slider or choose a fill level to see the price. Prices are based on our{" "}
             {TRAILER_SPEC.length} × {TRAILER_SPEC.width} × {TRAILER_SPEC.height} dump trailer (about {TRAILER_SPEC.cubicYards} cubic yards)
             and include standard labor, loading, hauling, and disposal. Mattresses, furniture, electronics, appliances, and other
             oversized items are priced individually rather than by trailer space.
@@ -65,38 +56,53 @@ export function TrailerPricing() {
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-14">
           <div>
-            {/* Equipment-matched trailer with illustrated junk fill */}
-            <div className="relative mx-auto max-w-3xl" aria-label="Trailer fill level preview">
-              <div className="relative aspect-[1376/768]">
-                {/* One fixed trailer stays mounted while nine transparent junk stages crossfade. */}
-                <img
-                  {...responsiveImage(trailerEmpty, "(min-width: 1280px) 756px, (min-width: 1024px) 60vw, calc(100vw - 40px)")}
-                  alt="EZ Haulaway 16-foot black dump trailer used for junk removal pricing"
-                  width={1376}
-                  height={768}
-                  fetchPriority="high"
-                  loading="eager"
-                  className="absolute inset-0 h-full w-full object-contain"
-                />
-                {loadImages.map((image, eighths) => (
-                  <img
-                    key={image}
-                    {...responsiveImage(image, "(min-width: 1280px) 756px, (min-width: 1024px) 60vw, calc(100vw - 40px)")}
-                    alt={`Illustrated dump trailer fill level: ${fillDescriptions[eighths]}`}
-                    aria-hidden={eighths !== selectedEighths}
-                    width={1376}
-                    height={768}
-                    loading={eighths === selectedEighths ? "eager" : "lazy"}
-                    fetchPriority={eighths === selectedEighths ? "high" : "low"}
-                    hidden={eighths !== selectedEighths}
-                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ease-out ${
-                      eighths === selectedEighths ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
+            <div
+              className="relative mx-auto max-w-3xl"
+              aria-label="Trailer fill level preview"
+              onPointerEnter={() => setWarm(true)}
+              onTouchStart={() => setWarm(true)}
+              onFocus={() => setWarm(true)}
+            >
+              <div className="relative aspect-[4/3]">
+                {loadImages.map((image, eighths) =>
+                  eighths === selectedEighths || warm ? (
+                    <img
+                      key={image}
+                      src={image}
+                      alt={eighths === selectedEighths ? `EZ Haulaway 16-foot dump trailer with ${fillDescriptions[eighths]}` : ""}
+                      aria-hidden={eighths !== selectedEighths}
+                      width={1000}
+                      height={750}
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority={eighths === selectedEighths ? "high" : "low"}
+                      className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ease-out ${
+                        eighths === selectedEighths ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
+                  ) : null,
+                )}
                 <span className="absolute left-3 top-3 rounded-full bg-secondary/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-secondary-foreground">
                   {selected.eighths === 0 ? "Minimum load" : `${selected.label}`}
                 </span>
+              </div>
+              <label className="mt-2 block">
+                <span className="sr-only">Drag to fill the trailer</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={8}
+                  step={1}
+                  value={selectedEighths}
+                  onChange={(event) => setSelectedEighths(Number(event.target.value))}
+                  aria-valuetext={`${selected.eighths === 0 ? "Minimum load" : selected.label}, ${selected.volume}, $${selected.price}`}
+                  className="h-8 w-full cursor-pointer accent-primary"
+                />
+              </label>
+              <div className="flex justify-between text-xs font-bold uppercase tracking-wide text-muted-foreground" aria-hidden="true">
+                <span>Minimum</span>
+                <span>Drag to fill</span>
+                <span>Full</span>
               </div>
             </div>
 
