@@ -1,83 +1,95 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import { loadByEighths, priceText } from "@/lib/price-guide";
-import clipYard from "@/assets/load-clip-yard.mp4";
-import posterYard from "@/assets/load-clip-yard.webp";
-import clipCouch from "@/assets/load-clip-couch.mp4";
-import posterCouch from "@/assets/load-clip-couch.webp";
-import clipFridge from "@/assets/load-clip-fridge.mp4";
-import posterFridge from "@/assets/load-clip-fridge.webp";
-import clipJunk from "@/assets/load-clip-junk.mp4";
-import posterJunk from "@/assets/load-clip-junk.webp";
+import animYard from "@/assets/load-anim-yard.webp";
+import stillYard from "@/assets/load-still-yard.webp";
+import animCouch from "@/assets/load-anim-couch.webp";
+import stillCouch from "@/assets/load-still-couch.webp";
+import animFridge from "@/assets/load-anim-fridge.webp";
+import stillFridge from "@/assets/load-still-fridge.webp";
+import animJunk from "@/assets/load-anim-junk.webp";
+import stillJunk from "@/assets/load-still-junk.webp";
+import animFull from "@/assets/load-anim-full.webp";
+import stillFull from "@/assets/load-still-full.webp";
 
-// Short silent clips rendered from the 3D model of our trailer. Prices are never baked into the
-// video: they are written here as tokens so they always match the crew app price list.
+// Short looping animations rendered from the 3D model of our trailer, with transparent backgrounds
+// so the trailer sits directly on the page. Prices are never baked into the pictures: they are
+// written here as tokens so they always match the crew app price list.
 const cards = [
   {
-    clip: clipYard,
-    poster: posterYard,
-    label: "A 3-foot cube, then the trailer filling one eighth at a time",
+    anim: animYard,
+    still: stillYard,
+    alt: "Our dump trailer filling one eighth at a time, starting from a single cubic yard",
     title: "What a cubic yard is",
     text: "A cubic yard is a cube 3 feet on each side. Our trailer holds about [[yards]] of them, and we price in eighths of the trailer.",
   },
   {
-    clip: clipCouch,
-    poster: posterCouch,
-    label: "One couch loaded at the front of the trailer",
+    anim: animCouch,
+    still: stillCouch,
+    alt: "One couch loaded at the front of the trailer, taking up a quarter of the bed",
     title: "One couch",
     text: "A couch takes up about a quarter of the trailer. On its own, a 2 to 3 seat couch is [[item:couch-small]].",
   },
   {
-    clip: clipFridge,
-    poster: posterFridge,
-    label: "One full-size fridge standing at the front of the trailer",
+    anim: animFridge,
+    still: stillFridge,
+    alt: "One full-size fridge standing at the front of the trailer, taking up an eighth of the bed",
     title: "One fridge",
     text: "A full-size fridge takes up about an eighth of the trailer. On its own it is [[item:fridge-full]].",
   },
   {
-    clip: clipJunk,
-    poster: posterJunk,
-    label: "Boxes, bags and small furniture filling a quarter of the trailer",
+    anim: animJunk,
+    still: stillJunk,
+    alt: "Boxes, bags and small furniture filling a quarter of the trailer",
     title: "A typical household pickup",
     text: "Boxes, bags and a few pieces of furniture usually fill about a quarter of the trailer: [[quarter-volume]] for [[load:2]].",
   },
+  {
+    anim: animFull,
+    still: stillFull,
+    alt: "The trailer filled front to back with furniture, boxes and bags",
+    title: "A full trailer",
+    text: "A whole-house or garage cleanout can fill the trailer front to back: about [[yards]] cubic yards for [[load:8]].",
+  },
 ];
 
-/** Plays only while it is on screen, and never autoplays for visitors who asked for less motion. */
-function LoadClip({ clip, poster, label }: { clip: string; poster: string; label: string }) {
-  const ref = useRef<HTMLVideoElement>(null);
+/**
+ * Shows the finished still until the card is on screen, then swaps in the animation.
+ * Visitors who asked for less motion keep the still.
+ */
+function LoadAnimation({ anim, still, alt }: { anim: string; still: string; alt: string }) {
+  const ref = useRef<HTMLImageElement>(null);
+  const [playing, setPlaying] = useState(false);
   useEffect(() => {
-    const video = ref.current;
-    if (!video) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
-      video.controls = true;
-      return;
-    }
+    const image = ref.current;
+    if (!image || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let cancelled = false;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) void video.play().catch(() => { video.controls = true; });
-          else video.pause();
+          if (!entry.isIntersecting) { setPlaying(false); continue; }
+          // Download the animation first so the still never flashes empty.
+          const loader = new Image();
+          loader.onload = () => { if (!cancelled) setPlaying(true); };
+          loader.src = anim;
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.4 },
     );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+    observer.observe(image);
+    return () => { cancelled = true; observer.disconnect(); };
+  }, [anim]);
   return (
-    <video
+    <img
       ref={ref}
-      src={clip}
-      poster={poster}
-      width={960}
-      height={540}
-      muted
-      loop
-      playsInline
-      preload="none"
-      aria-label={label}
-      className="aspect-video w-full bg-muted object-cover"
+      src={playing ? anim : still}
+      alt={alt}
+      width={800}
+      height={600}
+      loading="lazy"
+      decoding="async"
+      className="aspect-[4/3] w-full object-contain"
     />
   );
 }
@@ -100,21 +112,19 @@ export function WhatFits() {
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">What fits</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">See What You're Paying For</h2>
           <p className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg">
-            These clips use a model of our real trailer, built from its measurements, to show how much space common loads take up.
+            These use a model of our real trailer, built from its measurements, to show how much space common loads take up.
           </p>
         </div>
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-12">
           {cards.map((card) => (
-            <li key={card.title} className="overflow-hidden rounded-lg border border-border bg-card">
-              <LoadClip clip={card.clip} poster={card.poster} label={card.label} />
-              <div className="p-5">
-                <h3 className="text-lg font-bold">{card.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">{fill(card.text)}</p>
-              </div>
+            <li key={card.title} className="w-full text-center sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+              <LoadAnimation anim={card.anim} still={card.still} alt={card.alt} />
+              <h3 className="mt-3 text-xl font-bold">{card.title}</h3>
+              <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-muted-foreground">{fill(card.text)}</p>
             </li>
           ))}
         </ul>
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-5 text-muted-foreground">
+        <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-5 text-muted-foreground">
           Sizes are typical examples. Your price is confirmed from photos or on site before we load anything.
         </p>
       </div>
