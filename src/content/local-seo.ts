@@ -44,7 +44,8 @@ export const SERVICE_BENEFIT: Record<string, string> = {
   "appliance-removal": "Haul-Away & Recycling",
   "hot-tub-removal": "Cut Up & Hauled Away",
   "light-demolition": "Tear-Down & Haul-Away",
-  "deck-and-fence-removal": "Tear-Down & Haul-Away",
+  "deck-removal": "Tear-Down & Haul-Away",
+  "fence-removal": "Posts Hauled Away",
   "construction-debris-removal": "Fast Job-Site Cleanup",
   "yard-and-landscaping-debris": "Fast Yard Cleanup",
   "garage-cleanouts": "One-Visit Cleanouts",
@@ -65,6 +66,7 @@ export const CITY_SERVICE_DESCRIPTION: Record<string, string> = {
   "electronics-and-e-waste-removal": `Electronics and e-waste removal in {City}, CO. TVs, computers and monitors picked up and recycled. Free quote: ${PHONE}.`,
   "commercial-junk-removal": `Commercial junk removal in {City}, CO. Offices, retail and property-manager turnovers cleared fast. Free quote: ${PHONE}.`,
   "construction-debris-removal": `Construction debris removal in {City}, CO. Drywall, lumber, flooring and remodel debris hauled away. Free quote: ${PHONE}.`,
+  "deck-removal": `Deck removal in {City}, CO. Wood and composite decks taken apart and hauled away, including stairs and railings. Free quote: ${PHONE}.`,
 };
 
 /** Hub titles that should not use the shared pattern. */

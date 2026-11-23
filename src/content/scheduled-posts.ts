@@ -68,25 +68,6 @@ export type ScheduledPost = {
 
 export const SCHEDULED_POSTS: ScheduledPost[] = [
   {
-    slug: "yard-waste-brush-removal-cost-parker",
-    title: "Yard Waste and Brush Removal Cost in Parker, CO",
-    meta_description:
-      "What yard waste and brush removal costs in Parker, what counts as yard debris, and how we cleared a chicken coop and brush piles. Free photo quote.",
-    publish_at: "2026-11-04T14:00:00.000Z",
-    content_html: `<h1>Yard Waste and Brush Removal Cost in Parker, CO</h1>
-<p>Yard waste and brush removal in Parker is priced by how much of our trailer it fills. Small piles start at our [[min]] minimum. A quarter trailer is about [[load:2]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Send a couple of photos and you get a firm number before we show up.</p>
-<h2>What counts as yard debris</h2>
-<p>Most curbside pickups won't take a big pile of yard waste, and it fills a truck bed fast. Our <a href="/services/yard-and-landscaping-debris">yard and landscaping debris removal</a> takes branches, limbs and brush, storm damage, old sod, dirt and landscape rock, leaves and clippings, planters and edging, and old playground equipment.</p>
-<p>You don't need to bag or cut anything. Leave the pile as it is. We don't cut down trees, but we haul away what is already cut or fallen.</p>
-<h2>How the price works</h2>
-<p>We price by the space your pile takes up in our 16-foot trailer, not by the hour. That covers labor, loading, hauling and disposal fees, and we agree on the price before we load anything. Heavy material like dirt and rock is priced by weight. You can see the full breakdown on our <a href="/pricing">pricing page</a>.</p>
-<h2>A real job: a chicken coop and piles of brush</h2>
-<p>A customer reached out about some yard debris he needed gone. When we got there, it was a chicken coop, plus several piles of brush spread across his land. We took the coop down, hauled it away, and cleared every brush pile.</p>
-<p>That happens a lot. People say yard debris and mean a whole structure. If there is a shed, coop, fence or playset in the mix, put it in your photos. Our <a href="/services/light-demolition">light demolition service</a> takes it down and hauls it in the same visit.</p>
-<h2>Serving Parker and the south metro</h2>
-<p>We work out of Parker and cover the Denver metro. See everything we do on our <a href="/service-areas/parker">Parker junk removal page</a>, or skip ahead and get a <a href="/instant-estimate">free photo quote</a>.</p>`,
-  },
-  {
     slug: "christmas-tree-disposal",
     title: "Christmas Tree Disposal in Parker and Denver: Every Option",
     meta_description:
@@ -191,6 +172,287 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
         question: "How much does Christmas tree pickup cost?",
         answer:
           "A single tree is a minimum load for us, [[min]]. If you add other junk, the price is based on how much of the trailer it fills, and a quarter trailer runs about [[load:2]]. Ask about our curbside discount if the tree is already at the curb.",
+      },
+    ],
+  },
+  {
+    slug: "previous-owner-left-junk",
+    title: "Previous Owner Left Junk Behind? What to Do After Closing",
+    meta_description:
+      "Previous owner left junk in your new house? What to do after closing in Colorado: photos, your contract, the seller, and quick haul-away near Denver.",
+    publish_at: "2026-11-18T14:00:00.000Z",
+    hero: {
+      src: "/blog/previous-owner-left-junk/hero.webp",
+      alt: "Basement in a Parker home filled with boxes, shelving, a cabinet, a trash can and a bin of cables as an EZ Haulaway crew member walks through before a cleanout",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Previous Owner Left Junk Behind? What to Do After Closing</h1>
+<p>If the previous owner left junk in your new house, start with photos of everything, then have your real estate agent contact the seller's agent before you throw anything out. Check your contract for what was supposed to stay. Then decide whether the seller picks it up, pays for removal, or you just have it hauled so you can move in.</p>
+<p>One of our first big jobs started with a call from a buyer's agent. The sellers had left a basement full of couches, boxes and junk, and we cleared it the same day so the new owners could move into a clean house. Here's how to handle it, step by step, with the Colorado details that matter.</p>
+<h2>What should you do first when the previous owner left stuff in the house?</h2>
+<p>Don't start hauling yet. Walk every room, the garage, the basement, the attic, any shed and the yard, and take photos or a video of everything the seller left. Write a simple list. Then call your agent. That record is what you'll lean on if you ask the seller to come back for it or to pay for removal.</p>
+<p>Good places to check, because sellers forget them most:</p>
+<ul>
+<li>Garage rafters, shelving and the corners behind the water heater</li>
+<li>Basement storage rooms and under the stairs</li>
+<li>Attic and crawl space</li>
+<li>Kitchen cabinets, closets and bathroom vanities</li>
+<li>Sheds, side yards and the area under a deck</li>
+</ul>
+<h2>Is a seller allowed to leave things behind in Colorado?</h2>
+<p>Only what the contract says stays. Colorado real estate brokers generally have to use the Real Estate Commission's standard Contract to Buy and Sell Real Estate. It lists inclusions that convey with the house and says the property is delivered in the condition it was in on the contract date, ordinary wear and tear excepted. The seller's leftover boxes aren't inclusions unless someone wrote them in.</p>
+<p>Some things are supposed to stay, though, and people are sometimes surprised by them. Under the 2026 version of the form, items like window coverings, curtain rods, fireplace screens and storage sheds are included if they were on the property on the contract date, unless they were excluded. Read the inclusions and exclusions with your agent before you decide what counts as junk.</p>
+<p>One more check: if you signed a Post-Closing Occupancy Agreement (a rent-back), that agreement controls when the seller has to be out. Their things may still be there legitimately until it ends.</p>
+<h2>Who owns the items a seller leaves behind after closing?</h2>
+<p>It depends on your contract and on state law, so there isn't one answer that fits every closing. An agent quoted by Realtor.com says buyers own the belongings once the sale closes. Other legal guides advise giving the seller written notice first. If anything looks valuable or personal, talk to your agent or a real estate attorney before you toss it.</p>
+<p>In practice it splits into two piles. Obvious trash, like broken furniture, old carpet and bags of garbage, is rarely something anyone comes back for. Things with real value, family photos, paperwork, tools or a working appliance, are worth a message through the agents first. A short, polite deadline in writing ("please arrange pickup by this date or we'll donate or dispose of it") keeps everybody on the same page.</p>
+<h2>Can you make the seller pay to haul it away?</h2>
+<p>Sometimes. If the contract required the house to be left in a certain condition and it wasn't, your agent or a real estate attorney can ask the seller to cover a reasonable removal bill. Keep the before photos and the invoice.</p>
+<p>If they won't, Colorado's county courts have a <a href="https://www.coloradojudicial.gov/self-help/opening-case" rel="noopener">small claims division</a> for disputes of 7,500 dollars or less, without a jury. Whether that's worth your time depends on the amount. For a single trailer load, it may make more sense to skip the court date and just get it done. Either way, this is a question for your agent or a real estate attorney, not your junk hauler.</p>
+<img src="/blog/previous-owner-left-junk/basement-before-after.webp" alt="Before and after of a basement cleanout we did in Parker: boxes, shelving, a cabinet and a bin of cables on the left, the same basement empty and swept on the right" width="1600" height="900" loading="lazy">
+<h2>How do you avoid this at the final walk-through?</h2>
+<p>Use the walk-through. Colorado's standard contract gives buyers the right, with reasonable notice, to walk through the property before closing and check that it matches the contract. Open every closet, cabinet, storage room and the garage. If stuff is still there, say so before you sign, not after you have the keys.</p>
+<p>If you find things at the walk-through, your agent has more options then than later. They can ask the seller to clear it before closing, write a removal deadline into the contract's additional provisions, or ask for money held back at closing to cover the haul-off. A verbal "we'll come back for it" is easy to forget once the seller's truck is gone.</p>
+<h2>How much does it cost to haul away what the previous owner left?</h2>
+<p>We price by how much space the items take in our 14-cubic-yard dump trailer, not by the hour. Small loads start at our [[min]] minimum. A quarter trailer is about [[load:2]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. That covers the labor, loading, hauling and disposal fees. See the full breakdown on our <a href="/pricing">pricing page</a>.</p>
+<p>A few things in the garage is often a small load. A furnished basement is more. Send photos through our <a href="/instant-estimate">instant estimate</a> and you'll know the number before we show up.</p>
+<h2>What if the seller left paint, chemicals or a full house?</h2>
+<p>Leftover paint cans and garage chemicals are common, and they're one thing we can't take. Paint, solvents, chemicals, fuel, oil and propane tanks need a licensed disposal facility. We'll haul everything else around them. If you aren't sure about an item, text us a photo and we'll tell you straight.</p>
+<p>A full house is a different job. Our <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a> cover every room, the basement, the garage and the yard, with one firm price for the whole job before we start, even when it takes several loads. A multi-load job usually starts within a day or two. We sort out what can be donated or recycled along the way.</p>
+<h2>Realtors: who handles it when sellers leave junk at closing?</h2>
+<p>Agents call us when a closing gets tense because a house isn't empty. Our <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a> cover post-closing and seller-left-behind jobs for agents and attorneys. Send the address, the deadline and a few photos. We quote the whole job up front, take before and after photos for your file, and can invoice your brokerage.</p>
+<p>We'll tell you honestly whether we can meet a date. We also carry general liability insurance, and a certificate is available on request, which a lot of agents ask for before the first job.</p>
+<h2>Do you have to put leftover junk at the curb yourself?</h2>
+<p>No. We do all the lifting and loading from wherever it is, including basements, attics and backyards. That matters in the south metro, because Douglas County doesn't provide residential curbside trash pickup. If you want to set a pile out, check with your HOA or trash hauler first about what they'll pick up.</p>
+<p>If it's already at the curb, ask about our curbside discount. Ben spent about six years in construction, including leading a deck-building crew, before starting EZ Haulaway in 2026, so old lumber, tile and leftover building materials in a garage don't scare us either. For smaller leftovers, see our <a href="/services/garage-cleanouts">garage cleanouts</a> and <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a>.</p>
+<h2>Need it gone?</h2>
+<p>We're a family-owned, insured junk removal company based in Parker, and we serve Castle Rock, Highlands Ranch, Lone Tree, Castle Pines, Aurora, Denver and the rest of the metro. If you just closed on a house in town, here's our <a href="/service-areas/parker">Parker junk removal</a> page.</p>
+<p>Call or text us at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send a few photos and we'll text back a free quote, or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. Jobs start at our [[min]] minimum. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "Can I throw away things the previous owner left?",
+        answer:
+          "Clear trash like broken furniture or garbage bags is usually fine to get rid of. For anything valuable or personal, like photos, paperwork, tools or working appliances, take photos and have your agent contact the seller's agent first. If you're unsure, ask a real estate attorney before you toss it.",
+      },
+      {
+        question: "Does the seller's storage shed stay with the house in Colorado?",
+        answer:
+          "Usually, yes. Colorado's standard residential contract lists storage sheds as included if they were on the property on the contract date, unless they were excluded. Check the inclusions and exclusions in your contract. If you don't want the shed, we can tear it down and haul it away.",
+      },
+      {
+        question: "What does the final walk-through check in Colorado?",
+        answer:
+          "Colorado's standard contract gives the buyer the right, with reasonable notice, to walk through before closing and confirm the property and inclusions are in the condition the contract requires. Use it to open every closet, cabinet, storage room and the garage so leftover items get handled before you sign.",
+      },
+      {
+        question: "Can my real estate agent help if the seller left junk behind?",
+        answer:
+          "Yes, and they're the right first call. Your agent can reach the seller's agent, ask the seller to pick things up by a set date, or ask them to cover a removal bill. Send your agent your photos and a list of what was left.",
+      },
+      {
+        question: "How much does it cost to remove what the seller left behind?",
+        answer:
+          "We price by how much of our trailer it fills. Small loads start at [[min]], a quarter trailer is about [[load:2]], a half trailer about [[load:4]] and a full trailer about [[load:8]]. That includes labor, loading, hauling and disposal. Send photos for a firm quote.",
+      },
+      {
+        question: "Will you take paint and chemicals the previous owner left?",
+        answer:
+          "No. Paint, solvents, chemicals, fuel, oil and propane tanks need a licensed disposal facility, so we leave those. We'll haul the furniture, boxes, appliances and other junk around them, and we'll tell you if we're unsure about an item.",
+      },
+      {
+        question: "How fast can you clear a house after closing?",
+        answer:
+          "Smaller jobs can often be done quickly, and a multi-load whole-house cleanout usually starts within a day or two. Tell us your move-in date and we'll say honestly whether we can meet it. You get one firm price for the whole job before we start.",
+      },
+    ],
+  },
+  {
+    slug: "kitchen-cabinet-removal-cost",
+    title: "Kitchen Cabinet Removal Cost: Tear-Out and Haul-Away",
+    meta_description:
+      "Kitchen cabinet removal cost in Parker and the south Denver metro: tear-out and haul-away priced by trailer space, ReStore donation rules and lead paint.",
+    publish_at: "2026-11-20T14:00:00.000Z",
+    hero: {
+      src: "/blog/kitchen-cabinet-removal-cost/hero.webp",
+      alt: "Worker in a dust mask carrying out an old base cabinet with its laminate countertop during a kitchen tear-out, with the upper cabinets already removed",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Kitchen Cabinet Removal Cost: Tear-Out and Haul-Away</h1>
+<p>Kitchen cabinet removal cost with us comes down to two things. How much of my trailer the old cabinets and debris take up, and how much tear-out work there is if we're the ones pulling them off the wall. Haulaway starts at [[min]]. A quarter trailer runs about [[load:2]] and a half about [[load:4]], and loading, hauling and dump fees are all in there. If there's tear-out, I add that time to the quote so you get one number before we start.</p>
+<p>I'm Ben, I own EZ Haulaway here in Parker. I spent about six years in construction before this, and part of that was leading a deck crew. Pulling a run of cabinets off a wall is normal work for me.</p>
+<h2>How much does kitchen cabinet removal cost?</h2>
+<p>We price by trailer space, not by the linear foot. Our 16-foot dump trailer holds about 14 cubic yards. Small loads start at [[min]]. A quarter trailer is about [[load:2]], half is about [[load:4]], three-quarters about [[load:6]] and a full trailer about [[load:8]]. Loading, hauling and disposal are included.</p>
+<p>Tear-out is separate. If we're the ones taking the cabinets down, that's extra labor at [[labor]] per hour per crew member. I put it in the quote up front. Totally understand if you'd rather pull them yourself and save on labor. Then it's just the haulaway.</p>
+<p>National guides like Angi price cabinet removal by the linear foot or by the hour, then tell you to budget for debris removal on top of that. With us it's one total. Send me a couple photos and I'll get you a number, and we lock in the exact price on site before anything comes off the wall. Full breakdown's on our <a href="/pricing">pricing page</a>.</p>
+<p>Here's a real one. A customer sent screenshots of a remodel pile with wood, old cabinets, drywall, some checkerboard tile and a set of stairs. Plus two toilets and a dishwasher. Just from the photos I figured it at a half to five-eighths of the trailer.</p>
+<p>So when you're pricing cabinet removal, look at the whole pile, not just the boxes.</p>
+<p>To be straight with you, full kitchen tear-outs haven't been a big part of our work yet. We opened in June 2026, and 6 of the 39 jobs we've finished since then were construction debris or heavy stuff like concrete and tile. A recent one was about 6 cubic yards of wood, fencing, and stone and tile pieces out of a backyard in Aurora. I quoted it by text off the customer's photos.</p>
+<h2>What changes the price of a cabinet tear-out?</h2>
+<p>Mostly four things. Are we tearing them out or just hauling them? What are the countertops made of? Is there tile? And how far do we carry it all to the trailer? A few uppers in a condo isn't the same job as a full kitchen with an island and stone tops, so the quote follows what you've actually got.</p>
+<ul>
+<li><strong>Tear-out or haul only.</strong> If you or your remodeler already pulled them, that's a <a href="/services/construction-debris-removal">construction debris removal</a> job and it's less work for us. If we're taking them off the wall, it's <a href="/services/light-demolition">light demolition</a>.</li>
+<li><strong>Countertops.</strong> Laminate is light. Granite and quartz are way heavier, so send a photo and I'll tell you how we'll price them.</li>
+<li><strong>Backsplash and tile.</strong> Tile counts as heavy material, [[adj:heavy]] per cubic yard with a 2-yard minimum. It fills the trailer by weight long before it fills it by space.</li>
+<li><strong>Stairs and long carries.</strong> No stair charge. I just need to know about it so we plan the time.</li>
+<li><strong>Everything else.</strong> The old dishwasher, flooring, drywall and trim can ride in the same load.</li>
+</ul>
+<h2>Do I need to disconnect the sink and appliances first?</h2>
+<p>Yes. We don't do plumbing or electrical. Before we pull base cabinets, have a plumber shut off and cap the sink and dishwasher lines, and get an electrician for anything hardwired. Gas range going too? Have a pro disconnect it. After that the cabinets, the sink and the old <a href="/services/appliance-removal">appliances</a> can all go in one trip.</p>
+<p>Empty the cabinets before we get there. Dishes, food, the stuff under the sink, all of it. Cleaners, paint or any other chemicals can't go in our trailer, so just set those aside.</p>
+<h2>How long does it take to remove kitchen cabinets?</h2>
+<p>Should take a few hours to a day. That's the range for most of our light demolition jobs. A small kitchen with the plumbing already capped is on the quicker end, and a big one with an island, stone tops and a tile backsplash takes longer. I'll tell you which one yours looks like from your photos.</p>
+<p>We take the uppers down first, then the countertops, then the base cabinets. We load as we go so nothing piles up in your house.</p>
+<p>I've spent a lot of years taking decks apart, and in my experience anything that went together with screws comes apart the same way, just backwards. A cabinet box is no different.</p>
+<p>Someone should walk the kitchen with us at the start so we know what stays. When we leave, the debris is gone and the floor's swept.</p>
+<img src="/blog/kitchen-cabinet-removal-cost/cabinets-pulled.webp" alt="Kitchen mid tear-out with the upper cabinets gone, base cabinets pulled from the wall, a stainless sink on the floor and a reciprocating saw nearby" width="1600" height="900">
+<h2>Can old kitchen cabinets be donated in Denver?</h2>
+<p>Yes, if they're in decent shape. Habitat for Humanity of Metro Denver's ReStores take cabinet sets, single cabinets and vanities, as long as every door and drawer is attached, the boxes are structurally sound and no nails or screws are sticking out. Loose cabinet parts by themselves are a no, and staff make the final call in person.</p>
+<p>For most of Parker the closest one is the Aurora ReStore at 1640 S. Abilene St. There are also stores in Denver, Littleton and Arvada. Donation docks are open every day from 10 a.m. to 5:30 p.m.</p>
+<p>Habitat does have a standard pickup, but it costs a fee and those drivers can't come inside. The cabinets need to already be in the garage or driveway. Check their <a href="https://habitatmetrodenver.org/restore/donate/donate-guide/" rel="noopener">donation guidelines</a> before you go.</p>
+<p>If you want to donate, they have to come off clean. That means unscrewing them from the wall and from each other, not prying them off. Let me know ahead of time and we'll take them down carefully and set the good ones aside.</p>
+<p>We separate out metal for recycling and donate reusable stuff whenever we can. Honestly, I'd rather see a solid set of oak cabinets end up in somebody's garage than in the landfill.</p>
+<h2>Where do cabinets go if they can't be reused?</h2>
+<p>Water damaged, swollen, or broke coming off the wall? Then they go to a licensed disposal site with the rest of the debris. For us that's a landfill like the one in Sedalia, where we've taken loads, or the Denver Arapahoe Disposal Site in Aurora that the Town of Parker points residents to. Either way, you're not hauling it.</p>
+<p>That matters out here. The Town of Parker doesn't provide trash service, and Douglas County doesn't have residential curbside pickup. A pile of remodel debris in a south metro garage doesn't really have an easy way out.</p>
+<img src="/blog/kitchen-cabinet-removal-cost/loading-the-trailer.webp" alt="EZ Haulaway crew member in a company T-shirt carrying a load to our black dump trailer parked on a residential street" width="1080" height="1350">
+<h2>Should I hire a junk removal company or rent a dumpster?</h2>
+<p>My take: a dumpster makes sense when a remodel runs for weeks and your crew is filling it every day. If the cabinets are coming out in one day, a haulaway is easier. We do the tear-out and the loading, and nothing sits in your driveway for a week. Our <a href="/services/dumpster-rental-alternative">dumpster rental alternative</a> page goes over how they compare.</p>
+<p>Some remodel calls are a mix. One customer in Parker wanted a couple of sectional pieces, a dresser, a bathroom vanity top, cabinets and some construction debris gone all at once.</p>
+<p>One load, one price. Not three separate pickups.</p>
+<h2>Do you remove cabinets in older homes?</h2>
+<p>Tell me what year your house was built before we schedule. The EPA lists removing kitchen cabinets as work that can disturb paint. In homes built before 1978, its Renovation, Repair and Painting Rule says anyone paid to do that work generally has to be a lead-safe certified firm. We're not an EPA lead-safe certified firm.</p>
+<p>So if your place is pre-1978 and the cabinets or the walls around them are painted, we'll leave that tear-out to a certified renovator or pass on that part of the job.</p>
+<p>We also don't remove asbestos, mold or lead paint, and we don't take out walls. Cabinets that are just storage come out. A wall holding up the floor above stays put.</p>
+<h2>Do you remove cabinets from offices and businesses?</h2>
+<p>Yes. Break room and storage cabinets that are screwed to the wall come out the same way a kitchen does. We can plan around your hours, early mornings included, so your team isn't working around us. See our <a href="/services/commercial-junk-removal">commercial junk removal</a> page, or just send photos and I'll quote it the same way.</p>
+<h2>Need it gone?</h2>
+<p>We're family-owned, insured and based in Parker. We do junk removal and light demolition all over the south metro, including <a href="/service-areas/highlands-ranch">Highlands Ranch</a>, <a href="/service-areas/castle-rock">Castle Rock</a> and <a href="/service-areas/aurora">Aurora</a>. If you're in town, here's our <a href="/service-areas/parker">Parker junk removal</a> page and our <a href="/service-areas/parker/construction-debris-removal">Parker construction debris removal</a> page.</p>
+<p>Call or text me at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send me a couple photos of the kitchen and I'll text back a price, or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. Jobs start at our [[min]] minimum. Let me know if you have any questions. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "Can you haul the cabinets, drywall and tile from my remodel in one trip?",
+        answer:
+          "Yes, as long as it fits in the trailer. Cabinets, drywall, wood and tile can all go in one load for one price. One remodel pile I quoted from photos, with cabinets, drywall, tile and stairs, came out to a half to five-eighths of the trailer. Tile is priced as heavy material, so send me a photo of it.",
+      },
+      {
+        question: "Can you take the old dishwasher and toilets with the cabinets?",
+        answer:
+          "Yep. Old appliances and fixtures can go in the same load as the cabinets. Just have a plumber shut off and cap the water lines first, since we don't do plumbing or electrical. Send me a couple photos and it all goes on one quote.",
+      },
+      {
+        question: "Can you carry the debris down the stairs for me?",
+        answer:
+          "Yes. We do all the carrying and loading. Upstairs, basement, garage, backyard, doesn't matter. There's no stair charge. Just mention the stairs when you send photos so we plan the time.",
+      },
+      {
+        question: "How much does it cost to remove kitchen cabinets?",
+        answer:
+          "We price the haulaway by how much of our 14-cubic-yard trailer the job fills. Small loads start at [[min]], a quarter trailer is about [[load:2]], half about [[load:4]] and a full trailer about [[load:8]]. If we do the tear-out, that's extra labor at [[labor]] per hour per crew member, and it's in the quote up front.",
+      },
+      {
+        question: "Will Habitat for Humanity take my old kitchen cabinets?",
+        answer:
+          "If they're in good shape, yes. Habitat for Humanity of Metro Denver's ReStores take cabinet sets, single cabinets and vanities with all the doors and drawers attached, structurally sound, with no nails or screws sticking out. Loose cabinet parts by themselves won't work, and staff approve every donation in person.",
+      },
+      {
+        question: "Do you remove painted cabinets in older homes?",
+        answer:
+          "Tell me the year your home was built. EPA rules generally require a lead-safe certified firm for paid work that disturbs paint in homes built before 1978, and removing kitchen cabinets is one of EPA's examples. We're not a certified firm, so we leave that work to a certified renovator.",
+      },
+      {
+        question: "Do I need a permit to remove kitchen cabinets?",
+        answer:
+          "We don't pull permits. If the cabinets are part of a bigger remodel, check with the Town of Parker or your county building department about what the whole project needs before anybody starts.",
+      },
+    ],
+  },
+  {
+    slug: "estate-cleanout-cost",
+    title: "Estate Cleanout Cost in Parker and the South Metro",
+    meta_description:
+      "Estate cleanout cost in Parker and the south Denver metro, priced by trailer space. What drives the price, what to donate first and how to get a quote.",
+    publish_at: "2026-11-22T14:00:00.000Z",
+    hero: {
+      src: "/blog/estate-cleanout-cost/hero.webp",
+      alt: "EZ Haulaway crew member tipping a gray reclining sofa onto a hand truck outside a townhome",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Estate Cleanout Cost in Parker and the South Metro</h1>
+<p>Estate cleanout cost with us depends on one thing more than anything: how much of my trailer the stuff fills. Small loads start at [[min]], half a trailer is about [[load:4]] and a full trailer is about [[load:8]]. Loading, hauling and dump fees are in that number. A full house with a garage and basement can take more than one load, so send me photos and I'll give you a real number before we start.</p>
+<p>I'm Ben. I own EZ Haulaway here in Parker, and my wife helps me run it. We're local, insured and family-owned. Estate jobs are different from a couch pickup. It's somebody's whole life in that house, so I try to keep it simple for the family.</p>
+
+<h2>How much does an estate cleanout cost?</h2>
+<p>We don't charge by the room or by the square foot. We charge by trailer space. A quarter trailer runs about [[load:2]], half about [[load:4]], three-quarters about [[load:6]] and a full trailer about [[load:8]]. That covers the carrying, loading, the drive and the landfill. If the house needs more than one full load, each extra load is priced the same way, and you hear the total before anything moves.</p>
+<p>For reference, our biggest junk jobs so far each filled most or all of the trailer. That includes a job at an old double-wide in Kiowa and others in Parker, Highlands Ranch, Aurora and Centennial. Those six were the big ones out of about 40 jobs since we opened in June. A packed house with a full garage and basement can go past one load.</p>
+<p>Want to see every price? It's all on our <a href="/pricing">pricing page</a>, and you can get a ballpark in a couple minutes on the <a href="/instant-estimate">instant estimate</a>.</p>
+
+<h2>What makes an estate cleanout cost more?</h2>
+<p>Mostly volume. Then it's the stuff that costs me more to dump. Fridges, freezers and other appliances with Freon are [[adj:freon]] each, because they have to be handled separately. Dirt, rock, tile and concrete get priced separately too. A half trailer of concrete weighs way more than a half trailer of couches, and the landfill charges by weight.</p>
+<p>Old fridges show up more than you'd think. This fall we had one job with five old fridges and another with two Freon appliances. If there's an old fridge or chest freezer in the garage, tell me up front so it's in the quote.</p>
+<p>Stairs matter too. Carrying a basement full of boxes up one at a time is slower than loading a garage. That goes into the price I give you, so there's no add-on at the end.</p>
+
+<h2>What does a typical estate cleanout request look like?</h2>
+<p>Here's a real one from this month, no names. Someone filled out our form and said they were "just getting prices." The list: a two-car garage with an old refrigerator, lots of kids' toys and baby items, bunk beds in great shape, a couple dressers, a couch and loveseat under 10 years old, plus some stuff upstairs.</p>
+<p>Honestly that's what most of these look like. Some trash, some stuff somebody could use, and one old fridge. The bunk beds and a newer couch shouldn't go to the landfill if somebody can use them. So yeah, send me photos of all of it. Not just the big stuff.</p>
+<img src="/blog/estate-cleanout-cost/table.webp" alt="EZ Haulaway crew member carrying a dark wood table upside down on his shoulder down a sidewalk" width="1600" height="900">
+
+<h2>Can I sell or donate things before the cleanout?</h2>
+<p>Yes, and you should if there's time. Anything the family sells or donates first is stuff you're not paying to haul. Family takes what they want first. Then sell what's worth selling, donate what you can, and call me for the rest.</p>
+<p>Habitat for Humanity of Metro Denver ReStores take gently used furniture and household goods. They have ReStores in Denver, Littleton, Arvada and Aurora, and they'll pick up for a small fee. Two catches. Their crews can't go inside the house, so items have to be outside or in the garage. And they don't take mattresses, electronics, paint or appliances that don't work.</p>
+<p>Stuff we haul doesn't all go to the dump either. If it's still good, I set it aside. This month we sold a couch and a couple other things we hauled on Facebook Marketplace, and my wife sometimes meets the buyers. And honestly, if I see something worth real money, I'll tell you. You should be the one selling it, not me.</p>
+
+<h2>Where does estate junk go in Douglas County?</h2>
+<p>Douglas County has no county trash pickup. Most homes here use a private hauler or an HOA contract, and regular trash service isn't set up for a garage full of furniture. Regular junk from our jobs goes to the Sedalia landfill or the WM site in Aurora.</p>
+<p>Some things shouldn't go in the trailer at all. Douglas County GreenWorks in Sedalia takes household hazardous waste and electronics for free from county residents. You need an appointment and proof of residency. We don't haul paint, solvents, chemicals, fuel or propane tanks, so those go there. TVs and other electronics we can take, or county residents can drop them at GreenWorks.</p>
+
+<h2>Who has to approve the cleanout?</h2>
+<p>Make sure the right person says yes first. In Colorado, when an estate goes through probate, the court appoints a personal representative. That person has authority over the estate's property, including the house contents. I'm not a lawyer, so if there's any question about who gets what, sort that out first. Once the stuff is in my trailer, it's gone.</p>
+<p>Get the family's keep list settled before you book. It makes the day a lot easier.</p>
+
+<h2>How do I get an exact price for an estate cleanout?</h2>
+<p>Send me a couple photos of every room, the garage, the basement and any sheds. Text them to (720) 614-7223, or use the <a href="/instant-estimate">instant estimate</a>. Send me the job details and I'll get you a number.</p>
+<p>For a bigger house I'll come walk it. Earlier this month I walked a Parker job on a Tuesday, gave a price on site, and we had it cleared that Friday. A walkthrough also lets you point at what stays, what goes and what to set aside.</p>
+<p>If you're a realtor or attorney handling the estate for a family, I'm happy to work with you directly.</p>
+
+<h2>What we'll do on the day</h2>
+<p>We walk it with you or whoever has the keys and confirm the price. Then my crew starts carrying. If you told me to watch for papers, photos or anything else, we set it aside instead of tossing it.</p>
+<p>We handle full <a href="/services/house-and-estate-cleanouts">house and estate cleanouts</a>, plus <a href="/services/garage-cleanouts">garage cleanouts</a> and basement and attic cleanouts on their own. We work Parker, <a href="/service-areas/castle-rock">Castle Rock</a>, <a href="/service-areas/highlands-ranch">Highlands Ranch</a>, Aurora, Denver and the rest of the south metro. Not sure if we take something? Check <a href="/what-we-take">what we take</a>.</p>
+
+<h2>Need it gone?</h2>
+<p>Call or text me at (720) 614-7223 with a few photos, or get a price on the <a href="/instant-estimate">instant estimate</a>. Small jobs start at [[min]]. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "How much does an estate cleanout cost in Parker?",
+        answer:
+          "We price by trailer space. Small loads start at [[min]], half a trailer is about [[load:4]] and a full trailer is about [[load:8]], with loading, hauling and dump fees included. A full house with a garage and basement can need more than one load. Send photos and I'll give you the total before we start.",
+      },
+      {
+        question: "Is an estate cleanout cheaper if I donate things first?",
+        answer:
+          "Yes. Anything sold, donated or kept by family first is space you aren't paying for in my trailer. Habitat for Humanity of Metro Denver ReStores take gently used furniture, but their crews won't go inside, so items need to be outside or in the garage.",
+      },
+      {
+        question: "Do you charge extra for old refrigerators and freezers?",
+        answer:
+          "Yes. Appliances with Freon, like fridges, freezers and AC units, are [[adj:freon]] each on top of the load price, because they have to be handled separately. Tell me about them up front so they're in the quote.",
+      },
+      {
+        question: "Who can approve an estate cleanout in Colorado?",
+        answer:
+          "If the estate is in probate, the court-appointed personal representative has authority over the estate's property. Make sure that person signs off before anything leaves the house. If there's any question about who gets what, check with the estate's attorney first.",
+      },
+      {
+        question: "Can you take paint and chemicals from an estate garage?",
+        answer:
+          "We don't haul paint, solvents, chemicals, fuel or propane tanks. Douglas County residents can take household hazardous waste and electronics to Douglas County GreenWorks in Sedalia for free with an appointment and proof of residency.",
+      },
+      {
+        question: "Do you have to see the house before giving a price?",
+        answer:
+          "Not always. Photos of every room, the garage and the basement usually get you a solid range. For bigger houses I'll come walk it and give you a firm price on site.",
       },
     ],
   },

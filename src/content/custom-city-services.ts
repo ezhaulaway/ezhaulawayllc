@@ -30,7 +30,7 @@ const RAW_CUSTOM_PAGES: Record<
       "Hot tub removal in Castle Rock, CO. A standard spa (4–6 people) is [[item:hot-tub-standard]]. We cut up and haul out old spas, including the decks and pads they sit on. Free quotes.",
     intro: [
       "Castle Rock backyards are full of hot tubs that came with the house — and half of them haven't run in years. Whether your spa is dead, cracked, or you're reclaiming the patio in The Meadows, Founders Village or Castlewood Ranch, we remove the whole thing: shell, cabinet, cover, pump and wiring.",
-      "Most hot tubs won't fit through a gate or over a fence in one piece, so we cut them into manageable sections with a reciprocating saw, carry every piece out by hand, and load it into our 16-foot dump trailer. You don't touch anything — we disconnect, demolish, haul and sweep the pad when we're done.",
+      "Most hot tubs won't fit through a gate or over a fence in one piece, so we cut them into manageable sections with a reciprocating saw, carry every piece out by hand, and load it into our 16-foot dump trailer. A licensed electrician has to disconnect the spa first. You arrange that, or it is arranged separately. We do not do electrical work. Once it is safely disconnected, we cut, haul, and sweep the pad.",
       "A standard Castle Rock hot tub (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]. The job goes up with size, access and whether the tub is sunk into a deck. Text us a few photos and we'll give you a firm price before we ever start the saw.",
     ],
     localHeading: "Hot Tub Removal Across Castle Rock Neighborhoods",
@@ -223,23 +223,22 @@ const RAW_CUSTOM_PAGES: Record<
       ],
     ],
   },
-  "aurora/deck-and-fence-removal": {
-    description:
-      "Deck and fence tear-out in Aurora, CO. 300+ decks of construction experience. We demolish and haul old decks, rails and fence lines. Free quotes.",
+  "aurora/deck-removal": {
+    description: "Deck removal in Aurora, CO. 300+ decks of construction experience. We take down old decks, stairs and rails and haul them away. Free quotes.",
     intro: [
-      "Aurora's housing boom left thousands of aging cedar decks and leaning privacy fences, and we tear them out every week — from the older neighborhoods near Heather Ridge and Buckingham to newer builds out by Southlands where builders' grade decks are already failing.",
-      "This isn't a side service for us. Our crew comes from construction with 300+ decks of hands-on experience, so we know exactly how a deck is put together — ledger boards, joist hangers, footings and all — which means we take it apart fast, safely, and without damaging your house.",
-      "Deck and fence removal in Aurora is priced by trailer volume with a [[min]] minimum, Full deck tear-outs are a call or text for a quote. The price depends on size, height, and whether you want the footings pulled. Text photos for a firm quote before we start.",
+      "Aurora's housing boom left a lot of aging cedar decks, from the older neighborhoods near Heather Ridge and Buckingham to newer builds out by Southlands where a builder-grade deck is already failing.",
+      "This isn't a side service for us. Our crew comes from construction with 300+ decks of hands-on experience, so we know how a deck is put together — ledger boards, joist hangers, footings and all — and we take it apart without prying on your siding.",
+      "Deck removal in Aurora is quoted from photos. The price depends on size, height, and whether you want the footings pulled. A small related haul still starts at our [[min]] minimum. Text photos for a firm quote before we start. A fence on the same property is [fence removal](/services/fence-removal), and it can be the same visit when you want both.",
     ],
-    localHeading: "Deck & Fence Tear-Out Across Aurora",
+    localHeading: "Deck Tear-Out Across Aurora",
     localText: [
-      "We work all over Aurora's 160 square miles — second-story decks in Saddle Rock, ground-level cedar decks in Meadowood and Mission Viejo, and long fence lines along the Buckley corridor where wind does half the demolition for you. Tight lots, alley access and shared fence lines with neighbors are everyday situations for our crew.",
-      "If you're replacing the deck, we coordinate timing with your contractor so the old structure is gone before the new build starts. If you're just reclaiming the yard, we can pull the footings, haul the concrete, and leave you a clean, level spot ready for sod or a patio.",
+      "We work across Aurora — second-story decks in Saddle Rock, ground-level cedar decks in Meadowood and Mission Viejo, and yards along the Buckley corridor. Tight lots and alley access are everyday situations. If a privacy fence on your side of the line is coming out too, say so. Shared lines stay on your side of the property line.",
+      "If you're replacing the deck, we coordinate timing with your contractor so the old structure is gone before the new build starts. If you're reclaiming the yard, we can pull the footings or cut them at grade. We do not regrade the lot. A small load of fill after the deck is gone is [dirt, rock, and mulch delivery](/services/dirt-rock-mulch-delivery).",
     ],
     faqs: [
       [
         "How much does deck removal cost in Aurora?",
-        `Full deck tear-outs in Aurora are a call or text for a quote. The price depends on size, height off the ground, and footing removal. Fence lines are priced by the trailer load with a [[min]] minimum. Text photos to ${PHONE} for a firm quote.`,
+        `It depends on size, height off the ground, stairs, and whether the footings come out. Text photos to ${PHONE} for a firm quote before we start. Fence removal is quoted on its own if the fence is the whole job.`,
       ],
       [
         "Will tearing off the deck damage my house?",

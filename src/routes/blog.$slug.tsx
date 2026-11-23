@@ -6,8 +6,9 @@ import { HOURS_TEXT, PHONE, SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
 import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
+import { BLOG_SLUG_REDIRECTS } from "@/content/redirects";
 import { getBlogPost } from "@/lib/blog.functions";
-import { insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
+import { cleanHtml, insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
 import { fillBlogPriceJson, fillBlogPriceText } from "@/lib/blog-ez-prices";
 import { getGuide, priceText } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
@@ -16,8 +17,10 @@ import {
   applyBusinessIdentity,
   absoluteSiteUrl,
   BLOG_AUTHOR_NAME,
+  BLOG_BYLINE,
   blogDates,
   blogSchemas,
+  normalizeArticleAuthors,
 } from "@/lib/blog-schema";
 
 type Json = unknown;
@@ -55,6 +58,8 @@ const ser = (d: Json) => JSON.stringify(d).replace(/</g, "\\u003c");
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
+    const retired = BLOG_SLUG_REDIRECTS[params.slug];
+    if (retired) throw redirect({ to: "/blog/$slug", params: { slug: retired }, statusCode: 301 });
     const res = await getBlogPost({ data: { slug: params.slug } });
     if (!res.post) {
       if (res.redirectTo)
@@ -78,12 +83,14 @@ export const Route = createFileRoute("/blog/$slug")({
     const scripts = [...stored, ...(p.faq_json_ld == null ? [] : [p.faq_json_ld])]
       .map((x) => ({
         type: "application/ld+json",
-        children: ser(applyBusinessIdentity(repoint(fillBlogPriceJson(x, guide), url))),
+        children: ser(
+          applyBusinessIdentity(normalizeArticleAuthors(repoint(fillBlogPriceJson(x, guide), url))),
+        ),
       }))
       .concat(
         generated.map((x) => ({
           type: "application/ld+json",
-          children: ser(applyBusinessIdentity(x)),
+          children: ser(applyBusinessIdentity(normalizeArticleAuthors(x))),
         })),
       );
     const image = p.hero_image_url ? absoluteSiteUrl(p.hero_image_url) : null;
@@ -156,7 +163,7 @@ function BlogPost() {
           className="blog-prose mt-8"
           dangerouslySetInnerHTML={{
             __html: fillBlogPriceText(
-              optimizeBlogImages(insertPostHero(p.content_html ?? "", hero)),
+              optimizeBlogImages(insertPostHero(cleanHtml(p.content_html ?? ""), hero)),
               guide,
             ),
           }}
@@ -218,9 +225,8 @@ function PostDates({ created, updated }: { created: string | null; updated: stri
   if (!published) return null;
   const showUpdated = modified && fmtDate(modified) !== fmtDate(published);
   return (
-    <p className="mt-6 text-sm text-muted-foreground">
-      By {BLOG_AUTHOR_NAME}, EZ Haulaway · Published{" "}
-      <time dateTime={published}>{fmtDate(published)}</time>
+    <p className="mt-6 text-sm text-muted-foreground" data-author={BLOG_AUTHOR_NAME}>
+      {BLOG_BYLINE} · Published <time dateTime={published}>{fmtDate(published)}</time>
       {showUpdated ? (
         <>
           {" "}

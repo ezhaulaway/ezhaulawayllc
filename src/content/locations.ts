@@ -39,16 +39,8 @@ const raw_locations: Location[] = [
       "Parker is home base. EZ Haulaway is a family-owned crew, and a Parker job is in our own neighborhood. Call or text and you reach Ben and Zoe, the same people who put the truck on the schedule. EZ in, junk out.",
     local:
       "Share the street address, photos of what needs to go, and anything that changes the carry: stairs, a locked gate, a steep driveway, or a long walk from the backyard. Landmarks such as O’Brien Park, the PACE Center, or the historic 20 Mile House help describe the area. The address is what we use to plan the stop.",
-    nearby: [
-      "lone-tree",
-      "castle-rock",
-      "centennial",
-      "franktown",
-      "castle-pines",
-      "sedalia",
-      "elizabeth",
-    ],
-    topServices: ["deck-and-fence-removal", "garage-cleanouts", "hot-tub-removal"],
+    nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
+    topServices: ["deck-removal", "garage-cleanouts", "hot-tub-removal"],
     faqs: [
       [
         "How much does junk removal cost in Parker?",
@@ -114,7 +106,8 @@ const raw_locations: Location[] = [
           },
           { slug: "garage-cleanouts", label: "Parker garage cleanouts" },
           { slug: "hot-tub-removal", label: "Parker hot tub removal" },
-          { slug: "deck-and-fence-removal", label: "Parker deck and fence removal" },
+          { slug: "deck-removal", label: "Parker deck removal" },
+          { slug: "fence-removal", label: "Fence removal" },
         ],
       },
       {
@@ -147,9 +140,7 @@ const raw_locations: Location[] = [
         paragraphs: [
           "A recent Parker basement held boxes, a treadmill, a dresser, a TV, a bin of cables and a pile of trash. Our crew carried it all up the stairs, loaded the trailer and left the floor empty in about 45 minutes. We took before and after photos, as we do on every job.",
         ],
-        serviceLinks: [
-          { slug: "basement-and-attic-cleanouts", label: "Basement and attic cleanouts" },
-        ],
+        serviceLinks: [{ slug: "house-and-estate-cleanouts", label: "House and estate cleanouts, including basements" }],
       },
       {
         heading: "Where a Parker Load Goes",
@@ -173,16 +164,8 @@ const raw_locations: Location[] = [
       "Need **junk removal in Castle Rock**? EZ Haulaway is a family-owned, licensed and insured crew based nearby in [Parker](/service-areas/parker). EZ in, junk out. We handle the lifting, loading, and hauling — from one old couch to a property cleanout.",
     local:
       "Castle Rock is close to our Parker base and local disposal facilities, making it a practical part of our regular service area. Tell us what needs to go and we’ll confirm a price and the next available pickup.",
-    nearby: [
-      "parker",
-      "monument",
-      "lone-tree",
-      "highlands-ranch",
-      "franktown",
-      "sedalia",
-      "elizabeth",
-    ],
-    topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-and-fence-removal"],
+    nearby: ["parker", "monument", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
+    topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-removal"],
     faqs: [
       [
         "How much does junk removal cost in Castle Rock?",
@@ -294,12 +277,13 @@ const raw_locations: Location[] = [
         heading: "Hot Tubs, Sheds, Decks and Fences",
         paragraphs: [
           "Larger outdoor projects need more than a pickup truck. Our crew handles hot tub removal, shed removal, deck and fence tear-outs, and other light demolition with the haul-away included in the agreed scope. Ben’s construction and demolition experience helps us plan how a structure comes apart as well as how the debris leaves your property.",
-          "Send photos of the structure, its surroundings and the access route. Mention electrical connections, nearby landscaping or anything that must remain in place. We review the job before scheduling; hot tubs need to be drained and safely disconnected before removal. Whether it is an old backyard spa or damaged fence sections, the quote should cover the work you actually need.",
+          "Send photos of the structure, its surroundings and the access route. Mention electrical connections, nearby landscaping or anything that must remain in place. We review the job before scheduling. A hot tub's electrical disconnect has to be done by a licensed electrician, arranged by you or arranged separately, before we cut. Whether it is an old backyard spa or damaged fence sections, the quote should cover the work you actually need.",
         ],
         serviceLinks: [
           { slug: "hot-tub-removal", label: "Castle Rock hot tub removal" },
           { slug: "shed-removal", label: "Castle Rock shed removal" },
-          { slug: "deck-and-fence-removal", label: "Castle Rock deck and fence removal" },
+          { slug: "deck-removal", label: "Castle Rock deck removal" },
+          { slug: "fence-removal", label: "Fence removal" },
           { slug: "light-demolition", label: "Castle Rock light demolition" },
         ],
       },
@@ -808,11 +792,7 @@ const raw_locations: Location[] = [
           "For turnovers, we offer same-day and next-day slots, take before and after photos on every job, and can invoice your company. Landlords with several units can ask about volume discounts or locked-in rates for guaranteed jobs.",
         ],
         serviceLinks: [
-          {
-            slug: "eviction-cleanout-and-trash-out",
-            label: "Denver eviction cleanouts and trash outs",
-          },
-          { slug: "apartment-make-ready-haul-off", label: "Denver make-ready haul-off" },
+          { slug: "rental-cleanout-and-make-ready", label: "Denver rental cleanouts and make-ready haul-off" },
         ],
       },
       {
@@ -886,8 +866,7 @@ const raw_locations: Location[] = [
         closing:
           "Eviction cleanouts and trash outs are available same day or next day once we have the unit details, access and your go-ahead.",
         serviceLinks: [
-          { slug: "eviction-cleanout-and-trash-out", label: "Eviction cleanouts and trash outs" },
-          { slug: "apartment-make-ready-haul-off", label: "Make-ready haul-off for unit turns" },
+          { slug: "rental-cleanout-and-make-ready", label: "Rental cleanouts and make-ready haul-off" },
         ],
       },
       {
@@ -926,11 +905,7 @@ const raw_locations: Location[] = [
     local:
       "Older Littleton homes often mean decks and fences well past their service life, plus basements holding decades of stored items.",
     nearby: ["highlands-ranch", "englewood", "centennial", "sedalia"],
-    topServices: [
-      "deck-and-fence-removal",
-      "house-and-estate-cleanouts",
-      "yard-and-landscaping-debris",
-    ],
+    topServices: ["deck-removal", "house-and-estate-cleanouts", "yard-and-landscaping-debris"],
     content: [
       {
         heading: "Local Junk Removal Services",
@@ -967,7 +942,8 @@ const raw_locations: Location[] = [
           "Many Littleton homes have decks and fences past their prime. Ben has taken out more than 300 decks, so we tear down the boards, framing and railings and haul it all off the same visit. Branches, brush and old landscaping go too.",
         ],
         serviceLinks: [
-          { slug: "deck-and-fence-removal", label: "Littleton deck and fence removal" },
+          { slug: "deck-removal", label: "Littleton deck removal" },
+          { slug: "fence-removal", label: "Fence removal" },
           { slug: "yard-and-landscaping-debris", label: "Littleton yard debris removal" },
         ],
       },
@@ -1349,7 +1325,7 @@ const raw_locations: Location[] = [
     local:
       "A mix of acreage properties and older homes means fence tear-outs, shed removals, and brush cleanup are common requests.",
     nearby: ["parker", "elizabeth", "kiowa", "castle-rock", "sedalia"],
-    topServices: ["deck-and-fence-removal", "light-demolition", "garage-cleanouts"],
+    topServices: ["deck-removal", "light-demolition", "garage-cleanouts"],
     content: [
       {
         heading: "Junk Removal for Franktown Homes and Acreage",
@@ -1386,7 +1362,8 @@ const raw_locations: Location[] = [
           },
         ],
         serviceLinks: [
-          { slug: "deck-and-fence-removal", label: "Deck and fence removal" },
+          { slug: "deck-removal", label: "Deck removal" },
+          { slug: "fence-removal", label: "Fence removal" },
           { slug: "shed-removal", label: "Shed removal" },
           { slug: "light-demolition", label: "Light demolition" },
         ],
@@ -1565,6 +1542,6 @@ export const priorityLocations = PRIORITY_CITY_SLUGS.map((slug) =>
 export const SPECIALTY_SERVICE_SLUGS = [
   "hot-tub-removal",
   "shed-removal",
-  "deck-and-fence-removal",
+  "deck-removal",
   "mattress-and-bulky-item-removal",
 ] as const;

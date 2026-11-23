@@ -3,6 +3,8 @@ import { CityServiceLink } from "@/components/city-service-link";
 import { heroPreload, responsiveImage } from "@/lib/service-images";
 import { responsiveImage as responsiveCityImage } from "@/lib/city-images";
 import { isLiveCity, isLiveCityService } from "@/content/live-pages";
+import { retiredCityServicePath } from "@/content/redirects";
+import { faqPageJsonLd } from "@/lib/faq-schema";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowRight, Check, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -53,6 +55,14 @@ function cityServiceFaqs(
 
 export const Route = createFileRoute("/service-areas/$city_/$service")({
   loader: async ({ params }) => {
+    const retired = retiredCityServicePath(params.city, params.service);
+    if (retired?.startsWith("/service-areas/")) {
+      const [, , city, service] = retired.split("/");
+      throw redirect({ to: "/service-areas/$city/$service", params: { city: city!, service: service! }, statusCode: 301 });
+    }
+    if (retired?.startsWith("/services/")) {
+      throw redirect({ to: "/services/$slug", params: { slug: retired.slice("/services/".length) }, statusCode: 301 });
+    }
     const [{ locationBySlug }, { serviceBySlug }, { customCityServices }] = await Promise.all([
       import("@/content/locations"),
       import("@/content/services"),
@@ -126,15 +136,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
         },
         {
           type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map(([question, answer]) => ({
-              "@type": "Question",
-              name: priceText(question),
-              acceptedAnswer: { "@type": "Answer", text: priceText(answer) },
-            })),
-          }),
+          children: JSON.stringify(faqPageJsonLd(faqs, `${url}#faq`)),
         },
         {
           type: "application/ld+json",

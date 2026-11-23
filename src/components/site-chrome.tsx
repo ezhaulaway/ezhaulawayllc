@@ -426,6 +426,15 @@ export function SiteFooter() {
               <Link to="/what-we-take" className="font-semibold text-secondary-foreground">
                 View all services
               </Link>
+              <Link to="/services/$slug" params={{ slug: "garage-cleanouts" }} className="hover:text-secondary-foreground">
+                Garage Cleanouts
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "house-and-estate-cleanouts" }} className="hover:text-secondary-foreground">
+                House & Estate Cleanouts
+              </Link>
+              <Link to="/services/$slug" params={{ slug: "shed-removal" }} className="hover:text-secondary-foreground">
+                Shed Removal
+              </Link>
               <Link to="/services/$slug" params={{ slug: "wood-pallet-removal" }} className="hover:text-secondary-foreground">
                 Wood Pallet Removal
               </Link>
@@ -438,14 +447,14 @@ export function SiteFooter() {
               <Link to="/services/$slug" params={{ slug: "storage-unit-cleanout" }} className="hover:text-secondary-foreground">
                 Storage Unit Cleanout
               </Link>
-              <Link to="/services/$slug" params={{ slug: "eviction-cleanout-and-trash-out" }} className="hover:text-secondary-foreground">
-                Eviction Cleanout & Trash Out
+              <Link to="/services/$slug" params={{ slug: "rental-cleanout-and-make-ready" }} className="hover:text-secondary-foreground">
+                Rental Cleanout & Make-Ready
               </Link>
-              <Link to="/services/$slug" params={{ slug: "apartment-make-ready-haul-off" }} className="hover:text-secondary-foreground">
-                Apartment Make-Ready Haul-Off
+              <Link to="/services/$slug" params={{ slug: "sod-and-lawn-removal" }} className="hover:text-secondary-foreground">
+                Sod & Lawn Removal
               </Link>
-              <Link to="/services/$slug" params={{ slug: "basement-and-attic-cleanouts" }} className="hover:text-secondary-foreground">
-                Basement & Attic Cleanouts
+              <Link to="/services/$slug" params={{ slug: "dirt-rock-mulch-delivery" }} className="hover:text-secondary-foreground">
+                Dirt, Rock & Mulch Delivery
               </Link>
             </nav>
           </div>

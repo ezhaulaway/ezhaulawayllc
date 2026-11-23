@@ -129,17 +129,24 @@ describe("scheduled posts", () => {
     }
   });
   it("builds Article schema and leaves FAQ empty when a post has no questions", () => {
-    const row = toRow(first, 0);
+    const bare: ScheduledPost = {
+      slug: "schema-fixture",
+      title: "A post with no photos or questions",
+      meta_description: "Schema fixture for a post that has neither a hero nor an FAQ.",
+      publish_at: "2026-11-04T14:00:00.000Z",
+      content_html: "<h1>A post with no photos or questions</h1><p>Body.</p>",
+    };
+    const row = toRow(bare, 0);
     expect(row.hero_image_url).toBeNull();
     expect(row.faq_json_ld).toBeNull();
     expect(row.faqs).toBeNull();
     const article = (row.json_ld as Record<string, unknown>[])[0]!;
     expect(article["@type"]).toBe("BlogPosting");
-    expect(article["headline"]).toBe(first.title);
-    expect(article["description"]).toBe(first.meta_description);
+    expect(article["headline"]).toBe(bare.title);
+    expect(article["description"]).toBe(bare.meta_description);
     expect(article["image"]).toBe(`${SITE_URL}/apple-touch-icon.png`);
-    expect(article["datePublished"]).toBe(first.publish_at);
-    expect(article["dateModified"]).toBe(first.publish_at);
+    expect(article["datePublished"]).toBe(bare.publish_at);
+    expect(article["dateModified"]).toBe(bare.publish_at);
     expect(article["author"]).toMatchObject({ "@type": "Organization", name: "EZ Haulaway" });
     expect(article["publisher"]).toMatchObject({ "@type": "Organization", name: "EZ Haulaway" });
     expect((row.json_ld as Record<string, unknown>[])[1]?.["@type"]).toBe("BreadcrumbList");

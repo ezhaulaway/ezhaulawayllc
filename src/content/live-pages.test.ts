@@ -1,9 +1,23 @@
 import { describe, it, expect } from "vitest";
-import { liveUrlPaths, isLiveCityService } from "./live-pages";
+import { services as navServices } from "./navigation";
+import { services as contentServices } from "./services";
+import { LIVE_SERVICES, liveUrlPaths, isLiveCityService } from "./live-pages";
 import { readFileSync } from "node:fs";
 describe("live pages", () => {
   it("lists every live URL", () => expect(liveUrlPaths().length).toBe(97));
-  it("has 55 city-service pages", () => expect(liveUrlPaths().filter((p) => p.split("/").length === 4).length).toBe(50));
+  it("keeps navigation, page content, and the allow-list in the same order", () => {
+    expect(navServices.map((service) => service.slug)).toEqual([...LIVE_SERVICES]);
+    expect(contentServices.map((service) => service.slug)).toEqual([...LIVE_SERVICES]);
+    expect(
+      navServices.filter((service) => service.cityPages === false).map((service) => service.slug),
+    ).toEqual(
+      contentServices
+        .filter((service) => service.cityPages === false)
+        .map((service) => service.slug),
+    );
+  });
+  it("has 55 city-service pages", () =>
+    expect(liveUrlPaths().filter((p) => p.split("/").length === 4).length).toBe(50));
   it("keeps custom-copy pages", () => {
     expect(isLiveCityService("parker", "garage-cleanouts")).toBe(true);
     expect(isLiveCityService("parker", "shed-removal")).toBe(false);
@@ -23,7 +37,9 @@ describe("live pages", () => {
   });
   it("sitemap matches allow-list", () => {
     const xml = readFileSync("public/sitemap.xml", "utf8");
-    const locs = [...xml.matchAll(/<loc>https:\/\/www\.ezhaulawayllc\.com([^<]*)<\/loc>/g)].map((m) => m[1]);
+    const locs = [...xml.matchAll(/<loc>https:\/\/www\.ezhaulawayllc\.com([^<]*)<\/loc>/g)].map(
+      (m) => m[1],
+    );
     expect(locs).toEqual(liveUrlPaths());
     expect(locs).toContain("/service-areas/monument");
     expect(locs).toContain("/service-areas/kiowa");
