@@ -5,7 +5,7 @@ import { PageShell, CtaBand } from "@/components/site-chrome";
 import { HOURS_TEXT, PHONE, SITE_URL } from "@/content/site";
 import { NextSteps, blogNextSteps } from "@/components/next-steps";
 import { BlogCallout, BlogRelatedServices } from "@/components/blog-links";
-import { BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
+import { articleHeadingHtml, BLOG_HEAD_OVERRIDES, BLOG_RELATED } from "@/content/blog-links";
 import { BLOG_SLUG_REDIRECTS } from "@/content/redirects";
 import { getBlogPost } from "@/lib/blog.functions";
 import { cleanHtml, insertPostHero, optimizeBlogImages } from "@/lib/blog-html";
@@ -73,9 +73,11 @@ export const Route = createFileRoute("/blog/$slug")({
     // Posts synced without their own structured data get BlogPosting + BreadcrumbList from the post fields.
     const guide = getGuide();
     const override = BLOG_HEAD_OVERRIDES[p.slug];
+    const articleTitle = override?.syncHeading ? override.title : p.title;
     const title = override?.title ?? `${p.title} | EZ Haulaway Blog`;
     const desc = fillBlogPriceText(override?.description ?? p.meta_description ?? "", guide);
-    const generated = p.json_ld == null ? blogSchemas({ ...p, meta_description: desc }) : [];
+    const generated =
+      p.json_ld == null ? blogSchemas({ ...p, title: articleTitle, meta_description: desc }) : [];
     const hero = articleHero(p);
     const stored =
       p.id < 0 && Array.isArray(p.json_ld) ? p.json_ld : p.json_ld == null ? [] : [p.json_ld];
@@ -144,6 +146,7 @@ function BlogPost() {
   const p = Route.useLoaderData();
   const guide = usePriceGuide(); // re-render when live prices change
   const hero = articleHero(p);
+  const override = BLOG_HEAD_OVERRIDES[p.slug];
   return (
     <PageShell>
       <article
@@ -162,7 +165,16 @@ function BlogPost() {
           className="blog-prose mt-8"
           dangerouslySetInnerHTML={{
             __html: fillBlogPriceText(
-              optimizeBlogImages(insertPostHero(cleanHtml(p.content_html ?? ""), hero)),
+              optimizeBlogImages(
+                insertPostHero(
+                  articleHeadingHtml(
+                    cleanHtml(p.content_html ?? ""),
+                    p.title,
+                    override?.syncHeading ? override.title : p.title,
+                  ),
+                  hero,
+                ),
+              ),
               guide,
             ),
           }}

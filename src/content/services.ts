@@ -156,7 +156,8 @@ const raw_services: Service[] = [
     name: "Hot Tub Removal",
     h1: "Hot Tub Removal in Denver, Parker & Castle Rock, CO",
     metaTitle: "Hot Tub Removal Denver & Parker CO | EZ Haulaway",
-    metaDescription: "Hot tub removal and disposal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut down and haul old spas in one visit. A standard spa is [[item:hot-tub-standard]].",
+    metaDescription:
+      "Hot tub removal in Denver, Parker, Castle Rock and Highlands Ranch. We drain, cut and haul the spa in one visit. A standard spa is [[item:hot-tub-standard]].",
     summary: "Drain, cut down, and haul away old hot tubs, spas, and swim spas.",
     image: hotTubAsset,
     imageAlt: "Backyard hot tub ready for removal",
