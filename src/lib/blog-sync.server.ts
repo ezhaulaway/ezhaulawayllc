@@ -29,6 +29,7 @@ export async function runBlogSync() {
   const { supabaseAdmin: db } = await import("@/integrations/supabase/client.server");
   const { loadPriceGuide } = await import("@/lib/pricing.functions");
   const { rewriteEzPriceJson, rewriteEzPriceText } = await import("@/lib/blog-ez-prices");
+  const { normalizeArticleAuthors } = await import("@/lib/blog-schema");
   const guide = await loadPriceGuide();
 
   const { data: leased } = await db.rpc("blg_claim_lease" as never);
@@ -123,7 +124,9 @@ export async function runBlogSync() {
           hero_image_url: (d.hero_image_url as string) ?? null,
           language_code: (d.languageCode as string) ?? (d.language_code as string) ?? null,
           content_html: d.content_html ? rewriteEzPriceText(cleanHtml(String(d.content_html)), guide) : null,
-          json_ld: (d.jsonLd != null ? rewriteEzPriceJson(d.jsonLd, guide) : null) as never,
+          json_ld: (d.jsonLd != null
+            ? normalizeArticleAuthors(rewriteEzPriceJson(d.jsonLd, guide))
+            : null) as never,
           faq_json_ld: (d.faqJsonLd != null ? rewriteEzPriceJson(d.faqJsonLd, guide) : null) as never,
           article_created_at: (d.created_at as string) ?? null,
           article_updated_at: (d.updated_at as string) ?? s.updated_at ?? null,
