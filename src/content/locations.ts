@@ -559,7 +559,7 @@ const raw_locations: Location[] = [
     h1: "Highlands Ranch Junk Removal",
     metaTitle: "Highlands Ranch Junk Removal CO | Free Quotes | EZ Haulaway",
     metaDescription:
-      "Highlands Ranch junk removal: old furniture, garage cleanouts, yard debris and commercial junk removal. Hassle free, upfront pricing. Free quotes.",
+      "Highlands Ranch junk removal from [[min]]. Basement furniture, garage cleanouts, and yard debris in Westridge and BackCountry. Nothing sits outside.",
     intro:
       "We serve the area several times a week, from single-item pickups to complete garage and basement clearing.",
     local:
@@ -643,7 +643,7 @@ const raw_locations: Location[] = [
     h1: "Lone Tree Junk Removal",
     metaTitle: "Lone Tree Junk Removal CO | Same-Week Pickup | EZ Haulaway",
     metaDescription:
-      "Lone Tree junk removal: furniture, office cleanouts, electronics and bulky items hauled away. Same-day pickup available, upfront pricing and free quotes.",
+      "Junk removal in Lone Tree, CO from [[min]]. RidgeGate homes, Park Meadows offices, and electronics. Same-week is common, and same-day when available.",
     intro:
       "Our family-owned crew is minutes away in Parker, so same-week scheduling is usually straightforward.",
     local:
@@ -825,7 +825,7 @@ const raw_locations: Location[] = [
     county: "Arapahoe & Adams County",
     metaTitle: "Junk Removal Aurora CO | Aurora Junk Removal Services | EZ Haulaway",
     metaDescription:
-      "Junk removal in Aurora, CO — rental turnovers, estate cleanouts, appliance and furniture hauling. Fast scheduling and free quotes from EZ Haulaway.",
+      "Junk removal in Aurora, CO from [[min]]. Southlands garage cleanouts, Heather Ridge rental turnovers, and estate cleanouts. Free photo quotes.",
     intro:
       "Need junk removal in Aurora, CO? Our **junk removal services** cover the whole city, from Southlands out toward the older neighborhoods — and no two junk removal jobs here look alike.",
     local:
@@ -1383,7 +1383,7 @@ const raw_locations: Location[] = [
     h1: "Castle Pines Junk Removal",
     metaTitle: "Castle Pines Junk Removal | Fast, Local Pickup | EZ Haulaway",
     metaDescription:
-      "Castle Pines junk removal by a family-owned Douglas County crew. Furniture, hot tubs, yard waste and cleanouts hauled away. Upfront pricing, free estimate.",
+      "Castle Pines junk removal from [[min]]. Furniture, hot tubs, and yard waste in The Village, The Canyons, and Lagae Ranch. Same-day when the route has room.",
     intro:
       "Looking for **Castle Pines junk removal** from a local crew? EZ Haulaway is a family-owned team based in nearby Parker, and we handle **all the heavy lifting** for homes across Castle Pines.",
     local:
