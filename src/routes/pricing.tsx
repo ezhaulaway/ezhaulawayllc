@@ -6,6 +6,7 @@ import { BadgeCheck, Check, Receipt, ShieldCheck, Truck } from "lucide-react";
 import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, FaqAccordion, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { TrailerPricing } from "@/components/trailer-pricing";
+import { WhatFits } from "@/components/what-fits";
 import { DeferredAiEstimator } from "@/components/deferred-ai-estimator";
 import { PHONE, SITE_URL } from "@/content/site";
 import { eighthPrice } from "@/lib/price-guide";
@@ -78,6 +79,7 @@ function PricingPage() {
       />
 
       <TrailerPricing />
+      <WhatFits />
       <DeferredAiEstimator />
 
       <section className="border-b border-border py-16 sm:py-24">
