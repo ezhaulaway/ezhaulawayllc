@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { Route as BlogRoute } from "@/routes/blog.$slug";
 import { Route as HomeRoute } from "@/routes/index";
 import {
   BLOG_AUTHOR_NAME,
@@ -49,6 +50,76 @@ describe("blog authorship", () => {
       author: { "@type": "Organization", name: "EZ Haulaway" },
     }) as { author: { "@type": string; name: string } };
     expect(business.author).toEqual({ "@type": "Organization", name: "EZ Haulaway" });
+  });
+});
+
+describe("imported blog post head", () => {
+  it("names Ben Herrera when the stored article has no json_ld, as on furniture-disposal-denver", async () => {
+    const headFn = BlogRoute.options.head;
+    if (typeof headFn !== "function") throw new Error("blog head is missing");
+    const head = await headFn({
+      loaderData: {
+        id: 1019072,
+        slug: "furniture-disposal-denver",
+        previous_slugs: [],
+        title: "Furniture Disposal in Denver: Every Option, Cost and Rule",
+        meta_description: "Furniture disposal in Denver.",
+        hero_image_url: "https://example.com/sofa.jpg",
+        content_html: "<h1>Furniture</h1>",
+        json_ld: null,
+        faq_json_ld: null,
+        language_code: "en",
+        article_created_at: "2026-10-27T00:00:00+00:00",
+        article_updated_at: "2026-10-27T04:12:49.25+00:00",
+        synced_at: "2026-10-27T05:00:28.666+00:00",
+        hero_image_alt: null,
+        hero_image_width: null,
+        hero_image_height: null,
+        faqs: null,
+      },
+    } as unknown as Parameters<typeof headFn>[0]);
+    const article = (head.scripts ?? [])
+      .map((script) => String(script?.children ?? ""))
+      .find((script) => script.includes("BlogPosting"));
+    expect(article).toContain('"name":"Ben Herrera"');
+    expect(article).not.toContain('"name":"Ben"');
+    expect(BLOG_BYLINE).toBe("By Ben Herrera, owner of EZ Haulaway");
+  });
+
+  it("replaces a stored person named Ben before the script is emitted", async () => {
+    const headFn = BlogRoute.options.head;
+    if (typeof headFn !== "function") throw new Error("blog head is missing");
+    const head = await headFn({
+      loaderData: {
+        id: 7,
+        slug: "stored-author",
+        previous_slugs: [],
+        title: "Stored",
+        meta_description: "Stored author.",
+        hero_image_url: null,
+        content_html: "<p>Body</p>",
+        json_ld: {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: "Stored",
+          author: { "@type": "Person", name: "Ben" },
+        },
+        faq_json_ld: null,
+        language_code: "en",
+        article_created_at: "2026-10-27T00:00:00+00:00",
+        article_updated_at: "2026-10-27T00:00:00+00:00",
+        synced_at: "2026-10-27T00:00:00+00:00",
+        hero_image_alt: null,
+        hero_image_width: null,
+        hero_image_height: null,
+        faqs: null,
+      },
+    } as unknown as Parameters<typeof headFn>[0]);
+    const article = (head.scripts ?? [])
+      .map((script) => String(script?.children ?? ""))
+      .find((script) => script.includes("BlogPosting"));
+    expect(article).toContain('"name":"Ben Herrera"');
+    expect(article).not.toContain('"name":"Ben"');
   });
 });
 
