@@ -36,10 +36,10 @@ type Meta = {
   path: string;
   title: string;
   description: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  twitterTitle?: string;
-  twitterDescription?: string;
+  ogTitle?: string | undefined;
+  ogDescription?: string | undefined;
+  twitterTitle?: string | undefined;
+  twitterDescription?: string | undefined;
   scripts?: string[];
 };
 
@@ -346,7 +346,7 @@ describe("changed page schema", () => {
       const head = await headFn({
         loaderData: postFixture(slug, storedTitle),
       } as unknown as Parameters<typeof headFn>[0]);
-      const meta = readMeta(`/blog/${slug}`, head);
+      const meta = readMeta(`/blog/${slug}`, head as HeadResult);
       expect(meta.title).toBe(override!.title);
       expect(meta.ogTitle).toBe(override!.title);
       expect(meta.twitterTitle).toBe(override!.title);
@@ -379,7 +379,7 @@ describe("changed page schema", () => {
     const head = await headFn({
       loaderData: postFixture("furniture-disposal-denver", stored),
     } as unknown as Parameters<typeof headFn>[0]);
-    const meta = readMeta("/blog/furniture-disposal-denver", head);
+    const meta = readMeta("/blog/furniture-disposal-denver", head as HeadResult);
     expect(meta.title).toBe(BLOG_HEAD_OVERRIDES["furniture-disposal-denver"]!.title);
     const article = (meta.scripts ?? [])
       .map((script) => JSON.parse(script) as { "@type"?: string; headline?: string })

@@ -18,7 +18,8 @@ import {
 import { services } from "@/content/services";
 import { locations, priorityLocations } from "@/content/locations";
 import { locations as navigationLocations } from "@/content/navigation";
-import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
+import { PhoneLink } from "@/components/phone-link";
+import { PHONE, PHONE_DISPLAY, SITE_URL, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import wordmarkSmall from "@/assets/ez-haulaway-wordmark-sm.webp";
 import { responsiveImage as logoImage } from "@/lib/logo-images";
 
@@ -133,9 +134,9 @@ function ServicePage() {
             ))}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="outline">
-                <a href={`tel:${PHONE_TEL}`}>
-                  <Phone /> Call or Text {PHONE}
-                </a>
+                <PhoneLink location="service">
+                  <Phone /> Call or Text {PHONE_DISPLAY}
+                </PhoneLink>
               </Button>
             </div>
           </div>

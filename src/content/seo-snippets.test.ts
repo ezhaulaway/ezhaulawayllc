@@ -9,18 +9,20 @@ import { Route as CityServiceRoute } from "@/routes/service-areas.$city_.$servic
 import { Route as ServiceRoute } from "@/routes/services.$slug";
 import { Route as WhatWeTakeRoute } from "@/routes/what-we-take";
 
-function titleOf(head: { meta?: Array<{ title?: string; name?: string; content?: string }> }) {
-  return head.meta?.find((item) => item.title)?.title ?? "";
+function titleOf(head: {
+  meta?: ReadonlyArray<{ title?: string | undefined } | undefined> | undefined;
+}) {
+  return head.meta?.find((item) => item?.title)?.title ?? "";
 }
 
 function descriptionOf(head: {
-  meta?: Array<{ title?: string; name?: string; content?: string }>;
+  meta?: ReadonlyArray<{ name?: string | undefined; content?: string | undefined } | undefined> | undefined;
 }) {
-  return head.meta?.find((item) => item.name === "description")?.content ?? "";
+  return head.meta?.find((item) => item?.name === "description")?.content ?? "";
 }
 
 describe("this week's search snippets", () => {
-  it("keeps the Denver furniture snippet distinct from the general furniture page", () => {
+  it("keeps the Denver furniture snippet distinct from the general furniture page", async () => {
     const headFn = CityServiceRoute.options.head;
     const serviceHeadFn = ServiceRoute.options.head;
     if (typeof headFn !== "function" || typeof serviceHeadFn !== "function") {
@@ -31,11 +33,11 @@ describe("this week's search snippets", () => {
     const custom = customCityServices["denver/furniture-removal"];
     if (!location || !service || !custom) throw new Error("denver furniture content is missing");
 
-    const cityHead = headFn({
+    const cityHead = await headFn({
       params: { city: "denver", service: "furniture-removal" },
       loaderData: { location, service, custom },
     } as Parameters<typeof headFn>[0]);
-    const serviceHead = serviceHeadFn({
+    const serviceHead = await serviceHeadFn({
       params: { slug: "furniture-removal" },
       loaderData: { service },
     } as Parameters<typeof serviceHeadFn>[0]);
@@ -63,7 +65,7 @@ describe("this week's search snippets", () => {
     expect(serviceTitle).not.toBe(cityTitle);
 
     const faq = (cityHead.scripts ?? [])
-      .map((script) => String(script.children ?? ""))
+      .map((script) => String(script?.children ?? ""))
       .map(
         (block) =>
           JSON.parse(block) as {
@@ -79,7 +81,7 @@ describe("this week's search snippets", () => {
     expect(JSON.stringify(faq)).not.toContain("[[");
   });
 
-  it("targets junk removal in Centennial and haul-away on what we take", () => {
+  it("targets junk removal in Centennial and haul-away on what we take", async () => {
     const cityHeadFn = CityRoute.options.head;
     const takeHeadFn = WhatWeTakeRoute.options.head;
     if (typeof cityHeadFn !== "function" || typeof takeHeadFn !== "function") {
@@ -87,11 +89,11 @@ describe("this week's search snippets", () => {
     }
     const location = locationBySlug("centennial");
     if (!location) throw new Error("centennial content is missing");
-    const cityHead = cityHeadFn({
+    const cityHead = await cityHeadFn({
       params: { city: "centennial" },
       loaderData: { location, specialtyServices: [] },
-    } as Parameters<typeof cityHeadFn>[0]);
-    const takeHead = takeHeadFn({} as Parameters<typeof takeHeadFn>[0]);
+    } as unknown as Parameters<typeof cityHeadFn>[0]);
+    const takeHead = await takeHeadFn({} as Parameters<typeof takeHeadFn>[0]);
 
     const cityTitle = titleOf(cityHead);
     expect(cityTitle).toBe(priceText(cityHubTitle("Centennial", "centennial"), SNAPSHOT_GUIDE));

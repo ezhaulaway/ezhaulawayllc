@@ -16,9 +16,9 @@ import { locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { cityFaqs } from "@/content/city-faqs";
+import { PhoneLink } from "@/components/phone-link";
 import {
-  PHONE,
-  PHONE_TEL,
+  PHONE_DISPLAY,
   SITE_URL,
   BUSINESS_ID,
   BUSINESS_SCHEMA,
@@ -237,9 +237,9 @@ function CityPage() {
                 </Button>
               )}
               <Button asChild size="lg" variant="outline">
-                <a href={`tel:${PHONE_TEL}`}>
-                  <Phone /> Call or Text {PHONE}
-                </a>
+                <PhoneLink location="city">
+                  <Phone /> Call or Text {PHONE_DISPLAY}
+                </PhoneLink>
               </Button>
             </div>
             {pushInstantEstimate && (

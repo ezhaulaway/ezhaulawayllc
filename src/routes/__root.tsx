@@ -1,4 +1,4 @@
-import { FALLBACK_GUIDE, getPriceGuide } from "@/lib/pricing.functions";
+import { FALLBACK_GUIDE, getPriceGuide, loadPriceGuide } from "@/lib/pricing.functions";
 import { setGuide } from "@/lib/price-store";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -15,9 +15,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import dmSansFont from "@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url";
-import manropeFont from "@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initAnalytics, trackPageView } from "../lib/analytics";
+import { initAnalytics, phoneClickBootstrap, trackPageView } from "../lib/analytics";
 import { THEME_SCRIPT } from "../components/theme-toggle";
 
 function NotFoundComponent() {
@@ -89,8 +88,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "8oUl4Mp-ZT4fZSLPtPJoqibk3H2L-5CxbWfnEysIjXU" },
     ],
     links: [
-      { rel: "preload", as: "font", type: "font/woff2", href: dmSansFont, crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: manropeFont, crossOrigin: "anonymous" },
+      // The mobile LCP element is body text, so that face is preloaded.
+      // The heading face (Manrope) stays on font-display: swap and is discovered
+      // from CSS. Preloading it as well made the simulated LCP slower.
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: dmSansFont,
+        crossOrigin: "anonymous",
+        fetchPriority: "high",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -102,7 +110,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
   }),
   loader: async () => {
-    const guide = await getPriceGuide().catch(() => FALLBACK_GUIDE);
+    // A cold price feed can take longer than the LCP budget. The server paint waits
+    // a short moment, then uses the snapshot; the browser refreshes if that happened.
+    const guide =
+      typeof window === "undefined"
+        ? await loadPriceGuide(250).catch(() => FALLBACK_GUIDE)
+        : await getPriceGuide().catch(() => FALLBACK_GUIDE);
     setGuide(guide);
     return { guide };
   },
@@ -119,6 +132,13 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: phoneClickBootstrap(
+              import.meta.env["VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY"],
+            ),
+          }}
+        />
       </head>
       <body>
         {children}

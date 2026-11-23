@@ -10,11 +10,11 @@ import {
   SITE_URL,
 } from "@/content/site";
 import { getGoogleReviews } from "@/lib/google-reviews.functions";
-import { heroPreload } from "@/lib/home-images";
+import { HOME_HERO_SIZES, heroPreload } from "@/lib/home-images";
 import heroJob1200 from "@/assets/hero-job-1200.webp";
 
-/** Google Business Profile on Nov 17, 2026. Used when the live lookup does not return in time. */
-const BASELINE_RATING = { rating: 5, count: 21 };
+/** Google Business Profile on Nov 23, 2026. Used when the live lookup does not return in time. */
+const BASELINE_RATING = { rating: 5, count: 22 };
 
 const title = "Parker CO Junk Removal | Family-Owned | Free Photo Quote";
 const descriptionTemplate =
@@ -51,10 +51,9 @@ export const Route = createFileRoute("/")({
       ],
       links: [
         { rel: "canonical", href: `${SITE_URL}/` },
-        heroPreload(
-          heroJob1200,
-          "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)",
-        ),
+        // The hero is beside the text on desktop and below the fold on a phone.
+        // Preload it only for the desktop layout so it does not compete with the mobile LCP text.
+        { ...heroPreload(heroJob1200, HOME_HERO_SIZES), media: "(min-width: 1024px)" },
       ],
       scripts: [
         {

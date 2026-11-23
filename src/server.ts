@@ -1,6 +1,7 @@
 import "./lib/error-capture";
 
 import { canonicalRedirect } from "./lib/canonical-redirect";
+import { prioritizeCriticalResources } from "./lib/critical-html";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
@@ -38,6 +39,18 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+async function prioritizeDocument(response: Response): Promise<Response> {
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html") || !response.body) return response;
+  const html = await response.text();
+  const next = prioritizeCriticalResources(html);
+  const headers = new Headers(response.headers);
+  // text() already decoded the body, so the new response must not claim an encoding or a stale length.
+  headers.delete("content-length");
+  headers.delete("content-encoding");
+  return new Response(next, { status: response.status, statusText: response.statusText, headers });
+}
+
 function isH3SwallowedErrorBody(body: string): boolean {
   try {
     const payload = JSON.parse(body) as { unhandled?: unknown; message?: unknown };
@@ -62,7 +75,7 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return await prioritizeDocument(await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
