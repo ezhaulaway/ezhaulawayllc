@@ -21,19 +21,36 @@ import { services } from "@/content/services";
 import { PhoneLink } from "@/components/phone-link";
 import { PHONE, PHONE_DISPLAY, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
-import { CITY_SERVICE_DESCRIPTION, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
+import { priceText } from "@/lib/price-store";
+import {
+  CITY_SERVICE_DESCRIPTION,
+  SERVICE_BENEFIT,
+  fitTitle,
+  neighborhoodList,
+} from "@/content/local-seo";
 
+type FaqPair = [string, string];
+
+/** Visible accordion and FAQPage schema both read this list. */
 function cityServiceFaqs(
-  service: { name: string; faqs: Array<[string, string]> },
   city: string,
-  custom: { faqs: Array<[string, string]> } | null,
-): Array<[string, string]> {
-  if (custom) return custom.faqs;
-  const lower = service.name.toLowerCase();
+  serviceName: string,
+  serviceFaqs: ReadonlyArray<readonly [string, string]>,
+  customFaqs: ReadonlyArray<readonly [string, string]> | undefined,
+): FaqPair[] {
+  if (customFaqs && customFaqs.length > 0)
+    return customFaqs.map(([question, answer]) => [question, answer]);
+  const lower = serviceName.toLowerCase();
   return [
-    [`How much does ${lower} cost in ${city}?`, `We price by how much space it takes in our 16-foot trailer, starting at a [[min]] minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts. There is [[travel]].`],
-    [`How soon can you do ${lower} in ${city}?`, `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`],
-    ...service.faqs.slice(0, 3),
+    [
+      `How much does ${lower} cost in ${city}?`,
+      `We price by how much space it takes in our 16-foot trailer, starting at a [[min]] minimum, and certain heavy items are priced individually. Text photos to ${PHONE} and we'll give you a price before any work starts. There is [[travel]].`,
+    ],
+    [
+      `How soon can you do ${lower} in ${city}?`,
+      `We're based in Parker and work in ${city} every week, so openings often come up within a few days. Call or text for the soonest slot.`,
+    ],
+    ...serviceFaqs.slice(0, 3).map(([question, answer]) => [question, answer] as FaqPair),
   ];
 }
 
@@ -63,16 +80,34 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Page not found — EZ Haulaway" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Page not found — EZ Haulaway" }, { name: "robots", content: "noindex" }],
+      };
     }
     const { location, service, custom } = loaderData;
     const url = `${SITE_URL}/service-areas/${params.city}/${params.service}`;
     const benefit = SERVICE_BENEFIT[service.slug] ?? "Upfront Pricing";
-    const title = fitTitle(`${service.name} in ${location.city}, CO - ${benefit} | EZ Haulaway`, `${service.name} in ${location.city}, CO - ${benefit}`, `${service.name} in ${location.city}, CO | EZ Haulaway`, `${service.name} in ${location.city}, CO`, `${service.name} ${location.city}, CO`);
-    const description =
+    const generatedTitle = fitTitle(
+      `${service.name} in ${location.city}, CO - ${benefit} | EZ Haulaway`,
+      `${service.name} in ${location.city}, CO - ${benefit}`,
+      `${service.name} in ${location.city}, CO | EZ Haulaway`,
+      `${service.name} in ${location.city}, CO`,
+      `${service.name} ${location.city}, CO`,
+    );
+    const customTitle = custom?.title ? priceText(custom.title) : "";
+    const title =
+      params.city === "denver" &&
+      params.service === "furniture-removal" &&
+      customTitle.length > 0 &&
+      customTitle.length <= 60
+        ? customTitle
+        : generatedTitle;
+    const description = priceText(
       custom?.description ??
-      CITY_SERVICE_DESCRIPTION[service.slug]?.replace("{City}", location.city) ??
-      `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`;
+        CITY_SERVICE_DESCRIPTION[service.slug]?.replace("{City}", location.city) ??
+        `${service.name} in ${location.city}, Colorado. ${service.summary} Local, family-owned crew from Parker. Free quotes — call or text ${PHONE}.`,
+    );
+    const faqs = cityServiceFaqs(location.city, service.name, service.faqs, custom?.faqs);
     return {
       meta: [
         { title },
@@ -102,7 +137,7 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
         },
         {
           type: "application/ld+json",
-          children: JSON.stringify(faqPageJsonLd(cityServiceFaqs(service, location.city, custom), `${url}#faq`)),
+          children: JSON.stringify(faqPageJsonLd(faqs, `${url}#faq`)),
         },
         {
           type: "application/ld+json",
@@ -111,8 +146,18 @@ export const Route = createFileRoute("/service-areas/$city_/$service")({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
-              { "@type": "ListItem", position: 3, name: location.city, item: `${SITE_URL}/service-areas/${params.city}` },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Service Areas",
+                item: `${SITE_URL}/service-areas`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: location.city,
+                item: `${SITE_URL}/service-areas/${params.city}`,
+              },
               { "@type": "ListItem", position: 4, name: service.name, item: url },
             ],
           }),
@@ -129,7 +174,9 @@ function CityServiceNotFound() {
     <PageShell>
       <div className="mx-auto max-w-3xl px-5 py-24 text-center">
         <h1 className="text-3xl font-extrabold">We couldn’t find that page</h1>
-        <p className="mt-4 text-muted-foreground">Pick your city to see every service we offer there.</p>
+        <p className="mt-4 text-muted-foreground">
+          Pick your city to see every service we offer there.
+        </p>
         <Button asChild className="mt-8" size="lg">
           <Link to="/service-areas">View Service Areas</Link>
         </Button>
@@ -145,9 +192,11 @@ function CityServicePage() {
   const name = service.name;
   const lower = name.toLowerCase();
   const otherServices = services.filter((item) => item.slug !== service.slug);
-  const nearby = locations.filter((item) => location.nearby.includes(item.slug) && isLiveCityService(item.slug, service.slug));
+  const nearby = locations.filter(
+    (item) => location.nearby.includes(item.slug) && isLiveCityService(item.slug, service.slug),
+  );
 
-  const faqs = cityServiceFaqs(service, city, custom);
+  const faqs = cityServiceFaqs(city, name, service.faqs, custom?.faqs);
 
   const introParagraphs = custom ? custom.intro : service.intro;
 
@@ -156,11 +205,21 @@ function CityServicePage() {
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">Home</Link>
+            <Link to="/" className="hover:text-foreground">
+              Home
+            </Link>
             <span className="px-2">/</span>
-            <Link to="/service-areas" className="hover:text-foreground">Service Areas</Link>
+            <Link to="/service-areas" className="hover:text-foreground">
+              Service Areas
+            </Link>
             <span className="px-2">/</span>
-            <Link to="/service-areas/$city" params={{ city: location.slug }} className="hover:text-foreground">{city}</Link>
+            <Link
+              to="/service-areas/$city"
+              params={{ city: location.slug }}
+              className="hover:text-foreground"
+            >
+              {city}
+            </Link>
             <span className="px-2">/</span>
             <span className="font-semibold text-foreground">{name}</span>
           </nav>
@@ -169,7 +228,9 @@ function CityServicePage() {
           <div>
             <div className="flex items-center gap-2 text-primary">
               <MapPin className="size-4" />
-              <span className="text-xs font-bold uppercase tracking-[0.16em]">{city}, CO · {location.county}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.16em]">
+                {city}, CO · {location.county}
+              </span>
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.1] sm:text-5xl">{`${name} in ${city}, CO`}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
@@ -177,7 +238,8 @@ function CityServicePage() {
             </p>
             {neighborhoodList(location.slug) && (
               <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">
-                Our Parker-based crew handles {lower} across {city}, including {neighborhoodList(location.slug)}.
+                Our Parker-based crew handles {lower} across {city}, including{" "}
+                {neighborhoodList(location.slug)}.
               </p>
             )}
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
@@ -206,19 +268,21 @@ function CityServicePage() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
-            <SectionHeader
-              eyebrow={`${name} in ${city}`}
-              title={`How ${name} Works in ${city}`}
-            />
+            <SectionHeader eyebrow={`${name} in ${city}`} title={`How ${name} Works in ${city}`} />
             <div className="mt-6 space-y-5 leading-8 text-muted-foreground">
               {introParagraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)}>{rich(paragraph)}</p>
               ))}
             </div>
-            <h3 className="mt-10 font-display text-xl font-bold">What’s included for {city} customers</h3>
+            <h3 className="mt-10 font-display text-xl font-bold">
+              What’s included for {city} customers
+            </h3>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {service.includes.map((item) => (
-                <li key={item} className="flex gap-3 rounded-lg border border-border bg-card p-4 text-sm leading-6">
+                <li
+                  key={item}
+                  className="flex gap-3 rounded-lg border border-border bg-card p-4 text-sm leading-6"
+                >
                   <Check className="mt-0.5 size-4 shrink-0 text-primary" />
                   <span>{item}</span>
                 </li>
@@ -233,7 +297,9 @@ function CityServicePage() {
         <div className="mx-auto max-w-3xl px-5 lg:px-8">
           {service.sections.slice(0, 2).map((section) => (
             <div key={section.heading} className="mt-10 first:mt-0">
-              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">{section.heading}</h2>
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                {section.heading}
+              </h2>
               <p className="mt-5 leading-8 text-muted-foreground">{section.text}</p>
             </div>
           ))}
@@ -249,9 +315,13 @@ function CityServicePage() {
               ))}
               {custom.sections?.map((s) => (
                 <div key={s.heading} className="mt-10">
-                  <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">{s.heading}</h2>
+                  <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                    {s.heading}
+                  </h2>
                   {s.paragraphs.map((p) => (
-                    <p key={p.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">{rich(p)}</p>
+                    <p key={p.slice(0, 40)} className="mt-5 leading-8 text-muted-foreground">
+                      {rich(p)}
+                    </p>
                   ))}
                   {s.subsections?.map((sub) => (
                     <div key={sub.heading} className="mt-6">
@@ -272,32 +342,56 @@ function CityServicePage() {
           )}
           {location.slug === "parker" && PARKER_NEIGHBORHOODS_COPY[service.slug] && (
             <div className="mt-10">
-              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">Parker neighborhoods we serve</h2>
-              <p className="mt-5 leading-8 text-muted-foreground">{PARKER_NEIGHBORHOODS_COPY[service.slug]}</p>
+              <h2 className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+                Parker neighborhoods we serve
+              </h2>
+              <p className="mt-5 leading-8 text-muted-foreground">
+                {PARKER_NEIGHBORHOODS_COPY[service.slug]}
+              </p>
             </div>
           )}
           {photo && (
             <figure className="mt-10 overflow-hidden rounded-xl border border-border bg-card">
-              <img {...responsiveCityImage(photo.src, "(min-width: 768px) 728px, calc(100vw - 40px)")} alt={photo.alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] w-full object-cover" />
-              <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">{photo.caption}</figcaption>
+              <img
+                {...responsiveCityImage(photo.src, "(min-width: 768px) 728px, calc(100vw - 40px)")}
+                alt={photo.alt}
+                loading="lazy"
+                width={1200}
+                height={800}
+                className="aspect-[3/2] w-full object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm leading-6 text-muted-foreground">
+                {photo.caption}
+              </figcaption>
             </figure>
           )}
-          {(service.slug === "furniture-removal" || service.slug === "mattress-and-bulky-item-removal") && (() => {
-            const other = service.slug === "furniture-removal" ? "mattress-and-bulky-item-removal" : "furniture-removal";
-            const otherName = other === "furniture-removal" ? "Furniture Removal" : "Mattress Removal";
-            const local = isLiveCityService(location.slug, other);
-            const lead = other === "furniture-removal"
-              ? "Getting rid of couches, sofas, tables or chairs instead?"
-              : "Only need an old mattress or box spring gone?";
-            return (
-              <p className="mt-10 leading-8 text-muted-foreground">
-                {lead}{" "}
-                <CityServiceLink city={location.slug} service={other} className="font-semibold text-primary hover:underline">
-                  {local ? `${otherName} ${city}` : otherName}
-                </CityServiceLink>
-              </p>
-            );
-          })()}
+          {(service.slug === "furniture-removal" ||
+            service.slug === "mattress-and-bulky-item-removal") &&
+            (() => {
+              const other =
+                service.slug === "furniture-removal"
+                  ? "mattress-and-bulky-item-removal"
+                  : "furniture-removal";
+              const otherName =
+                other === "furniture-removal" ? "Furniture Removal" : "Mattress Removal";
+              const local = isLiveCityService(location.slug, other);
+              const lead =
+                other === "furniture-removal"
+                  ? "Getting rid of couches, sofas, tables or chairs instead?"
+                  : "Only need an old mattress or box spring gone?";
+              return (
+                <p className="mt-10 leading-8 text-muted-foreground">
+                  {lead}{" "}
+                  <CityServiceLink
+                    city={location.slug}
+                    service={other}
+                    className="font-semibold text-primary hover:underline"
+                  >
+                    {local ? `${otherName} ${city}` : otherName}
+                  </CityServiceLink>
+                </p>
+              );
+            })()}
         </div>
       </section>
 
@@ -312,21 +406,27 @@ function CityServicePage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <p className="font-display font-bold">More services in {city}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            {otherServices.map((item) => (
-              item.cityPages === false ? <Link
-                key={item.slug}
-                to="/services/$slug"
-                params={{ slug: item.slug }}
-                className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
-              >
-                {item.name}
-              </Link> : <CityServiceLink
-                key={item.slug} city={location.slug} service={item.slug}
-                className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
-              >
-                {item.name} {city}
-              </CityServiceLink>
-            ))}
+            {otherServices.map((item) =>
+              item.cityPages === false ? (
+                <Link
+                  key={item.slug}
+                  to="/services/$slug"
+                  params={{ slug: item.slug }}
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <CityServiceLink
+                  key={item.slug}
+                  city={location.slug}
+                  service={item.slug}
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+                >
+                  {item.name} {city}
+                </CityServiceLink>
+              ),
+            )}
           </div>
           {nearby.length > 0 && (
             <>
@@ -334,7 +434,9 @@ function CityServicePage() {
               <div className="mt-4 flex flex-wrap gap-2">
                 {nearby.map((item) => (
                   <CityServiceLink
-                    key={item.slug} city={item.slug} service={service.slug}
+                    key={item.slug}
+                    city={item.slug}
+                    service={service.slug}
                     className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
                   >
                     {name} {item.city}
@@ -343,7 +445,11 @@ function CityServicePage() {
               </div>
             </>
           )}
-          <Link to="/services/$slug" params={{ slug: service.slug }} className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary">
+          <Link
+            to="/services/$slug"
+            params={{ slug: service.slug }}
+            className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
+          >
             Full {lower} details and pricing <ArrowRight className="size-4" />
           </Link>
         </div>

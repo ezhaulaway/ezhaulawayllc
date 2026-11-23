@@ -124,7 +124,7 @@ describe("imported blog post head", () => {
 });
 
 describe("homepage review schema", () => {
-  it("uses 5.0 from 21 reviews when the live lookup does not return", async () => {
+  it("uses 5.0 from 22 reviews when the live lookup does not return", async () => {
     const headFn = HomeRoute.options.head;
     if (typeof headFn !== "function") throw new Error("homepage head is missing");
     const head = await headFn({ loaderData: undefined } as unknown as Parameters<typeof headFn>[0]);
@@ -132,7 +132,7 @@ describe("homepage review schema", () => {
       .map((script) => String(script?.children ?? ""))
       .find((script) => script.includes("AggregateRating"));
     expect(block).toContain('"ratingValue":"5.0"');
-    expect(block).toContain('"reviewCount":21');
+    expect(block).toContain('"reviewCount":22');
     expect(block).not.toContain('"@type":"Review"');
   });
 });

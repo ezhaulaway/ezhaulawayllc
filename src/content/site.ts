@@ -16,9 +16,8 @@ export const GOOGLE_PROFILE_URL = "https://www.google.com/maps?cid=4376648729554
 /** Opens the review composer. Use only for an explicit “Leave a review” action. */
 export const GOOGLE_REVIEW_URL = "https://g.page/r/CQaevL_U-rw8EBM/review";
 export const FACEBOOK_URL = "https://www.facebook.com/ezhaulawayjunkremoval/";
+export const INSTAGRAM_URL = "https://www.instagram.com/ezhaulawayllc/";
 export const NEXTDOOR_URL = "https://nextdoor.com/pages/ez-haulaway-parker-co/";
-export const THUMBTACK_URL =
-  "https://www.thumbtack.com/co/parker/junk-removal/ez-haulaway/service/592774324426809344";
 export const BBB_URL =
   "https://www.bbb.org/us/co/parker/profile/junk-removal/ez-haulaway-llc-1296-1000203490";
 export const CHAMBER_PROFILE_URL =
@@ -28,8 +27,8 @@ export const CHAMBER_PROFILE_URL =
 export const BUSINESS_SAME_AS = [
   GOOGLE_PROFILE_URL,
   FACEBOOK_URL,
+  INSTAGRAM_URL,
   NEXTDOOR_URL,
-  THUMBTACK_URL,
   BBB_URL,
   CHAMBER_PROFILE_URL,
 ] as const;
@@ -96,7 +95,7 @@ const raw_BUSINESS_SCHEMA = {
   telephone: PHONE_E164,
   image: `${SITE_URL}/apple-touch-icon.png`,
   logo: `${SITE_URL}/apple-touch-icon.png`,
-  priceRange: "[[min]] - [[load:8]]",
+  priceRange: "[[min]]-[[load:8]]",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Parker",

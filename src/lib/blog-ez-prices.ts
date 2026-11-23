@@ -145,7 +145,38 @@ export function rewriteEzPriceText(input: string, guide: PriceGuide): string {
 
   let out = rewritePriceTables(input, guide);
 
+  const couchSmall = itemWords(guide, "couch-small");
   const phrases: [RegExp, string][] = [
+    [
+      /Pricing is by trailer load:\s*\$\d{1,3}(?:,\d{3})*\s+minimum,\s*\$\d{1,3}(?:,\d{3})*\s+for an eighth of a trailer,\s*\$\d{1,3}(?:,\d{3})*\s+for a half,\s*\$\d{1,3}(?:,\d{3})*\s+for a full trailer/gi,
+      `Pricing is by trailer load: ${min} minimum, ${eighth} for an eighth of a trailer, ${half} for a half, ${full} for a full trailer`,
+    ],
+    [/A minimum load costs \$\d{1,3}(?:,\d{3})*/gi, `A minimum load costs ${min}`],
+    [/Our pricing starts at \$\d{1,3}(?:,\d{3})*/gi, `Our pricing starts at ${min}`],
+    [
+      /At our published rates that is \$\d{1,3}(?:,\d{3})*\s+to\s+\$\d{1,3}(?:,\d{3})*/gi,
+      `At our published rates that is ${quarter} to ${full}`,
+    ],
+    [/\$\d{1,3}(?:,\d{3})*\s+one-eighth trailer/gi, `${eighth} one-eighth trailer`],
+    [
+      /the \$\d{1,3}(?:,\d{3})* mattress price,\s*\$\d{1,3}(?:,\d{3})* for the couch/gi,
+      `the ${mattress} mattress price, ${couchSmall} for the couch`,
+    ],
+    [
+      /A basement that(?:'|’)s about half full of ordinary household items is \$\d{1,3}(?:,\d{3})*/gi,
+      `A basement that’s about half full of ordinary household items is ${half}`,
+    ],
+    [/half-trailer range, which is \$\d{1,3}(?:,\d{3})*/gi, `half-trailer range, which is ${half}`],
+    [
+      /Mattress removal with us is \$\d{1,3}(?:,\d{3})*/gi,
+      `Mattress removal with us is ${mattress}`,
+    ],
+    [
+      /Mattress removal:\s*\$\d{1,3}(?:,\d{3})*(?!\s*(?:to|–|-)\s*\$)/gi,
+      `Mattress removal: ${mattress}`,
+    ],
+    [/1\/2 trailer \(\$\d{1,3}(?:,\d{3})*\)/gi, `1/2 trailer (${half})`],
+    [/\$\d{1,3}(?:,\d{3})*\s+half-trailer job/gi, `${half} half-trailer job`],
     [/\$450\s*(?:–|-|to)\s*\$850 for a hot tub/gi, hotTubWords(guide)],
     [/\$450\s*(?:–|-|to)\s*\$850/gi, hotTubWords(guide)],
     [

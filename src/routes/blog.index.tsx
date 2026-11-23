@@ -5,7 +5,7 @@ import { BLOG_HEAD_OVERRIDES } from "@/content/blog-links";
 import { SITE_URL } from "@/content/site";
 import { listBlogPosts } from "@/lib/blog.functions";
 import { blogImageSrcSet, resizedBlogImage } from "@/lib/blog-html";
-import { rewriteEzPriceText } from "@/lib/blog-ez-prices";
+import { fillBlogPriceText } from "@/lib/blog-ez-prices";
 import { usePriceGuide } from "@/hooks/use-price-guide";
 
 const postsQuery = queryOptions({ queryKey: ["blog", "list"], queryFn: () => listBlogPosts() });
@@ -88,7 +88,7 @@ function BlogIndex() {
                     </h2>
                     {(BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description) ? (
                       <p className="mt-3 line-clamp-3 text-muted-foreground">
-                        {rewriteEzPriceText(
+                        {fillBlogPriceText(
                           BLOG_HEAD_OVERRIDES[p.slug]?.description ?? p.meta_description ?? "",
                           guide,
                         )}

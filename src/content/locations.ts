@@ -42,15 +42,42 @@ const raw_locations: Location[] = [
     nearby: ["lone-tree", "castle-rock", "centennial", "franktown", "castle-pines", "sedalia", "elizabeth"],
     topServices: ["deck-removal", "garage-cleanouts", "hot-tub-removal"],
     faqs: [
-      ["How much does junk removal cost in Parker?", "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price."],
-      ["Do you charge extra to come to Parker?", "No. Parker is home base, so a Parker address does not get a distance fee. Jobs farther out can include [[travel]], and we put that on the quote before we schedule."],
-      ["Which Parker neighborhoods do you serve?", "Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Bradbury Ranch, Clarke Farms, Compark, Pradera, and the homes around Mainstreet and the Cherry Creek Trail. Acreage toward Hilltop Road, Franktown, and Elizabeth is a regular stop for brush, old fencing, and shed tear-downs."],
-      ["What will you haul, and what do you leave?", "We take furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, hot tubs, sheds, decks, fences, and yard debris such as branches and brush. We do not take wet paint, chemicals, solvents, asbestos, or fuels."],
-      ["How do I book, and how soon can you come?", `Call or text ${PHONE_DISPLAY}, or use the free instant estimate. That form asks for your name, city, and phone first, then photos or a description, and then shows a preliminary range. Hours are ${HOURS_TEXT}. Same-day and next-day appointments often available. If the trailer is already booked, we tell you the next time that works.`],
-      ["Do I have to be home or drag everything to the curb?", "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone."],
-      ["Does Parker trash service take couches and mattresses?", "Most Parker trash service, and many HOAs, limit bulky items or how long a pile can sit in the driveway. We take the couches, mattresses, and appliances those services will not, and we schedule a window so the pile is not left out for days."],
-      ["Where does the junk go after you leave Parker?", "Usable furniture and household goods go to donation when a partner will accept them. Metal, appliances, and electronics go to recycling. What cannot be reused goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill."],
-      ["Do you serve Stroh Ranch and downtown Mainstreet?", "Yes. Stroh Ranch, along the Cherry Creek Trail, is a regular Parker stop, along with Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Clarke Farms, and the houses around downtown Mainstreet. Garage cleanouts in those HOA neighborhoods are a common call."],
+      [
+        "How much does junk removal cost in Parker?",
+        "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free photo quote, or use the free instant estimate for the exact price.",
+      ],
+      [
+        "Do you charge extra to come to Parker?",
+        "No. Parker is home base, so a Parker address does not get a distance fee. Jobs farther out can include [[travel]], and we put that on the quote before we schedule.",
+      ],
+      [
+        "Which Parker neighborhoods do you serve?",
+        "Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Bradbury Ranch, Clarke Farms, Compark, Pradera, and the homes around Mainstreet and the Cherry Creek Trail. Acreage toward Hilltop Road, Franktown, and Elizabeth is a regular stop for brush, old fencing, and shed tear-downs.",
+      ],
+      [
+        "What will you haul, and what do you leave?",
+        "We take furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, hot tubs, sheds, decks, fences, and yard debris such as branches and brush. We do not take wet paint, chemicals, solvents, asbestos, or fuels.",
+      ],
+      [
+        "How do I book, and how soon can you come?",
+        `Call or text ${PHONE_DISPLAY}, or use the free instant estimate. That form asks for your name, city, and phone first, then photos or a description, and then shows a preliminary range. Hours are ${HOURS_TEXT}. Same-day and next-day appointments often available. If the trailer is already booked, we tell you the next time that works.`,
+      ],
+      [
+        "Do I have to be home or drag everything to the curb?",
+        "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone.",
+      ],
+      [
+        "Does Parker trash service take couches and mattresses?",
+        "Most Parker trash service, and many HOAs, limit bulky items or how long a pile can sit in the driveway. We take the couches, mattresses, and appliances those services will not, and we schedule a window so the pile is not left out for days.",
+      ],
+      [
+        "Where does the junk go after you leave Parker?",
+        "Usable furniture and household goods go to donation when a partner will accept them. Metal, appliances, and electronics go to recycling. What cannot be reused goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill.",
+      ],
+      [
+        "Do you serve Stroh Ranch and downtown Mainstreet?",
+        "Yes. Stroh Ranch, along the Cherry Creek Trail, is a regular Parker stop, along with Stonegate, The Pinery, Idyllwilde, Canterberry Crossing, Clarke Farms, and the houses around downtown Mainstreet. Garage cleanouts in those HOA neighborhoods are a common call.",
+      ],
     ],
     content: [
       {
@@ -73,7 +100,10 @@ const raw_locations: Location[] = [
         serviceLinks: [
           { slug: "furniture-removal", label: "Parker furniture removal" },
           { slug: "appliance-removal", label: "Parker appliance removal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Parker mattress and bulky-item pickup" },
+          {
+            slug: "mattress-and-bulky-item-removal",
+            label: "Parker mattress and bulky-item pickup",
+          },
           { slug: "garage-cleanouts", label: "Parker garage cleanouts" },
           { slug: "hot-tub-removal", label: "Parker hot tub removal" },
           { slug: "deck-removal", label: "Parker deck removal" },
@@ -87,8 +117,14 @@ const raw_locations: Location[] = [
           "For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate). We look at the photos, give you a preliminary number, and then confirm it in person before a single item goes on the trailer. The number you approve is the number you pay.",
         ],
         list: [
-          { title: "Small pickup", text: "One or two bulky items, or a tight pile of boxes. Starts at [[min]]." },
-          { title: "Larger jobs", text: "A garage, a few rooms, or a whole-house cleanout. Send a free photo quote, or use the free instant estimate, and we quote the whole job before we schedule." },
+          {
+            title: "Small pickup",
+            text: "One or two bulky items, or a tight pile of boxes. Starts at [[min]].",
+          },
+          {
+            title: "Larger jobs",
+            text: "A garage, a few rooms, or a whole-house cleanout. Send a free photo quote, or use the free instant estimate, and we quote the whole job before we schedule.",
+          },
         ],
       },
       {
@@ -111,7 +147,8 @@ const raw_locations: Location[] = [
         paragraphs: [
           "We sort on the job. Clean, sturdy furniture and household goods go to donation when a partner will take them. Stained, torn, or broken pieces usually will not. Metal, appliances, and electronics go to recycling. What is left goes to a licensed disposal site. Loads that are not donated or recycled go to the Sedalia landfill.",
         ],
-        closing: "Ready to clear it out? Call, text, or send photos for a free estimate from the Parker crew.",
+        closing:
+          "Ready to clear it out? Call, text, or send photos for a free estimate from the Parker crew.",
       },
     ],
   },
@@ -130,14 +167,38 @@ const raw_locations: Location[] = [
     nearby: ["parker", "monument", "lone-tree", "highlands-ranch", "franktown", "sedalia", "elizabeth"],
     topServices: ["light-demolition", "yard-and-landscaping-debris", "deck-removal"],
     faqs: [
-      ["How much does junk removal cost in Castle Rock?", "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free quote, or use the free instant estimate."],
-      ["What will you take in Castle Rock?", "Furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, branches and brush, and hot tubs, sheds, decks, and fences when you want them gone. We do not take wet paint, chemicals, solvents, fuels, or other hazardous waste."],
-      ["How soon can you get to Castle Rock?", "Same-day and next-day appointments often available. Castle Rock is a short run from our Parker base. Call or text and we will tell you the next open window."],
-      ["Do you donate and recycle what you haul from Castle Rock?", "Usable furniture and household goods go to donation when a partner will accept them. Metal and appliances go to recycling. What cannot be reused goes to a licensed disposal site. The Town of Castle Rock does not run curbside trash or recycling, and neighborhood carts are not meant for a couch, a mattress, or a garage cleanout."],
-      ["Do I need to be home for a Castle Rock pickup?", "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone."],
-      ["Which Castle Rock neighborhoods do you serve?", "The Meadows, Crystal Valley Ranch, Castlewood Ranch, Plum Creek, Founders Village, Terrain, and homes around downtown Castle Rock. Tell us about stairs, a narrow gate, or a long carry when you send photos."],
-      ["What about HOA rules and hazardous items?", "A same-visit pickup avoids a pile or a dumpster sitting in the driveway, which many Castle Rock HOAs restrict. We do not haul wet paint, solvents, fuels, or other hazardous waste. Douglas County lists a household hazardous waste collection for residents, and a slash and mulch site for branches, leaves, and grass."],
-      ["Do you charge extra to come to Castle Rock?", "There is [[travel]]. We confirm that on the quote before any work starts."],
+      [
+        "How much does junk removal cost in Castle Rock?",
+        "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Text photos for a free quote, or use the free instant estimate.",
+      ],
+      [
+        "What will you take in Castle Rock?",
+        "Furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, branches and brush, and hot tubs, sheds, decks, and fences when you want them gone. We do not take wet paint, chemicals, solvents, fuels, or other hazardous waste.",
+      ],
+      [
+        "How soon can you get to Castle Rock?",
+        "Same-day and next-day appointments often available. Castle Rock is a short run from our Parker base. Call or text and we will tell you the next open window.",
+      ],
+      [
+        "Do you donate and recycle what you haul from Castle Rock?",
+        "Usable furniture and household goods go to donation when a partner will accept them. Metal and appliances go to recycling. What cannot be reused goes to a licensed disposal site. The Town of Castle Rock does not run curbside trash or recycling, and neighborhood carts are not meant for a couch, a mattress, or a garage cleanout.",
+      ],
+      [
+        "Do I need to be home for a Castle Rock pickup?",
+        "No. We carry items out of the room they are in. For a curbside or garage pickup you can be away if we have access and a way to pay, and we will text you when the load is gone.",
+      ],
+      [
+        "Which Castle Rock neighborhoods do you serve?",
+        "The Meadows, Crystal Valley Ranch, Castlewood Ranch, Plum Creek, Founders Village, Terrain, and homes around downtown Castle Rock. Tell us about stairs, a narrow gate, or a long carry when you send photos.",
+      ],
+      [
+        "What about HOA rules and hazardous items?",
+        "A same-visit pickup avoids a pile or a dumpster sitting in the driveway, which many Castle Rock HOAs restrict. We do not haul wet paint, solvents, fuels, or other hazardous waste. Douglas County lists a household hazardous waste collection for residents, and a slash and mulch site for branches, leaves, and grass.",
+      ],
+      [
+        "Do you charge extra to come to Castle Rock?",
+        "There is [[travel]]. We confirm that on the quote before any work starts.",
+      ],
     ],
     content: [
       {
@@ -169,7 +230,10 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Castle Rock furniture removal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Castle Rock mattress and bulky-item removal" },
+          {
+            slug: "mattress-and-bulky-item-removal",
+            label: "Castle Rock mattress and bulky-item removal",
+          },
         ],
       },
       {
@@ -190,7 +254,10 @@ const raw_locations: Location[] = [
           "For local businesses, we handle **commercial junk removal** and office furniture removal, including unwanted desks, chairs, shelving and other bulky items. Tell us about building access, operating hours and any loading restrictions when you reach out. We can also combine furniture with garage or storage-room junk in one quote instead of treating each room as a separate project.",
         ],
         serviceLinks: [
-          { slug: "house-and-estate-cleanouts", label: "Castle Rock estate and property cleanouts" },
+          {
+            slug: "house-and-estate-cleanouts",
+            label: "Castle Rock estate and property cleanouts",
+          },
           { slug: "garage-cleanouts", label: "Castle Rock garage cleanouts" },
           { slug: "commercial-junk-removal", label: "Castle Rock commercial junk removal" },
         ],
@@ -238,7 +305,8 @@ const raw_locations: Location[] = [
           "Pickups start at [[min]]. Labor, loading, hauling, and disposal are included in the price we confirm before anything is loaded. Heavy materials, specialty items, and demolition work need a look at the actual pile. For an exact price, send a free photo quote or use the [free instant estimate](/instant-estimate).",
           "Use the free instant estimate with photos or a description, or call or text us about the job. Tell us whether items are inside, in the garage or ready for curbside pickup. You do not need to move everything outdoors to use our service. We review the job with you and confirm the final price before loading; There is [[travel]].",
         ],
-        closing: "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
+        closing:
+          "One item or a full cleanout — get a free estimate and we’ll help you plan the haul.",
       },
       {
         heading: "Where Castle Rock Junk Goes",
@@ -300,9 +368,18 @@ const raw_locations: Location[] = [
         heading: "What We Haul in Monument",
         paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it."],
         list: [
-          { title: "Furniture and mattresses", text: "Couches, mattresses, and other household furniture carried out of the room they are in. A small couch (2–3 seats) is [[item:couch-small]] and a mattress is [[item:mattress]]." },
-          { title: "Appliances", text: "Refrigerators, washers, and dryers once they are unplugged and disconnected. A full-size fridge or freezer is [[item:fridge-full]]. A washer or dryer is [[item:washer-dryer]]." },
-          { title: "Garage and property cleanouts", text: "Garages, storage, and move-out piles loaded in one visit." },
+          {
+            title: "Furniture and mattresses",
+            text: "Couches, mattresses, and other household furniture carried out of the room they are in. A small couch (2–3 seats) is [[item:couch-small]] and a mattress is [[item:mattress]].",
+          },
+          {
+            title: "Appliances",
+            text: "Refrigerators, washers, and dryers once they are unplugged and disconnected. A full-size fridge or freezer is [[item:fridge-full]]. A washer or dryer is [[item:washer-dryer]].",
+          },
+          {
+            title: "Garage and property cleanouts",
+            text: "Garages, storage, and move-out piles loaded in one visit.",
+          },
         ],
       },
       {
@@ -317,9 +394,9 @@ const raw_locations: Location[] = [
     slug: "centennial",
     city: "Centennial",
     county: "Arapahoe County",
-    metaTitle: "Junk Removal Centennial CO | Same-Week Pickup | EZ Haulaway",
+    metaTitle: "Junk Removal in Centennial, CO | From [[min]]",
     metaDescription:
-      "Junk removal in Centennial, CO — appliances, furniture, construction debris and property cleanouts. Local crew, free quotes from EZ Haulaway.",
+      "Junk removal in Centennial, CO from [[min]]. Furniture, appliances, and home cleanouts hauled from inside the house. Regular route from Parker.",
     intro:
       "Centennial is a short run from Parker and a regular stop for household junk removal and property cleanouts.",
     local:
@@ -365,6 +442,13 @@ const raw_locations: Location[] = [
         ],
       },
       {
+        heading: "The drive from Parker",
+        paragraphs: [
+          "EZ Haulaway is based in Parker, and Centennial is a regular stop. East Centennial — Smoky Hill, Piney Creek, and the houses along Parker Road — is a straight drive north on Parker Road (Highway 83). Southglenn, Willow Creek, and the shops at The Streets at Southglenn sit on the west side, usually reached by I-25 or University Boulevard.",
+          "Same-week pickup is the usual plan, and next-day often works when the trailer is open. Same-day is sometimes available. There is [[travel]]. If a stop is far enough from Parker to add that fee, you see the number before we schedule.",
+        ],
+      },
+      {
         heading: "Responsible Disposal and Donation",
         paragraphs: [
           "We sort every Centennial load. Usable furniture goes to donation, appliances and metal go to recycling, and only what can't be reused goes to a licensed disposal site. Our family-owned, **licensed and insured** crew treats your home like our own.",
@@ -375,6 +459,7 @@ const raw_locations: Location[] = [
         heading: "Straight Pricing Before We Load Anything",
         paragraphs: [
           "Our 16-foot by 8-foot dump trailer holds about 14 cubic yards — roughly the same as a small roll-off dumpster, except we do all the lifting and it leaves the same day. A minimum load starts at [[min]], a quarter trailer runs [[load:2]], half is [[load:4]], three-quarters is [[load:6]], and a completely full trailer is [[load:8]]. We quote the price on site before a single item goes on the trailer, and that number is what you pay — **no hidden fees**.",
+          "The full price chart is on our [pricing page](/pricing). For the list of what we haul and what we leave behind, see [what we haul away](/what-we-take).",
         ],
         closing:
           "Call or text us for a same-week slot in Centennial, or send photos through our instant estimate tool for a ballpark in minutes.",
@@ -439,6 +524,32 @@ const raw_locations: Location[] = [
         ],
       },
     ],
+    faqs: [
+      [
+        "How much does junk removal cost in Centennial?",
+        "Pickups start at [[min]]. A half trailer is about [[load:4]] and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included. We confirm the price on site before anything goes on the trailer.",
+      ],
+      [
+        "How do you get to Centennial from Parker?",
+        "East Centennial is a straight drive north on Parker Road. West Centennial, including Southglenn, Willow Creek, and The Streets at Southglenn, is usually I-25 or University Boulevard. Same-week pickup is normal, and next-day often works when the trailer is open.",
+      ],
+      [
+        "What if my HOA does not want junk at the curb?",
+        "A lot of Centennial neighborhoods limit what can sit in a driveway or at the curb, and for how long. We load from the garage, the house, or the backyard and leave the same visit, so you are not waiting on a bulk-trash day or parking a dumpster all week.",
+      ],
+      [
+        "What will you haul in Centennial, and what do you leave?",
+        "Furniture, mattresses, appliances that are unplugged, garage and basement cleanouts, remodel debris, yard waste, and hot tubs. If two people can carry it and it is not hazardous, we can usually take it. Wet paint, chemicals, asbestos, and fuels stay behind.",
+      ],
+      [
+        "Can a couch and a fridge go on the same visit?",
+        "Yes. A sectional, a mattress, and a fridge can share one trailer. The job is priced by the space they take together, not as three separate minimums.",
+      ],
+      [
+        "Can you clear a Centennial garage while I am at work?",
+        "If the garage is open to us and we have a way to pay, we can load it while you are out and text you when we leave. Anything inside the house needs someone there, or a lockbox and a clear note about what stays.",
+      ],
+    ],
   },
 
   {
@@ -448,7 +559,7 @@ const raw_locations: Location[] = [
     h1: "Highlands Ranch Junk Removal",
     metaTitle: "Highlands Ranch Junk Removal CO | Free Quotes | EZ Haulaway",
     metaDescription:
-      "Highlands Ranch junk removal: old furniture, garage cleanouts, yard debris and commercial junk removal. Hassle free, upfront pricing. Free quotes.",
+      "Highlands Ranch junk removal from [[min]]. Basement furniture, garage cleanouts, and yard debris in Westridge and BackCountry. Nothing sits outside.",
     intro:
       "We serve the area several times a week, from single-item pickups to complete garage and basement clearing.",
     local:
@@ -469,10 +580,22 @@ const raw_locations: Location[] = [
           "Homes here have big basements and garages, and they fill up. These are our most common calls:",
         ],
         list: [
-          { title: "Basement furniture", text: "**Old furniture** like sectionals, futons, desks and bookshelves carried up the stairs for you." },
-          { title: "Exercise equipment", text: "Treadmills, ellipticals, weight benches and home gyms taken apart and hauled out." },
-          { title: "Mattresses", text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]], within our [[min]] minimum." },
-          { title: "Garage cleanouts", text: "Boxes, shelving, old bikes and yard tools cleared in one trip." },
+          {
+            title: "Basement furniture",
+            text: "**Old furniture** like sectionals, futons, desks and bookshelves carried up the stairs for you.",
+          },
+          {
+            title: "Exercise equipment",
+            text: "Treadmills, ellipticals, weight benches and home gyms taken apart and hauled out.",
+          },
+          {
+            title: "Mattresses",
+            text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]], within our [[min]] minimum.",
+          },
+          {
+            title: "Garage cleanouts",
+            text: "Boxes, shelving, old bikes and yard tools cleared in one trip.",
+          },
         ],
       },
       {
@@ -519,13 +642,18 @@ const raw_locations: Location[] = [
     county: "Douglas County",
     h1: "Lone Tree Junk Removal",
     metaTitle: "Lone Tree Junk Removal CO | Same-Week Pickup | EZ Haulaway",
-    metaDescription: "Lone Tree junk removal: furniture, office cleanouts, electronics and bulky items hauled away. Same-day pickup available, upfront pricing and free quotes.",
+    metaDescription:
+      "Junk removal in Lone Tree, CO from [[min]]. RidgeGate homes, Park Meadows offices, and electronics. Same-week is common, and same-day when available.",
     intro:
       "Our family-owned crew is minutes away in Parker, so same-week scheduling is usually straightforward.",
     local:
       "We handle a mix of residential cleanouts and commercial work here, including office furniture and tenant turnovers around the business corridors.",
     nearby: ["parker", "centennial", "highlands-ranch", "castle-pines"],
-    topServices: ["commercial-junk-removal", "furniture-removal", "electronics-and-e-waste-removal"],
+    topServices: [
+      "commercial-junk-removal",
+      "furniture-removal",
+      "electronics-and-e-waste-removal",
+    ],
     content: [
       {
         heading: "Homes and Businesses We Serve",
@@ -562,13 +690,20 @@ const raw_locations: Location[] = [
     city: "Denver",
     county: "Denver County",
     metaTitle: "Junk Removal Denver CO | EZ Haulaway – Free Estimates",
-    metaDescription: "Junk removal Denver CO: furniture, couches, mattresses, appliances and cleanouts hauled from inside your home. Upfront pricing, free instant estimate.",
+    metaDescription:
+      "Junk removal Denver CO: furniture, couches, mattresses, appliances and cleanouts hauled from inside your home. Upfront pricing, free instant estimate.",
     intro:
       "Need **junk removal in Denver**? EZ Haulaway is a local **junk removal service** that hauls furniture, appliances, mattresses and full cleanouts from homes, apartments and offices across Denver. We do all the lifting.",
     local:
       "Denver jobs mean alleys, tight parking and narrow stairs. We plan access before we arrive, so the crew isn't figuring it out in front of your building.",
     nearby: ["englewood", "aurora"],
-    topServices: ["furniture-removal", "appliance-removal", "mattress-and-bulky-item-removal", "house-and-estate-cleanouts", "commercial-junk-removal"],
+    topServices: [
+      "furniture-removal",
+      "appliance-removal",
+      "mattress-and-bulky-item-removal",
+      "house-and-estate-cleanouts",
+      "commercial-junk-removal",
+    ],
     content: [
       {
         heading: "Denver Junk Removal: The Quick Answer",
@@ -584,11 +719,26 @@ const raw_locations: Location[] = [
           "You pay for space, not hours. Here's how our trailer pricing works in Denver:",
         ],
         list: [
-          { title: "Minimum load", text: "[[min]] — one or two bulky items, like a couch or a mattress set." },
-          { title: "Quarter trailer", text: "[[load:2]] — a small room or a few pieces of furniture." },
-          { title: "Half trailer", text: "[[load:4]] — a one-car garage or a large basement corner." },
-          { title: "Three-quarter trailer", text: "[[load:6]] — most of an apartment or a big garage." },
-          { title: "Full trailer", text: "[[load:8]] — about 14 cubic yards, a full house or estate cleanout." },
+          {
+            title: "Minimum load",
+            text: "[[min]] — one or two bulky items, like a couch or a mattress set.",
+          },
+          {
+            title: "Quarter trailer",
+            text: "[[load:2]] — a small room or a few pieces of furniture.",
+          },
+          {
+            title: "Half trailer",
+            text: "[[load:4]] — a one-car garage or a large basement corner.",
+          },
+          {
+            title: "Three-quarter trailer",
+            text: "[[load:6]] — most of an apartment or a big garage.",
+          },
+          {
+            title: "Full trailer",
+            text: "[[load:8]] — about 14 cubic yards, a full house or estate cleanout.",
+          },
         ],
         closing:
           "Want a number now? Send photos through our free instant estimate and get a price range in about a minute.",
@@ -599,14 +749,28 @@ const raw_locations: Location[] = [
           "If two people can lift it and it's not hazardous, we can usually take it. Our most common Denver jobs:",
         ],
         list: [
-          { title: "Furniture and couch removal", text: "Sofas, sectionals, sleeper sofas, recliners, dressers and dining sets — carried down stairs and out of apartments." },
-          { title: "Mattress disposal", text: "Mattresses and box springs, plus bed frames we take apart for you." },
-          { title: "Appliance removal", text: "Fridges, washers, dryers, stoves and dishwashers, sent to metal recycling when possible." },
-          { title: "Cleanouts", text: "Garages, basements, apartments, move-outs and estate cleanouts in one trip." },
-          { title: "Office and commercial junk removal", text: "Desks, chairs, cubicles and filing cabinets, scheduled to keep downtime low." },
+          {
+            title: "Furniture and couch removal",
+            text: "Sofas, sectionals, sleeper sofas, recliners, dressers and dining sets — carried down stairs and out of apartments.",
+          },
+          {
+            title: "Mattress disposal",
+            text: "Mattresses and box springs, plus bed frames we take apart for you.",
+          },
+          {
+            title: "Appliance removal",
+            text: "Fridges, washers, dryers, stoves and dishwashers, sent to metal recycling when possible.",
+          },
+          {
+            title: "Cleanouts",
+            text: "Garages, basements, apartments, move-outs and estate cleanouts in one trip.",
+          },
+          {
+            title: "Office and commercial junk removal",
+            text: "Desks, chairs, cubicles and filing cabinets, scheduled to keep downtime low.",
+          },
         ],
-        closing:
-          "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
+        closing: "We can't take wet paint, oil, chemicals, asbestos or medical waste.",
         serviceLinks: [
           { slug: "mattress-and-bulky-item-removal", label: "Large item pickup in Denver" },
           { slug: "furniture-removal", label: "Denver furniture removal" },
@@ -661,7 +825,7 @@ const raw_locations: Location[] = [
     county: "Arapahoe & Adams County",
     metaTitle: "Junk Removal Aurora CO | Aurora Junk Removal Services | EZ Haulaway",
     metaDescription:
-      "Junk removal in Aurora, CO — rental turnovers, estate cleanouts, appliance and furniture hauling. Fast scheduling and free quotes from EZ Haulaway.",
+      "Junk removal in Aurora, CO from [[min]]. Southlands garage cleanouts, Heather Ridge rental turnovers, and estate cleanouts. Free photo quotes.",
     intro:
       "Need junk removal in Aurora, CO? Our **junk removal services** cover the whole city, from Southlands out toward the older neighborhoods — and no two junk removal jobs here look alike.",
     local:
@@ -699,7 +863,8 @@ const raw_locations: Location[] = [
             text: "A full-size fridge or freezer is [[item:fridge-full]] and a washer or dryer is [[item:washer-dryer]]. A side-by-side refrigerator is a call or text for a quote. A mattress is [[item:mattress]], a box spring is [[item:box-spring]], a small couch is [[item:couch-small]], and a large sectional is [[item:sectional-large]].",
           },
         ],
-        closing: "Eviction cleanouts and trash outs are available same day or next day once we have the unit details, access and your go-ahead.",
+        closing:
+          "Eviction cleanouts and trash outs are available same day or next day once we have the unit details, access and your go-ahead.",
         serviceLinks: [
           { slug: "rental-cleanout-and-make-ready", label: "Rental cleanouts and make-ready haul-off" },
         ],
@@ -722,8 +887,7 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Aurora junk removal is priced by how much space your items take in our 16-foot dump trailer. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and dump fees are included, There is [[travel]]. Every customer gets the same **upfront junk removal pricing**, whether the job is one mattress or a full **garage**.",
         ],
-        closing:
-          `Call or text ${PHONE} for an Aurora junk removal slot, or send photos through our instant estimate for a price range in minutes.`,
+        closing: `Call or text ${PHONE} for an Aurora junk removal slot, or send photos through our instant estimate for a price range in minutes.`,
       },
     ],
   },
@@ -766,7 +930,10 @@ const raw_locations: Location[] = [
         ],
         serviceLinks: [
           { slug: "furniture-removal", label: "Littleton furniture removal" },
-          { slug: "mattress-and-bulky-item-removal", label: "Littleton mattress and large item pickup" },
+          {
+            slug: "mattress-and-bulky-item-removal",
+            label: "Littleton mattress and large item pickup",
+          },
         ],
       },
       {
@@ -785,9 +952,7 @@ const raw_locations: Location[] = [
         paragraphs: [
           "Old fridges, freezers, washers and dryers come out of the kitchen, basement or garage once they're unplugged. A full-size fridge is about [[item:fridge-full]]. Fridges go to recyclers that handle the refrigerant, and other appliances go to metal recycling.",
         ],
-        serviceLinks: [
-          { slug: "appliance-removal", label: "Littleton appliance removal" },
-        ],
+        serviceLinks: [{ slug: "appliance-removal", label: "Littleton appliance removal" }],
       },
       {
         heading: "Basement, Garage and Estate Cleanouts",
@@ -809,10 +974,22 @@ const raw_locations: Location[] = [
         heading: "Common Questions",
         paragraphs: ["Learn the quick answers our customers ask most."],
         list: [
-          { title: "How does your pricing work?", text: "We price by trailer space, with loading and disposal included. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]]." },
-          { title: "Do you remove decks and fences?", text: "Yes. Ben has taken out more than 300 decks. We tear it down, handle the loading and haul it off in the same visit." },
-          { title: "Can you clear a basement?", text: "Yes. Our crew carries everything up the stairs and out, so you don't lift a thing." },
-          { title: "How do I contact you?", text: "Contact us by call or text with an email or phone number, or use our free instant estimate with a few photos to get a quote today." },
+          {
+            title: "How does your pricing work?",
+            text: "We price by trailer space, with loading and disposal included. Pickups start at [[min]], a half load is about [[load:4]], and a full trailer is about [[load:8]].",
+          },
+          {
+            title: "Do you remove decks and fences?",
+            text: "Yes. Ben has taken out more than 300 decks. We tear it down, handle the loading and haul it off in the same visit.",
+          },
+          {
+            title: "Can you clear a basement?",
+            text: "Yes. Our crew carries everything up the stairs and out, so you don't lift a thing.",
+          },
+          {
+            title: "How do I contact you?",
+            text: "Contact us by call or text with an email or phone number, or use our free instant estimate with a few photos to get a quote today.",
+          },
         ],
         closing: "Want to learn your price now? Use our free instant estimate.",
       },
@@ -830,7 +1007,11 @@ const raw_locations: Location[] = [
     local:
       "Smaller lots and older homes mean careful access and a lot of hand-carrying. That is normal work for our crew.",
     nearby: ["denver", "littleton", "centennial"],
-    topServices: ["furniture-removal", "commercial-junk-removal", "mattress-and-bulky-item-removal"],
+    topServices: [
+      "furniture-removal",
+      "commercial-junk-removal",
+      "mattress-and-bulky-item-removal",
+    ],
     content: [
       {
         heading: "Junk Removal Englewood",
@@ -846,11 +1027,26 @@ const raw_locations: Location[] = [
           "Our junk removal services cover almost anything that isn't hazardous. Here are the jobs we do most often in Englewood:",
         ],
         list: [
-          { title: "Furniture and mattresses", text: "Unwanted furniture like a small couch at [[item:couch-small]], a sleeper at [[item:sleeper-couch]], mattresses at [[item:mattress]] and box springs at [[item:box-spring]], plus dressers, recliners and bed frames." },
-          { title: "Appliance removal", text: "Fridges, washers, dryers and stoves carried out and sent to metal recycling whenever possible." },
-          { title: "Garage and basement cleanouts", text: "Boxes, shelving, old bikes, yard tools and years of storage cleared in a single trip." },
-          { title: "Small commercial cleanouts", text: "Office furniture, retail fixtures and storage rooms for Englewood businesses along Broadway and South Santa Fe." },
-          { title: "Rental turnovers", text: "Tenant leftovers and unwanted furniture cleared fast so landlords and property managers can clean and re-list the unit." },
+          {
+            title: "Furniture and mattresses",
+            text: "Unwanted furniture like a small couch at [[item:couch-small]], a sleeper at [[item:sleeper-couch]], mattresses at [[item:mattress]] and box springs at [[item:box-spring]], plus dressers, recliners and bed frames.",
+          },
+          {
+            title: "Appliance removal",
+            text: "Fridges, washers, dryers and stoves carried out and sent to metal recycling whenever possible.",
+          },
+          {
+            title: "Garage and basement cleanouts",
+            text: "Boxes, shelving, old bikes, yard tools and years of storage cleared in a single trip.",
+          },
+          {
+            title: "Small commercial cleanouts",
+            text: "Office furniture, retail fixtures and storage rooms for Englewood businesses along Broadway and South Santa Fe.",
+          },
+          {
+            title: "Rental turnovers",
+            text: "Tenant leftovers and unwanted furniture cleared fast so landlords and property managers can clean and re-list the unit.",
+          },
         ],
       },
       {
@@ -865,7 +1061,8 @@ const raw_locations: Location[] = [
         paragraphs: [
           "We sort every load. Usable furniture goes to **donation**, metal goes to **recycling**, and only what can't be reused heads to a licensed disposal site. Our customers like knowing their local junk gets a second life when it can — that's what local junk removal from a locally owned crew looks like.",
         ],
-        closing: "Call or text for the soonest Englewood junk removal slot, or book online with your free instant estimate.",
+        closing:
+          "Call or text for the soonest Englewood junk removal slot, or book online with your free instant estimate.",
       },
       {
         heading: "South Broadway Junk Removal",
@@ -907,16 +1104,32 @@ const raw_locations: Location[] = [
       },
       {
         heading: "Lakewood Junk Removal Services We Offer",
-        paragraphs: [
-          "From one couch to a full estate, here's what Lakewood customers book most:",
-        ],
+        paragraphs: ["From one couch to a full estate, here's what Lakewood customers book most:"],
         list: [
-          { title: "Garage cleanouts", text: "Old tools, shelving, bikes, paint cans that are fully dried, and boxes of storage cleared in one trip." },
-          { title: "Yard and landscaping debris", text: "Branches, brush, old sod, landscape rock and storm cleanup from Lakewood's mature yards." },
-          { title: "Light demolition", text: "Old sheds, decks, fences and playsets torn down and hauled away together." },
-          { title: "Furniture and mattress removal", text: "A small couch is [[item:couch-small]] and a mattress is [[item:mattress]], carried out from any room." },
-          { title: "Appliance removal", text: "Fridges, washers and dryers hauled and sent to **metal recycling** when possible." },
-          { title: "Estate and move-out cleanouts", text: "Whole-house cleanouts for families, realtors and **property managers**." },
+          {
+            title: "Garage cleanouts",
+            text: "Old tools, shelving, bikes, paint cans that are fully dried, and boxes of storage cleared in one trip.",
+          },
+          {
+            title: "Yard and landscaping debris",
+            text: "Branches, brush, old sod, landscape rock and storm cleanup from Lakewood's mature yards.",
+          },
+          {
+            title: "Light demolition",
+            text: "Old sheds, decks, fences and playsets torn down and hauled away together.",
+          },
+          {
+            title: "Furniture and mattress removal",
+            text: "A small couch is [[item:couch-small]] and a mattress is [[item:mattress]], carried out from any room.",
+          },
+          {
+            title: "Appliance removal",
+            text: "Fridges, washers and dryers hauled and sent to **metal recycling** when possible.",
+          },
+          {
+            title: "Estate and move-out cleanouts",
+            text: "Whole-house cleanouts for families, realtors and **property managers**.",
+          },
         ],
       },
       {
@@ -931,7 +1144,8 @@ const raw_locations: Location[] = [
         paragraphs: [
           "We sort each load so usable items go to **donation**, metal and yard waste go to **recycling** where possible, and only true trash goes to a licensed disposal site. It's **professional junk removal** done the right way.",
         ],
-        closing: "Book Lakewood junk removal today — call or text, or start your free instant estimate.",
+        closing:
+          "Book Lakewood junk removal today — call or text, or start your free instant estimate.",
       },
       {
         heading: "Why Lakewood Homeowners Choose EZ Haulaway",
@@ -1002,13 +1216,30 @@ const raw_locations: Location[] = [
       },
       {
         heading: "What We Haul in Elizabeth",
-        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it. Common Elizabeth jobs:"],
+        paragraphs: [
+          "If two people can lift it and it is not hazardous, we can usually take it. Common Elizabeth jobs:",
+        ],
         list: [
-          { title: "Property and estate cleanouts", text: "The house, garage and outbuildings cleared in one visit, ready to sell, rent or hand over." },
-          { title: "Brush, fencing and yard debris", text: "Brush piles, fallen limbs, old fence posts and wire, and landscaping leftovers." },
-          { title: "Sheds and outbuildings", text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included." },
-          { title: "Garage and storage cleanouts", text: "Boxes, tools, old furniture and anything else that has been stacking up." },
-          { title: "Appliances and furniture", text: "Refrigerators, washers, couches and mattresses carried out for you." },
+          {
+            title: "Property and estate cleanouts",
+            text: "The house, garage and outbuildings cleared in one visit, ready to sell, rent or hand over.",
+          },
+          {
+            title: "Brush, fencing and yard debris",
+            text: "Brush piles, fallen limbs, old fence posts and wire, and landscaping leftovers.",
+          },
+          {
+            title: "Sheds and outbuildings",
+            text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included.",
+          },
+          {
+            title: "Garage and storage cleanouts",
+            text: "Boxes, tools, old furniture and anything else that has been stacking up.",
+          },
+          {
+            title: "Appliances and furniture",
+            text: "Refrigerators, washers, couches and mattresses carried out for you.",
+          },
         ],
         serviceLinks: [
           { slug: "shed-removal", label: "Shed removal" },
@@ -1047,12 +1278,26 @@ const raw_locations: Location[] = [
       },
       {
         heading: "What We Haul in Kiowa",
-        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it. The work on these properties tends to be:"],
+        paragraphs: [
+          "If two people can lift it and it is not hazardous, we can usually take it. The work on these properties tends to be:",
+        ],
         list: [
-          { title: "Ranch and acreage cleanouts", text: "The house, barn and yard cleared in one visit for a sale, an estate or a handoff to the next owner." },
-          { title: "Barns, sheds and outbuildings", text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included." },
-          { title: "Fence, brush and scrap", text: "Old posts and wire, brush piles, scrap lumber and metal that has collected along a fence line." },
-          { title: "Appliances and furniture", text: "Refrigerators, washers, couches and mattresses carried out of the house or shop. A full-size fridge is [[item:fridge-full]] and a small couch is [[item:couch-small]]." },
+          {
+            title: "Ranch and acreage cleanouts",
+            text: "The house, barn and yard cleared in one visit for a sale, an estate or a handoff to the next owner.",
+          },
+          {
+            title: "Barns, sheds and outbuildings",
+            text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included.",
+          },
+          {
+            title: "Fence, brush and scrap",
+            text: "Old posts and wire, brush piles, scrap lumber and metal that has collected along a fence line.",
+          },
+          {
+            title: "Appliances and furniture",
+            text: "Refrigerators, washers, couches and mattresses carried out of the house or shop. A full-size fridge is [[item:fridge-full]] and a small couch is [[item:couch-small]].",
+          },
         ],
         serviceLinks: [
           { slug: "shed-removal", label: "Shed removal" },
@@ -1091,13 +1336,30 @@ const raw_locations: Location[] = [
       },
       {
         heading: "What We Haul in Franktown",
-        paragraphs: ["Franktown jobs are often outdoors, and we bring the tools for tear-down as well as the trailer for the haul."],
+        paragraphs: [
+          "Franktown jobs are often outdoors, and we bring the tools for tear-down as well as the trailer for the haul.",
+        ],
         list: [
-          { title: "Fence and deck tear-outs", text: "Old fencing and decks taken down and hauled away. Ben has about six years of construction and demolition experience, including more than 300 decks." },
-          { title: "Shed removal", text: "Worn-out sheds and small outbuildings torn down, contents included." },
-          { title: "Brush and acreage cleanups", text: "Brush piles, limbs, scrap lumber and yard debris." },
-          { title: "House, garage and estate cleanouts", text: "Whole properties cleared in one visit for a sale, a rental or a family transition." },
-          { title: "Furniture and appliances", text: "Couches, mattresses, refrigerators and washers carried out for you." },
+          {
+            title: "Fence and deck tear-outs",
+            text: "Old fencing and decks taken down and hauled away. Ben has about six years of construction and demolition experience, including more than 300 decks.",
+          },
+          {
+            title: "Shed removal",
+            text: "Worn-out sheds and small outbuildings torn down, contents included.",
+          },
+          {
+            title: "Brush and acreage cleanups",
+            text: "Brush piles, limbs, scrap lumber and yard debris.",
+          },
+          {
+            title: "House, garage and estate cleanouts",
+            text: "Whole properties cleared in one visit for a sale, a rental or a family transition.",
+          },
+          {
+            title: "Furniture and appliances",
+            text: "Couches, mattresses, refrigerators and washers carried out for you.",
+          },
         ],
         serviceLinks: [
           { slug: "deck-removal", label: "Deck removal" },
@@ -1121,7 +1383,7 @@ const raw_locations: Location[] = [
     h1: "Castle Pines Junk Removal",
     metaTitle: "Castle Pines Junk Removal | Fast, Local Pickup | EZ Haulaway",
     metaDescription:
-      "Castle Pines junk removal by a family-owned Douglas County crew. Furniture, hot tubs, yard waste and cleanouts hauled away. Upfront pricing, free estimate.",
+      "Castle Pines junk removal from [[min]]. Furniture, hot tubs, and yard waste in The Village, The Canyons, and Lagae Ranch. Same-day when the route has room.",
     intro:
       "Looking for **Castle Pines junk removal** from a local crew? EZ Haulaway is a family-owned team based in nearby Parker, and we handle **all the heavy lifting** for homes across Castle Pines.",
     local:
@@ -1151,9 +1413,18 @@ const raw_locations: Location[] = [
           "Old hot tubs are one of our specialties. We cut the spa down, carry the pieces out of the backyard, and haul everything away, usually without touching your landscaping. If the tub sits in a deck, we can take out the deck too.",
         ],
         list: [
-          { title: "Single item pickups", text: "One couch, mattress, or treadmill. Pickups start at [[min]]." },
-          { title: "Mattresses and box springs", text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]]." },
-          { title: "Hot tub removal", text: "A standard spa (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]]." },
+          {
+            title: "Single item pickups",
+            text: "One couch, mattress, or treadmill. Pickups start at [[min]].",
+          },
+          {
+            title: "Mattresses and box springs",
+            text: "Mattresses run [[item:mattress]] and box springs [[item:box-spring]].",
+          },
+          {
+            title: "Hot tub removal",
+            text: "A standard spa (4–6 people) is [[item:hot-tub-standard]]. Smaller and larger spas are [[item:hot-tub-small]] and [[item:hot-tub-large]].",
+          },
         ],
       },
       {
@@ -1212,11 +1483,26 @@ const raw_locations: Location[] = [
         heading: "What We Haul in Sedalia",
         paragraphs: ["Common Sedalia jobs include:"],
         list: [
-          { title: "Appliance haul-away", text: "Refrigerators, washers, dryers and stoves carried out and sent to metal recycling when possible." },
-          { title: "Yard and landscaping debris", text: "Brush, limbs, old fencing, sod and landscaping leftovers." },
-          { title: "Garage and shed cleanouts", text: "Boxes, tools, old furniture and anything else stacked up in the garage or outbuildings." },
-          { title: "House and estate cleanouts", text: "Whole properties cleared for a sale, a rental or a family transition." },
-          { title: "Electronics", text: "TVs, computers and other electronics collected for recycling when possible." },
+          {
+            title: "Appliance haul-away",
+            text: "Refrigerators, washers, dryers and stoves carried out and sent to metal recycling when possible.",
+          },
+          {
+            title: "Yard and landscaping debris",
+            text: "Brush, limbs, old fencing, sod and landscaping leftovers.",
+          },
+          {
+            title: "Garage and shed cleanouts",
+            text: "Boxes, tools, old furniture and anything else stacked up in the garage or outbuildings.",
+          },
+          {
+            title: "House and estate cleanouts",
+            text: "Whole properties cleared for a sale, a rental or a family transition.",
+          },
+          {
+            title: "Electronics",
+            text: "TVs, computers and other electronics collected for recycling when possible.",
+          },
         ],
         serviceLinks: [
           { slug: "appliance-removal", label: "Appliance removal" },
@@ -1235,7 +1521,8 @@ const raw_locations: Location[] = [
 ];
 export const locations = priced(raw_locations);
 
-export const locationBySlug = (slug: string) => locations.find((location) => location.slug === slug);
+export const locationBySlug = (slug: string) =>
+  locations.find((location) => location.slug === slug);
 
 /** Cities with the strongest local search demand — used for city + service cross-linking. */
 export const PRIORITY_CITY_SLUGS = [
@@ -1247,9 +1534,9 @@ export const PRIORITY_CITY_SLUGS = [
   "castle-pines",
 ] as const;
 
-export const priorityLocations = PRIORITY_CITY_SLUGS
-  .map((slug) => locations.find((location) => location.slug === slug))
-  .filter((location): location is Location => Boolean(location));
+export const priorityLocations = PRIORITY_CITY_SLUGS.map((slug) =>
+  locations.find((location) => location.slug === slug),
+).filter((location): location is Location => Boolean(location));
 
 /** High-ticket, low-competition specialty services promoted on city pages. */
 export const SPECIALTY_SERVICE_SLUGS = [

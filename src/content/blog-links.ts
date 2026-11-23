@@ -92,14 +92,52 @@ export const BLOG_RELATED: Record<string, string[]> = {
   "christmas-tree-disposal": ["/services/yard-and-landscaping-debris", "/instant-estimate"],
 };
 
-/** Full document title and meta description for a post whose synced title is a weak snippet. */
-export const BLOG_HEAD_OVERRIDES: Record<string, { title: string; description: string }> = {
+/**
+ * Full document title and meta description for a post whose synced title is a weak snippet.
+ * syncHeading updates the article H1 and the BlogPosting headline when that H1 is the synced title.
+ */
+export const BLOG_HEAD_OVERRIDES: Record<
+  string,
+  { title: string; description: string; syncHeading?: boolean }
+> = {
   "furniture-disposal-denver": {
     title: "Furniture Disposal in Denver, CO | Costs & Options",
     description:
       "Furniture disposal in Denver: city large-item pickup, donation rules, drop-off, and what a paid haul-away costs. How to choose and how to prepare.",
   },
+  "bed-frame-disposal": {
+    title: "Bed Frame Disposal Options: Curbside to Haul-Away",
+    description:
+      "Bed frame disposal options in the Denver area: curbside pickup, scrap, donation, drop-off, or haul-away from [[min]]. We carry it out from inside.",
+    syncHeading: true,
+  },
+  "deck-removal-cost": {
+    title: "Deck Removal Cost: Size, Height, and Haul-Away",
+    description:
+      "Deck removal cost depends on size, height, material, and access. Denver-area haul-away of the debris is priced from [[min]], with loading included.",
+    syncHeading: true,
+  },
 };
+
+/** Replaces the article H1 when it is the synced title, so the heading matches the new title. */
+export function articleHeadingHtml(html: string, from: string, to: string): string {
+  if (!to || from.trim() === to.trim()) return html;
+  return html.replace(
+    /<h1(\s[^>]*)?>([\s\S]*?)<\/h1>/i,
+    (full, attrs: string | undefined, inner: string) => {
+      const text = inner
+        .replace(/<[^>]+>/g, "")
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/\s+/g, " ")
+        .trim();
+      if (text !== from.trim()) return full;
+      const safe = to.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return `<h1${attrs ?? ""}>${safe}</h1>`;
+    },
+  );
+}
 
 /** Short quote prompt shown at the top of a post, for posts that already rank for hauling-away searches. */
 export const BLOG_CALLOUTS: Record<string, { text: string; href: string; label: string }> = {
