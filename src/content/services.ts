@@ -1,4 +1,3 @@
-import { PHONE } from "@/content/site";
 import { priced } from "@/lib/price-store";
 import furnitureAsset from "@/assets/real-furniture-couch-1000.webp";
 import applianceAsset from "@/assets/branded-service-appliance.webp";
@@ -52,15 +51,16 @@ const raw_services: Service[] = [
 {
     slug: "furniture-removal",
     name: "Furniture Removal",
-    h1: "Furniture Removal in Parker, Denver & the Metro",
-    metaTitle: "Furniture Removal Parker & Denver | We Carry It Out",
-    metaDescription: `Couches, sectionals, dressers, and office furniture carried out in Parker and Denver. Donation when a piece qualifies. Free photo quote: ${PHONE}.`,
+    h1: "Furniture and Sofa Removal Across Parker and the South Metro",
+    metaTitle: "Furniture Removal Company | Sofa & Couch Haul",
+    metaDescription:
+      "Sofas, sectionals, and office furniture carried out across Parker, Castle Rock, Centennial, and the south metro. From [[min]]. Free photo quote.",
     summary: "Couches, sectionals, tables, chairs, dressers, shelving, and office furniture.",
     image: furnitureAsset,
     imageAlt: "EZ Haulaway crew member wheeling a reclining sofa out on a dolly for furniture removal in Parker, CO",
     intro: [
       "Old furniture is bulky, awkward on stairs, and almost never fits in a car. Point at the sofa, the dresser, or the whole room. We carry it out from where it sits.",
-      "We work in occupied homes, apartments, and offices across Parker, Denver, Castle Rock, and the rest of the metro. Floors, doorframes, and corners get blankets and a careful carry on the way out.",
+      "We work in occupied homes, apartments, and offices across Parker, Castle Rock, Centennial, Highlands Ranch, Aurora, and Denver. Floors, doorframes, and corners get blankets and a careful carry on the way out. Denver apartments, alleys, and offices are on the [Denver furniture and sofa removal](/service-areas/denver/furniture-removal) page.",
     ],
     includes: [
       "Couches, sectionals, recliners, and sleeper sofas",
@@ -91,8 +91,11 @@ const raw_services: Service[] = [
         text: "Empty drawers and take personal items out of cushions and shelves. Clear a walking path and open the doors between the piece and the exit. Mention stairs, an elevator, a narrow hallway, or a long carry from a backyard or alley.\n\nIf a doorway looks tight, we can take the piece apart on site. You do not need to do that first, and you do not need to drag anything to the curb. Point out what stays. If you hope to donate something, tell us about rips, stains, or pet hair so we know whether donation is realistic.",
       },
       {
-        heading: "Stairs, apartments, and tight Denver houses",
-        text: "Most furniture is not waiting in the driveway. Narrow stairwells, third-floor walkups, basement turns, and alley pickups are part of the job. Older Denver houses often have steep stairs and tight doorways. Sleeper sofas and sectionals are the pieces that usually need to come apart. We protect floors and door frames and sweep up after the load is out.",
+        heading: "Stairs, apartments, and tight doorways",
+        text: "Most furniture is not waiting in the driveway. Narrow stairwells, upper-floor apartments, basement turns, and alley pickups are part of the job across Parker and the south metro. Sleeper sofas and sectionals are the pieces that usually need to come apart. We protect floors and door frames and sweep up after the load is out.\n\nDenver walkups, alley parking, and office buildings have their own details: elevators, loading docks, and buildings that ask for a certificate of insurance.",
+        links: [
+          { slug: "furniture-removal", label: "Furniture removal in Denver", city: "denver" },
+        ],
       },
       {
         heading: "Office furniture",

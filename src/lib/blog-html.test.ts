@@ -32,6 +32,14 @@ describe("resizedBlogImage", () => {
 describe("optimizeBlogImages", () => {
   const html = `<p>a</p><img src="${U}" alt="one"><img alt="two" src='${U}' loading="eager"><img src="/x.png" alt="three" />`;
   const out = optimizeBlogImages(html);
+  it("replaces the generic ezhaulawayllc file-name alt", () => {
+    const html = `<img src="${U.replace("pic_1.jpeg", "1791831589624_ezhaulawayllc.jpg")}" alt="Ezhaulawayllc" loading="lazy">`;
+    const out = optimizeBlogImages(html);
+    expect(out).not.toContain('alt="Ezhaulawayllc"');
+    expect(out).toContain(
+      'alt="Ben from EZ Haulaway standing with arms crossed in front of the black dump trailer"',
+    );
+  });
   it("resizes storage images and keeps alt text", () => {
     expect(out).toContain('alt="one"');
     expect(out).toContain("srcset=");

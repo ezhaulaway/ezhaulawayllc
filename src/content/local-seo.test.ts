@@ -23,5 +23,8 @@ describe("city hub titles", () => {
     expect(cityHubTitle("Lakewood", "lakewood")).toBe(
       "Junk Removal in Lakewood, CO | Same-Day When Available",
     );
+    expect(cityHubTitle("Centennial", "centennial")).toBe(
+      "Junk Removal in Centennial, CO | From [[min]]",
+    );
   });
 });

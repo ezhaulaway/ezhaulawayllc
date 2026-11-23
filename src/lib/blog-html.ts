@@ -28,6 +28,16 @@ export function blogImageSrcSet(
 }
 
 const ARTICLE_SIZES = "(min-width: 768px) 728px, calc(100vw - 40px)";
+/** Shared crew photo was saved as ezhaulawayllc.jpg, so the alt was just that file name. */
+const BRANDED_CREW_ALT =
+  "Ben from EZ Haulaway standing with arms crossed in front of the black dump trailer";
+
+function replaceGenericAlt(attrs: string): string {
+  return attrs.replace(
+    /(\salt\s*=\s*)(?:"ezhaulawayllc"|'ezhaulawayllc')/gi,
+    `$1"${BRANDED_CREW_ALT}"`,
+  );
+}
 
 function escapeAttr(value: string): string {
   return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
@@ -49,9 +59,8 @@ export function insertPostHero(
 export function optimizeBlogImages(html: string): string {
   let n = 0;
   return html.replace(/<img\b([^>]*?)(\/?)>/gi, (_m, attrs: string, slash: string) => {
-    let base = attrs.replace(
-      /\s+(loading|decoding|fetchpriority)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi,
-      "",
+    let base = replaceGenericAlt(
+      attrs.replace(/\s+(loading|decoding|fetchpriority)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, ""),
     );
     const src = /\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)')/i.exec(base);
     const url = src?.[1] ?? src?.[2];
