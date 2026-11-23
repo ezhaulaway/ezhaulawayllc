@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { HelpfulGuides } from "@/components/blog-links";
 import { CtaBand, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
 import { serviceAreaList } from "@/content/service-areas";
-import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
+import { PhoneLink } from "@/components/phone-link";
+import { PHONE, PHONE_DISPLAY, SITE_URL } from "@/content/site";
 
 const title = "Junk Removal FAQ: Prices & Answers | EZ Haulaway";
 const description =
@@ -198,9 +199,9 @@ function FaqPage() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone /> Call or Text {PHONE}
-              </a>
+              <PhoneLink location="faq">
+                <Phone /> Call or Text {PHONE_DISPLAY}
+              </PhoneLink>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link to="/pricing">See Pricing</Link>

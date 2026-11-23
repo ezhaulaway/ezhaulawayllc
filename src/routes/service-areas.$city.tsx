@@ -16,7 +16,8 @@ import { locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
 import { cityFaqs } from "@/content/city-faqs";
-import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_ID, BUSINESS_SCHEMA, processSteps } from "@/content/site";
+import { PhoneLink } from "@/components/phone-link";
+import { PHONE, PHONE_DISPLAY, SITE_URL, BUSINESS_ID, BUSINESS_SCHEMA, processSteps } from "@/content/site";
 import { rich } from "@/components/prose-section";
 import { cityHubTitle, neighborhoodList } from "@/content/local-seo";
 import { CITY_ANGLES } from "@/content/city-angles";
@@ -204,9 +205,9 @@ function CityPage() {
                 </Button>
               )}
               <Button asChild size="lg" variant="outline">
-                <a href={`tel:${PHONE_TEL}`}>
-                  <Phone /> Call or Text {PHONE}
-                </a>
+                <PhoneLink location="city">
+                  <Phone /> Call or Text {PHONE_DISPLAY}
+                </PhoneLink>
               </Button>
             </div>
             {pushInstantEstimate && (

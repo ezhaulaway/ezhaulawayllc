@@ -9,10 +9,24 @@ let timerStarted = false;
 export function usePriceGuide(): PriceGuide {
   const fetchGuide = useServerFn(getPriceGuide);
   useEffect(() => {
+    // The first HTML paint may have used the snapshot so the response was not held on the feed.
+    if (!getGuide().live)
+      fetchGuide()
+        .then(setGuide)
+        .catch(() => {});
     if (timerStarted) return;
     timerStarted = true;
-    const id = setInterval(() => fetchGuide().then(setGuide).catch(() => {}), 5 * 60 * 1000);
-    return () => { clearInterval(id); timerStarted = false; };
+    const id = setInterval(
+      () =>
+        fetchGuide()
+          .then(setGuide)
+          .catch(() => {}),
+      5 * 60 * 1000,
+    );
+    return () => {
+      clearInterval(id);
+      timerStarted = false;
+    };
   }, [fetchGuide]);
   return useSyncExternalStore(subscribeGuide, getGuide, getGuide);
 }

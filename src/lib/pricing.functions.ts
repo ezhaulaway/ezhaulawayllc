@@ -26,14 +26,27 @@ async function fetchFresh(): Promise<PriceGuide> {
   }
 }
 
-/** One guide for the request: the live feed, the last successful feed, or the validated snapshot. Never a mix. */
-export async function loadPriceGuide(): Promise<PriceGuide> {
+/**
+ * One guide for the request: the live feed, the last successful feed, or the validated snapshot. Never a mix.
+ * `maxWaitMs` caps how long the first HTML response waits on a cold feed. The fetch keeps running and fills
+ * the cache, and the page refreshes from that cache when the guide it rendered was the snapshot.
+ */
+export async function loadPriceGuide(maxWaitMs?: number): Promise<PriceGuide> {
   if (cache) {
     if (Date.now() - cache.at >= 5 * 60 * 1000 && !inflight) inflight = fetchFresh();
     return cache.guide;
   }
   inflight ??= fetchFresh();
-  return inflight;
+  if (maxWaitMs == null) return inflight;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const deadline = new Promise<PriceGuide>((resolve) => {
+    timer = setTimeout(() => resolve(cache?.guide ?? SNAPSHOT_GUIDE), maxWaitMs);
+  });
+  try {
+    return await Promise.race([inflight, deadline]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
 }
 
 export const getPriceGuide = createServerFn({ method: "GET" }).handler(() => loadPriceGuide());

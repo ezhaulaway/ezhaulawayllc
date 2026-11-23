@@ -45,6 +45,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { PhoneLink } from "@/components/phone-link";
 import { HOURS_TEXT, PHONE, PHONE_DISPLAY, PHONE_TEL } from "@/content/site";
 import { PROMO } from "@/content/promo";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -256,14 +257,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 md:gap-3">
           <ThemeToggle />
           <Button asChild variant="ghost" className="hidden px-3 md:inline-flex">
-            <a href={`tel:${PHONE_TEL}`}>
-              <Phone /> {PHONE}
-            </a>
+            <PhoneLink location="header">
+              <Phone /> {PHONE_DISPLAY}
+            </PhoneLink>
           </Button>
           <Button asChild variant="outline" size="icon" aria-label="Call EZ Haulaway" className="md:hidden">
-            <a href={`tel:${PHONE_TEL}`}>
+            <PhoneLink location="header_mobile">
               <Phone />
-            </a>
+            </PhoneLink>
           </Button>
           <Button asChild size="lg" className="hidden md:inline-flex">
             <Link to="/instant-estimate">Instant Estimate</Link>
@@ -411,9 +412,9 @@ export function SiteFooter() {
             <p className="mt-5 max-w-sm text-sm leading-6 text-secondary-foreground/65">
               Professional junk removal and light demolition from a family-owned business in Parker, Colorado.
             </p>
-            <a href={`tel:${PHONE_TEL}`} className="mt-5 inline-block font-display text-lg font-bold">
-              {PHONE}
-            </a>
+            <PhoneLink location="footer" className="mt-5 inline-block font-display text-lg font-bold">
+              {PHONE_DISPLAY}
+            </PhoneLink>
           </div>
           <div>
             <p className="font-display font-bold">Services</p>
@@ -486,7 +487,7 @@ export function SiteFooter() {
             <address className="mt-6 not-italic text-sm leading-6 text-secondary-foreground/70">
               <span className="block font-bold text-secondary-foreground">EZ Haulaway LLC</span>
               <span className="block">Parker, CO 80134</span>
-              <a href={`tel:${PHONE_TEL}`} className="block hover:text-secondary-foreground">{PHONE_DISPLAY}</a>
+              <PhoneLink location="footer_address" className="block hover:text-secondary-foreground">{PHONE_DISPLAY}</PhoneLink>
               <span className="block">{HOURS_TEXT}</span>
               <span className="block">Serving Douglas County &amp; the Denver metro</span>
             </address>
@@ -525,11 +526,11 @@ export function SiteFooter() {
 
 export function MobileCtaBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-2 border-t border-border bg-background p-2 shadow-lg md:hidden">
+    <div data-phone-region="mobile-sticky" className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-2 border-t border-border bg-background p-2 shadow-lg md:hidden">
       <Button asChild variant="outline">
-        <a href={`tel:${PHONE_TEL}`}>
+        <PhoneLink location="mobile_sticky">
           <Phone /> Call / Text
-        </a>
+        </PhoneLink>
       </Button>
       <QuoteButton className="w-full" />
     </div>
@@ -559,9 +560,9 @@ export function PageHero({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <QuoteButton />
             <Button asChild variant="outline" size="lg">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone /> Call or Text {PHONE}
-              </a>
+              <PhoneLink location="page_hero">
+                <Phone /> Call or Text {PHONE_DISPLAY}
+              </PhoneLink>
             </Button>
           </div>
         </div>

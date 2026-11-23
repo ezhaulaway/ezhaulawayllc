@@ -18,7 +18,8 @@ import {
 import { locations } from "@/content/locations";
 import { locationPhoto } from "@/content/location-images";
 import { services } from "@/content/services";
-import { PHONE, PHONE_TEL, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
+import { PhoneLink } from "@/components/phone-link";
+import { PHONE, PHONE_DISPLAY, SITE_URL, BUSINESS_SCHEMA } from "@/content/site";
 import { rich } from "@/components/prose-section";
 import { CITY_SERVICE_DESCRIPTION, SERVICE_BENEFIT, fitTitle, neighborhoodList } from "@/content/local-seo";
 
@@ -182,9 +183,9 @@ function CityServicePage() {
             <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">{location.local}</p>
             <div className="mt-8">
               <Button asChild size="lg" variant="outline">
-                <a href={`tel:${PHONE_TEL}`}>
-                  <Phone /> Call or Text {PHONE}
-                </a>
+                <PhoneLink location="city_service">
+                  <Phone /> Call or Text {PHONE_DISPLAY}
+                </PhoneLink>
               </Button>
             </div>
           </div>

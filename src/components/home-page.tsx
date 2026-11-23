@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CityServiceLink } from "@/components/city-service-link";
-import { responsiveImage } from "@/lib/home-images";
+import { PhoneLink } from "@/components/phone-link";
+import { HOME_HERO_SIZES, responsiveImage } from "@/lib/home-images";
 import { DeferredFaq } from "@/components/deferred-faq";
 import { isLiveCityService } from "@/content/live-pages";
 import { ProseSection } from "@/components/prose-section";
@@ -87,7 +88,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { serviceAreaList } from "@/content/service-areas";
-import { PHONE } from "@/content/site";
+import { PHONE, PHONE_DISPLAY } from "@/content/site";
 import { formatMoney } from "@/lib/price-guide";
 
 const navItems = [
@@ -231,7 +232,7 @@ export function HomePage() {
                   <Link to="/instant-estimate">Get My Free Instant Estimate</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <a href={`tel:${PHONE.replaceAll("-", "")}`}><Phone /> Call or Text {PHONE}</a>
+                  <PhoneLink location="home_hero"><Phone /> Call or Text {PHONE_DISPLAY}</PhoneLink>
                 </Button>
               </div>
               <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-muted-foreground">
@@ -268,12 +269,13 @@ export function HomePage() {
             </div>
             <div className="relative min-w-0">
               <img
-                {...responsiveImage(heroJob1200, "(min-width: 1280px) 617px, (min-width: 1024px) calc(52.5vw - 55px), calc(100vw - 40px)")}
+                {...responsiveImage(heroJob1200, HOME_HERO_SIZES)}
                 loading="eager"
+                decoding="async"
                 width={1200}
                 height={800}
                 alt="Ben from EZ Haulaway smiling in front of the red FX4 truck and black dump trailer in Parker, CO"
-                fetchPriority="high"
+                fetchPriority="low"
                 className="aspect-[4/3] min-h-80 w-full rounded-lg border border-border object-cover"
               />
               <div className="absolute -bottom-5 left-4 max-w-64 rounded-md bg-secondary p-4 text-secondary-foreground shadow-lg sm:left-[-1rem]">

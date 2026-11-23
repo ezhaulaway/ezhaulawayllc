@@ -5,7 +5,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, MapPin, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand, InlineQuoteForm, PageHero, PageShell, SectionHeader } from "@/components/site-chrome";
-import { PHONE, PHONE_TEL, SITE_URL } from "@/content/site";
+import { PhoneLink } from "@/components/phone-link";
+import { PHONE, PHONE_DISPLAY, PHONE_TEL, SITE_URL } from "@/content/site";
 import { locations } from "@/content/locations";
 
 const title = "Contact EZ Haulaway — Free Junk Removal Quotes";
@@ -49,7 +50,7 @@ function ContactPage() {
                 <h2 className="mt-4 text-lg font-bold">Call us</h2>
                 <p className="mt-1 text-sm text-muted-foreground">Talk it through and get an answer on the spot.</p>
                 <Button asChild className="mt-4" size="lg">
-                  <a href={`tel:${PHONE_TEL}`}>{PHONE}</a>
+                  <PhoneLink location="contact">{PHONE_DISPLAY}</PhoneLink>
                 </Button>
               </div>
               <div className="rounded-lg border border-border bg-card p-6">
