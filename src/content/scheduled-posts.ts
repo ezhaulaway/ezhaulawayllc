@@ -456,6 +456,94 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
       },
     ],
   },
+  {
+    slug: "electronics-recycling-denver",
+    title: "Electronics Recycling in Denver and Douglas County",
+    meta_description:
+      "Electronics recycling in Denver and Douglas County: free GreenWorks drop-off in Sedalia, Denver's E-cycle coupon, what's banned from the trash, and pickup.",
+    publish_at: "2026-11-24T14:00:00.000Z",
+    hero: {
+      src: "/blog/electronics-recycling-denver/hero.webp",
+      alt: "Basement in a Parker home before a cleanout, with a cardboard box full of tangled old cords and cables, a vacuum, a small cabinet, shelving and a trash can",
+      width: 1600,
+      height: 900,
+    },
+    content_html: `<h1>Electronics Recycling in Denver and Douglas County</h1>
+<p>Here's the short answer on electronics recycling in Denver and Douglas County. In Colorado you can't throw TVs, computers, monitors or printers in the trash. They have to get recycled. If you live in Douglas County you can drop them off free at GreenWorks in Sedalia, you just need an appointment. Denver gives you one E-cycle coupon a year for a discount. Or we haul it, starting at [[min]].</p>
+<p>I'm Ben, I own EZ Haulaway here in Parker. With electronics, people usually need to get rid of old TVs. That's the most common item. Following that is printers.</p>
+<h2>Can I throw away a TV in Colorado?</h2>
+<p>No. Colorado has banned electronics from landfills since July 1, 2013, so the TV can't go out with the trash. It has to be recycled. Same goes for computers, monitors, laptops, tablets, printers, fax machines, keyboards and mice, DVD players and VCRs. Any screen bigger than four inches, measured diagonally, counts too.</p>
+<p>The law is SB 12-133, the Electronic Recycling Jobs Act, and Denver's <a href="https://denvergov.org/My-Property/Recycle-Compost-Trash/Recycle/Electronic-Recycling" rel="noopener">electronic recycling page</a> has the whole list. Telephones aren't covered. Neither are the electronics built into washers, fridges and microwaves.</p>
+<h2>Where can I recycle electronics for free in Douglas County?</h2>
+<p>GreenWorks in Sedalia. It's the county's drop-off site right next to the Sedalia Landfill, and electronics recycling there is free for Douglas County residents. Parker, Castle Rock, Highlands Ranch, Lone Tree, Castle Pines and Sedalia all count. You do need an appointment, and you need an ID or other proof you live in the county.</p>
+<p>They're open Monday through Saturday, 8 a.m. to 5 p.m., and the last appointment is 4:30. Closed Sundays and county holidays. Open year-round, weather permitting. Reservations open ten days out and the county says they fill up fast, so if you don't see a slot, check back the next day. For booking help, call 303-660-7480 or go to the <a href="https://www.douglasco.gov/greenworks/electronics/" rel="noopener">GreenWorks electronics recycling page</a>.</p>
+<p>This is pretty new. Year-round drop-off at GreenWorks only started in July 2026.</p>
+<h2>What does Douglas County's electronics recycling accept?</h2>
+<p>In my words, "their accepted items are computers, tablets, monitors, televisions." Printers too, plus fax machines, keyboards and mice, DVD players, VCRs, cell phones, game consoles, stereo and audio stuff, networking gear, servers and external hard drives. If it's not on their list they don't take it. Take the stand or wall bracket off the TV first.</p>
+<p>The no list is long. No fridges, freezers, washers or dryers, and nothing with Freon, mini fridges included. No small appliances like microwaves, fans, coffee makers, toasters or blenders. No electric mowers, power tools, vacuums or exercise equipment. No car electronics, AC units or swamp coolers. And no light bulbs of any kind, fluorescent light ballasts, or anything with liquid mercury like an old thermostat.</p>
+<p>Tube TVs are the tricky one. TVs are on the yes list but broken or exposed CRT glass isn't, so if the old tube TV has a cracked screen, call GreenWorks before you load it up.</p>
+<img src="/blog/electronics-recycling-denver/old-monitors-pile.webp" alt="Pile of old beige CRT computer monitors and a desktop computer tower stacked outside, waiting for electronics recycling" width="1600" height="900">
+<h2>How does electronics recycling work in Denver?</h2>
+<p>Denver doesn't really have a free drop-off for TVs. It has the E-cycle coupon. If you live in Denver you can request one per household per calendar year, and it gets you a discounted rate on TVs, monitors and other electronics at Blue Star Recyclers. Bring the coupon code and proof of your address when you drop off.</p>
+<p>You request it on the city's <a href="https://denvergov.org/My-Property/Recycle-Compost-Trash/Recycle/Electronic-Recycling" rel="noopener">electronic recycling page</a>. They email you the code, and the city says to allow 12 to 24 hours. It's for drop-offs only. Businesses can't use it, PO boxes can't, and neither can anyone outside the City and County of Denver. Denver's list is also wider than Douglas County's. It takes coffee makers, vacuums, toasters, cords and cables, rechargeable batteries and some small appliances like microwaves.</p>
+<p>At <a href="https://bluestarrecyclers.org/electronics-recycling/for-residents/" rel="noopener">Blue Star Recyclers</a> computers, cell phones and tablets are free. TVs, monitors and most other electronics are charged by the pound, and a broken CRT costs more. They're open Monday through Friday 9 to 5 and Saturday 9 to 1.</p>
+<p>Don't take a TV to the Cherry Creek Recycling and Compost Drop-off. It only takes regular household recycling and compost. In Aurora or anywhere else in Arapahoe County, check with your city. The state keeps a <a href="https://cdphe.colorado.gov/hm/information-residential-electronics-and-computer-waste" rel="noopener">list of electronics recyclers</a> and says to expect a fee.</p>
+<h2>What do we do with the electronics we haul?</h2>
+<p>We recycle them. "Douglas County offers free recycling to all of its county members. So we take everything to the recycling center they have in Sedalia." We don't usually resell electronics either. "Usually we take everything to the electronics recycling."</p>
+<p>A lot of the time the electronics are just one part of a bigger cleanout. One Parker basement had a TV and a big box of old cords and cables in with a treadmill, a dresser and a bunch of boxes. That's the basement in the photo up top. My crew had it empty in about 45 minutes.</p>
+<p>TVs come up in our leads more than any other electronics. This fall we had a 65-inch TV just north of Denver that still worked, it was just too big for the house. Someone else had six old tube TVs going out with a bed set, a couch and a desk. Another lead was two TVs and three computer towers along with six office chairs. In Aurora it was a 2006 rear-projection TV with two sofas, a fridge and a lawn mower. And in Englewood, a tube TV, a TV/monitor and a wood TV cabinet, all down in the basement.</p>
+<p>Back in September we drove up to the mountains to pick up one TV. Just the one. So yes, we'll come out for a single TV.</p>
+<h2>How much does electronics pickup cost?</h2>
+<p>Our jobs start at [[min]], and that covers loading, hauling and disposal. TV and computer recycling is free when it's part of a regular junk removal pickup. Most people have more than one thing to get rid of, so the TVs just ride along with the rest of the load. There's also [[travel]].</p>
+<p>Bigger jobs go by how much of the trailer you fill. Half a trailer is about [[load:4]] and a full trailer is about [[load:8]]. Old tube TVs are heavy and awkward, and a lot of services turn them down. We take them.</p>
+<p>Fastest way to a price is to send me a couple photos and your city. I'll lock in the exact price and give you our soonest availability. You can also run it through our <a href="/instant-estimate">instant estimate</a>, and the whole price list is on our <a href="/pricing">pricing page</a>.</p>
+<h2>Should I wipe my computer or phone before recycling it?</h2>
+<p>Yes. Wipe it or pull the drive before it leaves your house. Denver's recycling page says deleting your personal files and resetting to factory settings is generally enough for laptops, computers and phones. We don't wipe data. So if a drive has anything sensitive on it, take it out or destroy it before we show up.</p>
+<h2>What can't you recycle at the electronics drop-off?</h2>
+<p>At Douglas County's drop-off, a lot of everyday stuff with a plug gets turned away. Microwaves, vacuums, toasters, power tools, electric mowers, exercise equipment, fridges and AC units all get a no. That doesn't make any of it trash, though. We can still haul most of it.</p>
+<p>Here's how I put it: "we are able to take pretty much anything that can be transported apart from biohazardous or hazardous waste." The treadmill, the microwave and the old fridge can go on the same trip as the TVs. Anything with Freon is [[adj:freon]] extra per unit. More on our <a href="/services/appliance-removal">appliance removal</a> and <a href="/what-we-take">what we take</a> pages.</p>
+<p>Paint, chemicals and other hazardous waste can't go in our trailer. For those, Douglas County's GreenWorks page links to its A-Z Recycling Guide.</p>
+<h2>Need your old electronics gone?</h2>
+<p>We're family-owned, insured and based in Parker, and we pick up electronics all over the south metro. See our <a href="/services/electronics-and-e-waste-removal">electronics and e-waste removal</a> page, or the local pages for <a href="/service-areas/sedalia/electronics-and-e-waste-removal">Sedalia</a> and <a href="/service-areas/centennial/electronics-and-e-waste-removal">Centennial</a>. We also work in <a href="/service-areas/parker">Parker</a>, <a href="/service-areas/castle-rock">Castle Rock</a>, <a href="/service-areas/highlands-ranch">Highlands Ranch</a> and <a href="/service-areas/denver">Denver</a>.</p>
+<p>Call or text me at <a href="tel:+17206147223">(720) 614-7223</a>, Monday through Saturday, 7 a.m. to 7 p.m. Send me a couple photos of the TVs, printers or whatever's piled up and I'll text you back a price. Or get one in a minute with our <a href="/instant-estimate">instant estimate</a>. EZ in, junk out.</p>`,
+    faqs: [
+      {
+        question: "Is electronics recycling free in Douglas County?",
+        answer:
+          "Yes, if you live in Douglas County. GreenWorks in Sedalia takes TVs, computers, monitors, printers and the rest of its list for free. Book an appointment and show an ID or other proof you live in the county. Slots open ten days ahead and go fast.",
+      },
+      {
+        question: "Can I throw a TV in the trash in Colorado?",
+        answer:
+          "No. Colorado has banned electronics from landfills since July 1, 2013. TVs, computers, monitors, printers, laptops, tablets, any screen over four inches. It all has to go to a recycler, not the trash.",
+      },
+      {
+        question: "Is there free TV recycling in Denver?",
+        answer:
+          "Not really. If you live in Denver you can get one E-cycle coupon per household each year, and it gets you a discount at Blue Star Recyclers. Computers, phones and tablets are free there. TVs and monitors are charged by the pound.",
+      },
+      {
+        question: "Does Douglas County's electronics recycling take microwaves or vacuums?",
+        answer:
+          "No, neither one. The Douglas County drop-off doesn't take small appliances, and that includes microwaves, vacuums, coffee makers, toasters and fans. Denver's E-cycle program does list vacuums and microwaves. Either way, we can haul them for you.",
+      },
+      {
+        question: "How much does it cost to have a TV picked up?",
+        answer:
+          "Our jobs start at [[min]], with loading, hauling and disposal included. TV and computer recycling is free with a regular junk removal pickup. There's also [[travel]]. Send me a couple photos and your city and I'll lock in the exact price.",
+      },
+      {
+        question: "Do you take old tube TVs?",
+        answer:
+          "Yes. Tube TVs are heavy and a lot of services won't take them, but we do. If the glass is cracked, let me know. Douglas County won't take broken or exposed CRT glass.",
+      },
+      {
+        question: "Do you wipe hard drives before recycling?",
+        answer:
+          "No, we don't wipe data. Pull or destroy any hard drive with sensitive info on it before we pick up the computer.",
+      },
+    ],
+  },
 ];
 
 type Row = Database["public"]["Tables"]["blg_articles"]["Row"];
