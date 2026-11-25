@@ -73,6 +73,11 @@ export const CITY_SERVICE_DESCRIPTION: Record<string, string> = {
 export const HUB_TITLE_OVERRIDES: Record<string, string> = {
   parker: "Junk Removal in Parker, CO | Family-Owned Crew",
   centennial: "Junk Removal in Centennial, CO | From [[min]]",
+  monument: "Junk Removal in Monument, CO | I-25 from Parker",
+  elizabeth: "Junk Removal in Elizabeth, CO | Acreage Cleanouts",
+  sedalia: "Junk Removal in Sedalia, CO | Near the Landfill",
+  franktown: "Junk Removal in Franktown, CO | Short Run from Parker",
+  kiowa: "Junk Removal in Kiowa, CO | Elbert County Seat",
 };
 
 /**

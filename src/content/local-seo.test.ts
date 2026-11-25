@@ -27,4 +27,20 @@ describe("city hub titles", () => {
       "Junk Removal in Centennial, CO | From [[min]]",
     );
   });
+
+  it("uses a distinct title for each outer-town hub", () => {
+    expect(cityHubTitle("Monument", "monument")).toBe(
+      "Junk Removal in Monument, CO | I-25 from Parker",
+    );
+    expect(cityHubTitle("Elizabeth", "elizabeth")).toBe(
+      "Junk Removal in Elizabeth, CO | Acreage Cleanouts",
+    );
+    expect(cityHubTitle("Sedalia", "sedalia")).toBe(
+      "Junk Removal in Sedalia, CO | Near the Landfill",
+    );
+    expect(cityHubTitle("Franktown", "franktown")).toBe(
+      "Junk Removal in Franktown, CO | Short Run from Parker",
+    );
+    expect(cityHubTitle("Kiowa", "kiowa")).toBe("Junk Removal in Kiowa, CO | Elbert County Seat");
+  });
 });
