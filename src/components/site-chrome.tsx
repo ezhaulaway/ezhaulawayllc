@@ -253,6 +253,9 @@ export function SiteHeader() {
           <Link to="/about" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
             About
           </Link>
+          <Link to="/blog" className={desktopLinkClass} activeProps={{ className: "text-foreground" }}>
+            Blog
+          </Link>
         </nav>
         <div className="flex items-center gap-2 md:gap-3">
           <ThemeToggle />
