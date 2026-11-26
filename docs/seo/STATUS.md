@@ -16,20 +16,20 @@ Ben's Nov 4 yard-waste URL, `/blog/yard-waste-brush-removal-cost-parker`, now 30
 
 ## Open pull requests
 
-As of Nov 26, 9:15 AM MT. #43 and #48 merged to `main` this morning. Every PR below has an audit row in [CHANGE-REQUESTS.md](CHANGE-REQUESTS.md).
+As of Nov 26, 9:20 AM MT. #43 and #48 merged this morning; #42, #44 and #45 merged and published at about 9:17 AM MT on Ben's go. Every PR below has an audit row in [CHANGE-REQUESTS.md](CHANGE-REQUESTS.md).
 
 | PR | Branch | What | Status |
 | --- | --- | --- | --- |
 | [#40](https://github.com/ezhaulaway/ezhaulawayllc/pull/40) | `grok/city-pages-outer-towns-2026-11-24` | Unique local copy for Monument, Elizabeth, Sedalia, Franktown, and Kiowa. | EZ SEO & Blog to update before merge: GreenWorks wording (CR-002), Monument meta length, two public-facility street addresses, Monument landlord card. See CR-004. |
-| [#42](https://github.com/ezhaulaway/ezhaulawayllc/pull/42) | `claude/indexing-fixes` | Footer links every service and town; pallet page soft-404 rewrite. | Ben said yes. Audit fix applied (per-pallet sentence). Ready. |
-| [#44](https://github.com/ezhaulaway/ezhaulawayllc/pull/44) | `claude/seo-review-2026-11-26` | Docs: reviews, Ben's answers, cross-audit rule, Nov 26 indexing pass. | Audit fixes applied; retargeted to `main`. Ready. |
-| [#45](https://github.com/ezhaulaway/ezhaulawayllc/pull/45) | `claude/remove-free-tv-promo` | End the free TV promo; TV-only trip is the minimum; electronics go to a recycler. | Audit fix applied (GreenWorks sentence cut). Ready. |
 
 PRs sometimes mentioned as still open are already merged: [#20](https://github.com/ezhaulaway/ezhaulawayllc/pull/20) (schema sameAs, Nov 10) and [#24](https://github.com/ezhaulaway/ezhaulawayllc/pull/24) (security hardening, Nov 18). No open follow-up "migration" PR was found.
 
 A promised small-fixes PR on `grok/audit-small-fixes-2026-11-23` was never opened (no branch, no PR). The live furniture pages still say "Pianos start at starting at $375." The Littleton city page still has the "more than 300 decks" line. A visible BabyLoveGrowth *brand card* was not found on the home, about, or furniture pages this check; imported post images on `/blog` still load from a `blog-images/babylovegrowth/` storage path.
 
 ## Ben's answers, Nov 26
+
+- Same-day pickup: yes, with a "text by noon" cutoff. A same-day page can be proposed (CR-006); it is a new URL, so it waits on CR-005 unless Ben says otherwise.
+- Sunday hours: never. Do not add Sunday or "Sunday by appointment" anywhere.
 
 - Free TV/computer removal was a promo and is over. A TV-only trip is the minimum. Site change in PR #45; Ben removes the discount in the crew app.
 - Electronics go to a recycler that accepts them (not GreenWorks as the crew's drop-off). Live post fixed in PR #45.
