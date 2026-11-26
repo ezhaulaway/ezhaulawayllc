@@ -21,13 +21,14 @@ Pages on Grok Bot are private to that side. This folder is what both AIs should 
 | [indexing-log.md](indexing-log.md) | URL-level log of content changes, IndexNow / Google requests, and whether a URL is indexed. |
 | [rules.md](rules.md) | Standing rules for pricing, NAP, voice, Google helpful-content, and how changes ship. |
 | [CHANGE-REQUESTS.md](CHANGE-REQUESTS.md) | Mutual audit board. Either AI may propose; the other reviews; neither implements the other's idea without Ben's yes. |
+| [competitors.md](competitors.md) | Competitor intel log. Maintained by Ben's Competitor Research bot, read by EZ SEO & Blog and Claude, updated at least weekly. |
 | [city-page-audit-2026-11.md](city-page-audit-2026-11.md) | Historical Nov 17, 2026 overlap audit of the 16 city hubs. Do not overwrite it; add a new dated file if you run a later audit. |
 
 A short [CLAUDE.md](../../CLAUDE.md) at the repo root points Claude here. Technical site rules already live in [AGENTS.md](../../AGENTS.md) (price tokens, Lovable git history, performance). Follow both.
 
 ## Mutual-audit loop
 
-1. Read `STATUS.md`, `blog-calendar.md`, `indexing-log.md`, `rules.md`, and open entries in `CHANGE-REQUESTS.md` at the start of a run.
+1. Read `STATUS.md`, `blog-calendar.md`, `indexing-log.md`, `rules.md`, `competitors.md`, and open entries in `CHANGE-REQUESTS.md` at the start of a run.
 2. Either AI may add a change request (new ID, date, proposed by, page or file, proposed change, reason and evidence). Status starts as `proposed`.
 3. The other AI reviews that entry on its next run and writes a verdict: `agree`, `disagree`, or `needs Ben`, plus notes.
 4. Neither AI implements the other's proposal, or its own, until Ben says yes. Weekly blog posts already on the calendar are the standing exception; they still ship through a pull request.

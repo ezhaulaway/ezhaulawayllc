@@ -5,7 +5,7 @@ This is the public website repo for EZ Haulaway (https://www.ezhaulawayllc.com).
 Before any SEO, content, or blog work:
 
 1. Read [AGENTS.md](AGENTS.md). It is the technical contract for this repo (Lovable git history, price tokens, performance, live-page allow-list). Do not conflict with it.
-2. Read everything in [docs/seo/](docs/seo/README.md), especially [docs/seo/rules.md](docs/seo/rules.md), [docs/seo/STATUS.md](docs/seo/STATUS.md), [docs/seo/blog-calendar.md](docs/seo/blog-calendar.md), and [docs/seo/CHANGE-REQUESTS.md](docs/seo/CHANGE-REQUESTS.md).
+2. Read everything in [docs/seo/](docs/seo/README.md), especially [docs/seo/rules.md](docs/seo/rules.md), [docs/seo/STATUS.md](docs/seo/STATUS.md), [docs/seo/blog-calendar.md](docs/seo/blog-calendar.md), [docs/seo/CHANGE-REQUESTS.md](docs/seo/CHANGE-REQUESTS.md), and [docs/seo/competitors.md](docs/seo/competitors.md).
 
 How to work with EZ SEO & Blog (Grok Bot):
 
