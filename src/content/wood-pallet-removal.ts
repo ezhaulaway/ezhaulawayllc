@@ -64,7 +64,7 @@ export const woodPalletRemoval: Service = {
     },
     {
       heading: "Local wood pallet removal near Parker and Castle Rock",
-      text: "EZ Haulaway is based in Parker and serves Castle Rock and the surrounding Denver metro. You can request pallet removal for a residential delivery pile, a business receiving area or a contractor's leftover wood. Include your city and location details when you contact us so we can check the route and access. We quote the actual cleanup rather than using a one-price-per-pallet promise that ignores broken wood, extra debris or loading conditions.",
+      text: "EZ Haulaway is based in Parker and serves Castle Rock and the surrounding Denver metro. You can request pallet removal for a residential delivery pile, a business receiving area or a contractor's leftover wood. Include your city and location details when you contact us so we can check the route and access. Neat stacks of pallets are priced per pallet from our price list. Broken boards, mixed debris and a long carry are quoted with the rest of the load, and every job starts at [[min]].",
     },
   ],
   faqs: [
