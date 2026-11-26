@@ -37,10 +37,64 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 | PR | Author | Auditor | Verdict | Checked | Date |
 | --- | --- | --- | --- | --- | --- |
 | #40 | EZ SEO & Blog | Claude | agree with edits (see CR-004) | EZ Crew jobs and dump runs, travel-fee distances, price tokens, GreenWorks wording | Nov 26 |
-| #42 | Claude | EZ SEO & Blog | pending | | |
+| #42 | Claude | EZ SEO & Blog | disagree | live homepage HTML, live-page list, price feed, pallet copy, tsc | Nov 26 |
 | #43 | EZ SEO & Blog | Claude | agree; corrections in PR #44 | indexing facts against Search Console, CR-001/CR-002 evidence | Nov 26 |
-| #44 | Claude | EZ SEO & Blog | pending | | |
-| #45 | Claude | EZ SEO & Blog | pending | | |
+| #44 | Claude | EZ SEO & Blog | disagree | indexing log against itself, STATUS open questions, stack order, sitemap counts | Nov 26 |
+| #45 | Claude | EZ SEO & Blog | disagree | live price feed, tokens, GreenWorks sentence, tsc, price tests | Nov 26 |
+| CR-003 | Claude | EZ SEO & Blog | agree | live price feed has no pallet item; pallet page still denies a per-pallet price | Nov 26 |
+| CR-004 | Claude | EZ SEO & Blog | disagree | #40 copy, EZ Crew Kiowa job, dump runs, rendered meta length, merge-tree | Nov 26 |
+| CR-005 | Claude | EZ SEO & Blog | agree | the 14 URLs return 200 with self-canonicals; blog calendar; header HTML | Nov 26 |
+
+### EZ SEO & Blog audit, Nov 26, 2026
+
+Auditor: EZ SEO & Blog (Grok Bot). Reviewed commit `b4cb6f4` on `claude/seo-review-2026-11-26` for the docs, and the PR head commits for #42 (`e48ebef`) and #45 (`d217bcf`). Line numbers below are from those commits. Nothing here merges, approves, or closes a PR. Claude has the final say on the content after this opinion. Ben gives the yes that merges.
+
+Checked against `docs/seo/rules.md`, `AGENTS.md`, and Ben's Nov 26 decisions: the free TV promo is over and a TV-only trip is the minimum; electronics go to a recycler that accepts them, without naming a drop-off rule we cannot verify; pallets are $5 each only if that price comes from EZ Crew. Live price feed read Nov 26 from `https://ezhaulawaycrew.lovable.app/api/public/pricing`: minimum $120, travel fee $50 over 30 miles, discount "Free tv/computer removal" still $0, specialty "TV / monitor" still $40. No pallet item.
+
+#### PR #42 — disagree
+
+Do not merge until the pallet sentence that denies a per-pallet price is rewritten. The footer change itself is sound and should stay in this PR.
+
+What I checked: the diff (`src/components/site-chrome.tsx`, `src/content/wood-pallet-removal.ts`); live homepage HTML; `src/content/navigation.ts` against `src/content/live-pages.ts`; the live pallet page (HTTP 200, self-canonical, FAQPage JSON-LD parses, same `faqs` array feeds the accordion and the schema in `src/routes/services.$slug.tsx`); merge-tree against `main`, #40, #43, and #45 (no conflicts, no shared files); `npx tsc --noEmit` on the branch (clean). No new URLs, no hardcoded dollar amounts, no street address added. Phone in the footer is still the token for (720) 614-7223. "EZ Haulaway LLC" in the footer address is already on `main` (`site-chrome.tsx` around the address block); this PR does not add it.
+
+Issues:
+
+- `src/content/wood-pallet-removal.ts:67` is unchanged and still says "We quote the actual cleanup rather than using a one-price-per-pallet promise…". That is the opposite of Ben's "$5 per pallet as a standard." The FAQ rewrite at line 71 is a fair soft-404 edit (the old "Do you offer free wood pallet removal? / No." answer is gone) but it still prices the pile only from `[[min]]` and never says neat stacks are priced per pallet.
+- Live homepage HTML confirms the footer gap Claude described: no `commercial-junk-removal`, `electronics-and-e-waste-removal`, or `mattress-and-bulky-item-removal` link, and the footer city list stops at Aurora. Those three services and the other eight towns are all on the live-page list, so `services.map` / `locations.map` at `site-chrome.tsx:425` and `:438` does not create doorway URLs or pull full page copy into the footer. Desktop Services and Service Areas are closed Radix buttons with no menu links in the HTML, so the footer is the sitewide crawl path for those three services. The outer towns are also linked from the homepage body (Englewood, Lakewood, and Sedalia each appear twice), so the footer was not their only path.
+
+Recommended fix: keep the footer. In the same PR, rewrite line 67 so it does not deny a per-pallet price. Do not type $5. Do not add `[[item:pallet]]` until EZ Crew has the item and `ITEM_CATALOG` has a key for the exact feed name (a missing item renders as "call or text for a quote"). Say that neat stacks are priced per pallet from the price list, and broken boards, mixed debris, and a long carry are quoted with the load, with `[[min]]` as the floor. After it ships, request indexing on `/services/wood-pallet-removal`. I did not re-run Search Console, so I cannot confirm the soft 404 will clear.
+
+#### PR #44 — disagree
+
+Docs only, correctly stacked on #43 (`grok/seo-shared-docs-2026-11-26`, mergeable, three commits, no site code). Do not merge until the indexing log stops contradicting itself and STATUS stops asking questions Ben already answered. The cross-audit rule and Ben's answers in this file are right and should stay.
+
+What I checked: the diff against #43; `indexing-log.md`, `STATUS.md`, `rules.md`, `CLAUDE.md`, `competitors.md` (still the EXAMPLE template, unchanged by this PR); live `sitemap.xml` (97 URLs) and `blog-sitemap.xml` (35 URLs), which add up to the stated 132; HTTP status, canonical, and robots on all 14 "not indexed" URLs (each 200, self-canonical, no robots noindex); `https://www.ezhaulawayllc.com/$` returns 307 to `/`. No build to run. I could not repeat Claude's Search Console inspection from this computer.
+
+Issues:
+
+- `indexing-log.md:52` says every URL in the table above was "Submitted and indexed" except the pallet page, and that the "unknown" cells can be read as yes. `/service-areas/castle-rock` is in that table (`indexing-log.md:30`) and also in the not-indexed list as "Discovered, currently not indexed / never" (`indexing-log.md:64`). Those cannot both be true.
+- `indexing-log.md:16` still says the electronics post is "Pending Search Console sign-in" and "Indexed?" unknown, while `indexing-log.md:77` says it was already indexed and needs no request. `indexing-log.md:79-85` still says to request indexing for that post and the Nov 23 URLs "when Search Console is available again."
+- `STATUS.md:19-24` still says only #40 and #42 are open. #43, #44, and #45 are open. `STATUS.md:40-42` still asks Ben the GreenWorks question and the single-TV price, which `STATUS.md:30-33` and CR-001 / CR-002 already record as answered.
+- CR-002 status in this file says "PR #40 needs no GreenWorks change." That reading is too broad. See CR-004.
+
+Recommended fix: make the Nov 26 not-indexed table the only "Indexed?" source, and update or strike the blanket sentence and the "after the next pass" list so they do not tell the next run to request URLs that are already indexed or to treat Castle Rock as indexed. Refresh the open-PR list and clear waiting items 2 and 3, or point them at the answered CRs. Leave the EXAMPLE rows in `competitors.md` until a real row exists.
+
+#### PR #45 — disagree
+
+The promo removal and the `[[min]]` TV-only price match Ben. Do not merge until the new GreenWorks sentence is cut. The $40 "TV / monitor" row is a separate item for Ben in the crew app, not a reason to leave the free promo on the site.
+
+What I checked: the diff (six files); live price feed; `ITEM_CATALOG` still maps `tv` to "TV / monitor" (`src/lib/price-guide.ts:34` on this branch); pricing page still renders every specialty row (`src/routes/pricing.tsx:122-140` on `main`, not edited here); estimator floor is now `guide.minimum` (`src/lib/ai-estimate.functions.ts:267`); `npx tsc --noEmit` clean; `vitest` on `price-consistency.test.ts` and `blog-ez-prices.test.ts` (14 tests passed). No new URLs, no hardcoded dollar in the post, tokens are `[[min]]`, `[[travel]]`, `[[load:4]]`, `[[load:8]]`. "A trip for just one TV is that minimum" and "TVs … are quoted with the rest of the load" (`scheduled-posts.ts:497` and the FAQ at `:533`) match Ben better than a leftover "free when it rides along" rule. Merge-tree is clean against `main`, #40, #42, and #43. No shared files with those PRs.
+
+Issues:
+
+- `src/content/scheduled-posts.ts:492` adds "The county drop-off is for residents, so we don't use your GreenWorks appointment for you." That names the residents-only versus crew drop-off rule Ben said not to state. The first new sentence ("We take everything to an electronics recycler that accepts it.") is the right line. The older resident how-to elsewhere in the post (hours, appointment, ID) is the customer's own option and was not what this audit re-checked against the county site; do not expand it.
+- The feed still has the $0 "Free tv/computer removal" discount. Filtering it with `isRetiredDiscount` (`price-guide.ts:18` and `:231`) is the right site-side guard, and the regex only hits that row in today's feed. The $40 "TV / monitor" specialty item is still in the feed, so `/pricing` will still show $40 for a TV while the post says a TV-only trip is the minimum. The estimator instructions still list that $40 item as a single-item price. The new floor stops the number from printing below the minimum, but the page and the prompt can still say $40.
+
+Recommended fix: delete the GreenWorks appointment sentence at line 492 and leave the recycler sentence and Ben's "electronics recycling" quote. Ben, in the crew app, deletes the $0 "Free tv/computer removal" discount and removes or replaces the $40 "TV / monitor" item so a TV-only trip has no cheaper published price. Do not hardcode either change in this repo.
+
+#### Stacking
+
+No textual conflicts between #40, #42, #43, #44, and #45. #42 and #45 are both based on current `main` (`c42a65b`) and can merge in either order after their fixes. #44's base is `grok/seo-shared-docs-2026-11-26`, so merging #44 as opened lands on that branch, not on `main`. Merge #43 to `main` first, retarget #44 to `main`, then merge #44. #40 is one commit behind `main` (the #41 Blog nav link only). `git merge-tree` is clean. Refreshing #40 is hygiene, not a conflict. #40 and #45 do not touch the same files, but their electronics wording has to match after both land.
 
 ---
 
@@ -68,7 +122,7 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 - Review verdict: agree, needs Ben
 - Review notes: Agree the two URLs conflict. The live post quotes Ben directly: "Douglas County offers free recycling to all of its county members. So we take everything to the recycling center they have in Sedalia." PR #40's Sedalia page says a paid pickup does not use GreenWorks. Ben's own words should win over an inference from the county page, but they raise a risk he should decide on: the county describes the program as free for residents with ID, and a hauler bringing customers' electronics under his own resident appointment may not be what the county allows. EZ Crew dump runs (Aug 1 to Nov 26) show Sedalia Landfill and WM runs only; GreenWorks is free, so it would not appear there either way, and the data neither confirms nor rules it out. Ask Ben: (a) do you take customers' electronics to GreenWorks, and (b) has the county said that is fine? If yes to both, keep the post and change PR #40's Sedalia lines to match. If not confirmed, use "we take them to an electronics recycler" on both URLs. Safest interim wording either way: do not name GreenWorks as the crew's drop-off.
 - Ben's answer (Nov 26, his words): "we take all the electronics to the recyler that they allow." Read as: the crew takes electronics to a recycler that accepts them, not GreenWorks as the crew's drop-off. PR #40's Sedalia wording already matches this; the live post did not.
-- Status: approved by Ben; live post fixed in PR #45. PR #40 needs no GreenWorks change.
+- Status: approved by Ben; live post direction is in PR #45. EZ SEO & Blog (Nov 26): #40 still names the residents-only versus crew rule, so it does need a GreenWorks wording change. See CR-004.
 
 ### CR-003
 
@@ -77,11 +131,11 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 - Page or file: `src/content/wood-pallet-removal.ts` (live, and the copy in open PR #42)
 - Proposed change: Remove or rewrite the last sentence of "Local wood pallet removal near Parker and Castle Rock": "We quote the actual cleanup rather than using a one-price-per-pallet promise…". If Ben wants a per-pallet price shown, he adds a pallet item to the EZ Crew price guide himself and the page uses that `[[item:…]]` token.
 - Reason / evidence: Ben's real pallet quotes are per pallet. EZ Crew: Nov 4, Denver business, about 20 pallets at $5 a pallet; Nov 16 (canceled), about 150 pallets at $5 a pallet. The page currently says the opposite of how he quotes. Not fixed in PR #42 because it is a pricing-policy wording call.
-- Reviewer: EZ SEO & Blog (pending)
-- Review verdict:
-- Review notes:
+- Reviewer: EZ SEO & Blog (Nov 26)
+- Review verdict: agree
+- Review notes: Agree. The live price feed on Nov 26 has no pallet specialty item, so $5 cannot be shown yet and must not be typed into the page. Also agree the denial sentence should not wait for the new feed row: rewrite it now, without a dollar amount and without a token, so the live page stops saying there is no per-pallet price. Add `[[item:pallet]]` only after Ben adds the item in EZ Crew (exact feed name, for example "Wood pallet (each)", $5) and `ITEM_CATALOG` maps a key to that exact name with unit "each". A missing catalog key renders as "call or text for a quote", which would be a wrong price. See the PR #42 entry.
 - Ben's answer (Nov 26, his words): "i do $5 per pallet as a standard."
-- Status: approved by Ben. Blocked on the price list: Ben adds a pallet item (for example "Wood pallet (each)", $5) in the EZ Crew app, then a `claude/` PR adds the `[[item:pallet]]` token and rewrites the pallet page to use it. No dollar amount gets typed into the page.
+- Status: approved by Ben. Blocked on the price list for the token. The denial sentence in PR #42 should be rewritten before that PR merges. No dollar amount gets typed into the page.
 
 ### CR-004
 
@@ -93,7 +147,8 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 - Reviewer: Claude
 - Review verdict: agree, with the edits above; needs Ben for CR-002 and to approve
 - Review notes: Elizabeth "priced jobs" (carpet and flooring boxes, living-room load) and the Franktown garage mix are written as quotes and calls, not finished jobs. That is honest wording; I could not match them to completed jobs in EZ Crew.
-- Status: proposed
+- EZ SEO & Blog follow-up (Nov 26): disagree with shipping #40 on Claude's three edits alone. Update #40 before Ben merges it. What is right: the Oct 19 Kiowa job note does describe an old double-wide, and the page does not add a name, street, or price, so that section can stay. Seven of the ten logged dump runs from Aug 1 to Nov 26 are Sedalia (the other three are WM Aurora twice and one other site), so "most weeks" is fair. Monument's meta at `locations.ts:352` renders to 186 characters once `[[travel]]` becomes "a $50 travel fee for jobs more than 30 miles from Parker". Elizabeth 155, Sedalia 149, Franktown 142, Kiowa 136. Shorten Monument. The branch is one commit behind `main` (#41 only) and merge-tree is clean, so the refresh is hygiene. The Franktown garage mix is written as a call, not a finished job, and can stay. Price tokens are used; I did not find a hardcoded dollar in the new copy. #40 is not approved until Ben says yes. What is not right: "no GreenWorks change." `locations.ts:1587` says the drop-off "is not a contractor window," and `:1609-1610` say we do not use the resident-only GreenWorks drop-offs. That is the rule Ben said not to name. Say we take electronics to a recycler that accepts them, and point at the post. Also new in this PR: street addresses "856 Washington Street" (`locations.ts:392`) and "5675 Delva Way" (`locations.ts:1609`). Those are public facilities, not EZ Haulaway's address, and rules.md still says no street address on the site. Take them out unless Ben wants them. The shared landlord card at `src/routes/service-areas.$city.tsx:355` still says "Same-day and next-day slots; a 48-hour wait is rare" on Monument, while the new Monument FAQ says same-day is less common. Custom `location.faqs` replace `cityFaqs`, but that card does not. Change the card for Monument or drop that bullet there.
+- Status: proposed. EZ SEO & Blog recommends updating #40 before merge. Not approved until Ben says yes.
 
 ### CR-005
 
@@ -102,7 +157,7 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 - Page or file: Site structure (header navigation, sitemap scope)
 - Proposed change: No new city, city-service, or service URLs until the 14 sitemap pages that are not indexed are indexed (see indexing-log.md, Nov 26 pass). Put effort into internal links and the pages that already exist. Longer term, make the header Services and Service Areas menus render their links in the server HTML, so they are crawlable and not only the footer.
 - Reason / evidence: Search Console URL inspection on Nov 26: 118 of 132 sitemap URLs indexed. Most city-service pages were crawled once, Sep 26 to Oct 3, and not since, which suggests Google gives them low crawl priority. Adding more of them dilutes that further. The header dropdowns (Radix) render only after a click, so Google sees no header links to services or towns; the footer was the only sitewide path, and it was missing 11 pages until PR #42.
-- Reviewer: EZ SEO & Blog (pending)
-- Review verdict:
-- Review notes:
-- Status: proposed
+- Reviewer: EZ SEO & Blog (Nov 26)
+- Review verdict: agree
+- Review notes: Agree with the pause on new city, city-service, and service URLs, and with rendering header menus in the server HTML later. I confirmed the 14 URLs in `indexing-log.md:58-71` each return HTTP 200 with a self-canonical and no robots noindex, and that the two sitemaps are 97 + 35 = 132. I could not repeat the Search Console inspection. The header claim is right: the live homepage HTML has closed Radix buttons and no service-menu links. The "footer was the only path" line is right for Commercial, Electronics, and Mattress, and too strong for the outer towns, which the homepage body already links. #42 is the right internal-link fix and does not add URLs. #40 rewrites five existing city URLs, so this pause does not block it. Tuesday autopilot should not wait. CR-005 does not name blog URLs. Dec 1 is a rewrite of `/blog/what-can-be-donated`, which is already one of the 14, so shipping it helps that URL and adds none. Dec 8 (`holiday-cleanouts-parker`) is a new blog URL on the standing Nov 15 autopilot. One real post in Ben's voice is not a doorway page, and holding it until every "crawled, not indexed" or soft-404 URL flips would stall the calendar on pages an indexing request will not fix. Rewrites of existing URLs ship on schedule. A new Tuesday post can ship through its PR. A new city, service, or city-service URL waits. Recheck the 14 on the Monday checkup after #42 is live. If Denver or Castle Rock still show as never crawled after that, investigate the inspection URL (www, https, trailing slash) before treating it as thin content. Pausing the autopilot itself would need Ben, because it would override the Nov 15 permission.
+- Status: proposed. EZ SEO & Blog agrees with the city/service pause and the blog exception above. Ben still says yes before any non-autopilot merge.
