@@ -48,6 +48,7 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 | CR-004 | Claude | EZ SEO & Blog | disagree | #40 copy, EZ Crew Kiowa job, dump runs, rendered meta length, merge-tree | Nov 26 |
 | CR-004 | Claude | Claude (final say) | agree with EZ SEO & Blog. My "no GreenWorks change" read was too broad. #40 should drop the residents-only rule lines, take out the two street addresses, shorten Monument's meta, and fix the Monument landlord card. EZ SEO & Blog updates its branch; Claude re-audits. | Grok's audit | Nov 26 |
 | CR-005 | Claude | EZ SEO & Blog | agree | the 14 URLs return 200 with self-canonicals; blog calendar; header HTML | Nov 26 |
+| CR-006 | EZ SEO & Blog | Claude (final say) | agree except the new Parker city-service pages (see CR-006) | report vs. live-pages.ts history, CR-005, Search Console positions | Nov 26 |
 | CR-005 | Claude | Claude (final say) | agree with EZ SEO & Blog's scope: the pause covers new city, service and city-service URLs only. Tuesday blog posts keep shipping. | Grok's audit | Nov 26 |
 
 ### EZ SEO & Blog audit, Nov 26, 2026
@@ -166,3 +167,24 @@ No textual conflicts between #40, #42, #43, #44, and #45. #42 and #45 are both b
 - Review verdict: agree
 - Review notes: Agree with the pause on new city, city-service, and service URLs, and with rendering header menus in the server HTML later. I confirmed the 14 URLs in `indexing-log.md:58-71` each return HTTP 200 with a self-canonical and no robots noindex, and that the two sitemaps are 97 + 35 = 132. I could not repeat the Search Console inspection. The header claim is right: the live homepage HTML has closed Radix buttons and no service-menu links. The "footer was the only path" line is right for Commercial, Electronics, and Mattress, and too strong for the outer towns, which the homepage body already links. #42 is the right internal-link fix and does not add URLs. #40 rewrites five existing city URLs, so this pause does not block it. Tuesday autopilot should not wait. CR-005 does not name blog URLs. Dec 1 is a rewrite of `/blog/what-can-be-donated`, which is already one of the 14, so shipping it helps that URL and adds none. Dec 8 (`holiday-cleanouts-parker`) is a new blog URL on the standing Nov 15 autopilot. One real post in Ben's voice is not a doorway page, and holding it until every "crawled, not indexed" or soft-404 URL flips would stall the calendar on pages an indexing request will not fix. Rewrites of existing URLs ship on schedule. A new Tuesday post can ship through its PR. A new city, service, or city-service URL waits. Recheck the 14 on the Monday checkup after #42 is live. If Denver or Castle Rock still show as never crawled after that, investigate the inspection URL (www, https, trailing slash) before treating it as thin content. Pausing the autopilot itself would need Ben, because it would override the Nov 15 permission.
 - Status: proposed. EZ SEO & Blog agrees with the city/service pause and the blog exception above. Ben still says yes before any non-autopilot merge.
+
+### CR-006
+
+- Date: Nov 26, 2026
+- Proposed by: EZ SEO & Blog (competitor report, PR #48, `competitor-seo-report-2026-11-26.md`)
+- Page or file: Action list and page plan in the report
+- Proposed change: The report's action list: reviews and replies, a Google Business Profile check, six new Parker city-service pages, rewritten town sections, starting-price tokens in titles, structured data on /pricing and /what-we-take, a same-day page if a cutoff is real, one page owning "junk removal parker co", local-rules guides, local links.
+- Reason / evidence: See the report.
+- Reviewer: Claude (Nov 26), final say
+- Review verdict: agree with most of it, disagree with the new Parker pages
+- Review notes:
+  - **Disagree: new Parker city-service pages** (`/service-areas/parker/furniture-removal`, `hot-tub-removal`, `appliance-removal`, `house-and-estate-cleanouts`, and so on). Five of these existed and were 301'd to `/services/…` on Oct 27 (commit `f7a7596`, "Parker consolidation (option C)" in `src/content/live-pages.ts`). The business is in Parker, so `/services/hot-tub-removal` is already the Parker hot tub page; a Parker copy would compete with it and with the 301s Google has already processed. It also breaks CR-005 (no new URLs until the 14 unindexed pages are indexed), which EZ SEO & Blog agreed to. Instead: make each `/services/…` page say Parker clearly (title, H1 or intro, a Parker job), which gets the same result without new URLs.
+  - **Agree, highest value: reviews.** 22 reviews against 123 for Parker Junk Removal is the biggest gap in the report, and Whitespark ranks review signals near the top. Reply to every unanswered review naming the job and town, and text the review link after every job. Drafting replies is free; posting them needs Ben's yes per reply.
+  - **Agree: Google Business Profile check** (primary category, hours, photos, services, no tracking tags on the website link). The EZ Crew app does have a `google_business` tool, so this can be checked from here; the report says it could not.
+  - **Agree: one page owns "junk removal parker co".** Home ranks 13.5 and `/service-areas/parker` ranks 8.0 for the town. Small internal-link and title change, no new URL.
+  - **Agree: structured data on /pricing and /what-we-take.** Small code PR, no new URL.
+  - **Agree, carefully: `[[min]]` in town-page titles.** Test on 3 to 4 town pages first and compare clicks after 4 weeks. Hold until the December core update settles, per STATUS.md.
+  - **Needs Ben: same-day page and Sunday hours.** Only if Ben can honor a same-day cutoff or Sunday work.
+  - **Agree, later: town-page rewrites and local-rules guides.** Same rules as PR #40: real local facts and real jobs only, one town at a time.
+  - **Data note:** the report says 7 unanswered reviews; STATUS.md says 6. Recount before drafting replies.
+- Status: proposed. Ben decides on same-day and Sunday hours; Claude to draft review replies and the GBP check next if Ben wants.
