@@ -43,15 +43,15 @@ export const woodPalletRemoval: Service = {
     },
     {
       heading: "Pallet removal cost: what goes into your quote",
-      text: "Pallet removal is quoted as hauling, not as a promise to buy your pallets. Our current minimum service charge is **[[min]]**; your actual quote depends on the amount of wood, trailer space, loading work, access and disposal requirements. A loose pile of broken boards loads differently from neatly stacked pallets, and a long carry from behind a building takes more work than driveway pickup. Send a rough pallet count, approximate dimensions and photos of any additional wood. We confirm the job and price before loading; a photo estimate is preliminary until the scope is checked.",
+      text: "Pallet removal is quoted as hauling. Our current minimum service charge is **[[min]]**; your actual quote depends on the amount of wood, trailer space, loading work, access and disposal requirements. A loose pile of broken boards loads differently from neatly stacked pallets, and a long carry from behind a building takes more work than driveway pickup. Send a rough pallet count, approximate dimensions and photos of any additional wood. We confirm the job and price before loading; a photo estimate is preliminary until the scope is checked.",
     },
     {
-      heading: "Paid pallet hauling versus free pallet recycling",
-      text: "If you are searching for free pallet pickup, it helps to separate two services. A pallet buyer or recycler may want a consistent supply of intact pallets in specific sizes and condition. Broken pallets, unusual sizes or piles mixed with scrap lumber may not fit that model. EZ Haulaway offers paid removal when you need the unwanted material gone. We do not advertise free collection or payment for pallets. If yours are reusable, checking with the supplier or a local pallet recycler first may make sense; if you want a hauling quote, send us the pile as it is.",
+      heading: "Pallet hauling or pallet recycling: which one fits your pile",
+      text: "Pallet buyers and recyclers usually want a steady supply of intact pallets in standard sizes. That works well for clean, reusable stock. Broken pallets, odd sizes and piles mixed with scrap lumber are where a hauling service fits better. EZ Haulaway takes the whole pile as it is, whole or broken, loads it and hauls it away, priced from the minimum service charge of **[[min]]**. If your pallets are in good shape, the supplier or a local pallet recycler is worth a call too; when you just want the pile gone, send us photos for a quote.",
     },
     {
       heading: "What happens to unwanted wood pallets?",
-      text: "Reuse and recycling depend on the wood's condition and what a receiving facility accepts. Clean, intact pallets are different from painted boards, pressure-treated lumber or oil-soaked wood. We review the load and arrange an appropriate disposal route; we do not promise that every pallet will be recycled. Do not burn pallets or unidentified scrap wood as a shortcut to disposal. If you know what the pallets carried or how the lumber was treated, share that information with the photos.",
+      text: "Reuse and recycling depend on the wood's condition and what a receiving facility accepts. Clean, intact pallets are different from painted boards, pressure-treated lumber or oil-soaked wood. We review the load and send each part to an appropriate disposal route, and usable wood is recycled when a facility accepts it. Burning pallets or unidentified scrap wood is not a safe shortcut, so leave the pile for pickup. If you know what the pallets carried or how the lumber was treated, share that information with the photos.",
     },
     {
       heading: "How to prepare for a wood pallet pickup",
@@ -64,15 +64,15 @@ export const woodPalletRemoval: Service = {
     },
     {
       heading: "Local wood pallet removal near Parker and Castle Rock",
-      text: "EZ Haulaway is based in Parker and serves Castle Rock and the surrounding Denver metro. You can request pallet removal for a residential delivery pile, a business receiving area or a contractor's leftover wood. Include your city and location details when you contact us so we can check the route and access. We quote the actual cleanup rather than using a one-price-per-pallet promise that ignores broken wood, extra debris or loading conditions.",
+      text: "EZ Haulaway is based in Parker and serves Castle Rock and the surrounding Denver metro. You can request pallet removal for a residential delivery pile, a business receiving area or a contractor's leftover wood. Include your city and location details when you contact us so we can check the route and access. Neat stacks of pallets are priced per pallet from our price list. Broken boards, mixed debris and a long carry are quoted with the rest of the load, and every job starts at [[min]].",
     },
   ],
   faqs: [
-    ["Do you offer free wood pallet removal?", "No. This is a paid hauling service, with a current minimum service charge of [[min]]. We quote the pile based on its size, access, loading and disposal needs. A supplier or pallet recycler may be another option for reusable pallets, but acceptance varies."],
+    ["How much does wood pallet removal cost?", "Pallet removal starts at our minimum service charge of [[min]]. We quote the pile based on its size, access, loading and disposal needs, and confirm the price before loading. For clean, reusable pallets, a supplier or pallet recycler may also take them."],
     ["Can you pick up broken pallets as well as whole ones?", "Yes. Include broken pallets and loose boards in your photos. Tell us about exposed nails, contamination or other material mixed into the pile so we can review it before pickup."],
     ["Do you also offer wood scrap removal?", "Yes. We can quote scrap lumber, offcuts and loose wood together with your pallets. Identify painted or treated wood and any mixed construction debris so the quote covers the actual material."],
     ["Do I need a large quantity to request pallet pickup?", "You can request a quote for a small pile as well as a larger stack. The minimum service charge still applies, so combining unwanted scrap wood or other accepted items may make the visit more useful."],
-    ["Do you buy pallets or pay for reusable ones?", "We offer removal, not pallet purchasing. If you want to sell reusable pallets, ask a pallet buyer or recycler about their size, condition and quantity requirements."],
+    ["Can I sell reusable pallets instead?", "Pallet buyers and recyclers sometimes pay for intact pallets in standard sizes; ask them about their size, condition and quantity requirements. We handle removal, so anything they will not take, we can haul away."],
     ["Can you take treated wood or contaminated pallets?", "Send photos and describe the treatment or contamination first. Acceptance and disposal requirements vary. We do not accept hazardous waste, chemicals, solvents or asbestos; unknown or contaminated material needs review before scheduling."],
     ["Can I book pallet removal in Parker or Castle Rock?", "Yes. We serve Parker, Castle Rock and the surrounding Denver metro. Send your city, photos and access details for a quote and available pickup times."],
   ],

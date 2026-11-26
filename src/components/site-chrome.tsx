@@ -422,7 +422,7 @@ export function SiteFooter() {
           <div>
             <p className="font-display font-bold">Services</p>
             <nav className="mt-4 grid gap-2.5 text-sm text-secondary-foreground/70" aria-label="Service links">
-              {services.slice(0, 8).map((service) => (
+              {services.map((service) => (
                 <Link key={service.slug} to="/services/$slug" params={{ slug: service.slug }} className="hover:text-secondary-foreground">
                   {service.name}
                 </Link>
@@ -430,42 +430,12 @@ export function SiteFooter() {
               <Link to="/what-we-take" className="font-semibold text-secondary-foreground">
                 View all services
               </Link>
-              <Link to="/services/$slug" params={{ slug: "garage-cleanouts" }} className="hover:text-secondary-foreground">
-                Garage Cleanouts
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "house-and-estate-cleanouts" }} className="hover:text-secondary-foreground">
-                House & Estate Cleanouts
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "shed-removal" }} className="hover:text-secondary-foreground">
-                Shed Removal
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "wood-pallet-removal" }} className="hover:text-secondary-foreground">
-                Wood Pallet Removal
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "dumpster-rental-alternative" }} className="hover:text-secondary-foreground">
-                Dumpster Rental Alternative
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "hoarder-cleanout" }} className="hover:text-secondary-foreground">
-                Hoarder Cleanout
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "storage-unit-cleanout" }} className="hover:text-secondary-foreground">
-                Storage Unit Cleanout
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "rental-cleanout-and-make-ready" }} className="hover:text-secondary-foreground">
-                Rental Cleanout & Make-Ready
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "sod-and-lawn-removal" }} className="hover:text-secondary-foreground">
-                Sod & Lawn Removal
-              </Link>
-              <Link to="/services/$slug" params={{ slug: "dirt-rock-mulch-delivery" }} className="hover:text-secondary-foreground">
-                Dirt, Rock & Mulch Delivery
-              </Link>
             </nav>
           </div>
           <div>
             <p className="font-display font-bold">Service Areas</p>
             <nav className="mt-4 grid gap-2.5 text-sm text-secondary-foreground/70" aria-label="Service area links">
-              {locations.slice(0, 8).map((location) => (
+              {locations.map((location) => (
                 <Link key={location.slug} to="/service-areas/$city" params={{ city: location.slug }} className="hover:text-secondary-foreground">
                   Junk Removal {location.city}
                 </Link>
