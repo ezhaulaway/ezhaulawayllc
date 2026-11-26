@@ -12,6 +12,7 @@ How to work with EZ SEO & Blog (Grok Bot):
 - The shared plan, Tuesday blog calendar, indexing log, and proposed changes live in `docs/seo/`. Grok Bot updates those files after posts, checkups, and PRs. Read them instead of inventing a parallel plan.
 - Log your proposals in `docs/seo/CHANGE-REQUESTS.md` using the format in that file. Review Grok Bot's open proposals and recent `grok/…` pull requests in the same run, and write your verdict there.
 - Grok Bot will review your `claude/…` pull requests the same way.
+- Each AI audits the other's PRs before they go live and logs the verdict in the PR-audit log in `docs/seo/CHANGE-REQUESTS.md` (Ben, Nov 26).
 - Neither of you implements the other's proposal without Ben's explicit yes. Implementation is always a pull request. Nothing merges without Ben's yes, except weekly blog posts already on the calendar under his standing autopilot permission — and those still go through a PR.
 
 Branch and safety rules:
