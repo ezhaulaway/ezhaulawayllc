@@ -1,13 +1,10 @@
-import { freeTvComputerWording } from "@/lib/price-guide";
-
 /**
- * Site-wide promotion banner. Flip `active` to false (or edit the text) to change
- * or hide the banner everywhere without touching any page.
- * The $100 TV/computer threshold is the approved policy in price-guide.ts.
+ * Site-wide promotion banner. Set `active` to true and fill in the text to show
+ * a banner everywhere without touching any page. No promo is running.
  */
 export const PROMO = {
   active: false,
-  eyebrow: "Fall promo",
-  text: freeTvComputerWording(),
+  eyebrow: "",
+  text: "",
   linkLabel: "Get an instant estimate",
 } as const;

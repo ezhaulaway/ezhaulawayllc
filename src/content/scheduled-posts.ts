@@ -489,12 +489,12 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
 <p>At <a href="https://bluestarrecyclers.org/electronics-recycling/for-residents/" rel="noopener">Blue Star Recyclers</a> computers, cell phones and tablets are free. TVs, monitors and most other electronics are charged by the pound, and a broken CRT costs more. They're open Monday through Friday 9 to 5 and Saturday 9 to 1.</p>
 <p>Don't take a TV to the Cherry Creek Recycling and Compost Drop-off. It only takes regular household recycling and compost. In Aurora or anywhere else in Arapahoe County, check with your city. The state keeps a <a href="https://cdphe.colorado.gov/hm/information-residential-electronics-and-computer-waste" rel="noopener">list of electronics recyclers</a> and says to expect a fee.</p>
 <h2>What do we do with the electronics we haul?</h2>
-<p>We recycle them. "Douglas County offers free recycling to all of its county members. So we take everything to the recycling center they have in Sedalia." We don't usually resell electronics either. "Usually we take everything to the electronics recycling."</p>
+<p>We recycle them. We take everything to an electronics recycler that accepts it. The county drop-off is for residents, so we don't use your GreenWorks appointment for you. We don't usually resell electronics either. "Usually we take everything to the electronics recycling."</p>
 <p>A lot of the time the electronics are just one part of a bigger cleanout. One Parker basement had a TV and a big box of old cords and cables in with a treadmill, a dresser and a bunch of boxes. That's the basement in the photo up top. My crew had it empty in about 45 minutes.</p>
 <p>TVs come up in our leads more than any other electronics. This fall we had a 65-inch TV just north of Denver that still worked, it was just too big for the house. Someone else had six old tube TVs going out with a bed set, a couch and a desk. Another lead was two TVs and three computer towers along with six office chairs. In Aurora it was a 2006 rear-projection TV with two sofas, a fridge and a lawn mower. And in Englewood, a tube TV, a TV/monitor and a wood TV cabinet, all down in the basement.</p>
 <p>Back in September we drove up to the mountains to pick up one TV. Just the one. So yes, we'll come out for a single TV.</p>
 <h2>How much does electronics pickup cost?</h2>
-<p>Our jobs start at [[min]], and that covers loading, hauling and disposal. TV and computer recycling is free when it's part of a regular junk removal pickup. Most people have more than one thing to get rid of, so the TVs just ride along with the rest of the load. There's also [[travel]].</p>
+<p>Our jobs start at [[min]], and that covers loading, hauling and disposal. A trip for just one TV is that minimum. Most people have more than one thing to get rid of, so the TVs get quoted with the rest of the load. There's also [[travel]].</p>
 <p>Bigger jobs go by how much of the trailer you fill. Half a trailer is about [[load:4]] and a full trailer is about [[load:8]]. Old tube TVs are heavy and awkward, and a lot of services turn them down. We take them.</p>
 <p>Fastest way to a price is to send me a couple photos and your city. I'll lock in the exact price and give you our soonest availability. You can also run it through our <a href="/instant-estimate">instant estimate</a>, and the whole price list is on our <a href="/pricing">pricing page</a>.</p>
 <h2>Should I wipe my computer or phone before recycling it?</h2>
@@ -530,7 +530,7 @@ export const SCHEDULED_POSTS: ScheduledPost[] = [
       {
         question: "How much does it cost to have a TV picked up?",
         answer:
-          "Our jobs start at [[min]], with loading, hauling and disposal included. TV and computer recycling is free with a regular junk removal pickup. There's also [[travel]]. Send me a couple photos and your city and I'll lock in the exact price.",
+          "Our jobs start at [[min]], with loading, hauling and disposal included. A trip for just one TV is that minimum, and TVs going out with other junk are quoted with the rest of the load. There's also [[travel]]. Send me a couple photos and your city and I'll lock in the exact price.",
       },
       {
         question: "Do you take old tube TVs?",

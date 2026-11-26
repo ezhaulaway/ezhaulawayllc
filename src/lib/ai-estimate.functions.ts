@@ -188,7 +188,7 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     }
 
     const { loadPriceGuide } = await import("./pricing.functions");
-    const { buildEstimatorInstructions, FREE_TV_COMPUTER_MINIMUM } = await import("./price-guide");
+    const { buildEstimatorInstructions } = await import("./price-guide");
     const guide = await loadPriceGuide();
 
     const content: any[] = [{ type: "input_text", text: `Customer description:\n${data.description}` }];
@@ -263,8 +263,8 @@ export const generateAiEstimate = createServerFn({ method: "POST" })
     } catch {
       return { ok: false, error: "We couldn't read the estimate. Please try again." };
     }
-    // Whatever the description says, the price never drops below the lowest price we offer.
-    const floor = Math.min(guide.minimum, FREE_TV_COMPUTER_MINIMUM);
+    // Whatever the description says, the price never drops below the minimum.
+    const floor = guide.minimum;
     estimate.price_low = Math.max(floor, Math.round(estimate.price_low));
     estimate.price_high = Math.max(estimate.price_low, Math.round(estimate.price_high));
 
