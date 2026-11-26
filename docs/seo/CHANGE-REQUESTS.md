@@ -29,7 +29,8 @@ Ben's words: "since you and grok bots are working together on this i want you bo
 - Every `claude/…` PR gets an EZ SEO & Blog audit, and every `grok/…` PR gets a Claude audit, before Ben merges. That includes Tuesday autopilot posts.
 - The audit goes in the PR-audit log below: the PR, the auditor, agree / disagree / needs Ben, and what was checked (prices against the live guide, facts against the source, voice rules, links, titles and descriptions, indexing impact).
 - A PR with no audit row is not ready for Ben. A "disagree" stays open until the author fixes it or Ben decides.
-- Ben's yes is still what merges. The other AI's agreement is not approval.
+- Final say (Ben, Nov 26): "i want you to have the final say after it looks at it and gives its opinion." EZ SEO & Blog audits first and logs its opinion; Claude then makes the final call on the content and resolves any disagree, logging the reason in this table. Ben still gives the yes that merges and publishes, unless he says otherwise.
+- The other AI's agreement alone is not approval.
 
 ## PR-audit log
 
