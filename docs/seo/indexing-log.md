@@ -4,7 +4,7 @@ How to read this table:
 
 - **Changed** is the date the URL's content or snippet last shipped, in America/Denver, with the PR when known.
 - **Bing IndexNow** is the HTTP result of the IndexNow ping (the key file is the `public/<32 hex>.txt` in the repo). "unknown" means no ping was recorded here.
-- **Google request** is a manual "Request indexing" in Search Console. As of Nov 26, 2026, that is blocked on Ben signing back in as ben@ezhaulawayllc.com.
+- **Google request** is a manual "Request indexing" in Search Console. Claude can do this through Ben's Chrome (Nov 26). The Grok Bot computer still needs Ben to sign in.
 - **Indexed?** is only "yes" or "no" when Search Console or a verified site: search has been checked *this period*. Otherwise it is unknown. Do not guess.
 
 EZ SEO & Blog told Ben that 12 URLs changed on Nov 23 and still needed a Google indexing request, along with the Nov 24 electronics post. That exact list of 12 was not recovered as a single saved set. The identifiable content/snippet URLs from the Nov 23 SEO PRs (#28 and #35) are listed below. Sitewide or chrome-only deploys (blog byline, call tracking, pricing "what fits," header Blog link) are noted under Other deploys, not as a made-up list of 12.
@@ -45,9 +45,36 @@ EZ SEO & Blog told Ben that 12 URLs changed on Nov 23 and still needed a Google 
 
 PR #28 also rewrote stale prices on several *imported* blog posts at render time, and fixed a shared blog image alt that had been the file name. Those posts were not named as a full URL list in the PR body, so they are not invented here.
 
-## Claude's Nov 26 indexing note (PR #42)
+## Nov 26 pass (Claude, Search Console URL inspection API plus the Search Console UI)
 
-PR #42 says Search Console showed a soft 404 on `/services/wood-pallet-removal` and that 13 other sitemap pages were discovered/unknown but not indexed. The PR body does not list those 13 URLs. Add them here once someone pastes the Search Console list. Do not request indexing until Ben has signed back in, and do not assume PR #42 is live until it is merged.
+Ben connected Search Console to OpenSEO on Nov 26, so Claude inspected every URL in both sitemaps (97 site pages, 34 posts, and /blog). Result: 118 of 132 indexed. Both sitemaps read successfully (sitemap.xml Nov 24, 97 pages; blog-sitemap.xml Nov 25, 35 pages). Whole-property Page indexing report (last update Nov 22): 253 indexed, 48 not indexed.
+
+The table above was written before this pass. Every URL in it reported "Submitted and indexed" on Nov 26 except `/services/wood-pallet-removal` (soft 404, below), so the "unknown" cells there can be read as yes as of Nov 26.
+
+### Not indexed on Nov 26
+
+| URL | Google status | Last crawl | Google request |
+| --- | --- | --- | --- |
+| /services/wood-pallet-removal | Soft 404 | Nov 17 | Not yet; wait until PR #42 is live |
+| /services/sod-and-lawn-removal | Crawled, currently not indexed | Nov 21 | Not yet (daily quota) |
+| /blog/what-can-be-donated | Crawled, currently not indexed | Nov 15 | Not yet; rewrite is the Dec 1 post |
+| /services/commercial-junk-removal | Discovered, currently not indexed | never | Not yet; footer link is in PR #42 |
+| /service-areas/castle-rock | Discovered, currently not indexed | never | Requested Nov 26 |
+| /service-areas/denver | Discovered, currently not indexed | never | Requested Nov 26 |
+| /service-areas/lakewood | Discovered, currently not indexed | never | Requested Nov 26 |
+| /service-areas/aurora/garage-cleanouts | Discovered, currently not indexed | never | Requested Nov 26 |
+| /blog/spring-junk-removal | Discovered, currently not indexed | never | Requested Nov 26 |
+| /services/appliance-removal | URL is unknown to Google | never | Requested Nov 26 |
+| /services/deck-removal | URL is unknown to Google | never | Requested Nov 26 |
+| /service-areas/englewood | URL is unknown to Google | never | Requested Nov 26 |
+| /service-areas/sedalia | URL is unknown to Google | never | Requested Nov 26 |
+| /blog/water-heater-disposal | URL is unknown to Google | never | Requested Nov 26 |
+
+Ten requests went into Google's priority crawl queue on Nov 26 (Denver, Castle Rock, Lakewood, Aurora garage cleanouts, appliance, deck, Englewood, Sedalia, water heater, spring). That is the usual daily limit.
+
+The second soft 404 in the whole-property report is `https://www.ezhaulawayllc.com/$`, a junk URL last crawled Nov 20. It now redirects to the homepage, so no fix is needed.
+
+Search Console is not blocked on a sign-in for Claude; it works through Ben's Chrome. The electronics post and the Nov 23 URLs above were already indexed on Nov 26, so they need no request.
 
 ## After the next indexing pass
 
