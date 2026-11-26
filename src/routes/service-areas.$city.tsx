@@ -169,6 +169,9 @@ function CityNotFound() {
 
 const INSTANT_ESTIMATE_CITIES = ["denver", "parker", "castle-rock"];
 
+/** Farther towns. The landlord card does not promise same-day on these pages. */
+const OUTER_TOWN_SLUGS = new Set(["monument", "elizabeth", "sedalia", "franktown", "kiowa"]);
+
 function CityPage() {
   const { location, specialtyServices } = Route.useLoaderData();
   const pushInstantEstimate = INSTANT_ESTIMATE_CITIES.includes(location.slug);
@@ -352,7 +355,9 @@ function CityPage() {
           </div>
           <ul className="mt-8 grid gap-3 text-sm font-semibold sm:grid-cols-2">
             <li className="rounded-lg border border-border bg-card px-5 py-4">
-              Same-day and next-day slots; a 48-hour wait is rare
+              {OUTER_TOWN_SLUGS.has(location.slug)
+                ? "Often within a few days"
+                : "Same-day and next-day slots; a 48-hour wait is rare"}
             </li>
             <li className="rounded-lg border border-border bg-card px-5 py-4">
               Before and after photos on every job

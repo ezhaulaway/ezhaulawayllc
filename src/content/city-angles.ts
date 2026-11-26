@@ -27,13 +27,13 @@ export const CITY_ANGLES: Record<string, string> = {
   "castle-pines":
     "Castle Pines homes in The Village, The Canyons and Lagae Ranch are often newer, so the usual jobs are move-outs, move-ins and clearing a house before it is listed. We carry everything out and leave the garage and floors swept.",
   monument:
-    "Monument is on the I-25 corridor south of Castle Rock. We schedule it from our Parker base and confirm the price, including any travel fee, before we load.",
+    "Monument sit-downs, rentals, and pre-sale cleanouts often come with a longer I-25 drive from Parker and an HOA or narrow street that does not want a curb pile. We schedule from our Parker base, put the travel fee on the quote up front, and carry everything out in one visit.",
   elizabeth:
-    "Out in Elizabeth, sellers and owners often have acreage, outbuildings and a house that has not been cleared in years. We handle the whole property in one visit, from the house and garage to sheds and brush piles.",
+    "Out in Elizabeth, sellers and owners often have acreage, a shop or shed, and a house that has not been cleared in years. Town jobs are a short run from Parker with no distance fee. We handle the house, the garage, and the outbuildings in one visit and quote any farther address against the 30-mile line first.",
   kiowa:
-    "Kiowa places are usually a house plus a barn, shop or other outbuilding on acreage along Highway 86. For a sale, an estate or a turnover, we clear the house and the outbuildings in one visit and confirm the job address against the distance fee before we schedule.",
+    "Kiowa places are usually a house plus a barn, shop, or other outbuilding on acreage along Highway 86, or an in-town unit that needs to be emptied. Town itself is inside our 30-mile line from Parker. For a sale, an estate, or a turnover, we clear the house and the outbuildings and confirm the address against the distance fee before we schedule.",
   franktown:
-    "Franktown properties are often acreage with older homes, sheds and fencing. For sales, estates and rentals we can clear the house and the outbuildings in the same visit.",
+    "Franktown properties are often acreage with older homes, sheds, and fencing, a short drive from our Parker base. For sales, estates, and rentals we can clear the house, the garage, and the outbuildings in the same visit, with no travel fee for a Franktown address.",
   sedalia:
-    "Sedalia properties near Highway 85, Perry Park and Indian Creek often include a house, a garage and outbuildings. Sellers, owners and landlords can book one crew to clear all of it, and Sedalia is close to where many of our loads end up.",
+    "Sedalia properties near Highway 85, Perry Park, and Indian Creek often include a house, a garage, and outbuildings. Sellers and landlords can book one crew to clear all of it. We already run this road to the landfill most weeks, and we will tell you if a Perry Park address is far enough to include a travel fee.",
 };

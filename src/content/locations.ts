@@ -347,26 +347,57 @@ const raw_locations: Location[] = [
     slug: "monument",
     city: "Monument",
     county: "El Paso County",
-    metaTitle: "Junk Removal Monument CO | EZ Haulaway",
+    metaTitle: "Junk Removal in Monument, CO | I-25 from Parker",
     metaDescription:
-      "Junk removal in Monument, CO, on the I-25 south corridor from Parker. Furniture, appliances, and cleanouts with upfront pricing. Free quotes from EZ Haulaway.",
+      "Junk removal in Monument, CO from our Parker crew. I-25 is over 30 miles, so the quote includes [[travel]].",
     intro:
-      "Monument is on the I-25 corridor south of Castle Rock. EZ Haulaway serves it from our Parker base.",
+      "Monument sits on I-25 south of Castle Rock, in El Paso County. We come down from Parker with the dump trailer, carry the load out, and haul it off in one visit. EZ in, junk out.",
     local:
-      "Share the address, photos of what needs to go, and how we will reach it — stairs, a long carry, or a narrow gate. We confirm the price before we load anything.",
+      "Share the address, photos of what needs to go, and how we will reach it: stairs, a long carry, a narrow gate, or an HOA that does not want a pile at the curb. Monument addresses on this route are more than 30 miles from our Parker lot, so the quote includes [[travel]] before we schedule.",
     nearby: ["castle-rock", "parker", "lone-tree"],
     topServices: ["furniture-removal", "appliance-removal", "garage-cleanouts"],
+    faqs: [
+      [
+        "Do you charge extra to come to Monument?",
+        "Yes. Monument addresses we have measured on the I-25 route are more than 30 miles from our Parker lot, so the quote includes [[travel]]. We show that fee before we schedule.",
+      ],
+      [
+        "How much does junk removal cost in Monument?",
+        "We price by the space in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], plus [[travel]]. Labor, loading, hauling, and disposal are included.",
+      ],
+      [
+        "Can I just take it to Peak Disposal myself?",
+        "Yes. Peak Disposal on Washington Street is a self-haul transfer station for the Tri-Lakes area. That works if you can load the items and drive them there. We are the option when the pile is inside the house, too heavy to load, or you want it gone in one visit without a trip to the scale.",
+      ],
+      [
+        "How soon can you get to Monument?",
+        "We confirm the soonest window when you call or text. Because it is a longer run down I-25, same-day is less common than it is in Parker or Castle Rock. We will not promise a same-day arrival we cannot keep.",
+      ],
+      [
+        "What will you not take?",
+        "Wet paint, chemicals, fuels, asbestos, and other hazardous material stay behind. If you are unsure, send a photo and we will tell you.",
+      ],
+    ],
     content: [
       {
-        heading: "Junk Removal for Monument",
+        heading: "How We Get to Monument",
         paragraphs: [
-          "EZ Haulaway is a family-owned crew based in Parker. Monument is part of the I-25 south corridor we serve, along with Castle Rock.",
-          "We carry items out from where they sit, load them on our dump trailer, and haul them away in one visit. There is [[travel]].",
+          "The usual drive is I-25 south through Castle Rock and into the Tri-Lakes area. Monument Town Hall on Beacon Lite Road is about 37 miles from our lot in Parker. The Baptist Road interchange is about 39 miles. Both are over the 30-mile line, so [[travel]] is part of a Monument quote.",
+          "We still run this corridor on purpose. It is a regular part of the I-25 south area we already serve with Castle Rock. We confirm the price, including the travel fee, and the soonest window before we roll. Same-day is less likely on this run than it is in Parker; we will tell you the next day that works.",
+        ],
+      },
+      {
+        heading: "What the Local Dump Does, and What We Do",
+        paragraphs: [
+          "The Town of Monument does not run a municipal junk pickup. If you want to haul a load yourself, Peak Disposal & Recycling has a self-service transfer station at 856 Washington Street in town. You drive onto the scale, dump, and pay. There is no minimum weight. Their hours, as published, are Monday through Friday 8 a.m. to 4 p.m. and Saturday 10 a.m. to 4 p.m., closed Sunday.",
+          "Peak takes household trash, furniture, mattresses, appliances, yard waste, construction debris, and most electronics. They do not take CRT TVs, wet paint, batteries, tires, chemicals, propane tanks, or asbestos. If you would rather not load a truck, wait in line, or sort the leftover pile, we come to the house, carry it out, and take it with us.",
         ],
       },
       {
         heading: "What We Haul in Monument",
-        paragraphs: ["If two people can lift it and it is not hazardous, we can usually take it."],
+        paragraphs: [
+          "If two people can lift it and it is not hazardous, we can usually take it. Common Monument calls are move-outs, garage piles, and the furniture and appliances a regular trash tote will not take.",
+        ],
         list: [
           {
             title: "Furniture and mattresses",
@@ -378,14 +409,21 @@ const raw_locations: Location[] = [
           },
           {
             title: "Garage and property cleanouts",
-            text: "Garages, storage, and move-out piles loaded in one visit.",
+            text: "Garages, storage, and move-out piles loaded in one visit, including homes in town and in the Woodmoor area just east of Monument.",
           },
+        ],
+        serviceLinks: [
+          { slug: "furniture-removal", label: "Furniture removal" },
+          { slug: "appliance-removal", label: "Appliance removal" },
+          { slug: "garage-cleanouts", label: "Garage cleanouts" },
         ],
       },
       {
         heading: "Monument Junk Removal Pricing",
         paragraphs: [
-          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included in that price. There is [[travel]].",
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included. There is [[travel]]. Text photos to " +
+            PHONE_DISPLAY +
+            " or use the [free instant estimate](/instant-estimate), and we confirm the full number before we load.",
         ],
       },
     ],
@@ -1197,60 +1235,80 @@ const raw_locations: Location[] = [
     slug: "elizabeth",
     city: "Elizabeth",
     county: "Elbert County",
-    metaTitle: "Junk Removal Elizabeth CO | EZ Haulaway",
+    metaTitle: "Junk Removal in Elizabeth, CO | Acreage Cleanouts",
     metaDescription:
-      "Junk removal in Elizabeth, CO — property cleanouts, outbuilding tear-downs, scrap and brush hauled away. Free quotes from EZ Haulaway.",
+      "Junk removal in Elizabeth, CO from Parker. Town jobs are inside 30 miles. We haul furniture, carpet tear-out, brush, and outbuilding cleanouts. Free quote.",
     intro:
-      "EZ Haulaway makes the trip out to Elizabeth for everything from single heavy items to full property cleanouts.",
+      "Elizabeth is a straight shot east of Parker on the Highway 86 corridor, in Elbert County. We come out for a single heavy item or a whole property, including the house, the garage, and the outbuildings.",
     local:
-      "Rural lots and ranch-style homes mean bigger yards, older outbuildings, and plenty of long-stored household junk that needs to go.",
+      "Lots out here usually have room: a house, a shop or shed, and years of stored household junk. Town itself, around Banner Street and the Highway 86 corridor, is about 18 miles from our Parker lot, so a job in town does not get a distance fee. We still check the exact address on acreage farther out.",
     nearby: ["parker", "franktown", "kiowa", "castle-rock"],
     topServices: ["garage-cleanouts", "yard-and-landscaping-debris", "house-and-estate-cleanouts"],
+    faqs: [
+      [
+        "Do you charge extra to come to Elizabeth?",
+        "Not for an address in town. Elizabeth Town Hall is under 30 miles from our Parker lot. We use the job address, not the town sign, so a property farther out in Elbert County can include [[travel]]. That shows up on the quote before we schedule.",
+      ],
+      [
+        "How much does junk removal cost in Elizabeth?",
+        "Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], with labor, loading, hauling, and disposal included. A quarter-trailer living-room load is about [[load:2]]. Send photos for a preliminary estimate.",
+      ],
+      [
+        "Can you dump my brush at the town brush pile?",
+        "No. The Town of Elizabeth brush and limb drop-off is for residents only, with proof of residency and a water bill, and it does not take contractor loads. We load the brush and haul it ourselves as part of the job.",
+      ],
+      [
+        "Do I have to drag everything to the driveway?",
+        "No. We carry items out from the room, the garage, or the outbuilding they are in. A long driveway or a muddy lot is worth a photo so we can plan the truck.",
+      ],
+      [
+        "How soon can you get to Elizabeth?",
+        "Same-week pickup is typical, and next-day often works when the trailer is open. Call or text and we will give you the soonest window.",
+      ],
+    ],
     content: [
       {
-        heading: "Junk Removal for Elizabeth Homes, Acreage and Outbuildings",
+        heading: "Junk Removal on the Highway 86 Corridor",
         paragraphs: [
-          "Elizabeth properties tend to come with room: bigger lots, a garage or shop, sheds and older outbuildings, and years of stored household items. EZ Haulaway is a family-owned crew based in nearby Parker, so Elizabeth is part of our regular service area. There is [[travel]].",
-          "We carry everything out from wherever it sits, load it on our dump trailer and haul it away in one visit. We serve homes in Spring Valley, Gold Creek and around Elizabeth's town center, as well as rural properties outside town.",
+          "We reach Elizabeth from Parker by heading toward Franktown and then east on Highway 86. Elizabeth Town Hall is 17.8 miles from the lot, under the 30-mile line, so there is no travel fee for an in-town address. A ranch farther out in Elbert County can pass that line, and the quote says so before we load.",
+          "We serve homes in Spring Valley, Gold Creek, and around Elizabeth's town center, plus rural properties outside town. Send photos of the house, the outbuildings, and the driveway, including any long, muddy, or gated access.",
         ],
       },
       {
-        heading: "What We Haul in Elizabeth",
+        heading: "What We Actually Get Called For in Elizabeth",
         paragraphs: [
-          "If two people can lift it and it is not hazardous, we can usually take it. Common Elizabeth jobs:",
+          "The work is a mix of household cleanouts and acreage piles. We have priced Elizabeth jobs that were carpet and pad pulled from several rooms, plus a stack of empty flooring boxes, and living-room loads of couches and a recliner that fill about a quarter trailer (about [[load:2]]). Larger property jobs can take more than one load.",
+          "If you have brush, the Town of Elizabeth keeps a resident-only brush and limb drop-off. You have to show proof of residency and a water bill, and contractors are not allowed to dump there. We cannot use that pile for you. We load the brush ourselves and haul it away.",
         ],
         list: [
           {
             title: "Property and estate cleanouts",
-            text: "The house, garage and outbuildings cleared in one visit, ready to sell, rent or hand over.",
+            text: "The house, garage, and outbuildings cleared in one visit for a sale, a rental, or a handoff.",
           },
           {
-            title: "Brush, fencing and yard debris",
-            text: "Brush piles, fallen limbs, old fence posts and wire, and landscaping leftovers.",
+            title: "Carpet, furniture, and appliances",
+            text: "Carpet and pad, couches, mattresses, refrigerators, and washers carried out for you. A small couch is [[item:couch-small]] and a full-size fridge is [[item:fridge-full]].",
+          },
+          {
+            title: "Brush, fencing, and yard debris",
+            text: "Brush piles, fallen limbs, old fence posts and wire, and landscaping leftovers. This is a paid haul, not a drop at the town pile.",
           },
           {
             title: "Sheds and outbuildings",
             text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included.",
-          },
-          {
-            title: "Garage and storage cleanouts",
-            text: "Boxes, tools, old furniture and anything else that has been stacking up.",
-          },
-          {
-            title: "Appliances and furniture",
-            text: "Refrigerators, washers, couches and mattresses carried out for you.",
           },
         ],
         serviceLinks: [
           { slug: "shed-removal", label: "Shed removal" },
           { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
           { slug: "house-and-estate-cleanouts", label: "House and estate cleanouts" },
+          { slug: "furniture-removal", label: "Furniture removal" },
         ],
       },
       {
         heading: "Elizabeth Junk Removal Pricing",
         paragraphs: [
-          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included. Acreage cleanouts can take more than one load, so send photos and we will quote the whole job before we start.",
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included. Acreage cleanouts can take more than one load, so send photos and we will quote the whole job before we start. There is [[travel]] only when the address itself is more than 30 miles from Parker.",
         ],
       },
     ],
@@ -1259,56 +1317,80 @@ const raw_locations: Location[] = [
     slug: "kiowa",
     city: "Kiowa",
     county: "Elbert County",
-    metaTitle: "Junk Removal Kiowa CO | EZ Haulaway",
+    metaTitle: "Junk Removal in Kiowa, CO | Elbert County Seat",
     metaDescription:
-      "Junk removal in Kiowa, CO — ranch and acreage cleanouts, barns, sheds, fencing and brush. Free quotes from EZ Haulaway in Parker.",
+      "Junk removal in Kiowa, CO from Parker. In-town jobs are inside 30 miles. We clear houses, shops, and old mobile homes. Free photo quote.",
     intro:
-      "Kiowa is the Elbert County seat, east of Elizabeth on Highway 86. We come out from Parker for ranch cleanouts, outbuildings and the heavy items a small-town trash day will not take.",
+      "Kiowa is the Elbert County seat, east of Elizabeth on Highway 86. We come out from Parker for in-town cleanouts, ranch piles, and the heavy items a small-town trash day will not take.",
     local:
-      "Most places here are acreage: a house, a barn or shop, and a run of fence, with a long drive off the highway.",
-    nearby: ["elizabeth", "franktown"],
+      "Most places here are a house plus a barn, shop, or other outbuilding, with a long drive off the highway. Town itself is under the 30-mile line from Parker. We use the job address, not the town sign, because a ranch farther east can pass that line.",
+    nearby: ["elizabeth", "franktown", "parker"],
     topServices: ["house-and-estate-cleanouts", "yard-and-landscaping-debris", "garage-cleanouts"],
+    faqs: [
+      [
+        "Do you charge extra to come to Kiowa?",
+        "Not for Kiowa itself. The courthouse in town is 24.8 miles from our Parker lot, under the 30-mile line. We use the job address, not the town sign. A ranch farther east can include [[travel]], and we show that before we schedule.",
+      ],
+      [
+        "How much does junk removal cost in Kiowa?",
+        "Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], with labor, loading, hauling, and disposal included. A packed house or mobile home can take more than one load.",
+      ],
+      [
+        "Can you empty an old mobile home or a whole house?",
+        "Yes. We have done an in-town Kiowa cleanout on an old double-wide that was filled with junk. Send photos of each room and the access around the unit so we can quote the whole job, not just the first trailer.",
+      ],
+      [
+        "Do I have to move things to the end of a long driveway?",
+        "No. We load from where the items sit, including a house, a shop, or a mobile home. A long or soft driveway is worth a photo so we can plan where the trailer goes.",
+      ],
+      [
+        "How soon can you get to Kiowa?",
+        "Same-week pickup is typical, and we will give you the soonest window when you call or text. It is a planned run down Highway 86, not a same-day promise.",
+      ],
+    ],
     content: [
       {
-        heading: "Junk Removal for Kiowa Ranches, Acreage and Outbuildings",
+        heading: "How Far Is Kiowa from Parker?",
         paragraphs: [
-          "Kiowa sits on the plains of Elbert County, east of Elizabeth along Highway 86. Town is about 20 miles from Parker in a straight line and about 26 miles by road through Elizabeth. There is [[travel]]. Those road miles stay inside that distance, so a job in Kiowa itself does not add the fee. We use the job address, not the town sign: a ranch farther east can pass the line, and the quote says so before we load.",
-          "The usual property is a house plus a barn, shop or other outbuilding, corrals, and fencing, with household junk and scrap that has piled up for years. We carry it out from where it sits, load the dump trailer and haul it away in one visit. Elizabeth is the next town west, and Franktown is farther west toward Parker.",
+          "The drive is through Elizabeth on Highway 86. The county courthouse on Comanche Street is 24.8 miles from our Parker lot, so a job in Kiowa itself does not get a travel fee. We have already done that run for an in-town cleanout, and it stayed inside the line.",
+          "A ranch farther east can go over 30 miles. There is [[travel]] only when the address does. We put that on the quote before we load, and we want photos of the driveway and the outbuildings so we know how many trips the job is.",
         ],
       },
       {
         heading: "What We Haul in Kiowa",
         paragraphs: [
-          "If two people can lift it and it is not hazardous, we can usually take it. The work on these properties tends to be:",
+          "One recent in-town job was an old double-wide mobile home filled with junk. That is the kind of cleanout we come out for: the unit is packed, the lot is tight, and you need it emptied in a planned window, not over a week of curb piles.",
+          "On acreage the pile is often bigger: household junk in the house, scrap along a fence line, and a barn or shop that has been storing things for years. We carry it out from where it sits, load the dump trailer, and haul it away. Elizabeth is the next town west, and Franktown is farther west toward Parker.",
         ],
         list: [
           {
-            title: "Ranch and acreage cleanouts",
-            text: "The house, barn and yard cleared in one visit for a sale, an estate or a handoff to the next owner.",
+            title: "House and mobile-home cleanouts",
+            text: "Whole interiors cleared for a sale, an estate, a handoff, or a unit that has been sitting full.",
           },
           {
-            title: "Barns, sheds and outbuildings",
+            title: "Barns, sheds, and outbuildings",
             text: "Tear-down and haul-away of worn-out sheds and small outbuildings, contents included.",
           },
           {
-            title: "Fence, brush and scrap",
-            text: "Old posts and wire, brush piles, scrap lumber and metal that has collected along a fence line.",
+            title: "Fence, brush, and scrap",
+            text: "Old posts and wire, brush piles, scrap lumber, and metal that has collected along a fence line.",
           },
           {
             title: "Appliances and furniture",
-            text: "Refrigerators, washers, couches and mattresses carried out of the house or shop. A full-size fridge is [[item:fridge-full]] and a small couch is [[item:couch-small]].",
+            text: "Refrigerators, washers, couches, and mattresses carried out of the house or shop. A full-size fridge is [[item:fridge-full]] and a small couch is [[item:couch-small]].",
           },
         ],
         serviceLinks: [
+          { slug: "house-and-estate-cleanouts", label: "House and estate cleanouts" },
           { slug: "shed-removal", label: "Shed removal" },
           { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
-          { slug: "house-and-estate-cleanouts", label: "House and estate cleanouts" },
+          { slug: "garage-cleanouts", label: "Garage cleanouts" },
         ],
       },
       {
         heading: "Kiowa Junk Removal Pricing",
         paragraphs: [
-          "We price by how much space the load takes in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]]. Labor, loading, hauling and disposal are included. A ranch cleanout can take more than one load, so send photos of the house, the outbuildings and the driveway and we will quote the whole job before we start. There is [[travel]].",
+          "We price by how much space the load takes in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]]. Labor, loading, hauling, and disposal are included. A ranch or whole-home cleanout can take more than one load, so send photos of the house, the outbuildings, and the driveway and we will quote the whole job before we start. In-town Kiowa does not add a travel fee. There is [[travel]] only when the address is more than 30 miles from Parker.",
         ],
       },
     ],
@@ -1317,61 +1399,81 @@ const raw_locations: Location[] = [
     slug: "franktown",
     city: "Franktown",
     county: "Douglas County",
-    metaTitle: "Junk Removal Franktown CO | EZ Haulaway",
+    metaTitle: "Junk Removal in Franktown, CO | Short Run from Parker",
     metaDescription:
-      "Junk removal in Franktown, CO — fence tear-outs, shed removal, brush and acreage cleanups. Free quotes from EZ Haulaway.",
+      "Junk removal in Franktown, CO, a short run from Parker. Sheds, fencing, garage piles, and acreage cleanups. No travel fee in town. Free quote.",
     intro:
-      "Franktown is a quick run southeast of Parker, and we handle junk removal and light demolition jobs here regularly.",
+      "Franktown is a short run southeast of Parker, where Highway 83 meets Highway 86 in Douglas County. We treat it like a regular stop, not a special trip.",
     local:
-      "A mix of acreage properties and older homes means fence tear-outs, shed removals, and brush cleanup are common requests.",
+      "Most places here are acreage or older homes near Castlewood Canyon and Russellville, with a long driveway, a shed, and a garage that has been collecting things for years. Castlewood Canyon is about 14 miles from our Parker lot, so a Franktown address does not get a distance fee.",
     nearby: ["parker", "elizabeth", "kiowa", "castle-rock", "sedalia"],
     topServices: ["deck-removal", "light-demolition", "garage-cleanouts"],
+    faqs: [
+      [
+        "Do you charge extra to come to Franktown?",
+        "No for a Franktown address. The Castlewood Canyon area is about 14 miles from our Parker lot, well under 30 miles. There is [[travel]] only if the actual address is farther than that, which we would show on the quote.",
+      ],
+      [
+        "Does Franktown have bulk trash pickup?",
+        "Douglas County does not provide curbside trash service. Residents hire a private hauler. If you do not want to wait on a special bulk day or load a truck yourself, we come to the garage or the yard and take it in one visit.",
+      ],
+      [
+        "Can you take a treadmill and furniture from the garage?",
+        "Yes. A treadmill is [[item:treadmill]]. Furniture, carpet scraps, and other household junk can go on the same visit, priced by the space they take together, not as separate trip minimums.",
+      ],
+      [
+        "Do you tear down sheds and fence, or only haul what is already down?",
+        "We do both. Shed, fence, and deck tear-down is quoted with the haul so you are not paying one crew to demo and another to load.",
+      ],
+      [
+        "How soon can you get to Franktown?",
+        "Same-week pickup is typical, and next-day often works when the trailer is open. It is a short run from Parker, so we can usually fit it in without a long wait.",
+      ],
+    ],
     content: [
       {
-        heading: "Junk Removal for Franktown Homes and Acreage",
+        heading: "Franktown Is Right Next Door",
         paragraphs: [
-          "Franktown sits southeast of Parker in Douglas County, near Castlewood Canyon State Park, with a mix of acreage properties and older homes. EZ Haulaway is a family-owned crew based in nearby Parker, so Franktown is a short drive and part of our regular service area. There is [[travel]].",
-          "We carry everything out, load it on our dump trailer and haul it away in one visit, whether it is a garage full of boxes, an old shed or a run of worn-out fence. We serve the Franktown acreage, Russellville and the Castlewood Canyon area.",
+          "From Parker you drop south and east toward the Highway 83 / Highway 86 junction. We are in Franktown in about 20 minutes on a normal day. Douglas County does not provide curbside trash service, so bulky items, a treadmill, or a garage pile are on you unless you hire a hauler or book a special pickup with a private company.",
+          "We carry the load out, put it in the dump trailer, and leave in one visit. Send photos of the driveway and the access around sheds or fence lines, not just the pile.",
         ],
       },
       {
-        heading: "What We Haul in Franktown",
+        heading: "What Shows Up in a Franktown Garage",
         paragraphs: [
-          "Franktown jobs are often outdoors, and we bring the tools for tear-down as well as the trailer for the haul.",
+          "A recent Franktown call was a garage on acreage that needed room: a heavy treadmill that still worked, a large upholstered armchair, a 7-foot Christmas tree, and bags of carpet scraps. That is a normal mix out here, and a household tote will not take it.",
+          "Outdoor work is common too. We tear down and haul worn-out sheds, old fence, and yard debris, and Ben's construction and demolition background is what we use when the job is more than a simple pickup. Tear-down is quoted with the haul so you get one number.",
         ],
         list: [
           {
-            title: "Fence and deck tear-outs",
-            text: "Old fencing and decks taken down and hauled away. Ben has about six years of construction and demolition experience, including more than 300 decks.",
+            title: "Garage and house cleanouts",
+            text: "Furniture, exercise equipment, stored holiday items, carpet scraps, and the boxes that have been sitting in the garage or house.",
           },
           {
             title: "Shed removal",
             text: "Worn-out sheds and small outbuildings torn down, contents included.",
           },
           {
-            title: "Brush and acreage cleanups",
-            text: "Brush piles, limbs, scrap lumber and yard debris.",
+            title: "Fence, deck, and yard debris",
+            text: "Old fencing, decks, brush piles, limbs, and scrap lumber taken down and hauled away.",
           },
           {
-            title: "House, garage and estate cleanouts",
-            text: "Whole properties cleared in one visit for a sale, a rental or a family transition.",
-          },
-          {
-            title: "Furniture and appliances",
-            text: "Couches, mattresses, refrigerators and washers carried out for you.",
+            title: "Appliances and furniture",
+            text: "Couches, mattresses, refrigerators, and washers carried out for you. A mattress is [[item:mattress]] and a full-size fridge is [[item:fridge-full]].",
           },
         ],
         serviceLinks: [
-          { slug: "deck-removal", label: "Deck removal" },
-          { slug: "fence-removal", label: "Fence removal" },
+          { slug: "garage-cleanouts", label: "Garage cleanouts" },
           { slug: "shed-removal", label: "Shed removal" },
+          { slug: "fence-removal", label: "Fence removal" },
+          { slug: "deck-removal", label: "Deck removal" },
           { slug: "light-demolition", label: "Light demolition" },
         ],
       },
       {
         heading: "Franktown Junk Removal Pricing",
         paragraphs: [
-          "Pricing is based on the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Tear-down work is quoted with the haul so you get one number up front. Send photos for a preliminary estimate.",
+          "Pricing is based on the space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], with labor, loading, hauling, and disposal included. Franktown itself does not add a travel fee. Tear-down work is quoted with the haul. Send photos for a preliminary estimate, or use the [free instant estimate](/instant-estimate).",
         ],
       },
     ],
@@ -1462,58 +1564,90 @@ const raw_locations: Location[] = [
     slug: "sedalia",
     city: "Sedalia",
     county: "Douglas County",
-    metaTitle: "Junk Removal Sedalia CO | EZ Haulaway",
+    metaTitle: "Junk Removal in Sedalia, CO | Near the Landfill",
     metaDescription:
-      "Junk removal in Sedalia, CO — appliance haul-away, yard debris and full garage cleanouts. Free quotes from EZ Haulaway.",
+      "Junk removal in Sedalia, CO from our Parker crew. We already dump on Highway 85 most weeks. Appliances, yard debris, and cleanouts. Free photo quote.",
     intro:
-      "Sedalia sits along Highway 85 and is a regular stop for EZ Haulaway on the way to and from Parker.",
+      "Sedalia sits along Highway 85 in Douglas County. We already drive this road most weeks, because a lot of our trailer loads end at the Sedalia landfill. If you live here, we are coming this way anyway.",
     local:
-      "Mountain homes and rural properties here often need appliance haul-away, yard debris cleanup, and full garage clear-outs.",
+      "Homes around the town center, Indian Creek, and up toward Perry Park often sit on gravel or steep drives, with a garage or outbuilding and yard debris that a regular trash tote will not take. Sedalia town and the landfill area are about 17 miles from our Parker lot, so those addresses do not get a distance fee. Perry Park sits right around the 30-mile line, so we check that address before we quote.",
     nearby: ["castle-rock", "littleton", "parker", "franktown"],
     topServices: ["yard-and-landscaping-debris", "appliance-removal", "garage-cleanouts"],
+    faqs: [
+      [
+        "Do you charge extra to come to Sedalia?",
+        "Not for Sedalia town or the landfill area, which are about 17 miles from our Parker lot. Perry Park is right around the 30-mile line, so that address is checked one by one. If [[travel]] applies, it is on the quote before we schedule.",
+      ],
+      [
+        "Do you dump at the Sedalia landfill?",
+        "Yes. A lot of our loads from around the metro already end at the Waste Connections landfill on Highway 85. The dump trip is included in the price we confirm before we load.",
+      ],
+      [
+        "What do you do with TVs and other electronics?",
+        "We take electronics to a recycler that accepts them, and that is included in the price. See our [electronics recycling guide](/blog/electronics-recycling-denver).",
+      ],
+      [
+        "Can you haul fence posts with the yard debris?",
+        "Yes. Fence, brush, and yard debris can go on the same paid visit.",
+      ],
+      [
+        "How much does junk removal cost in Sedalia?",
+        "Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], with labor, loading, hauling, and disposal included.",
+      ],
+    ],
     content: [
       {
-        heading: "Junk Removal for Sedalia Homes and Rural Properties",
+        heading: "We Already Know the Highway 85 Run",
         paragraphs: [
-          "Sedalia sits along Highway 85 in Douglas County, with homes in Perry Park and Indian Creek as well as rural properties and older buildings around town. EZ Haulaway is a family-owned crew based in nearby Parker, so Sedalia is part of our regular service area. There is [[travel]].",
-          "Much of our hauling ends at the Sedalia landfill, so this is a part of Douglas County we know well. We carry everything out, load it on our dump trailer and haul it away in one visit.",
+          "Parker to the Sedalia landfill and back is a 32-mile loop we run all the time. The landfill itself is at 5970 North Highway 85, operated by Waste Connections (it used to be called Durham/RAD). If you self-haul, call them for current hours and rules. If you hire us, the dump trip is part of the price.",
+          "We serve Sedalia town, Indian Creek, Perry Park, and the rural properties in between. Send photos of the driveway as well as the pile. A steep gravel drive changes how we place the trailer.",
+        ],
+      },
+      {
+        heading: "The Landfill, GreenWorks, and What We Can Take",
+        paragraphs: [
+          "Right next to the landfill, at 5675 Delva Way, Douglas County runs GreenWorks. It is a separate county site, not a window inside the landfill.",
+          "On a paid pickup, we take electronics to a recycler that accepts them. See our [electronics recycling guide](/blog/electronics-recycling-denver). We take the rest of the load to the proper disposal site.",
         ],
       },
       {
         heading: "What We Haul in Sedalia",
-        paragraphs: ["Common Sedalia jobs include:"],
+        paragraphs: [
+          "Common Sedalia jobs are appliances, yard debris, and garage or shed cleanouts, including electronics that need a responsible path and not a regular trash can.",
+        ],
         list: [
           {
             title: "Appliance haul-away",
-            text: "Refrigerators, washers, dryers and stoves carried out and sent to metal recycling when possible.",
+            text: "Refrigerators, washers, dryers, and stoves carried out and sent to metal recycling when possible. A full-size fridge or freezer is [[item:fridge-full]]. A washer or dryer is [[item:washer-dryer]].",
           },
           {
             title: "Yard and landscaping debris",
-            text: "Brush, limbs, old fencing, sod and landscaping leftovers.",
+            text: "Brush, limbs, old fencing, sod, and landscaping leftovers. We haul fencing and lumber as part of the job.",
           },
           {
             title: "Garage and shed cleanouts",
-            text: "Boxes, tools, old furniture and anything else stacked up in the garage or outbuildings.",
+            text: "Boxes, tools, old furniture, and anything else stacked up in the garage or outbuildings.",
           },
           {
             title: "House and estate cleanouts",
-            text: "Whole properties cleared for a sale, a rental or a family transition.",
+            text: "Whole properties cleared for a sale, a rental, or a family transition.",
           },
           {
             title: "Electronics",
-            text: "TVs, computers and other electronics collected for recycling when possible.",
+            text: "TVs, computers, and monitors. We take them to a recycler that accepts them. See our [electronics recycling guide](/blog/electronics-recycling-denver).",
           },
         ],
         serviceLinks: [
           { slug: "appliance-removal", label: "Appliance removal" },
           { slug: "yard-and-landscaping-debris", label: "Yard and landscaping debris removal" },
           { slug: "garage-cleanouts", label: "Garage cleanouts" },
+          { slug: "electronics-and-e-waste-removal", label: "Electronics and e-waste removal" },
         ],
       },
       {
         heading: "Sedalia Junk Removal Pricing",
         paragraphs: [
-          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]] and a full trailer is about [[load:8]], with labor, loading, hauling and disposal included. Send photos for a preliminary estimate and we will quote the whole job before we start.",
+          "We price by how much space your items take in our dump trailer. Pickups start at [[min]], a half trailer is about [[load:4]], and a full trailer is about [[load:8]], with labor, loading, hauling, and disposal included. Most Sedalia-town addresses have no travel fee. A Perry Park address can include [[travel]] if it is more than 30 miles from Parker, and we will say so on the quote. Send photos and we will quote the whole job before we start.",
         ],
       },
     ],
