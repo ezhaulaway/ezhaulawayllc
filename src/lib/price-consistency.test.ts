@@ -13,7 +13,6 @@ import {
   eighthPrice,
   formatDiscount,
   formatMoney,
-  freeTvComputerWording,
   ITEM_CATALOG,
   normalizeFeed,
   priceText,
@@ -184,16 +183,14 @@ describe("one price guide", () => {
     expect(Object.keys(ITEM_CATALOG)).toContain("fridge-full");
   });
 
-  it("states the military discount as dollars off and the approved TV threshold", () => {
+  it("states the military discount as dollars off and hides the retired TV promo", () => {
     const military = SNAPSHOT_GUIDE.discounts.find((discount) => /military/i.test(discount.label));
     expect(military).toBeTruthy();
     expect(formatDiscount(military!).amount).toBe("$25 off");
-    expect(freeTvComputerWording()).toBe(
-      "Free TV and computer recycling with any standard junk removal pickup over $100.",
-    );
-    expect(buildLlmsText(SNAPSHOT_GUIDE)).toContain(freeTvComputerWording());
+    expect(SNAPSHOT_GUIDE.discounts.some((discount) => /tv|computer/i.test(discount.label))).toBe(false);
+    expect(buildLlmsText(SNAPSHOT_GUIDE)).not.toMatch(/free tv/i);
     expect(buildEstimatorInstructions(SNAPSHOT_GUIDE)).toContain("$25 off");
-    expect(buildEstimatorInstructions(SNAPSHOT_GUIDE)).toContain("over $100");
+    expect(buildEstimatorInstructions(SNAPSHOT_GUIDE)).not.toMatch(/free tv|over \$100/i);
   });
 
   it("reads the travel fee from the guide", () => {

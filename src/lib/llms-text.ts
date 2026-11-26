@@ -18,7 +18,6 @@ import {
   formatDiscount,
   formatItemPrice,
   formatMoney,
-  freeTvComputerWording,
   ITEM_CATALOG,
   priceText,
   travelPhrase,
@@ -73,7 +72,6 @@ export function buildLlmsText(guide: PriceGuide): string {
 - Price guide version: ${guide.version}
 - Price range: [[min]] minimum to [[load:8]] for a full trailer
 - Travel: [[travel]]
-- ${freeTvComputerWording()}
 - Service model: the crew does the lifting, loading, sweeping, and disposal.
 - Disposal: metal is recycled, usable items are donated when possible, and the rest goes to the proper facility.
 

@@ -10,11 +10,13 @@ import snapshotJson from "../content/price-snapshot.json";
 export const QUOTE_ONLY = "call or text for a quote";
 export const PRICE_SOURCE = "https://ezhaulawaycrew.lovable.app/api/public/pricing";
 
-/** Ben approved this. The crew feed's free TV/computer discount does not include the minimum. */
-export const FREE_TV_COMPUTER_MINIMUM = 100;
-
-export function freeTvComputerWording(): string {
-  return `Free TV and computer recycling with any standard junk removal pickup over ${formatMoney(FREE_TV_COMPUTER_MINIMUM)}.`;
+/**
+ * The free TV/computer removal was a fall promo and has ended (Ben, Nov 26, 2026).
+ * A TV-only trip is the minimum. Until the crew feed drops its $0 discount row,
+ * the site hides it so no page or estimate offers it.
+ */
+export function isRetiredDiscount(discount: { label: string }): boolean {
+  return /tv|computer/i.test(discount.label);
 }
 
 export type PriceUnit = "each" | "flat rate" | "starting at";
@@ -115,14 +117,11 @@ export function formatMoney(amount: number): string {
   return `$${amount.toLocaleString("en-US")}`;
 }
 
-/** Military is a flat dollar amount off. Free TV/computer uses the approved $100 policy, not the feed's $0. */
+/** Military is a flat dollar amount off. */
 export function formatDiscount(discount: Discount): { label: string; amount: string | null } {
   const label = discount.label;
   if (/military/i.test(label) && discount.amountNumber != null) {
     return { label, amount: `${formatMoney(discount.amountNumber)} off` };
-  }
-  if (/tv|computer/i.test(label)) {
-    return { label: freeTvComputerWording(), amount: null };
   }
   return {
     label,
@@ -229,7 +228,7 @@ export function normalizeFeed(
   }
 
   const adjustments = readCharges(record["adjustments"]);
-  const discounts = readCharges(record["discounts"]);
+  const discounts = readCharges(record["discounts"])?.filter((discount) => !isRetiredDiscount(discount));
   if (!adjustments || !discounts) return null;
 
   const body = { minimum, laborRate, loads, adjustments, discounts, specialty };
@@ -372,7 +371,6 @@ export function publicPricing(guide: PriceGuide) {
         amount: shown.amount ?? discount.amountNumber ?? discount.amount,
       };
     }),
-    freeTvComputerRecycling: freeTvComputerWording(),
     specialty: guide.specialty.map((item) => ({
       item: item.item,
       price: item.amount ?? item.price,
