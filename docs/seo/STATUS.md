@@ -27,6 +27,14 @@ PRs sometimes mentioned as still open are already merged: [#20](https://github.c
 
 A promised small-fixes PR on `grok/audit-small-fixes-2026-11-23` was never opened (no branch, no PR). The live furniture pages still say "Pianos start at starting at $375." The Littleton city page still has the "more than 300 decks" line. A visible BabyLoveGrowth *brand card* was not found on the home, about, or furniture pages this check; imported post images on `/blog` still load from a `blog-images/babylovegrowth/` storage path.
 
+## Ben's answers, Nov 26
+
+- Free TV/computer removal was a promo and is over. A TV-only trip is the minimum. Site change in PR #45; Ben removes the discount in the crew app.
+- Electronics go to a recycler that accepts them (not GreenWorks as the crew's drop-off). Live post fixed in PR #45.
+- Pallets are $5 each as a standard. Ben adds the item to the crew price list; then the pallet page uses a token.
+- Yes on PR #42. Waiting on the EZ SEO & Blog audit per the new cross-audit rule.
+- New rule: each AI audits the other's PR before it goes live (see CHANGE-REQUESTS.md).
+
 ## Waiting on Ben
 
 1. Sign back in to [Google Search Console](https://search.google.com/search-console) as ben@ezhaulawayllc.com on the Grok Bot computer, so Google indexing can be requested for the electronics post and the Nov 23 page updates. Bing IndexNow already accepted the electronics post (HTTP 200, Nov 24).
