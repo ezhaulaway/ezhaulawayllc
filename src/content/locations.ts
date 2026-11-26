@@ -349,7 +349,7 @@ const raw_locations: Location[] = [
     county: "El Paso County",
     metaTitle: "Junk Removal in Monument, CO | I-25 from Parker",
     metaDescription:
-      "Junk removal in Monument, CO from our Parker crew. The drive down I-25 is over 30 miles, so the quote includes [[travel]]. Free photo quote.",
+      "Junk removal in Monument, CO from our Parker crew. I-25 is over 30 miles, so the quote includes [[travel]].",
     intro:
       "Monument sits on I-25 south of Castle Rock, in El Paso County. We come down from Parker with the dump trailer, carry the load out, and haul it off in one visit. EZ in, junk out.",
     local:
@@ -1583,12 +1583,12 @@ const raw_locations: Location[] = [
         "Yes. A lot of our loads from around the metro already end at the Waste Connections landfill on Highway 85. The dump trip is included in the price we confirm before we load.",
       ],
       [
-        "Can you drop my TVs at GreenWorks for me?",
-        "GreenWorks electronics drop-off is for Douglas County residents, by appointment, with an ID. It is not a contractor window. If you want to use it yourself, book on the county site and bring proof of residency. If we haul the TVs, we recycle them through the channels we use on other jobs and include that in your price.",
+        "What do you do with TVs and other electronics?",
+        "We take electronics to a recycler that accepts them, and that is included in the price. See our [electronics recycling guide](/blog/electronics-recycling-denver).",
       ],
       [
-        "Can I put fence posts in the county slash pile?",
-        "No. The GreenWorks slash site does not take fencing, lumber, trash, or contractor loads. We can haul fence, brush, and yard debris together on a paid visit.",
+        "Can you haul fence posts with the yard debris?",
+        "Yes. Fence, brush, and yard debris can go on the same paid visit.",
       ],
       [
         "How much does junk removal cost in Sedalia?",
@@ -1606,8 +1606,8 @@ const raw_locations: Location[] = [
       {
         heading: "The Landfill, GreenWorks, and What We Can Take",
         paragraphs: [
-          "Right next to the landfill, at 5675 Delva Way, Douglas County runs GreenWorks. It is a separate county site, not a window inside the landfill. Electronics recycling there is free for Douglas County residents who book an appointment and bring an ID. Slash and green yard waste is also residents only, with no contractor drop-offs, and they will not take fencing, lumber, or trash in that pile.",
-          "Those county programs are a good option if you are a resident and can get an appointment and haul the load yourself. On a paid pickup, we do not use the resident-only GreenWorks drop-offs. We sort for donation and recycling the way we do on our other jobs, including [electronics recycling](/blog/electronics-recycling-denver) when the items qualify, and we take the rest to the proper disposal site next door.",
+          "Right next to the landfill, at 5675 Delva Way, Douglas County runs GreenWorks. It is a separate county site, not a window inside the landfill.",
+          "On a paid pickup, we take electronics to a recycler that accepts them. See our [electronics recycling guide](/blog/electronics-recycling-denver). We take the rest of the load to the proper disposal site.",
         ],
       },
       {
@@ -1622,7 +1622,7 @@ const raw_locations: Location[] = [
           },
           {
             title: "Yard and landscaping debris",
-            text: "Brush, limbs, old fencing, sod, and landscaping leftovers. Fencing and lumber cannot go in the county slash pile, and we haul them as part of the job.",
+            text: "Brush, limbs, old fencing, sod, and landscaping leftovers. We haul fencing and lumber as part of the job.",
           },
           {
             title: "Garage and shed cleanouts",
@@ -1634,7 +1634,7 @@ const raw_locations: Location[] = [
           },
           {
             title: "Electronics",
-            text: "TVs, computers, and monitors collected for recycling when we can. This is not a GreenWorks resident appointment; it is part of the paid haul. See our [electronics recycling guide](/blog/electronics-recycling-denver).",
+            text: "TVs, computers, and monitors. We take them to a recycler that accepts them. See our [electronics recycling guide](/blog/electronics-recycling-denver).",
           },
         ],
         serviceLinks: [

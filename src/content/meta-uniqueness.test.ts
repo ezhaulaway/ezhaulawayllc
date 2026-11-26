@@ -142,6 +142,7 @@ const CHANGED = [
   "/service-areas/highlands-ranch",
   "/service-areas/aurora",
   "/service-areas/castle-pines",
+  "/service-areas/monument",
 ];
 
 describe("indexable titles and descriptions", () => {
