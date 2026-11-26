@@ -13,26 +13,26 @@ EZ SEO & Blog told Ben that 12 URLs changed on Nov 23 and still needed a Google 
 
 | URL | Changed (America/Denver) | Bing IndexNow | Google request | Indexed? |
 | --- | --- | --- | --- | --- |
-| https://www.ezhaulawayllc.com/blog/electronics-recycling-denver | Tue Nov 24, 2026, 7:03 AM MT (PR #39) | 200 accepted Nov 24 | Pending Search Console sign-in | unknown |
-| https://www.ezhaulawayllc.com/service-areas/denver/furniture-removal | Mon Nov 23, 2026 (PR #28, merged 10:01 AM MT) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/services/furniture-removal | Mon Nov 23, 2026 (PR #28) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/service-areas/centennial | Mon Nov 23, 2026 (PR #28) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/what-we-take | Mon Nov 23, 2026 (PR #28) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/blog/bed-frame-disposal | Mon Nov 23, 2026 (PR #35, merged 10:06 AM MT) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/blog/deck-removal-cost | Mon Nov 23, 2026 (PR #35) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/services/hot-tub-removal | Mon Nov 23, 2026 (PR #35, description only) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/service-areas/lone-tree | Mon Nov 23, 2026 (PR #35, description only) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/service-areas/highlands-ranch | Mon Nov 23, 2026 (PR #35, description only) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/service-areas/aurora | Mon Nov 23, 2026 (PR #35, description only) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/service-areas/castle-pines | Mon Nov 23, 2026 (PR #35, description only) | unknown | Pending sign-in (part of the Nov 23 set) | unknown |
-| https://www.ezhaulawayllc.com/ | Mon Nov 23, 2026 (PR #28 also updated the homepage price-range in schema to minimum–full trailer) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/service-areas/parker | Mon Nov 23, 2026 (PR #28 schema price range) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/service-areas/castle-rock | Mon Nov 23, 2026 (PR #28 schema price range) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/blog/christmas-tree-disposal | Mon Nov 16, 2026 (PR #27 rewrite) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/blog/previous-owner-left-junk | Wed Nov 18, 2026 (PR #30) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/blog/kitchen-cabinet-removal-cost | Fri Nov 20, 2026 (PR #33) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/blog/estate-cleanout-cost | Sun Nov 22, 2026 (PR #34) | unknown | unknown | unknown |
-| https://www.ezhaulawayllc.com/services/wood-pallet-removal | Live now (HTTP 200 on Nov 26). Copy fix is in open PR #42, not shipped. Search Console had flagged a soft 404. | unknown | unknown | unknown; Claude reported a soft-404 flag |
+| https://www.ezhaulawayllc.com/blog/electronics-recycling-denver | Tue Nov 24, 2026, 7:03 AM MT (PR #39) | 200 accepted Nov 24 | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/denver/furniture-removal | Mon Nov 23, 2026 (PR #28, merged 10:01 AM MT) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/services/furniture-removal | Mon Nov 23, 2026 (PR #28) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/centennial | Mon Nov 23, 2026 (PR #28) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/what-we-take | Mon Nov 23, 2026 (PR #28) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/bed-frame-disposal | Mon Nov 23, 2026 (PR #35, merged 10:06 AM MT) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/deck-removal-cost | Mon Nov 23, 2026 (PR #35) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/services/hot-tub-removal | Mon Nov 23, 2026 (PR #35, description only) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/lone-tree | Mon Nov 23, 2026 (PR #35, description only) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/highlands-ranch | Mon Nov 23, 2026 (PR #35, description only) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/aurora | Mon Nov 23, 2026 (PR #35, description only) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/castle-pines | Mon Nov 23, 2026 (PR #35, description only) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/ | Mon Nov 23, 2026 (PR #28 also updated the homepage price-range in schema to minimum–full trailer) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/parker | Mon Nov 23, 2026 (PR #28 schema price range) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/service-areas/castle-rock | Mon Nov 23, 2026 (PR #28 schema price range) | unknown | Requested Nov 26 (Claude) | no: Discovered, not indexed (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/christmas-tree-disposal | Mon Nov 16, 2026 (PR #27 rewrite) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/previous-owner-left-junk | Wed Nov 18, 2026 (PR #30) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/kitchen-cabinet-removal-cost | Fri Nov 20, 2026 (PR #33) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/blog/estate-cleanout-cost | Sun Nov 22, 2026 (PR #34) | unknown | Not needed | yes (Nov 26) |
+| https://www.ezhaulawayllc.com/services/wood-pallet-removal | Live now (HTTP 200 on Nov 26). Copy fix is in open PR #42, not shipped. Search Console had flagged a soft 404. | unknown | Not yet; after PR #42 is live | no: Soft 404 (Nov 26) |
 
 ## Other deploys (not a separate indexing target each)
 
@@ -49,7 +49,7 @@ PR #28 also rewrote stale prices on several *imported* blog posts at render time
 
 Ben connected Search Console to OpenSEO on Nov 26, so Claude inspected every URL in both sitemaps (97 site pages, 34 posts, and /blog). Result: 118 of 132 indexed. Both sitemaps read successfully (sitemap.xml Nov 24, 97 pages; blog-sitemap.xml Nov 25, 35 pages). Whole-property Page indexing report (last update Nov 22): 253 indexed, 48 not indexed.
 
-The table above was written before this pass. Every URL in it reported "Submitted and indexed" on Nov 26 except `/services/wood-pallet-removal` (soft 404, below), so the "unknown" cells there can be read as yes as of Nov 26.
+The "Indexed?" and "Google request" columns in the table above were filled from this pass. Two URLs in that table are not indexed: `/service-areas/castle-rock` and `/services/wood-pallet-removal`. The table below is the full not-indexed list.
 
 ### Not indexed on Nov 26
 
@@ -76,10 +76,8 @@ The second soft 404 in the whole-property report is `https://www.ezhaulawayllc.c
 
 Search Console is not blocked on a sign-in for Claude; it works through Ben's Chrome. The electronics post and the Nov 23 URLs above were already indexed on Nov 26, so they need no request.
 
-## After the next indexing pass
+## Next indexing pass (Monday checkup, Nov 30)
 
-When Search Console is available again:
-
-1. Request indexing for the electronics post and the Nov 23 snippet/content URLs in the table.
-2. Record the request date in this file.
-3. Recheck "Indexed?" on the following Monday checkup, and add the 13 discovered/unknown URLs if they are still listed.
+1. Once PR #42 is live, request indexing for `/services/wood-pallet-removal`, `/services/commercial-junk-removal` and `/services/sod-and-lawn-removal`. Request `/blog/what-can-be-donated` after the Dec 1 rewrite ships.
+2. Recheck the 14 URLs in the not-indexed table and record each result here with the date.
+3. If Denver or Castle Rock still show "never crawled", check the inspected URL form (www, https, no trailing slash) before treating it as a content problem.

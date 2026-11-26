@@ -16,12 +16,14 @@ Ben's Nov 4 yard-waste URL, `/blog/yard-waste-brush-removal-cost-parker`, now 30
 
 ## Open pull requests
 
-Only two PRs are open as of this snapshot. Neither should be merged without Ben's yes.
+As of Nov 26, 9:15 AM MT. #43 and #48 merged to `main` this morning. Every PR below has an audit row in [CHANGE-REQUESTS.md](CHANGE-REQUESTS.md).
 
 | PR | Branch | What | Status |
 | --- | --- | --- | --- |
-| [#40](https://github.com/ezhaulaway/ezhaulawayllc/pull/40) | `grok/city-pages-outer-towns-2026-11-24` | Unique local copy for Monument, Elizabeth, Sedalia, Franktown, and Kiowa. | Open since Mon Nov 24, 7:49 PM MT. Waiting on Ben. Head is still based on the electronics commit; `#41` has landed on `main` since then, so the branch may need a refresh before merge. Open questions in the PR body: GreenWorks business drop-off, Perry Park travel fee, whether to keep the Kiowa double-wide and Franktown garage mix, Monument meta length after `[[travel]]` expands. |
-| [#42](https://github.com/ezhaulaway/ezhaulawayllc/pull/42) | `claude/indexing-fixes` | Footer now links every service and service area; wood-pallet page copy reworked after a Search Console soft-404 flag. Also notes 13 other sitemap pages as discovered/unknown (list not in the PR body). | Open since Thu Nov 26, 7:58 AM MT. Waiting on Ben. Claude should still get a review from EZ SEO & Blog on the next run; log it in [CHANGE-REQUESTS.md](CHANGE-REQUESTS.md) if anything should change. |
+| [#40](https://github.com/ezhaulaway/ezhaulawayllc/pull/40) | `grok/city-pages-outer-towns-2026-11-24` | Unique local copy for Monument, Elizabeth, Sedalia, Franktown, and Kiowa. | EZ SEO & Blog to update before merge: GreenWorks wording (CR-002), Monument meta length, two public-facility street addresses, Monument landlord card. See CR-004. |
+| [#42](https://github.com/ezhaulaway/ezhaulawayllc/pull/42) | `claude/indexing-fixes` | Footer links every service and town; pallet page soft-404 rewrite. | Ben said yes. Audit fix applied (per-pallet sentence). Ready. |
+| [#44](https://github.com/ezhaulaway/ezhaulawayllc/pull/44) | `claude/seo-review-2026-11-26` | Docs: reviews, Ben's answers, cross-audit rule, Nov 26 indexing pass. | Audit fixes applied; retargeted to `main`. Ready. |
+| [#45](https://github.com/ezhaulaway/ezhaulawayllc/pull/45) | `claude/remove-free-tv-promo` | End the free TV promo; TV-only trip is the minimum; electronics go to a recycler. | Audit fix applied (GreenWorks sentence cut). Ready. |
 
 PRs sometimes mentioned as still open are already merged: [#20](https://github.com/ezhaulaway/ezhaulawayllc/pull/20) (schema sameAs, Nov 10) and [#24](https://github.com/ezhaulaway/ezhaulawayllc/pull/24) (security hardening, Nov 18). No open follow-up "migration" PR was found.
 
@@ -32,19 +34,20 @@ A promised small-fixes PR on `grok/audit-small-fixes-2026-11-23` was never opene
 - Free TV/computer removal was a promo and is over. A TV-only trip is the minimum. Site change in PR #45; Ben removes the discount in the crew app.
 - Electronics go to a recycler that accepts them (not GreenWorks as the crew's drop-off). Live post fixed in PR #45.
 - Pallets are $5 each as a standard. Ben adds the item to the crew price list; then the pallet page uses a token.
-- Yes on PR #42. Waiting on the EZ SEO & Blog audit per the new cross-audit rule.
+- Yes on PR #42. EZ SEO & Blog audited it; the fix it asked for is applied.
 - New rule: each AI audits the other's PR before it goes live (see CHANGE-REQUESTS.md).
 
 ## Waiting on Ben
 
-1. Sign back in to [Google Search Console](https://search.google.com/search-console) as ben@ezhaulawayllc.com on the Grok Bot computer, so Google indexing can be requested for the electronics post and the Nov 23 page updates. Bing IndexNow already accepted the electronics post (HTTP 200, Nov 24).
-2. Can the crew drop off customers' electronics at Douglas County GreenWorks as a business, or is that residents-only? This also affects wording in PR #40 vs. the live electronics post. See [CR-002](CHANGE-REQUESTS.md#cr-002).
-3. What should a single TV cost? The Oct 30, 2026 price guide has both "TV / monitor" at $40 and a "Free tv/computer removal" discount at $0. The live post says TV and computer recycling is free when it is part of a regular junk removal pickup (jobs start at the minimum). Quotes Ben has sent have not always matched. See [CR-001](CHANGE-REQUESTS.md#cr-001).
+1. In the EZ Crew app: delete the $0 "Free tv/computer removal" discount, and remove or replace the $40 "TV / monitor" item so a TV-only trip has no published price below the minimum (CR-001).
+2. In the EZ Crew app: add a pallet item at $5 each, for example "Wood pallet (each)", so the pallet page can show it with a token (CR-003).
+3. Sign in to Google Search Console on the Grok Bot computer, if Grok Bot should request indexing itself. Claude can request it through Ben's Chrome.
 4. Dec 1 interview answers and a donation-quality furniture photo, by Monday night, Nov 30. Questions and the image brief are in [blog-calendar.md](blog-calendar.md). The post still ships if either is missing, using the named fallback photo.
 5. Is "same-week is common, and same-day when available" accurate for Lone Tree? That wording went live in PR #35.
-6. PR #40 local-job questions (Kiowa double-wide, Franktown garage mix, Perry Park travel fee, any unlogged Monument or Sedalia jobs).
-7. Optional: electronics Q4 (a single-TV price, which overlaps item 3) and whether Ben usually does not resell electronics.
-8. Whether to draft replies to the six unanswered Google reviews (including Paul Cattich, Nov 18).
+6. PR #40 local-job questions (Perry Park travel fee, any unlogged Monument or Sedalia jobs). The Kiowa double-wide is verified in EZ Crew (Oct 19).
+7. Whether to draft replies to the six unanswered Google reviews.
+
+Answered Nov 26 and moved to "Ben's answers" above: GreenWorks (CR-002), single-TV price (CR-001), pallets (CR-003).
 
 ## Cadence
 
