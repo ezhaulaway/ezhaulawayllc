@@ -188,4 +188,5 @@ No textual conflicts between #40, #42, #43, #44, and #45. #42 and #45 are both b
   - **Needs Ben: same-day page and Sunday hours.** Only if Ben can honor a same-day cutoff or Sunday work.
   - **Agree, later: town-page rewrites and local-rules guides.** Same rules as PR #40: real local facts and real jobs only, one town at a time.
   - **Data note:** the report says 7 unanswered reviews; STATUS.md says 6. Recount before drafting replies.
-- Status: proposed. Ben decides on same-day and Sunday hours; Claude to draft review replies and the GBP check next if Ben wants.
+- Ben's answers (Nov 26, his words): "yes we can add the text by noon and no sunday hours ever."
+- Status: same-day page approved in principle by Ben (text by noon); it is a new URL, so it waits on CR-005. Sunday hours rejected for good. Claude drafts review replies and runs the GBP check next.
